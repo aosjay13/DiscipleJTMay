@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wheel of the Year: The Witches' Sabbats</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF; font-family: 'EB Garamond', Georgia, serif; color: var(--ink);
+    min-height: 100vh; padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px; margin: 0 auto; background: var(--parchment); border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset; position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson) ── */
+  .doc-header {
+    text-align: center; padding: 3rem 3rem 2rem; border-bottom: 3px solid var(--gold-light);
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); position: relative;
+  }
+  .part-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 0.5rem; }
+  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 0.8rem; }
+  .doc-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; color: #FBF5E6;
+    letter-spacing: 0.04em; line-height: 1.25; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+  .doc-subtitle { font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 1.8vw, 0.95rem); color: var(--gold-light); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.6rem; }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+
+  /* ── TOC ── */
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.35rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--gold); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 1.6rem; flex-shrink: 0; }
+
+  /* ── ARTICLE ── */
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+
+  /* ── SECTION ── */
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── HISTORICAL NOTE ── */
+  .hist-note { margin: 1.4rem 0; padding: 0.9rem 1.1rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; font-size: 0.92rem; line-height: 1.7; color: var(--ink-soft); font-style: italic; }
+  .hist-note strong { font-style: normal; color: var(--ink-mid); }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture-block { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+
+  /* ── COMPARISON TABLE ── */
+  .table-wrap { margin: 1.6rem 0; overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+  .compare-table thead tr { background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .compare-table th { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: #FBF5E6; padding: 0.6rem 0.8rem; text-align: left; font-weight: 500; }
+  .compare-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); vertical-align: top; line-height: 1.5; }
+  .compare-table tbody tr:nth-child(even) td { background: rgba(242,235,217,0.45); }
+  .compare-table .col-name { font-family: 'Cinzel', serif; font-size: 0.86rem; color: var(--ink); font-weight: 600; }
+  .compare-table .col-origin { font-style: italic; color: var(--ink-soft); }
+  .compare-table .col-hebrew { color: var(--crimson); font-weight: 600; }
+  .compare-table .col-none { color: var(--ink-soft); font-style: italic; }
+
+  /* ── FOOTER (crimson) ── */
+  .doc-footer { text-align: center; padding: 2rem; border-top: 3px solid var(--gold-light); margin-top: 3rem; background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: #FBF5E6; text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @media print {
+    @page { size: letter portrait; margin: 0.75in; }
+    body { background: white; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer, .section, .scripture-block, .hist-note, .toc, .compare-table thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .article { break-before: page; }
+    #art1 { break-before: avoid; }
+    .scripture-block, .section, .hist-note, .table-wrap { break-inside: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+    .toc-list { columns: 1; }
+    .compare-table { font-size: 0.82rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="part-label">Pagan Holidays &middot; Deep Dive</span>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">The Wheel of the Year</h1>
+    <p class="doc-subtitle">The Witches' Sabbats and the Counterfeit of God's Feasts</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Continuation of the Deep Dives</p>
+      <p>The earlier studies traced Christmas back to the midwinter Yule, Easter back to the spring Ostara, and Halloween back to the Celtic Samhain. What is striking is that these are not three scattered festivals. They are three spokes of a single wheel. Modern witchcraft keeps a sacred calendar of eight festivals, called the Wheel of the Year, and its turning points fall in the very seasons of the feasts of the LORD. This study sets that wheel beside God's appointed times. We will see that it is a counterfeit calendar, built on the worship of the sun, the seasons, and a dying and rising god, and that wherever it touches the feasts of God it twists their meaning into its own.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#art1"><span class="toc-num">I.</span>The Counterfeit Calendar</a></li>
+        <li><a href="#art2"><span class="toc-num">II.</span>The Eight Sabbats</a></li>
+        <li><a href="#art3"><span class="toc-num">III.</span>The Spring Counterfeit</a></li>
+        <li><a href="#art4"><span class="toc-num">IV.</span>The Fall Counterfeit</a></li>
+        <li><a href="#art5"><span class="toc-num">V.</span>Where God Set No Feast</a></li>
+        <li><a href="#art6"><span class="toc-num">VI.</span>The Cycle Against the Cross</a></li>
+        <li><a href="#art7"><span class="toc-num">VII.</span>The Verdict and the Call</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- ARTICLE I -->
+    <article class="article" id="art1">
+      <div class="article-header">
+        <span class="article-num">The Rival Year</span>
+        <h2 class="article-title">The Counterfeit Calendar</h2>
+      </div>
+      <p class="article-body">Modern witchcraft, in the form known as Wicca, took the scattered festivals of the old pagan world and gathered them into a single ordered year of eight holy days. Each of these festivals is called a sabbat. The choice of word is itself worth pausing over, for it is taken from the same root as the Sabbath, the holy day God gave to His people. Even in the name, the witches' calendar reaches for the language of God's appointed times and turns it to another use.</p>
+      <p class="article-body">At the center of this wheel stands the old worship traced all the way back to Babel: a fertility goddess and a god who dies and is reborn. In the Wiccan telling, the god is born at the midwinter, grows through the spring, is wedded to the goddess in the high days of summer, dies as the year darkens, and is born again at the next midwinter, turning forever in an endless circle. The goddess herself passes through maiden, mother, and crone and back again. Time, in this religion, is a wheel that never stops and never arrives.</p>
+      <p class="article-body">Against this stands the calendar of God, which is not a circle but a line. His feasts begin with the Passover and move forward through the harvests to the great ingathering, from redemption begun to redemption finished. They do not turn back on themselves; they march toward a day that is coming. The contrast between the turning wheel and the straight road is the contrast between the worship of the creature and the worship of the Creator.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 1:25</span>
+          <span class="scripture-text">Who changed the truth of God into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Daniel 7:25</span>
+          <span class="scripture-text">And he shall speak great words against the most High... and think to change times and laws...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Corinthians 11:14</span>
+          <span class="scripture-text">And no marvel; for Satan himself is transformed into an angel of light.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE II -->
+    <article class="article" id="art2">
+      <div class="article-header">
+        <span class="article-num">The Eight</span>
+        <h2 class="article-title">The Eight Sabbats</h2>
+      </div>
+      <p class="article-body">The eight sabbats divide into two kinds. Four are solar festivals fixed to the sun: the two solstices and the two equinoxes. Four are the older Celtic fire festivals that fall roughly midway between them. Set out in order through the year, and laid beside the seasons of God's feasts, the wheel looks like this.</p>
+
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Sabbat</th>
+              <th>Date</th>
+              <th>Type</th>
+              <th>What It Honors</th>
+              <th>God's Feast in That Season</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-name">Imbolc</td>
+              <td>Feb 1&ndash;2</td>
+              <td class="col-origin">Fire festival</td>
+              <td>The first stirrings of spring; the goddess Brigid; purification</td>
+              <td class="col-none">No appointed feast (winter)</td>
+            </tr>
+            <tr>
+              <td class="col-name">Ostara</td>
+              <td>Mar 20&ndash;21</td>
+              <td class="col-origin">Spring equinox</td>
+              <td>Rebirth and fertility; eggs and the hare; the returning god</td>
+              <td class="col-hebrew">Passover &amp; Firstfruits season</td>
+            </tr>
+            <tr>
+              <td class="col-name">Beltane</td>
+              <td>May 1</td>
+              <td class="col-origin">Fire festival</td>
+              <td>Fertility; the union of the god and goddess</td>
+              <td class="col-hebrew">Between Passover and Pentecost</td>
+            </tr>
+            <tr>
+              <td class="col-name">Litha</td>
+              <td>Jun 21</td>
+              <td class="col-origin">Summer solstice</td>
+              <td>The sun at its height; midsummer fires</td>
+              <td class="col-hebrew">Near the Feast of Weeks (Pentecost)</td>
+            </tr>
+            <tr>
+              <td class="col-name">Lughnasadh</td>
+              <td>Aug 1</td>
+              <td class="col-origin">Fire festival</td>
+              <td>The first grain harvest; also called Lammas</td>
+              <td class="col-none">No appointed feast (late summer)</td>
+            </tr>
+            <tr>
+              <td class="col-name">Mabon</td>
+              <td>Sep 21&ndash;23</td>
+              <td class="col-origin">Autumn equinox</td>
+              <td>The second harvest; a pagan thanksgiving</td>
+              <td class="col-hebrew">Feast of Trumpets season</td>
+            </tr>
+            <tr>
+              <td class="col-name">Samhain</td>
+              <td>Oct 31&ndash;Nov 1</td>
+              <td class="col-origin">Fire festival</td>
+              <td>The dead; the death of the god; the witches' new year</td>
+              <td class="col-hebrew">Near the Feast of Tabernacles</td>
+            </tr>
+            <tr>
+              <td class="col-name">Yule</td>
+              <td>Dec 21</td>
+              <td class="col-origin">Winter solstice</td>
+              <td>The rebirth of the sun and the god; the counterfeit nativity</td>
+              <td class="col-none">No appointed feast (winter)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hist-note"><strong>Two honest points for the teacher.</strong> First, the Wheel of the Year in its present eightfold form is modern. It was assembled in the middle of the twentieth century by the founders of Wicca, and names such as Ostara, Litha, and Mabon were attached to the solar festivals only around 1970. The festivals themselves draw on far older Celtic and Germanic worship, but the unified wheel is a recent construction that gathered the old festivals together. Second, the alignment with God's feasts is by season and by theme, not by exact date, and it is not perfect. Four of the sabbats fall squarely in the seasons of God's feasts, in the spring and in the fall, while four fall where God appointed no feast at all. As Article V will show, that very mismatch is part of the point.</div>
+    </article>
+
+
+    <!-- ARTICLE III -->
+    <article class="article" id="art3">
+      <div class="article-header">
+        <span class="article-num">Spring</span>
+        <h2 class="article-title">The Spring Counterfeit: Ostara and Beltane</h2>
+      </div>
+      <p class="article-body">God filled the spring with His first great feasts. At the Passover the Lamb is slain, through Unleavened Bread sin is purged, and at the Firstfruits the resurrection of Christ is foreshadowed, the firstfruits of them that slept. Then the days are numbered to the Feast of Weeks, when the Spirit was poured out. The whole spring, by God's design, proclaims the death and rising of His Son and the birth of His church.</p>
+      <p class="article-body">Into this same season the wheel sets Ostara, kept at the spring equinox. As the Easter study showed, this is the festival of the rebirth of the nature-god and the fertility of the earth, carrying the eggs and the hare of the old spring goddess. Where God's feast proclaims the risen Christ, Ostara proclaims the reviving of the green earth and the power of the goddess. A few weeks later comes Beltane, the great fertility fire festival, the union of the god and the goddess, often acted out in rite. It falls in the very weeks God set apart for the count from the Firstfruits to Pentecost. Where God numbers the days toward the giving of His Spirit, the wheel marks the season with the rites of the flesh.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 15:20</span>
+          <span class="scripture-text">But now is Christ risen from the dead, and become the firstfruits of them that slept.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 5:7&ndash;8</span>
+          <span class="scripture-text">...For even Christ our passover is sacrificed for us: Therefore let us keep the feast... with the unleavened bread of sincerity and truth.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Galatians 5:19&ndash;21</span>
+          <span class="scripture-text">Now the works of the flesh are manifest, which are these... Idolatry, witchcraft... and such like.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IV -->
+    <article class="article" id="art4">
+      <div class="article-header">
+        <span class="article-num">Fall</span>
+        <h2 class="article-title">The Fall Counterfeit: Mabon and Samhain</h2>
+      </div>
+      <p class="article-body">God filled the autumn with His second cluster of feasts, all in the holy seventh month. The Feast of Trumpets opens it with the sound of the shofar. The Day of Atonement follows. Then comes the Feast of Tabernacles, the great ingathering of the harvest, when God's people dwell with Him in joy and look ahead to the gathering of the redeemed at the end of the age. The autumn, by God's design, is a season of harvest unto life and of dwelling with God.</p>
+      <p class="article-body">Into this same season the wheel sets Mabon at the autumn equinox, a second harvest kept as a kind of thanksgiving, falling in the very weeks of the Feast of Trumpets. And then comes Samhain, the highest of the dark sabbats, the witches' new year, when the god is said to die and the veil between the living and the dead is held to be thinnest. It falls hard against the close of God's fall feasts. Where the Feast of Tabernacles gathers the harvest unto life and dwelling with God, Samhain turns the same harvest season into a festival of death, of the dead, and of descent into the dark half of the year. The very season God appointed for ingathering and joy, the wheel turns into a harvest of the dead.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:4</span>
+          <span class="scripture-text">These are the feasts of the LORD, even holy convocations, which ye shall proclaim in their seasons.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 8:19</span>
+          <span class="scripture-text">...should not a people seek unto their God? for the living to the dead?</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 18:11&ndash;12</span>
+          <span class="scripture-text">...or a necromancer. For all that do these things are an abomination unto the LORD.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE V -->
+    <article class="article" id="art5">
+      <div class="article-header">
+        <span class="article-num">The Mismatch</span>
+        <h2 class="article-title">Where God Set No Feast</h2>
+      </div>
+      <p class="article-body">Four of the sabbats fall in the seasons of God's feasts. The other four do not, and this is worth facing honestly, because it tells the truth about what the wheel really serves. Yule keeps the rebirth of the sun at the midwinter, where God appointed no feast. Imbolc keeps the first stirrings of spring in early February, where God appointed no feast. Litha keeps the height of the sun at midsummer, and Lughnasadh keeps the first grain at the beginning of August, both in seasons God left without an appointed feast.</p>
+      <p class="article-body">Notice what this means. The wheel keeps a festival even where God kept none. It does so because it is not following God's acts of redemption at all. It is following the sun, the solstices and equinoxes, and the turning of the seasons and the life of the nature-god. It is a calendar of the creature, charting the light and the harvest and the dying god, while God's calendar charts His own mighty works, each feast pointing forward to Christ. The mismatch is the proof. Two calendars stand here, and they serve two different masters. One follows the sun; the other follows the Son.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 4:19</span>
+          <span class="scripture-text">And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars... shouldest be driven to worship them, and serve them...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 10:2</span>
+          <span class="scripture-text">Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Colossians 2:16&ndash;17</span>
+          <span class="scripture-text">Let no man therefore judge you... in respect of an holyday, or of the new moon, or of the sabbath days: which are a shadow of things to come; but the body is of Christ.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VI -->
+    <article class="article" id="art6">
+      <div class="article-header">
+        <span class="article-num">The Heart</span>
+        <h2 class="article-title">The Cycle Against the Cross</h2>
+      </div>
+      <p class="article-body">Beneath every spoke of the wheel lies one belief: a god who dies and rises again every single year, forever, in an endless circle that never ends and never arrives. This is the ancient lie of the dying and rising god, the same one carried out of Babylon under the names of Tammuz, Osiris, and Attis, now turned into a calendar and kept by the witches as a yearly round. The wheel turns, the god dies and is reborn, and nothing is ever finished and nothing is ever saved.</p>
+      <p class="article-body">The gospel stands against this with a single, finished fact. Christ is not the dying and rising god of the seasons, reborn every winter. He died once, He rose once, and He dies no more. As the Scripture says, being raised from the dead He dieth no more; death hath no more dominion over Him. His one death and His one resurrection are enough for all time and for all who believe. The wheel offers an endless turning that saves no one; the cross offers a finished work that saves forever. To trade the once-for-all Christ for the ever-turning wheel is to exchange the truth of God for a lie, and to bow to the sun and the seasons in the place of the living God.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 6:9&ndash;10</span>
+          <span class="scripture-text">Knowing that Christ being raised from the dead dieth no more; death hath no more dominion over him. For in that he died, he died unto sin once...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 9:27&ndash;28</span>
+          <span class="scripture-text">And as it is appointed unto men once to die, but after this the judgment: So Christ was once offered to bear the sins of many...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 10:10</span>
+          <span class="scripture-text">...we are sanctified through the offering of the body of Jesus Christ once for all.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VII -->
+    <article class="article" id="art7">
+      <div class="article-header">
+        <span class="article-num">The Verdict</span>
+        <h2 class="article-title">The Verdict and the Call</h2>
+      </div>
+      <p class="article-body">The Wheel of the Year is the clearest proof of all that the enemy of God builds counterfeits, even a whole counterfeit calendar of holy days set against the appointed times of the LORD. It is built on witchcraft, which God names an abomination, and on the worship of the sun, the seasons, and the dying god. Where it touches the feasts of God, in the spring and in the fall, it does not honor them; it twists their meaning, setting fertility and death where God set redemption and life. And where God appointed no feast, the wheel still turns, because it follows the creature and not the Creator.</p>
+      <p class="article-body">The call of God is plain. His people are not to learn the way of the heathen, not to touch the unclean thing, and not to take the turning wheel of the witches in the place of the straight road of His feasts. The true calendar is not a circle that returns forever to the same darkness. It is a line that runs from the Passover, through the Spirit poured out, to the great ingathering and the coming of the King. Keep the feasts of the LORD. For those appointed times and how the assembly is to observe them, see the companion document <em>Moedim in the Church</em> and the article on the Moedim in the <em>Bylaws of Faith and Practice</em>.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Micah 5:12</span>
+          <span class="scripture-text">And I will cut off witchcrafts out of thine hand; and thou shalt have no more soothsayers.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 18:10&ndash;12</span>
+          <span class="scripture-text">There shall not be found among you any one that... useth divination... or a witch... For all that do these things are an abomination unto the LORD.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Corinthians 6:17</span>
+          <span class="scripture-text">Wherefore come out from among them, and be ye separate, saith the Lord, and touch not the unclean thing; and I will receive you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:2</span>
+          <span class="scripture-text">...Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts.</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Christ being raised from the dead dieth no more &middot; Romans 6:9 &middot; These are the feasts of the LORD &middot; Leviticus 23:4</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

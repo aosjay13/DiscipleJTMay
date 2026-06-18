@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sons of God and the Inheritance of the Nations</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+
+  .section-body strong { color: var(--ink); font-weight: 600; }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+
+  /* ── KEY POINT CALLOUT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+    position: relative;
+  }
+
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+
+  .keypoint p {
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  .keypoint strong { color: var(--ink); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-left: 4px solid var(--gold-light);
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.55rem;
+  }
+  .bonus p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .bonus p + p { margin-top: 0.7rem; }
+  .bonus strong { color: var(--ink); }
+
+  /* ── NATION CARD ── */
+  .nation {
+    margin: 1.1rem 0;
+    padding: 1rem 1.4rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+  }
+  .nation-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--crimson);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+  .nation-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+  }
+  .nation-body strong { color: var(--ink); }
+
+  /* ── TIMELINE PHASE ── */
+  .phase {
+    margin: 1.6rem 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A44;
+    border-left: 4px solid var(--gold);
+  }
+  .phase-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .phase-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--crimson);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .phase-body {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .conclusion-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #EDE0C4;
+  }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER (crimson, bookending the header) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    border-top: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.8;
+  }
+
+  /* ── PRINT (8.5 x 11 letter) ── */
+  @page { size: 8.5in 11in; margin: 0.5in; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .section { page-break-inside: avoid; }
+    .scripture, .keypoint, .bonus, .nation, .phase { page-break-inside: avoid; }
+    .conclusion, .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">A Scriptural Study &middot; Part II</p>
+    <h1 class="doc-title">The Sons of God &amp; the Nations</h1>
+    <p class="doc-subtitle">How the Most High Divided the Nations at Babel, the Princes Set Over Them, and the Kingdom Reclaimed by Christ</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">The first study followed the sons of God from Genesis 6 through the long war that ends at Armageddon. This second study turns to another part of that same family of heavenly beings, the sons of God who were given charge over the nations of the earth. The story begins not at the flood but just after it, at the tower of Babel, where mankind was scattered into nations. At that moment the Most High did something the surface of the text barely reveals. He divided the nations among the sons of His council and kept one nation, Israel, as His own portion.</p>
+      <p>From there the thread runs straight through Scripture. It surfaces in the law of Moses, in the divine council of the Psalms, in the named gods of Canaan and her neighbors, in the princes of Persia and Greece that Daniel saw, and in the principalities and powers that Paul warns us we still wrestle against. And it does not end in defeat. The same God who gave the nations over set in motion a plan to win them all back through one promised seed. This study traces that whole arc, drawn entirely from the testimony of Scripture.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span>The Scattering at Babel</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span>When the Most High Divided the Nations</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>The Host of Heaven Given to the Nations</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>The Divine Council and Its Rebellion</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>The Gods of the Nations</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>They Sacrificed unto Devils</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span>The Princes of Persia and Greece</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span>Principalities and Powers</a></li>
+        <li><a href="#s9"><span class="toc-num">IX.</span>The Reclaiming of the Nations</a></li>
+        <li><a href="#thread"><span class="toc-num">X.</span>The Thread in Brief</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Scattering at Babel</h2>
+      </div>
+      <div class="section-body">
+        <p>After the flood God told Noah and his sons to be fruitful and to fill the earth. Mankind did the opposite. Rather than spreading out, they gathered on the plain of Shinar, settled in one place, and began to build a city and a tower to make a name for themselves and to keep from being scattered. It was an act of unified defiance, and God answered it.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 11:6&ndash;8</span>
+          <span class="scripture-text">And the LORD said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do. Go to, let us go down, and there confound their language, that they may not understand one another's speech. So the LORD scattered them abroad from thence upon the face of all the earth: and they left off to build the city.</span>
+        </div>
+
+        <p>The confusing of the languages produced the nations. The previous chapter, Genesis 10, lists those nations descending from the sons of Noah, and the old reckoning counts about seventy of them. So when we read of "the nations" in what follows, this is their origin. They were born at Babel out of judgment, scattered across the earth, each with its own tongue and its own land.</p>
+
+        <p>What Genesis 11 does not tell us plainly is what happened in the unseen realm at that same moment. For that, we have to turn to the song Moses gave Israel at the end of his life.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">When the Most High Divided the Nations</h2>
+      </div>
+      <div class="section-body">
+        <p>The Song of Moses looks back to the scattering at Babel and tells us what was being decided in heaven while the nations were being formed on earth.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 32:8&ndash;9</span>
+          <span class="scripture-text">When the most High divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Israel. For the LORD'S portion is his people; Jacob is the lot of his inheritance.</span>
+        </div>
+
+        <p>Read it slowly and one detail does not fit. The boundaries of the nations were set "according to the number of the children of Israel." But this is describing the days of Babel, and at Babel there was no Israel. Jacob, whose other name is Israel, would not be born for many generations. So how could the nations be divided according to a people who did not yet exist?</p>
+
+        <p>The answer lies in the oldest copies of this verse. The Dead Sea Scrolls, the earliest Hebrew manuscripts of Deuteronomy we possess, do not read "children of Israel" here. They read "sons of God." The ancient Greek translation of the Old Testament agrees, reading "angels of God." Among the major English versions, the ESV preserves this older reading, rendering it "according to the number of the sons of God." The later Hebrew text we inherited appears to have softened the phrase, but the older witnesses tell us what was originally being said.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What the Older Reading Means</p>
+          <p>When the Most High scattered the nations at Babel, He apportioned them among the <strong>sons of God</strong>, the heavenly beings of His council. Each nation was placed under one of them. This is why the number of nations and the number of these beings are tied together. The nations were handed over to be administered by the heavenly host.</p>
+          <p>But verse 9 marks the great exception. <strong>One nation was not given away.</strong> The LORD kept Israel for Himself as His own portion, ruling it directly rather than through a delegated being.</p>
+        </div>
+
+        <p>The two names of God in these verses carry the whole point. Verse 8 says the <strong>Most High</strong> divided the nations. Verse 9 says the <strong>LORD</strong>, the personal covenant name, took His people as His inheritance. The Most High allotted the seventy nations to the sons of God. The LORD reserved Jacob for Himself. Israel alone would have God as her direct King, while every other nation was placed under a heavenly steward.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Host of Heaven Given to the Nations</h2>
+      </div>
+      <div class="section-body">
+        <p>This is not a single hard verse standing alone. Moses says the same thing again, plainly, only a few chapters earlier. As he warns Israel against worshipping the sun, moon, and stars, he explains why those things are off limits to them in particular.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 4:19&ndash;20</span>
+          <span class="scripture-text">And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which the LORD thy God hath divided unto all nations under the whole heaven. But the LORD hath taken you, and brought you forth out of the iron furnace, even out of Egypt, to be unto him a people of inheritance, as ye are this day.</span>
+        </div>
+
+        <p>The pattern is exactly the same as in chapter 32. The host of heaven was "divided unto all nations," handed out to them, but Israel was "taken" by the LORD to be His own people of inheritance. The nations got the host of heaven. Israel got the LORD Himself. What other peoples were allotted, Israel was forbidden, because she belonged to a different King.</p>
+
+        <p>Moses returns to this once more when he describes how Israel could fall under the curse of the covenant. The danger was always the same, turning aside to serve the gods that belonged to the other nations.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 29:26</span>
+          <span class="scripture-text">For they went and served other gods, and worshipped them, gods whom they knew not, and whom he had not given unto them.</span>
+        </div>
+
+        <p>Notice the wording. These were "gods whom he had not given unto them." The clear implication is that these gods had been given, allotted, to someone else, namely to the surrounding nations. Israel's sin was reaching across the boundary and serving the very gods the Most High had assigned to the other peoples. Three times in three chapters Moses lays down the same truth. The nations were given the host of heaven. Israel was kept for the LORD.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">The Divine Council and Its Rebellion</h2>
+      </div>
+      <div class="section-body">
+        <p>These sons of God were placed over the nations to govern them under the authority of the Most High. They were meant to administer His justice. They did not. They turned the nations toward themselves and ruled them corruptly, and there is a Psalm that shows God calling them to account for it.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 82:1&ndash;2</span>
+          <span class="scripture-text">God standeth in the congregation of the mighty; he judgeth among the gods. How long will ye judge unjustly, and accept the persons of the wicked? Selah.</span>
+        </div>
+
+        <p>God stands in the midst of an assembly and passes judgment on the "gods" gathered there. He charges them with judging unjustly and favoring the wicked, the very opposite of the righteous rule they were appointed to give. Then He pronounces their sentence.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 82:6&ndash;7</span>
+          <span class="scripture-text">I have said, Ye are gods; and all of you are children of the most High. But ye shall die like men, and fall like one of the princes.</span>
+        </div>
+
+        <p>He calls them "children of the most High," the same family named in Deuteronomy 32, the sons of God set over the nations. Their crime is injustice, and their punishment is to lose what makes them more than men. They will "die like men" and "fall like one of the princes." The beings who were given the nations are stripped of their dominion and condemned. The Psalm then closes with a cry that points the way forward.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 82:8</span>
+          <span class="scripture-text">Arise, O God, judge the earth: for thou shalt inherit all nations.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Hinge of the Whole Story</p>
+          <p>The plea is for God to rise up and take back <strong>all nations</strong> as His own inheritance, the very nations He once divided among the sons of God. The disinheriting of the nations was never meant to be permanent. From the moment the council fell into corruption, the answer to this prayer was already in view. Keep this line in mind. It is answered fully in the final section of this study.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Gods of the Nations</h2>
+      </div>
+      <div class="section-body">
+        <p>If each nation was placed under a heavenly being, we should expect Scripture to name those beings and to tie each one to a specific people. That is exactly what we find. The gods of the surrounding nations are not described in vague terms. Again and again they are named and attached to the nation they ruled.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Kings 11:5, 7</span>
+          <span class="scripture-text">For Solomon went after Ashtoreth the goddess of the Zidonians, and after Milcom the abomination of the Ammonites... Then did Solomon build an high place for Chemosh, the abomination of Moab, in the hill that is before Jerusalem, and for Molech, the abomination of the children of Ammon.</span>
+        </div>
+
+        <p>Read how precisely each god is matched to its nation.</p>
+
+        <div class="nation">
+          <p class="nation-name">Ashtoreth</p>
+          <p class="nation-body">Named "the goddess of the <strong>Zidonians</strong>." The deity behind Sidon and the Phoenician coast, paired again and again with Baal across the books of Judges and Kings.</p>
+        </div>
+
+        <div class="nation">
+          <p class="nation-name">Chemosh</p>
+          <p class="nation-body">Called "the abomination of <strong>Moab</strong>." So bound to that nation that the Moabites are themselves called "the people of Chemosh" in Numbers 21:29.</p>
+        </div>
+
+        <div class="nation">
+          <p class="nation-name">Molech &middot; Milcom</p>
+          <p class="nation-body">"The abomination of the children of <strong>Ammon</strong>," the god to whom children were passed through the fire. Tied directly to the Ammonite nation.</p>
+        </div>
+
+        <div class="nation">
+          <p class="nation-name">Baal</p>
+          <p class="nation-body">The storm god of the <strong>Canaanites</strong>, served across the whole region. When Israel turned away, she "served Baalim and Ashtaroth," taking on the gods of the nations around her.</p>
+        </div>
+
+        <div class="nation">
+          <p class="nation-name">Dagon</p>
+          <p class="nation-body">"Dagon their god," the deity of the <strong>Philistines</strong>. When the ark of the LORD was set in his temple, the idol fell on its face before it, broken on the threshold.</p>
+        </div>
+
+        <p>This is the visible footprint of an invisible arrangement. Every nation around Israel had its god, and that god was understood to belong to that nation and to stand behind it. The map of the gods follows the map of the nations, just as Deuteronomy 32 said it would. And the fall of Dagon before the ark makes the deeper truth plain. These powers were real, but they were never equal to the LORD. Set in His presence, the god of the Philistines could not so much as keep its footing.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">They Sacrificed unto Devils</h2>
+      </div>
+      <div class="section-body">
+        <p>It would be easy to read these gods as nothing more than carved statues, lifeless wood and stone. Scripture will not let us settle for that. The same Song of Moses that told us the nations were divided also tells us what truly stood behind their worship.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 32:17</span>
+          <span class="scripture-text">They sacrificed unto devils, not to God; to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.</span>
+        </div>
+
+        <p>Behind the idols were devils. The offerings made to Baal and Chemosh and Molech were not landing on empty altars. They were received by real and rebellious spirits. The Psalms say the same thing about the worth of these gods set beside the living God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 96:5</span>
+          <span class="scripture-text">For all the gods of the nations are idols: but the LORD made the heavens.</span>
+        </div>
+
+        <p>The gods of the nations are real powers, yet they are nothing next to the One who made the heavens. They are creatures, not creators. And lest anyone think this belonged only to the old covenant, Paul reaches back and confirms the whole picture for the church.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 10:20</span>
+          <span class="scripture-text">But I say, that the things which the Gentiles sacrifice, they sacrifice to devils, and not to God: and I would not that ye should have fellowship with devils.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">One Category, Two Testaments</p>
+          <p>Moses said the nations sacrificed to devils. Centuries later Paul says exactly the same of the idol worship of his own day. The gods of the nations, the principalities behind them, and what the New Testament calls devils are one and the same category of being. This is the bridge from the old covenant to the new, and it is what makes the warning against the gods of the nations a living warning for the church.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION VII -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">Section VII</span>
+        <h2 class="section-title">The Princes of Persia and Greece</h2>
+      </div>
+      <div class="section-body">
+        <p>So far we have seen the arrangement from the ground, in the named gods of the nations. In the book of Daniel the curtain is pulled back and we see it from above. Daniel had been praying and mourning for three weeks when a heavenly messenger finally reached him. The reason for the delay is one of the most revealing statements in Scripture.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 10:13</span>
+          <span class="scripture-text">But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me; and I remained there with the kings of Persia.</span>
+        </div>
+
+        <p>A "prince of the kingdom of Persia" was strong enough to resist a messenger of God for twenty-one days, until Michael, one of the chief princes, came to break the deadlock. This is no human ruler. No earthly king holds back an angel. This is the spiritual prince standing behind the empire of Persia. And he is not the only one.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 10:20&ndash;21</span>
+          <span class="scripture-text">Then said he, Knowest thou wherefore I come unto thee? and now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come. But I will shew thee that which is noted in the scripture of truth: and there is none that holdeth with me in these things, but Michael your prince.</span>
+        </div>
+
+        <p>Two empires, Persia and Greece, and each has its own spiritual prince. The kingdoms men could see were governed from behind by powers they could not. This is the world of Deuteronomy 32 made visible, the nations standing under heavenly beings who war against the purposes of God. And here we learn one more thing. Israel has a prince too, but His name is given, and He stands on the other side.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 12:1</span>
+          <span class="scripture-text">And at that time shall Michael stand up, the great prince which standeth for the children of thy people.</span>
+        </div>
+
+        <p>Michael is called "your prince," the great prince who stands for Daniel's people. While the nations are held by rebellious princes, Israel is defended by Michael, who serves the LORD. This is the same line drawn in the law. The nations under their princes, and Israel under the protection of heaven. The two princes of Persia and Greece are simply the part of that hidden order God allowed His prophet to see.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION VIII -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">Section VIII</span>
+        <h2 class="section-title">Principalities and Powers</h2>
+      </div>
+      <div class="section-body">
+        <p>The New Testament gathers all of this into a single phrase that every believer knows. Paul does not describe the spiritual rulers of the nations as a curiosity from the past. He names them as the real enemy in the believer's present struggle.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 6:12</span>
+          <span class="scripture-text">For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.</span>
+        </div>
+
+        <p>Principalities. Powers. Rulers of the darkness of this world. These are the heirs of the fallen sons of God, the spiritual rulers set over the nations who turned to corruption. Our true conflict was never merely with people or governments. It is with the unseen powers that stand behind them. Yet Paul is careful to remind us that even these beings are created things, never independent of Christ.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 1:16</span>
+          <span class="scripture-text">For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him.</span>
+        </div>
+
+        <p>The principalities and powers were made by Christ and for Christ. However high they may sit, they are creatures under their Creator. A rebellious steward is still a steward, and he answers to the One who made him. This is why the powers that hold the nations can be defeated, and why their defeat is certain. They were never sovereign. They only ever held a portion that was lent to them, and the day of reckoning belongs to the One who lent it.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION IX -->
+    <section class="section" id="s9">
+      <div class="section-header">
+        <span class="section-num">Section IX</span>
+        <h2 class="section-title">The Reclaiming of the Nations</h2>
+      </div>
+      <div class="section-body">
+        <p>The Most High gave the nations over at Babel, but He never abandoned His claim on them. From the moment Israel was set apart, a rescue was already underway. The whole point of calling out one nation was to use her to win back all the rest.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 3:8</span>
+          <span class="scripture-text">And the scripture, foreseeing that God would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed.</span>
+        </div>
+
+        <p>The promise to Abraham was never only about Abraham. The day the nations were divided among the sons of God, God called one man and swore that through his seed all those scattered nations would be blessed and brought back. The reclamation plan was built into the very promise that founded Israel. And that inheritance, all the nations of the earth, was promised to the Son.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 2:8</span>
+          <span class="scripture-text">Ask of me, and I shall give thee the heathen for thine inheritance, and the uttermost parts of the earth for thy possession.</span>
+        </div>
+
+        <p>At the cross the decisive blow fell. The powers that held the nations were stripped of their claim and openly defeated.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 2:15</span>
+          <span class="scripture-text">And having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it.</span>
+        </div>
+
+        <p>Then came Pentecost, and the scattering of Babel began to be undone. At Babel the languages were divided and the peoples were driven apart. At Pentecost the Spirit was poured out, and men out of every nation under heaven heard the works of God each in his own tongue. Where Babel confounded speech to scatter the nations, the gospel crossed every language to gather them. And the risen Christ gave the formal order to reclaim what the powers had held.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 28:18&ndash;19</span>
+          <span class="scripture-text">And Jesus came and spake unto them, saying, All power is given unto me in heaven and in earth. Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.</span>
+        </div>
+
+        <p>This is the disinheritance reversed. All power now belongs to Christ, and on that authority His people are sent to every nation to take them back from the powers that ruled them. The Great Commission is the reclaiming of the nations, nation by nation, through the preaching of the gospel. And Scripture tells us how it ends.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 11:15</span>
+          <span class="scripture-text">The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Prayer of Psalm 82 Answered</p>
+          <p>"Arise, O God, judge the earth: for thou shalt inherit all nations." The cry of the divine council Psalm is answered in full. Every nation that was once divided among the rebellious sons of God is gathered back under the rightful King. What was lost at Babel is restored in Christ, and the powers that held the portion are dethroned forever.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- THE THREAD IN BRIEF -->
+    <section class="section" id="thread">
+      <div class="section-header">
+        <span class="section-num">Section X</span>
+        <h2 class="section-title">The Thread in Brief</h2>
+      </div>
+      <div class="section-body">
+        <p>Set end to end, the whole arrangement reads as a single story, the loss of the nations and their long-promised return.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Division</p>
+        <p class="phase-title">The Nations Given to the Sons of God</p>
+        <p class="phase-body">At Babel the Most High scatters mankind into nations and apportions them among the sons of His council, but keeps Israel as His own portion and her only direct King.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Rebellion</p>
+        <p class="phase-title">The Council Turns to Corruption</p>
+        <p class="phase-body">The beings set over the nations rule unjustly and draw worship to themselves. They become the named gods of the nations, Baal, Ashtoreth, Chemosh, Molech, Dagon, the devils behind the idols, sentenced in Psalm 82 to fall like men.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Hidden War</p>
+        <p class="phase-title">The Princes of the Nations</p>
+        <p class="phase-body">Daniel sees the powers behind the empires, the prince of Persia and the prince of Greece, while Michael stands as the prince who guards Israel. Paul names them all as principalities and powers, the believer's true enemy.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Reclamation</p>
+        <p class="phase-title">All Nations Won Back in Christ</p>
+        <p class="phase-body">Through Abraham's seed the blessing reaches the nations. At the cross the powers are disarmed, at Pentecost Babel begins to reverse, and through the Great Commission the nations are gathered, until the kingdoms of the world become the kingdom of Christ.</p>
+      </div>
+    </section>
+
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">One Inheritance, Lost and Reclaimed</h3>
+      <div class="conclusion-body">
+        <p>The division of the nations, the gods of the Gentiles, the princes of Daniel, and the principalities Paul warns us of are not scattered curiosities. They are one story. At Babel the Most High gave the nations over to the sons of His council and kept Israel as His own. Those sons of God rebelled, becoming the gods, the devils, and the principalities that have stood behind the nations ever since.</p>
+        <p>But the LORD never gave up His claim. Through Abraham He began the rescue, at the cross He disarmed the powers, at Pentecost He began to reverse the scattering, and through the Great Commission He sends His people to take back every nation. This is why the gospel must go to all peoples, and why the believer's war is not against flesh and blood but against the powers that still hold them.</p>
+        <p>So the line drawn in the Garden runs straight through to the end. The nations were lost, but they were always destined to come home. <em>The kingdoms of this world become the kingdoms of our Lord, and He shall reign for ever and ever.</em></p>
+      </div>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Sola Scriptura &middot; Thou shalt inherit all nations &middot; Psalm 82:8</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

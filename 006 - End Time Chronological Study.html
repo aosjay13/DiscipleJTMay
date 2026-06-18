@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Chronological Harmony of the End Times &mdash; A Scriptural Study</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 0.9rem;
+  }
+  .preamble p:last-child { margin-bottom: 0; }
+
+  /* ── KEY CALLOUTS (the two foundational keys) ── */
+  .key-grid { margin-top: 1.6rem; }
+  .key-card {
+    margin: 1rem 0;
+    padding: 1.2rem 1.4rem;
+    background: var(--cream);
+    border-left: 4px solid var(--crimson);
+  }
+  .key-card .key-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+  }
+  .key-card p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    margin: 2.4rem 0;
+    padding: 1.5rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.45rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2.4rem;
+    flex-shrink: 0;
+  }
+
+  /* ── PHASE ── */
+  .phase {
+    margin: 2.4rem 0;
+    padding: 1.6rem 1.7rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A44;
+    border-left: 4px solid var(--gold);
+  }
+  .phase-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.3rem;
+  }
+  .phase-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.9rem;
+    line-height: 1.3;
+  }
+  .phase-intro {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    margin-bottom: 0.4rem;
+  }
+  .phase-intro + .phase-intro { margin-top: 0.7rem; }
+
+  .sub-phase {
+    margin: 1.2rem 0 0.5rem;
+    padding: 0.95rem 1.15rem;
+    background: var(--parchment);
+    border-left: 2px solid var(--gold-light);
+  }
+  .sub-phase-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  .phase-scripture {
+    margin: 0.55rem 0;
+    font-size: 0.96rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    break-inside: avoid;
+  }
+  .phase-scripture .phase-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.76rem;
+    color: var(--crimson);
+    font-style: normal;
+    display: inline-block;
+    margin-bottom: 0.18rem;
+    letter-spacing: 0.04em;
+  }
+  .phase-scripture em { font-style: italic; }
+
+  .phase-note {
+    margin-top: 1.1rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C99;
+    font-size: 0.94rem;
+    line-height: 1.72;
+    color: var(--ink-soft);
+  }
+  .phase-note strong {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+  }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 2.8rem;
+    padding-top: 2.2rem;
+    border-top: 2px solid var(--rule-solid);
+  }
+  .closing-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--crimson);
+    margin-bottom: 1rem;
+    letter-spacing: 0.04em;
+  }
+  .closing p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ── FOOTER (crimson, matching the lessons) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .phase { break-before: page; }
+    .phase:first-of-type { break-before: avoid; }
+    .closing { break-before: page; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.2rem 1.4rem 1.6rem; }
+    .phase { padding: 1.2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">A Scriptural Study</p>
+    <h1 class="doc-title">The Chronological Harmony of the End Times</h1>
+    <p class="doc-subtitle">Aligning the Olivet Discourse, the Seals of Revelation, the Prophets, and the Epistles into one unbroken Post-Tribulation, Pre-Wrath timeline</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Purpose of this Study</p>
+      <p>This document gathers the major end-time passages of Scripture and sets them side by side in the order they unfold. It is built to teach, so the same events are shown from several witnesses at once. The Gospels give us the words of Christ, the book of Revelation gives us the heavenly vision, and the prophets and the epistles fill in the surrounding detail. When these are laid together, a single clear timeline emerges, and that timeline is Post-Tribulation and Pre-Wrath.</p>
+      <p>Two keys unlock the whole study. Hold them in mind before reading the phases, because every passage below depends on them.</p>
+
+      <div class="key-grid">
+        <div class="key-card">
+          <p class="key-label">Key One &#183; The Discourse and the Seals are the Same Sequence</p>
+          <p>The teaching of Christ on the Mount of Olives, recorded in Matthew 24, Mark 13, and Luke 21, follows the exact same order as the opening of the seven seals in Revelation 6. What Christ described in plain words, John later saw in vision. They are not two timelines, they are one timeline told twice.</p>
+        </div>
+        <div class="key-card">
+          <p class="key-label">Key Two &#183; There Are Two Distinct Wraths</p>
+          <p>The Great Tribulation is the wrath of Satan poured out through the Antichrist against the saints who keep God's commandments. The Day of the Lord is the wrath of God poured out upon the kingdom of the beast. The saints pass through the first, but they are gathered out before the second. Confusing these two wraths is the root of nearly every error in end-time teaching.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">The Sequence at a Glance</p>
+      <ul class="toc-list">
+        <li><a href="#p1"><span class="toc-num">I.</span>The Beginning of Sorrows (First Four Seals)</a></li>
+        <li><a href="#p2"><span class="toc-num">II.</span>The Falling Away (The Precursor)</a></li>
+        <li><a href="#p3"><span class="toc-num">III.</span>The Man of Sin Revealed and the Abomination of Desolation</a></li>
+        <li><a href="#p4"><span class="toc-num">IV.</span>The Great Tribulation (Fifth Seal) &#183; Satan's Wrath</a></li>
+        <li><a href="#p5"><span class="toc-num">V.</span>The Cosmic Disturbances (Sixth Seal)</a></li>
+        <li><a href="#p6"><span class="toc-num">VI.</span>The Resurrection and the Rapture (Gathering of the Elect, Sixth Seal)</a></li>
+        <li><a href="#p7"><span class="toc-num">VII.</span>The Day of the Lord (Seventh Seal) &#183; God's Wrath</a></li>
+        <li><a href="#p8"><span class="toc-num">VIII.</span>The Return of Christ and Armageddon</a></li>
+        <li><a href="#p9"><span class="toc-num">IX.</span>The Millennial Kingdom (Feast of Tabernacles)</a></li>
+        <li><a href="#p10"><span class="toc-num">X.</span>The Final Judgment and the New Heavens and Earth</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- PHASE I -->
+    <div class="phase" id="p1">
+      <p class="phase-header">Phase One</p>
+      <p class="phase-title">The Beginning of Sorrows (The First Four Seals)</p>
+      <p class="phase-intro">Christ called the opening period the "beginning of sorrows," a season of escalating turmoil across the earth. This matches the ride of the four horsemen, seal by seal. None of these things is the end itself, they are the labor pains that come before it.</p>
+
+      <div class="sub-phase">
+        <p class="sub-phase-title">1. Deception and False Christs (The White Horse)</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:4&ndash;5</span><br><em>"Take heed that no man deceive you. For many shall come in my name, saying, I am Christ; and shall deceive many."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Mark 13:5&ndash;6</span><br><em>"Take heed lest any man deceive you: for many shall come in my name, saying, I am Christ; and shall deceive many."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 21:8</span><br><em>"Take heed that ye be not deceived: for many shall come in my name, saying, I am Christ; and the time draweth near: go ye not therefore after them."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 6:1&ndash;2 (1st Seal)</span><br><em>"...and behold a white horse: and he that sat on him had a bow; and a crown was given unto him: and he went forth conquering, and to conquer."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Daniel 11:32</span><br><em>"And such as do wickedly against the covenant shall he corrupt by flatteries: but the people that do know their God shall be strong, and do exploits."</em></div>
+      </div>
+
+      <div class="sub-phase">
+        <p class="sub-phase-title">2. Wars and Rumors of Wars (The Red Horse)</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:6&ndash;7a</span><br><em>"And ye shall hear of wars and rumours of wars... For nation shall rise against nation, and kingdom against kingdom."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Mark 13:7&ndash;8a</span><br><em>"And when ye shall hear of wars and rumours of wars, be ye not troubled: for such things must needs be; but the end shall not be yet. For nation shall rise against nation, and kingdom against kingdom."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 21:9&ndash;10</span><br><em>"But when ye shall hear of wars and commotions, be not terrified... Nation shall rise against nation, and kingdom against kingdom."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 6:3&ndash;4 (2nd Seal)</span><br><em>"...there went out another horse that was red: and power was given to him that sat thereon to take peace from the earth, and that they should kill one another: and there was given unto him a great sword."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Jeremiah 25:32</span><br><em>"Thus saith the LORD of hosts, Behold, evil shall go forth from nation to nation, and a great whirlwind shall be raised up from the coasts of the earth."</em></div>
+      </div>
+
+      <div class="sub-phase">
+        <p class="sub-phase-title">3. Famines (The Black Horse)</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:7b</span><br><em>"...and there shall be famines..."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 21:11a</span><br><em>"And great earthquakes shall be in divers places, and famines..."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 6:5&ndash;6 (3rd Seal)</span><br><em>"...and lo a black horse; and he that sat on him had a pair of balances in his hand... A measure of wheat for a penny, and three measures of barley for a penny."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Lamentations 4:9</span><br><em>"They that be slain with the sword are better than they that be slain with hunger: for these pine away, stricken through for want of the fruits of the field."</em></div>
+      </div>
+
+      <div class="sub-phase">
+        <p class="sub-phase-title">4. Pestilence and Death (The Pale Horse)</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:7c&ndash;8</span><br><em>"...and pestilences, and earthquakes, in divers places. All these are the beginning of sorrows."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 21:11b</span><br><em>"...and pestilences; and fearful sights and great signs shall there be from heaven."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 6:7&ndash;8 (4th Seal)</span><br><em>"...and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Ezekiel 14:21</span><br><em>"For thus saith the Lord GOD; How much more when I send my four sore judgments upon Jerusalem, the sword, and the famine, and the noisome beast, and the pestilence..."</em></div>
+      </div>
+    </div>
+
+
+    <!-- PHASE II -->
+    <div class="phase" id="p2">
+      <p class="phase-header">Phase Two</p>
+      <p class="phase-title">The Falling Away (The Precursor)</p>
+      <p class="phase-intro">Paul gives us an order that most readers pass over. The day of Christ does not come until a falling away comes first, and only then is the man of sin revealed. The falling away is listed before the Antichrist, not alongside him. It prepares the ground for him.</p>
+      <p class="phase-intro">A church that has already abandoned sound doctrine and drifted from the commandments of God is a church that will not be able to recognize the man of sin when he appears. The departure from truth comes first, and the deception follows on its heels.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:3a</span><br><em>"Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">1 Timothy 4:1</span><br><em>"Now the Spirit speaketh expressly, that in the latter times some shall depart from the faith, giving heed to seducing spirits, and doctrines of devils."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">2 Timothy 4:3&ndash;4</span><br><em>"For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears; and they shall turn away their ears from the truth, and shall be turned unto fables."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Matthew 24:10&ndash;12</span><br><em>"And then shall many be offended, and shall betray one another, and shall hate one another. And many false prophets shall rise, and shall deceive many. And because iniquity shall abound, the love of many shall wax cold."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Amos 8:11</span><br><em>"Behold, the days come, saith the Lord GOD, that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of the LORD."</em></div>
+
+      <div class="phase-note"><strong>Teaching Note</strong>Notice the spiritual logic. The famine of the third seal has a counterpart in Amos, a famine of hearing God's word. The same generation that loses its bread is also losing its truth, and that loss of truth is exactly what makes the coming deception possible.</div>
+    </div>
+
+
+    <!-- PHASE III -->
+    <div class="phase" id="p3">
+      <p class="phase-header">Phase Three</p>
+      <p class="phase-title">The Man of Sin Revealed and the Abomination of Desolation</p>
+      <p class="phase-intro">With the ground prepared, the man of sin is revealed. He exalts himself in the temple of God, defiling the holy place. Christ called this defilement the abomination of desolation, and pointed back to Daniel for the warning. This single act is the trigger that opens the Great Tribulation.</p>
+      <p class="phase-intro">His coming is not merely political. Paul says it works after the power of Satan, with lying wonders, and that God permits a strong delusion to fall upon those who refused to love the truth. Daniel's vision of the kingdom of iron and clay points to a supernatural dimension that ordinary human power cannot explain.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:3b&ndash;4</span><br><em>"...the son of perdition; who opposeth and exalteth himself above all that is called God, or that is worshipped; so that he as God sitteth in the temple of God, shewing himself that he is God."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:9&ndash;11</span><br><em>"Even him, whose coming is after the working of Satan with all power and signs and lying wonders, and with all deceivableness of unrighteousness in them that perish... And for this cause God shall send them strong delusion, that they should believe a lie."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 9:27</span><br><em>"And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate..."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 11:31</span><br><em>"And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Matthew 24:15</span><br><em>"When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)"</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Mark 13:14</span><br><em>"But when ye shall see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not... then let them that be in Judaea flee to the mountains."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 13:5&ndash;7</span><br><em>"And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months... And it was given unto him to make war with the saints, and to overcome them."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 2:43</span><br><em>"And whereas thou sawest iron mixed with miry clay, they shall mingle themselves with the seed of men: but they shall not cleave one to another, even as iron is not mixed with clay."</em></div>
+
+      <div class="phase-note"><strong>Teaching Note</strong>The mingling of Daniel 2:43 echoes the days of Noah, when the sons of God corrupted the seed of men. This supernatural corruption belongs to the same window as the Antichrist's revelation, and it forms the hidden foundation of his kingdom. The strong delusion is not mere confusion, it is a covering laid over the true nature of what is taking place.</div>
+    </div>
+
+
+    <!-- PHASE IV -->
+    <div class="phase" id="p4">
+      <p class="phase-header">Phase Four</p>
+      <p class="phase-title">The Great Tribulation (The Fifth Seal) &#183; Satan's Wrath</p>
+      <p class="phase-intro">Now the Great Tribulation breaks loose. Satan is cast down to the earth, and knowing his time is short, he pours out his wrath through the Antichrist against the people of God. His specific targets are those who keep the commandments of God and hold the testimony of Jesus. This is persecution, not the wrath of God, and the saints are present on the earth to endure it.</p>
+      <p class="phase-intro">The fifth seal answers to this exactly. John sees the souls of the martyrs under the altar, crying out for justice, told to rest a little longer until the full number of their brethren has been killed as they were.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">Matthew 24:21&ndash;22</span><br><em>"For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be. And except those days should be shortened, there should no flesh be saved: but for the elect's sake those days shall be shortened."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Mark 13:19&ndash;20</span><br><em>"For in those days shall be affliction, such as was not from the beginning of the creation which God created unto this time, neither shall be. And except that the Lord had shortened those days, no flesh should be saved: but for the elect's sake, whom he hath chosen, he hath shortened the days."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Luke 21:23&ndash;24</span><br><em>"...for there shall be great distress in the land, and wrath upon this people. And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 6:9&ndash;11 (5th Seal)</span><br><em>"I saw under the altar the souls of them that were slain for the word of God, and for the testimony which they held... and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 12:7&ndash;9</span><br><em>"And there was war in heaven... And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 12:12</span><br><em>"...Woe to the inhabiters of the earth and of the sea! for the devil is come down unto you, having great wrath, because he knoweth that he hath but a short time."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 12:17</span><br><em>"And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 7:25</span><br><em>"And he shall speak great words against the most High, and shall wear out the saints of the most High, and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Jeremiah 30:7</span><br><em>"Alas! for that day is great, so that none is like it: it is even the time of Jacob's trouble; but he shall be saved out of it."</em></div>
+
+      <div class="phase-note"><strong>Teaching Note</strong>Revelation 12:17 names the dragon's targets with precision. He makes war on those who keep the commandments of God and hold the testimony of Jesus. The Pronomian walk and this eschatology are not two separate subjects, they describe the very same people. To keep God's law in the last days is to stand in the path of the dragon's wrath.</div>
+    </div>
+
+
+    <!-- PHASE V -->
+    <div class="phase" id="p5">
+      <p class="phase-header">Phase Five</p>
+      <p class="phase-title">The Cosmic Disturbances (The Sixth Seal)</p>
+      <p class="phase-intro">This is the great turning point of the whole timeline. The persecution of the Antichrist is cut short by signs in the heavens. The sun is darkened, the moon turns to blood, and the stars fall. Christ said these signs come immediately after the tribulation of those days. They announce that Satan's wrath is finished and that the wrath of God is about to begin.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">Matthew 24:29</span><br><em>"Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Mark 13:24&ndash;25</span><br><em>"But in those days, after that tribulation, the sun shall be darkened, and the moon shall not give her light, and the stars of heaven shall fall, and the powers that are in heaven shall be shaken."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Luke 21:25&ndash;26</span><br><em>"And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity... men's hearts failing them for fear, and for looking after those things which are coming on the earth: for the powers of heaven shall be shaken."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 6:12&ndash;14 (6th Seal)</span><br><em>"...and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood; and the stars of heaven fell unto the earth... and every mountain and island were moved out of their places."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Joel 2:31</span><br><em>"The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of the LORD come."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Isaiah 13:10</span><br><em>"For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Isaiah 34:4</span><br><em>"And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down..."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Acts 2:20</span><br><em>"The sun shall be turned into darkness, and the moon into blood, before that great and notable day of the Lord come."</em></div>
+
+      <div class="phase-note"><strong>Teaching Note</strong>At this moment the wicked themselves recognize the shift. Revelation 6:16&ndash;17 records them crying to the mountains, "Hide us from the face of him that sitteth on the throne, and from the wrath of the Lamb: for the great day of his wrath is come; and who shall be able to stand?" The persecuted have become the rescued, and the persecutors now face the wrath of God.</div>
+    </div>
+
+
+    <!-- PHASE VI -->
+    <div class="phase" id="p6">
+      <p class="phase-header">Phase Six</p>
+      <p class="phase-title">The Resurrection and the Rapture (The Gathering of the Elect)</p>
+      <p class="phase-intro">With the heavens shaken at the sixth seal, the Son of man appears, the trumpet sounds, and the angels are sent to the four winds to gather the elect. This is the resurrection and the rapture, the moment for which the whole church has waited. Mark carefully where it falls on the timeline. It comes after the Antichrist is revealed and after the great falling away from the faith, and it comes before the wrath of God is poured out. The saints are not removed before the tribulation, they are gathered out of it, in the brief window between the sixth seal and the opening of the seventh. The trumpet that sounds here answers to the Feast of Trumpets among the appointed times.</p>
+      <p class="phase-intro">Two events happen together in this gathering, and Paul gives us their order. First the dead in Christ are raised, and then those who are alive and remain are caught up to join them in the air. The grave is emptied first, the living follow, and together they meet the Lord.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">Matthew 24:30&ndash;31</span><br><em>"And then shall appear the sign of the Son of man in heaven... and he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Mark 13:26&ndash;27</span><br><em>"And then shall they see the Son of man coming in the clouds with great power and glory. And then shall he send his angels, and shall gather together his elect from the four winds, from the uttermost part of the earth to the uttermost part of heaven."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Luke 21:27&ndash;28</span><br><em>"And then shall they see the Son of man coming in a cloud with power and great glory. And when these things begin to come to pass, then look up, and lift up your heads; for your redemption draweth nigh."</em></div>
+
+      <div class="sub-phase">
+        <p class="sub-phase-title">1. The Resurrection of the Dead in Christ</p>
+        <div class="phase-scripture"><span class="phase-ref">1 Thessalonians 4:16</span><br><em>"For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">1 Corinthians 15:51&ndash;52</span><br><em>"Behold, I shew you a mystery; We shall not all sleep, but we shall all be changed, In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Daniel 12:2</span><br><em>"And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">John 5:28&ndash;29</span><br><em>"...for the hour is coming, in the which all that are in the graves shall hear his voice, And shall come forth; they that have done good, unto the resurrection of life..."</em></div>
+      </div>
+
+      <div class="sub-phase">
+        <p class="sub-phase-title">2. The Rapture of the Living (Caught Up to Meet the Lord)</p>
+        <div class="phase-scripture"><span class="phase-ref">1 Thessalonians 4:17</span><br><em>"Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:40&ndash;41</span><br><em>"Then shall two be in the field; the one shall be taken, and the other left. Two women shall be grinding at the mill; the one shall be taken, and the other left."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:1</span><br><em>"Now we beseech you, brethren, by the coming of our Lord Jesus Christ, and by our gathering together unto him."</em></div>
+      </div>
+
+      <div class="phase-scripture"><span class="phase-ref">Revelation 7:9, 14 (following the 6th Seal)</span><br><em>"After this I beheld, and, lo, a great multitude, which no man could number... These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 12:1</span><br><em>"...and at that time thy people shall be delivered, every one that shall be found written in the book."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Isaiah 26:20&ndash;21</span><br><em>"Come, my people, enter thou into thy chambers, and shut thy doors about thee: hide thyself as it were for a little moment, until the indignation be overpast. For, behold, the LORD cometh out of his place to punish the inhabitants of the earth for their iniquity..."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Zechariah 9:14, 16</span><br><em>"And the LORD shall be seen over them... and the Lord GOD shall blow the trumpet... And the LORD their God shall save them in that day as the flock of his people..."</em></div>
+
+      <div class="phase-note"><strong>Teaching Note</strong>The order is fixed and it matters. The dead in Christ rise first, then the living are changed and caught up together with them, all at the last trump of this gathering. This is the first resurrection, the blessed and holy rising of those who belong to the Lord. Because it stands after the tribulation and before the wrath, the saints are spared the wrath of God, yet they are not spared the dragon's persecution that came before it. Revelation 7 confirms the timing, for the great multitude that appears at this point is named as those who came out of great tribulation. Isaiah 26 shows the same pattern, the people hidden in their chambers for a little moment until the indignation is overpast.</div>
+    </div>
+
+
+    <!-- PHASE VII -->
+    <div class="phase" id="p7">
+      <p class="phase-header">Phase Seven</p>
+      <p class="phase-title">The Day of the Lord (The Seventh Seal) &#183; God's Wrath</p>
+      <p class="phase-intro">Once the righteous are removed, the seventh seal is opened, and out of it come the seven trumpets and the seven bowls. This is the Day of the Lord, the direct wrath of God upon the kingdom of the beast. Just as in the days of Noah and the days of Lot, judgment fell the very day the righteous were taken out. The saints are not appointed to this wrath.</p>
+      <p class="phase-intro">It is here, under God's wrath and not Satan's tribulation, that the beings of the bottomless pit are released. The body of Christ is already gone, and only those sealed by God remain untouched.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">Revelation 8:1&ndash;2 (7th Seal)</span><br><em>"And when he had opened the seventh seal, there was silence in heaven about the space of half an hour. And I saw the seven angels which stood before God; and to them were given seven trumpets."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Matthew 24:37&ndash;39</span><br><em>"But as the days of Noe were, so shall also the coming of the Son of man be... and knew not until the flood came, and took them all away; so shall also the coming of the Son of man be."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Luke 17:28&ndash;30</span><br><em>"...but the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all. Even thus shall it be in the day when the Son of man is revealed."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">1 Thessalonians 5:9</span><br><em>"For God hath not appointed us to wrath, but to obtain salvation by our Lord Jesus Christ."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 9:1&ndash;3</span><br><em>"...and I saw a star fall from heaven unto the earth: and to him was given the key of the bottomless pit. And he opened the bottomless pit... And there came out of the smoke locusts upon the earth..."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 9:4</span><br><em>"...that they should not hurt the grass of the earth... but only those men which have not the seal of God in their foreheads."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Jude 6</span><br><em>"And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 16:1</span><br><em>"And I heard a great voice out of the temple saying to the seven angels, Go your ways, and pour out the vials of the wrath of God upon the earth."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:8</span><br><em>"And then shall that Wicked be revealed, whom the Lord shall consume with the spirit of his mouth, and shall destroy with the brightness of his coming."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Zephaniah 1:14&ndash;15</span><br><em>"The great day of the LORD is near... That day is a day of wrath, a day of trouble and distress, a day of wasteness and desolation, a day of darkness and gloominess..."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Joel 2:1&ndash;2</span><br><em>"Blow ye the trumpet in Zion, and sound an alarm in my holy mountain... for the day of the LORD cometh, for it is nigh at hand; A day of darkness and of gloominess, a day of clouds and of thick darkness..."</em></div>
+
+      <div class="phase-note"><strong>Teaching Note</strong>Revelation 9:4 is the seal that confirms the sequence. The locusts of the pit are forbidden to touch those who have the seal of God. The only people protected at this point are sealed servants like the 144,000, because the great multitude of the redeemed has already been gathered out in the previous phase. The wrath falls on a world the church has already left.</div>
+    </div>
+
+
+    <!-- PHASE VIII -->
+    <div class="phase" id="p8">
+      <p class="phase-header">Phase Eight</p>
+      <p class="phase-title">The Return of Christ and Armageddon</p>
+      <p class="phase-intro">The wrath of God climaxes in the visible, bodily return of Christ. Heaven opens, and the King rides forth to make war in righteousness. The kingdoms of men are gathered against him at Armageddon, and they are crushed. This is the stone cut without hands that strikes the image and grinds it to powder, and it is the final crushing of the serpent's head that was promised in the garden.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">Revelation 19:11&ndash;16</span><br><em>"And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war... And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 19:19&ndash;20</span><br><em>"And I saw the beast, and the kings of the earth, and their armies, gathered together to make war against him that sat on the horse... These both were cast alive into a lake of fire burning with brimstone."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Zechariah 14:3&ndash;4</span><br><em>"Then shall the LORD go forth, and fight against those nations... And his feet shall stand in that day upon the mount of Olives, which is before Jerusalem on the east..."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Jude 14&ndash;15</span><br><em>"Behold, the Lord cometh with ten thousands of his saints, to execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds..."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Isaiah 63:3&ndash;4</span><br><em>"I have trodden the winepress alone... For the day of vengeance is in mine heart, and the year of my redeemed is come."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 2:34&ndash;35</span><br><em>"...a stone was cut out without hands, which smote the image upon his feet... and the stone that smote the image became a great mountain, and filled the whole earth."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 2:44</span><br><em>"And in the days of these kings shall the God of heaven set up a kingdom, which shall never be destroyed... it shall break in pieces and consume all these kingdoms, and it shall stand for ever."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Genesis 3:15</span><br><em>"And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel."</em></div>
+
+      <div class="phase-note"><strong>Teaching Note</strong>The whole of Scripture bends toward this moment. The promise of Genesis 3:15 that the seed of the woman would crush the serpent's head is completed here. The cross dealt the wound, and the return delivers the death blow. The stone does not negotiate with the iron and clay, it destroys the entire structure and fills the earth in its place.</div>
+    </div>
+
+
+    <!-- PHASE IX -->
+    <div class="phase" id="p9">
+      <p class="phase-header">Phase Nine</p>
+      <p class="phase-title">The Millennial Kingdom (The Feast of Tabernacles)</p>
+      <p class="phase-intro">With the beast defeated and Satan bound, Christ establishes his kingdom on the earth. The saints who endured the tribulation and were gathered before the wrath now reign with him. The law goes forth from Zion, the nations come up to keep the Feast of Tabernacles, and the earth is filled with the knowledge of the Lord. At the close of the thousand years Satan is loosed for a final rebellion and is then cast into the lake of fire for ever.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">Revelation 20:1&ndash;3</span><br><em>"And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand. And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 20:4, 6</span><br><em>"...and they lived and reigned with Christ a thousand years... Blessed and holy is he that hath part in the first resurrection... but they shall be priests of God and of Christ, and shall reign with him a thousand years."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Luke 22:29&ndash;30</span><br><em>"And I appoint unto you a kingdom, as my Father hath appointed unto me; that ye may eat and drink at my table in my kingdom, and sit on thrones judging the twelve tribes of Israel."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Zechariah 14:9, 16</span><br><em>"And the LORD shall be king over all the earth... And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Isaiah 2:2&ndash;3</span><br><em>"...and all nations shall flow unto it... for out of Zion shall go forth the law, and the word of the LORD from Jerusalem."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Isaiah 11:6, 9</span><br><em>"The wolf also shall dwell with the lamb... They shall not hurt nor destroy in all my holy mountain: for the earth shall be full of the knowledge of the LORD, as the waters cover the sea."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Micah 4:1&ndash;2</span><br><em>"...for the law shall go forth of Zion, and the word of the LORD from Jerusalem."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 20:7&ndash;10</span><br><em>"And when the thousand years are expired, Satan shall be loosed out of his prison... And the devil that deceived them was cast into the lake of fire and brimstone... and shall be tormented day and night for ever and ever."</em></div>
+    </div>
+
+
+    <!-- PHASE X -->
+    <div class="phase" id="p10">
+      <p class="phase-header">Phase Ten</p>
+      <p class="phase-title">The Final Judgment and the New Heavens and Earth</p>
+      <p class="phase-intro">The last act is the Great White Throne. The dead are raised and judged according to their works, and death itself is cast into the lake of fire. Then God makes all things new. A new heaven and a new earth come down, and God dwells with his people, where there is no more death, sorrow, or pain. The whole study ends where the people of God have always longed to be, in the presence of the Lord, with his law written on the heart and his blessing on those who do his commandments.</p>
+
+      <div class="phase-scripture"><span class="phase-ref">Revelation 20:11&ndash;12</span><br><em>"And I saw a great white throne, and him that sat on it... And I saw the dead, small and great, stand before God; and the books were opened... and the dead were judged out of those things which were written in the books, according to their works."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 20:14&ndash;15</span><br><em>"And death and hell were cast into the lake of fire. This is the second death. And whosoever was not found written in the book of life was cast into the lake of fire."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Daniel 12:2</span><br><em>"And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">2 Peter 3:13</span><br><em>"Nevertheless we, according to his promise, look for new heavens and a new earth, wherein dwelleth righteousness."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 21:1&ndash;4</span><br><em>"And I saw a new heaven and a new earth... And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Isaiah 65:17</span><br><em>"For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 22:3&ndash;5</span><br><em>"And there shall be no more curse: but the throne of God and of the Lamb shall be in it; and his servants shall serve him... and they shall reign for ever and ever."</em></div>
+      <div class="phase-scripture"><span class="phase-ref">Revelation 22:14</span><br><em>"Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city."</em></div>
+    </div>
+
+
+    <!-- CLOSING -->
+    <section class="closing">
+      <p class="closing-title">Holding the Timeline Together</p>
+      <p>Read from beginning to end, the witnesses agree without contradiction. Christ on the mount, John in his vision, the prophets of old, and the apostles in their letters all describe one road. The beginning of sorrows gives way to a falling away, the man of sin is revealed, the saints are pressed through the Great Tribulation, the heavens are shaken, the dead in Christ are raised and the living are caught up to meet the Lord, the wrath of God falls, the King returns, the kingdom is established, and at last all things are made new.</p>
+      <p>The two keys carry the weight of the whole. The Olivet Discourse and the seals are one sequence, and the wrath of Satan against the saints is not the same as the wrath of God against the world. Keep these two truths in hand, and the passages that confuse so many fall neatly into place. The people who keep the commandments of God and hold the testimony of Jesus are the very people the dragon hates, and they are the very people the Lord gathers to himself before his indignation is poured out.</p>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Post-Tribulation &#183; Pre-Wrath &#183; One Witness from Genesis to Revelation</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

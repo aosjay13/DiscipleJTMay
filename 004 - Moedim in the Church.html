@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Moedim in the Church</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2rem;
+    border-bottom: 3px solid var(--gold-light);
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+
+  .doc-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 320px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY CONTENT ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin: 2.5rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+
+  .preamble p + p { margin-top: 1rem; }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.45rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--gold); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 4.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── CHAPTER (article) ── */
+  .chapter {
+    margin-top: 2.8rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .chapter-header {
+    margin-bottom: 1.4rem;
+  }
+
+  .chapter-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .chapter-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .chapter-body {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.4rem;
+  }
+
+  .chapter-body + .chapter-body { margin-top: -0.4rem; }
+
+  /* ── SUBSECTION HEADING ── */
+  .subhead {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 2rem 0 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: 0.02em;
+  }
+
+  .subhead-mini {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 1.4rem 0 0.6rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── DEFINITION LIST ── */
+  .term {
+    margin: 0.9rem 0;
+    padding: 0.7rem 0 0.7rem 1.1rem;
+    border-left: 3px solid var(--gold-light);
+  }
+  .term-name {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ── INLINE LIST ── */
+  .point-list { list-style: none; padding: 0; margin: 0.8rem 0; }
+  .point-list > li {
+    padding: 0.55rem 0 0.55rem 1.3rem;
+    position: relative;
+    line-height: 1.78;
+    color: var(--ink-mid);
+  }
+  .point-list > li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 1.15rem;
+    top: 0.4rem;
+  }
+  .point-list .lead { font-weight: 700; color: var(--ink); }
+
+  /* ── SCRIPTURE / VERSE CALLOUT ── */
+  .verse {
+    margin: 1.3rem 0;
+    padding: 1.1rem 1.4rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .verse-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.06em;
+  }
+  .verse-text {
+    color: var(--ink-mid);
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+
+  /* ── BONUS / TRADITIONS CALLOUT ── */
+  .bonus {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '✦'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus .point-list > li { padding-top: 0.45rem; padding-bottom: 0.45rem; }
+
+  em.greek, em.hebrew { font-weight: 600; font-style: italic; color: var(--ink); }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: #FBF5E6; text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .chapter { break-before: page; page-break-before: always; }
+    .chapter:first-of-type { break-before: auto; page-break-before: auto; }
+    .verse, .bonus, .term { break-inside: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <h1 class="doc-title">The Moedim in the Church</h1>
+    <p class="doc-subtitle">Keeping the Commandments of God &middot; Holding the Faith of Jesus</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Foundation</p>
+      <p>As we open the Scriptures for this study, we look directly to Revelation 14:12: "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus." This establishes the perfect harmony of our walk, resting entirely in the salvation provided by the Son while faithfully walking in obedience to the Father.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#intro"><span class="toc-num">Intro</span>The Moedim and the Commandments of God</a></li>
+        <li><a href="#ch1"><span class="toc-num">Ch. I</span>Passover &amp; Unleavened Bread</a></li>
+        <li><a href="#ch2"><span class="toc-num">Ch. II</span>First Fruits and Pentecost</a></li>
+        <li><a href="#ch3"><span class="toc-num">Ch. III</span>Feast of Trumpets</a></li>
+        <li><a href="#ch4"><span class="toc-num">Ch. IV</span>Day of Atonement</a></li>
+        <li><a href="#ch5"><span class="toc-num">Ch. V</span>Feast of Tabernacles and the Eighth Day</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- INTRODUCTION -->
+    <article class="chapter" id="intro">
+      <div class="chapter-header">
+        <span class="chapter-num">Introduction</span>
+        <h2 class="chapter-title">The Moedim and the Commandments of God</h2>
+      </div>
+
+      <h3 class="subhead">Defining the Terms</h3>
+      <p class="chapter-body">To rightly divide the word of truth regarding God's appointed times and His laws, it is helpful to look at the original languages.</p>
+
+      <div class="term"><span class="term-name">Moedim:</span> the Hebrew word for "appointed times" or "divine appointments." In the KJV it is frequently translated as "feasts" or "seasons." We see this introduced in Leviticus 23:2, "Speak unto the children of Israel, and say unto them, Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts."</div>
+
+      <div class="term"><span class="term-name">Torah:</span> while often simply translated as "law," this word fundamentally means "instruction" or "teaching" from a loving Father to His children.</div>
+
+      <div class="term"><span class="term-name">Mitzvot:</span> this word translates to "commandments," referring to the specific precepts given by God.</div>
+
+      <h3 class="subhead">The Commandments of God: The Moral Law</h3>
+      <p class="chapter-body">The foundation of God's instruction is His moral law, the Ten Commandments. These were not handwritten by a man. As Exodus 31:18 reveals, they were written by the finger of God on "tables of stone." They reflect His unchanging character, detailing exactly how to love Him and how to love our fellow man.</p>
+      <p class="chapter-body">Because they are an expression of the Creator's nature, the moral laws are eternal. Faith in Jesus does not abolish these commandments. Instead, His grace and the indwelling of the Holy Spirit empower us to keep them.</p>
+
+      <h3 class="subhead">The Moedim and the Handwriting of Ordinances</h3>
+      <p class="chapter-body">When we look at the Moedim, which includes the weekly Sabbath as well as the annual holy days like Passover, Pentecost, and Tabernacles, we must carefully distinguish between the days themselves and the temporary ceremonial works that were attached to them in the earthly sanctuary.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Colossians 2:14</span>
+        <span class="verse-text">Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross.</span>
+      </div>
+
+      <p class="chapter-body">The Greek word used here for ordinances is <em class="greek">dogmata</em>, which refers to decrees or the ceremonial laws handwritten by Moses in a book. This included the rigid system of animal sacrifices, specific meat offerings, and drink offerings that were required to be performed on the Moedim to temporarily cover sin.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Colossians 2:16&ndash;17</span>
+        <span class="verse-text">Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: Which are a shadow of things to come; but the body is of Christ.</span>
+      </div>
+
+      <p class="chapter-body">Here Paul uses the Greek word <em class="greek">skia</em> for "shadow" and <em class="greek">soma</em> for "body." The Moedim are a prophetic shadow outlining God's entire plan of redemption. The ceremonial sacrifices performed on those days were the "handwriting of ordinances" that pointed forward to the ultimate sacrifice. When Jesus died on the cross, He became our Passover lamb. The sacrificial rituals were nailed to the cross because the substance, the body of Christ, had arrived. The days themselves were not abolished.</p>
+
+      <h3 class="subhead">Walking in Spirit and Truth</h3>
+      <p class="chapter-body">Today, as believers keeping the faith of Jesus, we observe the Sabbath and the Moedim not to earn our salvation, nor by shedding the blood of animals. We observe them to honor our Creator, to remember His acts of deliverance, and to rehearse the prophetic events of Christ's return. The Sabbath remains a holy convocation, a weekly appointed time, where we rest in the finished work of our Savior while joyfully obeying the moral law written by the finger of God.</p>
+    </article>
+
+
+    <!-- CHAPTER 1 -->
+    <article class="chapter" id="ch1">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter I</span>
+        <h2 class="chapter-title">Passover &amp; Unleavened Bread</h2>
+      </div>
+
+      <p class="chapter-body">As we look at the Moedim, or appointed times of God, we must always anchor our understanding in Revelation 14:12: "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus." This verse beautifully defines the Pronomian walk. We do not choose between the law of the Father and the grace of the Son. Rather, the faith of Jesus empowers us to walk in obedience to the commandments of God.</p>
+
+      <p class="chapter-body">The spring feasts begin with Passover (Pesach) and immediately transition into the Feast of Unleavened Bread (Chag HaMatzot). These are not merely ancient historical markers. They are profound divine appointments that reveal the very heart of the gospel and God's redemptive plan.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:5</span>
+        <span class="verse-text">In the fourteenth day of the first month at even is the LORD's passover.</span>
+      </div>
+
+      <p class="chapter-body">Historically, Passover remembers the mighty deliverance of Israel from the bondage of Egypt. The blood of a spotless lamb was placed on the doorposts of the Israelites so that the judgment of death would pass over their homes.</p>
+
+      <p class="chapter-body">Prophetically, the events of Egypt and the ceremonial sacrifices of the earthly tabernacle were a <em class="greek">skia</em> (the Greek word for shadow) of the ultimate deliverance. Jesus is the <em class="greek">soma</em> (the Greek word for body or substance) of this shadow. John the Baptist recognized this immediately, calling Him the Lamb of God. As the Apostle Paul confirms in 1 Corinthians 5:7, "For even Christ our passover is sacrificed for us."</p>
+
+      <p class="chapter-body">The handwriting of ordinances concerning the physical slaughter of animals was nailed to the cross. Jesus shed His blood once and for all to deliver us from the bondage of sin. Because He is our sacrifice, we no longer shed the blood of lambs, but we absolutely continue to remember and honor the day of His deliverance.</p>
+
+      <p class="chapter-body">Immediately following Passover is the Feast of Unleavened Bread.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:6</span>
+        <span class="verse-text">And on the fifteenth day of the same month is the feast of unleavened bread unto the LORD: seven days ye must eat unleavened bread.</span>
+      </div>
+
+      <p class="chapter-body">In Scripture, leaven (in Hebrew, <em class="hebrew">chametz</em>) is consistently used as a symbol for sin, pride, hypocrisy, and false teaching that puffs up. God commanded His people to search their homes and remove all leaven.</p>
+
+      <p class="chapter-body">Because we have the faith of Jesus, we do not view this appointed time as a burden, but as a joyful commandment. Paul specifically exhorted the Gentile believers in Corinth to continue observing this very appointed time.</p>
+
+      <div class="verse">
+        <span class="verse-ref">1 Corinthians 5:8</span>
+        <span class="verse-text">Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.</span>
+      </div>
+
+      <p class="chapter-body">As believers, we physically remove the leaven from our homes during these seven days as an outward, physical expression of an inward, spiritual reality. Through Christ our past sins are washed away, and by the Holy Spirit we are actively walking in obedience to God's moral law, purging the remaining sin from our daily lives. We do not remove leaven to earn our salvation. We do it because we have been saved and freed by the perfect Passover Lamb, and we desire to walk in holiness.</p>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Rabbinic Traditions</p>
+        <p>Over the centuries, Rabbinic Judaism developed the Passover Seder, an ordered meal and liturgy designed to retell the Exodus story. One of the most striking traditions involves a specific piece of matzah (unleavened bread) called the Afikoman. During the meal, three pieces of matzah are placed together in a special pouch. The middle piece is taken out and broken. Half of it is hidden away, wrapped in a cloth. Later in the meal the children search for it, and once found it is brought back and eaten as the final taste of the Passover meal. For those holding the faith of Jesus, this tradition is a profound, albeit unintended, picture of the Messiah. He is the second person of the Godhead who was broken for our transgressions, wrapped in linen and hidden in the tomb, and then resurrected and brought forth.</p>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Early Church Fathers' Traditions</p>
+        <p>In the early centuries of the church there was a major historical conflict known as the Quartodeciman Controversy. "Quartodeciman" comes from the Latin word for "fourteenth." Early church leaders in Asia Minor, such as Polycarp (a direct disciple of the Apostle John) and later Polycrates, insisted on observing Passover strictly on the fourteenth day of the biblical month of Nisan, exactly as commanded in the law. They refused to adopt the Roman church's newly instituted practice of observing a resurrection Sunday festival, which later became known as Easter, that ignored the biblical calendar. Polycrates wrote a letter to the bishop of Rome firmly defending their fourteenth-of-Nisan practice, stating they were simply following the Gospel and the traditions handed down directly by the Apostles. This historical record shows that the earliest believers, guided by the Apostles, continued to faithfully keep the biblical Moedim.</p>
+      </div>
+    </article>
+
+
+    <!-- CHAPTER 2 -->
+    <article class="chapter" id="ch2">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter II</span>
+        <h2 class="chapter-title">First Fruits and Pentecost</h2>
+      </div>
+
+      <p class="chapter-body">Continuing our study through the lens of Revelation 14:12, we transition from the deliverance of Passover to the harvest appointed times: First Fruits and Pentecost (the Feast of Weeks). These appointed times perfectly connect the physical agricultural cycle of Israel to the profound spiritual realities of the Messiah and the Holy Spirit.</p>
+
+      <h3 class="subhead">The Scriptural Command: When and How to Count</h3>
+      <p class="chapter-body">The instructions for these two appointed times are intrinsically linked in Scripture by a literal countdown.</p>
+
+      <p class="subhead-mini">First Fruits</p>
+      <p class="chapter-body">God instructed the Israelites to bring the very first harvest of their barley crop to the priest.</p>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:11</span>
+        <span class="verse-text">And he shall wave the sheaf before the LORD, to be accepted for you: on the morrow after the sabbath the priest shall wave it.</span>
+      </div>
+
+      <p class="subhead-mini">Pentecost (Feast of Weeks)</p>
+      <p class="chapter-body">From that exact day of First Fruits, a specific count is commanded to reach the next appointed time.</p>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:15&ndash;16</span>
+        <span class="verse-text">And ye shall count unto you from the morrow after the sabbath, from the day that ye brought the sheaf of the wave offering; seven sabbaths shall be complete: Even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto the LORD.</span>
+      </div>
+
+      <p class="chapter-body">Because "Pentecost" is simply the Greek word for "fiftieth," the day arrives precisely fifty days after First Fruits, aligning with the wheat harvest.</p>
+
+      <h3 class="subhead">The Prophetic Fulfillment</h3>
+      <p class="chapter-body">Just as Passover foreshadowed the crucifixion, First Fruits and Pentecost perfectly mirror the resurrection and the giving of the Holy Spirit.</p>
+
+      <ul class="point-list">
+        <li><span class="lead">Christ our First Fruits:</span> the "morrow after the sabbath" is Sunday. Jesus resurrected on the exact day the high priest was waving the first ripened barley before God. The Apostle Paul explicitly confirms this in 1 Corinthians 15:20: "But now is Christ risen from the dead, and become the firstfruits of them that slept." Jesus is the firstborn from the dead, guaranteeing a much larger harvest of believers to follow.</li>
+        <li><span class="lead">The Fire of Pentecost:</span> fifty days later, as the people gathered in Jerusalem to offer the new grain of the wheat harvest, God poured out His Spirit. Acts 2:1&ndash;4 records, "And when the day of Pentecost was fully come, they were all with one accord in one place... And they were all filled with the Holy Ghost."</li>
+        <li><span class="lead">The Harmony of Sinai and Zion:</span> historically, the children of Israel arrived at Mount Sinai exactly fifty days after leaving Egypt. At Sinai the law (God's instruction) was given, written by the finger of God on tablets of stone. On the exact same day in Acts 2, the Holy Spirit was given to write that very same instruction upon the fleshy tables of the heart. Pentecost is not a replacement of God's law, but the empowerment to walk in it.</li>
+      </ul>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Rabbinic Traditions</p>
+        <p>During the Second Temple period a massive theological conflict erupted between the two ruling classes, the Pharisees and the Sadducees, regarding exactly how to start the count for Pentecost. The entire debate centered on how to interpret the phrase "the morrow after the sabbath" in Leviticus 23:11.</p>
+        <ul class="point-list">
+          <li><span class="lead">The Sadducees' Literal Count:</span> the Sadducees interpreted "sabbath" to mean the weekly seventh-day Sabbath. Thus "the morrow after the sabbath" was always a Sunday. By counting fifty days from a Sunday, Pentecost would also always fall on a Sunday.</li>
+          <li><span class="lead">The Pharisees' Annual Count:</span> the Pharisees interpreted the word "sabbath" as the annual high holy day of Unleavened Bread (Nisan 15). Therefore they began the fifty-day count on Nisan 16, regardless of what day of the week it fell on.</li>
+        </ul>
+        <p>Modern Rabbinic Judaism follows the tradition of the Pharisees. To this day, the "Counting of the Omer" begins on the second night of Passover. In rabbinic tradition this forty-nine-day count is viewed as a period of intense spiritual preparation and refinement, counting down the days from the physical deliverance of Egypt to the spiritual revelation of the law at Mount Sinai.</p>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Early Church Fathers' Traditions</p>
+        <p>The early church fathers attached immense joy and theological weight to the fifty-day period between First Fruits and Pentecost, viewing it not just as a countdown but as a continuous season of victory.</p>
+        <ul class="point-list">
+          <li><span class="lead">No Fasting or Kneeling:</span> because Christ had conquered the grave, early church leaders mandated that the entire fifty-day season be treated with the same reverence as Resurrection Sunday. Tertullian and others noted the tradition that during the fifty days of Pentecost, believers were forbidden to fast or even to kneel during prayer, standing upright to represent the resurrection life.</li>
+          <li><span class="lead">The Symbolism of Fifty:</span> the early scholars loved the biblical numerology of the count. Clement of Alexandria likened the fifty days to the width of Noah's Ark, viewing the season as a symbol of hope and divine pardon.</li>
+          <li><span class="lead">The Connection to the Jubilee:</span> Origen connected the fifty days of Pentecost directly to the fiftieth year of Jubilee found in Leviticus 25. Just as the Year of Jubilee required the release of captives, the forgiveness of debts, and the return of property, the early church viewed Pentecost as the ultimate spiritual Jubilee, where the Holy Spirit brings true liberty, cancels the debt of sin, and restores humanity to the Father.</li>
+        </ul>
+      </div>
+    </article>
+
+
+    <!-- CHAPTER 3 -->
+    <article class="chapter" id="ch3">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter III</span>
+        <h2 class="chapter-title">Feast of Trumpets</h2>
+      </div>
+
+      <p class="chapter-body">As we continue our study, we cross a profound prophetic threshold. The spring appointed times (Passover, Unleavened Bread, First Fruits, and Pentecost) have all been perfectly fulfilled in the first coming of the Messiah. Now we arrive at the fall appointed times, which prophetically outline the exact events of Jesus' glorious return. This prophetic shift begins with the Feast of Trumpets.</p>
+
+      <h3 class="subhead">The Scriptural Command: A Day of Shouting</h3>
+      <p class="chapter-body">In the biblical calendar a massive shift occurs in the seventh month.</p>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:24</span>
+        <span class="verse-text">Speak unto the children of Israel, saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Numbers 29:1</span>
+        <span class="verse-text">And in the seventh month, on the first day of the month, ye shall have an holy convocation; ye shall do no servile work: it is a day of blowing the trumpets unto you.</span>
+      </div>
+
+      <p class="chapter-body">The Hebrew word used here for "blowing of trumpets" is <em class="hebrew">Teruah</em>. It literally translates to a massive shout, an alarm, or an awakening blast. It is a day specifically appointed by the Father to sound an alarm. Historically, the blowing of the silver trumpets or the shofar (ram's horn) in Israel was used to gather the assembly, to signal the breaking of camp, or to sound the alarm for war.</p>
+
+      <h3 class="subhead">The Prophetic Fulfillment: The Return of the King</h3>
+      <p class="chapter-body">For those holding the faith of Jesus, the Feast of Trumpets is the ultimate rehearsal for the return of our King and the resurrection of the righteous dead. Jesus' return is intrinsically linked to the blowing of a trumpet.</p>
+      <div class="verse">
+        <span class="verse-ref">1 Thessalonians 4:16</span>
+        <span class="verse-text">For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">1 Corinthians 15:52</span>
+        <span class="verse-text">In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed.</span>
+      </div>
+      <p class="chapter-body">Just as the early believers kept the spring feasts looking backward in remembrance of Christ's sacrifice, we observe the Feast of Trumpets looking forward in joyful anticipation of His return. It is a day of rest, a holy convocation, where we rehearse the sounding of the alarm that will one day shatter the sky.</p>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Rabbinic Traditions</p>
+        <p>In Rabbinic Judaism the Feast of Trumpets underwent a significant transformation during the Babylonian exile. Today it is almost exclusively referred to as Rosh Hashanah, which means "Head of the Year," serving as the Jewish civil New Year. There are several deeply profound traditions attached to this day.</p>
+        <ul class="point-list">
+          <li><span class="lead">The Hidden Day:</span> this is the only biblical feast that falls exactly on the first day of a month (the New Moon). Because the ancient biblical calendar relied on the visual sighting of the crescent moon by two witnesses, it was a day that could not be mathematically calculated in advance. Thus it became known as the feast where "no man knows the day or the hour." For believers this perfectly illuminates Jesus' exact phrasing regarding His return in Matthew 24:36.</li>
+          <li><span class="lead">The 100 Blasts:</span> tradition dictates that the shofar must be blown precisely one hundred times during the service. The blasts are broken into different rhythms: <em>Tekiah</em> (one long blast), <em>Shevarim</em> (three broken blasts), and <em>Teruah</em> (nine rapid, staccato blasts). The hundredth and final blast is known as the <em>Tekiah Gedolah</em>, the great, long blast. Many scholars believe Paul was referencing this exact tradition when he spoke of the "last trump."</li>
+          <li><span class="lead">The Days of Awe:</span> in Judaism the Feast of Trumpets begins a ten-day period of intense introspection, repentance, and making right with one's fellow man before the coming judgment on the Day of Atonement. Tradition states that on this day God opens the Book of Life to begin judging the world.</li>
+        </ul>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Early Church Fathers' Traditions</p>
+        <p>While the early church focused heavily on the spring feasts due to their direct historical connection to the crucifixion and the giving of the Spirit, they viewed the Feast of Trumpets through a highly prophetic and typological lens.</p>
+        <ul class="point-list">
+          <li><span class="lead">The Trumpets of Jericho:</span> early church fathers such as Irenaeus of Lyons frequently connected the end-time trumpets to the historical account of Joshua at the battle of Jericho. Just as Joshua commanded seven priests to blow seven ram's horns for seven days before the walls of the enemy collapsed, the early church viewed this as a prophetic shadow. They tied this directly to the Book of Revelation, understanding that Jesus would return at the sounding of the final, seventh trumpet to utterly destroy the kingdoms of this world.</li>
+          <li><span class="lead">The Awakening Call:</span> scholars like John Chrysostom wrote extensively on the "Trumpet of God," identifying it not just as a loud noise but as the literal voice of God vibrating through the earth to awaken the dead. They viewed the biblical trumpet blasts as the divine mechanism that would reconstitute the physical bodies of the saints who had fallen asleep.</li>
+        </ul>
+      </div>
+    </article>
+
+
+    <!-- CHAPTER 4 -->
+    <article class="chapter" id="ch4">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter IV</span>
+        <h2 class="chapter-title">Day of Atonement</h2>
+      </div>
+
+      <p class="chapter-body">Following the awakening blast of the Feast of Trumpets, the fall appointed times progress into the most solemn and holy day of the biblical calendar: the Day of Atonement. If the Feast of Trumpets is the alarm of the King's return, the Day of Atonement prophetically points to the final Day of Judgment, the cleansing of the sanctuary, and the ultimate eradication of sin.</p>
+
+      <p class="chapter-body">As we maintain our Pronomian perspective, we see that the heavy ceremonial works of this day, the blood of bulls and goats, were completely fulfilled by our Great High Priest. Yet the divine appointment of the day remains for the saints as a solemn rehearsal of God's final justice and mercy.</p>
+
+      <h3 class="subhead">The Scriptural Command: A Day of Affliction</h3>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:27&ndash;28</span>
+        <span class="verse-text">Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls, and offer an offering made by fire unto the LORD. And ye shall do no work in that same day: for it is a day of atonement, to make an atonement for you before the LORD your God.</span>
+      </div>
+
+      <p class="chapter-body">The command to "afflict your souls" is universally understood biblically as fasting, abstaining from food and water to demonstrate complete reliance on God and deep repentance. It is a day of absolute rest, a Sabbath of Sabbaths.</p>
+
+      <p class="chapter-body">The ceremonial "handwriting of ordinances" for this day is detailed in Leviticus 16. It was the only day of the year the High Priest was permitted to enter the Holy of Holies. He cast lots over two goats. One was the "Lord's goat," whose blood was shed and sprinkled on the Mercy Seat to temporarily cover the sins of the nation. The other was the "scapegoat." The High Priest would lay his hands on the scapegoat, confess the sins of Israel over it, and send it away alive into the wilderness, visually removing the sin from the camp.</p>
+
+      <h3 class="subhead">The Prophetic Fulfillment: The True Mercy Seat</h3>
+      <p class="chapter-body">The Book of Hebrews masterfully explains how the earthly rituals of the Day of Atonement were a shadow of Jesus' heavenly ministry. The blood of animals could only temporarily push sin forward; it could never erase it.</p>
+      <div class="verse">
+        <span class="verse-ref">Hebrews 9:11&ndash;12</span>
+        <span class="verse-text">But Christ being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands, that is to say, not of this building; Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.</span>
+      </div>
+      <p class="chapter-body">Jesus fulfilled the role of both the sacrifice and the High Priest. When He ascended to the Father, He presented His own blood in the true, heavenly Holy of Holies. Prophetically, while Christ has already paid the price for our sins, the ultimate fulfillment of this day looks toward the end of the age: the final judgment of the earth, the cleansing of the universe from the stain of sin, and the banishment of the adversary, often typified by the scapegoat being cast into the desolate wilderness, mirroring the binding of Satan in Revelation 20.</p>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Rabbinic Traditions</p>
+        <p>The Day of Atonement is the culmination of the "Days of Awe" that began on the Feast of Trumpets. In Rabbinic Judaism there are stunning traditions surrounding this day that unintentionally bear witness to the Messiah.</p>
+        <ul class="point-list">
+          <li><span class="lead">The Crimson Thread:</span> the Talmud (Tractate Yoma 39b) records a remarkable historical phenomenon from the Second Temple period. When the scapegoat was sent into the wilderness, a crimson thread was tied to the sanctuary doors. When the goat reached the wilderness, the thread would turn white, fulfilling Isaiah 1:18 ("though your sins be as scarlet, they shall be as white as snow"). However, the Talmud explicitly records that for the final forty years before the Temple was destroyed, the thread stopped turning white. The Temple was destroyed in 70 AD. Going back exactly forty years points to 30 AD, the exact time Jesus, the true Lamb of God, was crucified. God was signaling that the blood of goats was no longer accepted, because the perfect sacrifice had been made.</li>
+          <li><span class="lead">The Closing of the Gates:</span> the final service of the Day of Atonement as the sun goes down is called Ne'ilah. Tradition teaches that during this hour the gates of heaven are closing, and God seals the Book of Life for the coming year. It is a moment of intense, desperate prayer, reflecting the prophetic reality that a day is coming when the door of grace will shut, just as God shut the door of Noah's Ark.</li>
+          <li><span class="lead">Wearing the Kittel:</span> many observant Jewish men wear a white linen robe called a <em>kittel</em> on this day. It is the same garment they will eventually be buried in. It serves a dual purpose, representing the purity of the angels and reminding the wearer of their mortality, essentially dying to the flesh through fasting and repentance.</li>
+        </ul>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Early Church Fathers' Traditions</p>
+        <p>The early Christian apologists frequently used the typology of the Day of Atonement to explain the Gospel to their Jewish contemporaries.</p>
+        <ul class="point-list">
+          <li><span class="lead">The Two Goats as the Two Comings:</span> in the <em>Epistle of Barnabas</em> (written between 70 and 132 AD) and later in the writings of Justin Martyr (in his <em>Dialogue with Trypho</em>), the early church fathers taught that the two goats of Leviticus 16 represented the two advents of Christ. The first goat, slaughtered as a sin offering, represented His first coming in humility, suffering, and death. The second goat, sent away bearing the sins of the people, represented His second coming. They noted that both goats had to be identical in appearance, prophetically pointing to the fact that the same Jesus who was pierced and rejected will be the exact same Jesus who returns in glory, recognized by those who pierced Him (Zechariah 12:10).</li>
+          <li><span class="lead">The True Fast:</span> while acknowledging the physical fast, early theologians like Origen emphasized that the true "affliction of the soul" was abstaining from sin. They taught that keeping the physical fast was meaningless if the believer did not also fast from malice, greed, and worldly desires, marrying the physical appointed time with the spiritual transformation required by the moral law.</li>
+        </ul>
+      </div>
+    </article>
+
+
+    <!-- CHAPTER 5 -->
+    <article class="chapter" id="ch5">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter V</span>
+        <h2 class="chapter-title">Feast of Tabernacles and the Eighth Day</h2>
+      </div>
+
+      <p class="chapter-body">We now reach the joyful climax of the biblical calendar: the Feast of Tabernacles and its companion, the Eighth Day. If Passover represents our justification, and Pentecost our sanctification by the Spirit, then Tabernacles represents our ultimate glorification. It is the great harvest festival, completely transitioning from the solemn fasting of the Day of Atonement into a mandated season of overwhelming joy.</p>
+
+      <p class="chapter-body">As those holding the faith of Jesus, we recognize that this appointed time points directly to the Millennial Kingdom, when the Messiah will physically dwell (tabernacle) with His people on earth.</p>
+
+      <h3 class="subhead">The Scriptural Command: A Season of Joy</h3>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:34, 39&ndash;43</span>
+        <span class="verse-text">Speak unto the children of Israel, saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto the LORD... Also in the fifteenth day of the seventh month, when ye have gathered in the fruit of the land, ye shall keep a feast unto the LORD seven days... And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before the LORD your God seven days... Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths.</span>
+      </div>
+
+      <p class="chapter-body">God commanded His people to leave the comfort of their permanent homes and live in fragile, temporary shelters (booths) constructed of branches. This physically reminded them of their dependence on God during the wilderness wanderings.</p>
+
+      <p class="chapter-body">Immediately attached to this seven-day feast is a distinct, one-day appointed time known as the Eighth Day.</p>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 23:36</span>
+        <span class="verse-text">...on the eighth day shall be an holy convocation unto you; and ye shall offer an offering made by fire unto the LORD: it is a solemn assembly; and ye shall do no servile work therein.</span>
+      </div>
+
+      <h3 class="subhead">The Prophetic Fulfillment: God with Us</h3>
+      <p class="chapter-body">From a Pronomian perspective, the Feast of Tabernacles perfectly encapsulates both the first and second comings of Jesus.</p>
+      <ul class="point-list">
+        <li><span class="lead">The Word Made Flesh:</span> the Apostle John uses explicit Tabernacles imagery to describe the incarnation. John 1:14 says, "And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth." The Greek word used for "dwelt" literally translates to "tabernacled" or "pitched his tent." Jesus left His eternal home to temporarily dwell in the fragile booth of a human body.</li>
+        <li><span class="lead">The Millennial Reign:</span> prophetically, the seven days of the feast picture the coming thousand-year reign of Christ on earth. Zechariah 14 makes it abundantly clear that this appointed time was not nailed to the cross, nor was it meant only for the Jews. Speaking of the future earthly reign of Jesus, Zechariah 14:16 prophesies: "And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles."</li>
+        <li><span class="lead">The Eighth Day (Eternity):</span> in biblical numerology, seven represents completion (the Millennial Kingdom), while eight represents a new beginning. The Eighth Day points past the Millennium to the New Heavens and the New Earth, where time as we know it ceases. Revelation 21:3 perfectly captures this reality: "And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God."</li>
+      </ul>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Rabbinic Traditions</p>
+        <p>During the Second Temple period the celebration of Tabernacles was magnificent, and Jesus directly used these traditions to declare His messiahship.</p>
+        <ul class="point-list">
+          <li><span class="lead">The Water Libation Ceremony:</span> each morning of the feast the High Priest would draw "living water" from the Pool of Siloam in a golden pitcher. He would carry it in a joyful procession to the Temple and pour it on the altar to pray for the winter rains. John 7:37&ndash;38 records exactly what Jesus did at this precise moment: "In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water."</li>
+          <li><span class="lead">The Illumination of the Temple:</span> during the feast, massive seventy-five-foot-tall menorahs were erected in the Court of the Women. Rabbinic literature states that the light from these lamps was so brilliant it illuminated every courtyard in Jerusalem. It was in the direct aftermath of this spectacular tradition that Jesus declared in John 8:12, "I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life."</li>
+          <li><span class="lead">Welcoming the Guests:</span> it is a tradition to symbolically welcome holy guests, such as Abraham, Isaac, and Jacob, into the booth each evening. For believers this echoes Jesus' promise in Matthew 8:11: "That many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven."</li>
+        </ul>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; Early Church Fathers' Traditions</p>
+        <p>The early church fathers saw the Feast of Tabernacles as the ultimate goal of the Christian walk.</p>
+        <ul class="point-list">
+          <li><span class="lead">Methodius of Olympus (ca. 300 AD):</span> in his work <em>The Banquet of the Ten Virgins</em>, Methodius wrote extensively on the Feast of Tabernacles. He explicitly taught that the literal, physical resurrection of the dead is the true Feast of Tabernacles. He reasoned that our current bodies are fallen tents, but in the resurrection God will "rebuild the tabernacle of David" by giving us glorified, immortal bodies that will never decay. He instructed believers to celebrate the feast by living holy lives now, preparing their tabernacles for eternal life.</li>
+          <li><span class="lead">The Seventh Millennium:</span> early theologians like Irenaeus and Justin Martyr heavily utilized the concept of the "Sabbath Millennium." They taught that just as there were six days of creation followed by a day of rest, there would be six thousand years of human history followed by a thousand-year Sabbath rest, the Messianic Kingdom. They viewed the seven days of the Feast of Tabernacles as the ultimate prophetic rehearsal of this glorious seventh millennium of peace.</li>
+          <li><span class="lead">The Eighth Day as the Eternal State:</span> the early fathers consistently referred to the eternal state beyond the Millennium as "The Eighth Day." They understood it not just as an add-on to the feast, but as the transition from the temporal world (governed by the seven-day week) into the infinite, unbounded presence of the Father.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Here are they that keep the commandments of God, and the faith of Jesus &middot; Revelation 14:12</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

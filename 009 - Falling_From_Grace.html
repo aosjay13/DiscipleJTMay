@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falling From Grace &middot; A Scriptural Answer to "Once in Grace, Always in Grace"</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── SCRIPTURE CALLOUT (cream box, gold top border) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.78; font-size: 1rem; }
+  .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── REBUTTAL CARD ── */
+  .rebuttal {
+    margin: 2rem 0;
+    padding: 0;
+    break-inside: avoid;
+  }
+  .rebuttal-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin-bottom: 0.9rem;
+  }
+  .rebuttal-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.15rem;
+  }
+  .rebuttal-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .stance {
+    margin: 0.9rem 0;
+    padding: 0.95rem 1.2rem;
+  }
+  .stance-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .stance-body { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .claim {
+    background: #F3E6E0;
+    border-left: 3px solid var(--crimson-lt);
+  }
+  .claim .stance-label { color: var(--crimson); }
+  .answer {
+    background: var(--cream);
+    border-left: 3px solid var(--gold-light);
+  }
+  .answer .stance-label { color: var(--gold); }
+
+  /* ── TRUTH ENTRY (heading + scripture + note) ── */
+  .truth-entry { margin: 1.8rem 0; break-inside: avoid; }
+  .truth-entry-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+  }
+  .truth-note {
+    font-size: 1.0rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    margin-top: 0.6rem;
+  }
+
+  /* ── BONUS / DASHED PANEL ── */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ── FOOTER (crimson, matching the lessons) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, 0.75in margins) ── */
+  @page { size: 8.5in 11in; margin: 0.75in; }
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .scripture, .claim, .answer, .bonus {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .section-head { break-before: page; page-break-before: always; }
+    .section-head:first-of-type { break-before: auto; page-break-before: auto; }
+    .rebuttal, .truth-entry, .bonus, .scripture { break-inside: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    .stance { padding: 0.85rem 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">A Doctrinal Foundation</p>
+    <h1 class="doc-title">Falling From Grace</h1>
+    <p class="doc-subtitle">A Scriptural Answer to "Once in Grace, Always in Grace"</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">The Question Before Us</p>
+      <p>Salvation is the free gift of God, received by grace through faith. No man earns it, and no man can boast in it. The question of this study is not how a man is saved, but whether a man who has been saved can ever turn away and be lost. The popular teaching answers with a single phrase, "Once in grace, always in grace," and insists that a true believer can never fall, no matter how he lives or how far he departs.</p>
+      <p>We hold a different and, we believe, plainer reading of Scripture. The believer is truly and fully secure as long as he abides in Christ by a living faith; he is not secured against his own will if he abandons that faith and turns back. The same God who promises that no enemy can pluck His sheep away also warns His people, again and again, not to fall away themselves. Both truths are His word, and sound doctrine must hold them together rather than silence one to protect the other.</p>
+      <p>This study has two parts. First we take up the verses most often raised to prove that a believer cannot fall, and we show what each one actually says. Then we set forth the plain witness of Scripture that a saved man can indeed fall from grace, and we close where the matter finally rests: the state of the soul at the end of life.</p>
+    </section>
+
+    <!-- PART ONE -->
+    <div class="section-head">
+      <p class="section-eyebrow">Part One</p>
+      <h2 class="section-title">Answering the Anchoring Verses</h2>
+    </div>
+
+    <p class="body-text">Every one of the passages below is true, and we receive each as the inspired word of God. The error is not in the verse; it is in loading a verse with a promise it never made. Read in full, with the surrounding words left in place, not one of these texts teaches that a believer cannot turn away. Each one promises something real, and something narrower than the popular claim.</p>
+
+    <!-- 1 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">One</span>
+        <h3 class="rebuttal-title">John 10:27&ndash;29 &middot; "Neither shall any man pluck them out of my hand"</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">John 10:27&ndash;29</span>
+        <span class="scripture-text">My sheep hear my voice, and I know them, and they follow me: And I give unto them eternal life; and they shall never perish, neither shall any man pluck them out of my hand. My Father, which gave them me, is greater than all; and no man is able to pluck them out of my Father's hand.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">Once a person is among Christ's sheep, nothing whatsoever can ever cause that person to be lost.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">Read the first line before the promise: these are the sheep who "hear my voice" and "follow me," spoken in the present and continuing tense. The promise that follows guards against being plucked, that is, snatched away by an outside hand against the sheep's will. No enemy, no devil, no man can rip a faithful follower out of the Shepherd's grip. That is a glorious and certain promise. It says nothing at all about a sheep that stops following, leaves the voice of the Shepherd, and wanders off on its own. The text shuts the door against theft from without; it does not bar the gate against a sheep that walks out.</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Two</span>
+        <h3 class="rebuttal-title">Romans 8:38&ndash;39 &middot; "Nothing shall separate us from the love of God"</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">Romans 8:38&ndash;39</span>
+        <span class="scripture-text">For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">Nothing can ever separate a believer from God, therefore a believer can never be lost.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">Look closely at Paul's list, for he is careful and complete. Death, life, angels, principalities, powers, things present, things to come, height, depth, and any other creature. Every single item is a force outside the believer. Paul never names the one thing that can in fact separate a man from God, namely the man himself through unbelief and willful departure. The setting confirms it; just above, Paul speaks of being killed all the day long for Christ's sake. He is answering the fear that suffering and persecution might drive God to cast us off. His answer is that no outside power can make God stop loving us. The love of God is unbreakable from God's side. The verse does not promise that you cannot let go of Him.</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Three</span>
+        <h3 class="rebuttal-title">John 6:37&ndash;40 &middot; "I will in no wise cast out"</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">John 6:37</span>
+        <span class="scripture-text">All that the Father giveth me shall come to me; and him that cometh to me I will in no wise cast out.</span>
+        <span class="scripture-ref">John 6:40</span>
+        <span class="scripture-text">And this is the will of him that sent me, that every one which seeth the Son, and believeth on him, may have everlasting life: and I will raise him up at the last day.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">Jesus promises never to lose a single believer, so a believer cannot be lost.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">Mark the tense in verse forty; the life is promised to "every one which seeth the Son, and believeth on him," a believing that is present and ongoing, not a single moment left forever behind. Christ promises that He will never reject anyone who comes to Him. The door is never shut from His side, and that is wonderful news for the doubting and the weak. Yet the same chapter ends with a sobering line; "From that time many of his disciples went back, and walked no more with him" (John 6:66). He will not cast you out. The Scriptures still record that a man can walk out.</p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Four</span>
+        <h3 class="rebuttal-title">Ephesians 1:13&ndash;14 &middot; The sealing of the Holy Spirit</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">Ephesians 1:13&ndash;14</span>
+        <span class="scripture-text">In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise, which is the earnest of our inheritance until the redemption of the purchased possession.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">The seal of the Spirit is an unbreakable guarantee that locks final salvation in place.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">The Spirit is called the "earnest," that is, the down payment that guarantees the full inheritance to come. Now read the same writer three chapters later; "And grieve not the holy Spirit of God, whereby ye are sealed unto the day of redemption" (Ephesians 4:30). Why would Paul warn a sealed man not to grieve the very One who seals him, if grieving Him held no danger at all? The Spirit is given "to them that obey him" (Acts 5:32). The deposit guarantees the inheritance of those who remain His; it is not a shackle that holds a man who tears himself loose.</p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Five</span>
+        <h3 class="rebuttal-title">Philippians 1:6 &middot; "He will perform it until the day of Jesus Christ"</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">Philippians 1:6</span>
+        <span class="scripture-text">Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">God guarantees to finish the work of salvation in every believer no matter how that believer lives.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">God is faithful; He finishes what He starts. But read on in the same short letter, where Paul commands these very people, "work out your own salvation with fear and trembling" (Philippians 2:12). Paul's confidence is grounded in their continued fellowship in the gospel, which he names plainly in verses five and seven. God completes His good work in the man who remains under His hand, not in the man who walks away from the work. The promise and the command stand together in one letter, and we must let both speak.</p>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Six</span>
+        <h3 class="rebuttal-title">1 Peter 1:5 &middot; "Kept by the power of God"</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">1 Peter 1:5</span>
+        <span class="scripture-text">Who are kept by the power of God through faith unto salvation ready to be revealed in the last time.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">God Himself keeps the believer, therefore the believer cannot fall.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">The verse names the means by which God keeps us; it is "through faith." The keeping power of God works through ongoing, living faith. Remove the faith and you have removed the very channel through which He keeps. This is no idle distinction, for Peter himself goes on to describe men who escaped the pollutions of the world through the knowledge of Christ, then were entangled again and overcome, so that their latter end was worse than the beginning (2 Peter 2:20). The God who keeps through faith warns us not to let go of that faith.</p>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Seven</span>
+        <h3 class="rebuttal-title">John 5:24 &middot; "Passed from death unto life"</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">John 5:24</span>
+        <span class="scripture-text">Verily, verily, I say unto you, He that heareth my word, and believeth on him that sent me, hath everlasting life, and shall not come into condemnation; but is passed from death unto life.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">The believer has already passed from death to life, and that crossing can never be reversed.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">The one described here hears and believes, present and active, and his everlasting life is a true and present possession. We do not soften that for a moment. But the same Scriptures that speak of present life also say, "Now the just shall live by faith: but if any man draw back, my soul shall have no pleasure in him" (Hebrews 10:38). The life is real, and it is held by continuing in the very faith that first received it. A man who has come alive can still, by drawing back, forsake the One who is his life.</p>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Eight</span>
+        <h3 class="rebuttal-title">Romans 8:29&ndash;30 &middot; The chain from foreknowledge to glory</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">Romans 8:30</span>
+        <span class="scripture-text">Moreover whom he did predestinate, them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">This chain is unbreakable, so everyone who is justified is certainly glorified and cannot be lost along the way.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">Paul is tracing the eternal purpose of God toward His people, looking from beginning to end. He is not declaring that a man cannot refuse to walk in that purpose. We know this because the same Paul, in the same letter, three chapters on, warns living believers in the plainest words; "thou standest by faith. Be not highminded, but fear" (Romans 11:20). The eternal purpose of God is sure. The warning to continue in faith is just as surely His word, written by the same hand to the same readers.</p>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="rebuttal">
+      <div class="rebuttal-head">
+        <span class="rebuttal-num">Nine</span>
+        <h3 class="rebuttal-title">Romans 11:29 &middot; "The gifts and calling of God are without repentance"</h3>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">Romans 11:29</span>
+        <span class="scripture-text">For the gifts and calling of God are without repentance.</span>
+      </div>
+      <div class="stance claim">
+        <span class="stance-label">What They Claim</span>
+        <p class="stance-body">God never takes back His calling, so those He has called can never fall away.</p>
+      </div>
+      <div class="stance answer">
+        <span class="stance-label">What It Actually Says</span>
+        <p class="stance-body">This may be the clearest case of all, because the very chapter that supplies the verse supplies the warning against the doctrine. Just a few lines earlier Paul says the natural branches were broken off through unbelief, then turns to the grafted branches and warns, "Be not highminded, but fear: for if God spared not the natural branches, take heed lest he also spare not thee" (Romans 11:20&ndash;21). He continues, "thou also shalt be cut off" (verse 22), unless they continue in His goodness. The chapter quoted to prove that a man cannot be cut off is the very chapter that warns him plainly that he can.</p>
+      </div>
+    </div>
+
+    <!-- PART TWO -->
+    <div class="section-head">
+      <p class="section-eyebrow">Part Two</p>
+      <h2 class="section-title">The Plain Witness of Scripture</h2>
+    </div>
+
+    <p class="body-text">Having shown that the anchoring verses do not teach what is claimed, we now set out the witness that does speak directly to the matter. These passages are not obscure, and they are not few. They are addressed to believers, they use the language of the saved, and they warn of a real and terrible possibility. We let them stand as written.</p>
+
+    <!-- truth: Galatians -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">The Holy Spirit uses the very phrase</p>
+      <div class="scripture">
+        <span class="scripture-ref">Galatians 5:4</span>
+        <span class="scripture-text">Christ is become of no effect unto you, whosoever of you are justified by the law; ye are fallen from grace.</span>
+      </div>
+      <p class="truth-note">The words "fallen from grace" are not ours; they are the inspired words of Paul to a church. A man cannot fall from a grace in which he never stood. The warning assumes a people who were in grace and from which they could fall.</p>
+    </div>
+
+    <!-- truth: vine -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">The vine and the branches</p>
+      <div class="scripture">
+        <span class="scripture-ref">John 15:2, 6</span>
+        <span class="scripture-text">Every branch in me that beareth not fruit he taketh away... If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.</span>
+      </div>
+      <p class="truth-note">These are branches "in me," joined to the true vine, not strangers who were never attached. A branch in Christ that does not abide is taken away, withered, and burned. The whole figure is a warning about union with Christ that is not maintained.</p>
+    </div>
+
+    <!-- truth: Hebrews 6 -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">Those once enlightened</p>
+      <div class="scripture">
+        <span class="scripture-ref">Hebrews 6:4&ndash;6</span>
+        <span class="scripture-text">For it is impossible for those who were once enlightened, and have tasted of the heavenly gift, and were made partakers of the Holy Ghost, and have tasted the good word of God, and the powers of the world to come, if they shall fall away, to renew them again unto repentance; seeing they crucify to themselves the Son of God afresh, and put him to an open shame.</span>
+      </div>
+      <p class="truth-note">No language could describe a believer more fully; enlightened, partakers of the Holy Ghost, having tasted the heavenly gift and the word of God. The Spirit then speaks of these very ones falling away. The warning has no meaning if the people described could never fall.</p>
+    </div>
+
+    <!-- truth: Hebrews 10 -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">Sinning willfully after the truth is known</p>
+      <div class="scripture">
+        <span class="scripture-ref">Hebrews 10:26&ndash;29</span>
+        <span class="scripture-text">For if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins, but a certain fearful looking for of judgment... Of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of God, and hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing...</span>
+      </div>
+      <p class="truth-note">The warning is to "we," to those who have received the knowledge of the truth, who were sanctified by the blood of the covenant. To trample the Son of God and count His blood unholy is the act of one who turns back, and the punishment named is severe beyond the first state.</p>
+    </div>
+
+    <!-- truth: 2 Peter -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">The dog and the washed sow</p>
+      <div class="scripture">
+        <span class="scripture-ref">2 Peter 2:20&ndash;21</span>
+        <span class="scripture-text">For if after they have escaped the pollutions of the world through the knowledge of the Lord and Saviour Jesus Christ, they are again entangled therein, and overcome, the latter end is worse with them than the beginning. For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them.</span>
+      </div>
+      <p class="truth-note">These had escaped the world's pollutions through the knowledge of the Lord, then were entangled again and overcome. Peter says their last state is worse than their first. A man who was never saved had nothing better to lose; only one who truly escaped can end worse than he began.</p>
+    </div>
+
+    <!-- truth: Ezekiel -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">When the righteous turns away</p>
+      <div class="scripture">
+        <span class="scripture-ref">Ezekiel 18:24</span>
+        <span class="scripture-text">But when the righteous turneth away from his righteousness, and committeth iniquity, and doeth according to all the abominations that the wicked man doeth, shall he live? All his righteousness that he hath done shall not be mentioned: in his trespass that he hath trespassed, and in his sin that he hath sinned, in them shall he die.</span>
+      </div>
+      <p class="truth-note">God says of the righteous man who turns to iniquity that his former righteousness shall not be remembered, and in his sin he shall die. The same warning is repeated in Ezekiel 33:12&ndash;13. The standing of the righteous is genuine, and it is forfeited by turning away.</p>
+    </div>
+
+    <!-- truth: conditional gospel -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">The gospel held out with a condition</p>
+      <div class="scripture">
+        <span class="scripture-ref">Colossians 1:22&ndash;23</span>
+        <span class="scripture-text">To present you holy and unblameable and unreproveable in his sight: if ye continue in the faith grounded and settled, and be not moved away from the hope of the gospel...</span>
+        <span class="scripture-ref">1 Corinthians 15:1&ndash;2</span>
+        <span class="scripture-text">...the gospel which I preached unto you... by which also ye are saved, if ye keep in memory what I preached unto you, unless ye have believed in vain.</span>
+        <span class="scripture-ref">Hebrews 3:14</span>
+        <span class="scripture-text">For we are made partakers of Christ, if we hold the beginning of our confidence stedfast unto the end.</span>
+      </div>
+      <p class="truth-note">Three times the Spirit attaches a condition with the small but decisive word "if." We are presented holy if we continue. We are saved if we keep what was preached. We are partakers of Christ if we hold our confidence firm to the end. The condition is not added to grace as a work; it is the mark of a faith that is alive and remains.</p>
+    </div>
+
+    <!-- truth: Paul's fear -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">Even the apostle watched himself</p>
+      <div class="scripture">
+        <span class="scripture-ref">1 Corinthians 9:27</span>
+        <span class="scripture-text">But I keep under my body, and bring it into subjection: lest that by any means, when I have preached to others, I myself should be a castaway.</span>
+        <span class="scripture-ref">1 Corinthians 10:12</span>
+        <span class="scripture-text">Wherefore let him that thinketh he standeth take heed lest he fall.</span>
+      </div>
+      <p class="truth-note">Paul did not hold the doctrine that he could not be lost. He disciplined himself for fear of becoming a castaway, and he warned the confident believer to take heed lest he fall. The man who wrote of God's keeping power also guarded his own walk with holy fear.</p>
+    </div>
+
+    <!-- truth: book of life -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">Names that can be blotted out</p>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 3:5</span>
+        <span class="scripture-text">He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.</span>
+        <span class="scripture-ref">Revelation 22:19</span>
+        <span class="scripture-text">And if any man shall take away from the words of the book of this prophecy, God shall take away his part out of the book of life...</span>
+      </div>
+      <p class="truth-note">The promise not to blot out the name belongs to the one who overcomes. A promise to spare what is faithful carries within it the warning that the unfaithful name can be blotted out. Scripture would not speak of taking a man's part out of the book of life if no part could ever be lost.</p>
+    </div>
+
+    <!-- truth: endure -->
+    <div class="truth-entry">
+      <p class="truth-entry-title">Salvation promised to the one who endures</p>
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 24:13</span>
+        <span class="scripture-text">But he that shall endure unto the end, the same shall be saved.</span>
+        <span class="scripture-ref">2 Peter 1:10</span>
+        <span class="scripture-text">Wherefore the rather, brethren, give diligence to make your calling and election sure: for if ye do these things, ye shall never fall.</span>
+      </div>
+      <p class="truth-note">The Lord ties the promise of being saved to enduring unto the end. Peter urges us to make our calling and election sure, and gives the safeguard against falling. These are commands to a people who can endure or fail to endure, who can stand sure or stumble.</p>
+    </div>
+
+    <!-- BONUS: the test of every warning -->
+    <div class="bonus">
+      <p class="bonus-label">The Test of Every Warning</p>
+      <p>Here is the simplest way to weigh the two teachings. Scripture is full of warnings to believers; endure to the end, abide in the vine, take heed lest you fall, do not grieve the Spirit, hold your confidence steadfast, do not draw back. If a true believer genuinely cannot fall, then every one of these warnings is empty speech addressed to a danger that does not exist. God does not warn His people against the impossible.</p>
+      <p>Sound doctrine must account for the warnings, not explain them away one by one until none is left standing. The plain reading honors both the promises and the warnings; God will lose none who remain His, and He calls His people, with real urgency, to remain.</p>
+    </div>
+
+    <!-- BONUS: this is not works salvation -->
+    <div class="bonus">
+      <p class="bonus-label">This Is Not Salvation by Works</p>
+      <p>To say a man can fall from grace is not to say he is saved or kept by his own works. Salvation is by grace through faith, the gift of God, not of works, lest any man should boast (Ephesians 2:8&ndash;9). We do not earn it, and we do not hold it by our performance.</p>
+      <p>The faith that saves is a living faith, the kind that continues and obeys; the faith that James calls dead is faith that has ceased to live. So a believer does not fall by stumbling into a sin and then repenting, for that is the ordinary battle of the Christian life met by the blood of Christ. He falls by abandoning the faith, turning back to the world, and refusing to repent. The danger is not the trembling soul who fears he has failed; it is the hardened soul who has departed and will not return.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <div class="section-head" style="margin-top:0;padding-top:0;border-top:none;">
+        <p class="section-eyebrow">The Settled End</p>
+        <h2 class="section-title">Where the Tree Falls</h2>
+      </div>
+      <p class="body-text">The whole matter comes to rest at the end of a life. The believer who walks with Christ has nothing to fear, for no power in heaven or earth can pluck him from the Shepherd's hand. The danger is never from without; it is the danger of turning away ourselves, of drawing back, of letting go of the faith through which God keeps us. Such departure calls for immediate repentance, and the door of return stands open while there is breath.</p>
+      <p class="body-text">But the state of the soul at the close of life is fixed. As the wise man wrote, where the tree falls, there it shall lie. This is why the call of the gospel is not only to begin but to endure, to abide, to hold fast, and to make our calling and election sure. We are kept by the power of God through faith, and we are called to keep that faith to the end.</p>
+      <div class="scripture">
+        <span class="scripture-ref">Ecclesiastes 11:3</span>
+        <span class="scripture-text">...and if the tree fall toward the south, or toward the north, in the place where the tree falleth, there it shall be.</span>
+        <span class="scripture-ref">Revelation 2:10</span>
+        <span class="scripture-text">...be thou faithful unto death, and I will give thee a crown of life.</span>
+      </div>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Kept by the Power of God Through Faith &middot; Endure Unto the End &middot; 1 Peter 1:5</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

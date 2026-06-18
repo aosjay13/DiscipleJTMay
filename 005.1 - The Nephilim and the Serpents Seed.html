@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nephilim and the Seed of the Serpent</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; counter-reset: toc; }
+  .toc-list li { margin-bottom: 0.5rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+
+  .section-body strong { color: var(--ink); font-weight: 600; }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+
+  /* ── KEY POINT CALLOUT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+    position: relative;
+  }
+
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+
+  .keypoint p {
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+
+  .keypoint strong { color: var(--ink); }
+
+  /* ── POSITION CARD (for the three views) ── */
+  .position {
+    margin: 1.3rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+  }
+
+  .position-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
+  }
+
+  .position-body {
+    font-size: 1rem;
+    line-height: 1.78;
+    color: var(--ink-mid);
+  }
+
+  .verdict-tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.7rem;
+    margin-top: 0.7rem;
+    border-radius: 2px;
+  }
+  .verdict-strong { background: var(--crimson); color: var(--gold-pale); }
+  .verdict-weak { background: #C9A84C33; color: var(--ink-soft); border: 1px solid var(--gold-light); }
+
+  /* ── TIMELINE PHASE ── */
+  .phase {
+    margin: 1.6rem 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A44;
+    border-left: 4px solid var(--gold);
+    counter-increment: phase;
+  }
+
+  .phase-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .phase-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--crimson);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .phase-body {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .phase-body p + p { margin-top: 0.7rem; }
+
+  /* ── THREE TIER LIST ── */
+  .tier-list { list-style: none; margin: 1rem 0; }
+  .tier-list li {
+    padding: 0.7rem 0 0.7rem 2.4rem;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--ink-mid);
+  }
+  .tier-list li:last-child { border-bottom: none; }
+  .tier-list li::before {
+    content: counter(tier);
+    counter-increment: tier;
+    position: absolute;
+    left: 0; top: 0.7rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold-pale);
+    background: var(--crimson);
+    width: 1.7rem; height: 1.7rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tier-list { counter-reset: tier; }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .conclusion-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #EDE0C4;
+  }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.2rem;
+    border-top: 2px solid var(--rule-solid);
+    margin-top: 3rem;
+    background: linear-gradient(to top, #F5EDDA, var(--parchment));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.8;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .section { page-break-inside: avoid; }
+    .conclusion { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .doc-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+    .tier-list li { padding-left: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">A Scriptural Study</p>
+    <h1 class="doc-title">The Nephilim &amp; the Seed of the Serpent</h1>
+    <p class="doc-subtitle">From the Sons of God in Genesis to the Crushing of the Serpent's Head at Armageddon</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">The question of who the sons of God were in Genesis 6 is one of the most fascinating in all of Scripture, and the answer reaches far beyond a single chapter. When followed faithfully, this thread runs from the third chapter of Genesis to the twentieth chapter of Revelation, tying together the corruption before the flood, the giants of Canaan, the spiritual princes of the nations, the mingling foretold in Daniel, and the final battle at Armageddon. It is not a collection of loosely related curiosities. It is one seamless narrative of a long war, declared in the Garden, fought across the whole of history, and finished by the return of the King.</p>
+      <p>This study traces that thread from beginning to end, drawn entirely from the testimony of Scripture, so that the believer may see the unbroken story God has told from Genesis to Revelation.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span>The Sons of God in Genesis 6</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span>The Witness of the New Testament</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>The Return of the Giants After the Flood</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>The Unfinished Mission and the Man After God's Heart</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>The Prophecy of Daniel 2:43</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>The Days of Noah and the End-Times Incursion</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span>Armageddon and the Crushing of the Serpent's Seed</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span>The Whole Story in One Thread</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Sons of God in Genesis 6</h2>
+      </div>
+      <div class="section-body">
+        <p>The account opens with a startling few verses. The sons of God saw the daughters of men, took wives from among them, and their offspring were the Nephilim, the mighty men of old, men of renown.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 6:1&ndash;4</span>
+          <span class="scripture-text">And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them, that the sons of God saw the daughters of men that they were fair; and they took them wives of all which they chose... There were giants in the earth in those days; and also after that, when the sons of God came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.</span>
+        </div>
+
+        <p>The decisive clue is in the Hebrew phrase rendered "sons of God," which is <em>bene ha'elohim</em>. Every other place this exact phrase appears in the Old Testament, it refers without ambiguity to angelic beings. It is used this way in Job 1:6, Job 2:1, and Job 38:7, where the sons of God shout for joy at creation, long before any man existed. The plain meaning of the phrase, used consistently throughout Scripture, points to angelic beings. The burden of proof falls entirely upon anyone who would make it mean something different here.</p>
+
+        <p>Three interpretations have been offered through the centuries. Let us weigh each against the text.</p>
+
+        <div class="position">
+          <p class="position-title">The Fallen Angels View</p>
+          <p class="position-body">The oldest interpretation, held by nearly every Jewish and Christian reader for the first several centuries. It rests on the consistent meaning of <em>bene ha'elohim</em>, the explicit testimony of the New Testament, and the fact that it actually explains the Nephilim and the severity of the flood. This is the reading the text itself supports.</p>
+          <span class="verdict-tag verdict-strong">Scripturally Sound</span>
+        </div>
+
+        <div class="position">
+          <p class="position-title">The Sethite View</p>
+          <p class="position-body">A later development, popularized after Augustine, claiming the sons of God were the godly line of Seth marrying the ungodly line of Cain. But "sons of God" is never used of a godly human lineage anywhere in the Old Testament. This view cannot explain why such unions produced giants, nor why the punishment was a worldwide flood. It arose largely from discomfort with the angelic reading, not from careful study of the text.</p>
+          <span class="verdict-tag verdict-weak">Textually Weak</span>
+        </div>
+
+        <div class="position">
+          <p class="position-title">The Divine Kings View</p>
+          <p class="position-body">A claim that the sons of God were ancient rulers asserting divine status. It has almost no support within Scripture itself and relies heavily on outside parallels. It does not account for the offspring or the severity of judgment.</p>
+          <span class="verdict-tag verdict-weak">Little Support</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Common Objection Answered</p>
+          <p>Some cite Matthew 22:30, where Jesus says angels in heaven neither marry nor are given in marriage. But notice His exact words: <strong>angels of God in heaven.</strong> He describes holy angels in their proper domain. He is not describing fallen angels who have abandoned that domain, which is precisely what Jude says they did. Their sin was leaving their assigned place and crossing a boundary God established.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Witness of the New Testament</h2>
+      </div>
+      <div class="section-body">
+        <p>The fallen-angel reading is not built on the Old Testament alone. The New Testament writers confirm it directly, and with remarkable convergence. Jude ties specific angels who abandoned their proper place to sexual immorality, drawing a deliberate parallel with Sodom.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Jude 6&ndash;7</span>
+          <span class="scripture-text">And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day. Even as Sodom and Gomorrha, and the cities about them in like manner, giving themselves over to fornication, and going after strange flesh, are set forth for an example.</span>
+        </div>
+
+        <p>The phrase "in like manner" links the angels' sin to the same category of forbidden union. Then Peter places the sinning angels immediately alongside the flood in the same breath, connecting the two events directly.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Peter 2:4&ndash;5</span>
+          <span class="scripture-text">For if God spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment; and spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly.</span>
+        </div>
+
+        <p>Peter elsewhere speaks of spirits in prison who were disobedient in the days of Noah, the very period of Genesis 6. Three separate New Testament passages all point back to the same event, all involving angelic beings, all connected to the flood. This is a convergence too strong to dismiss.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Return of the Giants After the Flood</h2>
+      </div>
+      <div class="section-body">
+        <p>If the flood destroyed the corrupted world, how do giants appear again afterward? The text itself opens the door. Genesis 6:4 says there were giants "in those days; <strong>and also after that.</strong>" That phrase points beyond the pre-flood era to a later recurrence. Two explanations stand out, and they may well work together.</p>
+
+        <div class="position">
+          <p class="position-title">A Second Incursion of Fallen Angels</p>
+          <p class="position-body">The pre-flood angels were imprisoned, but Satan commands a vast host, and other fallen beings could repeat the same transgression. This fits the striking fact that post-flood giants appear in a tight geographic cluster, concentrated in Canaan and the surrounding lands. It also explains why God commanded the utter destruction of those specific nations.</p>
+        </div>
+
+        <div class="position">
+          <p class="position-title">Corrupted Genetics Through the Ark</p>
+          <p class="position-body">Genesis 6:9 says Noah was "perfect in his generations," using a word meaning unblemished, and applied specifically to his lineage. Yet Scripture says nothing of the lineage of his sons' wives. If one of them carried the corrupted line, the giants could reappear without a second incursion. The Nephilim would not have returned; they would never have fully left.</p>
+        </div>
+
+        <p>The biblical record of the post-flood giants is detailed and specific. They are gathered under several names across the books of Moses and Joshua.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Numbers 13:33</span>
+          <span class="scripture-text">And there we saw the giants, the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers, and so we were in their sight.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 3:11</span>
+          <span class="scripture-text">For only Og king of Bashan remained of the remnant of giants; behold, his bedstead was a bedstead of iron... nine cubits was the length thereof, and four cubits the breadth of it.</span>
+        </div>
+
+        <p>The same line appears as the Rephaim, the Emim "as tall as the Anakim," and the Zamzummim. And one of the four giants of Gath bore a telling physical mark, six fingers on each hand and six toes on each foot, an anomaly that points to something beyond ordinary human variation.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Samuel 21:20</span>
+          <span class="scripture-text">And there was yet a battle in Gath, where was a man of great stature, that had on every hand six fingers, and on every foot six toes, four and twenty in number; and he also was born to the giant.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Why the Command to Utterly Destroy</p>
+          <p>God's command to wipe out specific Canaanite nations completely was not arbitrary cruelty. It was a targeted response to a specific corruption that had taken root in that land. The destruction of the giants and the cleansing of Canaan are the same campaign.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">The Unfinished Mission and the Man After God's Heart</h2>
+      </div>
+      <div class="section-body">
+        <p>Why did some giants survive long enough for David to face them centuries later? The answer is found in the faithfulness, and the failures, of those God appointed to the task. Joshua was faithful, but he was mortal. He cleared the highlands completely, yet a remnant remained in three specific cities.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Joshua 11:21&ndash;22</span>
+          <span class="scripture-text">And at that time came Joshua, and cut off the Anakims from the mountains... Joshua destroyed them utterly with their cities. There was none of the Anakims left in the land of the children of Israel: only in Gaza, in Gath, and in Ashdod, there remained.</span>
+        </div>
+
+        <p>Notice where they remained: Gaza, Gath, and Ashdod, the Philistine territory. And from Gath would come the most famous giant of all. Joshua ran out of years, as God Himself acknowledged when He said to him, "Thou art old and stricken in years, and there remaineth yet very much land to be possessed."</p>
+
+        <p>Where mortality stopped Joshua, disobedience stopped others. King Saul was commanded to utterly destroy the Amalekites, yet he spared their king. The consequence of that single act of partial obedience stretched across centuries, for Haman, who nearly destroyed the entire Jewish people, was a descendant of the very royal line Saul refused to cut off.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Pattern of Partial Obedience</p>
+          <p>God gives a command. His servants carry it out only in part. The consequences of that partiality accumulate across generations. Then God raises up a man whose heart is fully toward Him to finish what was left undone. <strong>Incomplete obedience is never neutral. It always costs someone something downstream.</strong></p>
+        </div>
+
+        <p>The mission was finally completed by a man after God's own heart. In 2 Samuel 21, David and his mighty men struck down four giants of Gath, named individually, as though closing a long-open account. The last of them fell to David's own household. What Joshua's mortality, Saul's disobedience, and the compromise of the judges left undone, David and his house brought to an end.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Prophecy of Daniel 2:43</h2>
+      </div>
+      <div class="section-body">
+        <p>After the giants of Gath, the thread seems to vanish from the record. But the prophet Daniel reopens it, pointing toward the final kingdom of the last days. In Nebuchadnezzar's dream of the great statue, each metal is a successive empire, ending with feet of iron mixed with clay.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 2:43</span>
+          <span class="scripture-text">And whereas thou sawest iron mixed with miry clay, they shall mingle themselves with the seed of men: but they shall not cleave one to another, even as iron is not mixed with clay.</span>
+        </div>
+
+        <p>The key is the word "they." If "they" were merely human rulers uniting through political marriage, the verse would make little sense, for human beings already <em>are</em> the seed of men. You would not say that men mingle with the seed of men. The phrase only holds together if the "they" is a category distinct from humanity. The text itself draws a line between two kinds of being.</p>
+
+        <p>Set this beside the language of Genesis 6, where the sons of God, beings distinct from humanity, came in unto the daughters of men. The structure is the same. Non-human beings mingling with the human line. Daniel describes a future recurrence of the very event recorded in Genesis 6.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">"They Shall Not Cleave"</p>
+          <p>Even with this mingling, the iron and clay do not bond. This tells us the corruption, though real, is only partly successful, just as in Noah's day a remnant remained uncorrupted. It also explains why the final kingdom is "partly strong, and partly broken." A kingdom with such backing should be unbreakable, yet it fractures, because the two natures fundamentally cannot permanently unite.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Days of Noah and the End-Times Incursion</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord Jesus Himself tied the conditions of His return to the days of Noah, and He meant the whole of those days, not merely their moral climate.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:37</span>
+          <span class="scripture-text">But as the days of Noe were, so shall also the coming of the Son of man be.</span>
+        </div>
+
+        <p>Three passages form a triangle. Genesis 6 describes the original incursion. Daniel 2:43 foretells its recurrence in the last kingdom. Matthew 24:37 ties the end times directly to the days of Noah. Laid together, they reveal a deliberate, Satan-driven effort to repeat the corruption of Genesis 6 in the final days before Christ returns.</p>
+
+        <p>The motive behind it reaches back to the Garden, to the first prophecy in all of Scripture.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 3:15</span>
+          <span class="scripture-text">And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.</span>
+        </div>
+
+        <p>Two seeds in conflict. The seed of the woman and the seed of the serpent. The first incursion was an attempt to corrupt the human line so completely that the promised seed could never come. God preserved Noah's uncorrupted line and sent the flood. The seed of the woman came in Christ, and the serpent's head was struck at the cross. Yet the war is not over, and Daniel 2:43 suggests the enemy returns to the same strategy one final time.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Strong Delusion</p>
+          <p>This deception unfolds alongside the revealing of the man of sin. Paul says God sends a strong delusion to those who "received not the love of the truth." It is a judicial act, falling not on those who never heard, but on those who heard the truth and deliberately refused it. The falling away prepares the ground first, stripping people of discernment, so that when the man of sin is revealed, they cannot recognize what they are seeing.</p>
+        </div>
+
+        <p>The sequence in 2 Thessalonians 2 is precise: the falling away comes <em>first</em>, then the man of sin is revealed, then the strong delusion confirms the lost in their chosen rejection. And the protection language of the trumpet judgments confirms that by the time these released beings ravage the earth, the body of Christ has already been gathered. They are released into a world from which the saints have been removed.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 12:17</span>
+          <span class="scripture-text">And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ.</span>
+        </div>
+
+        <p>The dragon's specific targets are not professing believers in general, but those who keep the commandments of God and hold the testimony of Jesus. The falling away separates the nominal from the genuine, and what remains is exactly this faithful, commandment-keeping remnant.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION VII -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">Section VII</span>
+        <h2 class="section-title">Armageddon and the Crushing of the Serpent's Seed</h2>
+      </div>
+      <div class="section-body">
+        <p>Armageddon is commonly pictured as a great clash of human armies. But Scripture reveals it operating on more than one dimension at once. Consider first how the armies are gathered.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 16:13&ndash;14</span>
+          <span class="scripture-text">And I saw three unclean spirits like frogs come out of the mouth of the dragon... For they are the spirits of devils, working miracles, which go forth unto the kings of the earth and of the whole world, to gather them to the battle of that great day of God Almighty.</span>
+        </div>
+
+        <p>The armies are not assembled by human alliance, but by demonic spirits. The battle is supernaturally engineered from the start. And every nation that marches carries with it the spiritual prince assigned to it, for Scripture teaches that fallen powers stand behind the nations.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 6:12</span>
+          <span class="scripture-text">For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.</span>
+        </div>
+
+        <p>The book of Daniel shows these princes by name, the prince of Persia and the prince of Greece, spiritual rulers behind earthly kingdoms. When the nations converge at Armageddon, their spiritual rulers converge with them. And the prophet Isaiah reveals that God judges both tiers in a single act.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 24:21&ndash;22</span>
+          <span class="scripture-text">And it shall come to pass in that day, that the LORD shall punish the host of the high ones that are on high, and the kings of the earth upon the earth. And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison.</span>
+        </div>
+
+        <p>Two groups, judged together: the host on high, and the kings of the earth. The fallen powers and the human rulers, brought low in the same moment. This is why the stone in Daniel's vision strikes the statue precisely at the feet, the very place where iron and clay were illegitimately fused.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 2:34&ndash;35</span>
+          <span class="scripture-text">Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces... and the wind carried them away, that no place was found for them.</span>
+        </div>
+
+        <p>The blow falls where the corruption is concentrated, and the whole structure, every empire from Babylon onward, is reduced to chaff and swept away. Armageddon is not merely the defeat of a final empire. It is the removal of the entire fallen system of human governance that has stood under demonic influence since Babel.</p>
+
+        <p>The judgment falls in three tiers, matching the three-fold structure of the enemy's kingdom.</p>
+
+        <ol class="tier-list">
+          <li>The beast and the false prophet, the human-faced leadership, are cast alive into the lake of fire. <em>(Revelation 19:20)</em></li>
+          <li>The human armies are slain by the sword of His mouth. <em>(Revelation 19:21)</em></li>
+          <li>The dragon, that old serpent, is bound and cast into the bottomless pit. <em>(Revelation 20:1&ndash;3)</em></li>
+        </ol>
+
+        <p>And so the sentence first pronounced in the Garden is finally executed in full.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 20:10</span>
+          <span class="scripture-text">And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION VIII -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">Section VIII</span>
+        <h2 class="section-title">The Whole Story in One Thread</h2>
+      </div>
+      <div class="section-body">
+        <p>What begins as a question about a few verses in Genesis 6 turns out to be the spine of the entire biblical narrative. Trace the thread from end to end.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Declaration</p>
+        <p class="phase-title">Enmity Between Two Seeds</p>
+        <p class="phase-body">In the Garden, God declares war between the seed of the serpent and the seed of the woman. Everything that follows is the unfolding of that single prophecy.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The First Strike</p>
+        <p class="phase-title">The Incursion Before the Flood</p>
+        <p class="phase-body">The sons of God corrupt the human line, seeking to prevent the promised seed from ever coming. God preserves Noah's uncorrupted lineage and cleanses the earth with the flood.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Persistence</p>
+        <p class="phase-title">The Giants of Canaan</p>
+        <p class="phase-body">The corruption reappears, concentrated in the land of promise. God commands its complete removal. Through Joshua, the judges, the kings, and finally David, the line of giants is at last brought to an end.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Coming of the Seed</p>
+        <p class="phase-title">The Heel Bruised at the Cross</p>
+        <p class="phase-body">The seed of the woman comes in Jesus Christ, born of an uncorrupted line. At the cross the serpent bruises His heel, but in that very act the killing blow to the serpent's head is begun.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Final Attempt</p>
+        <p class="phase-title">The Days of Noah Return</p>
+        <p class="phase-body">In the last days, the enemy returns to his oldest strategy. The mingling of Daniel 2:43, the falling away, the man of sin, and the strong delusion converge as the days of Noah are repeated before the gathering of the faithful remnant.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Final Blow</p>
+        <p class="phase-title">The Head Crushed at Armageddon</p>
+        <p class="phase-body">The stone cut without hands strikes the feet of iron and clay. Human leadership, human armies, and the spiritual powers behind them are all judged together. The serpent is bound and cast down, and the sentence of the Garden is fulfilled in full.</p>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Reign</p>
+        <p class="phase-title">The Whole Earth Walks in His Ways</p>
+        <p class="phase-body">The King who is Lord of the Sabbath reigns from Zion. The law goes forth from Jerusalem, and the nations keep His commandments and His appointed times. The long war is over, and the people of God dwell in everlasting rest.</p>
+      </div>
+    </section>
+
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">One Seamless Narrative, Genesis to Revelation</h3>
+      <div class="conclusion-body">
+        <p>The identity of the sons of God, the mystery of the Nephilim, the prophecy of Daniel, the conditions of the last days, and the battle of Armageddon are not separate doctrines loosely tied together. They are one story, told from the first book of the Bible to the last.</p>
+        <p>The same enemy who sought to corrupt the human race before the flood seeks to corrupt it again before the end. The same God who preserved a faithful remnant in Noah's day preserves a faithful, <em>commandment-keeping</em> remnant in the last days. And the same promise spoken in the Garden, that the seed of the woman would crush the serpent's head, is carried unbroken through every chapter until it is fulfilled completely at the return of the King.</p>
+        <p>Let the believer take heart. The war was declared at the beginning, it has been fought across all of history, and its outcome was never in doubt. <em>The stone cut without hands does not negotiate. It fills the whole earth.</em></p>
+      </div>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Sola Scriptura &middot; The seed of the woman shall bruise the serpent's head &middot; Genesis 3:15</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

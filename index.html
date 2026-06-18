@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brother Justin May &middot; Pronomian Bible Teaching</title>
+<meta name="description" content="The Bible teaching ministry of Brother Justin May. Pronomian in theology, rooted in the King James Bible, from Genesis to Revelation.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --crimson-dk:  #2a1414;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HERO (crimson banner) ── */
+  .site-hero {
+    text-align: center;
+    padding: 3.4rem 2rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .site-hero::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .emblem {
+    width: 132px; height: 132px;
+    margin: 0 auto 1.3rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .emblem-svg { width: 132px; height: 132px; display: block; }
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.9rem;
+  }
+  .hero-role {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.78rem, 1.7vw, 0.95rem);
+    letter-spacing: 0.14em;
+    color: var(--gold-pale);
+    margin-top: 0.85rem;
+    text-transform: uppercase;
+    opacity: 0.95;
+  }
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .hero-verse {
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    color: var(--gold-pale);
+    margin-top: 1.1rem;
+    opacity: 0.94;
+    max-width: 620px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.7;
+  }
+  .hero-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-top: 0.7rem;
+  }
+  .header-rule {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin: 1.6rem auto 0; max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── NAV ── */
+  .site-nav {
+    position: sticky; top: 0; z-index: 5;
+    background: linear-gradient(to bottom, #F3EAD3, var(--cream));
+    border-bottom: 2px solid var(--rule-solid);
+    border-top: 1px solid #D4B97A55;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.4rem 0.2rem;
+    padding: 0.7rem 1rem;
+  }
+  .site-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    padding: 0.45rem 0.95rem;
+    border-radius: 2px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .site-nav a:hover { color: var(--crimson); background: rgba(122,31,31,0.06); }
+
+  /* ── BODY SECTIONS ── */
+  .section { padding: 2.8rem 3rem; border-bottom: 1px solid var(--rule); }
+  .section:last-of-type { border-bottom: none; }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    font-weight: 700;
+    color: var(--crimson);
+    line-height: 1.25;
+  }
+  .section-lead {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    margin-top: 1rem;
+    max-width: 70ch;
+  }
+  .section-lead + .section-lead { margin-top: 0.9rem; }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    margin: 1.8rem 0 0;
+    padding: 1.3rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .scripture-text { font-style: italic; color: var(--ink-mid); font-size: 1.04rem; line-height: 1.8; }
+
+  /* ── FEATURED ARTICLES ── */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+  }
+  .feature-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.6rem 1.6rem 1.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .feature-card::after {
+    content: ''; position: absolute; inset: 8px;
+    border: 1px solid rgba(201,168,76,0.4); pointer-events: none;
+  }
+  .feature-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(42,20,20,0.3); }
+  .feature-kind {
+    font-family: 'Cinzel', serif; font-size: 0.62rem;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 0.6rem;
+  }
+  .feature-card h3 {
+    font-family: 'Cinzel', serif; font-size: 1.18rem; font-weight: 600;
+    color: #FBF6E9; line-height: 1.25;
+  }
+  .feature-card p { font-style: italic; font-size: 0.98rem; line-height: 1.6; margin-top: 0.6rem; color: #EDE0C4; }
+  .feature-card .go {
+    display: inline-block; margin-top: 1rem;
+    font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold-light);
+  }
+
+  /* ── DOCTRINE CATEGORIES ── */
+  .category { margin-top: 2.4rem; }
+  .category:first-of-type { margin-top: 1.8rem; }
+  .category-head {
+    display: flex; align-items: baseline; gap: 0.9rem;
+    border-bottom: 1px solid var(--rule); padding-bottom: 0.55rem; margin-bottom: 1.2rem;
+  }
+  .category-head h3 {
+    font-family: 'Cinzel', serif; font-size: 1.12rem; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.02em;
+  }
+  .category-head .count {
+    font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.16em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .category > p.cat-note { color: var(--ink-soft); font-style: italic; font-size: 0.98rem; margin: -0.6rem 0 1.1rem; }
+
+  .doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    gap: 0.9rem;
+  }
+  .doc-card {
+    display: flex; flex-direction: column;
+    text-decoration: none; color: inherit;
+    padding: 1.1rem 1.2rem 1rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-left: 3px solid var(--gold-light);
+    transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s, background 0.18s;
+  }
+  .doc-card:hover {
+    border-left-color: var(--crimson);
+    background: #F6EFDD;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow);
+  }
+  .doc-card .doc-tag {
+    font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .doc-card h4 {
+    font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600;
+    color: var(--ink); line-height: 1.3; transition: color 0.18s;
+  }
+  .doc-card:hover h4 { color: var(--crimson); }
+  .doc-card p { font-style: italic; font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft); margin-top: 0.5rem; flex: 1; }
+  .doc-card .read {
+    margin-top: 0.9rem; font-family: 'Cinzel', serif; font-size: 0.62rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--crimson); opacity: 0.85;
+  }
+  .doc-card .read::after { content: ' \2192'; }
+
+  /* ── STUDY THE WORD ── */
+  .study-panel {
+    margin-top: 1.8rem;
+    padding: 1.8rem 2rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border: 1px solid #D4B97A55;
+    border-left: 4px solid var(--crimson);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; justify-content: space-between;
+  }
+  .study-panel .study-text h3 {
+    font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--crimson); margin-bottom: 0.5rem;
+  }
+  .study-panel .study-text p { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); max-width: 52ch; }
+  .btn-gold {
+    display: inline-block; white-space: nowrap;
+    font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #FBF6E9; text-decoration: none;
+    padding: 0.85rem 1.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    border: 1px solid var(--gold-light);
+    box-shadow: 0 3px 10px rgba(42,20,20,0.25);
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 7px 18px rgba(42,20,20,0.32); }
+
+  /* ── FOOTER (crimson) ── */
+  .site-footer {
+    background: linear-gradient(135deg, var(--crimson-dk) 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    padding: 3rem 2rem 2.4rem;
+    text-align: center;
+    position: relative;
+  }
+  .site-footer::after {
+    content: ''; position: absolute; inset: 12px;
+    border: 1px solid rgba(201,168,76,0.32); pointer-events: none;
+  }
+  .footer-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.7rem;
+  }
+  .footer-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 700;
+    color: #FBF6E9; line-height: 1.25;
+  }
+  .footer-sub { font-style: italic; color: var(--gold-pale); margin-top: 0.8rem; opacity: 0.9; }
+
+  .social-group { margin-top: 2rem; }
+  .social-group .group-label {
+    font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+  }
+  .social-group .group-label span { height: 1px; width: 40px; background: var(--gold-light); opacity: 0.5; }
+  .social-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; }
+  .social-link {
+    text-decoration: none; color: var(--gold-pale);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    transition: transform 0.18s;
+  }
+  .social-link:hover { transform: translateY(-3px); }
+  .social-icon {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: rgba(245,237,216,0.07);
+    border: 1px solid var(--gold-light);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.18s;
+  }
+  .social-link:hover .social-icon { background: rgba(201,168,76,0.22); }
+  .social-icon svg { width: 24px; height: 24px; }
+  .social-icon svg [fill="currentColor"], .social-icon svg path[fill="currentColor"] { fill: var(--gold-pale); }
+  .social-label { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-pale); }
+
+  .footer-rule {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin: 2.4rem auto 1.6rem; max-width: 280px;
+  }
+  .footer-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.5; }
+  .footer-rule i { color: var(--gold-light); font-style: normal; }
+  .footer-fine {
+    font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold-light); line-height: 1.9;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .section { padding: 2rem 1.4rem; }
+    .site-hero { padding: 2.6rem 1.3rem 2rem; }
+    .study-panel { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ── PRINT (US Letter, 8.5 x 11) ── */
+  @page { size: letter portrait; margin: 0.5in; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .site-nav { display: none; }
+    .site-hero, .site-footer, .feature-card, .study-panel,
+    .btn-gold, .social-icon {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    .section, .category, .feature-card, .doc-card { page-break-inside: avoid; }
+    .social-link { color: #2a1414; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ════════ HERO ════════ -->
+  <header class="site-hero" id="top">
+        <div class="emblem">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-label="Open Bible emblem">
+  <g fill="none" stroke="#C9A84C" stroke-width="1.6">
+    <circle cx="60" cy="60" r="55"/>
+    <circle cx="60" cy="60" r="48" stroke-width="0.9" opacity="0.7"/>
+  </g>
+  <g stroke="#C9A84C" stroke-width="1.1" stroke-linecap="round" opacity="0.85">
+    <line x1="60" y1="27" x2="60" y2="37"/>
+    <line x1="47" y1="31" x2="51" y2="40"/>
+    <line x1="73" y1="31" x2="69" y2="40"/>
+    <line x1="37" y1="41" x2="43" y2="47"/>
+    <line x1="83" y1="41" x2="77" y2="47"/>
+  </g>
+  <g stroke="#F5EDD8" stroke-width="1.7" stroke-linejoin="round" fill="none">
+    <path d="M60 55 C 52 50, 42 50, 34 54 L34 81 C42 77, 52 77, 60 82 Z"/>
+    <path d="M60 55 C 68 50, 78 50, 86 54 L86 81 C78 77, 68 77, 60 82 Z"/>
+    <line x1="60" y1="55" x2="60" y2="82"/>
+  </g>
+  <g stroke="#C9A84C" stroke-width="0.8" opacity="0.8" stroke-linecap="round">
+    <line x1="40" y1="59" x2="55" y2="57"/>
+    <line x1="40" y1="64" x2="55" y2="62"/>
+    <line x1="40" y1="69" x2="55" y2="67"/>
+    <line x1="65" y1="57" x2="80" y2="59"/>
+    <line x1="65" y1="62" x2="80" y2="64"/>
+    <line x1="65" y1="67" x2="80" y2="69"/>
+  </g>
+  <g fill="#C9A84C">
+    <path d="M22 64 l1.1 2.4 2.6.3 -1.9 1.7 .5 2.5 -2.3-1.3 -2.3 1.3 .5-2.5 -1.9-1.7 2.6-.3z"/>
+    <path d="M98 64 l1.1 2.4 2.6.3 -1.9 1.7 .5 2.5 -2.3-1.3 -2.3 1.3 .5-2.5 -1.9-1.7 2.6-.3z"/>
+  </g>
+  <text x="60" y="103" text-anchor="middle" font-family="Cinzel, serif" font-size="6.4" letter-spacing="1.6" fill="#C9A84C">SOLA SCRIPTURA</text>
+</svg>
+    </div>
+    <p class="hero-eyebrow">Pronomian Bible Teaching</p>
+    <h1 class="hero-title">Brother Justin May</h1>
+    <p class="hero-role">A Teacher at Work the Word Church, Madison</p>
+    <p class="hero-verse">Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.</p>
+    <p class="hero-ref">2 Timothy 2:15 &middot; KJV</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- ════════ NAV ════════ -->
+  <nav class="site-nav">
+    <a href="#welcome">Welcome</a>
+    <a href="#articles">Articles of Faith</a>
+    <a href="#doctrine">Doctrine</a>
+    <a href="#study">Study the Word</a>
+    <a href="#connect">Connect</a>
+  </nav>
+
+  <!-- ════════ WELCOME ════════ -->
+  <section class="section" id="welcome">
+    <p class="eyebrow">Welcome</p>
+    <h2 class="section-title">A Place to Study the Scriptures</h2>
+    <p class="section-lead">Welcome. My name is Brother Justin May, and I teach the Bible. The teachings gathered here are Pronomian in theology. That word simply means I hold that the Law of God still stands as the shape of a faithful life, while salvation itself is the free gift of God, given by grace through faith in Jesus Christ.</p>
+    <p class="section-lead">We are saved by grace, not by keeping the Law. Yet a heart that loves God keeps His commandments. The moral commandments, the seventh-day Sabbath, and the appointed feasts still belong to the believer, while the priesthood and the sacrifices found their end in Christ. Obedience here is not a burden. It is the fruit of love.</p>
+    <p class="section-lead">Read slowly, compare everything to Scripture, and hold fast to what is good.</p>
+    <div class="scripture">
+      <span class="scripture-ref">Isaiah 8:20</span>
+      <span class="scripture-text">To the law and to the testimony: if they speak not according to this word, it is because there is no light in them.</span>
+    </div>
+  </section>
+
+  <!-- ════════ ARTICLES OF FAITH ════════ -->
+  <section class="section" id="articles">
+    <p class="eyebrow">Where to Begin</p>
+    <h2 class="section-title">Articles of Faith &amp; Practice</h2>
+    <p class="section-lead">These two documents set out what we believe and why. Start here to understand the foundation that every teaching on this site is built upon.</p>
+    <div class="featured-grid">
+
+      <a class="feature-card" href="./001%20-%20Bylaws%20of%20Faith%20and%20Practice.html">
+        <p class="feature-kind">Foundational Document</p>
+        <h3>Bylaws of Faith and Practice</h3>
+        <p>Rooted in Scripture, established in covenant. The articles of belief and the order of the assembly.</p>
+        <span class="go">Read &#8594;</span>
+      </a>
+
+      <a class="feature-card" href="./001.1%20-%20The%20First%20Pronomian%20Statement.html">
+        <p class="feature-kind">Statement of Belief</p>
+        <h3>The First Pronomian Statement</h3>
+        <p>Our stand on the continuing validity of God's Law and the unity of the Old and New Testaments.</p>
+        <span class="go">Read &#8594;</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ════════ DOCTRINE LIBRARY ════════ -->
+  <section class="section" id="doctrine">
+    <p class="eyebrow">The Teaching Library</p>
+    <h2 class="section-title">Doctrine</h2>
+    <p class="section-lead">Every teaching below is grouped by subject so you can find what you are studying. Each one quotes Scripture in full and is written to be read on its own.</p>
+
+    <!-- THE LAW -->
+    <div class="category">
+      <div class="category-head"><h3>The Law of God</h3><span class="count">Two Teachings</span></div>
+      <p class="cat-note">What the cross fulfilled, what still stands, and how the redeemed are called to walk.</p>
+      <div class="doc-grid">
+        <a class="doc-card" href="./002%20-%20Which%20Laws%20Remain.html">
+          <span class="doc-tag">The Torah &amp; the Cross</span>
+          <h4>Which Laws Remain</h4>
+          <p>The Torah, the cross, and standing against the lies of the adversary.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./008%20-%20Clean_and_Unclean_Animals_West_Virginia.html">
+          <span class="doc-tag">The Dietary Law</span>
+          <h4>Clean and Unclean Animals</h4>
+          <p>The distinction God set between clean and unclean, with a West Virginia reference.</p>
+          <span class="read">Read</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- THE SABBATH -->
+    <div class="category">
+      <div class="category-head"><h3>The Sabbath</h3><span class="count">Two Teachings</span></div>
+      <p class="cat-note">The rest the Lord made at creation, kept by Christ, and never changed by God.</p>
+      <div class="doc-grid">
+        <a class="doc-card" href="./003.1%20-%20The%20Sabbath.html">
+          <span class="doc-tag">The Seventh Day</span>
+          <h4>The Sabbath of the Lord</h4>
+          <p>Made at creation, kept by Christ, never changed by God.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./003.0%20-%20Sabbath%20Debate.html">
+          <span class="doc-tag">A Formal Exchange</span>
+          <h4>The Sabbath Debate</h4>
+          <p>A point by point exchange on the day the Lord blessed and sanctified.</p>
+          <span class="read">Read</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- THE APPOINTED TIMES -->
+    <div class="category">
+      <div class="category-head"><h3>The Appointed Times &amp; the Holidays of the Nations</h3><span class="count">Seven Teachings</span></div>
+      <p class="cat-note">The feasts of the Lord set beside the festivals the nations kept, tried by Scripture and traced through history.</p>
+      <div class="doc-grid">
+        <a class="doc-card" href="./004%20-%20Moedim%20in%20the%20Church.html">
+          <span class="doc-tag">The Feasts of the Lord</span>
+          <h4>The Moedim in the Church</h4>
+          <p>Keeping the commandments of God and holding the faith of Jesus.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./004.1%20-%20A%20Warning%20Against%20Pagan%20Holidays.html">
+          <span class="doc-tag">Pagan Holidays &middot; Part I</span>
+          <h4>A Scriptural Warning</h4>
+          <p>Tried by Scripture, traced through history. Why the warning matters.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./004.2%20-%20Pagan_Holidays_Part_II_The_Calendar_of_the_Nations.html">
+          <span class="doc-tag">Pagan Holidays &middot; Part II</span>
+          <h4>The Calendar of the Nations</h4>
+          <p>The names we speak every day, and where they came from.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./004.3%20-%20Pagan_Holidays_Deep_Dive_Christmas.html">
+          <span class="doc-tag">Deep Dive</span>
+          <h4>The Origins of Christmas</h4>
+          <p>The festival of the sun across the ancient world.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./004.4%20-%20Pagan_Holidays_Deep_Dive_Easter.html">
+          <span class="doc-tag">Deep Dive</span>
+          <h4>The Origins of Easter</h4>
+          <p>The spring worship of the goddess and the dying god.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./004.5%20-%20Pagan_Holidays_Deep_Dive_Halloween.html">
+          <span class="doc-tag">Deep Dive</span>
+          <h4>The Origins of Halloween</h4>
+          <p>The feast of the dead across the ages.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./004.6%20-%20Pagan_Holidays_Deep_Dive_Wiccan_Sabbats.html">
+          <span class="doc-tag">Deep Dive</span>
+          <h4>The Wheel of the Year</h4>
+          <p>The witches' sabbats and the counterfeit of God's feasts.</p>
+          <span class="read">Read</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- GRACE & THE BELIEVER'S LIFE -->
+    <div class="category">
+      <div class="category-head"><h3>Grace and the Believer's Life</h3><span class="count">Three Teachings</span></div>
+      <p class="cat-note">Holding fast to the grace of God, and walking it out in faithfulness.</p>
+      <div class="doc-grid">
+        <a class="doc-card" href="./009%20-%20Falling_From_Grace.html">
+          <span class="doc-tag">The Security of the Believer</span>
+          <h4>Falling From Grace</h4>
+          <p>A scriptural answer to the claim of once in grace, always in grace.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./010%20-%20The%20Tithe.html">
+          <span class="doc-tag">Giving &amp; Stewardship</span>
+          <h4>The Tithe</h4>
+          <p>The Lord's tenth, from Abraham to the believer today.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./012%20-%20Grace,%20Obedience,%20and%20the%20Laws%20Role.html">
+          <span class="doc-tag">Faith &amp; the Believer's Walk</span>
+          <h4>Grace, Obedience, and the Law's Role</h4>
+          <p>How the believer is saved, and how the believer walks.</p>
+          <span class="read">Read</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- SPIRITUAL REALITIES & LAST THINGS -->
+    <div class="category">
+      <div class="category-head"><h3>Spiritual Realities &amp; Last Things</h3><span class="count">Three Teachings</span></div>
+      <p class="cat-note">The unseen war that runs from Genesis to the close of the age.</p>
+      <div class="doc-grid">
+        <a class="doc-card" href="./005.1%20-%20The%20Nephilim%20and%20the%20Serpents%20Seed.html">
+          <span class="doc-tag">Genesis to Armageddon</span>
+          <h4>The Nephilim &amp; the Seed of the Serpent</h4>
+          <p>From the sons of God in Genesis to the crushing of the serpent's head.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./005.2%20-%20The%20Sons%20of%20God%20and%20the%20Nations.html">
+          <span class="doc-tag">Babel to the Kingdom</span>
+          <h4>The Sons of God &amp; the Nations</h4>
+          <p>How the Most High divided the nations, the princes set over them, and the kingdom reclaimed by Christ.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./006%20-%20End%20Time%20Chronological%20Study.html">
+          <span class="doc-tag">Prophecy &middot; Pre-Wrath</span>
+          <h4>The Chronology of the End Times</h4>
+          <p>The Olivet Discourse, the seals, the prophets, and the epistles in one timeline.</p>
+          <span class="read">Read</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- THE HOLY SPIRIT -->
+    <div class="category">
+      <div class="category-head"><h3>Baptism &amp; the Holy Ghost</h3><span class="count">Five Teachings</span></div>
+      <p class="cat-note">The first step of obedience after salvation, the immersion in the Spirit, and the gifts and offices given to the believer.</p>
+      <div class="doc-grid">
+        <a class="doc-card" href="./011%20-%20Water%20Baptism.html">
+          <span class="doc-tag">The First Step of Obedience</span>
+          <h4>Water Baptism</h4>
+          <p>The first act of obedience after salvation, and why it does not save.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./007.0%20-%20Baptism%20in%20the%20Holy%20Ghost.html">
+          <span class="doc-tag">Immersed in the Spirit</span>
+          <h4>The Baptism in the Holy Ghost</h4>
+          <p>Being fully immersed in God, with the evidence of speaking in tongues.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./007.1%20-%20Gifts_of_the_Holy_Ghost_1_-_The_Fivefold_Ministry.html">
+          <span class="doc-tag">Lesson One</span>
+          <h4>The Fivefold Ministry</h4>
+          <p>The gifts Christ gave to build and mature His church.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./007.2%20-%20Gifts_of_the_Holy_Ghost_2_-_The_Gifts_of_the_Spirit.html">
+          <span class="doc-tag">Lesson Two</span>
+          <h4>The Gifts of the Spirit</h4>
+          <p>The nine manifestations of the Spirit in First Corinthians twelve.</p>
+          <span class="read">Read</span>
+        </a>
+        <a class="doc-card" href="./007.3%20-%20Gifts_of_the_Holy_Ghost_3_-_Tongues_and_Interpretation.html">
+          <span class="doc-tag">Lesson Three</span>
+          <h4>Tongues and Interpretation</h4>
+          <p>The sign, the prayer language, and the voice in the assembly.</p>
+          <span class="read">Read</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════ STUDY THE WORD ════════ -->
+  <section class="section" id="study">
+    <p class="eyebrow">Dig Deeper</p>
+    <h2 class="section-title">Study the Word for Yourself</h2>
+    <p class="section-lead">Do not take any teaching on faith alone. Open the Scriptures and search them, as the Bereans did. Bible Hub is a free study site with the King James text, interlinears, concordances, and many commentaries side by side.</p>
+    <div class="study-panel">
+      <div class="study-text">
+        <h3>Bible Hub</h3>
+        <p>Free online study tools. Read any verse in context, check the original Hebrew and Greek, and compare commentaries.</p>
+      </div>
+      <a class="btn-gold" href="https://biblehub.com" target="_blank" rel="noopener">Open Bible Hub &#8594;</a>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER / CONNECT ════════ -->
+  <footer class="site-footer" id="connect">
+    <p class="footer-eyebrow">Connect</p>
+    <h2 class="footer-title">Walk With Us</h2>
+    <p class="footer-sub">Follow along, hear the teaching, and join the fellowship of believers.</p>
+
+    <!-- CHURCH SOCIALS -->
+    <div class="social-group">
+      <p class="group-label"><span></span> Work the Word Church <span></span></p>
+      <div class="social-row">
+        <a class="social-link" href="https://www.facebook.com/WorktheWordMadisonWV" target="_blank" rel="noopener" aria-label="Work the Word Church on Facebook">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5C16.4 5.4 15.5 5.3 14.5 5.3c-2.1 0-3.5 1.3-3.5 3.6v2.3H8.6V14H11v7h2.5z"/></svg></span>
+          <span class="social-label">Facebook</span>
+        </a>
+        <a class="social-link" href="https://www.youtube.com/@WorkTheWordChurch" target="_blank" rel="noopener" aria-label="Work the Word Church on YouTube">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 0 0 2 8.2 31 31 0 0 0 1.7 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.6 7.9.6 7.9.6s6 0 7.9-.6A3 3 0 0 0 22 15.8 31 31 0 0 0 22.3 12 31 31 0 0 0 22 8.2zM10 15V9l5.2 3z"/></svg></span>
+          <span class="social-label">YouTube</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- MINISTRY / PERSONAL SOCIALS -->
+    <div class="social-group">
+      <p class="group-label"><span></span> Brother Justin May <span></span></p>
+      <div class="social-row">
+        <a class="social-link" href="https://www.facebook.com/disciplejtmay/" target="_blank" rel="noopener" aria-label="Brother Justin May on Facebook">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5C16.4 5.4 15.5 5.3 14.5 5.3c-2.1 0-3.5 1.3-3.5 3.6v2.3H8.6V14H11v7h2.5z"/></svg></span>
+          <span class="social-label">Facebook</span>
+        </a>
+        <a class="social-link" href="https://www.youtube.com/@DiscipleJTMay" target="_blank" rel="noopener" aria-label="Brother Justin May on YouTube">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 0 0 2 8.2 31 31 0 0 0 1.7 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.6 7.9.6 7.9.6s6 0 7.9-.6A3 3 0 0 0 22 15.8 31 31 0 0 0 22.3 12 31 31 0 0 0 22 8.2zM10 15V9l5.2 3z"/></svg></span>
+          <span class="social-label">YouTube</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-rule"><span></span><i>&#10022;</i><span></span></div>
+    <p class="footer-fine">The Bible Teaching of Brother Justin May &middot; Pronomian in Theology<br>Sola Scriptura &middot; To the Law and to the Testimony &middot; Isaiah 8:20</p>
+  </footer>
+
+</div>
+</body>
+</html>

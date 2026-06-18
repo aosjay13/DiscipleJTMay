@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bylaws of Faith and Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative corner lines */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  /* gold inset frame */
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+  }
+
+  /* gold accent rule beneath the title */
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 320px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY CONTENT ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin: 2.5rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.35rem; break-inside: avoid; }
+  .toc-list a {
+    font-size: 0.9rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.4rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--gold); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    min-width: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    margin-top: 2.8rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .article-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .article-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.15rem;
+  }
+
+  .article-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.4rem;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin: 1.6rem 0;
+    padding: 1.2rem 1.4rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold-light);
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+
+  .section-body {
+    font-size: 1rem;
+    line-height: 1.78;
+    color: var(--ink-mid);
+  }
+
+  .section-body ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+  }
+
+  .section-body ul li {
+    padding: 0.25rem 0 0.25rem 1.2rem;
+    position: relative;
+  }
+
+  .section-body ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  /* ── GIFT ITEM (for Article IV gifts) ── */
+  .gift-item {
+    margin: 0.6rem 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: 2px solid #D4B97A55;
+  }
+
+  .gift-name {
+    font-weight: 600;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture-block {
+    margin-top: 1.6rem;
+    padding: 1.4rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+
+  .scripture-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .scripture-entry {
+    margin-bottom: 1rem;
+    font-size: 0.975rem;
+    line-height: 1.78;
+  }
+
+  .scripture-entry:last-child { margin-bottom: 0; }
+
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.06em;
+  }
+
+  .scripture-text {
+    color: var(--ink-mid);
+    font-style: italic;
+  }
+
+  /* ── PHASE (for Chronology article) ── */
+  .phase {
+    margin: 1.8rem 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A44;
+    border-left: 4px solid var(--gold);
+  }
+
+  .phase-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .phase-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .sub-phase {
+    margin: 1.1rem 0 0.5rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--parchment);
+    border-left: 2px solid var(--gold-light);
+  }
+
+  .sub-phase-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.03em;
+  }
+
+  .phase-scripture {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+  }
+
+  .phase-scripture .phase-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-style: normal;
+    display: inline-block;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.04em;
+  }
+
+  .phase-note {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ── CHRONOLOGY INTRO ── */
+  .chrono-intro {
+    font-size: 1.02rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  /* ── QUALS LIST ── */
+  .quals-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.6rem 0;
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+  .quals-list li {
+    padding: 0.2rem 0 0.2rem 1.2rem;
+    position: relative;
+    font-size: 0.975rem;
+    line-height: 1.65;
+    break-inside: avoid;
+  }
+  .quals-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 0.6rem;
+    top: 0.45rem;
+  }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @page {
+    size: 8.5in 11in;          /* US Letter, portrait */
+    margin: 0.75in;
+    /* Page number in the bottom margin (honored by print engines that support it) */
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page {
+      box-shadow: none;
+      border: none;
+      max-width: 100%;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    /* keep the crimson header/footer color on paper */
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* good breaks: start each article on a fresh page, keep blocks whole */
+    .article { page-break-before: always; break-before: page; }
+    .article:first-of-type { page-break-before: auto; break-before: auto; }
+    .preamble, .toc { page-break-after: avoid; }
+    .article-header { page-break-after: avoid; break-after: avoid; }
+    .scripture-block,
+    .scripture-entry,
+    .section,
+    .phase,
+    .sub-phase,
+    .gift-item,
+    .quals-list li,
+    .toc-list li { page-break-inside: avoid; break-inside: avoid; }
+    .doc-footer { page-break-before: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+    .toc-list { columns: 1; }
+    .quals-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <h1 class="doc-title">Bylaws of Faith and Practice</h1>
+    <p class="doc-subtitle">Rooted in Scripture &middot; Established in Covenant</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Preamble</p>
+      <p>These Bylaws serve as the foundational declarations of faith, outlining the core biblical tenets and the righteous standard by which believers are called to live. Rooted in Pronomian theology, we affirm that God's standard of righteousness remains unchanging and that His commandments remain a lamp unto our feet.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#art1"><span class="toc-num">I.</span>The Ten Commandments</a></li>
+        <li><a href="#art2"><span class="toc-num">II.</span>The Moedim</a></li>
+        <li><a href="#art3"><span class="toc-num">III.</span>Tithing &amp; Melchizedek</a></li>
+        <li><a href="#art4"><span class="toc-num">IV.</span>The Holy Ghost</a></li>
+        <li><a href="#art5"><span class="toc-num">V.</span>Water Baptism</a></li>
+        <li><a href="#art6"><span class="toc-num">VI.</span>Sanctification &amp; Justification</a></li>
+        <li><a href="#art7"><span class="toc-num">VII.</span>Backsliding</a></li>
+        <li><a href="#art8"><span class="toc-num">VIII.</span>Repentance</a></li>
+        <li><a href="#art9"><span class="toc-num">IX.</span>The Fivefold Ministry</a></li>
+        <li><a href="#art10"><span class="toc-num">X.</span>Qualifications for Leadership</a></li>
+        <li><a href="#art11"><span class="toc-num">XI.</span>Chronology of the End Times</a></li>
+        <li><a href="#art12"><span class="toc-num">XII.</span>Final Authority of Scripture</a></li>
+        <li><a href="#art13"><span class="toc-num">XIII.</span>Warning Against False Doctrine</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- ARTICLE I -->
+    <article class="article" id="art1">
+      <div class="article-header">
+        <span class="article-num">Article I</span>
+        <h2 class="article-title">The Ten Commandments</h2>
+      </div>
+      <p class="article-body">We affirm that the Ten Commandments are the foundational laws of God, established for His people. As the eternal and unchanging moral standard, these commandments have not been abolished but remain the binding standard of the Creator for the believer's life.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 20:1&ndash;17</span>
+          <span class="scripture-text">And God spake all these words, saying,</span>
+          <ul style="list-style:none;padding:0;margin-top:0.6rem;">
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">1.</span><span class="scripture-text">I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">2.</span><span class="scripture-text">Thou shalt have no other gods before me. Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth. Thou shalt not bow down thyself to them, nor serve them: for I the LORD thy God am a jealous God, visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me; and shewing mercy unto thousands of them that love me, and keep my commandments.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">3.</span><span class="scripture-text">Thou shalt not take the name of the LORD thy God in vain; for the LORD will not hold him guiltless that taketh his name in vain.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">4.</span><span class="scripture-text">Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: but the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: for in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">5.</span><span class="scripture-text">Honour thy father and thy mother: that thy days may be long upon the land which the LORD thy God giveth thee.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">6.</span><span class="scripture-text">Thou shalt not kill.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">7.</span><span class="scripture-text">Thou shalt not commit adultery.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">8.</span><span class="scripture-text">Thou shalt not steal.</span></li>
+            <li style="margin-bottom:0.5rem;padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">9.</span><span class="scripture-text">Thou shalt not bear false witness against thy neighbour.</span></li>
+            <li style="padding-left:1.2rem;position:relative;"><span style="position:absolute;left:0;color:var(--gold-light);">10.</span><span class="scripture-text">Thou shalt not covet thy neighbour's house, thou shalt not covet thy neighbour's wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour's.</span></li>
+          </ul>
+        </div>
+
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 7:12</span>
+          <span class="scripture-text">Wherefore the law is holy, and the commandment holy, and just, and good.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE II -->
+    <article class="article" id="art2">
+      <div class="article-header">
+        <span class="article-num">Article II</span>
+        <h2 class="article-title">The Moedim (Appointed Times)</h2>
+      </div>
+      <p class="article-body">We believe in the continuous observance of God's established creation order and His appointed times (Moedim). The feast days and appointed seasons were established at the very foundation of the world, codified throughout the Law, and have not been done away with. They remain a perpetual statute and a holy convocation for believers today.</p>
+
+      <div class="section">
+        <p class="section-title">1. The Sabbath &mdash; The Seventh Day</p>
+        <div class="section-body">
+          <p>The first and foundational appointed time is the Sabbath, set apart by God at creation itself. After six days of work, God rested on the seventh day, blessing it and sanctifying it before any man-made tradition existed. The Sabbath is the seventh day of the week, and it was God who hallowed that specific day. No man has authority to change it to the first day, Sunday, for the LORD declared the seventh day to be His holy day.</p>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References &mdash; The Sabbath</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 2:1&ndash;3</span>
+          <span class="scripture-text">Thus the heavens and the earth were finished, and all the host of them. And on the seventh day God ended his work which he had made; and he rested on the seventh day from all his work which he had made. And God blessed the seventh day, and sanctified it: because that in it he had rested from all his work which God created and made.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 20:8&ndash;11</span>
+          <span class="scripture-text">Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: but the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: for in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 31:16&ndash;17</span>
+          <span class="scripture-text">Wherefore the children of Israel shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant. It is a sign between me and the children of Israel for ever: for in six days the LORD made heaven and earth, and on the seventh day he rested, and was refreshed.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:3</span>
+          <span class="scripture-text">Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of the LORD in all your dwellings.</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References &mdash; The Appointed Times</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 1:14</span>
+          <span class="scripture-text">And God said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:2</span>
+          <span class="scripture-text">Speak unto the children of Israel, and say unto them, Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:4</span>
+          <span class="scripture-text">These are the feasts of the LORD, even holy convocations, which ye shall proclaim in their seasons.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 16:16</span>
+          <span class="scripture-text">Three times in a year shall all thy males appear before the LORD thy God in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before the LORD empty.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 5:8</span>
+          <span class="scripture-text">Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE III -->
+    <article class="article" id="art3">
+      <div class="article-header">
+        <span class="article-num">Article III</span>
+        <h2 class="article-title">Tithing and the Order of Melchizedek</h2>
+      </div>
+      <p class="article-body">We believe in the biblical mandate of tithing, established prior to the Levitical priesthood. As Abraham tithed to Melchizedek, we acknowledge that the believer today operates under the eternal priesthood of Jesus Christ, after the order of Melchizedek, and the principle of the tithe remains in effect.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 14:20</span>
+          <span class="scripture-text">...And he gave him tithes of all.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 7:17</span>
+          <span class="scripture-text">For he testifieth, Thou art a priest for ever after the order of Melchisedec.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IV -->
+    <article class="article" id="art4">
+      <div class="article-header">
+        <span class="article-num">Article IV</span>
+        <h2 class="article-title">The Holy Ghost</h2>
+      </div>
+      <p class="article-body">We recognize a distinct, two-fold operation of the Holy Ghost in the life of the believer, as well as the ongoing manifestation of His spiritual gifts for the edification of the body.</p>
+
+      <div class="section">
+        <p class="section-title">Section 1 &mdash; The Indwelling and Baptism of the Holy Ghost</p>
+        <div class="section-body">
+          <p><strong>At Salvation:</strong> Upon believing and receiving salvation, the believer is sealed with and receives the Holy Ghost.</p>
+          <p style="margin-top:0.6rem;"><strong>The Baptism of the Holy Ghost:</strong> There is a separate, subsequent step wherein the Holy Ghost fully immerses (baptizes) the believer. The biblical evidence of this specific immersion is speaking in tongues.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Section 2 &mdash; The Gifts of the Spirit</p>
+        <div class="section-body">
+          <p>We firmly affirm that all the spiritual gifts outlined in the Scriptures remain fully operational and active in the body of Christ today. The Holy Ghost distributes these gifts severally as He wills for the profit and edification of the assembly.</p>
+          <div style="margin-top:0.8rem;">
+            <div class="gift-item"><span class="gift-name">The Word of Wisdom:</span> Supernatural insight into the mind, will, and application of God's truth for specific situations or decisions.</div>
+            <div class="gift-item"><span class="gift-name">The Word of Knowledge:</span> Supernatural revelation of facts, events, or information not known by natural means, given to instruct, warn, or uncover hidden matters.</div>
+            <div class="gift-item"><span class="gift-name">Faith:</span> A supernatural impartation of unwavering belief and confidence in God for a specific miraculous outcome, distinct from general saving faith.</div>
+            <div class="gift-item"><span class="gift-name">The Gifts of Healing:</span> Supernatural impartations to cure diseases, sicknesses, and physical ailments without reliance on natural means, demonstrating God's compassion and power.</div>
+            <div class="gift-item"><span class="gift-name">The Working of Miracles:</span> Divine interventions that alter or supersede natural laws, demonstrating the sovereign power of the Creator.</div>
+            <div class="gift-item"><span class="gift-name">Prophecy:</span> Speaking forth a message from God by divine inspiration. True biblical prophecy will always perfectly harmonize with God's established written Law and frequently calls His people back to covenant faithfulness and obedience.</div>
+            <div class="gift-item"><span class="gift-name">Discerning of Spirits:</span> The supernatural ability to perceive the source of a spiritual manifestation, distinguishing whether it originates from the Holy Spirit, demonic entities, or the human spirit.</div>
+            <div class="gift-item"><span class="gift-name">Divers Kinds of Tongues:</span> Supernatural utterances in languages never learned by the speaker, utilized for personal edification or, when interpreted, for the edification of the assembly.</div>
+            <div class="gift-item"><span class="gift-name">The Interpretation of Tongues:</span> The supernatural ability to translate or reveal the meaning of an utterance spoken in an unknown tongue, so that the entire assembly may understand and be edified.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 1:13</span>
+          <span class="scripture-text">...in whom also after that ye believed, ye were sealed with that holy Spirit of promise.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 2:4</span>
+          <span class="scripture-text">And they were all filled with the Holy Ghost, and began to speak with other tongues, as the Spirit gave them utterance.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 19:2&ndash;6</span>
+          <span class="scripture-text">He said unto them, Have ye received the Holy Ghost since ye believed? And they said unto him, We have not so much as heard whether there be any Holy Ghost. And he said unto them, Unto what then were ye baptized? And they said, Unto John's baptism. Then said Paul, John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on Christ Jesus. When they heard this, they were baptized in the name of the Lord Jesus. And when Paul had laid his hands upon them, the Holy Ghost came on them; and they spake with tongues, and prophesied.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 12:8&ndash;11</span>
+          <span class="scripture-text">For to one is given by the Spirit the word of wisdom; to another the word of knowledge by the same Spirit; to another faith by the same Spirit; to another the gifts of healing by the same Spirit; to another the working of miracles; to another prophecy; to another discerning of spirits; to another divers kinds of tongues; to another the interpretation of tongues: but all these worketh that one and the selfsame Spirit, dividing to every man severally as he will.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE V -->
+    <article class="article" id="art5">
+      <div class="article-header">
+        <span class="article-num">Article V</span>
+        <h2 class="article-title">Water Baptism</h2>
+      </div>
+      <p class="article-body">We affirm that water baptism is a work and is therefore not a requirement for salvation, as salvation is by grace through faith alone. However, while it does not save, it is a righteous work of obedience that a believer's heart should naturally desire immediately upon being saved.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 2:8&ndash;9</span>
+          <span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: not of works, lest any man should boast.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 1:14, 17</span>
+          <span class="scripture-text">I thank God that I baptized none of you, but Crispus and Gaius... For Christ sent me not to baptize, but to preach the gospel...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 8:36&ndash;38</span>
+          <span class="scripture-text">And as they went on their way, they came unto a certain water: and the eunuch said, See, here is water; what doth hinder me to be baptized? And Philip said, If thou believest with all thine heart, thou mayest. And he answered and said, I believe that Jesus Christ is the Son of God. And he commanded the chariot to stand still: and they went down both into the water, both Philip and the eunuch; and he baptized him.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VI -->
+    <article class="article" id="art6">
+      <div class="article-header">
+        <span class="article-num">Article VI</span>
+        <h2 class="article-title">Sanctification and Justification</h2>
+      </div>
+      <p class="article-body">We believe that true biblical faith inherently produces obedience. Following salvation, the believer must deeply desire to follow God's Commandments. Sanctification requires us to be doers of the word and not hearers only, recognizing that faith void of obedient works to God's law is dead.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 1:22</span>
+          <span class="scripture-text">But be ye doers of the word, and not hearers only, deceiving your own selves.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 2:20</span>
+          <span class="scripture-text">But wilt thou know, O vain man, that faith without works is dead?</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 John 5:3</span>
+          <span class="scripture-text">For this is the love of God, that we keep his commandments: and his commandments are not grievous.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VII -->
+    <article class="article" id="art7">
+      <div class="article-header">
+        <span class="article-num">Article VII</span>
+        <h2 class="article-title">Backsliding</h2>
+      </div>
+      <p class="article-body">We define backsliding as turning away from God's Commandments to pursue one's own will. Such departure requires immediate repentance. The state of a person's soul at the end of their life is fixed; therefore, it is imperative to remain steadfast, for where a tree falls, so shall it lie.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Peter 2:21</span>
+          <span class="scripture-text">For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ecclesiastes 11:3</span>
+          <span class="scripture-text">...and if the tree fall toward the south, or toward the north, in the place where the tree falleth, there it shall be.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VIII -->
+    <article class="article" id="art8">
+      <div class="article-header">
+        <span class="article-num">Article VIII</span>
+        <h2 class="article-title">Repentance</h2>
+      </div>
+      <p class="article-body">We define repentance not merely as a singular confession, but as the continual state of living free from sin. Because sin is the transgression of God's Law, true repentance is a sustained return to observing His commandments and walking in His ways.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 John 3:4</span>
+          <span class="scripture-text">Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 6:1&ndash;2</span>
+          <span class="scripture-text">What shall we say then? Shall we continue in sin, that grace may abound? God forbid...</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IX -->
+    <article class="article" id="art9">
+      <div class="article-header">
+        <span class="article-num">Article IX</span>
+        <h2 class="article-title">The Fivefold Ministry</h2>
+      </div>
+      <p class="article-body">We recognize and affirm the continuous operation of the fivefold ministry gifts within the body of Christ. God has explicitly appointed apostles, prophets, evangelists, pastors, and teachers for the perfecting of the saints, the work of the ministry, and the edifying of the assembly. These spiritual offices work together in harmony to bring the body to the unity of the faith and maturity in Christ, establishing His people in sound biblical doctrine.</p>
+      <p class="article-body">As Paul writes in 1 Timothy 2:11&ndash;15, a woman is not to teach or usurp authority over the man, for Adam was formed first, and it was the woman who was deceived and fell into transgression. Therefore, anyone who holds any of these offices must be a man.</p>
+
+      <div class="section">
+        <p class="section-title">Section 1 &mdash; Apostles</p>
+        <div class="section-body">Apostles are "sent ones" commissioned by God to be foundational builders and overseers within the body of Christ. They establish assemblies, maintain doctrinal purity by ensuring alignment with the whole counsel of God (including His Law), and impart spiritual guidance and order, operating with a high level of spiritual authority and spiritual fatherhood.</div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Section 2 &mdash; Prophets</p>
+        <div class="section-body">Prophets speak by divine inspiration to bring edification, exhortation, and comfort to the body. A true biblical prophet will always align with the established written Word of God and will often carry the mandate to call God's people to repentance, urging a return to covenant faithfulness and obedience to His commandments. Prophets hold the Government of God in their heart, mind, soul, and strength.</div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Section 3 &mdash; Evangelists</p>
+        <div class="section-body">Evangelists are uniquely gifted and burdened to proclaim the Gospel of the Kingdom to the lost. They call individuals to repent of their sin, which is the transgression of the Law, and to turn to faith in Jesus Christ. Their ministry is focused on gathering the harvest and bringing new believers into the fold.</div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Section 4 &mdash; Pastors</p>
+        <div class="section-body">Pastors (Shepherds) are called to lead, feed, and protect the local assembly. They provide ongoing spiritual care, guiding the flock in the paths of righteousness, guarding against false teachings and grievous wolves, and fostering a spiritually healthy community of believers who walk in God's ways.</div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Section 5 &mdash; Teachers</p>
+        <div class="section-body">Teachers are given a special grace to expound upon the Scriptures, bringing deep clarity and understanding of God's Word from Genesis to Revelation. They instruct the body in sound doctrine and the practical application of God's commandments, ensuring the assembly is firmly rooted and grounded in biblical truth.</div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Timothy 2:11&ndash;15</span>
+          <span class="scripture-text">But I suffer not a woman to teach, nor to usurp authority over the man, but to be in silence. For Adam was first formed, then Eve. And Adam was not deceived, but the woman being deceived was in the transgression. Notwithstanding she shall be saved in childbearing, if they continue in faith and charity and holiness with sobriety.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 4:11&ndash;13</span>
+          <span class="scripture-text">And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; for the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 2:20</span>
+          <span class="scripture-text">And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 12:28</span>
+          <span class="scripture-text">And God hath set some in the church, first apostles, secondarily prophets, thirdly teachers, after that miracles, then gifts of healings, helps, governments, diversities of tongues.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 14:3</span>
+          <span class="scripture-text">But he that prophesieth speaketh unto men to edification, and exhortation, and comfort.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE X -->
+    <article class="article" id="art10">
+      <div class="article-header">
+        <span class="article-num">Article X</span>
+        <h2 class="article-title">Qualifications for Leadership</h2>
+      </div>
+      <p class="article-body">Leadership within the assembly is strictly governed by biblical qualifications. The requirement to be the "husband of one wife" explicitly prohibits polygamy; it is not a restriction regarding historical divorce and scriptural remarriage.</p>
+
+      <div class="section">
+        <p class="section-title">Section 1 &mdash; Qualifications of an Elder (Bishop/Pastor)</p>
+        <div class="section-body">
+          <p>The Elder is called to teach, lead, and oversee the spiritual health of the assembly. As 1 Timothy 3:1&ndash;7 and Titus 1:5&ndash;9 establish, an elder must be:</p>
+          <ul class="quals-list" style="margin-top:0.7rem;">
+            <li>A man</li>
+            <li>Blameless</li>
+            <li>The husband of one wife (strictly non-polygamous)</li>
+            <li>Vigilant, sober, of good behaviour</li>
+            <li>Given to hospitality, apt to teach</li>
+            <li>Not given to wine, no striker</li>
+            <li>Not greedy of filthy lucre</li>
+            <li>Patient, not a brawler, not covetous</li>
+            <li>One that ruleth well his own house</li>
+            <li>Having his children in subjection with all gravity</li>
+            <li>Not a novice (new convert)</li>
+            <li>A good report of them which are without</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Section 2 &mdash; Qualifications of a Deacon</p>
+        <div class="section-body">
+          <p>The Deacon is called to serve the practical, physical, and administrative needs of the assembly. As 1 Timothy 3:8&ndash;13 establishes, a deacon must be:</p>
+          <ul class="quals-list" style="margin-top:0.7rem;">
+            <li>A man</li>
+            <li>Grave, not double-tongued</li>
+            <li>Not given to much wine</li>
+            <li>Not greedy of filthy lucre</li>
+            <li>Holding the mystery of the faith in a pure conscience</li>
+            <li>First proved; then found blameless</li>
+            <li>The husband of one wife (strictly non-polygamous)</li>
+            <li>Ruling their children and their own houses well</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Timothy 3:1&ndash;7</span>
+          <span class="scripture-text">This is a true saying, if a man desire the office of a bishop, he desireth a good work. A bishop then must be blameless, the husband of one wife, vigilant, sober, of good behaviour, given to hospitality, apt to teach; not given to wine, no striker, not greedy of filthy lucre; but patient, not a brawler, not covetous; one that ruleth well his own house, having his children in subjection with all gravity; (for if a man know not how to rule his own house, how shall he take care of the church of God?) Not a novice, lest being lifted up with pride he fall into the condemnation of the devil. Moreover he must have a good report of them which are without; lest he fall into reproach and the snare of the devil.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Titus 1:5&ndash;9</span>
+          <span class="scripture-text">For this cause left I thee in Crete, that thou shouldest set in order the things that are wanting, and ordain elders in every city, as I had appointed thee: if any be blameless, the husband of one wife, having faithful children not accused of riot or unruly. For a bishop must be blameless, as the steward of God; not selfwilled, not soon angry, not given to wine, no striker, not given to filthy lucre; but a lover of hospitality, a lover of good men, sober, just, holy, temperate; holding fast the faithful word as he hath been taught, that he may be able by sound doctrine both to exhort and to convince the gainsayers.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Timothy 3:8&ndash;13</span>
+          <span class="scripture-text">Likewise must the deacons be grave, not doubletongued, not given to much wine, not greedy of filthy lucre; holding the mystery of the faith in a pure conscience. And let these also first be proved; then let them use the office of a deacon, being found blameless. Even so must their wives be grave, not slanderers, sober, faithful in all things. Let the deacons be the husbands of one wife, ruling their children and their own houses well. For they that have used the office of a deacon well purchase to themselves a good degree, and great boldness in the faith which is in Christ Jesus.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE XI (NEW) -->
+    <article class="article" id="art11">
+      <div class="article-header">
+        <span class="article-num">Article XI</span>
+        <h2 class="article-title">The Chronological Harmony of the End Times</h2>
+      </div>
+      <p class="chrono-intro">A Scriptural Alignment of Matthew 24, Luke 21, Revelation 6, the Prophets, and the Epistles.</p>
+      <p class="article-body">The most profound key to understanding the end-time timeline is recognizing that Christ's teaching in the Olivet Discourse (recorded in both Matthew 24 and Luke 21) is exactly the same chronological sequence as the opening of the Seals in Revelation 6. When we layer the Old Testament prophets and Paul's epistles on top of this dual-Gospel witness, a perfect, unbreakable Post-Tribulation / Pre-Wrath timeline emerges.</p>
+
+      <!-- Phase 1 -->
+      <div class="phase">
+        <p class="phase-header">Phase 1</p>
+        <p class="phase-title">The Beginning of Sorrows (The First Four Seals)</p>
+        <p style="font-size:0.97rem;line-height:1.75;color:var(--ink-mid);margin-bottom:1rem;">Christ described the "beginning of sorrows" as a period of escalating global turmoil. This perfectly matches the ride of the Four Horsemen of the Apocalypse.</p>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">1. Deception, the Falling Away, and False Christs (The White Horse)</p>
+          <div class="phase-scripture"><span class="phase-ref">Matthew 24:4&ndash;5</span><br><em>"Take heed that no man deceive you. For many shall come in my name, saying, I am Christ; and shall deceive many."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Luke 21:8</span><br><em>"And he said, Take heed that ye be not deceived: for many shall come in my name, saying, I am Christ; and the time draweth near: go ye not therefore after them."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Revelation 6:1&ndash;2 (1st Seal)</span><br><em>"...and behold a white horse: and he that sat on him had a bow; and a crown was given unto him: and he went forth conquering, and to conquer."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:3a</span><br><em>"Let no man deceive you by any means: for that day shall not come, except there come a falling away first..."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Daniel 11:32</span><br><em>"And such as do wickedly against the covenant shall he corrupt by flatteries: but the people that do know their God shall be strong, and do exploits."</em></div>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">2. Wars and Rumors of Wars (The Red Horse)</p>
+          <div class="phase-scripture"><span class="phase-ref">Matthew 24:6&ndash;7a</span><br><em>"And ye shall hear of wars and rumours of wars... For nation shall rise against nation, and kingdom against kingdom."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Luke 21:9&ndash;10</span><br><em>"But when ye shall hear of wars and commotions, be not terrified: for these things must first come to pass; but the end is not by and by. Then said he unto them, Nation shall rise against nation, and kingdom against kingdom."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Revelation 6:3&ndash;4 (2nd Seal)</span><br><em>"...there went out another horse that was red: and power was given to him that sat thereon to take peace from the earth, and that they should kill one another: and there was given unto him a great sword."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Jeremiah 25:32</span><br><em>"Thus saith the LORD of hosts, Behold, evil shall go forth from nation to nation, and a great whirlwind shall be raised up from the coasts of the earth."</em></div>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">3. Famines (The Black Horse)</p>
+          <div class="phase-scripture"><span class="phase-ref">Matthew 24:7b</span><br><em>"...and there shall be famines..."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Luke 21:11a</span><br><em>"And great earthquakes shall be in divers places, and famines..."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Revelation 6:5&ndash;6 (3rd Seal)</span><br><em>"...and lo a black horse; and he that sat on him had a pair of balances in his hand... A measure of wheat for a penny, and three measures of barley for a penny."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Lamentations 4:9</span><br><em>"They that be slain with the sword are better than they that be slain with hunger: for these pine away, stricken through for want of the fruits of the field."</em></div>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">4. Pestilences and Death (The Pale Horse)</p>
+          <div class="phase-scripture"><span class="phase-ref">Matthew 24:7c&ndash;8</span><br><em>"...and pestilences, and earthquakes, in divers places. All these are the beginning of sorrows."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Luke 21:11b</span><br><em>"...and pestilences; and fearful sights and great signs shall there be from heaven."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Revelation 6:7&ndash;8 (4th Seal)</span><br><em>"...and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth."</em></div>
+          <div class="phase-scripture"><span class="phase-ref">Ezekiel 14:21</span><br><em>"For thus saith the Lord GOD; How much more when I send my four sore judgments upon Jerusalem, the sword, and the famine, and the noisome beast, and the pestilence..."</em></div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase">
+        <p class="phase-header">Phase 2</p>
+        <p class="phase-title">The Great Tribulation (The Fifth Seal)</p>
+        <p style="font-size:0.97rem;line-height:1.75;color:var(--ink-mid);margin-bottom:1rem;">Following the beginning of sorrows, the "man of sin" is fully revealed by defiling the temple (the Abomination of Desolation). This triggers the Great Tribulation, a time of intense persecution specifically directed at the saints who keep God's commandments. Jerusalem falls under Gentile dominion.</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:15, 21</span><br><em>"When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place... For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 21:20, 23&ndash;24</span><br><em>"And when ye shall see Jerusalem compassed with armies, then know that the desolation thereof is nigh... for there shall be great distress in the land, and wrath upon this people. And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 6:9&ndash;11 (5th Seal)</span><br><em>"I saw under the altar the souls of them that were slain for the word of God, and for the testimony which they held... and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:3b&ndash;4</span><br><em>"...and that man of sin be revealed, the son of perdition; who opposeth and exalteth himself above all that is called God, or that is worshipped; so that he as God sitteth in the temple of God, shewing himself that he is God."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Daniel 7:25</span><br><em>"And he shall speak great words against the most High, and shall wear out the saints of the most High, and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Jeremiah 30:7</span><br><em>"Alas! for that day is great, so that none is like it: it is even the time of Jacob's trouble; but he shall be saved out of it."</em></div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase">
+        <p class="phase-header">Phase 3</p>
+        <p class="phase-title">The Cosmic Disturbances (The Sixth Seal)</p>
+        <p style="font-size:0.97rem;line-height:1.75;color:var(--ink-mid);margin-bottom:1rem;">This is the definitive transition point. The Tribulation of the Antichrist is abruptly cut short by God's cosmic warning signs. This announces that the persecution is over and God's wrath is about to begin. The world is plunged into darkness and panic.</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:29</span><br><em>"Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 21:25&ndash;26</span><br><em>"And there shall be signs in the sun, and in the moon, and in the stars; and upon the earth distress of nations, with perplexity; the sea and the waves roaring; men's hearts failing them for fear, and for looking after those things which are coming on the earth: for the powers of heaven shall be shaken."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 6:12&ndash;14 (6th Seal)</span><br><em>"...and, lo, there was a great earthquake; and the sun became black as sackcloth of hair, and the moon became as blood; and the stars of heaven fell unto the earth... and every mountain and island were moved out of their places."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Joel 2:31</span><br><em>"The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of the LORD come."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Isaiah 13:10</span><br><em>"For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine."</em></div>
+        <div class="phase-note">Note: At this moment, the wicked realize the shift from the Tribulation to the Day of the Lord. Revelation 6:16&ndash;17 records them crying out: "Hide us from the face of him that sitteth on the throne, and from the wrath of the Lamb: for the great day of his wrath is come; and who shall be able to stand?"</div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="phase">
+        <p class="phase-header">Phase 4</p>
+        <p class="phase-title">The Gathering of the Elect (Pre-Wrath Rescue)</p>
+        <p style="font-size:0.97rem;line-height:1.75;color:var(--ink-mid);margin-bottom:1rem;">With the cosmic signs displayed, the heavens open. Christ appears, the trumpet sounds (Feast of Trumpets), and the elect are gathered from the earth before the wrath of God falls. Luke explicitly tells the saints that these signs mark the moment of their redemption.</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:30&ndash;31</span><br><em>"And then shall appear the sign of the Son of man in heaven... and he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 21:27&ndash;28</span><br><em>"And then shall they see the Son of man coming in a cloud with power and great glory. And when these things begin to come to pass, then look up, and lift up your heads; for your redemption draweth nigh."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 7:9, 14 (Immediately following the 6th Seal)</span><br><em>"After this I beheld, and, lo, a great multitude, which no man could number... stood before the throne, and before the Lamb... These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:1</span><br><em>"Now we beseech you, brethren, by the coming of our Lord Jesus Christ, and by our gathering together unto him."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Daniel 12:1&ndash;2</span><br><em>"...and at that time thy people shall be delivered, every one that shall be found written in the book."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Zechariah 9:14, 16</span><br><em>"And the LORD shall be seen over them, and his arrow shall go forth as the lightning: and the Lord GOD shall blow the trumpet... And the LORD their God shall save them in that day as the flock of his people..."</em></div>
+      </div>
+
+      <!-- Phase 5 -->
+      <div class="phase">
+        <p class="phase-header">Phase 5</p>
+        <p class="phase-title">The Day of the Lord (The Seventh Seal &amp; God's Wrath)</p>
+        <p style="font-size:0.97rem;line-height:1.75;color:var(--ink-mid);margin-bottom:1rem;">Once the righteous are removed, the Seventh Seal is opened. This unleashes the Trumpet and Bowl judgments. This is the Day of Atonement fulfilled in judgment, God's direct wrath upon the kingdom of the beast. Just as in the days of Noah and Lot, judgment rains down the very day the righteous are removed.</p>
+        <div class="phase-scripture"><span class="phase-ref">Matthew 24:37&ndash;39</span><br><em>"But as the days of Noe were, so shall also the coming of the Son of man be... and knew not until the flood came, and took them all away; so shall also the coming of the Son of man be."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Luke 17:28&ndash;30</span><br><em>"Likewise also as it was in the days of Lot; they did eat, they drank, they bought, they sold, they planted, they builded; but the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all. Even thus shall it be in the day when the Son of man is revealed."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 8:1&ndash;2 (7th Seal)</span><br><em>"And when he had opened the seventh seal, there was silence in heaven about the space of half an hour. And I saw the seven angels which stood before God; and to them were given seven trumpets."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">2 Thessalonians 2:8</span><br><em>"And then shall that Wicked be revealed, whom the Lord shall consume with the spirit of his mouth, and shall destroy with the brightness of his coming."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Zephaniah 1:14&ndash;15</span><br><em>"The great day of the LORD is near... That day is a day of wrath, a day of trouble and distress, a day of wasteness and desolation, a day of darkness and gloominess..."</em></div>
+      </div>
+
+      <!-- Phase 6 -->
+      <div class="phase">
+        <p class="phase-header">Phase 6</p>
+        <p class="phase-title">The Millennial Kingdom (Feast of Tabernacles)</p>
+        <p style="font-size:0.97rem;line-height:1.75;color:var(--ink-mid);margin-bottom:1rem;">Following the outpouring of wrath and the defeat of the Antichrist at Armageddon, Christ establishes His earthly kingdom. The saints, having endured the tribulation and been gathered pre-wrath, now rule and reign with Him, perfectly keeping His law.</p>
+        <div class="phase-scripture"><span class="phase-ref">Luke 22:29&ndash;30</span><br><em>"And I appoint unto you a kingdom, as my Father hath appointed unto me; that ye may eat and drink at my table in my kingdom, and sit on thrones judging the twelve tribes of Israel."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Revelation 20:4</span><br><em>"And I saw thrones, and they sat upon them, and judgment was given unto them: and I saw the souls of them that were beheaded for the witness of Jesus, and for the word of God, and which had not worshipped the beast... and they lived and reigned with Christ a thousand years."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Zechariah 14:9, 16</span><br><em>"And the LORD shall be king over all the earth: in that day shall there be one LORD, and his name one... And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles."</em></div>
+        <div class="phase-scripture"><span class="phase-ref">Isaiah 2:3</span><br><em>"...for out of Zion shall go forth the law, and the word of the LORD from Jerusalem."</em></div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE XII (formerly XI) -->
+    <article class="article" id="art12">
+      <div class="article-header">
+        <span class="article-num">Article XII</span>
+        <h2 class="article-title">Final Authority of the Scriptures</h2>
+      </div>
+      <p class="article-body">We affirm that the entirety of the Bible, from Genesis to Revelation, is the complete, infallible, inspired, and authoritative Word of God. It is the supreme and final authority for our faith, our doctrine, and our daily practice. We strictly reject the traditions of men, worldly philosophies, and man-made religious dogmas that attempt to alter, contradict, or make void the commandments of God. We commit to living by the whole counsel of Scripture, guided by the Holy Ghost, in steadfast obedience to our Creator.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Timothy 3:16&ndash;17</span>
+          <span class="scripture-text">All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: that the man of God may be perfect, thoroughly furnished unto all good works.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 7:8</span>
+          <span class="scripture-text">For laying aside the commandment of God, ye hold the tradition of men...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 7:13</span>
+          <span class="scripture-text">Making the word of God of none effect through your tradition, which ye have delivered: and many such like things do ye.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Colossians 2:8</span>
+          <span class="scripture-text">Beware lest any man spoil you through philosophy and vain deceit, after the tradition of men, after the rudiments of the world, and not after Christ.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE XIII (formerly XII) -->
+    <article class="article" id="art13">
+      <div class="article-header">
+        <span class="article-num">Article XIII</span>
+        <h2 class="article-title">Warning Against False Doctrine and Deception</h2>
+      </div>
+      <p class="article-body">We solemnly warn the assembly to remain eternally vigilant against the rise of false doctrine and those who would pervert the true Gospel of the Kingdom. The Scriptures explicitly prophesy that in the latter times, some shall depart from the faith, giving heed to seducing spirits and doctrines of devils.</p>
+      <p class="article-body">We stand fiercely on guard against ravenous wolves in sheep's clothing who will rise up from within and without to deceive many, speaking perverse things to draw away disciples after themselves. Furthermore, we wholly reject the ministries of false apostles and deceitful workers, apostles of Satan who transform themselves into angels of light. Believers must be firmly rooted in the Law and the Prophets, resisting the temptation to seek out teachers who merely satisfy itching ears with worldly fables and smooth words that make void the commandments of God.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Timothy 4:1</span>
+          <span class="scripture-text">Now the Spirit speaketh expressly, that in the latter times some shall depart from the faith, giving heed to seducing spirits, and doctrines of devils.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Timothy 4:3&ndash;4</span>
+          <span class="scripture-text">For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears; and they shall turn away their ears from the truth, and shall be turned unto fables.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 7:15</span>
+          <span class="scripture-text">Beware of false prophets, which come to you in sheep's clothing, but inwardly they are ravening wolves.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 20:29&ndash;30</span>
+          <span class="scripture-text">For I know this, that after my departing shall grievous wolves enter in among you, not sparing the flock. Also of your own selves shall men arise, speaking perverse things, to draw away disciples after them.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Corinthians 11:13&ndash;15</span>
+          <span class="scripture-text">For such are false apostles, deceitful workers, transforming themselves into the apostles of Christ. And no marvel; for Satan himself is transformed into an angel of light...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 24:11</span>
+          <span class="scripture-text">And many false prophets shall rise, and shall deceive many.</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Sola Scriptura &middot; All Scripture is given by inspiration of God &middot; 2 Timothy 3:16</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sabbath of the Lord</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px; margin: 0 auto; background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson) ── */
+  .doc-header {
+    text-align: center; padding: 3rem 3rem 2rem;
+    border-bottom: 3px solid var(--gold-light);
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .part-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 0.5rem;
+  }
+  .header-ornament {
+    font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em;
+    display: block; margin-bottom: 0.8rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700;
+    color: #FBF5E6; letter-spacing: 0.04em; line-height: 1.25; text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+  .doc-subtitle {
+    font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.6rem;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; margin-bottom: 1rem; }
+  .preamble p:last-child { margin-bottom: 0; }
+
+  /* ── TOC ── */
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.35rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--gold); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 1.6rem; flex-shrink: 0; }
+
+  /* ── ARTICLE ── */
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+  .article-body:last-child { margin-bottom: 0; }
+
+  /* ── SECTION ── */
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── HISTORICAL / TEACHER NOTE ── */
+  .hist-note { margin: 1.4rem 0; padding: 0.9rem 1.1rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; font-size: 0.92rem; line-height: 1.7; color: var(--ink-soft); font-style: italic; }
+  .hist-note strong { font-style: normal; color: var(--ink-mid); }
+  .hist-note .note-label { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.5rem; }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture-block { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+
+  /* ── TIMELINE TABLE ── */
+  .table-wrap { margin: 1.6rem 0; overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .compare-table thead tr { background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .compare-table th { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #FBF5E6; padding: 0.65rem 0.9rem; text-align: left; font-weight: 500; }
+  .compare-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); vertical-align: top; line-height: 1.55; }
+  .compare-table tbody tr:nth-child(even) td { background: rgba(242,235,217,0.45); }
+  .compare-table .col-when { font-family: 'Cinzel', serif; font-size: 0.82rem; color: var(--crimson); font-weight: 600; white-space: nowrap; }
+
+  /* ── FOOTER (crimson) ── */
+  .doc-footer { text-align: center; padding: 2rem; border-top: 3px solid var(--gold-light); margin-top: 3rem; background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: #FBF5E6; text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT (8.5 x 11) ── */
+  @media print {
+    @page { size: letter portrait; margin: 0.75in; }
+    body { background: white; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer, .section, .scripture-block, .hist-note, .toc,
+    .compare-table thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .article { break-before: page; }
+    #art1 { break-before: avoid; }
+    .scripture-block, .section, .hist-note, .table-wrap { break-inside: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="part-label">A Pronomian Teaching</span>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">The Sabbath of the Lord</h1>
+    <p class="doc-subtitle">Made at Creation &middot; Kept by Christ &middot; Never Changed by God</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Before We Begin</p>
+      <p>The question of the Sabbath is not a small matter of preference. It touches the character of God, the authority of His Word, and the obedience of those who claim His name. This teaching makes one plain case from the Scriptures: the seventh-day Sabbath was set in place at creation, it was written by the finger of God among His ten great commandments, it was kept by Jesus and by His apostles, and it stands in force today. God never changed it, and His Word never changed it.</p>
+      <p>The change from the seventh day to the first did not come from heaven. It came later, from the customs of men and then from the decrees of councils and emperors, long after the apostles had passed from the earth. We will trace that change as well, so the believer can see clearly where the truth ends and where the tradition of men begins.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#art1"><span class="toc-num">I.</span>The Sabbath Born at Creation</a></li>
+        <li><a href="#art2"><span class="toc-num">II.</span>Kept Before Sinai</a></li>
+        <li><a href="#art3"><span class="toc-num">III.</span>Written by the Finger of God</a></li>
+        <li><a href="#art4"><span class="toc-num">IV.</span>A Sign God Will Not Alter</a></li>
+        <li><a href="#art5"><span class="toc-num">V.</span>The Sabbath of Jesus Christ</a></li>
+        <li><a href="#art6"><span class="toc-num">VI.</span>The Sabbath of the Apostles</a></li>
+        <li><a href="#art7"><span class="toc-num">VII.</span>The Verses Men Use to Move the Day</a></li>
+        <li><a href="#art8"><span class="toc-num">VIII.</span>The Sabbath That Still Remains</a></li>
+        <li><a href="#art9"><span class="toc-num">IX.</span>How the Day Was Changed</a></li>
+        <li><a href="#art10"><span class="toc-num">X.</span>The Verdict and the Invitation</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- ARTICLE I -->
+    <article class="article" id="art1">
+      <div class="article-header">
+        <span class="article-num">In the Beginning</span>
+        <h2 class="article-title">The Sabbath Born at Creation</h2>
+      </div>
+      <p class="article-body">The Sabbath did not begin at Mount Sinai. It began in the first week of the world, before there was an Israelite, before there was sin, before there was a single law given to a single nation. When God finished His work of creation, He rested on the seventh day, and He did three things to that day that He did to no other: He rested on it, He blessed it, and He sanctified it. To sanctify means to set apart as holy. From the very dawn of time, one day in seven was marked off from the rest as the holy day of the Lord.</p>
+      <p class="article-body">This matters for everything that follows. Because the Sabbath was made at creation and given to mankind through Adam, it belongs to all people, not to one nation only. The same God who made the seventh day holy at creation later wrote it into His law for Israel; He did not invent a new thing at Sinai, He reminded His people of something that was already old, already holy, already His.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 2:1&ndash;3</span>
+          <span class="scripture-text">Thus the heavens and the earth were finished, and all the host of them. And on the seventh day God ended his work which he had made; and he rested on the seventh day from all his work which he had made. And God blessed the seventh day, and sanctified it: because that in it he had rested from all his work which God created and made.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 2:27</span>
+          <span class="scripture-text">And he said unto them, The sabbath was made for man, and not man for the sabbath.</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">The Weight of Three Words</p>
+        <p class="section-body">Notice carefully what God did. He <em>rested</em>, which gave the day its pattern. He <em>blessed</em> it, which set His favor upon it. He <em>sanctified</em> it, which made it holy. What God has blessed and sanctified, no man has the right to make common. Jesus Himself confirms the reach of it: the Sabbath was made for man, for the whole human family, not for the Jew alone.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE II -->
+    <article class="article" id="art2">
+      <div class="article-header">
+        <span class="article-num">Before the Law</span>
+        <h2 class="article-title">Kept Before Sinai</h2>
+      </div>
+      <p class="article-body">Some teach that the Sabbath was a new thing handed down at Mount Sinai, a burden laid only on Israel. The Scriptures answer this plainly. Before Israel ever reached Sinai, before the Ten Commandments were spoken from the mountain, God was already commanding His people to keep the Sabbath. In the wilderness, when He sent bread from heaven, He gathered them a double portion on the sixth day and none on the seventh, and He called the seventh day by name: the Sabbath.</p>
+      <p class="article-body">When some of the people went out to gather on the seventh day anyway, God did not rebuke them for breaking a law not yet given. He rebuked them for refusing a commandment they were already bound to keep. This proves the Sabbath was known and binding before Sinai; it was woven into the order of the world from creation, and Israel was simply called back to it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 16:26</span>
+          <span class="scripture-text">Six days ye shall gather it; but on the seventh day, which is the sabbath, in it there shall be none.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 16:28&ndash;30</span>
+          <span class="scripture-text">And the LORD said unto Moses, How long refuse ye to keep my commandments and my laws? See, for that the LORD hath given you the sabbath... So the people rested on the seventh day.</span>
+        </div>
+      </div>
+
+      <div class="hist-note">
+        <span class="note-label">Teacher's Note</span>
+        <strong>Watch the order of events.</strong> The bread from heaven and this rebuke come in Exodus 16. The Ten Commandments are not spoken until Exodus 20. God asks, "How long refuse ye to keep my commandments," about the Sabbath two chapters before Sinai. That is a strong, clean argument that the Sabbath predates the Law of Moses and was never the property of one nation alone.
+      </div>
+    </article>
+
+
+    <!-- ARTICLE III -->
+    <article class="article" id="art3">
+      <div class="article-header">
+        <span class="article-num">The Fourth Word</span>
+        <h2 class="article-title">Written by the Finger of God</h2>
+      </div>
+      <p class="article-body">When God gave the Ten Commandments, He did not whisper them to one prophet to be copied down. He spoke them aloud to the whole nation, and He wrote them with His own finger on tablets of stone. These ten words stand apart from every other statute; they are the moral heart of God's law, the standard of righteousness that does not bend with time or place. The Sabbath sits in the very center of that law, the fourth commandment, and it is the only one that begins with the word "Remember."</p>
+      <p class="article-body">God grounds the command not in anything Jewish, not in the exodus from Egypt, but in creation itself. The reason given for keeping the Sabbath is the same reason it was holy in Genesis: in six days the Lord made all things, and He rested the seventh. A man who keeps the Sabbath is confessing every week that the Lord is the Maker of heaven and earth. To throw the day away is to loosen the one commandment that points back to God as Creator.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 20:8&ndash;11</span>
+          <span class="scripture-text">Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Why "Remember"</p>
+        <p class="section-body">You do not tell a man to remember a thing he has never known. The command to "remember" assumes the Sabbath was already there to be remembered, reaching back to the creation week. And the command is for the household and the stranger alike; the foreigner within the gates rested too. The Sabbath was never fenced off as a Jewish-only custom; it was opened to all who would come under the God of Israel.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IV -->
+    <article class="article" id="art4">
+      <div class="article-header">
+        <span class="article-num">Perpetual</span>
+        <h2 class="article-title">A Sign God Will Not Alter</h2>
+      </div>
+      <p class="article-body">God did not give the Sabbath as a temporary measure to be set aside once a better age arrived. He called it a perpetual covenant and a sign forever between Himself and His people. A sign points to something; this sign points to the Lord as the One who made all things and as the One who makes His people holy. As long as God is Creator and as long as He sanctifies a people for Himself, the sign remains in force.</p>
+      <p class="article-body">Beyond the Sabbath command itself stands the unchanging nature of God and His word. The Lord declares that He does not change, that He will not break His covenant nor alter the thing that has gone out of His lips. And Jesus, far from loosening the law, declared that not the smallest letter of it would pass away while heaven and earth remain. If God does not change, and His word does not change, and His Son did not come to destroy the law, then the Sabbath He wrote in stone stands today exactly as He wrote it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 31:16&ndash;17</span>
+          <span class="scripture-text">Wherefore the children of Israel shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant. It is a sign between me and the children of Israel for ever: for in six days the LORD made heaven and earth, and on the seventh day he rested, and was refreshed.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 20:12</span>
+          <span class="scripture-text">Moreover also I gave them my sabbaths, to be a sign between me and them, that they might know that I am the LORD that sanctify them.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Malachi 3:6</span>
+          <span class="scripture-text">For I am the LORD, I change not; therefore ye sons of Jacob are not consumed.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 89:34</span>
+          <span class="scripture-text">My covenant will I not break, nor alter the thing that is gone out of my lips.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 5:17&ndash;18</span>
+          <span class="scripture-text">Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE V -->
+    <article class="article" id="art5">
+      <div class="article-header">
+        <span class="article-num">The Example of the Lord</span>
+        <h2 class="article-title">The Sabbath of Jesus Christ</h2>
+      </div>
+      <p class="article-body">If anyone had the authority to set the Sabbath aside, it was Jesus, the Son of God and Lord of the Sabbath. Yet He did the opposite. It was His settled custom to keep the Sabbath, going into the synagogue on that day to read and to teach. He cleansed the Sabbath of the heavy man-made rules that had been piled upon it, but He never once broke God's command or taught others to break it. He called Himself Lord of the Sabbath, which is no abolishing of the day but a claiming of it; a man is not lord of what he intends to throw away.</p>
+      <p class="article-body">Consider also what happened the very weekend He died. The women who loved Him watched where He was laid, prepared their spices, and then rested on the Sabbath day "according to the commandment." After the cross, with their Lord in the tomb, His own followers still honored the seventh day as the holy day of God. And looking forward to the destruction of Jerusalem, decades after the resurrection, Jesus told His followers to pray that their flight would not fall on the Sabbath day, plainly expecting that they would still be keeping it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 4:16</span>
+          <span class="scripture-text">And he came to Nazareth, where he had been brought up: and, as his custom was, he went into the synagogue on the sabbath day, and stood up for to read.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 2:27&ndash;28</span>
+          <span class="scripture-text">And he said unto them, The sabbath was made for man, and not man for the sabbath: Therefore the Son of man is Lord also of the sabbath.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 23:56</span>
+          <span class="scripture-text">And they returned, and prepared spices and ointments; and rested the sabbath day according to the commandment.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 24:20</span>
+          <span class="scripture-text">But pray ye that your flight be not in the winter, neither on the sabbath day.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VI -->
+    <article class="article" id="art6">
+      <div class="article-header">
+        <span class="article-num">The Practice of the Church</span>
+        <h2 class="article-title">The Sabbath of the Apostles</h2>
+      </div>
+      <p class="article-body">After the resurrection, after Pentecost, after the gospel went out to the nations, the apostles still kept the seventh-day Sabbath. This was not merely Paul slipping into the synagogue to reach the Jews; it was his settled manner, week after week, year after year. In one city he reasoned in the synagogue every Sabbath for a year and a half. By a riverside, where there was no synagogue at all, the believers still gathered on the Sabbath for prayer.</p>
+      <p class="article-body">The clearest proof is in Antioch. When Paul finished preaching, the Gentiles begged to hear more. Paul had a perfect moment to say, "Come back tomorrow, the first day, our new day of worship." He said no such thing. He invited them to return the next Sabbath, and nearly the whole city came. If the day of worship had been moved to Sunday, this was the place to say so, and the apostle to the Gentiles never said it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 17:2</span>
+          <span class="scripture-text">And Paul, as his manner was, went in unto them, and three sabbath days reasoned with them out of the scriptures.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 18:4</span>
+          <span class="scripture-text">And he reasoned in the synagogue every sabbath, and persuaded the Jews and the Greeks.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 16:13</span>
+          <span class="scripture-text">And on the sabbath we went out of the city by a river side, where prayer was wont to be made; and we sat down, and spake unto the women which resorted thither.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 13:42, 44</span>
+          <span class="scripture-text">And when the Jews were gone out of the synagogue, the Gentiles besought that these words might be preached to them the next sabbath... And the next sabbath day came almost the whole city together to hear the word of God.</span>
+        </div>
+      </div>
+
+      <div class="hist-note">
+        <span class="note-label">Teacher's Note</span>
+        <strong>Press the Antioch point.</strong> Acts 13:42&ndash;44 is the hinge. Gentiles ask to hear the word again; the apostle answers with "the next sabbath," not "the next day." This is the single best New Testament evidence that the Sabbath was still the day of gathering even among Gentile converts, and it sits inside the very book that records the spread of the church.
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VII -->
+    <article class="article" id="art7">
+      <div class="article-header">
+        <span class="article-num">The Texts Examined</span>
+        <h2 class="article-title">The Verses Men Use to Move the Day</h2>
+      </div>
+      <p class="article-body">Those who teach a change from Saturday to Sunday lean on a small handful of verses. Not one of them commands a new day, and not one of them cancels the old. Let us look at each honestly.</p>
+
+      <div class="section">
+        <p class="section-title">Acts 20:7 &middot; Breaking Bread on the First Day</p>
+        <p class="section-body">This was a single evening meeting, gathered because Paul was leaving the next morning, and his message ran until midnight. The believers broke bread daily from house to house, so a meal and a sermon on this occasion proves no transfer of the holy day. It records a farewell gathering, not a new commandment.</p>
+      </div>
+
+      <div class="section">
+        <p class="section-title">1 Corinthians 16:2 &middot; Laying By in Store</p>
+        <p class="section-body">Paul tells each believer to set something aside at home on the first day, so that the collection for the poor saints in Jerusalem would be ready before he came. This is a private act of saving in one's own house, not a public worship service, and it says nothing whatever about which day is holy.</p>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Revelation 1:10 &middot; The Lord's Day</p>
+        <p class="section-body">John says he was in the Spirit on the Lord's day. Nowhere does Scripture call Sunday the Lord's day. Scripture does, however, call the seventh day the Lord's holy day, and the Sabbath of the Lord. The day that belongs to the Lord, by His own word, is the Sabbath.</p>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Colossians 2:16 &middot; The Sabbath Days That Were Shadows</p>
+        <p class="section-body">This verse lists meat, drink, holydays, new moons, and sabbath days together, and calls them shadows of things to come. These are the ceremonial appointments tied to the temple and the priesthood, the yearly feasts and their special rest days, which were fulfilled in Christ. They stand in a series with new moons and feast days, which marks them out as the annual ceremonial sabbaths, not the weekly Sabbath written in stone at creation. The shadow law of the sanctuary was fulfilled; the moral law of the Creator remains.</p>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 20:7</span>
+          <span class="scripture-text">And upon the first day of the week, when the disciples came together to break bread, Paul preached unto them, ready to depart on the morrow; and continued his speech until midnight.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 16:2</span>
+          <span class="scripture-text">Upon the first day of the week let every one of you lay by him in store, as God hath prospered him, that there be no gatherings when I come.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 58:13</span>
+          <span class="scripture-text">If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of the LORD, honourable...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Colossians 2:16&ndash;17</span>
+          <span class="scripture-text">Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: Which are a shadow of things to come; but the body is of Christ.</span>
+        </div>
+      </div>
+
+      <div class="hist-note">
+        <span class="note-label">Teacher's Note</span>
+        <strong>Distinguish the two kinds of sabbath.</strong> The yearly feast-day rests of the ceremonial law were attached to the temple service and the sacrifices, and those were fulfilled and ended in Christ. The weekly seventh-day Sabbath was set at creation, before any temple or sacrifice existed, and was written among the ten moral commandments. Colossians 2 sweeps away the shadow sabbaths of the old sanctuary; it does not touch the creation Sabbath. Keep this distinction sharp, because the whole weight of the Sunday argument leans on blurring it.
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VIII -->
+    <article class="article" id="art8">
+      <div class="article-header">
+        <span class="article-num">Into the Age to Come</span>
+        <h2 class="article-title">The Sabbath That Still Remains</h2>
+      </div>
+      <p class="article-body">The Sabbath does not merely survive into our own day; it carries on into eternity. The book of Hebrews declares that there remains a rest, a keeping of a Sabbath, for the people of God. And the prophet looks ahead to the new heavens and the new earth and sees all flesh coming to worship before the Lord from one Sabbath to another. The day God blessed at the first creation will be kept in the new creation. There is no point on the line, from Eden to eternity, where God ever sets it aside.</p>
+      <p class="article-body">There is also a deeper rest within the command. To keep the Sabbath is to cease from our own striving and to trust the finished work of God; it is to rest in the Lord, not only with the body for a day, but with the soul that has stopped trying to save itself by its own labor. The believer who keeps the Sabbath enters a weekly picture of the settled, inward peace that Christ gives. The outward rest of the day and the inward rest of the heart belong together.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 4:9&ndash;10</span>
+          <span class="scripture-text">There remaineth therefore a rest to the people of God. For he that is entered into his rest, he also hath ceased from his own works, as God did from his.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 66:22&ndash;23</span>
+          <span class="scripture-text">For as the new heavens and the new earth, which I will make, shall remain before me, saith the LORD, so shall your seed and your name remain. And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith the LORD.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 56:6&ndash;7</span>
+          <span class="scripture-text">Also the sons of the stranger, that join themselves to the LORD... every one that keepeth the sabbath from polluting it, and taketh hold of my covenant; Even them will I bring to my holy mountain, and make them joyful in my house of prayer...</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IX -->
+    <article class="article" id="art9">
+      <div class="article-header">
+        <span class="article-num">The Record of History</span>
+        <h2 class="article-title">How the Day Was Changed</h2>
+      </div>
+      <p class="article-body">If God never changed the Sabbath, and His word never changed it, and Jesus and the apostles kept it, then where did Sunday come from? The honest answer is found not in the Bible but in the history of the church after the apostles died. The change came slowly, then it came by law, and at last the church that made it openly admitted it had done so on its own authority and not by any command of Scripture.</p>
+
+      <p class="article-body">In the generations after the apostles were gone, the church filled with Gentile converts, and hostility toward the Jews grew fierce across the Roman world, especially after Jerusalem was destroyed and the later Jewish revolt was crushed. Many Gentile believers wanted to be seen as wholly separate from anything Jewish, and the seventh-day Sabbath was the most visible Jewish practice of all. So a custom slowly grew of honoring the first day, the day of the resurrection, and of treating the old Sabbath with suspicion. This was the choice of men seeking to distance themselves from the Jews; it was never a word from God.</p>
+
+      <p class="article-body">In time the power of the state and the decrees of councils were placed behind the new day. What had been a drifting custom became enforced law.</p>
+
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>When</th>
+              <th>What Happened</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-when">2nd century</td>
+              <td>After the apostles, Sunday observance grows among Gentile believers as a custom, defended by appeal to the resurrection and by a desire to be set apart from the Jews. No commandment of God or Scripture is given for it.</td>
+            </tr>
+            <tr>
+              <td class="col-when">A.D. 321</td>
+              <td>The emperor Constantine issues a civil law commanding rest on "the venerable day of the Sun." For the first time, the power of the Roman state stands behind Sunday rest. The day is named for the sun, long the object of pagan worship, and the emperor himself had been a devotee of the sun.</td>
+            </tr>
+            <tr>
+              <td class="col-when">A.D. 363&ndash;364</td>
+              <td>The Council of Laodicea, a council of churchmen, forbids Christians to rest on the seventh-day Sabbath, calls such rest a Judaizing offense, commands the honoring of the first day instead, and pronounces a curse on those who keep the Sabbath. Here a council of men sets itself directly against a commandment written by the finger of God.</td>
+            </tr>
+            <tr>
+              <td class="col-when">Later centuries</td>
+              <td>The Roman Church openly teaches that the change of worship from the seventh day to the first rests on the authority of the church, not on any command of Scripture, and points to that very change as proof of its power to bind tradition.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="article-body">The chain is plain. God set the seventh day apart at creation. He wrote it into His law. His Son and His apostles kept it. Then men, in the centuries after the apostles, by custom and then by imperial edict and church council, moved the observance to the first day, and the church that did it has acknowledged that it acted on its own authority. No verse of Scripture was ever produced to command the change, because none exists.</p>
+
+      <div class="hist-note">
+        <span class="note-label">Teacher's Note</span>
+        <strong>Be precise, and your case becomes unbreakable.</strong> The strongest claim is not that one council on one day invented Sunday out of nothing; the move toward Sunday began as a gradual custom in the second century, before Constantine or Laodicea, and those later acts of emperor and council formalized and enforced what men had already been building. State it this way: Scripture never changed the day, God never changed the day, and men changed it step by step, first by custom and then by decree. That claim is fully accurate and leaves no opening for a critic to correct you. Also, when you cite a catechism in which the Roman Church admits it changed the day, quote the exact source and edition; several quotations passed around in print are loose or secondhand, and a precise citation keeps the teaching above reproach.
+      </div>
+    </article>
+
+
+    <!-- ARTICLE X -->
+    <article class="article" id="art10">
+      <div class="article-header">
+        <span class="article-num">The Conclusion</span>
+        <h2 class="article-title">The Verdict and the Invitation</h2>
+      </div>
+      <p class="article-body">Lay the whole matter side by side and the verdict is not difficult. The Sabbath was made holy at creation, kept before Sinai, written by the finger of God among His ten commandments, sealed as a perpetual sign, kept by Jesus as His custom, kept by the apostles long after the resurrection, never moved by any word of Scripture, and carried forward even into the new heavens and the new earth. The change to the first day rests on the traditions of men and the decrees of councils, and on nothing the Lord ever said.</p>
+      <p class="article-body">This is not a teaching meant to load the believer with guilt or to make rest into a new burden. It is an invitation to receive a gift God gave to mankind in the first week of the world. To keep the Sabbath is to confess that the Lord is the Maker of all things, to trust His finished work rather than our own striving, and to walk in step with Jesus, who kept the day Himself. The God who does not change still calls His people to remember the day He blessed, and still offers, within it, the deeper rest of the soul that has found its peace in Him.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 20:8</span>
+          <span class="scripture-text">Remember the sabbath day, to keep it holy.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 58:13&ndash;14</span>
+          <span class="scripture-text">...and call the sabbath a delight, the holy of the LORD, honourable... Then shalt thou delight thyself in the LORD; and I will cause thee to ride upon the high places of the earth...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 4:9</span>
+          <span class="scripture-text">There remaineth therefore a rest to the people of God.</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Remember the sabbath day, to keep it holy &middot; Exodus 20:8</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

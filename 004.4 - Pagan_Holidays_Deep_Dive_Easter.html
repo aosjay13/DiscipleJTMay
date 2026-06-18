@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Origins of Easter: A Deep Dive</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px; margin: 0 auto; background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson) ── */
+  .doc-header {
+    text-align: center; padding: 3rem 3rem 2rem;
+    border-bottom: 3px solid var(--gold-light);
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .part-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 0.5rem;
+  }
+  .header-ornament {
+    font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em;
+    display: block; margin-bottom: 0.8rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700;
+    color: #FBF5E6; letter-spacing: 0.04em; line-height: 1.25; text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+  .doc-subtitle {
+    font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.6rem;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+
+  /* ── TOC ── */
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.35rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--gold); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 1.6rem; flex-shrink: 0; }
+
+  /* ── ARTICLE ── */
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+
+  /* ── SECTION ── */
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── HISTORICAL NOTE ── */
+  .hist-note { margin: 1.4rem 0; padding: 0.9rem 1.1rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; font-size: 0.92rem; line-height: 1.7; color: var(--ink-soft); font-style: italic; }
+  .hist-note strong { font-style: normal; color: var(--ink-mid); }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture-block { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+
+  /* ── COMPARISON TABLE ── */
+  .table-wrap { margin: 1.6rem 0; overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .compare-table thead tr { background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .compare-table th { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #FBF5E6; padding: 0.65rem 0.9rem; text-align: left; font-weight: 500; }
+  .compare-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); vertical-align: top; line-height: 1.55; }
+  .compare-table tbody tr:nth-child(even) td { background: rgba(242,235,217,0.45); }
+  .compare-table .col-name { font-family: 'Cinzel', serif; font-size: 0.88rem; color: var(--ink); font-weight: 600; }
+  .compare-table .col-origin { font-style: italic; color: var(--ink-soft); font-size: 0.93rem; }
+  .compare-table .col-hebrew { color: var(--crimson); font-weight: 500; font-size: 0.93rem; }
+  .compare-table .true-row td { background: var(--gold-pale) !important; }
+  .compare-table .true-row .col-name { color: var(--crimson); }
+
+  /* ── FOOTER (crimson) ── */
+  .doc-footer { text-align: center; padding: 2rem; border-top: 3px solid var(--gold-light); margin-top: 3rem; background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: #FBF5E6; text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @media print {
+    @page { size: letter portrait; margin: 0.75in; }
+    body { background: white; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer, .section, .scripture-block, .hist-note, .toc,
+    .compare-table thead tr, .compare-table .true-row td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .article { break-before: page; }
+    #art1 { break-before: avoid; }
+    .scripture-block, .section, .hist-note, .table-wrap { break-inside: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="part-label">Pagan Holidays &middot; Part I &middot; Deep Dive</span>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">The Origins of Easter</h1>
+    <p class="doc-subtitle">The Spring Worship of the Goddess and the Dying God</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Continuation of Part I</p>
+      <p>Part I named Easter as the second of the pagan holidays and traced it to the worship of the spring fertility goddess, known as Ishtar in Babylon, Ashtoreth among the Canaanites, and Astarte to the Greeks, with her consort Tammuz whom the women wept for at the door of God's own temple. This deep dive follows that thread out across the nations. Just as the whole ancient world kept a midwinter festival of the dying and reborn sun, so the whole ancient world kept a spring festival of the dying and rising god of the green earth, mourned at his death and celebrated at his return. From Babylon to Egypt to Phrygia and Greece, the same pattern appears: a fertility goddess, a god who dies and rises with the spring, mourning that turns to rejoicing, and the symbols of new life. What follows shows how that spring worship spread, how it gathered its symbols, and how the resurrection of Christ came to be set into its season and called by its name.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#art1"><span class="toc-num">I.</span>The Spring of the Dying God</a></li>
+        <li><a href="#art2"><span class="toc-num">II.</span>Babylon: Ishtar and Tammuz</a></li>
+        <li><a href="#art3"><span class="toc-num">III.</span>Egypt: Isis and the Risen Osiris</a></li>
+        <li><a href="#art4"><span class="toc-num">IV.</span>Phrygia and Greece: The Day of Joy</a></li>
+        <li><a href="#art5"><span class="toc-num">V.</span>The Name and the Symbols</a></li>
+        <li><a href="#art6"><span class="toc-num">VI.</span>The Church Cuts Off the Passover</a></li>
+        <li><a href="#art7"><span class="toc-num">VII.</span>The Customs and the Verdict</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- ARTICLE I -->
+    <article class="article" id="art1">
+      <div class="article-header">
+        <span class="article-num">The Common Root</span>
+        <h2 class="article-title">The Spring of the Dying God</h2>
+      </div>
+      <p class="article-body">If the winter solstice was the death and rebirth of the sun, the spring equinox was the death and rebirth of the green earth. As the cold gave way and the seed broke open and the land came back to life, the nations told the same story over and over under different names: a god of the growing things had died, the goddess had mourned him, and now he was risen and the world was alive again. The festivals of this story clustered tightly around the spring equinox, the moment when day and night stand equal and the light begins to win. Long before the resurrection of Christ was ever set in the spring, the spring already belonged to the goddess and her dying, rising god.</p>
+      <p class="article-body">The table below lays the spring festivals of the nations side by side. Notice how they gather at one season, carry one theme, and surround one figure: the great mother goddess and the god who dies and rises.</p>
+
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Land or People</th>
+              <th>Festival</th>
+              <th>What Was Honored</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-name">Babylon &amp; Mesopotamia</td>
+              <td class="col-origin">Akitu, the spring New Year</td>
+              <td>The goddess Ishtar; the mourning and return of Tammuz, god of the green earth</td>
+            </tr>
+            <tr>
+              <td class="col-name">Egypt</td>
+              <td class="col-origin">Rites of Isis and Osiris</td>
+              <td>The slain and restored Osiris; the mother Isis and her son Horus</td>
+            </tr>
+            <tr>
+              <td class="col-name">Phrygia &amp; Rome</td>
+              <td class="col-origin">The Hilaria of Cybele and Attis</td>
+              <td>The death and rising of Attis, consort of the mother goddess Cybele</td>
+            </tr>
+            <tr>
+              <td class="col-name">Greece &amp; Syria</td>
+              <td class="col-origin">The mourning and return of Adonis</td>
+              <td>Adonis, the dying-and-rising god of vegetation, beloved of the goddess</td>
+            </tr>
+            <tr>
+              <td class="col-name">Anglo-Saxon</td>
+              <td class="col-origin">Eosturmonath, the month of Eostre</td>
+              <td>The spring goddess Eostre, from whom the English name "Easter" is taken</td>
+            </tr>
+            <tr class="true-row">
+              <td class="col-name">Israel (by God's command)</td>
+              <td class="col-origin">The Passover &amp; Unleavened Bread</td>
+              <td>The LORD's redemption of His people; Christ our Passover sacrificed for us</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hist-note"><strong>A note on the strongest case.</strong> Scholars have long debated how exactly the "dying and rising god" stories match one another, and some of the parallels drawn in popular books are overstated. What is not in doubt is the foundation of this study: the spring season across the ancient world belonged to the fertility goddess and to a god mourned and then celebrated as life returned to the earth, with the symbols of new life all around. Build the case on that documented worship, not on a claim that every myth matches Christ point for point, and it stands firm.</div>
+    </article>
+
+
+    <!-- ARTICLE II -->
+    <article class="article" id="art2">
+      <div class="article-header">
+        <span class="article-num">The Fountainhead</span>
+        <h2 class="article-title">Babylon: Ishtar and Tammuz</h2>
+      </div>
+      <p class="article-body">As Part I established, the spring goddess rises at Babel. In Babylon she was Ishtar, the goddess of love and fertility, the queen of heaven; among the Canaanites she was Ashtoreth, and to the Greeks Astarte. Bound to her was Tammuz, the god of the green and growing earth, whose death each year was mourned and whose return was celebrated as the land came back to life. The prophet Ezekiel was shown the women of Israel weeping for Tammuz at the very door of the LORD's temple, a spring mourning rite drawn straight from this Babylonian worship.</p>
+      <p class="article-body">Babylon kept its great New Year festival, the Akitu, in the spring month, the same season God appointed for His Passover. There the renewal of the world and the power of the goddess were celebrated. This is the root pattern: a mother goddess, a dying and rising god of vegetation, mourning that turns to joy, all fixed to the spring. From Babylon it was carried into every land, taking new names but keeping the same shape.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 8:14</span>
+          <span class="scripture-text">...behold, there sat women weeping for Tammuz.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 7:18</span>
+          <span class="scripture-text">...and the women knead their dough, to make cakes to the queen of heaven, and to pour out drink offerings unto other gods, that they may provoke me to anger.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Kings 11:5</span>
+          <span class="scripture-text">For Solomon went after Ashtoreth the goddess of the Zidonians...</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE III -->
+    <article class="article" id="art3">
+      <div class="article-header">
+        <span class="article-num">The Land of the Nile</span>
+        <h2 class="article-title">Egypt: Isis and the Risen Osiris</h2>
+      </div>
+      <p class="article-body">In Egypt the dying and rising god was Osiris. The story told that he was slain and his body torn apart, that his wife Isis gathered and restored him, and that he was raised to live and reign as lord over the realm of the dead. His death and restoration were bound to the yearly cycle of the land, the dying of the fields and the renewal that came with the flooding of the Nile and the return of the growing season. Where there was death, Egypt looked for the god to live again.</p>
+      <p class="article-body">Beside Osiris stood Isis and her son Horus, the same mother and child traced from Babylon, now under Egyptian names. The image of the goddess holding her divine son was honored for thousands of years. Here again is the spring pattern of the nations: a god who dies and is raised, a grieving goddess who restores him, and the promise that life will return to the dead earth. Israel had lived in the midst of this very worship, and God commanded them plainly not to do after the doings of the land of Egypt.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 18:3</span>
+          <span class="scripture-text">After the doings of the land of Egypt, wherein ye dwelt, shall ye not do... neither shall ye walk in their ordinances.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 8:16</span>
+          <span class="scripture-text">...with their backs toward the temple of the LORD, and their faces toward the east; and they worshipped the sun toward the east.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 20:3&ndash;5</span>
+          <span class="scripture-text">Thou shalt have no other gods before me... Thou shalt not bow down thyself to them, nor serve them...</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IV -->
+    <article class="article" id="art4">
+      <div class="article-header">
+        <span class="article-num">The Striking Parallel</span>
+        <h2 class="article-title">Phrygia and Greece: The Day of Joy</h2>
+      </div>
+      <p class="article-body">Nowhere does the spring story come closer to the shape of the Christian festival than in the worship of the goddess Cybele and her consort Attis, which spread from Phrygia into the heart of Rome. Each spring, around the time of the equinox, the cult kept a passion of Attis. A pine tree representing the dead god was wrapped in a linen shroud and laid in a tomb. On the Day of Blood the priests mourned and grieved over him with fasting and wild lamentation. Then, after the appointed days, at dawn the tomb was opened and found empty, and the cry went up that the god was risen and saved from death. That day of rejoicing was called the Hilaria, the Day of Joy.</p>
+      <p class="article-body">The Greeks told the same story of Adonis, the beautiful young god beloved of the goddess, who died and was mourned by women each year and then returned, his death and rising tied to the withering and greening of the earth. So too the maiden of the Greek myth was said to return from the realm of the dead each spring, and the world bloomed again at her coming. Wherever the nations spread, the spring carried this one tale of death, mourning, and resurrection wrapped around a god of the green earth and the goddess who loved him.</p>
+
+      <div class="hist-note"><strong>A point worth handling with care.</strong> The parallel between the Hilaria of Attis and the Christian Passover week is striking, and the climax of the Attis festival fell on the twenty-fifth of March, the very date the early church had settled on for the death of Christ. This overlap is real and worth showing. At the same time, scholars debate whether the "resurrection" of Attis was fully developed before Christianity or grew alongside it in rivalry. The safe and solid ground is this: the spring season was already crowded with festivals of a dying-and-rising god long before Easter, and the church set its observance into that crowded season rather than keeping the Passover God appointed. That fact needs no exaggeration.</div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 12:30&ndash;31</span>
+          <span class="scripture-text">...that thou enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise. Thou shalt not do so unto the LORD thy God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 10:2</span>
+          <span class="scripture-text">Thus saith the LORD, Learn not the way of the heathen...</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE V -->
+    <article class="article" id="art5">
+      <div class="article-header">
+        <span class="article-num">The Name &amp; the Eggs</span>
+        <h2 class="article-title">The Name and the Symbols</h2>
+      </div>
+      <p class="article-body">The English name Easter comes from the spring goddess of the Anglo-Saxons. The eighth-century writer Bede recorded that the month answering to April was called Eosturmonath, the month of the goddess Eostre, who was honored with feasts at that season. When the Christian observance reached these northern peoples, it took the name of their spring goddess and has carried it in English ever since. Almost everywhere else in the world the holiday is still called by a form of the word Passover, which only makes the substitution in English plainer.</p>
+      <p class="article-body">The symbols are older than the name. The egg has been a sign of new life and fertility across the ancient world for as far back as memory reaches, and it belongs to the spring fertility cults, not to the empty tomb of Christ. The hare, fruitful and abundant in the spring, was a fertility symbol of the season among the Germanic peoples. And the sunrise service, the gathering to worship facing the rising sun at dawn on Easter morning, reaches straight back to the sun worship that God rebuked through Ezekiel, where men in His own temple turned their backs to His house and bowed toward the rising sun in the east.</p>
+
+      <div class="hist-note"><strong>On the Ishtar claim.</strong> A popular saying holds that the word Easter comes from Ishtar. It does not; the English name comes from the Germanic goddess Eostre, and the two words belong to entirely different languages. Do not rest any weight on the spelling. The true and defensible connection, as Part I showed, is that Ishtar, Ashtoreth, Astarte, and Eostre are all the same kind of spring fertility goddess, and the worship is what carries from one to the next, not the letters of a name.</div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 8:16</span>
+          <span class="scripture-text">...they worshipped the sun toward the east.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 44:17</span>
+          <span class="scripture-text">...to burn incense unto the queen of heaven, and to pour out drink offerings unto her...</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 12:32</span>
+          <span class="scripture-text">What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VI -->
+    <article class="article" id="art6">
+      <div class="article-header">
+        <span class="article-num">The Substitution</span>
+        <h2 class="article-title">The Church Cuts Off the Passover</h2>
+      </div>
+      <p class="article-body">The resurrection of Christ is the cornerstone of the faith, and the earliest believers did keep its memory. But they kept it at the time God had already appointed, the Passover. In the second century, the believers of Asia Minor observed the death and resurrection of the Lord on the fourteenth of the first month, the day of the Passover, exactly as the Law commanded, and they traced this practice back to the apostles themselves. They were called the Quartodecimans, from the word for fourteenth.</p>
+      <p class="article-body">A long dispute followed over whether the observance should stay tied to the Passover or be moved to a fixed Sunday. At the Council of Nicaea in the year 325, the matter was settled against the Passover. The celebration was set on the first Sunday after the first full moon following the spring equinox, and it was deliberately cut loose from the Jewish reckoning so that it would no longer fall with the Passover. In that decision the appointed time of God was set aside, and the festival drifted onto the calendar of the spring equinox where the goddess and the dying god had always been honored.</p>
+      <p class="article-body">A trace of the original remains even in the King James text. In Acts 12:4 the word translated Easter is the word that everywhere else is rendered Passover. The Scriptures gave the feast; men gave it a new name and a new date.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 12:4</span>
+          <span class="scripture-text">...intending after Easter to bring him forth to the people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:5</span>
+          <span class="scripture-text">In the fourteenth day of the first month at even is the LORD'S passover.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:14</span>
+          <span class="scripture-text">And this day shall be unto you for a memorial; and ye shall keep it a feast to the LORD throughout your generations; ye shall keep it a feast by an ordinance for ever.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 7:9</span>
+          <span class="scripture-text">...Full well ye reject the commandment of God, that ye may keep your own tradition.</span>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VII -->
+    <article class="article" id="art7">
+      <div class="article-header">
+        <span class="article-num">The Verdict</span>
+        <h2 class="article-title">The Customs and the Verdict</h2>
+      </div>
+      <p class="article-body">When the customs of Easter are traced to their sources, the same thing is found as with Christmas. The name, the symbols, the sunrise rite, and even the date come not from Scripture but from the spring worship of the nations.</p>
+
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Custom</th>
+              <th>What It Was</th>
+              <th>Where It Came From</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-name">The name "Easter"</td>
+              <td>The English name of the holiday</td>
+              <td class="col-origin">The Anglo-Saxon spring goddess Eostre, recorded by Bede</td>
+            </tr>
+            <tr>
+              <td class="col-name">Sunrise service</td>
+              <td>Worship facing the rising sun at dawn</td>
+              <td class="col-origin">Ancient sun worship; the very rite condemned in Ezekiel 8:16</td>
+            </tr>
+            <tr>
+              <td class="col-name">Eggs</td>
+              <td>Symbols of new life and fertility</td>
+              <td class="col-origin">The spring fertility cults of the nations</td>
+            </tr>
+            <tr>
+              <td class="col-name">The hare / rabbit</td>
+              <td>A spring sign of fertility and abundance</td>
+              <td class="col-origin">Germanic spring custom of the season</td>
+            </tr>
+            <tr>
+              <td class="col-name">Spring cakes &amp; buns</td>
+              <td>Breads offered in the spring season</td>
+              <td class="col-origin">The cakes to the queen of heaven (Jeremiah 7:18)</td>
+            </tr>
+            <tr>
+              <td class="col-name">The date</td>
+              <td>The Sunday after the spring full moon</td>
+              <td class="col-origin">Set by the Council of Nicaea, cut loose from God's Passover</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="article-body">The verdict is the same as before. God forbids His people to worship Him in the way the nations worshipped their gods, and He forbids dressing the customs of false worship in the clothing of devotion to Him. The resurrection of Christ is true, glorious, and central, but it is not honored by keeping the festival of the spring goddess under a new name. God already gave a feast that points to the Lamb and to His triumph: the Passover, in which Christ our Passover is sacrificed for us. The call of God is to come out from the customs of the nations and to keep the days He Himself appointed. For those appointed times, see the companion document <em>Moedim in the Church</em> and the article on the Moedim in the <em>Bylaws of Faith and Practice</em>.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 5:7&ndash;8</span>
+          <span class="scripture-text">...For even Christ our passover is sacrificed for us: Therefore let us keep the feast, not with old leaven... but with the unleavened bread of sincerity and truth.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 12:31</span>
+          <span class="scripture-text">Thou shalt not do so unto the LORD thy God: for every abomination to the LORD, which he hateth, have they done unto their gods.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Corinthians 6:17</span>
+          <span class="scripture-text">Wherefore come out from among them, and be ye separate, saith the Lord, and touch not the unclean thing; and I will receive you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Revelation 18:4</span>
+          <span class="scripture-text">Come out of her, my people, that ye be not partakers of her sins...</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Christ our passover is sacrificed for us &middot; 1 Corinthians 5:7 &middot; Learn not the way of the heathen &middot; Jeremiah 10:2</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

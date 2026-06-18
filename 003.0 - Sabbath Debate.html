@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sabbath Debate: A Formal Exchange</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #1a1710;
+    --bg2:          #221f15;
+    --bg3:          #2a2619;
+    --paper:        #f7f2e8;
+    --paper2:       #ede7d5;
+    --ink:          #1c1a14;
+    --ink-mid:      #3d3826;
+    --ink-soft:     #6b5f44;
+    --gold:         #c9973a;
+    --gold-light:   #e8c068;
+    --gold-pale:    #f5e8c8;
+    --nathan-col:   #2c4a3e;
+    --nathan-light: #e8f2ee;
+    --nathan-acc:   #4a8c72;
+    --marcus-col:   #3d2c1e;
+    --marcus-light: #f2ece3;
+    --marcus-acc:   #8c5a3a;
+    --rule:         rgba(201,151,58,0.25);
+    --shadow:       rgba(0,0,0,0.35);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(201,151,58,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(44,74,62,0.08) 0%, transparent 60%);
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--paper);
+    min-height: 100vh;
+    padding: 1.5rem 0.75rem 4rem;
+  }
+
+  /* ── WRAPPER ── */
+  .wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 2px;
+    background: var(--gold);
+  }
+
+  .masthead-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .masthead-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--paper);
+    margin-bottom: 0.5rem;
+  }
+
+  .masthead-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .masthead-sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    color: #8a7d5e;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+  }
+
+  .ornament {
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 0.5em;
+    display: block;
+    margin: 1.2rem 0;
+    opacity: 0.7;
+  }
+
+  /* ── INTRO CARD ── */
+  .intro-card {
+    background: var(--bg2);
+    border: 1px solid rgba(201,151,58,0.2);
+    border-left: 3px solid var(--gold);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #c4b896;
+    font-style: italic;
+  }
+
+  .intro-card p + p { margin-top: 0.75rem; }
+
+  /* ── DRAMATIS PERSONAE ── */
+  .personae {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .personae { grid-template-columns: 1fr; }
+  }
+
+  .persona-card {
+    padding: 1.2rem 1.4rem;
+    border: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .persona-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .persona-card.nathan {
+    background: rgba(44,74,62,0.2);
+    border-color: rgba(74,140,114,0.25);
+  }
+  .persona-card.nathan::before { background: var(--nathan-acc); }
+
+  .persona-card.marcus {
+    background: rgba(61,44,30,0.25);
+    border-color: rgba(140,90,58,0.25);
+  }
+  .persona-card.marcus::before { background: var(--marcus-acc); }
+
+  .persona-role {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .persona-card.nathan .persona-role { color: var(--nathan-acc); }
+  .persona-card.marcus .persona-role { color: var(--marcus-acc); }
+
+  .persona-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--paper);
+    margin-bottom: 0.4rem;
+  }
+
+  .persona-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #9a8e72;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2.5rem 0 1.2rem;
+  }
+
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    white-space: nowrap;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid rgba(201,151,58,0.3);
+  }
+
+  .section-title-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 600;
+    color: var(--paper);
+    flex: 1;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── ARGUMENT BLOCK ── */
+  .argument {
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .arg-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .arg-speaker {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .arg-label {
+    font-size: 0.78rem;
+    font-style: italic;
+    opacity: 0.7;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .arg-body {
+    padding: 1.1rem 1.3rem 1.3rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    line-height: 1.82;
+  }
+
+  .arg-body p + p { margin-top: 0.8rem; }
+
+  /* Nathan (Pro-Sabbath) styling */
+  .argument.nathan .arg-header {
+    background: rgba(44,74,62,0.5);
+    border-bottom: 1px solid rgba(74,140,114,0.2);
+  }
+  .argument.nathan .arg-speaker { color: var(--nathan-acc); }
+  .argument.nathan .arg-body {
+    background: rgba(44,74,62,0.15);
+    color: #d4e8e0;
+    border: 1px solid rgba(74,140,114,0.15);
+    border-top: none;
+  }
+
+  /* Marcus (Anti-Sabbath) styling */
+  .argument.marcus .arg-header {
+    background: rgba(61,44,30,0.55);
+    border-bottom: 1px solid rgba(140,90,58,0.2);
+  }
+  .argument.marcus .arg-speaker { color: var(--marcus-acc); }
+  .argument.marcus .arg-body {
+    background: rgba(61,44,30,0.2);
+    color: #e0d4c4;
+    border: 1px solid rgba(140,90,58,0.15);
+    border-top: none;
+  }
+
+  /* ── SCRIPTURE INLINE ── */
+  .scripture {
+    display: block;
+    margin: 0.9rem 0;
+    padding: 0.8rem 1rem 0.8rem 1.1rem;
+    background: rgba(0,0,0,0.2);
+    border-left: 2px solid var(--gold);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #d4c9a8;
+  }
+
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    font-style: normal;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  /* ── VERDICT CARD ── */
+  .verdict {
+    margin: 3rem 0 1.5rem;
+    background: var(--bg2);
+    border: 1px solid rgba(201,151,58,0.3);
+    padding: 1.8rem 1.8rem;
+    position: relative;
+  }
+
+  .verdict::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .verdict-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .verdict-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .verdict-body {
+    font-size: 1rem;
+    line-height: 1.82;
+    color: #c4b896;
+  }
+
+  .verdict-body p + p { margin-top: 0.75rem; }
+
+  .verdict-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(201,151,58,0.1);
+    font-size: 0.97rem;
+    line-height: 1.65;
+    color: #c4b896;
+  }
+
+  .verdict-item:last-child { border-bottom: none; }
+
+  .verdict-check {
+    color: var(--nathan-acc);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--rule);
+    margin-top: 3rem;
+  }
+
+  .doc-footer .ornament { margin: 0 0 0.6rem; }
+
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    color: #6b5f44;
+    text-transform: uppercase;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 3rem; }
+    .argument .arg-body { padding: 1rem; }
+    .verdict { padding: 1.3rem 1.2rem; }
+    .masthead { padding: 2rem 1rem 1.5rem; }
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .masthead { padding: 1.5rem 1.5rem 1.2rem; }
+    .masthead-title { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <p class="masthead-eyebrow">A Formal Scriptural Exchange</p>
+    <h1 class="masthead-title">The <em>Sabbath</em> Question</h1>
+    <p class="masthead-sub">Saturday or Sunday &middot; Binding or Fulfilled &middot; Law or Grace</p>
+    <span class="ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+  </header>
+
+  <!-- INTRO -->
+  <div class="intro-card">
+    <p>The question before us is one of the most consequential in the life of the believer: Is the seventh-day Sabbath, as commanded at Sinai and rooted in creation itself, still binding upon the follower of Christ today? Or has the New Covenant, through the resurrection of Jesus and the ministry of the Apostle Paul, freed the believer from obligation to a specific day of rest?</p>
+    <p>What follows is a formal exchange between two men of Scripture, each committed to the authority of God's Word, yet arriving at different conclusions. Let the reader weigh the evidence carefully.</p>
+  </div>
+
+  <!-- DRAMATIS PERSONAE -->
+  <div class="personae">
+    <div class="persona-card nathan">
+      <p class="persona-role">The Affirmative</p>
+      <p class="persona-name">Elder Nathaniel</p>
+      <p class="persona-desc">Holds that the seventh-day Sabbath remains a binding, perpetual commandment for all believers, rooted in creation and confirmed by Christ and the apostles.</p>
+    </div>
+    <div class="persona-card marcus">
+      <p class="persona-role">The Negative</p>
+      <p class="persona-name">Pastor Marcus</p>
+      <p class="persona-desc">Holds that while Saturday was the Old Covenant Sabbath, the New Covenant calls believers to a spiritual rest in Christ, with the church assembling on the first day in honor of the resurrection.</p>
+    </div>
+  </div>
+
+
+  <!-- SECTION I -->
+  <div class="section-header">
+    <span class="section-num">Round I</span>
+    <span class="section-title-text">The Identity of the Day</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Opening</span>
+    </div>
+    <div class="arg-body">
+      <p>Let us begin with common ground. I will grant freely that the seventh day of the creation week, the day God blessed and hallowed in Genesis 2, corresponds to what we call Saturday on our modern calendar. I do not dispute that the Hebrew Sabbath runs from Friday sunset to Saturday sunset. That much is historically settled. The real question is not which day God originally set apart, but whether that specific day carries binding obligation for the New Covenant believer today. I would argue that the resurrection of our Lord on the first day of the week, combined with the early church's practice of gathering on that same day, points us toward a new and living way.</p>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Response</span>
+    </div>
+    <div class="arg-body">
+      <p>I appreciate Pastor Marcus' candor on the identity of the day, for it clarifies what is actually in dispute. Now consider carefully: the Sabbath was not instituted at Sinai. It was instituted at creation, before there was a Jew or a Gentile, before there was a covenant of circumcision, before there was a law written on stone. God himself rested, blessed, and sanctified the seventh day in Genesis 2:1-3. That is not Mosaic legislation; that is a creation ordinance.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Genesis 2:2-3</span>
+        "And on the seventh day God ended his work which he had made; and he rested on the seventh day... And God blessed the seventh day, and sanctified it."
+      </span>
+      <p>When Jesus was asked about marriage in Matthew 19, he went back to creation to establish the standard. The same principle applies here. If God sanctified the seventh day at creation, the burden of proof lies entirely with those who say that sanctification has been revoked or transferred to another day.</p>
+    </div>
+  </div>
+
+
+  <!-- SECTION II -->
+  <div class="section-header">
+    <span class="section-num">Round II</span>
+    <span class="section-title-text">Did Jesus Abolish or Confirm the Law?</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Challenge</span>
+    </div>
+    <div class="arg-body">
+      <p>I agree that creation ordinances carry weight. But consider what Paul writes to the Colossians. He places sabbath days in a category of things that believers should not allow others to judge them about, calling them a shadow of things to come. If the Sabbath were still binding in the same way as moral law, why would Paul list it alongside dietary regulations and festival observances, things most Christians today agree were fulfilled in Christ?</p>
+      <span class="scripture">
+        <span class="scripture-ref">Colossians 2:16-17</span>
+        "Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: which are a shadow of things to come; but the body is of Christ."
+      </span>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Response</span>
+    </div>
+    <div class="arg-body">
+      <p>Brother Marcus, I must challenge your reading of this passage at a critical point. You have assumed the direction of the judging. Paul does not say "do not let anyone condemn you for failing to keep these things." He says "let no man judge you" in respect of them, which in context means: do not allow outsiders to sit in judgment over you for keeping these practices. The Colossian church was a Gentile-heavy congregation surrounded by people who did not observe these things and who would mock or condemn those who did. Paul is defending the believers, not dismissing the observances.</p>
+      <p>Furthermore, the phrase "shadow of things to come" is future-pointing. The Greek word mello points forward, not backward. If everything was already fulfilled and done away with, why would Paul point forward? The Sabbath still casts its shadow toward the millennial rest of Revelation 20 and the age to come. It has not lost its meaning; it has gained more of it.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Matthew 5:17-18</span>
+        "Think not that I am come to destroy the law or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled."
+      </span>
+      <p>Heaven and earth are still standing. Jesus himself told us that not one jot would pass from the law. That is not my opinion. That is the word of our Lord, spoken plainly, with no qualification.</p>
+    </div>
+  </div>
+
+
+  <!-- SECTION III -->
+  <div class="section-header">
+    <span class="section-num">Round III</span>
+    <span class="section-title-text">The Galatians and Romans Challenge</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Challenge</span>
+    </div>
+    <div class="arg-body">
+      <p>Let us consider Galatians 4. Paul expresses genuine alarm over the believers' observance of days and seasons, writing "I am afraid of you." And in Romans 14, he places the esteeming of one day above another squarely in the realm of personal conscience, saying "let every man be fully persuaded in his own mind." If the Sabbath were a binding moral commandment like "thou shalt not murder," Paul could not place it in the conscience category. These passages together suggest that day observance became a matter of Christian liberty under the New Covenant.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Galatians 4:10-11</span>
+        "Ye observe days, and months, and times, and years. I am afraid of you, lest I have bestowed upon you labour in vain."
+      </span>
+      <span class="scripture">
+        <span class="scripture-ref">Romans 14:5</span>
+        "One man esteemeth one day above another: another esteemeth every day alike. Let every man be fully persuaded in his own mind."
+      </span>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Response</span>
+    </div>
+    <div class="arg-body">
+      <p>On Galatians, the context of the entire letter must govern our reading of chapter 4. The whole epistle is Paul's response to Judaizers who were teaching that circumcision was required for salvation. Paul's alarm was not that the Galatians were keeping God's appointed times. His alarm was that they were being told their standing before God depended on external observances rather than on faith in Christ alone. He was fighting against works-based salvation, not against obedience to God's commands.</p>
+      <p>On Romans 14, consider this carefully: Paul writes "God forbid" no fewer than several times throughout that same letter whenever he anticipates someone concluding that grace leads to lawlessness. In Romans 3:31 he asks, "Do we then make void the law through faith?" and answers his own question: "God forbid: yea, we establish the law." Paul is not going to turn around in chapter 14 and contradict himself by placing God's eternal commandments in the category of personal preference.</p>
+      <p>And there is a decisive historical point here. The debate about which day Christians should observe did not arise during Paul's lifetime. The controversy over Sunday versus Saturday did not begin as a church dispute until well after Paul was dead. The debate in Rome was over Jewish fasting days and Gentile feast days. The Sabbath was simply not the argument of that moment. To read Romans 14 as addressing the weekly Sabbath is to read it backward through a later controversy that Paul never faced.</p>
+    </div>
+  </div>
+
+
+  <!-- SECTION IV -->
+  <div class="section-header">
+    <span class="section-num">Round IV</span>
+    <span class="section-title-text">Hebrews and the Rest That Remains</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Challenge</span>
+    </div>
+    <div class="arg-body">
+      <p>I want to press on Hebrews chapters 3 and 4. The writer uses the Sabbath theologically to describe the spiritual rest that believers enter through faith in Christ. He writes that "we which have believed do enter into rest," and in verse 10 he draws the analogy to God's rest at creation. Is it not reasonable to conclude that the weekly Sabbath was a type pointing to this deeper rest in Christ, and that the believer who has entered that spiritual rest has, in a sense, entered the Sabbath's ultimate fulfillment?</p>
+      <span class="scripture">
+        <span class="scripture-ref">Hebrews 4:9-10</span>
+        "There remaineth therefore a rest to the people of God. For he that is entered into his rest, he also hath ceased from his own works, as God did from his."
+      </span>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Response</span>
+    </div>
+    <div class="arg-body">
+      <p>Brother Marcus, look at that verse again, very carefully. "There remaineth therefore a rest to the people of God." The Greek word used is sabbatismos, a Sabbath rest, a keeping of the Sabbath. And the writer of Hebrews says it remains. Not "there was a rest." Not "there was once a Sabbath that is now fulfilled." There remains a Sabbath rest for the people of God. The present tense is the writer's own choice.</p>
+      <p>Furthermore, the entire letter of Hebrews is not about abolishing God's law. It is about the transition of the priesthood from the Aaronic order to the order of Melchizedek. That priesthood, as Genesis 14 shows us, predates the Mosaic covenant entirely. Melchizedek was a priest of the Most High God in the days of Abraham. The commandments of God existed before Moses wrote them on stone. Hebrews is not tearing down the structure of God's law; it is showing us the superior priest who mediates it.</p>
+      <p>And consider this: if the weekly Sabbath is merely a shadow that dissolves into spiritual rest in Christ, why does Isaiah 66:22-23 describe people keeping the Sabbath in the new earth, after all things are renewed? The prophet places Sabbath observance at the very end of all things, in the age to come. That is not the language of something abolished.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Isaiah 66:22-23</span>
+        "For as the new heavens and the new earth... shall remain before me, saith the LORD, so shall your seed and your name remain. And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith the LORD."
+      </span>
+    </div>
+  </div>
+
+
+  <!-- SECTION V -->
+  <div class="section-header">
+    <span class="section-num">Round V</span>
+    <span class="section-title-text">The Jerusalem Council and the Silence of Acts 15</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Challenge</span>
+    </div>
+    <div class="arg-body">
+      <p>Consider Acts 15. The Jerusalem Council gathered specifically to answer the question of what Gentile believers were required to observe. The apostles, the elders, and the Holy Ghost deliberated carefully and issued a formal ruling. Their conclusion was four requirements: abstain from things offered to idols, from blood, from things strangled, and from sexual immorality. The Sabbath is not on that list. James himself declared it seemed good to the Holy Ghost and to the council to lay upon the Gentiles no greater burden than those necessary things. If the Sabbath commandment applied equally to Gentile believers, its absence from that ruling is difficult to explain.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Acts 15:28-29</span>
+        "For it seemed good to the Holy Ghost, and to us, to lay upon you no greater burden than these necessary things; that ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication."
+      </span>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Response</span>
+    </div>
+    <div class="arg-body">
+      <p>Pastor Marcus, I must press back on the premise behind your argument. The Jerusalem Council was not a comprehensive summary of everything a Gentile believer must do for the rest of their life. It was a ruling on a specific controversy, namely, whether circumcision was required for salvation. The circumcision party was saying you cannot be saved without it. The Council answered that salvation question and issued four immediate behavioral requirements for Gentiles entering fellowship with Jewish believers.</p>
+      <p>The Sabbath was not on the table because it was not in dispute. No one was arguing about it. And look at what James says just two verses earlier in Acts 15:21: "For Moses of old time hath in every city them that preach him, being read in the synagogues every sabbath day." James is saying that Gentile believers will hear the full counsel of the law as they gather and grow. The four points were a starting place, not a ceiling.</p>
+      <p>More importantly, examine Paul's own practice. In Acts 13:42-44, Gentiles begged Paul to preach to them again on the following Sabbath, and the whole city gathered. In Acts 17:2, Luke tells us that going to the synagogue on the Sabbath was Paul's manner, his regular habit. In Acts 18:4, Paul reasoned every Sabbath with both Jews and Greeks. If Paul believed the Sabbath was done away with, why did he never once say to those eager Gentiles, "Come back tomorrow instead"? He met them on the Sabbath, week after week, because that was the LORD's day.</p>
+    </div>
+  </div>
+
+
+  <!-- SECTION VI -->
+  <div class="section-header">
+    <span class="section-num">Round VI</span>
+    <span class="section-title-text">One Law for All: The Sojourner Argument</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Challenge</span>
+    </div>
+    <div class="arg-body">
+      <p>Even granting Paul's Sabbath practice, one could argue he met in synagogues on Saturday simply because that was where the people were, not because the day itself was theologically binding. And does the Sabbath sign not apply specifically to Israel? Exodus 31 calls it a sign between God and the children of Israel forever. How do Gentile believers come under a covenant sign given to Israel?</p>
+      <span class="scripture">
+        <span class="scripture-ref">Exodus 31:16-17</span>
+        "Wherefore the children of Israel shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant. It is a sign between me and the children of Israel for ever."
+      </span>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Response</span>
+    </div>
+    <div class="arg-body">
+      <p>This is answered directly within the Torah itself. In Numbers 15:15-16, God commands: "One ordinance shall be both for you of the congregation, and also for the stranger that sojourneth with you, an ordinance for ever in your generations: as ye are, so shall the stranger be before the LORD. One law and one manner shall be for you, and for the stranger that sojourneth with you." One law. Forever. For the native-born and the sojourner alike. God did not create a tiered system where Israel keeps the Sabbath and Gentiles dwell among them free from the same standard.</p>
+      <p>And Romans 11 completes this picture. When Gentile believers are grafted into the olive tree of Israel through faith in Christ, they are not grafted into a different tree with different rules. Paul says explicitly that they partake of the root and the fatness of the olive tree. If the root is holy, so are the branches. The covenantal identity of the people of God does not fracture along ethnic lines under the New Covenant. There is one body, one Spirit, one Lord, one faith. One law.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Romans 11:17</span>
+        "And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree."
+      </span>
+    </div>
+  </div>
+
+
+  <!-- SECTION VII -->
+  <div class="section-header">
+    <span class="section-num">Round VII</span>
+    <span class="section-title-text">The Lord's Day: Whose Day Is It?</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Challenge</span>
+    </div>
+    <div class="arg-body">
+      <p>John writes in Revelation 1:10 that he was in the Spirit on the Lord's Day. Early church fathers, including Ignatius of Antioch writing around 107 AD, used the phrase "the Lord's Day" to refer specifically to Sunday, the day of the resurrection. Ignatius wrote of believers "no longer observing the Sabbath, but living in the observance of the Lord's Day." This is within one generation of the apostles. Does that not carry significant weight in establishing how the early church understood the Lord's Day?</p>
+      <span class="scripture">
+        <span class="scripture-ref">Revelation 1:10</span>
+        "I was in the Spirit on the Lord's day, and heard behind me a great voice, as of a trumpet."
+      </span>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Response</span>
+    </div>
+    <div class="arg-body">
+      <p>Brother Marcus, before we accept what a second-century church father says about the Lord's Day, we must ask what God himself says about it in Scripture. Because the answer is already there, and it is unambiguous.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Isaiah 58:13</span>
+        "If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day... then shalt thou delight thyself in the LORD."
+      </span>
+      <p>God calls the Sabbath "my holy day." The language of divine ownership over a specific day is already established in the Old Testament, and it points to Saturday. Then in Mark 2:28, Jesus declares himself "Lord of the Sabbath." Not Lord of Sunday. Lord of the Sabbath. When John says he was in the Spirit on the Lord's Day, the Scripturally established meaning of that phrase already exists and it points to the seventh day.</p>
+      <p>As for Ignatius, we must weigh what a post-apostolic writer says against what the Scripture says. Historically, we know that the shift away from Saturday worship accelerated dramatically after Emperor Hadrian banned Jewish practices following the Bar Kokhba revolt of 135 AD. Keeping Saturday suddenly looked Jewish, and in Rome that was socially and politically dangerous. The change to Sunday has a documented historical and political cause. There is no apostolic written command to make it. Sola Scriptura demands that we weigh the evidence accordingly.</p>
+    </div>
+  </div>
+
+
+  <!-- SECTION VIII -->
+  <div class="section-header">
+    <span class="section-num">Round VIII</span>
+    <span class="section-title-text">The New Covenant: Law Abolished or Law Internalized?</span>
+    <span class="section-rule"></span>
+  </div>
+
+  <div class="argument marcus">
+    <div class="arg-header">
+      <span class="arg-speaker">Pastor Marcus</span>
+      <span class="arg-label">Final Challenge</span>
+    </div>
+    <div class="arg-body">
+      <p>Let me press on the New Covenant itself. Jeremiah 31 promises that God will write His law on the heart. If the law is now internal and spiritual, does the outward, physical observance of a specific day still carry the same obligatory weight? Could it not be argued that the believer who rests daily in Christ, whose heart keeps the Sabbath continually in the Spirit, has entered a fuller expression of what the weekly day was pointing toward?</p>
+      <span class="scripture">
+        <span class="scripture-ref">Jeremiah 31:33</span>
+        "But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts."
+      </span>
+    </div>
+  </div>
+
+  <div class="argument nathan">
+    <div class="arg-header">
+      <span class="arg-speaker">Elder Nathaniel</span>
+      <span class="arg-label">Final Response</span>
+    </div>
+    <div class="arg-body">
+      <p>Brother Marcus, you have asked the most important question of this entire debate, and I want to answer it directly. The New Covenant does not reduce the law to something purely internal and invisible. It takes the very same commands that were once written on stone and writes them on the heart, so that we might actually keep them. Consider what Ezekiel says in chapter 36:</p>
+      <span class="scripture">
+        <span class="scripture-ref">Ezekiel 36:26-27</span>
+        "A new heart also will I give you, and a new spirit will I put within you... and I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them."
+      </span>
+      <p>God says He will cause us to walk in His statutes. The Spirit is given not to replace the commandments but to produce obedience to them. The New Covenant's answer to Israel's failure to keep the law is not to lower the standard. It is to provide the supernatural power to meet it. And Paul confirms this in Romans 8:4: "That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit." Fulfilled in us, in actual daily living, not merely imputed to us while we live as though the law does not exist.</p>
+      <p>The believer who says "I rest in Christ spiritually and therefore the seventh day means nothing to me" has not arrived at a higher expression of the Sabbath. They have subtracted from it. The rest in Christ and the physical Sabbath point to each other. They are both real. One does not cancel the other any more than being spiritually fed by Christ cancels the need to eat physical food. We are whole persons, and God sanctified a whole day for our good, for our rest, for our holy convocation, for our delight in Him. That day still stands.</p>
+      <span class="scripture">
+        <span class="scripture-ref">Hebrews 4:9</span>
+        "There remaineth therefore a rest to the people of God."
+      </span>
+    </div>
+  </div>
+
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <p class="verdict-label">Summary of Evidence</p>
+    <p class="verdict-title">Where the Scriptural Weight Falls</p>
+    <div class="verdict-body">
+      <p>Across eight rounds of formal exchange, the following points stand on the Scriptural record for the reader to weigh:</p>
+    </div>
+    <br>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>The seventh-day Sabbath is Saturday. This is historically and textually undisputed. No verse of Scripture establishes Sunday as a replacement holy day.</span>
+    </div>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>The Sabbath was established at creation before the Mosaic covenant, making it a creation ordinance, not merely Mosaic legislation.</span>
+    </div>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>Jesus declared heaven and earth would pass before one jot of the law fails, and declared himself Lord of the Sabbath. He issued no command to change the day.</span>
+    </div>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>Paul's habitual practice was Sabbath observance and teaching, with Gentiles gathering to hear him on the Sabbath by their own request in Acts 13, 17, and 18.</span>
+    </div>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>The Torah itself commands one law for both the native-born and the sojourner, and Romans 11 grafts Gentile believers into the same covenantal root as Israel.</span>
+    </div>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>The shift to Sunday worship is documented as a second-century ecclesiastical and political development, not an apostolic command found in Scripture.</span>
+    </div>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>The New Covenant, per Jeremiah 31, Ezekiel 36, and Romans 8, writes the law more deeply on the heart and empowers obedience to it. It does not abolish the law; it fulfills it in the believer.</span>
+    </div>
+    <div class="verdict-item">
+      <span class="verdict-check">✦</span>
+      <span>Hebrews 4:9 uses the word sabbatismos, a keeping of the Sabbath, and declares that it still remains for the people of God.</span>
+    </div>
+    <br>
+    <div class="verdict-body">
+      <p>The reader is left to be "fully persuaded in their own mind," but let them be persuaded by the whole counsel of Scripture, from Genesis to Revelation, rather than by tradition, convenience, or the customs of men.</p>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <span class="ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="footer-text">Sola Scriptura &middot; Let every man be fully persuaded in his own mind &middot; Romans 14:5</p>
+  </footer>
+
+</div>
+</body>
+</html>

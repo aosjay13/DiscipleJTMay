@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fivefold Ministry &middot; Gifts of the Holy Ghost, Lesson One</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+    --green:       #2c4a3e;
+    --green-acc:   #4a8c72;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2.3rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em.term { font-style: italic; color: var(--crimson); font-weight: 500; }
+
+  /* ── SCRIPTURE ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+
+  /* ── KEYPOINT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+  .keypoint p {
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .keypoint p + p { margin-top: 0.7rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── OFFICE CARD (the five ministries) ── */
+  .office {
+    margin: 1.6rem 0;
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    background: var(--cream);
+    padding: 1.4rem 1.6rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .office-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.7rem;
+  }
+  .office-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--crimson);
+    letter-spacing: 0.02em;
+  }
+  .office-meaning {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .office-body { font-size: 1.04rem; line-height: 1.82; color: var(--ink-mid); }
+  .office-body p + p { margin-top: 0.7rem; }
+  .office-body strong { color: var(--ink); }
+  .office-role {
+    margin-top: 0.9rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+  }
+  .office-role strong { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.35rem; }
+
+  /* ── BONUS / NOTE PANEL ── */
+  .bonus {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '✦'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus strong { color: var(--ink); }
+
+  em.greek { font-weight: 600; font-style: italic; color: var(--ink); }
+
+  /* ── CONCLUSION (crimson) ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  .conclusion-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #EDE0C4;
+  }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── DISCUSSION / QUESTIONS ── */
+  .qpage { page-break-before: always; break-before: page; }
+  .block-head {
+    text-align: center;
+    margin: 2.5rem 0 1.8rem;
+  }
+  .block-head .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .block-head h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 700;
+    color: var(--crimson);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .block-head .rule { display: flex; align-items: center; gap: 0.6rem; max-width: 220px; margin: 0.9rem auto 0; }
+  .block-head .rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .block-head .rule i { color: var(--gold-light); font-style: normal; }
+
+  .qlist { list-style: none; counter-reset: q; }
+  .qlist > li {
+    counter-increment: q;
+    margin-bottom: 1.4rem;
+    padding-left: 2.6rem;
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .qlist > li::before {
+    content: counter(q);
+    position: absolute;
+    left: 0; top: -0.1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--crimson);
+    width: 1.9rem; height: 1.9rem;
+    border: 1px solid var(--gold-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--cream);
+  }
+  .qlist .q-text { font-size: 1.05rem; line-height: 1.7; color: var(--ink-mid); }
+  .qlist .q-ref { display: block; margin-top: 0.3rem; font-size: 0.85rem; font-style: italic; color: var(--ink-soft); }
+  .qlist .answer-lines { margin-top: 0.7rem; }
+  .qlist .answer-lines span {
+    display: block;
+    border-bottom: 1px solid #C9A84C55;
+    height: 1.5rem;
+  }
+
+  /* ── ANSWER KEY (teacher) ── */
+  .keypage { page-break-before: always; break-before: page; }
+  .teacher-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  .akey { list-style: none; counter-reset: a; }
+  .akey > li {
+    counter-increment: a;
+    margin-bottom: 1.3rem;
+    padding: 1rem 1.3rem 1rem 1.3rem;
+    background: var(--cream);
+    border-left: 3px solid var(--green-acc);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .akey > li .anum {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .akey > li .anum::before { content: 'Answer ' counter(a); }
+  .akey .a-q { font-style: italic; color: var(--crimson); font-size: 0.98rem; margin-bottom: 0.5rem; }
+  .akey .a-body { font-size: 1.0rem; line-height: 1.78; color: var(--ink-mid); }
+  .akey .a-body strong { color: var(--ink); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page { size: 8.5in 11in; margin: 0.5in; }
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .section { page-break-inside: avoid; }
+    .office, .bonus, .scripture, .keypoint { page-break-inside: avoid; break-inside: avoid; }
+    .conclusion, .doc-header, .doc-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .qpage, .keypage { page-break-before: always; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">Gifts of the Holy Ghost &middot; Lesson One</p>
+    <h1 class="doc-title">The Fivefold Ministry</h1>
+    <p class="doc-subtitle">The Gifts Christ Gave to Build and Mature His Church</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">When Christ rose and ascended, He did not leave His church empty handed. He gave gifts to men, and among the very first of those gifts were people. He set certain believers into the body to serve specific functions, so that the whole church would be built up, grounded in truth, and brought into maturity. We call these five functions the fivefold ministry, and they are named together in a single passage in the letter to the Ephesians.</p>
+      <p>This first lesson opens our series on the gifts of the Holy Ghost. Before we look at the gifts that operate through individual believers in worship and prayer, we begin with the framework Christ Himself put in place to govern, feed, and equip His people. Understanding these five callings will keep everything that follows in right order, because the gifts of the Spirit were never meant to run loose. They were given to a body that is led, taught, and shepherded under the headship of Christ.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span>Gifts from the Ascended Christ</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span>The Purpose: To Equip, Not to Replace the Saints</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>The Goal and the Timeline</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>The Apostle</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>The Prophet</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>The Evangelist</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span>The Pastor</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span>The Teacher</a></li>
+        <li><a href="#s9"><span class="toc-num">IX.</span>How the Five Work Together</a></li>
+        <li><a href="#s10"><span class="toc-num">X.</span>Testing the Calling: Fruit Over Title</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">Gifts from the Ascended Christ</h2>
+      </div>
+      <div class="section-body">
+        <p>The fivefold ministry is not a human invention or a management structure borrowed from the world. It is a direct gift of the risen Lord. After describing the ascension, Paul names the gifts that Christ handed down to His people.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:8</span>
+          <span class="scripture-text">Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:11</span>
+          <span class="scripture-text">And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers.</span>
+        </div>
+
+        <p>Notice the first word of verse eleven. He <strong>gave</strong>. These callings are not earned by ambition and they are not won by popularity. They are given by Christ as gifts to His church. The men and women who fill these roles are themselves the gift, set in place to serve the body rather than to be served by it.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Foundation</p>
+          <p>The fivefold ministry flows down from the head, who is Christ. Every office exists under His authority and for His purposes, never as a power of its own.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Purpose: To Equip, Not to Replace the Saints</h2>
+      </div>
+      <div class="section-body">
+        <p>The next verse tells us exactly why Christ gave these gifts. The reason is plain, and it corrects one of the most common errors in church life, which is the idea that ministry belongs only to a professional few while everyone else simply attends.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:12</span>
+          <span class="scripture-text">For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ.</span>
+        </div>
+
+        <p>The word translated <em class="term">perfecting</em> carries the sense of mending, setting in order, and fully preparing. A fisherman uses the same kind of word for mending a net so that it is fit to do its work. The fivefold ministry exists to mend and prepare the saints, so that the saints themselves can do the work of the ministry.</p>
+
+        <p>This is the heart of the matter. The apostle, prophet, evangelist, pastor, and teacher were never meant to do all the work while the congregation watches. They were given to train, equip, and release the whole body into service. A healthy church is not a crowd gathered around five gifted people. It is a body where each member has been equipped and is functioning.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Pattern</p>
+          <p>Leaders equip. Saints minister. The body is built up. When the order is reversed, and leaders try to do everything while the saints stay passive, the body grows weak.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Goal and the Timeline</h2>
+      </div>
+      <div class="section-body">
+        <p>How long do these gifts remain, and what are they aiming at? Paul answers both questions in the verses that follow. The goal is unity and maturity, and the timeline runs until that goal is reached.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:13</span>
+          <span class="scripture-text">Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ.</span>
+        </div>
+
+        <p>The little word <strong>till</strong> matters greatly. These gifts continue until the church arrives at full unity of faith and the full stature of Christ. Since the church has plainly not yet reached that finished state, these ministries are still needed today. They were not packed away after the first generation. They remain part of how Christ matures His people.</p>
+
+        <p>The aim is not numbers, buildings, or influence. The aim is a people grown up into Christ, no longer tossed about by every wind of doctrine, but settled, discerning, and conformed to Him.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:14-15</span>
+          <span class="scripture-text">That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive; But speaking the truth in love, may grow up into him in all things, which is the head, even Christ.</span>
+        </div>
+
+        <p>This maturity is inward and lasting. It is the soul brought into peace and stability under the lordship of Christ, not a promise of ease or earthly gain. The fivefold ministry labors so that believers stand firm in truth and grow steadily into the likeness of the Lord.</p>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">The Apostle</h2>
+      </div>
+      <div class="section-body">
+        <div class="office">
+          <div class="office-head">
+            <span class="office-name">The Apostle</span>
+            <span class="office-meaning">a sent one, a messenger commissioned and sent forth</span>
+          </div>
+          <div class="office-body">
+            <p>The word <em class="greek">apostolos</em> means one who is sent. An apostle is sent out with a commission to establish the work of the Lord where it has not yet been planted or where it needs to be set in order. In Scripture the apostles laid foundations, planted churches, appointed leaders, and carried sound doctrine from place to place.</p>
+            <div class="scripture">
+              <span class="scripture-ref">Ephesians 2:20</span>
+              <span class="scripture-text">And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief corner stone.</span>
+            </div>
+            <p>An apostolic calling is marked by spiritual fatherhood and oversight. It plants, strengthens, and ties churches together in shared truth. Paul listed this calling first in order of function, not because the man is greater, but because the work of laying a foundation comes first in any building.</p>
+            <div class="scripture">
+              <span class="scripture-ref">1 Corinthians 12:28</span>
+              <span class="scripture-text">And God hath set some in the church, first apostles, secondarily prophets, thirdly teachers...</span>
+            </div>
+          </div>
+          <div class="office-role">
+            <strong>Function in the Body</strong>
+            Lays foundations, plants and orders churches, guards sound doctrine, and provides fatherly oversight that ties the work together.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Prophet</h2>
+      </div>
+      <div class="section-body">
+        <div class="office">
+          <div class="office-head">
+            <span class="office-name">The Prophet</span>
+            <span class="office-meaning">one who speaks forth the word and counsel of God</span>
+          </div>
+          <div class="office-body">
+            <p>A prophet speaks forth what God has revealed. This includes calling the people back to the truth they already have, and at times it includes foretelling things to come. The plainest description of the prophet's work in the church is given to us directly.</p>
+            <div class="scripture">
+              <span class="scripture-ref">1 Corinthians 14:3</span>
+              <span class="scripture-text">But he that prophesieth speaketh unto men to edification, and exhortation, and comfort.</span>
+            </div>
+            <p>The aim of true prophetic ministry is to build up, to stir up, and to comfort the people of God. It strengthens the church in obedience and turns hearts back toward the Lord and His word. We see a clear example in Agabus, who foretold a coming famine.</p>
+            <div class="scripture">
+              <span class="scripture-ref">Acts 11:28</span>
+              <span class="scripture-text">And there stood up one of them named Agabus, and signified by the Spirit that there should be great dearth throughout all the world...</span>
+            </div>
+            <p>Every prophetic word must be weighed against Scripture, since God will never contradict what He has already spoken in His word. A word that calls the people away from the truth is not from Him.</p>
+          </div>
+          <div class="office-role">
+            <strong>Function in the Body</strong>
+            Speaks forth God's word to edify, exhort, and comfort, calls the people back to obedience, and is always tested against Scripture.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Evangelist</h2>
+      </div>
+      <div class="section-body">
+        <div class="office">
+          <div class="office-head">
+            <span class="office-name">The Evangelist</span>
+            <span class="office-meaning">a bearer of good news, a herald of the gospel</span>
+          </div>
+          <div class="office-body">
+            <p>The evangelist carries the good news of salvation to those who have not heard or received it. This calling burns to see the lost brought to Christ and is gifted to proclaim the gospel clearly and persuasively. The only person directly called an evangelist in Scripture is Philip.</p>
+            <div class="scripture">
+              <span class="scripture-ref">Acts 21:8</span>
+              <span class="scripture-text">...we entered into the house of Philip the evangelist, which was one of the seven; and abode with him.</span>
+            </div>
+            <p>We watch Philip at work in Samaria and on the desert road, preaching Christ, answering questions, and leading people to faith and baptism. Yet evangelism is not for the gifted few alone. Paul charged Timothy, who was not himself an evangelist by office, to take up this work as well.</p>
+            <div class="scripture">
+              <span class="scripture-ref">2 Timothy 4:5</span>
+              <span class="scripture-text">But watch thou in all things, endure afflictions, do the work of an evangelist, make full proof of thy ministry.</span>
+            </div>
+            <p>So the gifted evangelist also stirs and equips the rest of the body to share the gospel, which keeps the work of reaching the lost from resting on one person's shoulders.</p>
+          </div>
+          <div class="office-role">
+            <strong>Function in the Body</strong>
+            Proclaims the gospel to the lost, leads people to faith, and equips the saints to carry the good news to others.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VII -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">Section VII</span>
+        <h2 class="section-title">The Pastor</h2>
+      </div>
+      <div class="section-body">
+        <div class="office">
+          <div class="office-head">
+            <span class="office-name">The Pastor</span>
+            <span class="office-meaning">a shepherd who feeds, leads, and guards the flock</span>
+          </div>
+          <div class="office-body">
+            <p>The word pastor means shepherd. A pastor cares for a particular flock, feeding the people, leading them to good pasture, and protecting them from harm. This is the most local and the most steady of the five callings, because it is bound to the daily care of a body of believers.</p>
+            <div class="scripture">
+              <span class="scripture-ref">1 Peter 5:2-3</span>
+              <span class="scripture-text">Feed the flock of God which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind; Neither as being lords over God's heritage, but being ensamples to the flock.</span>
+            </div>
+            <p>Notice the manner that is required. The shepherd serves willingly, not for gain, and leads by example rather than by lordship. Paul gave the same charge to the elders at Ephesus, warning them to watch over the flock entrusted to them.</p>
+            <div class="scripture">
+              <span class="scripture-ref">Acts 20:28</span>
+              <span class="scripture-text">Take heed therefore unto yourselves, and to all the flock, over the which the Holy Ghost hath made you overseers, to feed the church of God, which he hath purchased with his own blood.</span>
+            </div>
+            <p>The pastor follows the pattern of the great Shepherd, who lays down His life for the sheep and knows them each by name.</p>
+          </div>
+          <div class="office-role">
+            <strong>Function in the Body</strong>
+            Feeds, leads, and guards a local flock, gives steady daily care, and shepherds by example under the great Shepherd, Christ.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VIII -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">Section VIII</span>
+        <h2 class="section-title">The Teacher</h2>
+      </div>
+      <div class="section-body">
+        <div class="office">
+          <div class="office-head">
+            <span class="office-name">The Teacher</span>
+            <span class="office-meaning">one gifted to instruct in sound doctrine</span>
+          </div>
+          <div class="office-body">
+            <p>The teacher is gifted to open the Scriptures clearly so that believers understand and are grounded in sound doctrine. Where the prophet often stirs and the evangelist often gathers, the teacher steadily establishes. This calling builds depth, careful understanding, and a firm footing in the truth.</p>
+            <div class="scripture">
+              <span class="scripture-ref">2 Timothy 2:2</span>
+              <span class="scripture-text">And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also.</span>
+            </div>
+            <p>Because teaching shapes what people believe and how they live, it carries a sober weight. James gives a clear warning to anyone who would take up this calling lightly.</p>
+            <div class="scripture">
+              <span class="scripture-ref">James 3:1</span>
+              <span class="scripture-text">My brethren, be not many masters, knowing that we shall receive the greater condemnation.</span>
+            </div>
+            <p>A faithful teacher handles the word with care, rightly dividing it, and labors to ground the saints so they are not blown about by error. This is the steady work that keeps a church anchored.</p>
+          </div>
+          <div class="office-role">
+            <strong>Function in the Body</strong>
+            Opens the Scriptures, grounds believers in sound doctrine, and builds depth and stability so the church is not led astray.
+          </div>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">A Note on Pastors and Teachers</p>
+          <p>You may have noticed that the text reads "pastors and teachers" while the other three callings each stand alone. Many believers see these two as closely joined, since the man who shepherds a flock must also feed it with sound instruction, and a teacher among the people often carries a pastor's heart. Whether you count five distinct callings or see pastor and teacher as one closely bound work, the principle holds. Both feed and establish the people of God, and both are needed for a healthy body.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IX -->
+    <section class="section" id="s9">
+      <div class="section-header">
+        <span class="section-num">Section IX</span>
+        <h2 class="section-title">How the Five Work Together</h2>
+      </div>
+      <div class="section-body">
+        <p>These five callings are not rivals and they are not ranks of honor. They are different functions in one body, each supplying what the others do not. The apostle lays a foundation, the prophet calls the people back to the word, the evangelist gathers in the lost, the pastor shepherds the gathered flock, and the teacher grounds them in truth. Take away any one of them and the body suffers a real loss.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:16</span>
+          <span class="scripture-text">From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body unto the edifying of itself in love.</span>
+        </div>
+
+        <p>Christ is the head, and these gifts serve under Him so that every joint and every part supplies its share. The picture is a living body in motion, fitly joined and working together in love, not a stage with a few performers and a passive crowd. When the five callings function as Christ intended, the saints are equipped, the body is knit together, and the church grows up into the fullness of the Lord.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Whole Body</p>
+          <p>Five functions, one head, one body. The gifts are given so that the people of God are built up, established in truth, and matured into the likeness of Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION X -->
+    <section class="section" id="s10">
+      <div class="section-header">
+        <span class="section-num">Section X</span>
+        <h2 class="section-title">Testing the Calling: Fruit Over Title</h2>
+      </div>
+      <div class="section-body">
+        <p>Because these are weighty callings, they are sometimes claimed by those who have not been given them. Scripture teaches us to test the calling by its fruit and its character, not by the title a person wears or claims for himself.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 7:20</span>
+          <span class="scripture-text">Wherefore by their fruits ye shall know them.</span>
+        </div>
+
+        <p>A true minister of Christ serves rather than rules, points to the Lord rather than to himself, and stays in line with the whole counsel of Scripture. The Lord set the pattern plainly when His own disciples argued over greatness.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 20:26-27</span>
+          <span class="scripture-text">But it shall not be so among you: but whosoever will be great among you, let him be your minister; And whosoever will be chief among you, let him be your servant.</span>
+        </div>
+
+        <p>So when we consider any calling, we look for the marks of the Spirit and the fruit of a servant's heart. We ask whether the person's life and doctrine line up with God's word, whether the work builds up the body, and whether the Lord is exalted rather than the man. The gift always points back to the Giver.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Remember the Whole Counsel</p>
+          <p>Every one of these callings exists to equip the saints to walk faithfully with God. The leaders Christ gives are meant to ground His people in the truth of His word, to feed them, and to lead them into obedience that flows out of love for Him. Salvation is by grace through faith alone. These gifts do not save anyone. They serve a saved people, helping them grow up into the stature of Christ and stand firm in His truth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Closing</p>
+      <h3 class="conclusion-title">Gifts to Build His People</h3>
+      <div class="conclusion-body">
+        <p>The fivefold ministry is the gift of the risen Christ to His church. Apostle, prophet, evangelist, pastor, and teacher were each given for one great purpose, which is to equip the saints, to build up the body, and to bring the people of God into <em>unity of faith and the full stature of Christ</em>.</p>
+        <p>These callings still serve the church today, for the church has not yet reached that finished maturity. As we begin this study of the gifts of the Holy Ghost, hold this framework in view. The gifts that follow operate within a body that is led, fed, and taught under the headship of the Lord, all of it working together so that His people grow up into Him.</p>
+      </div>
+    </section>
+
+    <!-- DISCIPLESHIP QUESTIONS -->
+    <div class="qpage">
+      <div class="block-head">
+        <span class="eyebrow">For Discussion and Study</span>
+        <h2>Discipleship Questions</h2>
+        <div class="rule"><span></span><i>✦</i><span></span></div>
+      </div>
+
+      <ol class="qlist">
+        <li>
+          <div class="q-text">Where do the gifts of the fivefold ministry come from, and what does that tell us about how a person enters one of these callings?</div>
+          <span class="q-ref">Ephesians 4:8, 4:11</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">According to Ephesians 4:12, why did Christ give these gifts to the church? Who is supposed to do the work of the ministry?</div>
+          <span class="q-ref">Ephesians 4:12</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">What is the goal these gifts are aiming at, and how long do they continue?</div>
+          <span class="q-ref">Ephesians 4:13</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">What does the word apostle mean, and what kind of work did apostles do in the early church?</div>
+          <span class="q-ref">Ephesians 2:20; 1 Corinthians 12:28</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">According to 1 Corinthians 14:3, what is the purpose of true prophetic ministry? How should every prophetic word be tested?</div>
+          <span class="q-ref">1 Corinthians 14:3</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Who is the one person in Scripture directly called an evangelist, and what did Paul tell Timothy to do even though Timothy was not an evangelist by office?</div>
+          <span class="q-ref">Acts 21:8; 2 Timothy 4:5</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">What does the word pastor mean, and what manner of leadership does Peter require of a shepherd?</div>
+          <span class="q-ref">1 Peter 5:2-3</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Why does James warn that not many should become teachers? What weight does the teaching calling carry?</div>
+          <span class="q-ref">James 3:1</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">How do the five callings work together in the body, and what happens when one is missing?</div>
+          <span class="q-ref">Ephesians 4:16</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">How does Scripture tell us to test whether a person truly holds one of these callings? What marks a true minister of Christ?</div>
+          <span class="q-ref">Matthew 7:20; Matthew 20:26-27</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- TEACHER ANSWER KEY -->
+    <div class="keypage">
+      <div class="block-head">
+        <span class="eyebrow">Teacher's Guide</span>
+        <h2>Answer Key</h2>
+        <div class="rule"><span></span><i>✦</i><span></span></div>
+      </div>
+      <p class="teacher-note">For the teacher. This page prints after the worksheet for your reference during class discussion.</p>
+
+      <ol class="akey">
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Where do these gifts come from, and how does a person enter one of these callings?</div>
+          <div class="a-body">They come from the ascended Christ Himself, who gave gifts unto men. The word in verse eleven is <strong>gave</strong>, so these are gifts of the Lord, not roles earned by ambition or won by popularity. A person enters a calling because Christ sets him in it, and the person himself becomes a gift to the body, placed there to serve rather than to be served.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Why did Christ give these gifts, and who does the work of the ministry?</div>
+          <div class="a-body">He gave them for the perfecting of the saints, for the work of the ministry, and for the edifying of the body. The word perfecting means to mend and fully prepare. The leaders equip the saints, and then the <strong>saints themselves</strong> do the work of the ministry. The whole body ministers, not just a gifted few.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What is the goal, and how long do these gifts continue?</div>
+          <div class="a-body">The goal is the unity of the faith, the knowledge of the Son of God, and the full stature of Christ. The word <strong>till</strong> shows the timeline. They continue until the church reaches that finished maturity. Since the church has not yet arrived there, these callings are still needed today.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What does apostle mean, and what work did apostles do?</div>
+          <div class="a-body">Apostle means a sent one. Apostles laid foundations, planted churches, appointed leaders, guarded sound doctrine, and provided fatherly oversight that tied the work together. Ephesians 2:20 speaks of the church being built on the foundation of the apostles and prophets, with Christ as the chief corner stone.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What is the purpose of prophetic ministry, and how is it tested?</div>
+          <div class="a-body">According to 1 Corinthians 14:3, prophecy speaks to men for edification, exhortation, and comfort. It builds up, stirs up, and comforts the people, and calls them back to obedience. Every prophetic word must be weighed against Scripture, since God will not contradict His own word. A word that leads people away from the truth is not from Him.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Who is called an evangelist, and what did Paul tell Timothy?</div>
+          <div class="a-body">Philip is the one person directly called an evangelist (Acts 21:8). Paul told Timothy to <strong>do the work of an evangelist</strong> even though Timothy was not an evangelist by office (2 Timothy 4:5). This shows that the gifted evangelist also equips and stirs the whole body to share the gospel.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What does pastor mean, and what manner of leadership is required?</div>
+          <div class="a-body">Pastor means shepherd. The pastor feeds, leads, and guards a local flock. Peter requires that he serve willingly and not for gain, and lead by example rather than as a lord over God's heritage. He follows the pattern of the great Shepherd.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Why does James warn against many becoming teachers?</div>
+          <div class="a-body">Because teaching shapes what people believe and how they live, so it carries a greater accountability and a stricter judgment (James 3:1). A faithful teacher must handle the word with care, rightly dividing it, and ground the saints so they are not blown about by error.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">How do the five work together, and what if one is missing?</div>
+          <div class="a-body">Each supplies what the others do not. The apostle lays a foundation, the prophet calls the people back to the word, the evangelist gathers the lost, the pastor shepherds the flock, and the teacher grounds them in truth. Ephesians 4:16 pictures the whole body fitly joined, with every joint supplying its share. Remove one and the body suffers a real loss, because all five serve one head, who is Christ.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">How do we test a person's calling, and what marks a true minister?</div>
+          <div class="a-body">We test by fruit and character, not by title (Matthew 7:20). A true minister serves rather than rules, points to Christ rather than himself, and stays in line with the whole counsel of Scripture (Matthew 20:26-27). We ask whether his life and doctrine line up with God's word, whether the work builds up the body, and whether the Lord is exalted. The gift always points back to the Giver.</div>
+        </li>
+      </ol>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">
+      Gifts of the Holy Ghost &middot; Lesson One<br>
+      The Fivefold Ministry &middot; Ephesians 4:11-16<br>
+      All Scripture from the Authorized King James Version
+    </p>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>

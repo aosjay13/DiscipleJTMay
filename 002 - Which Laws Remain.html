@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Laws Remain: The Torah, the Cross, and the Lies of the Adversary</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+    --green:       #2c4a3e;
+    --green-acc:   #4a8c72;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4.2vw, 2.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em.term { font-style: italic; color: var(--crimson); font-weight: 500; }
+
+  /* ── SCRIPTURE ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+
+  /* ── KEYPOINT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+  .keypoint p {
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .keypoint p + p { margin-top: 0.7rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── THE LIE / THE TRUTH BLOCKS ── */
+  .objection {
+    margin: 1.8rem 0;
+    border: 1px solid #D4B97A55;
+    overflow: hidden;
+  }
+  .objection-claim {
+    padding: 1.1rem 1.5rem;
+    background: rgba(122,31,31,0.07);
+    border-left: 4px solid var(--crimson);
+  }
+  .objection-claim .tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .objection-claim p {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    font-style: italic;
+  }
+  .objection-answer {
+    padding: 1.2rem 1.5rem;
+    background: rgba(44,74,62,0.06);
+    border-left: 4px solid var(--green-acc);
+  }
+  .objection-answer .tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .objection-answer p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .objection-answer p + p { margin-top: 0.7rem; }
+  .objection-answer strong { color: var(--ink); }
+  .objection-answer em.term { font-style: italic; color: var(--green); font-weight: 600; }
+
+  /* ── SORTING TABLE ── */
+  .sort-wrap {
+    margin: 1.6rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 560px) { .sort-wrap { grid-template-columns: 1fr; } }
+
+  .sort-col {
+    padding: 1.2rem 1.4rem;
+    border: 1px solid #D4B97A55;
+  }
+  .sort-col.remains {
+    background: rgba(44,74,62,0.07);
+    border-top: 3px solid var(--green-acc);
+  }
+  .sort-col.fulfilled {
+    background: rgba(122,31,31,0.06);
+    border-top: 3px solid var(--crimson);
+  }
+  .sort-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .sort-col.remains h4 { color: var(--green); }
+  .sort-col.fulfilled h4 { color: var(--crimson); }
+  .sort-col .sub {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 0.9rem;
+    display: block;
+  }
+  .sort-col ul { list-style: none; }
+  .sort-col ul li {
+    padding: 0.35rem 0 0.35rem 1.3rem;
+    position: relative;
+    font-size: 0.97rem;
+    line-height: 1.55;
+    color: var(--ink-mid);
+    border-bottom: 1px solid var(--rule);
+  }
+  .sort-col ul li:last-child { border-bottom: none; }
+  .sort-col.remains ul li::before {
+    content: '✓';
+    position: absolute; left: 0; color: var(--green-acc); font-weight: 700;
+  }
+  .sort-col.fulfilled ul li::before {
+    content: '✦';
+    position: absolute; left: 0; color: var(--crimson);
+  }
+
+  /* ── COMBAT STEP ── */
+  .combat-step {
+    margin: 1.3rem 0;
+    padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A44;
+    border-left: 4px solid var(--gold);
+    counter-increment: combat;
+    position: relative;
+  }
+  .combat-step .num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .combat-step h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    color: var(--crimson);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+  .combat-step p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .combat-step p + p { margin-top: 0.6rem; }
+  .combat-step strong { color: var(--ink); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  .conclusion-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #EDE0C4;
+  }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.2rem;
+    border-top: 2px solid var(--rule-solid);
+    margin-top: 3rem;
+    background: linear-gradient(to top, #F5EDDA, var(--parchment));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.8;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .section { page-break-inside: avoid; }
+    .objection { page-break-inside: avoid; }
+    .conclusion, .doc-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">A Scriptural Study</p>
+    <h1 class="doc-title">Which Laws Remain</h1>
+    <p class="doc-subtitle">The Torah, the Cross, and Standing Against the Lies of the Adversary</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">One of the most consequential questions a believer can ask is this: now that Christ has come, what part of God's law still stands, and what was brought to completion in Him? The enemy of our souls knows that if he can persuade a believer that God's whole law was abolished at the cross, he can unmoor that believer from the very standard of righteousness. And so this question is fought over with great cunning, often using the words of Scripture itself, twisted just slightly out of their meaning.</p>
+      <p>This study sets out the matter plainly. It establishes the principle by which the law is rightly divided, shows clearly which commands remain binding and which were fulfilled in Christ, answers every major argument raised against the continuing law of God, and closes with practical instruction for standing firm against deception. Throughout, the standard is the same: salvation is by grace through faith alone, and obedience is the fruit of that salvation, never its mechanism.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span>The One Question That Sorts the Whole Law</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span>The Change of Priesthood: What Was Truly Set Aside</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>What Remains and What Was Fulfilled</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>Circumcision: The Sign That Pointed to the Heart</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>The Dietary Laws: Older Than the Priesthood</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>Answering the Lies, One by One</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span>How to Combat the Lies</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span>Standing Against Deception</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The One Question That Sorts the Whole Law</h2>
+      </div>
+      <div class="section-body">
+        <p>Many have tried to divide the law into neat categories with man-made labels, but Scripture itself does not hand us those labels. Instead, it gives us a single, reliable question that sorts every command correctly:</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Sorting Principle</p>
+          <p>Does the command <strong>describe the unchanging character of God</strong>, or does it <strong>administer a temporary shadow that pointed forward to Christ?</strong></p>
+        </div>
+
+        <p>The moral law describes who God is. "Be ye holy; for I am holy." God does not cease to be holy, therefore that standard never expires. Murder, theft, adultery, idolatry, and false witness are wrong because they violate the very nature of God, and His nature is eternal.</p>
+
+        <p>The shadow law administered the management of sin and the approach to a holy God through a mediating system: the priesthood, the sacrifices, and the temple service. These were never the substance. They were the shadow cast ahead by the One who was coming.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 2:17</span>
+          <span class="scripture-text">Which are a shadow of things to come; but the body is of Christ.</span>
+        </div>
+
+        <p>When the body arrives, the shadow has finished its work. It is not abolished as though it were evil. It is fulfilled, its purpose accomplished in the substance it always pointed to. This single principle sorts the entire law without contradiction. It retires the sacrifices without touching the command against theft. It upholds the moral law because that law reflects God Himself.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Change of Priesthood: What Was Truly Set Aside</h2>
+      </div>
+      <div class="section-body">
+        <p>The book of Hebrews tells us precisely what changed, and it is far more specific than the careless claim that "the law was done away." What changed was the <strong>priesthood</strong>, and with it, the regulations that governed the priesthood.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 7:12</span>
+          <span class="scripture-text">For the priesthood being changed, there is made of necessity a change also of the law.</span>
+        </div>
+
+        <p>Notice the careful wording. It is the law concerning the priesthood that changes, because the priesthood itself changed, from the order of Aaron to the order of Melchizedek. And this was no innovation. Melchizedek met Abraham in Genesis 14, centuries before Levi was born, and Abraham paid tithes to him. The Melchizedek priesthood is both older and greater than the Aaronic, which was only ever a temporary placeholder until the true and eternal High Priest came.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 10:1</span>
+          <span class="scripture-text">For the law having a shadow of good things to come, and not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect.</span>
+        </div>
+
+        <p>Christ is the Passover Lamb, the once-for-all sacrifice, and the High Priest after the order of Melchizedek. Therefore the sacrificial system, the Levitical mediation, and the temple service are all fulfilled in Him. Their entire purpose was to manage sin through the blood of animals until the true Lamb came. That purpose is now complete.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What This Does and Does Not Touch</p>
+          <p>The change of priesthood retires the sacrifices and the temple service completely. It does not touch the command against murder, the command against idolatry, or the Sabbath, because none of those were priestly ordinances. They describe the character of God, not the management of sin through a mediating system.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">What Remains and What Was Fulfilled</h2>
+      </div>
+      <div class="section-body">
+        <p>Applying the sorting principle consistently, the law divides as follows.</p>
+
+        <div class="sort-wrap">
+          <div class="sort-col remains">
+            <h4>Remains Binding</h4>
+            <span class="sub">Describes the unchanging character of God</span>
+            <ul>
+              <li>The Ten Commandments</li>
+              <li>The seventh-day Sabbath, set at creation</li>
+              <li>The moral statutes: against theft, murder, adultery, false witness, covetousness</li>
+              <li>The command against idolatry and the worship of false gods</li>
+              <li>Honest weights, honest dealing, love of neighbor</li>
+              <li>The dietary distinction of clean and unclean, older than the priesthood</li>
+              <li>Love of God with all the heart, the Shema</li>
+            </ul>
+          </div>
+          <div class="sort-col fulfilled">
+            <h4>Fulfilled in Christ</h4>
+            <span class="sub">A shadow that pointed forward to the Lamb</span>
+            <ul>
+              <li>The animal sacrifice system</li>
+              <li>The Aaronic and Levitical priesthood</li>
+              <li>The temple service and its ordinances</li>
+              <li>The blood mediation for sin</li>
+              <li>The penalty of death carried out by the congregation against the lawbreaker</li>
+              <li>Circumcision as a requirement, its outward form fulfilled in the circumcised heart</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">A Vital Distinction on Penalty</p>
+          <p>The moral law remains the standard, yet the believer in Christ is no longer under its condemnation. The penalty for breaking the commandments, the sentence of death, was paid in full by Christ on the cross. We are no longer stoned for sin, because the penalty was satisfied in Him. <strong>The law still defines sin. The cross removed the condemnation.</strong> The standard endures; our deliverance from its sentence is complete.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Circumcision: The Sign That Pointed to the Heart</h2>
+      </div>
+      <div class="section-body">
+        <p>Circumcision is often misfiled. It is not a priestly or sacrificial ordinance, for it predates the Aaronic priesthood entirely, given to Abraham in Genesis 17, more than four hundred years before Sinai. It is its own category: the ratifying sign of the Abrahamic covenant, cut into the flesh.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 17:11</span>
+          <span class="scripture-text">And ye shall circumcise the flesh of your foreskin; and it shall be a token of the covenant betwixt me and you.</span>
+        </div>
+
+        <p>And here is the truth that resolves the whole matter: God always meant the outward sign to point to an inward reality. This is not a New Testament novelty. It is spoken in the Torah itself, centuries before the apostles.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 10:16</span>
+          <span class="scripture-text">Circumcise therefore the foreskin of your heart, and be no more stiffnecked.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 30:6</span>
+          <span class="scripture-text">And the LORD thy God will circumcise thine heart, and the heart of thy seed, to love the LORD thy God with all thine heart, and with all thy soul, that thou mayest live.</span>
+        </div>
+
+        <p>God, by His own authority, declared that the cutting of the flesh was always pointing toward a heart cut free from rebellion and given over to Him. This is why the apostle, when he speaks of true circumcision being "that of the heart, in the spirit, and not in the letter," is not inventing a new doctrine. He is repeating what Moses said.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Why the Great Battle Over Circumcision</p>
+          <p>The dispute in the early assemblies was never "is circumcision sin." The false teachers were declaring, "except ye be circumcised after the manner of Moses, ye cannot be saved." They turned a work of the flesh into the ground of salvation, which destroys the gospel of grace. That is the lie the apostle fought with all his strength, not the act itself.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 7:19</span>
+          <span class="scripture-text">Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of God.</span>
+        </div>
+
+        <p>Read that slowly, for it is the whole framework in a single verse. In the same breath where the apostle says circumcision is nothing, he declares what <strong>is</strong> something: the keeping of the commandments of God. He does not oppose circumcision to commandment-keeping. He opposes circumcision-as-a-salvation-requirement to faith, and then upholds commandment-keeping as what truly matters.</p>
+      </div>
+    </section>
+
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Dietary Laws: Older Than the Priesthood</h2>
+      </div>
+      <div class="section-body">
+        <p>The clean and unclean distinction is not a Levitical invention bound to the temple. It is older than the priesthood, older than Israel, older than the flood.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 7:2</span>
+          <span class="scripture-text">Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female.</span>
+        </div>
+
+        <p>Noah already knew the categories of clean and unclean, before there was a single sacrifice commanded as a system, before there was a Levite or a tabernacle. Therefore the dietary laws cannot be filed under "priestly duties retired by the change of priesthood," for the same reason circumcision could not. They are older than the priesthood itself.</p>
+
+        <p>Their purpose is given plainly in the text: to mark out a holy and separated people unto God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Leviticus 20:24&ndash;26</span>
+          <span class="scripture-text">I am the LORD your God, which have separated you from other people... ye shall be holy unto me: for I the LORD am holy, and have severed you from other people, that ye should be mine.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Why Not Relocated Inward Like Circumcision</p>
+          <p>Some ask: if circumcision moved inward to the heart, why not the food laws? The answer is that <strong>Scripture itself relocates circumcision to the heart</strong>, on God's own authority, in Deuteronomy. God never once makes that inward move for food. He never says the true clean and unclean is a matter of the heart. The relocation of circumcision is authorized by the text; an identical move for food is not. We read each command the way Scripture itself reads it, and that is not inconsistency, it is faithfulness to what is written.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Answering the Lies, One by One</h2>
+      </div>
+      <div class="section-body">
+        <p>Every argument raised to abolish God's law uses Scripture, but twists it. Here are the major ones, each with its claim and its answer set side by side.</p>
+      </div>
+
+      <!-- Matthew 5:17 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"Jesus fulfilled the law, and fulfill means He brought it to an end. So the law is finished."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>In Matthew 5:17 the word for fulfill is <em class="term">pleroo</em>, meaning to fill up, to complete, to bring to full measure. The contrast Jesus draws is decisive: He sets "fulfill" against "destroy." He says, "I came not to destroy, but to fulfil." If fulfill meant "bring to an end," then fulfill and destroy would mean the same thing, and the sentence would be nonsense. The only coherent reading is that fulfill is the opposite of abolish. He came to fill the law full and embody it perfectly.</p>
+          <p>And He seals it: "Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law." Heaven and earth are still standing. The law still stands with them.</p>
+        </div>
+      </div>
+
+      <!-- 2 Cor 3 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"Paul calls the ministry written and engraved in stones a 'ministration of death' that was 'done away.' That is the Ten Commandments, so they are abolished."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>Ask how a law that is "holy, and just, and good" becomes a ministration of death. The law itself is not death. It is a mirror that shows us our sin and pronounces the lawbreaker condemned. The "ministry of death" is the law functioning as a <strong>sentence of condemnation</strong> against those who break it, not the standard itself.</p>
+          <p>Paul says it in the same passage: "the letter killeth, but the spirit giveth life." The same law that condemns when written only on stone now gives life when written by the Spirit on the heart. The law did not change. Our relationship to it did. What passed was the condemning ministry, not the eternal standard.</p>
+        </div>
+      </div>
+
+      <!-- Colossians 2:14 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"Christ nailed the handwriting of ordinances to the cross. So the ordinances, including the Sabbath and food laws, are gone."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>The word translated "handwriting" in Colossians 2:14 is <em class="term">cheirographon</em>. It does not mean "the law." It means a handwritten document, specifically a <strong>certificate of debt</strong>, the written record of charges against a debtor. What was nailed to the cross was not the law of God, but the record of our debt, the verdict of guilt that stood against us because we broke the law.</p>
+          <p>The charge sheet was nailed up, not the standard we violated. This proves the believer's freedom from condemnation; it does not abolish the commandments. A paid debt does not erase the law against stealing; it simply clears the one who owed.</p>
+        </div>
+      </div>
+
+      <!-- Galatians 3:24-25 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"The law was our schoolmaster to bring us to Christ, but now that faith is come, we are no longer under a schoolmaster. The law's job is over."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>The law's role as the <strong>tutor that drives us to Christ for justification</strong> is what is no longer needed, because we have now come to Christ by faith. We are no longer under the law as the thing that condemns us and shuts us up unto the promise. But the standard of righteousness itself does not vanish when we arrive at the One it pointed us to. The same letter declares the fruit of the Spirit, against which there is no law, the very life the law always described.</p>
+        </div>
+      </div>
+
+      <!-- Romans 6:14 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"We are not under the law, but under grace. So we are not obligated to keep it."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>"Under the law" means under its jurisdiction as a condemning judge, not outside its definition of righteousness. The proof is the very next verse, where Paul anticipates this exact misreading: "Shall we sin because we are not under the law, but under grace? <strong>God forbid.</strong>" And earlier he had already declared, "Do we then make void the law through faith? God forbid: yea, we establish the law." A man does not establish the law in one chapter and abolish it in the next.</p>
+        </div>
+      </div>
+
+      <!-- Mark 7:19 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"In Mark 7, Jesus declared all foods clean. The dietary laws are abolished."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>Read the question being debated. In Mark 7 the Pharisees attack the disciples for eating with <strong>unwashed hands</strong>, a man-made tradition, not a command of God. Jesus says so plainly: "laying aside the commandment of God, ye hold the tradition of men." His point is that food entering through unwashed hands does not spiritually defile a man. Pork was never the subject.</p>
+          <p>The phrase "declared all foods clean," where it appears, is a translator's interpretive gloss, not the words of Jesus. To His hearers, "all foods" meant all the things that are food. Not one disciple reacts as though Moses had been overturned, and years later Peter still says he has never eaten anything unclean. The food laws were not in view.</p>
+        </div>
+      </div>
+
+      <!-- Acts 10 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"In Acts 10, God lowered a sheet of unclean animals and said 'kill and eat.' God abolished the food laws by revelation."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>Do not stop reading at the vision. Peter himself tells you what it meant. Standing in the house of Cornelius, he explains: "God hath shewed me that I should not call any <strong>man</strong> common or unclean." Not any food. Any man. The vision broke Peter's reluctance to enter a Gentile home and preach the gospel, for God was bringing the Gentiles into the body.</p>
+          <p>The man who received the vision is the one person qualified to interpret it, and he says it was about people. And note that this is years after Mark 7, yet Peter still says he has never eaten anything unclean. The food laws were never repealed, and this passage is not about food at all.</p>
+        </div>
+      </div>
+
+      <!-- Romans 14:14 -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"Paul says in Romans 14:14 that there is nothing unclean of itself. He abolished the distinction between clean and unclean animals."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>The whole chapter is a dispute between meat-eaters and vegetarians, where the weak ate only herbs. Nobody becomes a vegetarian to avoid pork; one simply avoids pork. The issue was meat that may have been offered to idols, which is why the cautious abstained from all meat.</p>
+          <p>And the word matters. Paul's word for "unclean" in that verse is <em class="term">koinos</em>, meaning common or defiled by association. He does <strong>not</strong> use <em class="term">akathartos</em>, the word for an inherently unclean animal used throughout Leviticus. Paul had the precise word for "unclean animal" available and deliberately did not use it. He is saying clean food is not rendered impure by association or by a brother's suspicion. Unclean animals were never in view, because within that debate they were never in the category of food to begin with.</p>
+        </div>
+      </div>
+
+      <!-- Circumcision salvation -->
+      <div class="objection">
+        <div class="objection-claim">
+          <span class="tag">The Claim</span>
+          <p>"Paul says circumcision is nothing and warns against it. He abolished it and, with it, the law of Moses."</p>
+        </div>
+        <div class="objection-answer">
+          <span class="tag">The Answer</span>
+          <p>Paul never says circumcision is sin or is abolished. He says that as a <strong>requirement for salvation</strong> it is nothing, because it cannot justify. "Every man that is circumcised is a debtor to do the whole law" for righteousness, and that road to justification by the flesh is the false gospel he destroys. In the same breath he upholds "the keeping of the commandments of God." The outward sign was always pointing to the circumcised heart, and that inward reality is what counts before God.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION VII -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">Section VII</span>
+        <h2 class="section-title">How to Combat the Lies</h2>
+      </div>
+      <div class="section-body">
+        <p>Knowing the answers is not enough. The believer must know how to wield them, for the lies do not come labeled as lies. They come dressed in verses. Here is the discipline for standing firm.</p>
+      </div>
+
+      <div class="combat-step">
+        <span class="num">First</span>
+        <h4>Always Ask What Question the Passage Is Actually Answering</h4>
+        <p>Most deception works by lifting a verse out of the dispute it was written to settle. Mark 7 is about unwashed hands. Acts 10 is about Gentile inclusion. Romans 14 is about idol-tainted meat. Galatians is about salvation by works. <strong>Read the surrounding verses and find the real question on the table.</strong> A verse pressed into answering a question it was never addressing will always produce a false conclusion.</p>
+      </div>
+
+      <div class="combat-step">
+        <span class="num">Second</span>
+        <h4>Let the Author Interpret Himself</h4>
+        <p>When Peter has a vision, read on until Peter says what it meant. When Paul anticipates a misreading, read the very next verse where he answers it with "God forbid." Scripture is its own best interpreter. The plainer statement governs the obscure one, and the author's own explanation outranks any clever inference drawn from his imagery.</p>
+      </div>
+
+      <div class="combat-step">
+        <span class="num">Third</span>
+        <h4>Test Every Reading for Consistency</h4>
+        <p>If a proposed meaning forces a contradiction, it is wrong. If "the law is abolished" requires Paul to both establish the law and abolish it, the reading fails. If "Jesus declared all foods clean" requires Peter to have misunderstood his own Lord for years afterward, the reading fails. <strong>Truth is consistent with itself from Genesis to Revelation.</strong> A reading that pits Scripture against Scripture is a counterfeit.</p>
+      </div>
+
+      <div class="combat-step">
+        <span class="num">Fourth</span>
+        <h4>Watch the Words Themselves</h4>
+        <p>The adversary hides in vague translations. The certificate of debt nailed to the cross is <em>cheirographon</em>, not "the law." The "unclean" of Romans 14 is <em>koinos</em>, common by association, not <em>akathartos</em>, an unclean creature. Where a precise word was available and a different one was chosen, that choice carries meaning. Do not let an imprecise English rendering carry a doctrine the original would never bear.</p>
+      </div>
+
+      <div class="combat-step">
+        <span class="num">Fifth</span>
+        <h4>Hold Fast the Sorting Principle</h4>
+        <p>When a new argument comes, return to the one question: does this command describe the unchanging character of God, or did it administer a shadow that pointed to Christ? The sacrifices pointed forward and are complete. The moral law reflects God Himself and endures. <strong>One consistent principle dismantles a hundred inconsistent objections.</strong></p>
+      </div>
+
+      <div class="combat-step">
+        <span class="num">Sixth</span>
+        <h4>Keep Grace and Obedience in Their Right Order</h4>
+        <p>Never let the enemy push you into the ditch on either side. Salvation is by grace through faith alone; no work of the law can justify. Yet genuine faith produces obedience as its fruit. If anyone tells you that keeping God's commandments earns salvation, that is a lie. If anyone tells you that grace frees you to ignore God's commandments, that is also a lie. <strong>Obedience is the fruit of salvation, never its mechanism, and never optional for the one who loves God.</strong></p>
+      </div>
+    </section>
+
+
+    <!-- SECTION VIII -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">Section VIII</span>
+        <h2 class="section-title">Standing Against Deception</h2>
+      </div>
+      <div class="section-body">
+        <p>The Scriptures warn plainly that in the latter times deception will increase, and that much of it will come from within, speaking the language of faith while making void the commandments of God. The believer is not left defenseless. The same Word that exposes the lie also arms the faithful to stand.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 4:3&ndash;4</span>
+          <span class="scripture-text">For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears; and they shall turn away their ears from the truth, and shall be turned unto fables.</span>
+        </div>
+
+        <p>Notice the mechanism of the deception. It is not that people are forced into error against their will. They <strong>heap to themselves teachers</strong> who tell them what they already wish to hear. A doctrine that removes the obligation to obey God is attractive precisely because it flatters the flesh. The lie that the law is abolished spreads not because it is well argued, but because it is comfortable.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 7:15</span>
+          <span class="scripture-text">Beware of false prophets, which come to you in sheep's clothing, but inwardly they are ravening wolves.</span>
+        </div>
+
+        <p>The wolf wears the clothing of the sheep. He uses Scripture, speaks of grace, and names the name of Christ. This is why discernment cannot rest on tone or sincerity. It must rest on the whole counsel of the Word, tested by the sorting principle and by consistency from Genesis to Revelation.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Mark of the Faithful Remnant</p>
+          <p>Scripture identifies the people the adversary most fiercely opposes in the last days, and it is no accident that they are described by their relationship to God's commandments: <strong>"the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ."</strong> To stand against deception is to be exactly this: a people who hold fast both the grace of Christ and the commandments of God, refusing to surrender either.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 8:20</span>
+          <span class="scripture-text">To the law and to the testimony: if they speak not according to this word, it is because there is no light in them.</span>
+        </div>
+
+        <p>Here is the final test, given by the prophet himself. Every teacher, every doctrine, every clever argument is measured against the law and the testimony. If it does not agree with the whole of God's revealed Word, the verdict is settled: there is no light in it. The believer who keeps this test will not be swept away, for he stands on the Word that does not change.</p>
+      </div>
+    </section>
+
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">The Law Established, Not Abolished</h3>
+      <div class="conclusion-body">
+        <p>What was set aside was the sacrificial and priestly system, fulfilled by the change to the eternal priesthood of Christ, for its whole purpose was to manage sin until the Lamb came. The penalty of the law, the sentence of death, was paid in full at the cross, freeing the believer from condemnation. Circumcision was revealed as the sign it always was, pointing to the circumcision of the heart, which is why it cannot be a requirement for salvation. And everything that describes the unchanging character of God, the moral law, the Sabbath, the standard of holiness, and the dietary distinction older than the priesthood, all of it remains in full force, now written upon the heart by the Spirit so that we are able to keep it.</p>
+        <p>The lies are many, but they share one root: the desire to be free of the obligation to obey. They are answered by one discipline: reading each verse in its true context, letting Scripture interpret itself, and testing every claim against the whole counsel of God.</p>
+        <p>Salvation is the gift of grace, received by faith alone. Obedience is the fruit that grows from a heart made new. <em>We do not keep the commandments to be saved. We keep them because we have been saved, and because we love the One who gave them.</em></p>
+      </div>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Sola Scriptura &middot; To the law and to the testimony &middot; Isaiah 8:20</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

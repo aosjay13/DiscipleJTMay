@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tongues and Interpretation &middot; Gifts of the Holy Ghost, Lesson Three</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+    --green:       #2c4a3e;
+    --green-acc:   #4a8c72;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2.3rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em.term { font-style: italic; color: var(--crimson); font-weight: 500; }
+
+  .group-intro {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── SCRIPTURE ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+
+  /* ── KEYPOINT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+  .keypoint p {
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .keypoint p + p { margin-top: 0.7rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── GIFT / DEFINITION CARD ── */
+  .gift {
+    margin: 1.4rem 0;
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    background: var(--cream);
+    padding: 1.4rem 1.6rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .gift-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.7rem;
+  }
+  .gift-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--crimson);
+    letter-spacing: 0.02em;
+  }
+  .gift-meaning {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .gift-body { font-size: 1.04rem; line-height: 1.82; color: var(--ink-mid); }
+  .gift-body p + p { margin-top: 0.7rem; }
+  .gift-body strong { color: var(--ink); }
+  .gift-role {
+    margin-top: 0.9rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+  }
+  .gift-role strong { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.35rem; }
+
+  /* ── BONUS / NOTE PANEL ── */
+  .bonus {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '✦'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus strong { color: var(--ink); }
+
+  em.greek { font-weight: 600; font-style: italic; color: var(--ink); }
+
+  /* ── THREE-GROUP OVERVIEW ── */
+  .groups {
+    margin: 1.6rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  @media (max-width: 640px) { .groups { grid-template-columns: 1fr; } }
+  .group-col {
+    padding: 1.2rem 1.3rem;
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--crimson);
+    background: rgba(122,31,31,0.05);
+  }
+  .group-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.3rem;
+  }
+  .group-col .sub { font-size: 0.82rem; font-style: italic; color: var(--ink-soft); display: block; margin-bottom: 0.8rem; }
+  .group-col ul { list-style: none; }
+  .group-col ul li {
+    padding: 0.3rem 0 0.3rem 1.2rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--ink-mid);
+    border-bottom: 1px solid var(--rule);
+  }
+  .group-col ul li:last-child { border-bottom: none; }
+  .group-col ul li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-light); }
+
+  /* ── CONCLUSION (crimson) ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  .conclusion-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #EDE0C4;
+  }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── DISCUSSION / QUESTIONS ── */
+  .qpage { page-break-before: always; break-before: page; }
+  .block-head {
+    text-align: center;
+    margin: 2.5rem 0 1.8rem;
+  }
+  .block-head .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .block-head h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 700;
+    color: var(--crimson);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .block-head .rule { display: flex; align-items: center; gap: 0.6rem; max-width: 220px; margin: 0.9rem auto 0; }
+  .block-head .rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .block-head .rule i { color: var(--gold-light); font-style: normal; }
+
+  .qlist { list-style: none; counter-reset: q; }
+  .qlist > li {
+    counter-increment: q;
+    margin-bottom: 1.4rem;
+    padding-left: 2.6rem;
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .qlist > li::before {
+    content: counter(q);
+    position: absolute;
+    left: 0; top: -0.1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--crimson);
+    width: 1.9rem; height: 1.9rem;
+    border: 1px solid var(--gold-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--cream);
+  }
+  .qlist .q-text { font-size: 1.05rem; line-height: 1.7; color: var(--ink-mid); }
+  .qlist .q-ref { display: block; margin-top: 0.3rem; font-size: 0.85rem; font-style: italic; color: var(--ink-soft); }
+  .qlist .answer-lines { margin-top: 0.7rem; }
+  .qlist .answer-lines span {
+    display: block;
+    border-bottom: 1px solid #C9A84C55;
+    height: 1.5rem;
+  }
+
+  /* ── ANSWER KEY (teacher) ── */
+  .keypage { page-break-before: always; break-before: page; }
+  .teacher-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  .akey { list-style: none; counter-reset: a; }
+  .akey > li {
+    counter-increment: a;
+    margin-bottom: 1.3rem;
+    padding: 1rem 1.3rem 1rem 1.3rem;
+    background: var(--cream);
+    border-left: 3px solid var(--green-acc);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .akey > li .anum {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .akey > li .anum::before { content: 'Answer ' counter(a); }
+  .akey .a-q { font-style: italic; color: var(--crimson); font-size: 0.98rem; margin-bottom: 0.5rem; }
+  .akey .a-body { font-size: 1.0rem; line-height: 1.78; color: var(--ink-mid); }
+  .akey .a-body strong { color: var(--ink); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page { size: 8.5in 11in; margin: 0.5in; }
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .section { page-break-inside: avoid; }
+    .gift, .bonus, .scripture, .keypoint, .group-col { page-break-inside: avoid; break-inside: avoid; }
+    .conclusion, .doc-header, .doc-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .qpage, .keypage { page-break-before: always; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">Gifts of the Holy Ghost &middot; Lesson Three</p>
+    <h1 class="doc-title">Tongues and Interpretation</h1>
+    <p class="doc-subtitle">The Sign, the Prayer Language, and the Voice in the Assembly</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">In our second lesson we walked through all nine gifts of the Spirit, and we set the last two of them aside for closer study. We come now to those two, the gift of tongues and the interpretation of tongues. No gifts have stirred more confusion or more division in the church than these, and much of that confusion comes from treating every appearance of tongues in Scripture as though it were exactly the same thing. When we read carefully, we find that the Spirit gives this gift in more than one setting and for more than one purpose.</p>
+      <p>This lesson sets the matter in order by following three threads in the text. First, we look at the day of Pentecost, where tongues came as real languages, spoken and heard, declaring the wonderful works of God. Second, we look at the language of prayer and praise, by which a believer speaks not to men but to God and is built up in private. Third, we look at the use of tongues in the gathered assembly, where one speaks and another interprets, so that the whole body is edified, just as it is by prophecy. Through it all the standard remains what it has always been. The gifts serve a body that walks in love and good order, and they add nothing to a salvation that is already ours by grace through faith.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span>The Day of Pentecost: Tongues as Known Languages</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span>The Same Gift Poured Out Again</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>Three Settings for One Gift</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>A Language of Prayer and Praise</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>Tongues in the Assembly Must Be Interpreted</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>The Gift of Interpretation of Tongues</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span>One Speaks, Another Interprets</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span>A Sign to Them That Believe Not</a></li>
+        <li><a href="#s9"><span class="toc-num">IX.</span>Tongues, Love, and the Whole Counsel</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Day of Pentecost: Tongues as Known Languages</h2>
+      </div>
+      <div class="section-body">
+        <p>The gift of tongues first appears on the day of Pentecost, when the Holy Ghost was poured out upon the gathered believers. What they spoke was not gibberish or noise. They spoke real languages, as the Spirit Himself gave them the words.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 2:4</span>
+          <span class="scripture-text">And they were all filled with the Holy Ghost, and began to speak with other tongues, as the Spirit gave them utterance.</span>
+        </div>
+
+        <p>A crowd gathered from many nations, and each person heard the believers speaking in his own native language. This was the wonder of it. The believers had not studied these languages, yet visitors from across the known world understood them perfectly.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 2:6</span>
+          <span class="scripture-text">Now when this was noised abroad, the multitude came together, and were confounded, because that every man heard them speak in his own language.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 2:11</span>
+          <span class="scripture-text">...we do hear them speak in our tongues the wonderful works of God.</span>
+        </div>
+
+        <p>Two things stand out here. First, the content of the speech was praise. They declared the wonderful works of God. Second, no interpreter was needed, because the hearers already knew the languages being spoken. The tongues at Pentecost were a sign that drew a crowd and opened the door for Peter to preach the gospel, after which about three thousand souls were added to the church.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What Pentecost Shows</p>
+          <p>At Pentecost the tongues were genuine human languages, given by the Spirit, declaring the praises of God. They served as a sign to a watching crowd of unbelievers and opened the way for the preaching of Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Same Gift Poured Out Again</h2>
+      </div>
+      <div class="section-body">
+        <p>Pentecost was not the only time tongues accompanied the giving of the Holy Ghost. The same thing happened in the house of Cornelius, when the gospel first came to the Gentiles. The believing Jews who were present knew the Spirit had been poured out because they heard these new believers speak with tongues and magnify God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 10:46</span>
+          <span class="scripture-text">For they heard them speak with tongues, and magnify God. Then answered Peter.</span>
+        </div>
+
+        <p>It happened again at Ephesus, when Paul laid hands on a group of disciples who had not yet received the Holy Ghost. They spoke with tongues and prophesied.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 19:6</span>
+          <span class="scripture-text">And when Paul had laid his hands upon them, the Holy Ghost came on them; and they spake with tongues, and prophesied.</span>
+        </div>
+
+        <p>Notice the pattern. In each of these moments, tongues marked the coming of the Spirit and gave voice to praise toward God. This is the same gift we will see Paul instruct the church about in his letter to Corinth, where he gives careful guidance for its right use among the gathered believers.</p>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Three Settings for One Gift</h2>
+      </div>
+      <div class="section-body">
+        <p>Before we go further, it helps to hold the whole picture in view. Scripture shows the gift of tongues operating in three settings, each with its own purpose. Keeping these distinct clears away most of the confusion that surrounds this subject.</p>
+
+        <div class="groups">
+          <div class="group-col">
+            <h4>The Sign</h4>
+            <span class="sub">Tongues toward the watching world</span>
+            <ul>
+              <li>Known languages at Pentecost</li>
+              <li>A sign to unbelievers</li>
+              <li>Declares the works of God</li>
+              <li>Opens the way for the gospel</li>
+            </ul>
+          </div>
+          <div class="group-col">
+            <h4>The Prayer Language</h4>
+            <span class="sub">Tongues toward God in private</span>
+            <ul>
+              <li>The believer speaks to God</li>
+              <li>He utters mysteries in the spirit</li>
+              <li>It edifies the believer himself</li>
+              <li>No interpreter is required</li>
+            </ul>
+          </div>
+          <div class="group-col">
+            <h4>The Assembly Voice</h4>
+            <span class="sub">Tongues toward the gathered church</span>
+            <ul>
+              <li>Spoken aloud in the meeting</li>
+              <li>Must be interpreted</li>
+              <li>Edifies the whole body</li>
+              <li>Governed by order</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>The same gift, the Spirit-given utterance, serves in all three. What changes is the setting and the purpose, and with them the rules that govern its use. We turn now to the second and third of these, which Paul lays out in detail in First Corinthians chapter fourteen.</p>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">A Language of Prayer and Praise</h2>
+      </div>
+      <div class="section-body">
+        <p>Paul describes a use of tongues that is directed not toward people but toward God. When a believer prays in this way, he is not speaking to the congregation. He is speaking to the Lord, uttering things his own mind does not fully grasp.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:2</span>
+          <span class="scripture-text">For he that speaketh in an unknown tongue speaketh not unto men, but unto God: for no man understandeth him; howbeit in the spirit he speaketh mysteries.</span>
+        </div>
+
+        <p>This kind of prayer builds up the one who prays. Paul says so plainly, and he does not despise it. He puts it alongside praying and singing with the understanding, so that the believer worships God with both his spirit and his mind.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:4</span>
+          <span class="scripture-text">He that speaketh in an unknown tongue edifieth himself; but he that prophesieth edifieth the church.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:14-15</span>
+          <span class="scripture-text">For if I pray in an unknown tongue, my spirit prayeth, but my understanding is unfruitful. What is it then? I will pray with the spirit, and I will pray with the understanding also: I will sing with the spirit, and I will sing with the understanding also.</span>
+        </div>
+
+        <p>Paul himself valued this private prayer language and used it often. He was not against tongues at all. He simply wanted them kept in their proper place.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:18</span>
+          <span class="scripture-text">I thank my God, I speak with tongues more than ye all.</span>
+        </div>
+
+        <p>This building up is inward and spiritual. It strengthens the believer's own walk with God and stirs up his faith, which is why Jude joins praying in the Holy Ghost to building ourselves up in the faith.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Jude 20</span>
+          <span class="scripture-text">But ye, beloved, building up yourselves on your most holy faith, praying in the Holy Ghost.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Prayer Language</p>
+          <p>In private, tongues are a means of speaking to God, uttering mysteries in the spirit, and being built up in the inner man. The edifying here is a strengthening of the soul before God, not a path to ease or earthly gain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Tongues in the Assembly Must Be Interpreted</h2>
+      </div>
+      <div class="section-body">
+        <p>When the believers come together, the rule changes. In the gathered church, the goal is always that everyone present is built up, and that cannot happen if words are spoken that no one understands. So Paul gives a clear principle. A tongue spoken aloud in the assembly must be interpreted, or it does the hearers no good.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:5</span>
+          <span class="scripture-text">...greater is he that prophesieth than he that speaketh with tongues, except he interpret, that the church may receive edifying.</span>
+        </div>
+
+        <p>Paul is not saying prophecy is a better gift in itself. He is saying that in the public meeting, a word everyone understands does more good than a word no one understands. An uninterpreted tongue leaves the hearers in the dark. He drives the point home with a simple picture. If a trumpet gives an uncertain sound, no one prepares for battle. If words carry no clear meaning to the hearer, they fall to the ground.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:9</span>
+          <span class="scripture-text">So likewise ye, except ye utter by the tongue words easy to be understood, how shall it be known what is spoken? for ye shall speak into the air.</span>
+        </div>
+
+        <p>This is why the speaker is told to pray for the gift of interpretation, so that what he speaks can be understood and the whole gathering can be edified.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:13</span>
+          <span class="scripture-text">Wherefore let him that speaketh in an unknown tongue pray that he may interpret.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Gift of Interpretation of Tongues</h2>
+      </div>
+      <div class="section-body">
+        <p>This brings us to the ninth gift, the companion to tongues in the public meeting. The interpretation of tongues is the Spirit-given ability to make known the meaning of a message spoken in a tongue, so that the gathered body understands and is built up.</p>
+
+        <div class="gift">
+          <div class="gift-head">
+            <span class="gift-name">Interpretation of Tongues</span>
+            <span class="gift-meaning">to render the meaning of a message given in a tongue</span>
+          </div>
+          <div class="gift-body">
+            <p>Interpretation is not the same as natural translation. A translator works word for word from a language he has studied. An interpreter of tongues receives the sense of the message from the Spirit and gives it to the church in a known language. The aim is not a perfect literal rendering but a faithful conveying of the meaning, so that the body is edified.</p>
+            <p>When a tongue is spoken aloud and then interpreted, the two gifts together accomplish what prophecy accomplishes. The message that was hidden becomes plain, and the whole gathering can receive it, weigh it, and be built up.</p>
+          </div>
+          <div class="gift-role">
+            <strong>How It Serves</strong>
+            Makes a message in tongues understood by the church, so that what was spoken edifies the whole body and no one is left without understanding.
+          </div>
+        </div>
+
+        <p>Because interpretation completes the work of a public tongue, the two are always meant to travel together in the assembly. Where there is no interpretation, the tongue is to be kept private, between the believer and God.</p>
+      </div>
+    </section>
+
+    <!-- SECTION VII -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">Section VII</span>
+        <h2 class="section-title">One Speaks, Another Interprets</h2>
+      </div>
+      <div class="section-body">
+        <p>Paul gives plain instructions for how tongues and interpretation are to operate when the church gathers. The number is limited, the speaking is taken in turn, and an interpretation must follow. This is the prophetic pattern you asked us to look at closely, where one speaks and the meaning is then made known to all.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:27-28</span>
+          <span class="scripture-text">If any man speak in an unknown tongue, let it be by two, or at the most by three, and that by course; and let one interpret. But if there be no interpreter, let him keep silence in the church; and let him speak to himself, and to God.</span>
+        </div>
+
+        <p>Read this carefully, for it sets the whole order. No more than two or three are to speak in a meeting. They speak one at a time, not all at once. After the tongue is given, one interprets, so the message can be understood. And if no one present has the gift of interpretation, the one with a tongue is to stay silent in the gathering and keep that utterance private between himself and God.</p>
+
+        <p>The same chapter shows that the speaker keeps control of himself and is not swept away. The gift does not override the person, and a true working of the Spirit never produces chaos.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:32-33</span>
+          <span class="scripture-text">And the spirits of the prophets are subject to the prophets. For God is not the author of confusion, but of peace, as in all churches of the saints.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Order in the Assembly</p>
+          <p>Two or three at most, each in turn, and every tongue interpreted. If there is no interpreter, the tongue stays private. The Spirit gives utterance, yet the believer remains in control, because God is the author of peace, not confusion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VIII -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">Section VIII</span>
+        <h2 class="section-title">A Sign to Them That Believe Not</h2>
+      </div>
+      <div class="section-body">
+        <p>Paul gives one more piece that ties back to Pentecost. He teaches that tongues serve as a sign, and he points to a word spoken long before through the prophet Isaiah, where God said He would speak to a people through other tongues and other lips.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:21</span>
+          <span class="scripture-text">In the law it is written, With men of other tongues and other lips will I speak unto this people; and yet for all that will they not hear me, saith the Lord.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:22</span>
+          <span class="scripture-text">Wherefore tongues are for a sign, not to them that believe, but to them that believe not: but prophesying serveth not for them which believe not, but for them which believe.</span>
+        </div>
+
+        <p>This is exactly what we saw at Pentecost. The tongues were a sign that arrested a crowd of unbelievers and turned their attention to the works of God. Inside the gathered church, however, where believers come to be fed, prophecy and interpreted tongues carry the day, because the whole point of the meeting is that everyone understands and is built up.</p>
+      </div>
+    </section>
+
+    <!-- SECTION IX -->
+    <section class="section" id="s9">
+      <div class="section-header">
+        <span class="section-num">Section IX</span>
+        <h2 class="section-title">Tongues, Love, and the Whole Counsel</h2>
+      </div>
+      <div class="section-body">
+        <p>Paul does not forbid tongues. He guards them and gives them their right place. He closes the matter with two balanced commands, holding both gifts in honor while keeping the meeting in good order.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:39-40</span>
+          <span class="scripture-text">Wherefore, brethren, covet to prophesy, and forbid not to speak with tongues. Let all things be done decently and in order.</span>
+        </div>
+
+        <p>So we neither chase after tongues as a badge of spiritual rank nor forbid them as though they were dangerous. We seek to build up the body, we keep all things in order, and above all we walk in love, for that is the more excellent way we saw in the last lesson. Without love, even the tongues of men and of angels are only noise.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 13:1</span>
+          <span class="scripture-text">Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.</span>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">A Word on "Unknown"</p>
+          <p>In the King James text of First Corinthians fourteen, the word <strong>unknown</strong> is printed in italics, as in "an unknown tongue." The translators set it in italics to show that they supplied the word for the sake of clear English, since it is not standing for a separate word in the original. They added it to make plain that the tongue was not understood by those who heard it. This is a helpful reminder to read carefully and to let the whole passage, not a single supplied word, shape our understanding.</p>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Tongues Are Not the Measure of Salvation</p>
+          <p>It is vital to keep this gift in its place. Speaking with tongues is not the proof that a person is saved, nor a mark that one believer is holier than another. Salvation is by grace through faith alone, and no gift adds anything to it. Tongues are a gift for prayer, for praise, and for the building up of the body when interpreted. We pursue them, like all the gifts, for the good of others and the glory of God, and we let love and Christlike character be the thing we treasure most.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Closing</p>
+      <h3 class="conclusion-title">The Gift in Its Proper Place</h3>
+      <div class="conclusion-body">
+        <p>We have followed the gift of tongues through three settings. At Pentecost it came as known languages, a sign that declared the works of God to a watching world. In private it serves as a language of prayer and praise, by which a believer speaks to God and is built up in the inner man. In the gathered assembly it is joined to interpretation, so that one speaks, another makes the meaning known, and <em>the whole church may receive edifying</em>.</p>
+        <p>This brings our short series on the gifts of the Holy Ghost to its close. We began with the five callings Christ gave to equip His church, moved through the nine gifts His Spirit distributes among the members, and have now seen these last two set in their right order. Through all of it the aim has been the same. The gifts serve a body that is led, taught, and shepherded under the headship of Christ, a body that does all things decently and in order, and that above every gift walks in love, the way that never fails.</p>
+      </div>
+    </section>
+
+    <!-- DISCIPLESHIP QUESTIONS -->
+    <div class="qpage">
+      <div class="block-head">
+        <span class="eyebrow">For Discussion and Study</span>
+        <h2>Discipleship Questions</h2>
+        <div class="rule"><span></span><i>✦</i><span></span></div>
+      </div>
+
+      <ol class="qlist">
+        <li>
+          <div class="q-text">At Pentecost, what kind of tongues did the believers speak, and how did the crowd respond? What was the content of what they spoke?</div>
+          <span class="q-ref">Acts 2:4, 6, 11</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Besides Pentecost, name two other times in Acts when believers spoke with tongues as they received the Holy Ghost.</div>
+          <span class="q-ref">Acts 10:46; Acts 19:6</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">What are the three settings for the gift of tongues that this lesson sets out, and what is the purpose of each?</div>
+          <span class="q-ref">Acts 2; 1 Corinthians 14:2-4; 14:27</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">According to 1 Corinthians 14:2, to whom does a person speak in an unknown tongue, and what does he utter?</div>
+          <span class="q-ref">1 Corinthians 14:2</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">How does the prayer language build a believer up, and what did Paul say about his own use of tongues?</div>
+          <span class="q-ref">1 Corinthians 14:4, 14-15, 18; Jude 20</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Why must a tongue spoken aloud in the assembly be interpreted? What happens to the hearers if it is not?</div>
+          <span class="q-ref">1 Corinthians 14:5, 9, 13</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">What is the gift of interpretation of tongues, and how is it different from a natural, word-for-word translation?</div>
+          <span class="q-ref">1 Corinthians 14:13</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">What order does Paul give for tongues in the gathered church? What is to happen if no interpreter is present?</div>
+          <span class="q-ref">1 Corinthians 14:27-28</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">According to 1 Corinthians 14:22, tongues are a sign to whom? What older word from the prophets does Paul cite?</div>
+          <span class="q-ref">1 Corinthians 14:21-22</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Are tongues the proof that a person is saved or more spiritual than others? How does this gift relate to grace and to love?</div>
+          <span class="q-ref">1 Corinthians 13:1; 14:39-40</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- TEACHER ANSWER KEY -->
+    <div class="keypage">
+      <div class="block-head">
+        <span class="eyebrow">Teacher's Guide</span>
+        <h2>Answer Key</h2>
+        <div class="rule"><span></span><i>✦</i><span></span></div>
+      </div>
+      <p class="teacher-note">For the teacher. This page prints after the worksheet for your reference during class discussion.</p>
+
+      <ol class="akey">
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What kind of tongues at Pentecost, and how did the crowd respond?</div>
+          <div class="a-body">They spoke real, known human languages as the Spirit gave utterance (Acts 2:4). Visitors from many nations each heard the believers in their own native language and were amazed (Acts 2:6). The content was praise, declaring <strong>the wonderful works of God</strong> (Acts 2:11). No interpreter was needed, because the hearers already knew those languages.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Two other times tongues accompanied receiving the Spirit.</div>
+          <div class="a-body">At the house of Cornelius, where the Gentiles spoke with tongues and magnified God (Acts 10:46), and at Ephesus, where Paul laid hands on the disciples and they spoke with tongues and prophesied (Acts 19:6).</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">The three settings and their purposes.</div>
+          <div class="a-body">First, <strong>the sign</strong>, the known languages at Pentecost that served as a witness to unbelievers and opened the way for the gospel. Second, <strong>the prayer language</strong>, by which a believer speaks privately to God and is built up. Third, <strong>the assembly voice</strong>, spoken aloud in the meeting and interpreted, so the whole body is edified.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">To whom does one speak in an unknown tongue, and what is uttered?</div>
+          <div class="a-body">He speaks <strong>not unto men, but unto God</strong>, for no man understands him. In the spirit he speaks <strong>mysteries</strong> (1 Corinthians 14:2).</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">How does the prayer language build up, and Paul's own use?</div>
+          <div class="a-body">He that speaks in a tongue <strong>edifies himself</strong> (14:4). The spirit prays while the understanding is unfruitful, so Paul resolves to pray and sing with both the spirit and the understanding (14:14-15). Jude joins praying in the Holy Ghost to building ourselves up in the faith (Jude 20). Paul valued it, saying he spoke with tongues more than them all (14:18). The building up is inward and spiritual, a strengthening of the soul before God.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Why must a public tongue be interpreted?</div>
+          <div class="a-body">So that <strong>the church may receive edifying</strong> (14:5). The goal of the gathering is that everyone understands and is built up. Without interpretation the words are spoken into the air and the hearers gain nothing (14:9). The speaker is therefore told to pray that he may interpret (14:13).</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What is interpretation, and how is it unlike translation?</div>
+          <div class="a-body">It is the Spirit-given rendering of the meaning of a message in tongues, so the church understands. Unlike a natural translator who works word for word from a language he has studied, the interpreter receives the <strong>sense</strong> of the message from the Spirit and conveys it. The aim is faithful meaning, not a literal word-for-word rendering.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">The order for tongues in the assembly.</div>
+          <div class="a-body">Let it be by <strong>two, or at the most three</strong>, and <strong>in turn</strong> (by course), and <strong>let one interpret</strong>. If there is no interpreter present, the one with a tongue is to <strong>keep silence in the church</strong> and speak only to himself and to God (1 Corinthians 14:27-28). The speaker remains in control, for God is the author of peace, not confusion (14:32-33).</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Tongues are a sign to whom, and what older word?</div>
+          <div class="a-body">Tongues are a sign <strong>to them that believe not</strong> (1 Corinthians 14:22). Paul cites the word given through Isaiah, that God would speak to this people with other tongues and other lips (14:21). This matches Pentecost, where the sign arrested a crowd of unbelievers.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Do tongues prove salvation or spirituality? Relation to grace and love?</div>
+          <div class="a-body">No. Salvation is by grace through faith alone, and no gift adds to it. Tongues are not a badge of rank or proof of holiness. Paul says to covet prophecy and not to forbid tongues, doing all things decently and in order (14:39-40). Above all, without love even the tongues of men and of angels are only sounding brass (13:1). We treasure love and Christlike character most.</div>
+        </li>
+      </ol>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">
+      Gifts of the Holy Ghost &middot; Lesson Three<br>
+      Tongues and Interpretation &middot; Acts 2 &amp; First Corinthians 14<br>
+      All Scripture from the Authorized King James Version
+    </p>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homework &mdash; Lesson 2: Discipling Others</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-soft:#9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 2.8rem 3rem 2rem;
+    background: linear-gradient(to bottom, var(--crimson), var(--crimson-soft));
+    color: var(--gold-pale);
+  }
+  .header-ornament { font-size: 1.4rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 0.9rem; }
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700;
+    color: #FBF4E2; letter-spacing: 0.04em; line-height: 1.2; text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'Cinzel', serif; font-size: clamp(0.8rem, 1.8vw, 1rem); color: var(--gold-light);
+    letter-spacing: 0.16em; text-transform: uppercase; margin-top: 0.5rem;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.4rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── NAME BAR ── */
+  .name-bar {
+    display: flex; gap: 2rem; padding: 1.1rem 3rem;
+    border-bottom: 1px solid var(--rule); background: var(--cream);
+  }
+  .name-field { flex: 1; display: flex; align-items: baseline; gap: 0.5rem; }
+  .name-field span {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); white-space: nowrap;
+  }
+  .name-field .blank { flex: 1; border-bottom: 1px solid var(--ink-soft); height: 1.1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 1.6rem 3rem 2.4rem; }
+
+  .intro {
+    padding: 1.2rem 1.4rem; background: var(--gold-pale); border-left: 3px solid var(--gold-light);
+    font-size: 1.02rem; line-height: 1.8; color: var(--ink-mid); font-style: italic; text-align: justify;
+    margin-bottom: 1rem;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2rem; }
+  .section-header { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 0.8rem; }
+  .section-num {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); white-space: nowrap; padding-top: 0.15rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.18rem); font-weight: 600;
+    color: var(--crimson); line-height: 1.3;
+  }
+  .section-lead { font-size: 1.02rem; line-height: 1.78; color: var(--ink-mid); margin-bottom: 0.6rem; text-align: justify; }
+
+  /* ── SCRIPTURE ── */
+  .scripture { margin: 0.8rem 0; padding: 0.9rem 1.2rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.06em; color: var(--gold); display: block; margin-bottom: 0.35rem; }
+  .scripture-text { font-style: italic; color: var(--ink-mid); font-size: 0.98rem; line-height: 1.74; }
+
+  /* ── PROMPT + WRITE LINES ── */
+  .prompt { font-size: 1.02rem; line-height: 1.65; color: var(--ink); font-weight: 500; margin: 0.9rem 0 0.5rem; }
+  .lines .line { height: 0.42in; border-bottom: 1px solid var(--rule-solid); }
+  .lines.short .line { height: 0.42in; }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; padding: 0; margin: 0.6rem 0; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.32rem 0;
+    font-size: 1rem; line-height: 1.6; color: var(--ink-mid);
+  }
+  .checklist .box {
+    width: 1rem; height: 1rem; border: 1.5px solid var(--gold); flex-shrink: 0; margin-top: 0.18rem; background: var(--parchment);
+  }
+
+  /* ── PEOPLE TABLE ── */
+  .people {
+    width: 100%; border-collapse: collapse; margin: 0.7rem 0;
+  }
+  .people th {
+    font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1.5px solid var(--gold-light);
+  }
+  .people td { border-bottom: 1px solid var(--rule-solid); height: 0.5in; padding: 0.2rem 0.6rem; }
+
+  /* ── COMMITMENT BLOCK ── */
+  .commit {
+    margin-top: 1.2rem; padding: 1.3rem 1.5rem; background: var(--cream);
+    border: 1px solid #D4B97A55; border-top: 3px solid var(--gold-light);
+  }
+  .commit-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .commit p { font-size: 1.02rem; line-height: 1.74; color: var(--ink-mid); margin-bottom: 1rem; }
+  .sign-row { display: flex; gap: 2rem; margin-top: 1.4rem; }
+  .sign-field { flex: 1; }
+  .sign-field .blank { border-bottom: 1px solid var(--ink-soft); height: 1.3rem; }
+  .sign-field span { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); display: block; margin-top: 0.3rem; }
+
+  /* ── ENCOURAGEMENT BOX ── */
+  .encourage {
+    margin-top: 1.6rem; padding: 1.3rem 1.5rem; background: var(--gold-pale);
+    border: 1px dashed #C9A84C99;
+  }
+  .encourage-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.7rem; }
+  .encourage .scripture-text { display: block; margin-bottom: 0.6rem; }
+  .encourage .scripture-ref { color: var(--gold); }
+
+  /* ── ANSWER KEY / LEADER GUIDE ── */
+  .keydiv {
+    text-align: center;
+    margin-top: 2.6rem;
+    padding-top: 2.4rem;
+    border-top: 2px solid var(--rule-solid);
+  }
+  .key-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .key-name { font-family: 'Cinzel', serif; font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 600; color: var(--crimson); letter-spacing: 0.03em; }
+  .key-flourish { color: var(--gold-light); font-size: 0.9rem; letter-spacing: 0.3em; margin-top: 0.5rem; }
+  .key-intro { font-size: 1rem; line-height: 1.78; color: var(--ink-soft); font-style: italic; margin: 1.4rem 0 0.4rem; text-align: justify; }
+
+  .answer { margin: 1.2rem 0; padding: 1.1rem 1.4rem; background: var(--cream); border: 1px solid #D4B97A44; border-left: 3px solid var(--crimson-soft); }
+  .a-num { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.45rem; }
+  .a-prompt { font-weight: 600; color: var(--ink); font-size: 1rem; line-height: 1.6; margin-bottom: 0.55rem; }
+  .a-text { font-size: 0.99rem; line-height: 1.76; color: var(--ink-mid); }
+  .a-text ul { list-style: none; padding: 0; margin-top: 0.4rem; }
+  .a-text ul li { padding: 0.18rem 0 0.18rem 1.2rem; position: relative; }
+  .a-text ul li::before { content: '\2726'; position: absolute; left: 0; color: var(--gold-light); font-size: 0.6rem; top: 0.42rem; }
+
+  /* ── FOOTER ── */
+  .doc-footer { text-align: center; padding: 2rem; background: linear-gradient(to top, var(--crimson), var(--crimson-soft)); color: var(--gold-pale); margin-top: 2.4rem; }
+  .footer-ornament { color: var(--gold-light); font-size: 1.1rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.18em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @page {
+    size: letter portrait;
+    margin: 0.7in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 7.5pt;
+      color: #8B6914;
+      letter-spacing: 0.12em;
+    }
+  }
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; background: var(--parchment); }
+    .page::before, .page::after { display: none; }
+    .doc-header { padding: 1.2rem 0.5in 1rem; }
+    .name-bar { padding: 0.6rem 0; }
+    .doc-body { padding: 0.8rem 0 0; }
+
+    /* Keep atomic content blocks together */
+    .scripture   { break-inside: avoid; page-break-inside: avoid; }
+    .commit      { break-inside: avoid; page-break-inside: avoid; }
+    .encourage   { break-inside: avoid; page-break-inside: avoid; }
+    .people      { break-inside: avoid; page-break-inside: avoid; }
+    .answer      { break-inside: avoid; page-break-inside: avoid; }
+    .checklist   { break-inside: avoid; page-break-inside: avoid; }
+    .lines       { break-inside: avoid; page-break-inside: avoid; }
+
+    /* Keep section headings with at least the first element below them */
+    .section-header { break-after: avoid; page-break-after: avoid; }
+    .section-num    { break-after: avoid; page-break-after: avoid; }
+    .section-title  { break-after: avoid; page-break-after: avoid; }
+    .a-num          { break-after: avoid; page-break-after: avoid; }
+    .a-prompt       { break-after: avoid; page-break-after: avoid; }
+    .key-name       { break-after: avoid; page-break-after: avoid; }
+
+    /* Explicit page breaks */
+    .pb-before { break-before: page; page-break-before: always; margin-top: 0; }
+
+    /* Remove top margin when a section lands at the top of a page */
+    .pb-before.section { margin-top: 0; padding-top: 0; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 1.4rem 1.3rem 2rem; }
+    .doc-header { padding: 2rem 1.3rem 1.4rem; }
+    .name-bar { flex-direction: column; gap: 0.9rem; padding: 1rem 1.3rem; }
+    .sign-row { flex-direction: column; gap: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="doc-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 2 &middot; Homework</p>
+    <h1 class="doc-title">Discipling Others</h1>
+    <p class="doc-subtitle">Leading Someone to Salvation</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- NAME BAR -->
+  <div class="name-bar">
+    <div class="name-field"><span>Name</span><div class="blank"></div></div>
+    <div class="name-field"><span>Date</span><div class="blank"></div></div>
+  </div>
+
+  <div class="doc-body">
+
+    <p class="intro">In Lesson 2 we learned that salvation is the free gift of God's grace, received by humble faith and never earned by works. Now we turn that truth outward. Having received such mercy, we are sent to carry it to others. This homework is meant to prepare your heart and your words so that you can faithfully lead someone else to the same Savior, and then help them grow.</p>
+
+    <!-- SECTION I -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">Part I</span>
+        <h2 class="section-title">The Command to Make Disciples</h2>
+      </div>
+      <p class="section-lead">Sharing the gospel is not an option for the believer, it is a direct command from the Lord Himself. Notice that He calls us not only to win converts, but to teach them to obey everything He commanded.</p>
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 28:18&ndash;20</span>
+        <span class="scripture-text">And Jesus came and spake unto them, saying, All power is given unto me in heaven and in earth. Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.</span>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">Mark 16:15</span>
+        <span class="scripture-text">And he said unto them, Go ye into all the world, and preach the gospel to every creature.</span>
+      </div>
+      <p class="prompt">In your own words, what two things did Jesus command His followers to do? Why is "teaching them to observe all things" just as important as the first decision to follow Him?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section pb-before">
+      <div class="section-header">
+        <span class="section-num">Part II</span>
+        <h2 class="section-title">The Message You Carry</h2>
+      </div>
+      <p class="section-lead">To lead someone to salvation, you must be clear about the message itself. The gospel is simple, but it must be complete. Below are the truths a person needs to understand. Check each one as you settle it in your own heart.</p>
+      <ul class="checklist">
+        <li><span class="box"></span><span>All have sinned and fall short of God's glory (Romans 3:23), and sin is the breaking of God's Law (1 John 3:4).</span></li>
+        <li><span class="box"></span><span>The Law shows us our sin and our need for a Savior. No one can earn salvation by good works (Romans 3:20).</span></li>
+        <li><span class="box"></span><span>Salvation is the free gift of God's grace, received through faith, not earned (Ephesians 2:8-9).</span></li>
+        <li><span class="box"></span><span>We must repent, humbly turning from sin, and place our faith in Jesus Christ (Luke 18:13-14).</span></li>
+        <li><span class="box"></span><span>Saving grace then empowers us to walk in obedience to God out of love (Ephesians 2:10).</span></li>
+      </ul>
+      <div class="scripture">
+        <span class="scripture-ref">Romans 10:9</span>
+        <span class="scripture-text">That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved.</span>
+      </div>
+      <p class="prompt">Write out, in a few sentences, how you would explain the way of salvation to a friend who has never heard it. Keep it simple and true.</p>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section pb-before">
+      <div class="section-header">
+        <span class="section-num">Part III</span>
+        <h2 class="section-title">Ready to Give an Answer</h2>
+      </div>
+      <p class="section-lead">People cannot believe in a Savior they have never heard about. God uses our willing voices to carry the good news. We are to be prepared, gentle, and respectful as we share.</p>
+      <div class="scripture">
+        <span class="scripture-ref">Romans 10:13&ndash;15</span>
+        <span class="scripture-text">For whosoever shall call upon the name of the Lord shall be saved. How then shall they call on him in whom they have not believed? and how shall they believe in him of whom they have not heard? and how shall they hear without a preacher? And how shall they preach, except they be sent? as it is written, How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!</span>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">1 Peter 3:15</span>
+        <span class="scripture-text">But sanctify the Lord God in your hearts: and be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear.</span>
+      </div>
+      <p class="prompt">What is one fear or hesitation that has kept you from sharing your faith? What truth from these verses helps you overcome it?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">Part IV</span>
+        <h2 class="section-title">Sow the Seed, Trust God for the Increase</h2>
+      </div>
+      <p class="section-lead">It is a great relief to know that we are not responsible to save anyone. We are responsible to faithfully share. God alone changes the heart and gives the growth. This frees us to plant and water without fear of failure.</p>
+      <div class="scripture">
+        <span class="scripture-ref">1 Corinthians 3:6&ndash;7</span>
+        <span class="scripture-text">I have planted, Apollos watered; but God gave the increase. So then neither is he that planteth any thing, neither he that watereth; but God that giveth the increase.</span>
+      </div>
+      <p class="prompt">How does knowing that "God gives the increase" change the pressure you feel about someone's response? How does it change the way you pray for them?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">Part V</span>
+        <h2 class="section-title">Your Life Is a Witness</h2>
+      </div>
+      <p class="section-lead">Often the most powerful sermon is a changed life. People watch how we live before they listen to what we say. A life of quiet obedience and love opens the door for the words we speak.</p>
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 5:16</span>
+        <span class="scripture-text">Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.</span>
+      </div>
+      <p class="prompt">Honestly check the areas where your daily walk is a strong witness, and circle any you want to grow in.</p>
+      <ul class="checklist">
+        <li><span class="box"></span><span>My speech and honesty</span></li>
+        <li><span class="box"></span><span>My patience and kindness with others</span></li>
+        <li><span class="box"></span><span>My obedience to God's commandments</span></li>
+        <li><span class="box"></span><span>The way I handle hardship and trials</span></li>
+        <li><span class="box"></span><span>My love for fellow believers</span></li>
+      </ul>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">Part VI</span>
+        <h2 class="section-title">Discipling Beyond the Decision</h2>
+      </div>
+      <p class="section-lead">Leading someone to salvation is the beginning, not the end. A true disciple does not abandon a new believer. We walk alongside them, teaching them to obey, helping them grow, and equipping them to one day disciple others themselves.</p>
+      <div class="scripture">
+        <span class="scripture-ref">2 Timothy 2:2</span>
+        <span class="scripture-text">And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also.</span>
+      </div>
+      <p class="prompt">Think back to Matthew 28:20. What are some practical ways you could help a new believer learn to "observe all things" the Lord commanded? List at least three.</p>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </section>
+
+    <!-- SECTION VII -->
+    <section class="section pb-before">
+      <div class="section-header">
+        <span class="section-num">Part VII</span>
+        <h2 class="section-title">My Personal Action Plan</h2>
+      </div>
+      <p class="section-lead">Write the names of people God has placed in your life who do not yet know Him. Beside each, note one first step you can take, such as praying for them, inviting them, or sharing your own story.</p>
+      <table class="people">
+        <thead>
+          <tr><th style="width:40%;">Person</th><th>My Next Step</th></tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td></td></tr>
+          <tr><td></td><td></td></tr>
+          <tr><td></td><td></td></tr>
+        </tbody>
+      </table>
+
+      <div class="commit">
+        <p class="commit-label">My Commitment</p>
+        <p>Having received the free gift of grace, I commit to share that same good news with others, to do so with humility and love, to trust God for the increase, and to help those who believe to grow as faithful disciples of Jesus Christ.</p>
+        <div class="sign-row">
+          <div class="sign-field"><div class="blank"></div><span>Signature</span></div>
+          <div class="sign-field"><div class="blank"></div><span>Date</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENCOURAGEMENT -->
+    <div class="encourage">
+      <p class="encourage-label">A Word of Encouragement</p>
+      <span class="scripture-text">The fruit of the righteous is a tree of life; and he that winneth souls is wise.</span>
+      <span class="scripture-ref">Proverbs 11:30</span>
+      <span class="scripture-text" style="margin-top:0.8rem;">And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.</span>
+      <span class="scripture-ref">Daniel 12:3</span>
+    </div>
+
+    <!-- ============ ANSWER KEY / LEADER GUIDE ============ -->
+    <div class="keydiv pb-before">
+      <p class="key-label">For the Teacher</p>
+      <p class="key-name">Answer Key &amp; Leader's Guide</p>
+      <p class="key-flourish">&#10022; &#10022; &#10022;</p>
+    </div>
+
+    <p class="key-intro">Much of this homework is personal and prayerful, so several parts have no single right answer. Use this guide to evaluate understanding, to gently steer responses, and to encourage genuine follow-through. The goal is not a perfect paper but a heart prepared to share grace and to disciple others well.</p>
+
+    <div class="answer">
+      <p class="a-num">Part I &middot; The Command to Make Disciples</p>
+      <p class="a-prompt">What two things did Jesus command, and why does teaching obedience matter as much as the first decision?</p>
+      <p class="a-text">Look for both halves of the commission. First, to go and make disciples of all nations, preaching the gospel and baptizing. Second, "teaching them to observe all things" the Lord commanded. The student should see that Jesus called for disciples, not merely converts. A decision is only the beginning. Genuine salvation produces a transformed, obedient life, so leading someone to Christ includes helping them learn to walk in His ways.</p>
+    </div>
+
+    <div class="answer">
+      <p class="a-num">Part II &middot; The Message You Carry</p>
+      <p class="a-prompt">How would you explain the way of salvation to someone who has never heard it?</p>
+      <p class="a-text">A complete, simple explanation should touch each of the five truths in the checklist:</p>
+      <p class="a-text"><ul>
+        <li>All have sinned, and sin is the breaking of God's Law.</li>
+        <li>The Law shows us our sin and our need for a Savior. We cannot earn salvation.</li>
+        <li>Salvation is the free gift of God's grace, received through faith.</li>
+        <li>We must repent and put our faith in Jesus Christ.</li>
+        <li>Grace then empowers us to walk in obedience out of love.</li>
+      </ul></p>
+      <p class="a-text">Watch that the explanation stays centered on Christ and on grace, never on earning salvation by works. It should be clear and true, even if worded simply.</p>
+    </div>
+
+    <div class="answer">
+      <p class="a-num">Part III &middot; Ready to Give an Answer</p>
+      <p class="a-prompt">What fear has held you back, and what truth helps you overcome it?</p>
+      <p class="a-text">This is a personal response. Look for honesty in naming a real hesitation, such as fear of rejection, not feeling qualified, or not knowing enough. The truth that answers it should come from the verses. God is the One who sends us, people cannot believe what they have never heard, and we are simply called to share with meekness, not to have every answer. Affirm any sincere willingness to step out.</p>
+    </div>
+
+    <div class="answer pb-before">
+      <p class="a-num">Part IV &middot; Sow the Seed, Trust God for the Increase</p>
+      <p class="a-prompt">How does "God gives the increase" change the pressure you feel, and how you pray?</p>
+      <p class="a-text">The student should recognize that the burden of saving anyone is not on them. We plant and water faithfully, but God alone changes the heart and gives growth. This frees us from fear of failure and from the temptation to manipulate a response. In prayer it shifts the focus to asking God to soften the person's heart, open their eyes, and draw them, rather than relying on our own persuasion.</p>
+    </div>
+
+    <div class="answer">
+      <p class="a-num">Part V &middot; Your Life Is a Witness</p>
+      <p class="a-prompt">Self-examination of the life as a witness.</p>
+      <p class="a-text">There is no scoring here. Look for honest self-examination rather than either pride or discouragement. The point is that a changed, obedient, loving life lends weight to the words we speak, and that growth in these areas strengthens our testimony. Encourage the student in their strengths and gently support the areas they marked for growth.</p>
+    </div>
+
+    <div class="answer">
+      <p class="a-num">Part VI &middot; Discipling Beyond the Decision</p>
+      <p class="a-prompt">Practical ways to help a new believer learn to "observe all things."</p>
+      <p class="a-text">Accept any sincere, practical ideas. Strong answers may include reading the Scriptures together, modeling and teaching prayer, bringing them into the fellowship of the assembly, teaching them God's commandments and how to walk in them, being available to answer questions, and walking alongside them with patience and accountability. The key idea is ongoing relationship and teaching, not a one-time hand-off.</p>
+    </div>
+
+    <div class="answer">
+      <p class="a-num">Part VII &middot; My Personal Action Plan</p>
+      <p class="a-prompt">Names of people and next steps, with the commitment.</p>
+      <p class="a-text">This is the student's own plan, so there is no key. Encourage them to name real people and realistic first steps, and to commit it to prayer. As a leader, consider following up in a later session to ask how it is going, and offer to pray with them. Gentle, ongoing encouragement matters far more than a graded answer.</p>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Discipleship Class &middot; Level 1 &middot; Lesson 2 &middot; Homework: Discipling Others</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

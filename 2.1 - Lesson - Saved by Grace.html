@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discipleship Class &mdash; Level 1 &mdash; Lesson 2: Salvation by Grace</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-soft:#9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 2.8rem 3rem 2.2rem;
+    background: linear-gradient(to bottom, var(--crimson), var(--crimson-soft));
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .header-ornament { font-size: 1.4rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 0.9rem; }
+  .doc-eyebrow { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .doc-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 700; color: #FBF4E2; letter-spacing: 0.04em; line-height: 1.2; text-transform: uppercase; }
+  .doc-subtitle { font-family: 'Cinzel', serif; font-size: clamp(0.8rem, 1.8vw, 1rem); color: var(--gold-light); letter-spacing: 0.16em; text-transform: uppercase; margin-top: 0.5rem; }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.4rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PART DIVIDER ── */
+  .part-divider { text-align: center; margin: 3rem 0 2rem; padding-top: 2.4rem; border-top: 2px solid var(--rule-solid); }
+  .part-divider:first-child { border-top: none; padding-top: 2.4rem; }
+  .part-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .part-name { font-family: 'Cinzel', serif; font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 600; color: var(--crimson); letter-spacing: 0.03em; }
+  .part-flourish { color: var(--gold-light); font-size: 0.9rem; letter-spacing: 0.3em; margin-top: 0.5rem; }
+
+  /* ── LESSON SECTIONS ── */
+  .section { margin-top: 2.2rem; }
+  .section:first-of-type { margin-top: 1.6rem; }
+  .section-header { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 1rem; }
+  .section-num { font-family: 'Cinzel', serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-light); line-height: 1; flex-shrink: 0; }
+  .section-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .section-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; }
+  .section-body p { margin-bottom: 1rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* ── LESSON SCRIPTURE VERSES ── */
+  .verse { margin: 1.2rem 0; padding: 1.1rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .verse-ref { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.08em; color: var(--gold); display: block; margin-bottom: 0.4rem; }
+  .verse-text { font-style: italic; color: var(--ink-mid); font-size: 1rem; line-height: 1.75; }
+
+  /* ── FACTS BLOCK ── */
+  .facts { margin-top: 1.4rem; padding: 1.3rem 1.5rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .facts-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .facts ul { list-style: none; padding: 0; }
+  .facts li { padding: 0.4rem 0 0.4rem 1.4rem; position: relative; font-size: 1rem; line-height: 1.7; color: var(--ink-mid); }
+  .facts li::before { content: '\2726'; position: absolute; left: 0; color: var(--gold-light); font-size: 0.66rem; top: 0.62rem; }
+
+  /* ── QUESTION BLOCKS ── */
+  .q-block { margin: 1.4rem 0; }
+  .question { padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .q-num { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .q-read { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--crimson); letter-spacing: 0.04em; margin-bottom: 0.6rem; }
+  .q-verse { font-style: italic; color: var(--ink-soft); font-size: 0.96rem; line-height: 1.72; padding-left: 1rem; border-left: 2px solid #D4B97A55; margin-bottom: 0.8rem; }
+  .q-prompt { font-size: 1.03rem; line-height: 1.7; color: var(--ink); font-weight: 500; }
+  .q-reflect { background: var(--gold-pale); border-left-color: var(--gold); padding-bottom: 0.3rem; }
+
+  /* ── WRITING LINES ── */
+  .lines { padding: 0 0.2rem; margin-top: 0; }
+  .lines .line { height: 0.44in; border-bottom: 1px solid var(--rule-solid); }
+
+  /* ── ANSWER KEY ── */
+  .key-intro { font-size: 1rem; line-height: 1.78; color: var(--ink-soft); font-style: italic; margin-bottom: 1.6rem; text-align: justify; }
+  .answer { margin: 1.3rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border: 1px solid #D4B97A44; border-left: 3px solid var(--crimson-soft); }
+  .a-num { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.5rem; }
+  .a-prompt { font-weight: 600; color: var(--ink); font-size: 1.02rem; line-height: 1.65; margin-bottom: 0.6rem; }
+  .a-text { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── FOOTER ── */
+  .doc-footer { text-align: center; padding: 2rem; background: linear-gradient(to top, var(--crimson), var(--crimson-soft)); color: var(--gold-pale); margin-top: 3rem; }
+  .footer-ornament { color: var(--gold-light); font-size: 1.1rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.18em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @page {
+    size: letter portrait;
+    margin: 0.85in 0.7in 0.75in;
+
+    @top-left {
+      content: "\2726";
+      background-color: #7A1F1F;
+      color: #C9A84C;
+      font-family: Georgia, serif;
+      font-size: 7pt;
+      padding: 0 8pt;
+      border-bottom: 1pt solid #C9A84C;
+      vertical-align: middle;
+    }
+    @top-center {
+      content: "DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 2.1  \00B7  THE PARABLE";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 6.5pt;
+      letter-spacing: 0.14em;
+      border-bottom: 1pt solid #C9A84C;
+      padding-bottom: 2pt;
+      text-align: center;
+      vertical-align: middle;
+    }
+    @top-right {
+      content: "\2726";
+      background-color: #7A1F1F;
+      color: #C9A84C;
+      font-family: Georgia, serif;
+      font-size: 7pt;
+      padding: 0 8pt;
+      border-bottom: 1pt solid #C9A84C;
+      vertical-align: middle;
+    }
+    @bottom-left {
+      content: "";
+      background-color: #7A1F1F;
+      border-top: 1pt solid #C9A84C;
+    }
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages) "\A DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 2.1  \00B7  THE PARABLE";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 6.5pt;
+      letter-spacing: 0.12em;
+      border-top: 1pt solid #C9A84C;
+      padding-top: 2pt;
+      text-align: center;
+      vertical-align: middle;
+      white-space: pre;
+      line-height: 1.75;
+    }
+    @bottom-right {
+      content: "";
+      background-color: #7A1F1F;
+      border-top: 1pt solid #C9A84C;
+    }
+  }
+
+  @page :first {
+    @top-left   { content: none; background: none; border: none; }
+    @top-center { content: none; background: none; border: none; }
+    @top-right  { content: none; background: none; border: none; }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; background: var(--parchment); }
+    .page::before, .page::after { display: none; }
+    .doc-header { padding: 1.1rem 0 0.9rem; }
+    .doc-body { padding: 0 0 0.5in; }
+
+    .section { margin-top: 1.3rem; }
+    .section:first-of-type { margin-top: 0.8rem; }
+    .part-divider { padding-top: 1.2rem; margin: 1rem 0 0.8rem; }
+
+    .verse     { break-inside: avoid; page-break-inside: avoid; }
+    .facts     { break-inside: avoid; page-break-inside: avoid; }
+    .q-block   { break-inside: avoid; page-break-inside: avoid; }
+    .question  { break-inside: avoid; page-break-inside: avoid; }
+    .lines     { break-inside: avoid; page-break-inside: avoid; }
+    .answer    { break-inside: avoid; page-break-inside: avoid; }
+
+    .section-header { break-after: avoid; page-break-after: avoid; }
+    .section-title  { break-after: avoid; page-break-after: avoid; }
+    .part-name      { break-after: avoid; page-break-after: avoid; }
+    .q-num          { break-after: avoid; page-break-after: avoid; }
+    .q-read         { break-after: avoid; page-break-after: avoid; }
+    .a-num          { break-after: avoid; page-break-after: avoid; }
+    .a-prompt       { break-after: avoid; page-break-after: avoid; }
+
+    .part-divider { break-before: page; page-break-before: always; }
+    .part-divider:first-child { break-before: auto; page-break-before: auto; }
+
+    .pb-before { break-before: page; page-break-before: always; }
+    .pb-before.section { margin-top: 0; }
+    .pb-before.q-block { margin-top: 0; }
+
+    .doc-footer { display: none; }
+
+    /* Tighter answer spacing in print so all 7 answers fit across two pages */
+    .answer { margin: 0.55rem 0; padding: 0.7rem 1rem; }
+    .key-intro { margin-bottom: 0.7rem; }
+
+    /* Personal Reflection: allow lines to flow right after the question on the same page */
+    .q-block.reflect-block { break-inside: auto; page-break-inside: auto; }
+    .lines.reflect-lines   { break-inside: auto; page-break-inside: auto; }
+    .reflect-lines .line   { height: 0.46in; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="doc-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 2.1</p>
+    <h1 class="doc-title">Salvation by Grace</h1>
+    <p class="doc-subtitle">The Parable of the Pharisee &amp; the Publican</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- ============ PART ONE: THE LESSON ============ -->
+    <div class="part-divider" style="border-top:none;">
+      <p class="part-label">Part One</p>
+      <p class="part-name">The Parable</p>
+      <p class="part-flourish">&#10022; &#10022; &#10022;</p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">1</span>
+        <h2 class="section-title">The Parable of the Pharisee and the Publican</h2>
+      </div>
+      <div class="section-body">
+        <p>Jesus often used parables, stories that illustrate spiritual truths, to correct the misunderstandings of the people of His day. One of the most powerful parables regarding salvation is found in the Gospel of Luke.</p>
+        <div class="verse">
+          <span class="verse-ref">Luke 18:9&ndash;10</span>
+          <span class="verse-text">And he spake this parable unto certain which trusted in themselves that they were righteous, and despised others: Two men went up into the temple to pray; the one a Pharisee, and the other a publican.</span>
+        </div>
+        <p>Jesus directed this story specifically at people who were self-righteous. They believed that because of their strict religious behavior, they had earned their salvation, and as a result, they looked down on everyone else.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section pb-before">
+      <div class="section-header">
+        <span class="section-num">2</span>
+        <h2 class="section-title">The Trap of Self-Righteousness</h2>
+      </div>
+      <div class="section-body">
+        <p>The Pharisee stood in the temple and prayed, thanking God that he was not an extortioner, unjust, or an adulterer. He boasted, "I fast twice in the week, I give tithes of all that I possess" (Luke 18:12).</p>
+        <p>It is important to understand that the specific acts he named, fasting and tithing, are not wrong in themselves. Tithing is not merely a rule of the Mosaic Law. Abraham gave tithes to Melchizedek long before the Law of Moses was ever given (Genesis 14:20), and that priesthood endures forever in the Lord Jesus Christ (Hebrews 7:17). These are righteous, ongoing mandates that a saved and obedient heart will naturally desire to perform. The Pharisee's deadly error was not that he tithed and fasted but that he pointed to those very acts as the reason he stood acceptable before God. He traded humble dependence on God's mercy for confidence in his own religious achievement.</p>
+        <p>No amount of righteous obedience can purchase justification. The Scriptures make this very clear.</p>
+        <div class="verse">
+          <span class="verse-ref">Romans 3:20</span>
+          <span class="verse-text">Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin.</span>
+        </div>
+        <p>The Law of God is perfect. Its purpose is to reveal what sin is so that we recognize our desperate need for a Savior, not to serve as a ladder by which we climb into God's favor.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">3</span>
+        <h2 class="section-title">The Posture of Repentance and Justification</h2>
+      </div>
+      <div class="section-body">
+        <p>The publican, a tax collector known in that culture to be a terrible sinner, stood far off. He would not even lift his eyes to heaven, but smote his breast, saying, "God be merciful to me a sinner" (Luke 18:13).</p>
+        <p>Jesus gave the shocking conclusion to this parable.</p>
+        <div class="verse">
+          <span class="verse-ref">Luke 18:14</span>
+          <span class="verse-text">I tell you, this man went down to his house justified rather than the other: for every one that exalteth himself shall be abased; and he that humbleth himself shall be exalted.</span>
+        </div>
+        <p>The publican was justified and declared righteous before God. Not because of anything good he had done, but because he humbly threw himself on the mercy of God. His prayer shows us the correct posture for approaching the throne of grace: empty-handed, broken, and entirely dependent on God's mercy.</p>
+        <p>However, true repentance does not end with a single prayer. Because sin is the transgression of God's Law (1 John 3:4), genuine repentance requires a sustained turning away from lawlessness and a return to walking in His commandments. The state of a man's soul reflects where he is standing at the end, not merely where he stood at a single moment (Ecclesiastes 11:3). Scripture is plain on the danger of turning away from righteousness after having known it.</p>
+        <div class="verse">
+          <span class="verse-ref">2 Peter 2:21</span>
+          <span class="verse-text">For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them.</span>
+        </div>
+        <p>The publican's humble posture before God was the right beginning. Genuine repentance then walks forward in that same spirit of dependence, expressed through an ongoing, obedient life.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="section pb-before">
+      <div class="section-header">
+        <span class="section-num">4</span>
+        <h2 class="section-title">Grace, Obedience, and the Love of God</h2>
+      </div>
+      <div class="section-body">
+        <p>This brings us to the true meaning of Grace. Grace is the unmerited, unearned favor of God. It is a free gift.</p>
+        <div class="verse">
+          <span class="verse-ref">Ephesians 2:8&ndash;10</span>
+          <span class="verse-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span>
+        </div>
+        <p>We are saved purely by grace, not by works. However, modern religion sometimes twists this grace to mean that keeping God's commandments no longer matters. The Apostle Paul forcefully corrected this misunderstanding.</p>
+        <div class="verse">
+          <span class="verse-ref">Romans 6:1&ndash;2</span>
+          <span class="verse-text">What shall we say then? Shall we continue in sin, that grace may abound? God forbid. How shall we, that are dead to sin, live any longer therein?</span>
+        </div>
+        <p>Because sin is the breaking of the Law (1 John 3:4), being saved by grace does not give us a license to break God's Law. Grace cleanses us from our past failures and gives us the Holy Spirit so that we can become His workmanship, empowered to walk in the good works and commandments He has ordained from the beginning.</p>
+        <p>This obedience is not passive, and it is not optional. Scripture commands us to be active doers of the Word, warning against the self-deception of merely hearing it.</p>
+        <div class="verse">
+          <span class="verse-ref">James 1:22</span>
+          <span class="verse-text">But be ye doers of the word, and not hearers only, deceiving your own selves.</span>
+        </div>
+        <p>Faith that produces no obedience to God's commandments is not saving faith at all.</p>
+        <div class="verse">
+          <span class="verse-ref">James 2:20</span>
+          <span class="verse-text">But wilt thou know, O vain man, that faith without works is dead?</span>
+        </div>
+        <p>And the love of God is not merely an inward feeling that eventually leads toward obedience. Scripture is precise on this point. The love of God is the keeping of His commandments.</p>
+        <div class="verse">
+          <span class="verse-ref">1 John 5:3</span>
+          <span class="verse-text">For this is the love of God, that we keep his commandments: and his commandments are not grievous.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">5</span>
+        <h2 class="section-title">Facts About Salvation by Grace</h2>
+      </div>
+      <div class="facts">
+        <p class="facts-label">Key Truths</p>
+        <ul>
+          <li>Salvation cannot be earned by self-righteousness or by pointing to our own works as the basis of our standing before God. It is the free gift of God's grace. Righteous acts such as tithing and fasting are eternal mandates that a saved heart will naturally desire to perform, not as a means to earn favor, but as the genuine fruit of faith.</li>
+          <li>Justification begins when we humbly recognize our sin and throw ourselves on God's mercy through Jesus Christ. True repentance is not a single moment but a sustained turning from lawlessness and a continuous walking in His commandments, because sin is the transgression of the Law (1 John 3:4).</li>
+          <li>We are not saved by our works, but we are saved for works. Saving faith is never passive. The love of God is the keeping of His commandments (1 John 5:3), and faith without obedient works to God's Law is dead (James 2:20).</li>
+        </ul>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Discipleship Class &middot; Level 1 &middot; Lesson 2.1 &middot; Salvation by Grace</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

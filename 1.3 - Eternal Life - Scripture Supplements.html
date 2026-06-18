@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discipleship Class - Level 1 - Lesson 1: Eternal Life - Scriptural Supplements</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --gold:#8B6914; --gold-light:#C9A84C; --gold-pale:#F5EDD8;
+    --ink:#1C1A17; --ink-mid:#3D3829; --ink-soft:#6B6047;
+    --parchment:#FAF6EE; --cream:#F2EBD9;
+    --crimson:#7A1F1F; --crimson-lt:#9B3434; --crimson-dk:#2a1414;
+    --rule:#C9A84C44; --rule-solid:#C9A84C; --accent-bg:#F3ECD8;
+    --shadow:rgba(28,26,23,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:#EDE4CF;
+    font-family:'EB Garamond',Georgia,serif;
+    color:var(--ink);
+    line-height:1.6;
+    padding:2rem 1rem 4rem;
+  }
+  .page{
+    max-width:8.5in; margin:0 auto;
+    background:var(--parchment);
+    border:1px solid #D4B97A;
+    box-shadow:0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position:relative;
+  }
+  .page::before,.page::after{
+    content:''; position:absolute; width:40px; height:40px;
+    border-color:var(--gold-light); border-style:solid; pointer-events:none; z-index:3;
+  }
+  .page::before{top:12px;left:12px;border-width:2px 0 0 2px;}
+  .page::after{bottom:12px;right:12px;border-width:0 2px 2px 0;}
+
+  /* ── CRIMSON HEADER BOOKEND ── */
+  .doc-header{
+    text-align:center;
+    padding:2.6rem 2rem 2rem;
+    background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-lt) 100%);
+    position:relative; color:var(--gold-pale); overflow:hidden;
+    border-bottom:3px solid var(--gold-light);
+  }
+  .doc-header::after{
+    content:''; position:absolute; inset:12px;
+    border:1px solid rgba(201,168,76,0.4); pointer-events:none;
+  }
+  .header-ornament{font-size:1.1rem;color:var(--gold-light);letter-spacing:0.4em;display:block;margin-bottom:0.8rem;}
+  .header-eyebrow{
+    font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.26em;
+    text-transform:uppercase; color:var(--gold-light); margin-bottom:0.7rem;
+  }
+  .header-title{
+    font-family:'Cinzel',serif; font-size:clamp(1.7rem,4vw,2.4rem); font-weight:700;
+    color:#FBF6E9; letter-spacing:0.03em; line-height:1.15; text-transform:uppercase;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .header-subtitle{
+    font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(0.95rem,2vw,1.12rem);
+    color:var(--gold-pale); margin-top:0.9rem; opacity:0.94;
+  }
+  .header-rule{
+    display:flex; align-items:center; gap:0.75rem; margin:1.4rem auto 0; max-width:280px;
+  }
+  .header-rule span{flex:1;height:1px;background:var(--gold-light);opacity:0.6;}
+  .header-rule i{color:var(--gold-light);font-style:normal;}
+
+  /* ── BODY ── */
+  .doc-body{padding:2.4rem 3rem 2.6rem;}
+
+  /* ── CRIMSON FOOTER BOOKEND ── */
+  .doc-footer{
+    text-align:center; padding:2rem;
+    border-top:3px solid var(--gold-light); margin-top:2rem;
+    background:linear-gradient(135deg,var(--crimson),var(--crimson-lt));
+  }
+  .footer-ornament{color:var(--gold-light);font-size:1.1rem;letter-spacing:0.4em;}
+  .footer-text{
+    font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.2em;
+    color:#FBF5E6; text-transform:uppercase; margin-top:0.6rem; line-height:1.9;
+  }
+
+  .section{margin-top:2.2rem;}
+  .section:first-child{margin-top:0;}
+  .section-title{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:var(--crimson);letter-spacing:0.02em;border-bottom:2px solid var(--gold-light);padding-bottom:0.45rem;margin-bottom:1rem;}
+  .testament{font-family:'Cinzel',serif;font-size:0.66rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--crimson);padding:0.18rem 0.6rem;border:1px solid var(--crimson);display:inline-block;margin:1rem 0 0.7rem;}
+  .subgroup{font-family:'Cinzel',serif;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;color:var(--ink-mid);margin:0.8rem 0 0.5rem;padding-bottom:0.2rem;border-bottom:1px solid var(--rule);}
+  .verse{margin-bottom:0.65rem;padding-left:0.7rem;border-left:2px solid var(--rule-solid);}
+  .verse-ref{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:600;color:var(--gold);letter-spacing:0.04em;display:block;margin-bottom:0.1rem;}
+  .verse-text{font-style:italic;font-size:1rem;line-height:1.6;color:var(--ink-mid);}
+  .verse-note{display:block;margin-top:0.4rem;padding:0.4rem 0.7rem;background:var(--cream);border:1px dashed var(--gold-light);font-size:0.9rem;font-style:normal;line-height:1.55;color:#5A4A30;}
+  @media (max-width:600px){.doc-body{padding:0 1.4rem 2rem;}}
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page{
+    size:8.5in 11in; margin:0.7in 0.75in 0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'Cinzel',serif; font-size:8pt; letter-spacing:0.1em; color:#8B6914;
+    }
+  }
+  @page:first{ margin-top:0; }
+  @media print{
+    body{background:#fff;padding:0;}
+    .page{box-shadow:none;border:none;max-width:100%;}
+    .page::before,.page::after{display:none;}
+    .doc-header,.doc-footer{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .doc-footer{display:none;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important;}
+    .section-title,.section-header,.testament,.testament-label,.subgroup{break-after:avoid;page-break-after:avoid;}
+    .scripture,.anchor-verse,.verse,.key-item,.warning-box,.commitment,.scale-row,.checkbox-grid{break-inside:avoid;page-break-inside:avoid;}
+    .section{break-before:page;page-break-before:always;}
+    .section:first-of-type{break-before:avoid;page-break-before:avoid;}
+
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ TITLE HEADER ═══════════════════════════════════ -->
+  <header class="doc-header">
+    <div class="header-eyebrow">Discipleship Class &nbsp;&bull;&nbsp; Level 1 &nbsp;&bull;&nbsp; Lesson 1</div>
+    <div class="header-title">Scriptural Supplements</div>
+    <div class="header-subtitle">Eternal Life &nbsp;&bull;&nbsp; Extended Scripture Reference</div>
+    <div class="header-rule"></div>
+  </header>
+
+  <!-- ══ BODY ═══════════════════════════════════════════ -->
+  <div class="doc-body">
+
+
+    <!-- ════════ SECTION 1 ════════════════════════════════ -->
+    <section class="section">
+      <h2 class="section-title">The True Definition of Eternal Life</h2>
+
+      <p class="testament">Old Testament Scriptures</p>
+
+      <div class="verse"><span class="verse-ref">Proverbs 9:10</span><span class="verse-text">The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.</span></div>
+      <div class="verse"><span class="verse-ref">Hosea 4:6</span><span class="verse-text">My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee...</span></div>
+      <div class="verse"><span class="verse-ref">Hosea 6:6</span><span class="verse-text">For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings.</span></div>
+      <div class="verse"><span class="verse-ref">Jeremiah 9:24</span><span class="verse-text">But let him that glorieth glory in this, that he understandeth and knoweth me, that I am the LORD which exercise lovingkindness, judgment, and righteousness, in the earth: for in these things I delight, saith the LORD.</span></div>
+      <div class="verse"><span class="verse-ref">Jeremiah 31:34</span><span class="verse-text">And they shall teach no more every man his neighbour, and every man his brother, saying, Know the LORD: for they shall all know me, from the least of them unto the greatest of them, saith the LORD.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 46:10</span><span class="verse-text">Be still, and know that I am God: I will be exalted among the heathen, I will be exalted in the earth.</span></div>
+      <div class="verse"><span class="verse-ref">Proverbs 3:5-6</span><span class="verse-text">Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 11:9</span><span class="verse-text">...for the earth shall be full of the knowledge of the LORD, as the waters cover the sea.</span></div>
+      <div class="verse"><span class="verse-ref">Deuteronomy 4:35</span><span class="verse-text">Unto thee it was shewed, that thou mightest know that the LORD he is God; there is none else beside him.</span></div>
+      <div class="verse"><span class="verse-ref">1 Chronicles 28:9</span><span class="verse-text">And thou, Solomon my son, know thou the God of thy father, and serve him with a perfect heart and with a willing mind: for the LORD searcheth all hearts, and understandeth all the imaginations of the thoughts: if thou seek him, he will be found of thee...</span></div>
+
+      <p class="testament">New Testament Scriptures</p>
+
+      <div class="verse"><span class="verse-ref">John 17:3</span><span class="verse-text">And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent.</span></div>
+      <div class="verse"><span class="verse-ref">John 14:7</span><span class="verse-text">If ye had known me, ye should have known my Father also: and from henceforth ye know him, and have seen him.</span></div>
+      <div class="verse"><span class="verse-ref">Philippians 3:10</span><span class="verse-text">That I may know him, and the power of his resurrection, and the fellowship of his sufferings, being made conformable unto his death.</span></div>
+      <div class="verse"><span class="verse-ref">2 Peter 1:2</span><span class="verse-text">Grace and peace be multiplied unto you through the knowledge of God, and of Jesus our Lord.</span></div>
+      <div class="verse"><span class="verse-ref">2 Peter 3:18</span><span class="verse-text">But grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ...</span></div>
+      <div class="verse"><span class="verse-ref">1 John 2:3</span><span class="verse-text">And hereby we do know that we know him, if we keep his commandments.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 4:7-8</span><span class="verse-text">Beloved, let us love one another: for love is of God; and every one that loveth is born of God, and knoweth God. He that loveth not knoweth not God; for God is love.</span></div>
+      <div class="verse"><span class="verse-ref">Galatians 4:9</span><span class="verse-text">But now, after that ye have known God, or rather are known of God...</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 1:17</span><span class="verse-text">That the God of our Lord Jesus Christ, the Father of glory, may give unto you the spirit of wisdom and revelation in the knowledge of him.</span></div>
+      <div class="verse"><span class="verse-ref">Colossians 1:10</span><span class="verse-text">That ye might walk worthy of the Lord unto all pleasing, being fruitful in every good work, and increasing in the knowledge of God.</span></div>
+      <div class="verse">
+        <span class="verse-ref">Hebrews 8:11</span>
+        <span class="verse-text">And they shall not teach every man his neighbour, and every man his brother, saying, Know the Lord: for all shall know me, from the least to the greatest.</span>
+        <span class="verse-note">Hebrews 8:11 is a direct quote from Jeremiah 31:34, which ties the two testaments together on this topic in a significant way.</span>
+      </div>
+      <div class="verse"><span class="verse-ref">1 Corinthians 13:12</span><span class="verse-text">For now we see through a glass, darkly; but then face to face: now I know in part; but then shall I know even as also I am known.</span></div>
+    </section>
+
+
+    <!-- ════════ SECTION 2 ════════════════════════════════ -->
+    <section class="section">
+      <h2 class="section-title">The Barrier of Sin Removed</h2>
+
+      <p class="testament">Old Testament Scriptures</p>
+
+      <div class="verse"><span class="verse-ref">Isaiah 59:2</span><span class="verse-text">But your iniquities have separated between you and your God, and your sins have hid his face from you, that he will not hear.</span></div>
+      <div class="verse"><span class="verse-ref">Genesis 3:23-24</span><span class="verse-text">Therefore the LORD God sent him forth from the garden of Eden, to till the ground from whence he was taken. So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 64:6</span><span class="verse-text">But we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do fade as a leaf; and our iniquities, like the wind, have taken us away.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 66:18</span><span class="verse-text">If I regard iniquity in my heart, the Lord will not hear me.</span></div>
+      <div class="verse"><span class="verse-ref">Proverbs 15:29</span><span class="verse-text">The LORD is far from the wicked: but he heareth the prayer of the righteous.</span></div>
+      <div class="verse"><span class="verse-ref">Jeremiah 5:25</span><span class="verse-text">Your iniquities have turned away these things, and your sins have withholden good things from you.</span></div>
+      <div class="verse"><span class="verse-ref">Ezekiel 18:4</span><span class="verse-text">Behold, all souls are mine; as the soul of the father, so also the soul of the son is mine: the soul that sinneth, it shall die.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 53:6</span><span class="verse-text">All we like sheep have gone astray; we have turned every one to his own way; and the LORD hath laid on him the iniquity of us all.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 51:3-4</span><span class="verse-text">For I acknowledge my transgressions: and my sin is ever before me. Against thee, thee only, have I sinned, and done this evil in thy sight...</span></div>
+      <div class="verse"><span class="verse-ref">Numbers 32:23</span><span class="verse-text">...be sure your sin will find you out.</span></div>
+      <div class="verse"><span class="verse-ref">Deuteronomy 31:17-18</span><span class="verse-text">Then my anger shall be kindled against them in that day, and I will forsake them, and I will hide my face from them... And I will surely hide my face in that day for all the evils which they shall have wrought, in that they are turned unto other gods.</span></div>
+      <div class="verse"><span class="verse-ref">Proverbs 28:13</span><span class="verse-text">He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy.</span></div>
+      <div class="verse"><span class="verse-ref">Lamentations 3:44</span><span class="verse-text">Thou hast covered thyself with a cloud, that our prayer should not pass through.</span></div>
+      <div class="verse"><span class="verse-ref">Micah 3:4</span><span class="verse-text">Then shall they cry unto the LORD, but he will not hear them: he will even hide his face from them at that time, as they have behaved themselves ill in their doings.</span></div>
+
+      <p class="testament">New Testament Scriptures</p>
+
+      <p class="subgroup">The Reality of Sin</p>
+      <div class="verse"><span class="verse-ref">Romans 3:23</span><span class="verse-text">For all have sinned, and come short of the glory of God.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 6:23</span><span class="verse-text">For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 5:12</span><span class="verse-text">Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 3:4</span><span class="verse-text">Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.</span></div>
+      <div class="verse"><span class="verse-ref">James 2:10</span><span class="verse-text">For whosoever shall keep the whole law, and yet offend in one point, he is guilty of all.</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 2:1-3</span><span class="verse-text">And you hath he quickened, who were dead in trespasses and sins; wherein in time past ye walked according to the course of this world, according to the prince of the power of the air, the spirit that now worketh in the children of disobedience.</span></div>
+
+      <p class="subgroup">The Redemption Provided</p>
+      <div class="verse"><span class="verse-ref">John 3:16-17</span><span class="verse-text">For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life. For God sent not his Son into the world to condemn the world; but that the world through him might be saved.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 5:8</span><span class="verse-text">But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.</span></div>
+      <div class="verse"><span class="verse-ref">1 Peter 1:18-19</span><span class="verse-text">Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold... but with the precious blood of Christ, as of a lamb without blemish and without spot.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 9:22</span><span class="verse-text">And almost all things are by the law purged with blood; and without shedding of blood is no remission.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 53:5</span><span class="verse-text">But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.</span></div>
+      <div class="verse"><span class="verse-ref">Colossians 1:13-14</span><span class="verse-text">Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son: in whom we have redemption through his blood, even the forgiveness of sins.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 8:1</span><span class="verse-text">There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.</span></div>
+      <div class="verse"><span class="verse-ref">Titus 2:14</span><span class="verse-text">Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works.</span></div>
+      <div class="verse"><span class="verse-ref">Galatians 3:13</span><span class="verse-text">Christ hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 1:7</span><span class="verse-text">But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 2:13</span><span class="verse-text">But now in Christ Jesus ye who sometimes were far off are made nigh by the blood of Christ.</span></div>
+
+      <p class="subgroup">The Restored Relationship</p>
+      <div class="verse"><span class="verse-ref">Romans 5:1</span><span class="verse-text">Therefore being justified by faith, we have peace with God through our Lord Jesus Christ.</span></div>
+      <div class="verse"><span class="verse-ref">2 Corinthians 5:17-18</span><span class="verse-text">Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new. And all things are of God, who hath reconciled us to himself by Jesus Christ.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 10:19-22</span><span class="verse-text">Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus... let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 1:9</span><span class="verse-text">If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 8:38-39</span><span class="verse-text">For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.</span></div>
+    </section>
+
+
+    <!-- ════════ SECTION 3 ════════════════════════════════ -->
+    <section class="section">
+      <h2 class="section-title">The Abundant Life in God's Word</h2>
+
+      <p class="testament">Old Testament Scriptures</p>
+
+      <p class="subgroup">The Peace That Comes From God's Presence</p>
+      <div class="verse"><span class="verse-ref">Psalm 23:1-3</span><span class="verse-text">The LORD is my shepherd; I shall not want. He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 26:3</span><span class="verse-text">Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 4:8</span><span class="verse-text">I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety.</span></div>
+      <div class="verse"><span class="verse-ref">Numbers 6:24-26</span><span class="verse-text">The LORD bless thee, and keep thee: the LORD make his face shine upon thee, and be gracious unto thee: the LORD lift up his countenance upon thee, and give thee peace.</span></div>
+
+      <p class="subgroup">The Abundance Found in God's Word and His Law</p>
+      <div class="verse"><span class="verse-ref">Psalm 119:165</span><span class="verse-text">Great peace have they which love thy law: and nothing shall offend them.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 19:7-8</span><span class="verse-text">The law of the LORD is perfect, converting the soul: the testimony of the LORD is sure, making wise the simple. The statutes of the LORD are right, rejoicing the heart: the commandment of the LORD is pure, enlightening the eyes.</span></div>
+      <div class="verse"><span class="verse-ref">Joshua 1:8</span><span class="verse-text">This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 1:1-3</span><span class="verse-text">Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful. But his delight is in the law of the LORD; and in his law doth he meditate day and night. And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.</span></div>
+      <div class="verse"><span class="verse-ref">Proverbs 3:1-2</span><span class="verse-text">My son, forget not my law; but let thine heart keep my commandments: for length of days, and long life, and peace, shall they add to thee.</span></div>
+
+      <p class="subgroup">Soul Satisfaction That the World Cannot Give</p>
+      <div class="verse"><span class="verse-ref">Psalm 63:1-5</span><span class="verse-text">O God, thou art my God; early will I seek thee: my soul thirsteth for thee, my flesh longeth for thee in a dry and thirsty land, where no water is... Because thy lovingkindness is better than life, my lips shall praise thee... My soul shall be satisfied as with marrow and fatness; and my mouth shall praise thee with joyful lips.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 107:9</span><span class="verse-text">For he satisfieth the longing soul, and filleth the hungry soul with goodness.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 55:2-3</span><span class="verse-text">Wherefore do ye spend money for that which is not bread? and your labour for that which satisfieth not? hearken diligently unto me, and eat ye that which is good, and let your soul delight itself in fatness. Incline your ear, and come unto me: hear, and your soul shall live.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 36:7-9</span><span class="verse-text">How excellent is thy lovingkindness, O God! therefore the children of men put their trust under the shadow of thy wings. They shall be abundantly satisfied with the fatness of thy house; and thou shalt make them drink of the river of thy pleasures. For with thee is the fountain of life: in thy light shall we see light.</span></div>
+
+      <p class="subgroup">Peace That Holds Even Through Hardship</p>
+      <div class="verse"><span class="verse-ref">Habakkuk 3:17-18</span><span class="verse-text">Although the fig tree shall not blossom, neither shall fruit be in the vines; the labour of the olive shall fail, and the fields shall yield no meat; the flock shall be cut off from the fold, and there shall be no herd in the stalls: yet I will rejoice in the LORD, I will joy in the God of my salvation.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 46:1-2</span><span class="verse-text">God is our refuge and strength, a very present help in trouble. Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 41:10</span><span class="verse-text">Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 34:18</span><span class="verse-text">The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.</span></div>
+
+      <p class="subgroup">The Joy of Walking With God</p>
+      <div class="verse"><span class="verse-ref">Nehemiah 8:10</span><span class="verse-text">...for the joy of the LORD is your strength.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 16:11</span><span class="verse-text">Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 119:14</span><span class="verse-text">I have rejoiced in the way of thy testimonies, as much as in all riches.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 119:72</span><span class="verse-text">The law of thy mouth is better unto me than thousands of gold and silver.</span></div>
+
+      <p class="testament">New Testament Scriptures</p>
+
+      <p class="subgroup">The Direct Statement of Abundant Life</p>
+      <div class="verse"><span class="verse-ref">John 10:10</span><span class="verse-text">The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.</span></div>
+      <div class="verse"><span class="verse-ref">John 14:27</span><span class="verse-text">Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.</span></div>
+      <div class="verse"><span class="verse-ref">John 16:33</span><span class="verse-text">These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.</span></div>
+
+      <p class="subgroup">The Peace That Passes Understanding</p>
+      <div class="verse"><span class="verse-ref">Philippians 4:6-7</span><span class="verse-text">Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.</span></div>
+      <div class="verse"><span class="verse-ref">Philippians 4:11-13</span><span class="verse-text">Not that I speak in respect of want: for I have learned, in whatsoever state I am, therewith to be content. I know both how to be abased, and I know how to abound: every where and in all things I am instructed both to be full and to be hungry, both to abound and to suffer need. I can do all things through Christ which strengtheneth me.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 5:1-2</span><span class="verse-text">Therefore being justified by faith, we have peace with God through our Lord Jesus Christ: by whom also we have access by faith into this grace wherein we stand, and rejoice in hope of the glory of God.</span></div>
+      <div class="verse"><span class="verse-ref">Colossians 3:15</span><span class="verse-text">And let the peace of God rule in your hearts, to the which also ye are called in one body; and be ye thankful.</span></div>
+
+      <p class="subgroup">Soul Satisfaction Found in Christ and His Word</p>
+      <div class="verse"><span class="verse-ref">John 6:35</span><span class="verse-text">And Jesus said unto them, I am the bread of life: he that cometh to me shall never hunger; and he that believeth on me shall never thirst.</span></div>
+      <div class="verse"><span class="verse-ref">John 7:37-38</span><span class="verse-text">In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.</span></div>
+      <div class="verse"><span class="verse-ref">John 4:13-14</span><span class="verse-text">Jesus answered and said unto her, Whosoever drinketh of this water shall thirst again: but whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.</span></div>
+      <div class="verse"><span class="verse-ref">Matthew 5:6</span><span class="verse-text">Blessed are they which do hunger and thirst after righteousness: for they shall be filled.</span></div>
+
+      <p class="subgroup">Abundance That Holds Through Hardship</p>
+      <div class="verse"><span class="verse-ref">Romans 8:35-37</span><span class="verse-text">Who shall separate us from the love of Christ? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?... Nay, in all these things we are more than conquerors through him that loved us.</span></div>
+      <div class="verse"><span class="verse-ref">2 Corinthians 4:8-9</span><span class="verse-text">We are troubled on every side, yet not distressed; we are perplexed, but not in despair; persecuted, but not forsaken; cast down, but not destroyed.</span></div>
+      <div class="verse"><span class="verse-ref">2 Corinthians 6:10</span><span class="verse-text">As sorrowful, yet alway rejoicing; as poor, yet making many rich; as having nothing, and yet possessing all things.</span></div>
+      <div class="verse"><span class="verse-ref">James 1:2-4</span><span class="verse-text">My brethren, count it all joy when ye fall into divers temptations; knowing this, that the trying of your faith worketh patience. But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.</span></div>
+
+      <p class="subgroup">The Richness of Walking in God's Word</p>
+      <div class="verse"><span class="verse-ref">John 15:10-11</span><span class="verse-text">If ye keep my commandments, ye shall abide in my love; even as I have kept my Father's commandments, and abide in his love. These things have I spoken unto you, that my joy might remain in you, and that your joy might be full.</span></div>
+      <div class="verse"><span class="verse-ref">John 8:31-32</span><span class="verse-text">Then said Jesus to those Jews which believed on him, If ye continue in my word, then are ye my disciples indeed; and ye shall know the truth, and the truth shall make you free.</span></div>
+      <div class="verse"><span class="verse-ref">Colossians 3:16</span><span class="verse-text">Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 15:13</span><span class="verse-text">Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.</span></div>
+
+      <p class="subgroup">The Renewed Mind and the Transformed Inner Life</p>
+      <div class="verse"><span class="verse-ref">Romans 12:2</span><span class="verse-text">And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 3:16-19</span><span class="verse-text">That he would grant you, according to the riches of his glory, to be strengthened with might by his Spirit in the inner man; that Christ may dwell in your hearts by faith; that ye, being rooted and grounded in love, may be able to comprehend with all saints what is the breadth, and length, and depth, and height; and to know the love of Christ, which passeth knowledge, that ye might be filled with all the fulness of God.</span></div>
+      <div class="verse"><span class="verse-ref">2 Peter 1:3</span><span class="verse-text">According as his divine power hath given unto us all things that pertain unto life and godliness, through the knowledge of him that hath called us to glory and virtue.</span></div>
+
+      <p class="subgroup">Joy That the World Cannot Take</p>
+      <div class="verse"><span class="verse-ref">John 16:22</span><span class="verse-text">And ye now therefore have sorrow: but I will see you again, and your heart shall rejoice, and your joy no man taketh from you.</span></div>
+      <div class="verse"><span class="verse-ref">1 Peter 1:8</span><span class="verse-text">Whom having not seen, ye love; in whom, though now ye see him not, yet believing, ye rejoice with joy unspeakable and full of glory.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 13:5</span><span class="verse-text">Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.</span></div>
+    </section>
+
+
+    <!-- ════════ SECTION 4 ════════════════════════════════ -->
+    <section class="section">
+      <h2 class="section-title">The Call to Sanctification and Works</h2>
+
+      <p class="testament">Old Testament Scriptures</p>
+
+      <p class="subgroup">The Call to Walk With God</p>
+      <div class="verse"><span class="verse-ref">Genesis 5:24</span><span class="verse-text">And Enoch walked with God: and he was not; for God took him.</span></div>
+      <div class="verse"><span class="verse-ref">Genesis 6:9</span><span class="verse-text">These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with God.</span></div>
+      <div class="verse"><span class="verse-ref">Genesis 17:1</span><span class="verse-text">And when Abram was ninety years old and nine, the LORD appeared to Abram, and said unto him, I am the Almighty God; walk before me, and be thou perfect.</span></div>
+      <div class="verse"><span class="verse-ref">Deuteronomy 5:33</span><span class="verse-text">Ye shall walk in all the ways which the LORD your God hath commanded you, that ye may live, and that it may be well with you, and that ye may prolong your days in the land which ye shall possess.</span></div>
+      <div class="verse"><span class="verse-ref">Micah 6:8</span><span class="verse-text">He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?</span></div>
+
+      <p class="subgroup">Obedience Is Not Optional</p>
+      <div class="verse"><span class="verse-ref">Deuteronomy 10:12-13</span><span class="verse-text">And now, Israel, what doth the LORD thy God require of thee, but to fear the LORD thy God, to walk in all his ways, and to love him, and to serve the LORD thy God with all thy heart and with all thy soul, to keep the commandments of the LORD, and his statutes, which I command thee this day for thy good?</span></div>
+      <div class="verse"><span class="verse-ref">Deuteronomy 28:1-2</span><span class="verse-text">And it shall come to pass, if thou shalt hearken diligently unto the voice of the LORD thy God, to observe and to do all his commandments which I command thee this day, that the LORD thy God will set thee on high above all nations of the earth: and all these blessings shall come on thee, and overtake thee, if thou shalt hearken unto the voice of the LORD thy God.</span></div>
+      <div class="verse"><span class="verse-ref">Joshua 22:5</span><span class="verse-text">But take diligent heed to do the commandment and the law, which Moses the servant of the LORD charged you, to love the LORD your God, and to walk in all his ways, and to keep his commandments, and to cleave unto him, and to serve him with all your heart and with all your soul.</span></div>
+      <div class="verse"><span class="verse-ref">Ecclesiastes 12:13</span><span class="verse-text">Let us hear the conclusion of the whole matter: Fear God, and keep his commandments: for this is the whole duty of man.</span></div>
+
+      <p class="subgroup">Hearing Is Not Enough, Doing Is Required</p>
+      <div class="verse"><span class="verse-ref">Ezekiel 33:31-32</span><span class="verse-text">And they come unto thee as the people cometh, and they sit before thee as my people, and they hear thy words, but they will not do them: for with their mouth they shew much love, but their heart goeth after their covetousness. And, lo, thou art unto them as a very lovely song of one that hath a pleasant voice, and can play well on an instrument: for they hear thy words, but they do them not.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 29:13</span><span class="verse-text">Wherefore the Lord said, Forasmuch as this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me, and their fear toward me is taught by the precept of men.</span></div>
+      <div class="verse"><span class="verse-ref">Jeremiah 7:9-10</span><span class="verse-text">Will ye steal, murder, and commit adultery, and swear falsely, and burn incense unto Baal, and walk after other gods whom ye know not; and come and stand before me in this house, which is called by my name, and say, We are delivered to do all these abominations?</span></div>
+
+      <p class="subgroup">Sanctification, Being Set Apart for God</p>
+      <div class="verse"><span class="verse-ref">Leviticus 11:44-45</span><span class="verse-text">For I am the LORD your God: ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy... for I am the LORD that bringeth you up out of the land of Egypt, to be your God: ye shall therefore be holy, for I am holy.</span></div>
+      <div class="verse"><span class="verse-ref">Leviticus 20:7-8</span><span class="verse-text">Sanctify yourselves therefore, and be ye holy: for I am the LORD your God. And ye shall keep my statutes, and do them: I am the LORD which sanctify you.</span></div>
+      <div class="verse"><span class="verse-ref">Deuteronomy 7:6</span><span class="verse-text">For thou art an holy people unto the LORD thy God: the LORD thy God hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.</span></div>
+      <div class="verse"><span class="verse-ref">Exodus 19:5-6</span><span class="verse-text">Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine. And ye shall be unto me a kingdom of priests, and an holy nation.</span></div>
+
+      <p class="subgroup">True Faith Produces Action</p>
+      <div class="verse"><span class="verse-ref">Genesis 22:2-3</span><span class="verse-text">And he said, Take now thy son, thine only son Isaac, whom thou lovest, and get thee into the land of Moriah; and offer him there for a burnt offering upon one of the mountains which I will tell thee of. And Abraham rose up early in the morning, and saddled his ass...</span></div>
+      <div class="verse"><span class="verse-ref">Exodus 24:7</span><span class="verse-text">And he took the book of the covenant, and read in the audience of the people: and they said, All that the LORD hath said will we do, and be obedient.</span></div>
+      <div class="verse"><span class="verse-ref">Ruth 1:16-17</span><span class="verse-text">And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God: where thou diest, will I die, and there will I be buried: the LORD do so to me, and more also, if ought but death part thee and me.</span></div>
+      <div class="verse"><span class="verse-ref">1 Samuel 15:22</span><span class="verse-text">And Samuel said, Hath the LORD as great delight in burnt offerings and sacrifices, as in obeying the voice of the LORD? Behold, to obey is better than sacrifice, and to hearken than the fat of rams.</span></div>
+
+      <p class="subgroup">The Promise of a Heart That Obeys</p>
+      <div class="verse"><span class="verse-ref">Deuteronomy 30:6</span><span class="verse-text">And the LORD thy God will circumcise thine heart, and the heart of thy seed, to love the LORD thy God with all thine heart, and with all thy soul, that thou mayest live.</span></div>
+      <div class="verse"><span class="verse-ref">Jeremiah 31:33</span><span class="verse-text">But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.</span></div>
+      <div class="verse"><span class="verse-ref">Ezekiel 36:26-27</span><span class="verse-text">A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 40:8</span><span class="verse-text">I delight to do thy will, O my God: yea, thy law is within my heart.</span></div>
+
+      <p class="subgroup">God Looks at the Whole Life, Not Just the Confession</p>
+      <div class="verse"><span class="verse-ref">Proverbs 20:11</span><span class="verse-text">Even a child is known by his doings, whether his work be pure, and whether it be right.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 1:16-17</span><span class="verse-text">Wash you, make you clean; put away the evil of your doings from before mine eyes; cease to do evil; learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 15:1-2</span><span class="verse-text">LORD, who shall abide in thy tabernacle? who shall dwell in thy holy hill? He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart.</span></div>
+      <div class="verse"><span class="verse-ref">Proverbs 21:3</span><span class="verse-text">To do justice and judgment is more acceptable to the LORD than sacrifice.</span></div>
+
+      <p class="testament">New Testament Scriptures</p>
+
+      <p class="subgroup">Jesus Himself Defines What Following Him Means</p>
+      <div class="verse"><span class="verse-ref">John 14:15</span><span class="verse-text">If ye love me, keep my commandments.</span></div>
+      <div class="verse"><span class="verse-ref">John 14:21</span><span class="verse-text">He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father, and I will love him, and will manifest myself to him.</span></div>
+      <div class="verse"><span class="verse-ref">John 15:14</span><span class="verse-text">Ye are my friends, if ye do whatsoever I command you.</span></div>
+      <div class="verse"><span class="verse-ref">Matthew 7:21</span><span class="verse-text">Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.</span></div>
+      <div class="verse"><span class="verse-ref">Matthew 7:24-25</span><span class="verse-text">Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock: and the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock.</span></div>
+      <div class="verse"><span class="verse-ref">Luke 6:46</span><span class="verse-text">And why call ye me, Lord, Lord, and do not the things which I say?</span></div>
+
+      <p class="subgroup">Walking as Jesus Walked</p>
+      <div class="verse"><span class="verse-ref">1 John 2:3-6</span><span class="verse-text">And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him. But whoso keepeth his word, in him verily is the love of God perfected: hereby know we that we are in him. He that saith he abideth in him ought himself also so to walk, even as he walked.</span></div>
+      <div class="verse"><span class="verse-ref">1 Peter 2:21</span><span class="verse-text">For even hereunto were ye called: because Christ also suffered for us, leaving us an example, that ye should follow his steps.</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 5:1-2</span><span class="verse-text">Be ye therefore followers of God, as dear children; and walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 8:29</span><span class="verse-text">For whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might be the firstborn among many brethren.</span></div>
+
+      <p class="subgroup">Faith Without Works Is Dead</p>
+      <div class="verse"><span class="verse-ref">James 2:14</span><span class="verse-text">What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him?</span></div>
+      <div class="verse"><span class="verse-ref">James 2:17-18</span><span class="verse-text">Even so faith, if it hath not works, is dead, being alone. Yea, a man may say, Thou hast faith, and I have works: shew me thy faith without thy works, and I will shew thee my faith by my works.</span></div>
+      <div class="verse"><span class="verse-ref">James 2:20</span><span class="verse-text">But wilt thou know, O vain man, that faith without works is dead?</span></div>
+      <div class="verse"><span class="verse-ref">James 2:26</span><span class="verse-text">For as the body without the spirit is dead, so faith without works is dead also.</span></div>
+      <div class="verse"><span class="verse-ref">Titus 1:16</span><span class="verse-text">They profess that they know God; but in works they deny him, being abominable, and disobedient, and unto every good work reprobate.</span></div>
+
+      <p class="subgroup">The Call to Sanctification</p>
+      <div class="verse"><span class="verse-ref">1 Peter 1:15-16</span><span class="verse-text">But as he which hath called you is holy, so be ye holy in all manner of conversation; because it is written, Be ye holy; for I am holy.</span></div>
+      <div class="verse"><span class="verse-ref">1 Thessalonians 4:3-4</span><span class="verse-text">For this is the will of God, even your sanctification, that ye should abstain from fornication: that every one of you should know how to possess his vessel in sanctification and honour.</span></div>
+      <div class="verse"><span class="verse-ref">2 Corinthians 7:1</span><span class="verse-text">Having therefore these promises, dearly beloved, let us cleanse ourselves from all filthiness of the flesh and spirit, perfecting holiness in the fear of God.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 12:14</span><span class="verse-text">Follow peace with all men, and holiness, without which no man shall see the Lord.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 6:19</span><span class="verse-text">...for as ye have yielded your members servants to uncleanness and to iniquity unto iniquity; even so now yield your members servants to righteousness unto holiness.</span></div>
+
+      <p class="subgroup">Hearing Is Not Enough, Doing Is Required</p>
+      <div class="verse"><span class="verse-ref">James 1:22-25</span><span class="verse-text">But be ye doers of the word, and not hearers only, deceiving your own selves. For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass: for he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was. But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 2:13</span><span class="verse-text">For not the hearers of the law are just before God, but the doers of the law shall be justified.</span></div>
+      <div class="verse"><span class="verse-ref">Matthew 12:50</span><span class="verse-text">For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.</span></div>
+
+      <p class="subgroup">The Transformed Life, Evidence of True Salvation</p>
+      <div class="verse"><span class="verse-ref">2 Corinthians 5:17</span><span class="verse-text">Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new.</span></div>
+      <div class="verse"><span class="verse-ref">Galatians 5:22-24</span><span class="verse-text">But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance: against such there is no law. And they that are Christ's have crucified the flesh with the affections and lusts.</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 2:8-10</span><span class="verse-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 12:1-2</span><span class="verse-text">I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</span></div>
+      <div class="verse"><span class="verse-ref">Titus 2:11-12</span><span class="verse-text">For the grace of God that bringeth salvation hath appeared to all men, teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world.</span></div>
+
+      <p class="subgroup">The Law Written on the Heart, Now Activated</p>
+      <div class="verse"><span class="verse-ref">Romans 8:3-4</span><span class="verse-text">For what the law could not do, in that it was weak through the flesh, God sending his own Son in the likeness of sinful flesh, and for sin, condemned sin in the flesh: that the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 10:16</span><span class="verse-text">This is the covenant that I will make with them after those days, saith the Lord, I will put my laws into their hearts, and in their minds will I write them.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 6:1-2</span><span class="verse-text">What shall we say then? Shall we continue in sin, that grace may abound? God forbid. How shall we, that are dead to sin, live any longer therein?</span></div>
+      <div class="verse"><span class="verse-ref">Romans 6:14-15</span><span class="verse-text">For sin shall not have dominion over you: for ye are not under the law, but under grace. What then? shall we sin, because we are not under the law, but under grace? God forbid.</span></div>
+
+      <p class="subgroup">A Tree Is Known by Its Fruit</p>
+      <div class="verse"><span class="verse-ref">Matthew 7:16-20</span><span class="verse-text">Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles? Even so every good tree bringeth forth good fruit; but a corrupt tree bringeth forth evil fruit. A good tree cannot bring forth evil fruit, neither can a corrupt tree bring forth good fruit... Wherefore by their fruits ye shall know them.</span></div>
+      <div class="verse"><span class="verse-ref">John 15:4-5</span><span class="verse-text">Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. I am the vine, ye are the branches: he that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.</span></div>
+      <div class="verse"><span class="verse-ref">Luke 13:6-7</span><span class="verse-text">He spake also this parable; A certain man had a fig tree planted in his vineyard; and he came and sought fruit thereon, and found none. Then said he unto the dresser of his vineyard, Behold, these three years I come seeking fruit on this fig tree, and find none: cut it down; why cumbereth it the ground?</span></div>
+
+      <p class="subgroup">The Warning Against Empty Profession</p>
+      <div class="verse"><span class="verse-ref">Matthew 7:22-23</span><span class="verse-text">Many will say to me in that day, Lord, Lord, have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works? And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.</span></div>
+      <div class="verse"><span class="verse-ref">Revelation 22:14</span><span class="verse-text">Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 3:7-8</span><span class="verse-text">Little children, let no man deceive you: he that doeth righteousness is righteous, even as he is righteous. He that committeth sin is of the devil; for the devil sinneth from the beginning.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 3:10</span><span class="verse-text">In this the children of God are manifest, and the children of the devil: whosoever doeth not righteousness is not of God, neither he that loveth not his brother.</span></div>
+    </section>
+
+
+    <!-- ════════ SECTION 5 ════════════════════════════════ -->
+    <section class="section">
+      <h2 class="section-title">Holding Fast: The Ongoing Responsibility</h2>
+
+      <p class="testament">Old Testament Scriptures</p>
+
+      <p class="subgroup">The Nature of True Repentance</p>
+      <div class="verse"><span class="verse-ref">2 Chronicles 7:14</span><span class="verse-text">If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 55:6-7</span><span class="verse-text">Seek ye the LORD while he may be found, call ye upon him while he is near: let the wicked forsake his way, and the unrighteous man his thoughts: and let him return unto the LORD, and he will have mercy upon him; and to our God, for he will abundantly pardon.</span></div>
+      <div class="verse"><span class="verse-ref">Ezekiel 18:30-32</span><span class="verse-text">Therefore I will judge you, O house of Israel, every one according to his ways, saith the Lord GOD. Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin. Cast away from you all your transgressions, whereby ye have transgressed; and make you a new heart and a new spirit: for why will ye die, O house of Israel? For I have no pleasure in the death of him that dieth, saith the Lord GOD: wherefore turn yourselves, and live ye.</span></div>
+      <div class="verse"><span class="verse-ref">Jeremiah 3:12-13</span><span class="verse-text">Go and proclaim these words toward the north, and say, Return, thou backsliding Israel, saith the LORD; and I will not cause mine anger to fall upon you: for I am merciful, saith the LORD, and I will not keep anger for ever. Only acknowledge thine iniquity, that thou hast transgressed against the LORD thy God.</span></div>
+      <div class="verse"><span class="verse-ref">Hosea 14:1-2</span><span class="verse-text">O Israel, return unto the LORD thy God; for thou hast fallen by thine iniquity. Take with you words, and turn to the LORD: say unto him, Take away all iniquity, and receive us graciously.</span></div>
+
+      <p class="subgroup">Repentance Requires a Genuine Heart Turn</p>
+      <div class="verse"><span class="verse-ref">Joel 2:12-13</span><span class="verse-text">Therefore also now, saith the LORD, turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning: and rend your heart, and not your garments, and turn unto the LORD your God: for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 51:1-4</span><span class="verse-text">Have mercy upon me, O God, according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions. Wash me throughly from mine iniquity, and cleanse me from my sin. For I acknowledge my transgressions: and my sin is ever before me. Against thee, thee only, have I sinned, and done this evil in thy sight.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 51:10-13</span><span class="verse-text">Create in me a clean heart, O God; and renew a right spirit within me. Cast me not away from thy presence; and take not thy holy spirit from me. Restore unto me the joy of thy salvation; and uphold me with thy free spirit. Then will I teach transgressors thy ways; and sinners shall be converted unto thee.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 1:18</span><span class="verse-text">Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.</span></div>
+      <div class="verse"><span class="verse-ref">Zechariah 1:3</span><span class="verse-text">Therefore say thou unto them, Thus saith the LORD of hosts; Turn ye unto me, saith the LORD of hosts, and I will turn unto you, saith the LORD of hosts.</span></div>
+
+      <p class="subgroup">Maintaining Active Fellowship With God</p>
+      <div class="verse"><span class="verse-ref">Psalm 25:4-5</span><span class="verse-text">Shew me thy ways, O LORD; teach me thy paths. Lead me in thy truth, and teach me: for thou art the God of my salvation; on thee do I wait all the day.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 27:4</span><span class="verse-text">One thing have I desired of the LORD, that will I seek after; that I may dwell in the house of the LORD all the days of my life, to behold the beauty of the LORD, and to enquire in his temple.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 63:1</span><span class="verse-text">O God, thou art my God; early will I seek thee: my soul thirsteth for thee, my flesh longeth for thee in a dry and thirsty land, where no water is.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 42:1-2</span><span class="verse-text">As the hart panteth after the water brooks, so panteth my soul after thee, O God. My soul thirsteth for God, for the living God: when shall I come and appear before God?</span></div>
+      <div class="verse"><span class="verse-ref">Deuteronomy 4:29</span><span class="verse-text">But if from thence thou shalt seek the LORD thy God, thou shalt find him, if thou seek him with all thy heart and with all thy soul.</span></div>
+
+      <p class="subgroup">The Danger of Drifting Away</p>
+      <div class="verse"><span class="verse-ref">Deuteronomy 8:11-14</span><span class="verse-text">Beware that thou forget not the LORD thy God, in not keeping his commandments, and his judgments, and his statutes, which I command thee this day: lest when thou hast eaten and art full, and hast built goodly houses, and dwelt therein... then thine heart be lifted up, and thou forget the LORD thy God, which brought thee forth out of the land of Egypt.</span></div>
+      <div class="verse"><span class="verse-ref">Jeremiah 2:13</span><span class="verse-text">For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water.</span></div>
+      <div class="verse"><span class="verse-ref">Hosea 4:6</span><span class="verse-text">My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee.</span></div>
+      <div class="verse"><span class="verse-ref">Proverbs 4:23</span><span class="verse-text">Keep thy heart with all diligence; for out of it are the issues of life.</span></div>
+      <div class="verse"><span class="verse-ref">1 Kings 11:4</span><span class="verse-text">For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with the LORD his God, as was the heart of David his father.</span></div>
+
+      <p class="subgroup">God's Faithfulness to Restore the Repentant</p>
+      <div class="verse"><span class="verse-ref">Lamentations 3:22-23</span><span class="verse-text">It is of the LORD's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 103:8-12</span><span class="verse-text">The LORD is merciful and gracious, slow to anger, and plenteous in mercy. He will not always chide: neither will he keep his anger for ever. He hath not dealt with us after our sins; nor rewarded us according to our iniquities. For as the heaven is high above the earth, so great is his mercy toward them that fear him. As far as the east is from the west, so far hath he removed our transgressions from us.</span></div>
+      <div class="verse"><span class="verse-ref">Micah 7:18-19</span><span class="verse-text">Who is a God like unto thee, that pardoneth iniquity, and passeth by the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in mercy. He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea.</span></div>
+      <div class="verse"><span class="verse-ref">Isaiah 43:25</span><span class="verse-text">I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 86:5</span><span class="verse-text">For thou, Lord, art good, and ready to forgive; and plenteous in mercy unto all them that call upon thee.</span></div>
+
+      <p class="subgroup">The Pattern of Returning After Failure</p>
+      <div class="verse"><span class="verse-ref">Judges 10:15-16</span><span class="verse-text">And the children of Israel said unto the LORD, We have sinned: do thou unto us whatsoever seemeth good unto thee; deliver us only, we pray thee, this day. And they put away the strange gods from among them, and served the LORD: and his soul was grieved for the misery of Israel.</span></div>
+      <div class="verse"><span class="verse-ref">1 Samuel 7:3</span><span class="verse-text">And Samuel spake unto all the house of Israel, saying, If ye do return unto the LORD with all your hearts, then put away the strange gods and Ashtaroth from among you, and prepare your hearts unto the LORD, and serve him only: and he will deliver you out of the hand of the Philistines.</span></div>
+      <div class="verse"><span class="verse-ref">Nehemiah 9:28</span><span class="verse-text">But after they had rest, they did evil again before thee: therefore leftest thou them in the hand of their enemies, so that they had the dominion over them: yet when they returned, and cried unto thee, thou heardest them from heaven; and many times didst thou deliver them according to thy mercies.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 78:38-39</span><span class="verse-text">But he, being full of compassion, forgave their iniquity, and destroyed them not: yea, many a time turned he his anger away, and did not stir up all his wrath. For he remembered that they were but flesh; a wind that passeth away, and cometh not again.</span></div>
+
+      <p class="subgroup">Walking Daily in Closeness With God</p>
+      <div class="verse"><span class="verse-ref">Proverbs 3:5-6</span><span class="verse-text">Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 119:9-11</span><span class="verse-text">Wherewithal shall a young man cleanse his way? by taking heed thereto according to thy word. With my whole heart have I sought thee: O let me not wander from thy commandments. Thy word have I hid in mine heart, that I might not sin against thee.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 32:5</span><span class="verse-text">I acknowledged my sin unto thee, and mine iniquity have I not hid. I said, I will confess my transgressions unto the LORD; and thou forgavest the iniquity of my sin.</span></div>
+      <div class="verse"><span class="verse-ref">Psalm 32:8</span><span class="verse-text">I will instruct thee and teach thee in the way which thou shalt go: I will guide thee with mine eye.</span></div>
+      <div class="verse"><span class="verse-ref">Amos 3:3</span><span class="verse-text">Can two walk together, except they be agreed?</span></div>
+
+      <p class="subgroup">The Promise of a Restored and Sustained Relationship</p>
+      <div class="verse"><span class="verse-ref">Jeremiah 29:13</span><span class="verse-text">And ye shall seek me, and find me, when ye shall search for me with all your heart.</span></div>
+      <div class="verse"><span class="verse-ref">Ezekiel 36:26-27</span><span class="verse-text">A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</span></div>
+      <div class="verse"><span class="verse-ref">Deuteronomy 30:19-20</span><span class="verse-text">I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live: that thou mayest love the LORD thy God, and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days.</span></div>
+      <div class="verse"><span class="verse-ref">Zephaniah 3:17</span><span class="verse-text">The LORD thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing.</span></div>
+
+      <p class="testament">New Testament Scriptures</p>
+
+      <p class="subgroup">The Call to Remain and Abide</p>
+      <div class="verse"><span class="verse-ref">John 15:4-6</span><span class="verse-text">Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. I am the vine, ye are the branches: he that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing. If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned.</span></div>
+      <div class="verse"><span class="verse-ref">John 15:9-10</span><span class="verse-text">As the Father hath loved me, so have I loved you: continue ye in my love. If ye keep my commandments, ye shall abide in my love; even as I have kept my Father's commandments, and abide in his love.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 2:24</span><span class="verse-text">Let that therefore abide in you, which ye have heard from the beginning. If that which ye have heard from the beginning shall remain in you, ye also shall continue in the Son, and in the Father.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 3:14</span><span class="verse-text">For we are made partakers of Christ, if we hold the beginning of our confidence stedfast unto the end.</span></div>
+
+      <p class="subgroup">True Repentance in the New Testament</p>
+      <div class="verse"><span class="verse-ref">Acts 3:19</span><span class="verse-text">Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord.</span></div>
+      <div class="verse"><span class="verse-ref">Acts 26:20</span><span class="verse-text">But shewed first unto them of Damascus, and at Jerusalem, and throughout all the coasts of Judaea, and then to the Gentiles, that they should repent and turn to God, and do works meet for repentance.</span></div>
+      <div class="verse"><span class="verse-ref">2 Corinthians 7:10</span><span class="verse-text">For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.</span></div>
+      <div class="verse"><span class="verse-ref">Luke 13:3</span><span class="verse-text">I tell you, Nay: but, except ye repent, ye shall all likewise perish.</span></div>
+      <div class="verse"><span class="verse-ref">Revelation 2:5</span><span class="verse-text">Remember therefore from whence thou art fallen, and repent, and do the first works; or else I will come unto thee quickly, and will remove thy candlestick out of his place, except thou repent.</span></div>
+      <div class="verse"><span class="verse-ref">Revelation 3:19</span><span class="verse-text">As many as I love, I rebuke and chasten: be zealous therefore, and repent.</span></div>
+
+      <p class="subgroup">The Ongoing Confession and Cleansing</p>
+      <div class="verse"><span class="verse-ref">1 John 1:8-10</span><span class="verse-text">If we say that we have no sin, we deceive ourselves, and the truth is not in us. If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness. If we say that we have not sinned, we make him a liar, and his word is not in us.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 2:1-2</span><span class="verse-text">My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Jesus Christ the righteous: and he is the propitiation for our sins: and not for ours only, but also for the sins of the whole world.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 4:15-16</span><span class="verse-text">For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin. Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.</span></div>
+      <div class="verse"><span class="verse-ref">James 5:16</span><span class="verse-text">Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.</span></div>
+
+      <p class="subgroup">The Danger of Drifting and Falling Away</p>
+      <div class="verse"><span class="verse-ref">Hebrews 2:1</span><span class="verse-text">Therefore we ought to give the more earnest heed to the things which we have heard, lest at any time we should let them slip.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 3:12-13</span><span class="verse-text">Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living God. But exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin.</span></div>
+      <div class="verse"><span class="verse-ref">Galatians 5:4</span><span class="verse-text">Christ is become of no effect unto you, whosoever of you are justified by the law; ye are fallen from grace.</span></div>
+      <div class="verse"><span class="verse-ref">2 Peter 2:20-21</span><span class="verse-text">For if after they have escaped the pollutions of the world through the knowledge of the Lord and Saviour Jesus Christ, they are again entangled therein, and overcome, the latter end is worse with them than the beginning. For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them.</span></div>
+      <div class="verse"><span class="verse-ref">1 Corinthians 10:12</span><span class="verse-text">Wherefore let him that thinketh he standeth take heed lest he fall.</span></div>
+      <div class="verse"><span class="verse-ref">Revelation 2:4-5</span><span class="verse-text">Nevertheless I have somewhat against thee, because thou hast left thy first love. Remember therefore from whence thou art fallen, and repent, and do the first works.</span></div>
+
+      <p class="subgroup">Maintaining Daily Fellowship With Christ</p>
+      <div class="verse"><span class="verse-ref">Philippians 4:6-7</span><span class="verse-text">Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.</span></div>
+      <div class="verse"><span class="verse-ref">Colossians 4:2</span><span class="verse-text">Continue in prayer, and watch in the same with thanksgiving.</span></div>
+      <div class="verse"><span class="verse-ref">1 Thessalonians 5:17</span><span class="verse-text">Pray without ceasing.</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 6:18</span><span class="verse-text">Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints.</span></div>
+      <div class="verse"><span class="verse-ref">Luke 18:1</span><span class="verse-text">And he spake a parable unto them to this end, that men ought always to pray, and not to faint.</span></div>
+
+      <p class="subgroup">Feeding on the Word to Stay Close</p>
+      <div class="verse"><span class="verse-ref">John 8:31-32</span><span class="verse-text">Then said Jesus to those Jews which believed on him, If ye continue in my word, then are ye my disciples indeed; and ye shall know the truth, and the truth shall make you free.</span></div>
+      <div class="verse"><span class="verse-ref">Colossians 3:16</span><span class="verse-text">Let the word of Christ dwell in you richly in all wisdom; teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord.</span></div>
+      <div class="verse"><span class="verse-ref">2 Timothy 2:15</span><span class="verse-text">Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.</span></div>
+      <div class="verse"><span class="verse-ref">1 Peter 2:2</span><span class="verse-text">As newborn babes, desire the sincere milk of the word, that ye may grow thereby.</span></div>
+      <div class="verse"><span class="verse-ref">Matthew 4:4</span><span class="verse-text">But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.</span></div>
+
+      <p class="subgroup">God's Faithfulness to Restore the Repentant</p>
+      <div class="verse"><span class="verse-ref">Romans 8:38-39</span><span class="verse-text">For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.</span></div>
+      <div class="verse"><span class="verse-ref">1 John 1:7</span><span class="verse-text">But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 7:25</span><span class="verse-text">Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.</span></div>
+      <div class="verse"><span class="verse-ref">Luke 15:20</span><span class="verse-text">And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 5:20</span><span class="verse-text">Moreover the law entered, that the offence might abound. But where sin abounded, grace did much more abound.</span></div>
+
+      <p class="subgroup">The Pattern of Returning After Failure</p>
+      <div class="verse"><span class="verse-ref">Luke 22:31-32</span><span class="verse-text">And the Lord said, Simon, Simon, behold, Satan hath desired to have you, that he may sift you as wheat: but I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.</span></div>
+      <div class="verse"><span class="verse-ref">John 21:15-17</span><span class="verse-text">So when they had dined, Jesus saith to Simon Peter, Simon, son of Jonas, lovest thou me more than these? He saith unto him, Yea, Lord; thou knowest that I love thee. He saith unto him, Feed my lambs... He saith unto him the third time, Simon, son of Jonas, lovest thou me?... He saith unto him, Feed my sheep.</span></div>
+      <div class="verse"><span class="verse-ref">Galatians 6:1</span><span class="verse-text">Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.</span></div>
+      <div class="verse"><span class="verse-ref">James 5:19-20</span><span class="verse-text">Brethren, if any of you do err from the truth, and one convert him; let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.</span></div>
+
+      <p class="subgroup">Walking in the Light, Not in Darkness</p>
+      <div class="verse"><span class="verse-ref">1 John 1:6-7</span><span class="verse-text">If we say that we have fellowship with him, and walk in darkness, we lie, and do not the truth: but if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.</span></div>
+      <div class="verse"><span class="verse-ref">Ephesians 5:8-11</span><span class="verse-text">For ye were sometimes darkness, but now are ye light in the Lord: walk as children of light: for the fruit of the Spirit is in all goodness and righteousness and truth; proving what is acceptable unto the Lord. And have no fellowship with the unfruitful works of darkness, but rather reprove them.</span></div>
+      <div class="verse"><span class="verse-ref">Romans 13:12-14</span><span class="verse-text">The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light. Let us walk honestly, as in the day; not in rioting and drunkenness, not in chambering and wantonness, not in strife and envying. But put ye on the Lord Jesus Christ, and make not provision for the flesh, to fulfil the lusts thereof.</span></div>
+
+      <p class="subgroup">Pressing Forward and Not Looking Back</p>
+      <div class="verse"><span class="verse-ref">Philippians 3:13-14</span><span class="verse-text">Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize of the high calling of God in Christ Jesus.</span></div>
+      <div class="verse"><span class="verse-ref">Hebrews 12:1-2</span><span class="verse-text">Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us, looking unto Jesus the author and finisher of our faith.</span></div>
+      <div class="verse"><span class="verse-ref">2 Timothy 4:7-8</span><span class="verse-text">I have fought a good fight, I have finished my course, I have kept the faith: henceforth there is laid up for me a crown of righteousness, which the Lord, the righteous judge, shall give me at that day.</span></div>
+    </section>
+
+
+  </div><!-- /doc-body -->
+
+  <!-- ══ FOOTER ══════════════════════════════════════════ -->
+  <footer class="doc-footer">
+    <span>Discipleship Class &nbsp;&bull;&nbsp; Level 1 &nbsp;&bull;&nbsp; Lesson 1</span>
+    <span>Scriptural Supplements &nbsp;&bull;&nbsp; Eternal Life</span>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>

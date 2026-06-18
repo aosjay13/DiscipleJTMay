@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discipleship Class - Level 1 - Lesson 1: Eternal Life - Class Lecture</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --gold:#8B6914; --gold-light:#C9A84C; --gold-pale:#F5EDD8;
+    --ink:#1C1A17; --ink-mid:#3D3829; --ink-soft:#6B6047;
+    --parchment:#FAF6EE; --cream:#F2EBD9;
+    --crimson:#7A1F1F; --crimson-lt:#9B3434; --crimson-dk:#2a1414;
+    --rule:#C9A84C44; --rule-solid:#C9A84C; --accent-bg:#F3ECD8;
+    --shadow:rgba(28,26,23,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:#EDE4CF;
+    font-family:'EB Garamond',Georgia,serif;
+    color:var(--ink);
+    line-height:1.6;
+    padding:2rem 1rem 4rem;
+  }
+  .page{
+    max-width:8.5in; margin:0 auto;
+    background:var(--parchment);
+    border:1px solid #D4B97A;
+    box-shadow:0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position:relative;
+  }
+  .page::before,.page::after{
+    content:''; position:absolute; width:40px; height:40px;
+    border-color:var(--gold-light); border-style:solid; pointer-events:none; z-index:3;
+  }
+  .page::before{top:12px;left:12px;border-width:2px 0 0 2px;}
+  .page::after{bottom:12px;right:12px;border-width:0 2px 2px 0;}
+
+  /* ── CRIMSON HEADER BOOKEND ── */
+  .doc-header{
+    text-align:center;
+    padding:2.6rem 2rem 2rem;
+    background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-lt) 100%);
+    position:relative; color:var(--gold-pale); overflow:hidden;
+    border-bottom:3px solid var(--gold-light);
+  }
+  .doc-header::after{
+    content:''; position:absolute; inset:12px;
+    border:1px solid rgba(201,168,76,0.4); pointer-events:none;
+  }
+  .header-ornament{font-size:1.1rem;color:var(--gold-light);letter-spacing:0.4em;display:block;margin-bottom:0.8rem;}
+  .header-eyebrow{
+    font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.26em;
+    text-transform:uppercase; color:var(--gold-light); margin-bottom:0.7rem;
+  }
+  .header-title{
+    font-family:'Cinzel',serif; font-size:clamp(1.7rem,4vw,2.4rem); font-weight:700;
+    color:#FBF6E9; letter-spacing:0.03em; line-height:1.15; text-transform:uppercase;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .header-subtitle{
+    font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(0.95rem,2vw,1.12rem);
+    color:var(--gold-pale); margin-top:0.9rem; opacity:0.94;
+  }
+  .header-rule{
+    display:flex; align-items:center; gap:0.75rem; margin:1.4rem auto 0; max-width:280px;
+  }
+  .header-rule span{flex:1;height:1px;background:var(--gold-light);opacity:0.6;}
+  .header-rule i{color:var(--gold-light);font-style:normal;}
+
+  /* ── BODY ── */
+  .doc-body{padding:2.4rem 3rem 2.6rem;}
+
+  /* ── CRIMSON FOOTER BOOKEND ── */
+  .doc-footer{
+    text-align:center; padding:2rem;
+    border-top:3px solid var(--gold-light); margin-top:2rem;
+    background:linear-gradient(135deg,var(--crimson),var(--crimson-lt));
+  }
+  .footer-ornament{color:var(--gold-light);font-size:1.1rem;letter-spacing:0.4em;}
+  .footer-text{
+    font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.2em;
+    color:#FBF5E6; text-transform:uppercase; margin-top:0.6rem; line-height:1.9;
+  }
+
+
+  /* SECTION */
+  .section{margin-top:2.2rem;}
+  .section:first-of-type{margin-top:0;}
+  .section-header{display:flex;align-items:baseline;gap:0.8rem;margin-bottom:1rem;border-bottom:2px solid var(--gold-light);padding-bottom:0.45rem;}
+  .section-num{font-family:'Cinzel',serif;font-size:0.95rem;font-weight:700;color:var(--gold);letter-spacing:0.06em;white-space:nowrap;}
+  .section-title{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:600;color:var(--crimson);line-height:1.25;}
+  .doc-body p{margin-bottom:0.7rem;text-align:justify;font-size:1.05rem;line-height:1.75;color:var(--ink-mid);}
+  /* ANCHOR VERSE */
+  .anchor-verse{background:var(--cream);border-left:4px solid var(--gold-light);padding:0.9rem 1.2rem;margin:0.9rem 0;}
+  .anchor-verse .verse-text{font-style:italic;font-size:1.05rem;color:var(--ink-mid);line-height:1.7;}
+  .anchor-verse .verse-ref{display:block;text-align:right;font-family:'Cinzel',serif;font-size:0.72rem;color:var(--crimson);letter-spacing:0.08em;margin-top:0.4rem;}
+  /* TESTAMENT BLOCKS */
+  .testament-block{margin:1.1rem 0;}
+  .testament-label{font-family:'Cinzel',serif;font-size:0.66rem;font-weight:700;letter-spacing:0.17em;text-transform:uppercase;color:var(--crimson);padding:0.18rem 0.6rem;border:1px solid var(--crimson);display:inline-block;margin-bottom:0.7rem;}
+  /* SCRIPTURE (grid: ref | text) */
+  .scripture{display:grid;grid-template-columns:1.25in 1fr;gap:0 0.7rem;margin-bottom:0.7rem;align-items:start;}
+  .scripture .ref{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:600;color:var(--gold);letter-spacing:0.03em;text-align:right;padding-right:0.6rem;border-right:1.5px solid var(--rule-solid);line-height:1.55;}
+  .scripture .text{font-style:italic;font-size:1rem;color:var(--ink-mid);line-height:1.6;}
+  .scripture .note{grid-column:2;font-size:0.9rem;font-style:normal;color:#5A4A30;margin-top:0.25rem;padding-left:0.5rem;border-left:2px solid var(--gold-light);line-height:1.5;}
+  @media (max-width:600px){
+    .doc-body{padding:0 1.4rem 2rem;}
+    .scripture{grid-template-columns:1fr;gap:0.15rem;}
+    .scripture .ref{text-align:left;border-right:none;border-bottom:1px solid var(--rule);padding:0 0 0.2rem;}
+  }
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page{
+    size:8.5in 11in; margin:0.7in 0.75in 0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'Cinzel',serif; font-size:8pt; letter-spacing:0.1em; color:#8B6914;
+    }
+  }
+  @page:first{ margin-top:0; }
+  @media print{
+    body{background:#fff;padding:0;}
+    .page{box-shadow:none;border:none;max-width:100%;}
+    .page::before,.page::after{display:none;}
+    .doc-header,.doc-footer{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .doc-footer{display:none;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important;}
+    .section-title,.section-header,.testament,.testament-label,.subgroup{break-after:avoid;page-break-after:avoid;}
+    .scripture,.anchor-verse,.verse,.key-item,.warning-box,.commitment,.scale-row,.checkbox-grid{break-inside:avoid;page-break-inside:avoid;}
+    .section{break-before:page;page-break-before:always;}
+    .section:first-of-type{break-before:avoid;page-break-before:avoid;}
+
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 1</p>
+    <h1 class="header-title">Eternal Life</h1>
+    <p class="header-subtitle">Class Lecture &middot; What It Means to Truly Know the Father</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+<div class="section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <span class="section-title">The True Definition of Eternal Life</span>
+      </div>
+
+      <p>When we think of "eternal life," we often simply think of living forever. However, Jesus gave us the exact definition of what eternal life truly is:</p>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent."</div>
+        <span class="verse-ref">John 17:3</span>
+      </div>
+
+      <p>Eternal life is an active, present-day relationship with the Father. Knowing God is not simply a feeling or an emotional experience. Scripture gives us an explicit test, and it is inseparable from covenant obedience:</p>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him. But whoso keepeth his word, in him verily is the love of God perfected."</div>
+        <span class="verse-ref">1 John 2:3–5</span>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">Old Testament Foundation</div>
+        <div class="scripture">
+          <span class="ref">Deuteronomy 30:15–16</span>
+          <span class="text">"See, I have set before thee this day life and good, and death and evil; In that I command thee this day to love the LORD thy God, to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Jeremiah 22:16</span>
+          <span class="text">"He judged the cause of the poor and needy; then it was well with him: was not this to know me? saith the LORD."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Hosea 4:6</span>
+          <span class="text">"My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee... seeing thou hast forgotten the law of thy God, I will also forget thy children."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Ecclesiastes 12:13</span>
+          <span class="text">"Fear God, and keep his commandments: for this is the whole duty of man."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Proverbs 19:16</span>
+          <span class="text">"He that keepeth the commandment keepeth his own soul; but he that despiseth his ways shall die."</span>
+        </div>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">New Testament Confirmation</div>
+        <div class="scripture">
+          <span class="ref">Matthew 19:16–17</span>
+          <span class="text">"...Good Master, what good thing shall I do, that I may have eternal life? And he said unto him... if thou wilt enter into life, keep the commandments."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">John 14:15</span>
+          <span class="text">"If ye love me, keep my commandments."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">John 14:21</span>
+          <span class="text">"He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father, and I will love him."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">1 John 5:2–3</span>
+          <span class="text">"By this we know that we love the children of God, when we love God, and keep his commandments. For this is the love of God, that we keep his commandments: and his commandments are not grievous."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Revelation 22:14</span>
+          <span class="text">"Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city."</span>
+        </div>
+      </div>
+    </div>
+
+<div class="section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <span class="section-title">The Barrier of Sin Removed</span>
+      </div>
+
+      <p>If eternal life is an obedient relationship with God, what stopped us from having it? Our sin. Before we can fully appreciate salvation, we must understand what we are being saved from. Scripture defines sin with precision:</p>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law."</div>
+        <span class="verse-ref">1 John 3:4</span>
+      </div>
+
+      <p>Jesus did not remove a vague barrier. His blood paid the legal penalty for our Law-breaking. Our iniquities created a wall of separation that only the shed blood of the Messiah could remove.</p>
+
+      <div class="testament-block">
+        <div class="testament-label">Old Testament Foundation</div>
+        <div class="scripture">
+          <span class="ref">Isaiah 59:2</span>
+          <span class="text">"But your iniquities have separated between you and your God, and your sins have hid his face from you, that he will not hear."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Leviticus 17:11</span>
+          <span class="text">"For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Isaiah 53:5–6</span>
+          <span class="text">"But he was wounded for our transgressions, he was bruised for our iniquities... and the LORD hath laid on him the iniquity of us all."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Ezekiel 18:20</span>
+          <span class="text">"The soul that sinneth, it shall die."</span>
+        </div>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">New Testament Confirmation</div>
+        <div class="scripture">
+          <span class="ref">Romans 6:23</span>
+          <span class="text">"For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Hebrews 9:14–15</span>
+          <span class="text">"How much more shall the blood of Christ... purge your conscience from dead works to serve the living God? And for this cause he is the mediator of the new testament, that by means of death, for the redemption of the transgressions... they which are called might receive the promise of eternal inheritance."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Ephesians 1:7</span>
+          <span class="text">"In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Romans 8:3–4</span>
+          <span class="text">"...God sending his own Son in the likeness of sinful flesh, and for sin, condemned sin in the flesh: That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">1 John 1:7</span>
+          <span class="text">"...the blood of Jesus Christ his Son cleanseth us from all sin."</span>
+        </div>
+      </div>
+    </div>
+
+<div class="section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <span class="section-title">The Abundant Life in God's Word</span>
+      </div>
+
+      <p>Jesus promised that He came to give us an abundant life. It is easy to misread this as freedom from earthly hardship or material poverty, but true biblical abundance is rooted in something far deeper:</p>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly."</div>
+        <span class="verse-ref">John 10:10</span>
+      </div>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"Great peace have they which love thy law: and nothing shall offend them."</div>
+        <span class="verse-ref">Psalm 119:165</span>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">Old Testament Foundation</div>
+        <div class="scripture">
+          <span class="ref">Psalm 1:1–3</span>
+          <span class="text">"Blessed is the man... whose delight is in the law of the LORD; and in his law doth he meditate day and night. And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Joshua 1:8</span>
+          <span class="text">"This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night... for then thou shalt make thy way prosperous, and then thou shalt have good success."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Proverbs 3:1–2</span>
+          <span class="text">"My son, forget not my law; but let thine heart keep my commandments: For length of days, and long life, and peace, shall they add to thee."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Psalm 19:7–8</span>
+          <span class="text">"The law of the LORD is perfect, converting the soul: the testimony of the LORD is sure, making wise the simple. The statutes of the LORD are right, rejoicing the heart: the commandment of the LORD is pure, enlightening the eyes."</span>
+        </div>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">New Testament Confirmation</div>
+        <div class="scripture">
+          <span class="ref">James 1:25</span>
+          <span class="text">"But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Matthew 4:4</span>
+          <span class="text">"Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Romans 7:12</span>
+          <span class="text">"Wherefore the law is holy, and the commandment holy, and just, and good."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">John 15:10–11</span>
+          <span class="text">"If ye keep my commandments, ye shall abide in my love; even as I have kept my Father's commandments, and abide in his love. These things have I spoken unto you, that my joy might remain in you, and that your joy might be full."</span>
+        </div>
+      </div>
+    </div>
+
+<div class="section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <span class="section-title">The Call to Sanctification and Works</span>
+      </div>
+
+      <p>Salvation requires more than mental agreement; it requires walking as Jesus walked. True faith inherently produces action. The defining mark of a saint who possesses eternal life is a dual commitment to both grace and ongoing obedience:</p>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus."</div>
+        <span class="verse-ref">Revelation 14:12</span>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">Old Testament Foundation</div>
+        <div class="scripture">
+          <span class="ref">Genesis 26:5</span>
+          <span class="text">"Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws."</span>
+          <span class="note">Abraham is the father of faith, and his faith was perfectly coupled with obedience to God's instructions.</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Leviticus 20:7–8</span>
+          <span class="text">"Sanctify yourselves therefore, and be ye holy: for I am the LORD your God. And ye shall keep my statutes, and do them: I am the LORD which sanctify you."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Deuteronomy 6:25</span>
+          <span class="text">"And it shall be our righteousness, if we observe to do all these commandments before the LORD our God, as he hath commanded us."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Micah 6:8</span>
+          <span class="text">"He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?"</span>
+        </div>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">New Testament Confirmation</div>
+        <div class="scripture">
+          <span class="ref">James 2:17–18, 20</span>
+          <span class="text">"Even so faith, if it hath not works, is dead, being alone. Yea, a man may say, Thou hast faith, and I have works: shew me thy faith without thy works, and I will shew thee my faith by my works... faith without works is dead."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">1 John 2:6</span>
+          <span class="text">"He that saith he abideth in him ought himself also so to walk, even as he walked."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Titus 2:11–14</span>
+          <span class="text">"For the grace of God that bringeth salvation hath appeared to all men, Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world... Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Ephesians 2:10</span>
+          <span class="text">"For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">1 John 3:7</span>
+          <span class="text">"Little children, let no man deceive you: he that doeth righteousness is righteous, even as he is righteous."</span>
+        </div>
+      </div>
+    </div>
+
+<div class="section">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <span class="section-title">Holding Fast: The Ongoing Responsibility</span>
+      </div>
+
+      <p>While eternal life begins the moment you put your faith in Jesus, Scripture presents it as a relationship that must be maintained through covenant faithfulness and repentance. We have an ongoing responsibility to remain in active fellowship with the Savior:</p>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living God. But exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin. For we are made partakers of Christ, if we hold the beginning of our confidence stedfast unto the end."</div>
+        <span class="verse-ref">Hebrews 3:12–14</span>
+      </div>
+
+      <div class="anchor-verse">
+        <div class="verse-text">"But when the righteous turneth away from his righteousness, and committeth iniquity, and doeth according to all the abominations that the wicked man doeth, shall he live? All his righteousness that he hath done shall not be mentioned: in his trespass that he hath trespassed, and in his sin that he hath sinned, in them shall he die."</div>
+        <span class="verse-ref">Ezekiel 18:24</span>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">Old Testament Foundation</div>
+        <div class="scripture">
+          <span class="ref">Ezekiel 33:12–13</span>
+          <span class="text">"The righteousness of the righteous shall not deliver him in the day of his transgression... if he trust to his own righteousness, and commit iniquity, all his righteousnesses shall not be remembered; but for his iniquity that he hath committed, he shall die for it."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">1 Chronicles 28:9</span>
+          <span class="text">"...if thou seek him, he will be found of thee; but if thou forsake him, he will cast thee off for ever."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Joshua 24:20</span>
+          <span class="text">"If ye forsake the LORD, and serve strange gods, then he will turn and do you hurt, and consume you, after that he hath done you good."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">Ecclesiastes 11:3</span>
+          <span class="text">"...if the tree fall toward the south, or toward the north, in the place where the tree falleth, there it shall be."</span>
+          <span class="note">The spiritual state of a man at the end of his life is fixed. Steadfastness to the end is imperative.</span>
+        </div>
+      </div>
+
+      <div class="testament-block">
+        <div class="testament-label">New Testament Confirmation</div>
+        <div class="scripture">
+          <span class="ref">2 Peter 2:20–21</span>
+          <span class="text">"For if after they have escaped the pollutions of the world through the knowledge of the Lord and Saviour Jesus Christ, they are again entangled therein, and overcome, the latter end is worse with them than the beginning. For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them."</span>
+        </div>
+        <div class="scripture">
+          <span class="ref">John 15:5–6</span>
+          <span class="text">"I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing. If a man abide not in me, he is cast forth as a branch, and is withered."</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="doc-footer">
+    <span class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="footer-text">Work the Word Church &middot; Madison, West Virginia<br>Discipleship Class &middot; Level 1 &middot; Lesson 1</p>
+  </footer>
+</div>
+</body>
+</html>

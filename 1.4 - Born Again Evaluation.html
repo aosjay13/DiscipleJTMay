@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discipleship Class - Level 1 - Lesson 1: Am I Truly Born Again?</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --gold:#8B6914; --gold-light:#C9A84C; --gold-pale:#F5EDD8;
+    --ink:#1C1A17; --ink-mid:#3D3829; --ink-soft:#6B6047;
+    --parchment:#FAF6EE; --cream:#F2EBD9;
+    --crimson:#7A1F1F; --crimson-lt:#9B3434; --crimson-dk:#2a1414;
+    --rule:#C9A84C44; --rule-solid:#C9A84C; --accent-bg:#F3ECD8;
+    --shadow:rgba(28,26,23,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:#EDE4CF;
+    font-family:'EB Garamond',Georgia,serif;
+    color:var(--ink);
+    line-height:1.6;
+    padding:2rem 1rem 4rem;
+  }
+  .page{
+    max-width:8.5in; margin:0 auto;
+    background:var(--parchment);
+    border:1px solid #D4B97A;
+    box-shadow:0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position:relative;
+  }
+  .page::before,.page::after{
+    content:''; position:absolute; width:40px; height:40px;
+    border-color:var(--gold-light); border-style:solid; pointer-events:none; z-index:3;
+  }
+  .page::before{top:12px;left:12px;border-width:2px 0 0 2px;}
+  .page::after{bottom:12px;right:12px;border-width:0 2px 2px 0;}
+
+  /* ── CRIMSON HEADER BOOKEND ── */
+  .doc-header{
+    text-align:center;
+    padding:2.6rem 2rem 2rem;
+    background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-lt) 100%);
+    position:relative; color:var(--gold-pale); overflow:hidden;
+    border-bottom:3px solid var(--gold-light);
+  }
+  .doc-header::after{
+    content:''; position:absolute; inset:12px;
+    border:1px solid rgba(201,168,76,0.4); pointer-events:none;
+  }
+  .header-ornament{font-size:1.1rem;color:var(--gold-light);letter-spacing:0.4em;display:block;margin-bottom:0.8rem;}
+  .header-eyebrow{
+    font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.26em;
+    text-transform:uppercase; color:var(--gold-light); margin-bottom:0.7rem;
+  }
+  .header-title{
+    font-family:'Cinzel',serif; font-size:clamp(1.7rem,4vw,2.4rem); font-weight:700;
+    color:#FBF6E9; letter-spacing:0.03em; line-height:1.15; text-transform:uppercase;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .header-subtitle{
+    font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(0.95rem,2vw,1.12rem);
+    color:var(--gold-pale); margin-top:0.9rem; opacity:0.94;
+  }
+  .header-rule{
+    display:flex; align-items:center; gap:0.75rem; margin:1.4rem auto 0; max-width:280px;
+  }
+  .header-rule span{flex:1;height:1px;background:var(--gold-light);opacity:0.6;}
+  .header-rule i{color:var(--gold-light);font-style:normal;}
+
+  /* ── BODY ── */
+  .doc-body{padding:2.4rem 3rem 2.6rem;}
+
+  /* ── CRIMSON FOOTER BOOKEND ── */
+  .doc-footer{
+    text-align:center; padding:2rem;
+    border-top:3px solid var(--gold-light); margin-top:2rem;
+    background:linear-gradient(135deg,var(--crimson),var(--crimson-lt));
+  }
+  .footer-ornament{color:var(--gold-light);font-size:1.1rem;letter-spacing:0.4em;}
+  .footer-text{
+    font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.2em;
+    color:#FBF5E6; text-transform:uppercase; margin-top:0.6rem; line-height:1.9;
+  }
+
+
+  .meta-row{display:flex;gap:2rem;margin-bottom:1.4rem;}
+  .meta-field{display:flex;flex-direction:column;gap:4px;flex:1;}
+  .meta-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);}
+  .meta-line{border-bottom:1px solid var(--ink);height:1.5rem;}
+  .intro{font-style:italic;font-size:1.04rem;line-height:1.7;color:var(--ink-mid);background:var(--cream);border-left:4px solid var(--gold-light);padding:1rem 1.2rem;margin-bottom:1.6rem;}
+  .section{margin-top:1.8rem;}
+  .section:first-of-type{margin-top:0;}
+  .section-header{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.8rem;border-bottom:1px solid var(--gold-light);padding-bottom:0.4rem;}
+  .section-num{font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;background:var(--crimson);color:#FFF8EE;padding:0.18rem 0.55rem;flex-shrink:0;}
+  .section-title{font-family:'Cinzel',serif;font-size:1.08rem;font-weight:600;color:var(--crimson);letter-spacing:0.02em;}
+  .scripture{background:var(--cream);border-left:3px solid var(--gold-light);border-top:1px solid #D4B97A55;padding:0.7rem 1rem;margin-bottom:0.7rem;}
+  .scripture p{font-style:italic;font-size:1rem;color:var(--ink-mid);line-height:1.6;}
+  .scripture-ref{display:block;text-align:right;font-family:'Cinzel',serif;font-style:normal;font-size:0.72rem;font-weight:600;color:var(--crimson);letter-spacing:0.05em;margin-top:0.3rem;}
+  .instruction{font-size:1.02rem;color:var(--ink);margin-bottom:0.5rem;line-height:1.62;}
+  .instruction strong{color:var(--crimson);font-family:'Cinzel',serif;font-size:0.95rem;}
+  .instruction em{color:var(--crimson);font-style:italic;}
+  .answer-line{display:block;border-bottom:1px solid var(--rule-solid);height:1.9rem;width:100%;}
+  .divider{border:none;border-top:1px dashed var(--rule-solid);margin:1.3rem 0;}
+  /* scale */
+  .scale-row{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.5rem;}
+  .scale-item{flex:1;min-width:120px;display:flex;align-items:center;gap:0.5rem;font-size:0.92rem;color:var(--ink-mid);border:1px solid var(--rule);border-radius:3px;padding:0.5rem 0.6rem;background:var(--parchment);}
+  .circle{width:14px;height:14px;border:1.5px solid var(--ink);border-radius:50%;flex-shrink:0;}
+  /* checkboxes */
+  .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem 1.2rem;margin-top:0.5rem;}
+  .check-item{display:flex;align-items:center;gap:0.55rem;font-size:0.96rem;color:var(--ink-mid);}
+  .checkbox{width:14px;height:14px;border:1.5px solid var(--ink);flex-shrink:0;}
+  /* warning */
+  .warning-box{background:#FBEFE6;border:1px solid var(--crimson);border-left:4px solid var(--crimson);padding:1rem 1.2rem;margin:1.4rem 0;}
+  .warning-title{font-family:'Cinzel',serif;font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--crimson);margin-bottom:0.5rem;}
+  .warning-box p{font-style:italic;font-size:1rem;line-height:1.62;color:var(--ink-mid);}
+  /* commitment */
+  .commitment{background:var(--cream);border:1px solid #D4B97A55;border-top:2px solid var(--gold-light);padding:1.1rem 1.2rem;margin-top:1.6rem;text-align:center;}
+  .commitment p{font-style:italic;color:var(--ink-mid);margin-bottom:0.6rem;}
+  .sig-row{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:0.6rem;}
+  .sig-field{min-width:200px;}
+  /* teacher guide */
+  .keypage{break-before:page;page-break-before:always;}
+  .key-banner{background:var(--gold);color:var(--parchment);font-family:'Cinzel',serif;text-align:center;padding:0.5rem;letter-spacing:0.18em;font-size:0.72rem;margin-bottom:1.4rem;text-transform:uppercase;}
+  .keypage .header{text-align:center;margin-bottom:1.4rem;}
+  .keypage .header h1{font-family:'Cinzel',serif;color:var(--crimson);font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;}
+  .course-label{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .subtitle{font-style:italic;color:var(--ink-soft);font-size:0.95rem;margin-top:0.4rem;}
+  .key-item{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px dashed var(--rule-solid);}
+  .key-item:last-child{border-bottom:none;}
+  .key-question{font-family:'Cinzel',serif;font-size:0.82rem;font-weight:600;color:var(--crimson);margin-bottom:0.4rem;}
+  .key-answer{font-size:1rem;font-style:italic;color:var(--ink-mid);padding-left:1rem;border-left:2px solid var(--gold-light);line-height:1.6;}
+  .pastoral-note{display:block;font-size:0.9rem;color:#5A4A2A;font-family:'EB Garamond',serif;font-style:normal;margin-top:0.5rem;}
+  .pastoral-note strong{color:var(--crimson);}
+  @media (max-width:600px){.doc-body{padding:0 1.4rem 2rem;}.checkbox-grid{grid-template-columns:1fr;}}
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page{
+    size:8.5in 11in; margin:0.7in 0.75in 0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'Cinzel',serif; font-size:8pt; letter-spacing:0.1em; color:#8B6914;
+    }
+  }
+  @page:first{ margin-top:0; }
+  @media print{
+    body{background:#fff;padding:0;}
+    .page{box-shadow:none;border:none;max-width:100%;}
+    .page::before,.page::after{display:none;}
+    .doc-header,.doc-footer{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .doc-footer{display:none;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important;}
+    .section-title,.section-header,.testament,.testament-label,.subgroup{break-after:avoid;page-break-after:avoid;}
+    .scripture,.anchor-verse,.verse,.key-item,.warning-box,.commitment,.scale-row,.checkbox-grid{break-inside:avoid;page-break-inside:avoid;}
+    .keypage{break-before:page;page-break-before:always;}
+    .break-before{break-before:page;page-break-before:always;}
+    .key-banner,.warning-box,.scale-item,.circle,.checkbox{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .answer-line{border-bottom:0.5pt solid #999 !important;}
+    .meta-line{border-bottom:0.5pt solid #444 !important;}
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 1 Homework</p>
+    <h1 class="header-title">Am I Truly Born Again?</h1>
+    <p class="header-subtitle">A Personal Self-Examination Before God</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+  <div class="meta-row">
+    <div class="meta-field"><span class="meta-label">Name</span><div class="meta-line"></div></div>
+    <div class="meta-field"><span class="meta-label">Date</span><div class="meta-line"></div></div>
+  </div>
+
+  <div class="intro">
+    This is not a test with right and wrong answers to impress your teacher. This is an honest, private evaluation between you and God. Answer every question truthfully. The goal is not to feel good about yourself, but to see yourself clearly in the light of Scripture, so that if anything needs to change, you can act on it today.
+  </div>
+
+  <!-- ══ SECTION I ════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">I</span>
+      <span class="section-title">The Test of Examination</span>
+    </div>
+
+    <div class="scripture">
+      <p>Examine yourselves, whether ye be in the faith; prove your own selves. Know ye not your own selves, how that Jesus Christ is in you, except ye be reprobates?</p>
+      <span class="scripture-ref">2 Corinthians 13:5</span>
+    </div>
+
+    <p class="instruction">Paul commands every believer to examine themselves. Before you answer anything else on this worksheet, sit quietly for a moment, then answer honestly.</p>
+
+    <p class="instruction"><strong>1a.</strong> In your own words, what do you believe it means to be "born again"? Write your answer before reading further.</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>1b.</strong> Now read the passage below. How does your answer above compare to what Jesus actually said?</p>
+
+    <div class="scripture">
+      <p>Jesus answered and said unto him, Verily, verily, I say unto thee, Except a man be born again, he cannot see the kingdom of God... Except a man be born of water and of the Spirit, he cannot enter into the kingdom of God. That which is born of the flesh is flesh; and that which is born of the Spirit is spirit. Marvel not that I said unto thee, Ye must be born again.</p>
+      <span class="scripture-ref">John 3:3, 5&ndash;7</span>
+    </div>
+
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION II ═══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">II</span>
+      <span class="section-title">The Test of Obedience</span>
+    </div>
+
+    <div class="scripture">
+      <p>And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.</p>
+      <span class="scripture-ref">1 John 2:3&ndash;4</span>
+    </div>
+
+    <div class="scripture">
+      <p>Whosoever is born of God doth not commit sin; for his seed remaineth in him: and he cannot sin, because he is born of God.</p>
+      <span class="scripture-ref">1 John 3:9</span>
+    </div>
+
+    <div class="scripture">
+      <p>For this is the love of God, that we keep his commandments: and his commandments are not grievous.</p>
+      <span class="scripture-ref">1 John 5:3</span>
+    </div>
+
+    <p class="instruction"><strong>2a.</strong> Scripture says the born-again believer does <em>not</em> continue in a lifestyle of sin (law-breaking). How would you honestly describe your current relationship with God's commandments? Circle one:</p>
+
+    <div class="scale-row">
+      <div class="scale-item"><div class="circle"></div>I rarely think about them</div>
+      <div class="scale-item"><div class="circle"></div>I know them but struggle to follow them</div>
+      <div class="scale-item"><div class="circle"></div>I desire them and am growing</div>
+      <div class="scale-item"><div class="circle"></div>They are a delight to me</div>
+    </div>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>2b.</strong> Is there a specific commandment you know you are currently breaking or avoiding? Write it here (this is between you and God).</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>2c.</strong> Do God's commandments feel like a burden or a love? Explain why you feel that way.</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION III ══════════════════════════════════ -->
+  <!-- Page break before Section III keeps pages balanced -->
+  <div class="section break-before">
+    <div class="section-header">
+      <span class="section-num">III</span>
+      <span class="section-title">The Test of a New Heart</span>
+    </div>
+
+    <div class="scripture">
+      <p>A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</p>
+      <span class="scripture-ref">Ezekiel 36:26&ndash;27</span>
+    </div>
+
+    <p class="instruction">When God truly transforms a person, the result is not just forgiveness. It is a new desire to walk in His statutes; the Spirit literally <em>causes</em> the regenerate person to want to obey.</p>
+
+    <p class="instruction"><strong>3a.</strong> Can you point to a real, noticeable change in your desires since you received Christ? Describe it specifically.</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>3b.</strong> Before salvation, did sin bother you the way it does now? How has your attitude toward sin changed, or has it not changed much? Be honest.</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION IV ═══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">IV</span>
+      <span class="section-title">The Test of Fruit</span>
+    </div>
+
+    <div class="scripture">
+      <p>Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles? Even so every good tree bringeth forth good fruit; but a corrupt tree bringeth forth evil fruit... Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.</p>
+      <span class="scripture-ref">Matthew 7:16&ndash;17, 21</span>
+    </div>
+
+    <div class="scripture">
+      <p>But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance: against such there is no law.</p>
+      <span class="scripture-ref">Galatians 5:22&ndash;23</span>
+    </div>
+
+    <p class="instruction"><strong>4a.</strong> Check every fruit below that people who know you well would genuinely say describes your life right now. Be honest, not hopeful.</p>
+
+    <div class="checkbox-grid">
+      <div class="check-item"><span class="checkbox"></span>Love for others, including difficult people</div>
+      <div class="check-item"><span class="checkbox"></span>Joy not based merely on circumstances</div>
+      <div class="check-item"><span class="checkbox"></span>Peace even in hard seasons</div>
+      <div class="check-item"><span class="checkbox"></span>Patience (longsuffering) with people</div>
+      <div class="check-item"><span class="checkbox"></span>Gentleness in how I speak and act</div>
+      <div class="check-item"><span class="checkbox"></span>Goodness (doing right when no one watches)</div>
+      <div class="check-item"><span class="checkbox"></span>Faith that shows in my daily choices</div>
+      <div class="check-item"><span class="checkbox"></span>Meekness (strength under control)</div>
+      <div class="check-item"><span class="checkbox"></span>Temperance (self-control over my appetites)</div>
+    </div>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>4b.</strong> Looking at the ones you did <em>not</em> check, which area is the Holy Spirit calling you to grow in most urgently? Why?</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION V ════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">V</span>
+      <span class="section-title">The Test of Love for the Brethren</span>
+    </div>
+
+    <div class="scripture">
+      <p>We know that we have passed from death unto life, because we love the brethren. He that loveth not his brother abideth in death.</p>
+      <span class="scripture-ref">1 John 3:14</span>
+    </div>
+
+    <div class="scripture">
+      <p>He that saith he is in the light, and hateth his brother, is in darkness even until now.</p>
+      <span class="scripture-ref">1 John 2:9</span>
+    </div>
+
+    <p class="instruction"><strong>5a.</strong> Scripture gives us one of the clearest signs of regeneration here: genuine love for fellow believers. Is there currently anyone in the body of Christ toward whom you carry bitterness, hatred, or unforgiveness? (Yes or No)</p>
+    <span class="answer-line"></span>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>5b.</strong> If yes, what specific step will you take this week to address it, based on what the Word says?</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ SECTION VI ═══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">VI</span>
+      <span class="section-title">The Test of Faith and Works Together</span>
+    </div>
+
+    <div class="scripture">
+      <p>What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him?... Even so faith, if it hath not works, is dead, being alone.</p>
+      <span class="scripture-ref">James 2:14, 17</span>
+    </div>
+
+    <div class="scripture">
+      <p>Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus.</p>
+      <span class="scripture-ref">Revelation 14:12</span>
+    </div>
+
+    <p class="instruction"><strong>6a.</strong> The saints of God are defined by two things together: the faith of Jesus AND keeping the commandments. In your own life, would you say both of these are truly present, or does one exist without the other? Write your honest assessment.</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ══ WARNING ═══════════════════════════════════════ -->
+  <div class="warning-box break-before">
+    <p class="warning-title">A Sober Warning from Scripture</p>
+    <p>"Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven. Many will say to me in that day, Lord, Lord, have we not prophesied in thy name?... And then will I profess unto them, I never knew you: depart from me, ye that work iniquity."</p>
+    <p style="text-align:right; margin-top:.35rem; font-size:.78rem; color:var(--crimson); font-family:'Cinzel',serif; letter-spacing:.05em;">Matthew 7:21&ndash;23</p>
+  </div>
+
+  <!-- ══ SECTION VII ══════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">VII</span>
+      <span class="section-title">The Final Honest Assessment</span>
+    </div>
+
+    <p class="instruction"><strong>7a.</strong> Based on everything you worked through above, honestly answer: Do you believe you are truly born again? Explain your answer using evidence from your own life, not just a prayer you prayed in the past.</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>7b.</strong> If after this evaluation you are unsure whether you are truly saved, what does the following verse tell you to do right now?</p>
+
+    <div class="scripture">
+      <p>But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die.</p>
+      <span class="scripture-ref">Ezekiel 18:21</span>
+    </div>
+
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+
+    <p class="instruction" style="margin-top:.85rem;"><strong>7c.</strong> Write out a short, specific, honest prayer to God below. Not a performance, just the truth of where you are with Him today.</p>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+    <span class="answer-line"></span>
+  </div>
+
+  <!-- ══ COMMITMENT ════════════════════════════════════ -->
+  <div class="commitment">
+    <p>I have completed this self-examination honestly and before God, not for the eyes of others.</p>
+    <div class="sig-row">
+      <div class="sig-field meta-field">
+        <span class="meta-label">Signature</span>
+        <div class="meta-line"></div>
+      </div>
+      <div class="sig-field meta-field">
+        <span class="meta-label">Date</span>
+        <div class="meta-line"></div>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="keypage">
+<div class="key-banner">
+    FOR TEACHER / LEADER USE ONLY
+  </div>
+
+  <div class="header" style="border-bottom:none; margin-bottom: 0;">
+    <p class="course-label">Lesson 1 Homework Supplement</p>
+    <h1 style="font-size: 1.4rem;">Answer &amp; Pastoral Guide</h1>
+    <p class="subtitle" style="font-size:.85rem; margin-top:.5rem; max-width:600px; margin-inline:auto;">
+      Because this worksheet is a subjective self-evaluation, there is no traditional "right/wrong" answer key for most questions. Use this guide to review student responses, gauge their spiritual condition, and know how to counsel them.
+    </p>
+  </div>
+
+  <div class="key-item">
+    <div class="key-question">Section I: The Test of Examination (1a & 1b)</div>
+    <div class="key-answer">
+      Look for the student to recognize the difference between their personal definition (1a) and Jesus' definition (1b). 
+      <span class="pastoral-note"><strong>Counseling Note:</strong> Jesus defined it as a spiritual rebirth by water and the Spirit resulting in a changed nature, not merely praying a prayer or going to church. Ensure the student grasps this foundational difference.</span>
+    </div>
+  </div>
+
+  <div class="key-item">
+    <div class="key-question">Section II: The Test of Obedience (2a, 2b, & 2c)</div>
+    <div class="key-answer">
+      True believers delight in God's commands (1 John 5:3 says they are "not grievous"). Struggle is normal, but apathy or rebellion is a red flag.
+      <span class="pastoral-note"><strong>Red Flag:</strong> If the student circles "I rarely think about them" (2a) or describes God's commandments as a heavy burden (2c), they may still have a "stony heart" or lack proper teaching on grace-fueled obedience. Use this to open a dialogue.</span>
+    </div>
+  </div>
+
+  <div class="key-item">
+    <div class="key-question">Section III: The Test of a New Heart (3a & 3b)</div>
+    <div class="key-answer">
+      A genuinely converted person will be able to articulate a shift from loving sin to hating it, fulfilling Ezekiel 36.
+      <span class="pastoral-note"><strong>Counseling Note:</strong> Look for evidence of godly sorrow and conviction of the Holy Spirit. If they state that their attitude toward sin has "not changed much," they need to hear the Gospel of repentance again.</span>
+    </div>
+  </div>
+
+  <div class="key-item">
+    <div class="key-question">Section IV: The Test of Fruit (4a & 4b)</div>
+    <div class="key-answer">
+      This is a personal assessment of the Fruit of the Spirit. No one is perfect, but the trajectory of their life should display these traits.
+      <span class="pastoral-note"><strong>Counseling Note:</strong> Use question 4b to encourage them. Ask them how you can pray for them specifically regarding the fruit they identified as lacking.</span>
+    </div>
+  </div>
+
+  <div class="key-item">
+    <div class="key-question">Section V: The Test of Love for the Brethren (5a & 5b)</div>
+    <div class="key-answer">
+      1 John states emphatically that he who hates his brother is in darkness.
+      <span class="pastoral-note"><strong>Red Flag:</strong> If they answer "Yes" to holding bitterness or unforgiveness, this is a critical discipleship moment. Direct them to Matthew 18 and Matthew 6:14-15. Unforgiveness is a severe spiritual blockage.</span>
+    </div>
+  </div>
+
+  <div class="key-item">
+    <div class="key-question">Section VI: The Test of Faith and Works Together (6a)</div>
+    <div class="key-answer">
+      Look for an acknowledgment that biblical faith naturally produces obedience/works. 
+      <span class="pastoral-note"><strong>Counseling Note:</strong> Ensure they see faith and obedience as partners in the life of a saint (Revelation 14:12), not as enemies or contradictory concepts.</span>
+    </div>
+  </div>
+
+  <div class="key-item">
+    <div class="key-question">Section VII: Final Assessment (7a & 7b)</div>
+    <div class="key-answer">
+      <strong>Explicit Answer for 7b:</strong> According to Ezekiel 18:21, they must turn from all their sins, keep God's statutes, and do what is lawful and right. This is the biblical definition of repentance.
+      <span class="pastoral-note"><strong>Counseling Note:</strong> If their honest assessment in 7a is "No" or "I'm not sure," gently guide them through repentance using Ezekiel 18 and pray with them. Do not offer false assurance; let the Word of God give them true assurance as they align with it.</span>
+    </div>
+  </div>
+
+  
+</div>
+  </div>
+
+  <footer class="doc-footer">
+    <span class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="footer-text">Work the Word Church &middot; Madison, West Virginia<br>Discipleship Class &middot; Level 1 &middot; Lesson 1</p>
+  </footer>
+</div>
+</body>
+</html>

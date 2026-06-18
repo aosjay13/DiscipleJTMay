@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discipleship Class - Level 1 - Lesson 1: Eternal Life - Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --gold:#8B6914; --gold-light:#C9A84C; --gold-pale:#F5EDD8;
+    --ink:#1C1A17; --ink-mid:#3D3829; --ink-soft:#6B6047;
+    --parchment:#FAF6EE; --cream:#F2EBD9;
+    --crimson:#7A1F1F; --crimson-lt:#9B3434; --crimson-dk:#2a1414;
+    --rule:#C9A84C44; --rule-solid:#C9A84C; --accent-bg:#F3ECD8;
+    --shadow:rgba(28,26,23,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:#EDE4CF;
+    font-family:'EB Garamond',Georgia,serif;
+    color:var(--ink);
+    line-height:1.6;
+    padding:2rem 1rem 4rem;
+  }
+  .page{
+    max-width:8.5in; margin:0 auto;
+    background:var(--parchment);
+    border:1px solid #D4B97A;
+    box-shadow:0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position:relative;
+  }
+  .page::before,.page::after{
+    content:''; position:absolute; width:40px; height:40px;
+    border-color:var(--gold-light); border-style:solid; pointer-events:none; z-index:3;
+  }
+  .page::before{top:12px;left:12px;border-width:2px 0 0 2px;}
+  .page::after{bottom:12px;right:12px;border-width:0 2px 2px 0;}
+
+  /* ── CRIMSON HEADER BOOKEND ── */
+  .doc-header{
+    text-align:center;
+    padding:2.6rem 2rem 2rem;
+    background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-lt) 100%);
+    position:relative; color:var(--gold-pale); overflow:hidden;
+    border-bottom:3px solid var(--gold-light);
+  }
+  .doc-header::after{
+    content:''; position:absolute; inset:12px;
+    border:1px solid rgba(201,168,76,0.4); pointer-events:none;
+  }
+  .header-ornament{font-size:1.1rem;color:var(--gold-light);letter-spacing:0.4em;display:block;margin-bottom:0.8rem;}
+  .header-eyebrow{
+    font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.26em;
+    text-transform:uppercase; color:var(--gold-light); margin-bottom:0.7rem;
+  }
+  .header-title{
+    font-family:'Cinzel',serif; font-size:clamp(1.7rem,4vw,2.4rem); font-weight:700;
+    color:#FBF6E9; letter-spacing:0.03em; line-height:1.15; text-transform:uppercase;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .header-subtitle{
+    font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(0.95rem,2vw,1.12rem);
+    color:var(--gold-pale); margin-top:0.9rem; opacity:0.94;
+  }
+  .header-rule{
+    display:flex; align-items:center; gap:0.75rem; margin:1.4rem auto 0; max-width:280px;
+  }
+  .header-rule span{flex:1;height:1px;background:var(--gold-light);opacity:0.6;}
+  .header-rule i{color:var(--gold-light);font-style:normal;}
+
+  /* ── BODY ── */
+  .doc-body{padding:2.4rem 3rem 2.6rem;}
+
+  /* ── CRIMSON FOOTER BOOKEND ── */
+  .doc-footer{
+    text-align:center; padding:2rem;
+    border-top:3px solid var(--gold-light); margin-top:2rem;
+    background:linear-gradient(135deg,var(--crimson),var(--crimson-lt));
+  }
+  .footer-ornament{color:var(--gold-light);font-size:1.1rem;letter-spacing:0.4em;}
+  .footer-text{
+    font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.2em;
+    color:#FBF5E6; text-transform:uppercase; margin-top:0.6rem; line-height:1.9;
+  }
+
+
+  .section{margin-top:1.6rem;}
+  .section:first-of-type{margin-top:0;}
+  .section-header{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.7rem;border-bottom:1px solid var(--gold-light);padding-bottom:0.4rem;}
+  .section-num{font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;background:var(--crimson);color:#FFF8EE;padding:0.18rem 0.55rem;flex-shrink:0;}
+  .section-title{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;color:var(--crimson);letter-spacing:0.02em;}
+  .lesson-text{font-size:1.02rem;color:var(--ink-mid);margin-bottom:0.6rem;text-align:justify;line-height:1.65;}
+  /* META ROW */
+  .meta-row{display:flex;gap:2rem;margin-bottom:1.2rem;}
+  .meta-field{display:flex;flex-direction:column;gap:4px;flex:1;}
+  .meta-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);}
+  .meta-line{border-bottom:1px solid var(--ink);height:1.5rem;}
+  /* SCRIPTURE BOX */
+  .scripture{background:var(--cream);border-left:3px solid var(--gold-light);border-top:1px solid #D4B97A55;padding:0.7rem 1rem;margin-bottom:0.7rem;}
+  .scripture p{font-style:italic;font-size:1rem;color:var(--ink-mid);line-height:1.6;}
+  .scripture p + p{margin-top:0.4rem;}
+  .scripture strong{font-family:'Cinzel',serif;font-style:normal;font-size:0.7rem;font-weight:600;color:var(--crimson);letter-spacing:0.05em;}
+  /* INSTRUCTION + ANSWER LINES */
+  .instruction{font-size:1.02rem;color:var(--ink);margin-bottom:0.5rem;line-height:1.6;}
+  .instruction strong{color:var(--crimson);font-family:'Cinzel',serif;font-size:0.95rem;}
+  .answer-line{display:block;border-bottom:1px solid var(--rule-solid);height:1.9rem;width:100%;}
+  /* ANSWER KEY */
+  .keypage{break-before:page;page-break-before:always;}
+  .key-banner{background:var(--gold);color:var(--parchment);font-family:'Cinzel',serif;text-align:center;padding:0.5rem;letter-spacing:0.18em;font-size:0.72rem;margin-bottom:1.2rem;text-transform:uppercase;}
+  .key-item{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px dashed var(--rule-solid);}
+  .key-item:last-child{border-bottom:none;}
+  .key-question{font-family:'Cinzel',serif;font-size:0.82rem;font-weight:600;color:var(--crimson);margin-bottom:0.4rem;letter-spacing:0.02em;line-height:1.4;}
+  .key-answer{font-style:italic;font-size:1rem;color:var(--ink-mid);padding-left:1rem;border-left:2px solid var(--gold-light);line-height:1.6;}
+  @media (max-width:600px){.doc-body{padding:0 1.4rem 2rem;}}
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page{
+    size:8.5in 11in; margin:0.7in 0.75in 0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'Cinzel',serif; font-size:8pt; letter-spacing:0.1em; color:#8B6914;
+    }
+  }
+  @page:first{ margin-top:0; }
+  @media print{
+    body{background:#fff;padding:0;}
+    .page{box-shadow:none;border:none;max-width:100%;}
+    .page::before,.page::after{display:none;}
+    .doc-header,.doc-footer{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .doc-footer{display:none;}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important;}
+    .section-title,.section-header,.testament,.testament-label,.subgroup{break-after:avoid;page-break-after:avoid;}
+    .scripture,.anchor-verse,.verse,.key-item,.warning-box,.commitment,.scale-row,.checkbox-grid{break-inside:avoid;page-break-inside:avoid;}
+    .keypage .section,.keypage{break-before:auto;}
+    .key-banner{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .answer-line{border-bottom:0.5pt solid #999 !important;}
+    .meta-line{border-bottom:0.5pt solid #444 !important;}
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 1</p>
+    <h1 class="header-title">Eternal Life</h1>
+    <p class="header-subtitle">Study Worksheet &middot; Understanding the True Definition of Salvation</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+<div class="meta-row">
+      <div class="meta-field">
+        <span class="meta-label">Name</span>
+        <div class="meta-line"></div>
+      </div>
+      <div class="meta-field">
+        <span class="meta-label">Date</span>
+        <div class="meta-line"></div>
+      </div>
+    </div>
+
+    <!-- SECTION I -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">I</span>
+        <span class="section-title">The True Definition of Eternal Life</span>
+      </div>
+      <p class="lesson-text">When we think of "eternal life," we often simply think of living forever. However, Jesus gave us the exact definition of what eternal life truly is:</p>
+      <div class="scripture">
+        <p><strong>John 17:3</strong> &nbsp;&bull;&nbsp; And this is life eternal, that they might know thee the only true God, and Jesus Christ, whom thou hast sent.</p>
+      </div>
+      <p class="instruction"><strong>1.</strong> According to Jesus' own words, what is the true definition of eternal life?</p>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <!-- SECTION II -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">II</span>
+        <span class="section-title">The Test of Knowing God</span>
+      </div>
+      <p class="lesson-text">Eternal life is an active, present-day relationship with the Father. Many equate knowing God with simply having a feeling or an emotional experience. However, the New Testament gives us an explicit test for knowing the Father, and it is inseparable from covenant obedience:</p>
+      <div class="scripture">
+        <p><strong>1 John 2:3&ndash;5</strong> &nbsp;&bull;&nbsp; And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him. But whoso keepeth his word, in him verily is the love of God perfected: hereby know we that we are in him.</p>
+      </div>
+      <p class="instruction"><strong>2.</strong> How do we know that we have truly come to know Him? What does the Bible call a person who claims to know Him but does not keep His commandments?</p>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <!-- SECTION III -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">III</span>
+        <span class="section-title">The Barrier of Sin Removed</span>
+      </div>
+      <p class="lesson-text">If eternal life is walking in an obedient relationship with God, what stopped us from having it? Our sin. Before we can fully appreciate salvation, we must understand what we are being saved from. Sin must be explicitly defined using the scriptural standard:</p>
+      <div class="scripture">
+        <p><strong>1 John 3:4</strong> &nbsp;&bull;&nbsp; Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.</p>
+        <p style="margin-top: 0.04in;"><strong>John 3:16</strong> &nbsp;&bull;&nbsp; For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.</p>
+      </div>
+      <p class="instruction"><strong>3.</strong> His blood paid the ultimate penalty for our Law-breaking. According to 1 John 3:4, what is the biblical definition of sin? Why was it necessary for Jesus to come into the world?</p>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+<!-- SECTION IV -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">IV</span>
+        <span class="section-title">The Present Reality of Life</span>
+      </div>
+      <div class="scripture">
+        <p><strong>1 John 5:11&ndash;12</strong> &nbsp;&bull;&nbsp; And this is the record, that God hath given to us eternal life, and this life is in his Son. He that hath the Son hath life; and he that hath not the Son of God hath not life.</p>
+      </div>
+      <p class="instruction"><strong>4.</strong> According to these verses, when does this eternal life begin for the believer?</p>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <!-- SECTION V -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">V</span>
+        <span class="section-title">The Abundant Life in God's Word</span>
+      </div>
+      <p class="lesson-text">It is easy to misinterpret "abundant life" as simply a life free from earthly struggles or financial poverty. However, true biblical peace and spiritual abundance are inherently tied to loving and walking in God's Instructions:</p>
+      <div class="scripture">
+        <p><strong>John 10:10</strong> &nbsp;&bull;&nbsp; The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.</p>
+        <p style="margin-top: 0.04in;"><strong>Psalm 119:165</strong> &nbsp;&bull;&nbsp; Great peace have they which love thy law: and nothing shall offend them.</p>
+      </div>
+      <p class="instruction"><strong>5.</strong> According to Psalm 119:165, what kind of life and peace belongs to those who love God's Law? How does keeping God's commandments protect us from the "thief" who comes to steal, kill, and destroy?</p>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <!-- SECTION VI -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">VI</span>
+        <span class="section-title">The Call to Sanctification and Works</span>
+      </div>
+      <p class="lesson-text">Salvation and eternal life require more than just mental agreement; they require walking as Jesus walked. The defining mark of a saint who possesses eternal life involves a dual commitment to grace and ongoing obedience:</p>
+      <div class="scripture">
+        <p><strong>Revelation 14:12</strong> &nbsp;&bull;&nbsp; Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus.</p>
+      </div>
+      <p class="instruction"><strong>6.</strong> Do you believe that God sent Jesus to shed His blood to pay the penalty for your law-breaking (sin)? Are you ready to live as a true saint, keeping the commandments of God and the faith of Jesus?</p>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+<!-- SECTION VII -->
+    <div class="section" style="flex: 1; display: flex; flex-direction: column;">
+      <div class="section-header">
+        <span class="section-num">VII</span>
+        <span class="section-title">Holding Fast and Personal Reflection</span>
+      </div>
+      <p class="lesson-text">While eternal life begins the moment you put your faith in Jesus, Scripture presents it as a relationship that must be maintained through covenant faithfulness and repentance. We have an ongoing responsibility to remain in active fellowship with the Savior:</p>
+      <div class="scripture">
+        <p><strong>Hebrews 3:12&ndash;14</strong> &nbsp;&bull;&nbsp; Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living God. But exhort one another daily... lest any of you be hardened through the deceitfulness of sin. For we are made partakers of Christ, if we hold the beginning of our confidence stedfast unto the end.</p>
+        <p style="margin-top: 0.04in;"><strong>Ezekiel 18:21, 24</strong> &nbsp;&bull;&nbsp; But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die... But when the righteous turneth away from his righteousness, and committeth iniquity... in his sin that he hath sinned, in them shall he die.</p>
+      </div>
+      <p class="instruction"><strong>7. Personal Reflection:</strong> Now that you see eternal life is not just "waiting to go to heaven," but is an active, obedient relationship with the Father today, what is one area of your life where you feel the Holy Spirit calling you to align with His commandments? Use the space below to write out your reflections honestly before the Lord.</p>
+
+      <span class="answer-line" style="margin-top: 0.06in;"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+<div class="keypage">
+<div class="key-banner">FOR TEACHER USE ONLY &nbsp;&bull;&nbsp; DO NOT DISTRIBUTE TO STUDENTS</div>
+
+    <div class="key-item">
+      <div class="key-question">1. According to Jesus' own words, what is the true definition of eternal life? (John 17:3)</div>
+      <div class="key-answer">Eternal life is intimately knowing the Father, the only true God, and Jesus Christ whom He has sent. It is a present-tense, active, covenant relationship with our Creator, rather than simply a future destination after death.</div>
+    </div>
+
+    <div class="key-item">
+      <div class="key-question">2. How do we know that we have truly come to know Him? What does the Bible call a person who claims to know Him but does not keep His commandments? (1 John 2:3-4)</div>
+      <div class="key-answer">We know that we have truly come to know Him if we keep His commandments. If a person claims to have an intimate relationship with God ("I know Him") but does not walk in obedience to His commandments, the Bible calls that person a "liar," and declares that the truth is not in them. Intimacy with God cannot be separated from obedience to His Law.</div>
+    </div>
+
+    <div class="key-item">
+      <div class="key-question">3. According to 1 John 3:4, what is the biblical definition of sin? Why was it necessary for Jesus to come into the world?</div>
+      <div class="key-answer">The biblical definition of sin is the transgression (breaking) of God's Law. It was necessary for Jesus to come because our Law-breaking separated us from a holy God, earning us spiritual death. Jesus came to shed His blood, pay the penalty for our transgressions, and rescue us from perishing so that we could be restored to eternal life.</div>
+    </div>
+
+    <div class="key-item">
+      <div class="key-question">4. According to 1 John 5:11-12, when does this eternal life begin for the believer?</div>
+      <div class="key-answer">Eternal life begins right now, in the present. The text says "He that hath the Son hath life" (present tense). The moment we receive Jesus Christ and enter into a covenant relationship with Him, we possess eternal life.</div>
+    </div>
+
+    <div class="key-item">
+      <div class="key-question">5. What kind of life belongs to those who love God's Law? How does keeping God's commandments protect us from the "thief"?</div>
+      <div class="key-answer">Those who love God's Law have "great peace" (the abundant life), and "nothing shall offend them." Keeping God's commandments acts as a protective boundary for our lives. When we walk in God's instructions, we close the doors to the enemy, preventing the destruction, strife, and brokenness that come from lawlessness.</div>
+    </div>
+
+    <div class="key-item">
+      <div class="key-question">6. Do you believe that God sent Jesus to shed His blood... Are you ready to live as a true saint?</div>
+      <div class="key-answer">This is a personal confession of faith and commitment. The student's answer should reflect a sincere "Yes," acknowledging both their faith in Jesus' atoning blood for salvation and their commitment to walk in the commandments of God as a true saint.</div>
+    </div>
+
+    <div class="key-item">
+      <div class="key-question">7. Personal Reflection: What is one area of your life where you feel the Holy Spirit calling you to align with His commandments?</div>
+      <div class="key-answer">This is an open-ended personal response. Look for students to name a practical area of biblical obedience, such as keeping the seventh-day Sabbath, walking in financial integrity, honoring parents, speaking truth, or treating others with love and mercy, where they desire to align their actions with God's Word.</div>
+    </div>
+</div>
+  </div>
+
+  <footer class="doc-footer">
+    <span class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="footer-text">Work the Word Church &middot; Madison, West Virginia<br>Discipleship Class &middot; Level 1 &middot; Lesson 1</p>
+  </footer>
+</div>
+</body>
+</html>

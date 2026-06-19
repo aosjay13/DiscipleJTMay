@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Feast of Tabernacles: God Dwelling With His People</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson-dark:#7A1F1F;
+    --crimson-light:#9B3434;
+    --parchment:#FAF6EE;
+    --gold:#C9A84C;
+    --ink:#2B2622;
+    --cream:#FBF3E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:#EDE4CF;
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .page-wrap{
+    max-width:8.5in;
+    margin:0 auto;
+    background:var(--parchment);
+  }
+
+  /* ===== Crimson header bookend ===== */
+  .doc-header{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:38px 32px 30px;
+    border-bottom:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-header .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .doc-header h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+  .doc-header .subtitle{
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream);
+    opacity:.92;
+  }
+  .doc-header .anchor{
+    margin-top:14px;
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--gold);
+  }
+
+  /* ===== Body region with gold corner brackets ===== */
+  .body-region{
+    position:relative;
+    padding:40px 46px 46px;
+  }
+  .body-region::before,
+  .body-region::after{
+    content:"";
+    position:absolute;
+    width:42px; height:42px;
+    border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .body-region::before{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .body-region::after{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  .corner-br, .corner-bl{
+    position:absolute; width:42px; height:42px; border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .corner-br{ top:14px; right:14px; border-left:none; border-bottom:none; }
+  .corner-bl{ bottom:14px; left:14px; border-right:none; border-top:none; }
+
+  h2{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-dark);
+    font-size:23px;
+    margin:34px 0 6px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    break-after:avoid;
+  }
+  h2 .num{ color:var(--gold); margin-right:8px; }
+
+  h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-light);
+    font-size:18px;
+    margin:22px 0 4px;
+    break-after:avoid;
+  }
+
+  p{ margin:0 0 14px; }
+
+  .lead{ font-size:19px; }
+
+  /* Dropcap */
+  .dropcap::first-letter{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    float:left;
+    font-size:64px;
+    line-height:50px;
+    padding:6px 10px 0 0;
+  }
+
+  /* ===== Table of contents ===== */
+  .toc{
+    background:#fff;
+    border:1px solid #e3d9c4;
+    border-left:5px solid var(--gold);
+    padding:20px 26px;
+    margin:8px 0 10px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toc h2{
+    border:none; margin:0 0 8px; padding:0; font-size:19px;
+  }
+  .toc ol{ margin:0; padding-left:22px; columns:2; column-gap:34px; }
+  .toc li{ margin-bottom:5px; break-inside:avoid; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+
+  /* ===== Scripture box ===== */
+  .scripture{
+    background:#fff;
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:16px 22px 12px;
+    margin:16px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .scripture .ref{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--crimson-dark);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .scripture p{ font-style:italic; margin:0 0 6px; }
+
+  /* ===== Keypoint panel (crimson border) ===== */
+  .keypoint{
+    border:2px solid var(--crimson-light);
+    border-radius:4px;
+    background:#fff;
+    padding:16px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .keypoint .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .keypoint p:last-child{ margin-bottom:0; }
+
+  /* ===== Teacher / Bonus note (dashed gold) ===== */
+  .note{
+    border:2px dashed var(--gold);
+    border-radius:4px;
+    background:#FBF7EC;
+    padding:15px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .note .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:#8a7320;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .note p:last-child{ margin-bottom:0; }
+
+  /* ===== Element header tag ===== */
+  .element-tag{
+    display:inline-block;
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cream);
+    background:var(--crimson-light);
+    padding:3px 12px;
+    border-radius:3px;
+    margin-bottom:4px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .verdict{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:.5px;
+    color:var(--crimson-dark);
+    margin:2px 0 12px;
+  }
+  .verdict strong{ color:var(--crimson-dark); }
+
+  /* ===== Conclusion block ===== */
+  .conclusion{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px 32px;
+    margin:30px 0 8px;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .conclusion h2{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+  }
+  .conclusion p{ margin-bottom:12px; }
+  .conclusion .scripture{ background:rgba(255,255,255,.08); border-top-color:var(--gold); }
+  .conclusion .scripture .ref{ color:var(--gold); }
+  .conclusion .scripture p{ color:var(--cream); }
+
+  /* ===== Discipleship questions ===== */
+  .questions{ counter-reset:q; }
+  .q{
+    counter-increment:q;
+    position:relative;
+    padding-left:46px;
+    margin:0 0 22px;
+    break-inside:avoid;
+  }
+  .q::before{
+    content:counter(q);
+    position:absolute;
+    left:0; top:-2px;
+    width:30px; height:30px;
+    background:var(--crimson-dark);
+    color:var(--cream);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .q .qtext{ font-weight:600; margin-bottom:10px; }
+  .answer-line{
+    border-bottom:1px solid #c9bfa6;
+    height:24px;
+    margin:0 0 8px;
+  }
+
+  /* ===== Answer key ===== */
+  .answer-key{ counter-reset:a; }
+  .ak{
+    counter-increment:a;
+    position:relative;
+    padding-left:40px;
+    margin-bottom:16px;
+    break-inside:avoid;
+  }
+  .ak::before{
+    content:counter(a);
+    position:absolute; left:0; top:0;
+    width:26px; height:26px;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ===== Crimson footer bookend ===== */
+  .doc-footer{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:24px 32px;
+    border-top:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-footer .verse{ font-family:'Cinzel', serif; color:var(--gold); letter-spacing:1px; font-size:14px; margin-bottom:6px; }
+  .doc-footer .small{ font-size:13px; opacity:.9; }
+
+  .page-break{ break-before:page; }
+
+  /* ===== Print rules ===== */
+  @page{
+    size:letter portrait;
+    margin:0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'EB Garamond', serif;
+      font-size:10px;
+      color:#7A1F1F;
+    }
+  }
+
+  @media print{
+    body{ font-size:12.5pt; background:#fff; }
+    .page-wrap{ max-width:none; margin:0; }
+    .doc-header{ padding:26px 20px 22px; }
+    .doc-header h1{ font-size:26pt; }
+    .body-region{ padding:26px 20px 30px; }
+    h2{ font-size:16pt; }
+    h3{ font-size:13pt; }
+    a{ color:inherit; text-decoration:none; }
+    .no-print{ display:none !important; }
+  }
+
+  .print-tip{
+    max-width:8.5in;
+    margin:14px auto 0;
+    font-size:13px;
+    color:#7a6f57;
+    text-align:center;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <div class="eyebrow">Work the Word &middot; Pronomian Teaching</div>
+    <h1>The Feast of Tabernacles:<br>God Dwelling With His People</h1>
+    <div class="subtitle">From the Wilderness Booths to the Kingdom, With Shemini Atzeret, the Eighth Day</div>
+    <div class="anchor">The Tabernacle of God Is With Men &middot; Revelation 21:3</div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-region">
+    <span class="corner-br"></span>
+    <span class="corner-bl"></span>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <h2>What This Teaching Covers</h2>
+      <ol>
+        <li><a href="#story">The Story Behind the Feast</a></li>
+        <li><a href="#names">The Names and the Command</a></li>
+        <li><a href="#offerings">The Offerings of the Feast</a></li>
+        <li><a href="#eighth">Shemini Atzeret: The Eighth Day Apart</a></li>
+        <li><a href="#israel">The Feast in the Life of Israel</a></li>
+        <li><a href="#calendar">Its Place in the Appointed Times</a></li>
+        <li><a href="#nt">The Feast in the New Testament</a></li>
+        <li><a href="#prophetic">The Kingdom and the Eternal Day</a></li>
+        <li><a href="#rabbinic">Rabbinic Traditions of the Feast</a></li>
+        <li><a href="#church">The Early Church and the Feast</a></li>
+        <li><a href="#keep">How We Keep the Feast Now</a></li>
+        <li><a href="#booth">Setting the Booth Today</a></li>
+        <li><a href="#conclusion">Conclusion: Keep the Feast</a></li>
+        <li><a href="#questions">Discipleship Questions</a></li>
+      </ol>
+    </nav>
+
+    <!-- STORY -->
+    <h2 id="story"><span class="num">1.</span>The Story Behind the Feast</h2>
+    <p class="lead dropcap">Before we open a single command, we need the picture the feast was made to hold. The Feast of Tabernacles is the great harvest feast at the close of the year, and it is also a memorial. God told Israel to leave their solid houses for a week and live in temporary shelters, so that every generation would remember how He carried them through the wilderness and dwelt in their midst. The feast looks back to the journey, and it looks ahead to the day when God comes to dwell with His people for good.</p>
+
+    <h3>The Wilderness Behind the Booths</h3>
+    <p>When God brought Israel out of Egypt, they did not march straight into the promised land. They lived forty years in the desert, in tents, with no permanent home. They had no fields to harvest and no storehouse to lean on. The LORD fed them with manna, gave them water from the rock, and went before them in the cloud and the fire. Their shelter was fragile, but their God was faithful. The booth of the feast preaches that lesson in wood and branches: we are pilgrims, and our security is not in the walls around us but in the God who covers us.</p>
+    <div class="scripture">
+      <div class="ref">Leviticus 23:42&ndash;43</div>
+      <p>"Ye shall dwell in booths seven days... That your generations may know that I made the children of Israel to dwell in booths, when I brought them out of the land of Egypt: I am the LORD your God."</p>
+    </div>
+
+    <h3>The Harvest at the End of the Year</h3>
+    <p>Tabernacles also lands at the close of the agricultural year, after the grain, the grapes, and the olives have all been gathered in. The barns are full. The work is finished. So the feast carries a second name, the Feast of Ingathering, and a deep note of thanksgiving runs through it. God's people stop to rejoice over a year of His provision, and the joy of the harvest joins the memory of the wilderness in one feast.</p>
+    <div class="scripture">
+      <div class="ref">Exodus 23:16</div>
+      <p>"...and the feast of ingathering, which is in the end of the year, when thou hast gathered in thy labours out of the field."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">The Pattern to Watch</div>
+      <p>Hold these two threads together as we go: the booth that remembers the wilderness, and the harvest that gathers everything in. One says God dwelt with us on the journey. The other says God brings the journey to a full and joyful end. The whole feast points to a God who tabernacles with His people and finally gathers them home.</p>
+    </div>
+
+    <!-- NAMES -->
+    <h2 id="names"><span class="num">2.</span>The Names and the Command</h2>
+    <p>The feast is given plainly in the law, with a set time, a set length, and a set purpose. It begins on the fifteenth day of the seventh month and runs seven days, followed by a separate eighth day. The first day and the eighth day are holy gatherings with rest from ordinary work. Through the week the people live in booths and rejoice before the LORD.</p>
+    <div class="scripture">
+      <div class="ref">Leviticus 23:33&ndash;36</div>
+      <p>"The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto the LORD... on the eighth day shall be an holy convocation unto you... it is a solemn assembly; and ye shall do no servile work therein."</p>
+    </div>
+    <p>The command is not a passing custom. The LORD calls it a statute for ever, to be kept through all generations. That phrase matters for everything that follows in this teaching. The feast was never set with an expiration date written into it.</p>
+    <div class="scripture">
+      <div class="ref">Leviticus 23:41</div>
+      <p>"And ye shall keep it a feast unto the LORD seven days in the year. It shall be a statute for ever in your generations: ye shall celebrate it in the seventh month."</p>
+    </div>
+
+    <h3>A Feast Marked by Joy</h3>
+    <p>More than any other appointed time, Tabernacles is the feast of rejoicing. The law does not merely permit gladness here, it commands it, and it widens the circle to include the whole household, the servant, the Levite, the stranger, the fatherless, and the widow. No one is left outside the joy.</p>
+    <div class="scripture">
+      <div class="ref">Deuteronomy 16:14&ndash;15</div>
+      <p>"And thou shalt rejoice in thy feast, thou, and thy son, and thy daughter... Seven days shalt thou keep a solemn feast unto the LORD thy God... because the LORD thy God shall bless thee in all thine increase... therefore thou shalt surely rejoice."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>Two names, two meanings, one feast. As the Feast of Tabernacles it remembers God's dwelling with a pilgrim people. As the Feast of Ingathering it gives thanks for a finished harvest. The commanded mood of both is joy, and that joy is meant to overflow onto the poor and the stranger. A feast that hoards its blessing has missed the point of the booth.</p>
+    </div>
+
+    <!-- OFFERINGS -->
+    <h2 id="offerings"><span class="num">3.</span>The Offerings of the Feast</h2>
+    <p>Numbers gives the order of the sacrifices for the week, and one detail stands out. The bullocks offered each day descend in number, thirteen on the first day, twelve on the second, and so on down to seven on the seventh day. Over the seven days the total comes to seventy bullocks, with the eighth day standing on its own with a single bullock.</p>
+    <div class="scripture">
+      <div class="ref">Numbers 29:12&ndash;13</div>
+      <p>"And on the fifteenth day of the seventh month ye shall have an holy convocation... And ye shall offer a burnt offering... thirteen young bullocks, two rams, and fourteen lambs of the first year; they shall be without blemish."</p>
+    </div>
+    <div class="scripture">
+      <div class="ref">Numbers 29:35&ndash;36</div>
+      <p>"On the eighth day ye shall have a solemn assembly... but ye shall offer a burnt offering... one bullock, one ram, seven lambs of the first year without blemish."</p>
+    </div>
+    <p>These offerings belonged to the altar and the priesthood. They were the Levitical part of the feast, the shadow that pointed forward to the once-for-all sacrifice of Christ. We will return to this when we ask how the feast is kept now, because this is exactly the part that has been fulfilled and is no longer offered.</p>
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>The descending count of bullocks down to seventy was tied by later Jewish teachers to the seventy nations of Genesis 10, as if the feast quietly carried the whole world on its heart. That link is a tradition, not a stated command, so handle it as illustration rather than proof. The scriptural theme it reaches for is real, though, since Zechariah 14 plainly brings the nations up to this very feast in the age to come.</p>
+    </div>
+
+    <!-- EIGHTH DAY -->
+    <div class="page-break"></div>
+    <h2 id="eighth"><span class="num">4.</span>Shemini Atzeret: The Eighth Day Apart</h2>
+    <span class="element-tag">The Eighth Day</span>
+    <p class="verdict"><strong>Hebrew:</strong> the eighth (day) of assembly &nbsp;&middot;&nbsp; <strong>Command:</strong> a holy convocation, a solemn assembly &nbsp;&middot;&nbsp; <strong>Picture:</strong> the day beyond the seven</p>
+    <p>After the seven days of booths comes a day that is joined to the feast and yet set apart from it. The law calls it a solemn assembly, and the name carried in Hebrew is Shemini Atzeret, the eighth day of gathering. Israel does not dwell in booths on this day. It is its own holy convocation, with its own single offering, a quiet and intimate close to the long week of joy.</p>
+    <div class="scripture">
+      <div class="ref">Leviticus 23:36</div>
+      <p>"...on the eighth day shall be an holy convocation unto you; and ye shall offer an offering made by fire unto the LORD: it is a solemn assembly; and ye shall do no servile work therein."</p>
+    </div>
+
+    <h3>Why the Number Eight Matters</h3>
+    <p>All through Scripture, seven marks completion within this present creation, the seven days of the week, the seven-day feast, the seventh-year rest. Eight steps just past that line. A child was circumcised on the eighth day, entering the covenant. The Lord rose on the first day of a new week, the eighth day beyond the old cycle. So the eighth day of this feast is more than an extra day tacked on. It points beyond the completed sevens of this world into something new and lasting, a day that opens onto eternity.</p>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>If the seven days of Tabernacles picture God dwelling with His people through the long week of the age to come, the eighth day pictures what lies beyond even that, the eternal day when God and His people are together with no end in view. We will draw this out fully in the prophetic section. For now, hold the shape: seven days of dwelling, then one more day that reaches past the seven into forever.</p>
+    </div>
+
+    <!-- ISRAEL -->
+    <h2 id="israel"><span class="num">5.</span>The Feast in the Life of Israel</h2>
+    <p>This feast was not a minor entry on the calendar. It was so central that Scripture often calls it simply "the feast," the greatest of the year. Two great moments in Israel's history landed on it.</p>
+
+    <h3>Solomon Dedicated the Temple at This Feast</h3>
+    <p>When the house of God was finished, Solomon gathered the nation to dedicate it during the seventh month, at this very feast. The glory of the LORD filled the house, and Israel rejoiced. The feast of God dwelling in booths became the moment God filled His dwelling place with His people gathered around it.</p>
+    <div class="scripture">
+      <div class="ref">1 Kings 8:2, 65</div>
+      <p>"And all the men of Israel assembled themselves unto king Solomon at the feast in the month Ethanim, which is the seventh month... And at that time Solomon held a feast, and all Israel with him, a great congregation..."</p>
+    </div>
+
+    <h3>The Word Read and the Feast Restored</h3>
+    <p>The law tied this feast to the public reading of God's word. Every seventh year, at Tabernacles, the law was to be read aloud before all Israel, men, women, children, and strangers, so that they would hear and learn to fear the LORD.</p>
+    <div class="scripture">
+      <div class="ref">Deuteronomy 31:10&ndash;12</div>
+      <p>"At the end of every seven years... in the feast of tabernacles... thou shalt read this law before all Israel in their hearing... that they may hear, and that they may learn, and fear the LORD your God."</p>
+    </div>
+    <p>That is exactly what happened when Israel returned from exile. They found the command to dwell in booths written in the law, kept the feast as it had not been kept since the days of Joshua, and gave themselves to the reading of the word with great gladness.</p>
+    <div class="scripture">
+      <div class="ref">Nehemiah 8:17&ndash;18</div>
+      <p>"...and all the congregation... made booths, and sat under the booths... and there was very great gladness. Also day by day, from the first day unto the last day, he read in the book of the law of God."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>Notice the threads gathered at this feast: God's dwelling place, the nation gathered in joy, and the open reading of His word. When a people forget the feast, they tend to forget the word as well. When revival comes, both come back together, as they did under Nehemiah. This is a feast built for the church that loves the law of God and rejoices in it.</p>
+    </div>
+
+    <!-- CALENDAR -->
+    <h2 id="calendar"><span class="num">6.</span>Its Place in the Appointed Times</h2>
+    <p>Tabernacles is one of the three feasts at which every man was to appear before the LORD, alongside Unleavened Bread in the spring and Weeks at early summer. These three pilgrim feasts frame the year.</p>
+    <div class="scripture">
+      <div class="ref">Deuteronomy 16:16</div>
+      <p>"Three times in a year shall all thy males appear before the LORD thy God in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles..."</p>
+    </div>
+    <p>Seen as a whole, the appointed times tell a single story. The spring feasts were fulfilled at the first coming of Christ. He died as our Passover, He was the sinless bread of the days of unleavened bread, He rose as the firstfruits, and He poured out the Spirit at the feast of Weeks. The autumn feasts gather around His return: the trumpet that gathers His people, the day of the LORD that pours out wrath, and then Tabernacles, the feast of God dwelling with His people in the kingdom. Tabernacles stands last in the year because it pictures the last great act of the story, God making His home with man.</p>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The feasts are not random rituals. They are a calendar of redemption. Tabernacles closes the cycle, which is fitting, because the goal of the whole Bible is God dwelling with His people. That is where Genesis began in the garden, and that is where Revelation ends in the city. The feast that pictures it stands at the close of the year.</p>
+    </div>
+
+    <!-- NEW TESTAMENT -->
+    <div class="page-break"></div>
+    <h2 id="nt"><span class="num">7.</span>The Feast in the New Testament</h2>
+    <p>The Lord Jesus did not ignore this feast. He kept it, He taught at it, and He revealed Himself through it. The seventh chapter of John is set entirely at the Feast of Tabernacles, and what He says there is shaped by the ceremonies happening around Him.</p>
+
+    <h3>Living Water on the Great Day</h3>
+    <p>During the feast, the priests carried water drawn from the pool of Siloam and poured it out at the altar, a ceremony asking God for rain and remembering the water He gave from the rock in the wilderness. On the last and greatest day of the feast, in the middle of that very theme, Jesus stood up and cried out that He is the source of the living water everyone is thirsting for. John tells us plainly that He was speaking of the Spirit.</p>
+    <div class="scripture">
+      <div class="ref">John 7:37&ndash;39</div>
+      <p>"In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink... But this spake he of the Spirit, which they that believe on him should receive..."</p>
+    </div>
+
+    <h3>Light of the World</h3>
+    <p>The feast was also a feast of light. Great lamps were lit in the Temple court, and the celebration filled the night. Standing in that setting, Jesus declared Himself the light the whole world needs, the light that ends the darkness for everyone who follows Him.</p>
+    <div class="scripture">
+      <div class="ref">John 8:12</div>
+      <p>"Then spake Jesus again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life."</p>
+    </div>
+
+    <h3>The Word That Tabernacled Among Us</h3>
+    <p>The deepest New Testament link is in the opening of John's Gospel. When John says the Word was made flesh and dwelt among us, the word he chooses for "dwelt" means to pitch a tent, to tabernacle. In Christ, God did exactly what the feast pictured. He left the glory of heaven, took on a body like a tent of flesh, and came to live in the midst of His people.</p>
+    <div class="scripture">
+      <div class="ref">John 1:14</div>
+      <p>"And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth."</p>
+    </div>
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Some teachers press this further and argue that Christ was actually born during the Feast of Tabernacles. The "tabernacled among us" language is a genuine and strong picture, but the timing of His birth is an inference, not a stated fact in Scripture. Use the dwelling theme with full confidence, and present any claim about the exact date of His birth as a possibility rather than a certainty.</p>
+    </div>
+
+    <!-- PROPHETIC -->
+    <h2 id="prophetic"><span class="num">8.</span>The Kingdom and the Eternal Day</h2>
+    <p>The clearest proof that this feast still has a future is that Scripture shows it being kept after Christ returns. In the age of His reign, the nations that are left come up year by year to Jerusalem to keep the Feast of Tabernacles, and refusing to come brings the withholding of rain. A feast that is celebrated in the kingdom age was plainly never meant to vanish.</p>
+    <div class="scripture">
+      <div class="ref">Zechariah 14:16&ndash;17</div>
+      <p>"And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles. And it shall be... upon them shall be no rain."</p>
+    </div>
+
+    <h3>The Seven Days and the Kingdom</h3>
+    <p>The seven days of dwelling in booths line up with the long age of the LORD's reign on the earth, when His people dwell with Him and keep His law in a renewed world. The redeemed, gathered before His throne, are pictured holding palm branches, the very branches of this feast, as the nations are brought in at last.</p>
+    <div class="scripture">
+      <div class="ref">Revelation 7:9&ndash;10</div>
+      <p>"...a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands..."</p>
+    </div>
+
+    <h3>The Eighth Day and Eternity</h3>
+    <p>Then comes the eighth day. Just as Shemini Atzeret reaches past the seven days into something new, the end of Revelation reaches past the kingdom age into the new heavens and the new earth, the eternal day with no night and no end. And there, the final word of the whole Bible is the word of this feast: God will tabernacle with His people for ever.</p>
+    <div class="scripture">
+      <div class="ref">Revelation 21:3</div>
+      <p>"And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">The Whole Arc in One Line</div>
+      <p>The booth remembers God dwelling with a pilgrim people in the wilderness. The kingdom is God dwelling with His people on a renewed earth. The eighth day is God dwelling with His people for ever in the new creation. From the desert tent to the eternal city, this is one unbroken promise, and the feast holds it all.</p>
+    </div>
+
+    <!-- RABBINIC -->
+    <div class="page-break"></div>
+    <h2 id="rabbinic"><span class="num">9.</span>Rabbinic Traditions of the Feast</h2>
+    <p>This feast gathered many customs over the centuries, and a few are worth knowing, since the Lord Himself taught in the middle of them. We mention them briefly, and we keep them in their place as traditions rather than commands.</p>
+    <h3>The Branches and the Four Species</h3>
+    <p>The law tells the people to take the boughs of goodly trees, palm branches, and willows of the brook, and to rejoice before the LORD. Out of this, the rabbis built the custom of binding together four specific species, the palm, the myrtle, the willow, and the citron, and waving them in the assembly. The command to take and rejoice with branches is from Scripture. The exact bundle and the waving pattern are the tradition layered on top.</p>
+    <div class="scripture">
+      <div class="ref">Leviticus 23:40</div>
+      <p>"And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before the LORD your God seven days."</p>
+    </div>
+    <h3>The Water and the Lights</h3>
+    <p>The water-drawing ceremony and the lighting of the great lamps in the Temple court were both joyful traditions of the feast, not written commands. They are worth knowing only because Jesus stepped into them and pointed to Himself, offering living water in the one and calling Himself the light of the world in the other.</p>
+    <h3>Rejoicing in the Word</h3>
+    <p>In later Jewish practice, the eighth day became tied to the joyful completion and restarting of the yearly Torah reading, a celebration of rejoicing in the law. The custom itself is a tradition, but it reaches back to a real scriptural root, since the law had always commanded the reading of the word at this feast. The instinct to rejoice over God's word at this season is faithful, even though the particular ceremony is man's addition.</p>
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Keep the same rule here that we keep with every feast. Where a custom is rooted in a command, such as taking branches or reading the word, we may keep it freely. Where it is purely a tradition of men, such as the water libation or a fixed waving ritual, we are free to use it as a teaching picture if it points to Christ, but we bind no one's conscience to it.</p>
+    </div>
+
+    <!-- CHURCH -->
+    <h2 id="church"><span class="num">10.</span>The Early Church and the Feast</h2>
+    <p>The first believers were keepers of the appointed times. The apostles and the early Jewish church continued to mark the feasts, and we see Paul ordering his travel around them, hurrying to be in Jerusalem for one and reckoning his plans by another.</p>
+    <div class="scripture">
+      <div class="ref">Acts 20:16</div>
+      <p>"For Paul had determined to sail by Ephesus... for he hasted, if it were possible for him, to be at Jerusalem the day of Pentecost."</p>
+    </div>
+    <p>As the years passed and the church became mostly Gentile, the keeping of the feasts faded in the wider body, and other observances took their place. We should be careful and honest about this history rather than claiming more than the records support. The simple and certain point is this: the apostolic believers did not treat the feasts as abolished. The pattern of letting them slip away came later, and a people who want to walk as the first disciples walked have good reason to recover what was laid down.</p>
+
+    <!-- KEEP NOW -->
+    <h2 id="keep"><span class="num">11.</span>How We Keep the Feast Now</h2>
+    <p>Here we come to the heart of the teaching. As believers who hold that the law of God still shapes the life of faith, we ask the careful question we always ask of a feast. What part of it was a shadow that has now been fulfilled in Christ, and what part still stands as a command for us to keep with joy?</p>
+
+    <h3>What Has Been Fulfilled and Ceased</h3>
+    <p>The sacrifices of the feast, the seventy bullocks and all the offerings of Numbers 29, belonged to the Levitical and Aaronic system. They were shadows pointing to the perfect sacrifice, and Christ has already offered Himself once for all. We do not rebuild an altar, and we do not offer the bullocks. That part of the feast is finished in Him. In the same way, the law's command to appear before the LORD at the chosen place, the Temple in Jerusalem, cannot be kept as written while there is no Temple standing. We do not pretend otherwise, and we do not invent a replacement for it.</p>
+    <div class="scripture">
+      <div class="ref">Hebrews 10:11&ndash;12</div>
+      <p>"And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins: But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God."</p>
+    </div>
+
+    <h3>What Still Stands as a Command</h3>
+    <p>Strip away the sacrifices and the Temple pilgrimage, and the feast itself remains. The LORD called it a statute for ever, and Zechariah shows it kept in the kingdom age, so we have no warrant to call it abolished. What remains is the appointed time, the holy gatherings, the dwelling in booths, the rejoicing before the LORD, the thanksgiving for His provision, and the reading of His word. These rest on the written command, and these we keep.</p>
+    <div class="keypoint">
+      <div class="label">The Dividing Line</div>
+      <p>The dividing line runs straight through the feast. On one side stand the altar, the priesthood, and the sacrifices, all fulfilled in Christ and no longer practiced. On the other side stand the feast, the rest, the joy, the booth, and the word, all still commanded and still ours to keep. We do not throw out the feast because the sacrifices are finished, any more than we throw out the Passover because the lamb has come. We keep the feast and let Christ be its center.</p>
+    </div>
+
+    <!-- SETTING THE BOOTH -->
+    <h2 id="booth"><span class="num">12.</span>Setting the Booth Today</h2>
+    <p>So what does a believer who walks in the commandments of God actually do when this feast comes around? Here is a plain summary that holds the command and the tradition in their right places.</p>
+
+    <h3>Keep the Appointed Time and the Gatherings</h3>
+    <p>Mark the days the LORD marked, the seven days of the feast beginning on the fifteenth of the seventh month, together with the eighth day. Keep the first day and the eighth day as holy gatherings, resting from ordinary work and meeting to worship. These are the convocations the law sets apart, and they anchor the week.</p>
+
+    <h3>Dwell in a Booth as a Teaching Picture</h3>
+    <p>Build a simple shelter and spend time in it through the week, with the family if you can. Let the children ask why, and tell them the story: God brought us through the wilderness, He dwelt among us, and we are pilgrims whose true home is with Him. The booth is meant to be lived in and learned from, not merely admired.</p>
+
+    <h3>Rejoice, Give Thanks, and Include Others</h3>
+    <p>This is the feast of joy, so rejoice on purpose. Give thanks for a year of God's provision, since it is the feast of ingathering. And do what the law commands by widening the table to the stranger, the poor, and the lonely. A booth with an open door keeps the feast better than a full barn with a closed one.</p>
+
+    <h3>Open the Word and Look for His Coming</h3>
+    <p>Read the Scriptures together at this feast, as Israel did under Nehemiah and as the law commands. And keep the feast looking forward, with your eyes on the day when Christ returns to reign and God tabernacles with His people for ever. The feast is a yearly rehearsal of the hope of the whole church.</p>
+
+    <div class="keypoint">
+      <div class="label">The Whole Lesson in One Sentence</div>
+      <p>We keep the feast God commanded, we let Christ be the center where the sacrifices once stood, and we hold every man-made tradition loosely, using only what points to Him and binding no one's conscience to the rest.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>If the class asks, "do we have to build a booth, or wave branches, to keep this feast rightly?", answer with care. We are commanded to keep the feast, to rest on the holy days, to rejoice, and to dwell in booths as a memorial. The elaborate customs that grew up around it, the fixed four-species bundle, the water ceremony, and the rest, are traditions, not commands. A family may keep a rich and detailed observance as a teaching tool, or a simple one with the commanded elements. Either way, the conscience stays free and Christ stays central.</p>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <h2 style="margin-top:0;">Keep the Feast</h2>
+      <p>The Feast of Tabernacles tells the whole story of God with us in a single week. It begins in a fragile booth that remembers the wilderness, where God dwelt among a homeless people and carried them through. It rises to a finished harvest, where a grateful people rejoice over a year of His provision. And it reaches forward to the kingdom and beyond, to the eternal day when God makes His home with man and wipes away every tear.</p>
+      <p>So we do not abandon the feast, and we do not return to the shadows of altar and sacrifice as though Christ had never come. We keep the feast, and we keep it looking full in the face of the Lord Jesus, the Word who tabernacled among us, the living water, the light of the world, the One who is coming again to dwell with His people for ever.</p>
+      <div class="scripture">
+        <div class="ref">Revelation 21:3</div>
+        <p>"Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God."</p>
+      </div>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="page-break"></div>
+    <h2 id="questions"><span class="num">13.</span>Discipleship Questions</h2>
+    <p>Answer in your own words from the Scriptures we have studied.</p>
+
+    <div class="questions">
+      <div class="q">
+        <div class="qtext">What two things does the Feast of Tabernacles remember and give thanks for? Give the name that goes with each.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Does the command to keep this feast have an end date written into it? Quote the phrase from Leviticus 23:41 that answers this.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What is Shemini Atzeret, and why does the number eight point past the seven days of the feast?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How did the Lord Jesus use the water ceremony and the lights of the feast to reveal Himself? Give the verses.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What does the word "dwelt" mean in John 1:14, and how does it connect Christ to this feast?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Which passage shows this feast being kept after Christ returns, and why does that settle whether it was abolished?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Which parts of the feast were fulfilled in Christ and are no longer practiced, and which parts still stand as commands for us?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How should we treat the rabbinic customs of the feast, such as the four-species bundle or the water ceremony?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+    </div>
+
+    <!-- ANSWER KEY -->
+    <div class="page-break"></div>
+    <h2><span class="num">&#10003;</span>Teacher Answer Key</h2>
+    <div class="answer-key">
+      <div class="ak">It remembers God dwelling with Israel in the wilderness, when He made them dwell in booths after leaving Egypt (Leviticus 23:42&ndash;43). It also gives thanks for the completed harvest at the end of the year. The first meaning goes with the name Feast of Tabernacles, the second with the name Feast of Ingathering (Exodus 23:16).</div>
+      <div class="ak">No. Leviticus 23:41 calls it "a statute for ever in your generations." It is the LORD's feast, given to last, not a custom set to expire. That is why we still keep it.</div>
+      <div class="ak">Shemini Atzeret is the eighth day, a separate holy convocation and solemn assembly joined to the feast yet set apart, on which Israel does not dwell in booths (Leviticus 23:36). Seven marks completion within this creation, so eight steps past it into something new, as with circumcision on the eighth day and the resurrection on the first day of a new week. The eighth day pictures the eternal day beyond the kingdom age.</div>
+      <div class="ak">During the water ceremony, on the last and great day of the feast, He stood and offered living water to all who thirst, which John says was the Spirit (John 7:37&ndash;39). In the setting of the feast's lights, He called Himself the light of the world, so that those who follow Him would not walk in darkness (John 8:12).</div>
+      <div class="ak">The word "dwelt" means to pitch a tent, to tabernacle (John 1:14). In Christ, God did what the feast pictured: He came in a body like a tent of flesh and lived in the midst of His people. The feast of God dwelling with man is fulfilled first in the incarnation.</div>
+      <div class="ak">Zechariah 14:16&ndash;17 shows the nations going up year by year to keep the Feast of Tabernacles in the age of the LORD's reign, with rain withheld from those who refuse. A feast still kept in the kingdom age was plainly never meant to be abolished.</div>
+      <div class="ak">Fulfilled and no longer practiced: the sacrifices and offerings of the feast, which belonged to the Levitical and Aaronic system and are finished in the one offering of Christ (Hebrews 10:11&ndash;12), along with the Temple pilgrimage that cannot be kept as written without a Temple. Still commanded: the appointed time, the holy gatherings and rest, dwelling in booths, rejoicing, thanksgiving, and the reading of the word.</div>
+      <div class="ak">Where a custom is rooted in a command, such as taking branches or reading the word, we may keep it freely. Where it is purely a tradition of men, such as the water libation or a fixed waving ritual, we may use it as a teaching picture only if it points to Christ, and we bind no one's conscience to it.</div>
+    </div>
+
+  </div><!-- /body-region -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <div class="verse">Study to shew thyself approved unto God &middot; 2 Timothy 2:15</div>
+    <div class="small">Work the Word &middot; Pronomian Teaching Series</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>

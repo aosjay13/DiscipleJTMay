@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Day of Atonement in the Light of Christ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson-dark:#7A1F1F;
+    --crimson-light:#9B3434;
+    --parchment:#FAF6EE;
+    --gold:#C9A84C;
+    --ink:#2B2622;
+    --cream:#FBF3E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:#EDE4CF;
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .page-wrap{
+    max-width:8.5in;
+    margin:0 auto;
+    background:var(--parchment);
+  }
+
+  /* ===== Crimson header bookend ===== */
+  .doc-header{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:38px 32px 30px;
+    border-bottom:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-header .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .doc-header h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+  .doc-header .subtitle{
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream);
+    opacity:.92;
+  }
+  .doc-header .anchor{
+    margin-top:14px;
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--gold);
+  }
+
+  /* ===== Body region with gold corner brackets ===== */
+  .body-region{
+    position:relative;
+    padding:40px 46px 46px;
+  }
+  .body-region::before,
+  .body-region::after{
+    content:"";
+    position:absolute;
+    width:42px; height:42px;
+    border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .body-region::before{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .body-region::after{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  .corner-br, .corner-bl{
+    position:absolute; width:42px; height:42px; border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .corner-br{ top:14px; right:14px; border-left:none; border-bottom:none; }
+  .corner-bl{ bottom:14px; left:14px; border-right:none; border-top:none; }
+
+  h2{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-dark);
+    font-size:23px;
+    margin:34px 0 6px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    break-after:avoid;
+  }
+  h2 .num{ color:var(--gold); margin-right:8px; }
+
+  h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-light);
+    font-size:18px;
+    margin:22px 0 4px;
+    break-after:avoid;
+  }
+
+  p{ margin:0 0 14px; }
+
+  .lead{ font-size:19px; }
+
+  /* Dropcap */
+  .dropcap::first-letter{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    float:left;
+    font-size:64px;
+    line-height:50px;
+    padding:6px 10px 0 0;
+  }
+
+  /* ===== Table of contents ===== */
+  .toc{
+    background:#fff;
+    border:1px solid #e3d9c4;
+    border-left:5px solid var(--gold);
+    padding:20px 26px;
+    margin:8px 0 10px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toc h2{
+    border:none; margin:0 0 8px; padding:0; font-size:19px;
+  }
+  .toc ol{ margin:0; padding-left:22px; columns:2; column-gap:34px; }
+  .toc li{ margin-bottom:5px; break-inside:avoid; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+
+  /* ===== Scripture box ===== */
+  .scripture{
+    background:#fff;
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:16px 22px 12px;
+    margin:16px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .scripture .ref{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--crimson-dark);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .scripture p{ font-style:italic; margin:0 0 6px; }
+
+  /* ===== Keypoint panel (crimson border) ===== */
+  .keypoint{
+    border:2px solid var(--crimson-light);
+    border-radius:4px;
+    background:#fff;
+    padding:16px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .keypoint .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .keypoint p:last-child{ margin-bottom:0; }
+
+  /* ===== Teacher / Bonus note (dashed gold) ===== */
+  .note{
+    border:2px dashed var(--gold);
+    border-radius:4px;
+    background:#FBF7EC;
+    padding:15px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .note .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:#8a7320;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .note p:last-child{ margin-bottom:0; }
+
+  /* ===== Element header tag ===== */
+  .element-tag{
+    display:inline-block;
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cream);
+    background:var(--crimson-light);
+    padding:3px 12px;
+    border-radius:3px;
+    margin-bottom:4px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .verdict{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:.5px;
+    color:var(--crimson-dark);
+    margin:2px 0 12px;
+  }
+  .verdict strong{ color:var(--crimson-dark); }
+
+  /* ===== Conclusion block ===== */
+  .conclusion{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px 32px;
+    margin:30px 0 8px;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .conclusion h2{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+  }
+  .conclusion p{ margin-bottom:12px; }
+  .conclusion .scripture{ background:rgba(255,255,255,.08); border-top-color:var(--gold); }
+  .conclusion .scripture .ref{ color:var(--gold); }
+  .conclusion .scripture p{ color:var(--cream); }
+
+  /* ===== Discipleship questions ===== */
+  .questions{ counter-reset:q; }
+  .q{
+    counter-increment:q;
+    position:relative;
+    padding-left:46px;
+    margin:0 0 22px;
+    break-inside:avoid;
+  }
+  .q::before{
+    content:counter(q);
+    position:absolute;
+    left:0; top:-2px;
+    width:30px; height:30px;
+    background:var(--crimson-dark);
+    color:var(--cream);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .q .qtext{ font-weight:600; margin-bottom:10px; }
+  .answer-line{
+    border-bottom:1px solid #c9bfa6;
+    height:24px;
+    margin:0 0 8px;
+  }
+
+  /* ===== Answer key ===== */
+  .answer-key{ counter-reset:a; }
+  .ak{
+    counter-increment:a;
+    position:relative;
+    padding-left:40px;
+    margin-bottom:16px;
+    break-inside:avoid;
+  }
+  .ak::before{
+    content:counter(a);
+    position:absolute; left:0; top:0;
+    width:26px; height:26px;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ===== Crimson footer bookend ===== */
+  .doc-footer{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:24px 32px;
+    border-top:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-footer .verse{ font-family:'Cinzel', serif; color:var(--gold); letter-spacing:1px; font-size:14px; margin-bottom:6px; }
+  .doc-footer .small{ font-size:13px; opacity:.9; }
+
+  .page-break{ break-before:page; }
+
+  /* ===== Print rules ===== */
+  @page{
+    size:letter portrait;
+    margin:0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'EB Garamond', serif;
+      font-size:10px;
+      color:#7A1F1F;
+    }
+  }
+
+  @media print{
+    body{ font-size:12.5pt; background:#fff; }
+    .page-wrap{ max-width:none; margin:0; }
+    .doc-header{ padding:26px 20px 22px; }
+    .doc-header h1{ font-size:26pt; }
+    .body-region{ padding:26px 20px 30px; }
+    h2{ font-size:16pt; }
+    h3{ font-size:13pt; }
+    a{ color:inherit; text-decoration:none; }
+    .no-print{ display:none !important; }
+  }
+
+  .print-tip{
+    max-width:8.5in;
+    margin:14px auto 0;
+    font-size:13px;
+    color:#7a6f57;
+    text-align:center;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <div class="eyebrow">Work the Word &middot; Pronomian Teaching</div>
+    <h1>The Day of Atonement<br>in the Light of Christ</h1>
+    <div class="subtitle">The Holiest Day of the Year and Its Fulfillment in Our Great High Priest</div>
+    <div class="anchor">By His Own Blood He Entered In Once Into the Holy Place &middot; Hebrews 9:12</div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-region">
+    <span class="corner-br"></span>
+    <span class="corner-bl"></span>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <h2>What This Teaching Covers</h2>
+      <ol>
+        <li><a href="#place">The Day and Its Place in the Year</a></li>
+        <li><a href="#ot">The Old Testament Function</a></li>
+        <li><a href="#highpriest">The High Priest Goes Within the Veil</a></li>
+        <li><a href="#goats">The Two Goats</a></li>
+        <li><a href="#afflict">Afflict Your Souls</a></li>
+        <li><a href="#weakness">Why the Day Had to Be Repeated</a></li>
+        <li><a href="#nt">The New Testament Function</a></li>
+        <li><a href="#once">Once for All</a></li>
+        <li><a href="#twogoats">Both Goats Fulfilled in Christ</a></li>
+        <li><a href="#rabbinic">Rabbinic Traditions</a></li>
+        <li><a href="#early">Early Church Traditions</a></li>
+        <li><a href="#keep">How We Keep This Day Now</a></li>
+        <li><a href="#prophetic">The Day Still Ahead</a></li>
+        <li><a href="#questions">Discipleship Questions</a></li>
+      </ol>
+    </nav>
+
+    <!-- THE DAY AND ITS PLACE -->
+    <h2 id="place"><span class="num">1.</span>The Day and Its Place in the Year</h2>
+    <p class="lead dropcap">Of all the appointed times the LORD gave to His people, the Day of Atonement stands as the most solemn. It falls on the tenth day of the seventh month, in the heart of the fall feasts. The Feast of Trumpets opens that season with a loud blast, like an alarm. Ten days later comes the Day of Atonement, the one day in the whole year when the high priest was permitted to pass through the veil and stand in the Most Holy Place before the presence of God. Five days after that comes the joy of the Feast of Tabernacles. So this day sits at the hinge of the year, between the alarm and the rejoicing, and everything in it is about one thing: how a sinful people can be made clean before a holy God.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:27&ndash;28</div>
+      <p>"Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls, and offer an offering made by fire unto the LORD. And ye shall do no work in that same day: for it is a day of atonement, to make an atonement for you before the LORD your God."</p>
+    </div>
+
+    <p>Notice the three commands tied to the day. There is a holy convocation, a gathering of the people. There is the afflicting of the soul, which Scripture and long practice understand as fasting. And there is complete rest, a Sabbath of rest where no ordinary work is done. The LORD calls it a statute for ever throughout your generations, which means the day was never given an expiration. We will hold onto that point, because it shapes how we keep the day now.</p>
+
+    <!-- THE OT FUNCTION -->
+    <div class="page-break"></div>
+    <h2 id="ot"><span class="num">2.</span>The Old Testament Function</h2>
+    <span class="element-tag">Leviticus 16</span>
+    <p class="verdict"><strong>The need:</strong> a defiled sanctuary and a sinful people &nbsp;&middot;&nbsp; <strong>The means:</strong> blood and a scapegoat &nbsp;&middot;&nbsp; <strong>The result:</strong> cleansing for one more year</p>
+
+    <p>The full instructions for the day are laid out in Leviticus 16. To understand the day, you have to understand the problem it was answering. Through the year the people sinned, and the priests sinned, and even the holy things became defiled by the uncleanness of the nation living all around the tabernacle. Sin does not simply float away. It leaves a stain, and that stain settled on the sanctuary itself. The Day of Atonement was the day God set apart to deal with all of it at once, to cleanse the people, the priesthood, and the holy place together.</p>
+
+    <h3>One Man, One Day, One Door</h3>
+    <p>Only the high priest could perform this service, and he could only do it on this one day. He laid aside his ordinary garments of glory and beauty and put on plain white linen, a sign of humility before God. He washed himself, and he brought blood, because without the shedding of blood there is no remission of sin. Any other man who tried to enter that inner room, or the high priest entering on any other day, would die. The way into the presence of God was guarded, narrow, and costly.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 16:2</div>
+      <p>"...Speak unto Aaron thy brother, that he come not at all times into the holy place within the vail before the mercy seat... that he die not: for I will appear in the cloud upon the mercy seat."</p>
+    </div>
+
+    <!-- HIGH PRIEST WITHIN THE VEIL -->
+    <h2 id="highpriest"><span class="num">3.</span>The High Priest Goes Within the Veil</h2>
+    <p>The heart of the day was the high priest carrying blood into the Most Holy Place and sprinkling it on the mercy seat, the gold lid that covered the ark of the covenant. Inside that ark was the broken law, the testimony the people had failed to keep. The mercy seat sat directly over it. When the blood was sprinkled there, it spoke of mercy covering the very place where judgment was due. This was the one spot on earth where God promised to meet His people, and it could only be approached through blood.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 16:14</div>
+      <p>"And he shall take of the blood of the bullock, and sprinkle it with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood seven times."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">The Pattern to Watch</div>
+      <p>Hold this picture in your mind: a single mediator, entering the presence of God through a torn opening, carrying blood that covers a broken law. Every part of this points forward. When we reach the New Testament, we will see the same shape repeated, but with a better priest, better blood, and an entrance that never closes.</p>
+    </div>
+
+    <!-- THE TWO GOATS -->
+    <h2 id="goats"><span class="num">4.</span>The Two Goats</h2>
+    <p>The most striking part of the day involved two goats. The high priest took two goats that looked alike and cast lots over them. One lot fell for the LORD, and that goat was killed as a sin offering, its blood carried inside to make atonement. The other lot fell for the goat that would be sent away. Over its head the high priest confessed all the sins of the people, laying them on the animal, and then it was led out into the wilderness, carrying those sins far away, never to return.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 16:21&ndash;22</div>
+      <p>"And Aaron shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Israel... and shall send him away by the hand of a fit man into the wilderness: And the goat shall bear upon him all their iniquities unto a land not inhabited..."</p>
+    </div>
+
+    <p>Two goats, one truth told in two pictures. The first goat shows the price of sin paid in death and blood. The second goat shows the removal of sin, carried away so far that it can never be found again. You need both pictures to see the whole work. Sin must be paid for, and sin must be taken away. We will see that both of these were answered fully in one Person.</p>
+
+    <!-- AFFLICT YOUR SOULS -->
+    <h2 id="afflict"><span class="num">5.</span>Afflict Your Souls</h2>
+    <p>While the high priest worked, the whole nation kept the day in a particular way. They afflicted their souls. The plain meaning, understood by the people of God across the centuries, is fasting, going without food and drink for the day. It was not a punishment for its own sake. It was the body bowing along with the heart, a way of saying that on this day nothing matters more than being made right with God. A man with an empty stomach and a humble heart was confessing that he could not save himself and was casting himself wholly on God's mercy.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 16:29&ndash;30</div>
+      <p>"...in the seventh month, on the tenth day of the month, ye shall afflict your souls... For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before the LORD."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teaching Point</div>
+      <p>The fast was never meant to be only an empty stomach. The prophets warned the people that God despised a fast where men starved their bodies but kept right on with their cruelty and greed. The true affliction of the soul is a heart that turns from sin and toward God. Keep this in view, because it carries straight over into how a believer keeps this day now.</p>
+    </div>
+
+    <!-- WEAKNESS -->
+    <h2 id="weakness"><span class="num">6.</span>Why the Day Had to Be Repeated</h2>
+    <p>Here is the most important thing to see about the old Day of Atonement: it never finished the work. It came around every single year because it could never actually remove sin. The blood of bulls and goats could cover sin and push the account forward, but it could never wash a conscience clean or settle the matter for good. The very repetition was a sermon. Every year the people came back proved that last year's blood had not been enough.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 10:1&ndash;4</div>
+      <p>"For the law having a shadow of good things to come... can never with those sacrifices which they offered year by year continually make the comers thereunto perfect... For it is not possible that the blood of bulls and of goats should take away sins."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Shadow and Substance</div>
+      <p>The whole system was a shadow. A shadow proves there is a real object casting it, and it shows you the shape of that object before you ever see it. The Day of Atonement was the shadow. Its repeated, unfinished, blood-soaked work was pointing the whole time to a real and final atonement that was still to come. The shadow was good and given by God, but it was never the thing itself.</p>
+    </div>
+
+    <!-- THE NT FUNCTION -->
+    <div class="page-break"></div>
+    <h2 id="nt"><span class="num">7.</span>The New Testament Function</h2>
+    <p>When we open the New Testament, the book of Hebrews takes the Day of Atonement and shows us what it was always reaching toward. Every part of the old day finds its true meaning in the Lord Jesus Christ. He is the better High Priest, He carries better blood, and He enters a greater sanctuary. The earthly tabernacle was always a copy of a heavenly reality, and on the cross and in His ascension, the Lord did in heaven what the high priest only pictured on earth.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 9:11&ndash;12</div>
+      <p>"But Christ being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands... Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us."</p>
+    </div>
+
+    <p>Read those words slowly. The high priest carried the blood of an animal. The Lord Jesus carried His own blood. The high priest entered a room behind a curtain in a tent. The Lord entered the true and heavenly Most Holy Place. The high priest came out and had to do it all again next year. The Lord obtained eternal redemption, a redemption with no end date and no need for repeating. The shadow has met its substance.</p>
+
+    <!-- ONCE FOR ALL -->
+    <h2 id="once"><span class="num">8.</span>Once for All</h2>
+    <p>The phrase the New Testament keeps pressing on is "once." The old day was a yearly thing precisely because it could never be a finished thing. The work of Christ is the opposite. He offered Himself one time, and that one offering settled the matter for ever. There is no Day of Atonement that needs to roll around again to top up His sacrifice, because His sacrifice was complete the first time.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 9:25&ndash;26</div>
+      <p>"Nor yet that he should offer himself often... but now once in the end of the world hath he appeared to put away sin by the sacrifice of himself."</p>
+    </div>
+    <div class="scripture">
+      <div class="ref">Hebrews 10:14</div>
+      <p>"For by one offering he hath perfected for ever them that are sanctified."</p>
+    </div>
+
+    <p>And there is one more sign that the old day had done its work. At the very moment the Lord died, the veil of the temple, the same kind of curtain the high priest passed through on the Day of Atonement, was torn from top to bottom. No human hand tore it. God tore it, from the top down, opening the way into His presence that had been guarded for so long. The narrow, deadly door of Leviticus 16 was thrown wide open by the blood of the Son.</p>
+
+    <div class="scripture">
+      <div class="ref">Matthew 27:51</div>
+      <p>"And, behold, the veil of the temple was rent in twain from the top to the bottom..."</p>
+    </div>
+
+    <!-- BOTH GOATS -->
+    <h2 id="twogoats"><span class="num">9.</span>Both Goats Fulfilled in Christ</h2>
+    <p>Remember the two goats. They were one offering shown in two pictures, and the Lord Jesus is both. He is the slain goat, whose blood was offered to God to pay the full price of sin. And He is the goat sent away, carrying the sins of the people far off into a land not inhabited, so that they can never be brought back against us. He did not only pay for sin; He carried it away.</p>
+
+    <div class="scripture">
+      <div class="ref">Isaiah 53:6</div>
+      <p>"...and the LORD hath laid on him the iniquity of us all."</p>
+    </div>
+    <div class="scripture">
+      <div class="ref">Psalm 103:12</div>
+      <p>"As far as the east is from the west, so far hath he removed our transgressions from us."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>This is the comfort of the believer. Your sin was not merely covered for another year, waiting to come up again. In Christ it was paid for in full and carried away for ever. The slain goat says the debt is paid. The scapegoat says the record is gone. Both are true of you at once if you are in Him.</p>
+    </div>
+
+    <!-- RABBINIC -->
+    <div class="page-break"></div>
+    <h2 id="rabbinic"><span class="num">10.</span>Rabbinic Traditions</h2>
+    <p>We touch on these briefly, since they are not our focus, but they are striking. Over the centuries Jewish tradition built up customs around this day, and several of them, perhaps without meaning to, bear witness to the Messiah.</p>
+
+    <h3>The Crimson Thread</h3>
+    <p>An old record in the Talmud describes a crimson thread tied at the temple on the Day of Atonement. The tradition held that when the atonement was accepted, the thread would turn white, echoing the promise that scarlet sins can be made white as snow. The same record admits that for the last forty years before the temple was destroyed in 70 AD, the thread stopped turning white. Counting back forty years lands right at the time of the crucifixion. We hold this as an interesting historical witness rather than as Scripture, but the timing is hard to ignore: once the true sacrifice was made, the old sign of acceptance ceased.</p>
+
+    <h3>The Closing of the Gates</h3>
+    <p>The final prayer service of the day, as the sun sets, is built around the image of the gates of heaven slowly closing, with a last urgent plea for mercy before the door shuts. For the believer this carries a sober echo of the day when the door of grace will finally close, just as God Himself shut the door of the ark in the days of Noah.</p>
+
+    <h3>The Burial Garment</h3>
+    <p>Many observant men wear a plain white robe on this day, the same garment in which they will one day be buried. It speaks of purity, and it speaks of mortality, a way of dying to the flesh through fasting and humility. It is a quiet reminder that this day has always been about facing God honestly, with nothing hidden.</p>
+
+    <!-- EARLY CHURCH -->
+    <h2 id="early"><span class="num">11.</span>Early Church Traditions</h2>
+    <p>Again briefly, the earliest Christian teachers loved this feast, because it preached Christ so plainly. They used it to explain the gospel to their neighbors.</p>
+
+    <h3>The Two Goats as the Two Comings</h3>
+    <p>Early writings, including the Epistle of Barnabas and later Justin Martyr, taught that the two goats pictured the two comings of Christ. The slain goat showed His first coming in suffering and death. The goat sent away and then returning from the wilderness showed His coming again. They made much of the fact that the two goats had to look alike, since the same Jesus who was pierced and rejected is the same Jesus who will return in glory, recognized at last by those who pierced Him.</p>
+
+    <h3>The True Fast</h3>
+    <p>Teachers like Origen, while honoring the physical fast, pressed the deeper point the prophets had already made. The real affliction of the soul is to fast from sin itself, from malice and greed and pride, not merely from food. They tied the outward observance of the day to the inward obedience of the heart, which is exactly the balance the moral law has always called for.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>These traditions, Jewish and Christian alike, are useful as teaching pictures and as historical witnesses. They are not the rule of our faith. We test every one of them by Scripture, keep what agrees and points to Christ, and never bind anyone's conscience to a custom that God did not command.</p>
+    </div>
+
+    <!-- HOW WE KEEP IT -->
+    <div class="page-break"></div>
+    <h2 id="keep"><span class="num">12.</span>How We Keep This Day Now</h2>
+    <p>So how does a believer who walks in the commandments of God keep the Day of Atonement, now that the true atonement has been made? This is where the Pronomian view brings real clarity. The ceremonial machinery of the day, the animal blood, the earthly high priest, the sprinkling on the mercy seat, was the part that pointed to Christ, and that part is finished in Him. We do not, and could not, repeat it. But the appointed day itself was given as a statute for ever, and it still stands as a holy gathering and a Sabbath of rest.</p>
+
+    <h3>Keep What God Appointed</h3>
+    <p>Keep the day in its season as a holy convocation, gathering with the saints. Keep it as a Sabbath of rest, laying aside ordinary work. And keep the afflicting of the soul, which has always meant fasting and humbling the heart before God. These rest on the plain command of Scripture, and they were never tied to the temple or the sacrifices. A believer can keep all three without an altar, a priest, or a single drop of animal blood.</p>
+
+    <h3>Never Repeat the Sacrifice</h3>
+    <p>Do not look for any new offering for sin, on this day or any other. There is no goat to slay and no blood to carry in, because Christ our High Priest has entered once for all with His own blood. To set up any sacrifice for sin again would deny the finished work of the cross. If a teaching picture is used to explain Leviticus 16, let it point straight to the Lamb of God and never stand in as a substitute offering.</p>
+
+    <h3>Make It a Day of Looking to Christ</h3>
+    <p>For the believer the fast is not a desperate plea wondering whether God will accept us this year. It is the opposite. We fast and humble ourselves in joyful confidence, because the atonement is already accomplished and the veil is already torn. We use the day to search our own hearts, to confess and forsake sin, and to fix our eyes on the One who paid the price and carried our sin away. The old fast asked, "will I be covered?" The believer's fast says, "I am covered, and I come gladly to honor the One who covered me."</p>
+
+    <div class="keypoint">
+      <div class="label">The Whole Lesson in One Sentence</div>
+      <p>We keep the day God appointed as a Sabbath of rest, a holy gathering, and a humbling of the soul, while we look entirely to Christ for the atonement that the day's old sacrifices could only picture and never finish.</p>
+    </div>
+
+    <!-- PROPHETIC -->
+    <h2 id="prophetic"><span class="num">13.</span>The Day Still Ahead</h2>
+    <p>There is one more layer, because the appointed times point forward as well as back. Passover pointed to the cross, and it was fulfilled exactly on Passover. The spring feasts were kept by Christ in His first coming with stunning precision. The fall feasts wait on His return. The Feast of Trumpets sounds the alarm of the King's coming, and the Day of Atonement points to the great and final Day of the Lord, the day of judgment, when sin is removed from the earth for good and the sanctuary is finally and fully cleansed.</p>
+
+    <p>So when we keep this day now, we keep it looking two directions at once. We look back to the cross, where the price was paid and the sin carried away. And we look forward to the day when the Judge of all the earth sets every wrong right and dwells with a clean people for ever. The afflicting of the soul becomes a yearly rehearsal of that solemn and glorious day, keeping us sober, humble, and ready.</p>
+
+    <!-- ============ CONCLUSION ============ -->
+    <div class="conclusion">
+      <h2 style="margin-top:0;">The Atonement Is Finished</h2>
+      <p>The old Day of Atonement was a yearly memorial of a debt that could not be cleared. Each year the high priest went in alone, with borrowed blood, and came out again, only to return the next year, because the work was never done. It was a shadow waiting on its substance.</p>
+      <p>Now the substance has come. Our great High Priest entered once, with His own blood, into the true holy place, and obtained eternal redemption. He is the slain goat whose blood was offered and the scapegoat who carried our sin into a land not inhabited. The veil is torn. The way is open. So we keep the day He appointed, not to add to His finished work, but to humble our souls, search our hearts, and fix our eyes on the Lord who has done it all.</p>
+      <div class="scripture">
+        <div class="ref">Hebrews 10:14</div>
+        <p>"For by one offering he hath perfected for ever them that are sanctified."</p>
+      </div>
+    </div>
+
+    <!-- ============ QUESTIONS ============ -->
+    <div class="page-break"></div>
+    <h2 id="questions"><span class="num">14.</span>Discipleship Questions</h2>
+    <p>Answer in your own words from the Scriptures we have studied.</p>
+
+    <div class="questions">
+      <div class="q">
+        <div class="qtext">What three things did God command His people to do on the Day of Atonement, according to Leviticus 23:27&ndash;28?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Why was only the high priest allowed within the veil, and only on this one day of the year?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">The two goats told one truth in two pictures. What did each goat show about how God deals with sin?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Why did the old Day of Atonement have to be repeated every single year? What does Hebrews 10:4 say about the blood of bulls and goats?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How is the Lord Jesus a better High Priest than Aaron, according to Hebrews 9:11&ndash;12? Name at least two differences.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What happened to the veil of the temple when the Lord died, and why does that matter for this feast?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">In the Pronomian view, which parts of this day are finished in Christ, and which parts still remain for the believer to keep?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How is the believer's fast on this day different in heart from the old fast that asked whether God would accept them?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+    </div>
+
+    <!-- ============ ANSWER KEY ============ -->
+    <div class="page-break"></div>
+    <h2><span class="num">&#10003;</span>Teacher Answer Key</h2>
+    <div class="answer-key">
+      <div class="ak">A holy convocation or gathering of the people, the afflicting of the soul which means fasting and humbling the heart, and complete rest, a Sabbath where no ordinary work is done. The text calls it a statute for ever throughout their generations.</div>
+      <div class="ak">The way into God's presence was guarded, narrow, and costly. The high priest could only approach through blood, and only on this appointed day, to show that sinful people cannot come carelessly before a holy God. Leviticus 16:2 warns that he would die if he came at the wrong time, because God Himself appeared above the mercy seat.</div>
+      <div class="ak">The slain goat showed the price of sin paid in death and blood. The goat sent away showed sin being carried off into a land not inhabited, never to return. Together they teach that sin must both be paid for and taken away, and both are answered in Christ.</div>
+      <div class="ak">Because it could never actually remove sin. It could cover sin for a time and push the account forward, but it could not perfect the conscience or settle the matter for good. Hebrews 10:4 says it is not possible that the blood of bulls and goats should take away sins, so the very repetition proved the work was unfinished.</div>
+      <div class="ak">The Lord carried His own blood rather than the blood of animals. He entered the true and heavenly holy place rather than an earthly tent. And He entered once and obtained eternal redemption, rather than coming and going year after year. He is the perfect and final High Priest the old one only pictured.</div>
+      <div class="ak">The veil was torn in two from the top to the bottom by the hand of God. It was the same kind of curtain that guarded the Most Holy Place on the Day of Atonement. Its tearing showed that the way into God's presence was now open, the narrow and deadly door thrown wide by the blood of Christ.</div>
+      <div class="ak">Finished in Christ: the animal sacrifices, the earthly high priest, the sprinkling of blood on the mercy seat, the whole ceremonial system that pointed to Him. Remaining: the appointed day itself as a holy convocation, a Sabbath of rest, and the afflicting of the soul through fasting and humility, since these rest on the plain command of Scripture and were never tied to the temple sacrifices.</div>
+      <div class="ak">The old fast asked in uncertainty whether the people would be covered and accepted for another year. The believer's fast is kept in joyful confidence, because the atonement is already finished and the veil already torn. We humble ourselves not to earn acceptance but to honor the One who already secured it, searching our hearts and fixing our eyes on Christ.</div>
+    </div>
+
+  </div><!-- /body-region -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <div class="verse">Study to shew thyself approved unto God &middot; 2 Timothy 2:15</div>
+    <div class="small">Work the Word &middot; Pronomian Teaching Series</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>

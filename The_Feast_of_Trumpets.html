@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Feast of Trumpets: The Sound That Calls Us to the King</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson-dark:#7A1F1F;
+    --crimson-light:#9B3434;
+    --parchment:#FAF6EE;
+    --gold:#C9A84C;
+    --ink:#2B2622;
+    --cream:#FBF3E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:#EDE4CF;
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .page-wrap{
+    max-width:8.5in;
+    margin:0 auto;
+    background:var(--parchment);
+  }
+
+  /* ===== Crimson header bookend ===== */
+  .doc-header{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:38px 32px 30px;
+    border-bottom:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-header .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .doc-header h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+  .doc-header .subtitle{
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream);
+    opacity:.92;
+  }
+  .doc-header .anchor{
+    margin-top:14px;
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--gold);
+  }
+
+  /* ===== Body region with gold corner brackets ===== */
+  .body-region{
+    position:relative;
+    padding:40px 46px 46px;
+  }
+  .body-region::before,
+  .body-region::after{
+    content:"";
+    position:absolute;
+    width:42px; height:42px;
+    border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .body-region::before{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .body-region::after{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  .corner-br, .corner-bl{
+    position:absolute; width:42px; height:42px; border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .corner-br{ top:14px; right:14px; border-left:none; border-bottom:none; }
+  .corner-bl{ bottom:14px; left:14px; border-right:none; border-top:none; }
+
+  h2{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-dark);
+    font-size:23px;
+    margin:34px 0 6px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    break-after:avoid;
+  }
+  h2 .num{ color:var(--gold); margin-right:8px; }
+
+  h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-light);
+    font-size:18px;
+    margin:22px 0 4px;
+    break-after:avoid;
+  }
+
+  p{ margin:0 0 14px; }
+
+  .lead{ font-size:19px; }
+
+  /* Dropcap */
+  .dropcap::first-letter{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    float:left;
+    font-size:64px;
+    line-height:50px;
+    padding:6px 10px 0 0;
+  }
+
+  /* ===== Table of contents ===== */
+  .toc{
+    background:#fff;
+    border:1px solid #e3d9c4;
+    border-left:5px solid var(--gold);
+    padding:20px 26px;
+    margin:8px 0 10px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toc h2{
+    border:none; margin:0 0 8px; padding:0; font-size:19px;
+  }
+  .toc ol{ margin:0; padding-left:22px; columns:2; column-gap:34px; }
+  .toc li{ margin-bottom:5px; break-inside:avoid; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+
+  /* ===== Scripture box ===== */
+  .scripture{
+    background:#fff;
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:16px 22px 12px;
+    margin:16px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .scripture .ref{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--crimson-dark);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .scripture p{ font-style:italic; margin:0 0 6px; }
+
+  /* ===== Keypoint panel (crimson border) ===== */
+  .keypoint{
+    border:2px solid var(--crimson-light);
+    border-radius:4px;
+    background:#fff;
+    padding:16px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .keypoint .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .keypoint p:last-child{ margin-bottom:0; }
+
+  /* ===== Teacher / Bonus note (dashed gold) ===== */
+  .note{
+    border:2px dashed var(--gold);
+    border-radius:4px;
+    background:#FBF7EC;
+    padding:15px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .note .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:#8a7320;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .note p:last-child{ margin-bottom:0; }
+
+  /* ===== Element header tag ===== */
+  .element-tag{
+    display:inline-block;
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cream);
+    background:var(--crimson-light);
+    padding:3px 12px;
+    border-radius:3px;
+    margin-bottom:4px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .verdict{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:.5px;
+    color:var(--crimson-dark);
+    margin:2px 0 12px;
+  }
+  .verdict strong{ color:var(--crimson-dark); }
+
+  /* ===== Conclusion block ===== */
+  .conclusion{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px 32px;
+    margin:30px 0 8px;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .conclusion h2{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+  }
+  .conclusion p{ margin-bottom:12px; }
+  .conclusion .scripture{ background:rgba(255,255,255,.08); border-top-color:var(--gold); }
+  .conclusion .scripture .ref{ color:var(--gold); }
+  .conclusion .scripture p{ color:var(--cream); }
+
+  /* ===== Discipleship questions ===== */
+  .questions{ counter-reset:q; }
+  .q{
+    counter-increment:q;
+    position:relative;
+    padding-left:46px;
+    margin:0 0 22px;
+    break-inside:avoid;
+  }
+  .q::before{
+    content:counter(q);
+    position:absolute;
+    left:0; top:-2px;
+    width:30px; height:30px;
+    background:var(--crimson-dark);
+    color:var(--cream);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .q .qtext{ font-weight:600; margin-bottom:10px; }
+  .answer-line{
+    border-bottom:1px solid #c9bfa6;
+    height:24px;
+    margin:0 0 8px;
+  }
+
+  /* ===== Answer key ===== */
+  .answer-key{ counter-reset:a; }
+  .ak{
+    counter-increment:a;
+    position:relative;
+    padding-left:40px;
+    margin-bottom:16px;
+    break-inside:avoid;
+  }
+  .ak::before{
+    content:counter(a);
+    position:absolute; left:0; top:0;
+    width:26px; height:26px;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ===== Crimson footer bookend ===== */
+  .doc-footer{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:24px 32px;
+    border-top:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-footer .verse{ font-family:'Cinzel', serif; color:var(--gold); letter-spacing:1px; font-size:14px; margin-bottom:6px; }
+  .doc-footer .small{ font-size:13px; opacity:.9; }
+
+  .page-break{ break-before:page; }
+
+  /* ===== Print rules ===== */
+  @page{
+    size:letter portrait;
+    margin:0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'EB Garamond', serif;
+      font-size:10px;
+      color:#7A1F1F;
+    }
+  }
+
+  @media print{
+    body{ font-size:12.5pt; background:#fff; }
+    .page-wrap{ max-width:none; margin:0; }
+    .doc-header{ padding:26px 20px 22px; }
+    .doc-header h1{ font-size:26pt; }
+    .body-region{ padding:26px 20px 30px; }
+    h2{ font-size:16pt; }
+    h3{ font-size:13pt; }
+    a{ color:inherit; text-decoration:none; }
+    .no-print{ display:none !important; }
+  }
+
+  .print-tip{
+    max-width:8.5in;
+    margin:14px auto 0;
+    font-size:13px;
+    color:#7a6f57;
+    text-align:center;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <div class="eyebrow">Work the Word &middot; Pronomian Teaching</div>
+    <h1>The Feast of Trumpets</h1>
+    <div class="subtitle">The Sound That Calls Us to the King</div>
+    <div class="anchor">At the Last Trump We Shall Be Changed &middot; 1 Corinthians 15:52</div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-region">
+    <span class="corner-br"></span>
+    <span class="corner-bl"></span>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <h2>What This Teaching Covers</h2>
+      <ol>
+        <li><a href="#place">The Feast and Its Place in the Year</a></li>
+        <li><a href="#command">What Scripture Commands</a></li>
+        <li><a href="#trumpet">The Meaning of the Trumpet in Israel</a></li>
+        <li><a href="#season">The Opening of the Solemn Season</a></li>
+        <li><a href="#nt">The Feast in the New Testament</a></li>
+        <li><a href="#fall">The Fall Feasts and the Second Coming</a></li>
+        <li><a href="#rabbinic">Rabbinic Traditions</a></li>
+        <li><a href="#early">The Early Church and the Feasts</a></li>
+        <li><a href="#keep">How We Keep the Feast Now</a></li>
+        <li><a href="#practice">Setting It in Practice Today</a></li>
+        <li><a href="#questions">Discipleship Questions</a></li>
+      </ol>
+    </nav>
+
+    <!-- PLACE -->
+    <h2 id="place"><span class="num">1.</span>The Feast and Its Place in the Year</h2>
+    <p class="lead dropcap">Of all the feasts of the LORD, the Feast of Trumpets is the one most clearly tied to a sound. It does not center on a meal like the Passover, or on a booth like Tabernacles. It centers on a blast that splits the air and calls a people to attention. On the first day of the seventh month, when the new moon was sighted, the trumpet was to sound across the land, and every soul was to stop and listen.</p>
+
+    <p>The seventh month of God's calendar is the holiest stretch of the whole year. It opens with this feast, the day of the blowing of trumpets. Nine days later comes the Day of Atonement, the most solemn day on the calendar. Five days after that comes the Feast of Tabernacles, the great week of rejoicing and dwelling with God. The trumpet is the first note of that holy month. It is the sound that wakes the people and tells them the most sacred season has begun.</p>
+
+    <p>So this is not a small or forgettable feast. It is the opening blast of God's appointed climax to the year, and as we will see, it carries a meaning that reaches all the way to the return of the Lord Jesus Christ.</p>
+
+    <div class="keypoint">
+      <div class="label">The One Thing to Hold</div>
+      <p>A trumpet is never quiet background music. In Scripture it is a summons. It gathers, it warns, it announces a king, and it calls a people to get ready. Keep that in mind through this entire study, because the Feast of Trumpets is God commanding His people to listen for a summons.</p>
+    </div>
+
+    <!-- COMMAND -->
+    <h2 id="command"><span class="num">2.</span>What Scripture Commands</h2>
+    <p>Before we reach for any deeper meaning, we begin where we always begin: with the plain written word. The feast is given in two places, and the commands are short and clear.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:24-25</div>
+      <p>"Speak unto the children of Israel, saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation. Ye shall do no servile work therein: but ye shall offer an offering made by fire unto the LORD."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Numbers 29:1</div>
+      <p>"And in the seventh month, on the first day of the month, ye shall have an holy convocation; ye shall do no servile work: it is a day of blowing the trumpets unto you."</p>
+    </div>
+
+    <p>From these two passages we can list exactly what God commanded, and nothing more. The day is fixed: the first day of the seventh month. It is a sabbath rest, so no servile work is to be done. It is a holy convocation, which means a set apart gathering of God's people. It is marked by the blowing of trumpets, which is why we call it the Feast of Trumpets. And in the days of the Temple, an offering was made by fire to the LORD.</p>
+
+    <p>That last item, the fire offering, is the one part we no longer carry out, and the reason is the same reason we no longer slay a Passover lamb. The sacrificial system that pointed forward to the cross has been fulfilled in Christ. The feast itself remains. The animal offering attached to it has met its end in the perfect sacrifice of the Lord Jesus. We will return to this when we ask how to keep the feast now.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Notice how little the written command actually requires. A set day, a rest from work, a holy gathering, and the sounding of the trumpet. Everything else that has grown up around this feast over the centuries is either a tradition or a teaching picture. Keep the command and the tradition in separate hands, the same way we did with the Passover plate.</p>
+    </div>
+
+    <!-- TRUMPET MEANING -->
+    <h2 id="trumpet"><span class="num">3.</span>The Meaning of the Trumpet in Israel</h2>
+    <p>To understand why God would set aside a whole feast for the sound of a trumpet, we have to know what the trumpet meant to Israel. It was never just noise. Scripture gives it several clear uses, and each one feeds into the meaning of this feast.</p>
+
+    <h3>The Trumpet Gathered the People</h3>
+    <p>When God gave Israel the silver trumpets, the first purpose He named was the gathering of the assembly. The sound called a scattered people into one place before the LORD.</p>
+    <div class="scripture">
+      <div class="ref">Numbers 10:2-3</div>
+      <p>"Make thee two trumpets of silver... that thou mayest use them for the calling of the assembly... And when they shall blow with them, all the assembly shall assemble themselves to thee at the door of the tabernacle of the congregation."</p>
+    </div>
+
+    <h3>The Trumpet Sounded the Alarm</h3>
+    <p>The same trumpet warned of danger and called the people to war. It was the sound that told a man to wake up, take his stand, and trust that God would remember His people in the battle.</p>
+    <div class="scripture">
+      <div class="ref">Numbers 10:9</div>
+      <p>"And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before the LORD your God, and ye shall be saved from your enemies."</p>
+    </div>
+
+    <h3>The Trumpet Announced the King and the Holy Days</h3>
+    <p>The trumpet was blown over the offerings, in the new moons, and in Israel's solemn days. It heralded the presence of the King of heaven among His people, and later it was sounded at the crowning of earthly kings as well. Where the trumpet sounded, a royal and holy moment was being declared.</p>
+    <div class="scripture">
+      <div class="ref">Numbers 10:10</div>
+      <p>"Also in the day of your gladness, and in your solemn days, and in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings... that they may be to you for a memorial before your God."</p>
+    </div>
+    <div class="scripture">
+      <div class="ref">Psalm 47:5</div>
+      <p>"God is gone up with a shout, the LORD with the sound of a trumpet."</p>
+    </div>
+
+    <h3>The Trumpet Proclaimed Liberty</h3>
+    <p>In the year of jubilee, the trumpet was the very sound that set captives free and returned every man to his inheritance. The blast of the horn meant that bondage was over and the great release had come.</p>
+    <div class="scripture">
+      <div class="ref">Leviticus 25:9-10</div>
+      <p>"Then shalt thou cause the trumpet of the jubile to sound... and ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Put the Sounds Together</div>
+      <p>Gathering, alarm, the announcement of the King, and the proclaiming of liberty. Now hold all four of those together and ask what it would mean if God blew one great trumpet over the whole earth. It would mean His people are gathered, the last warning is given, the King has come, and the great release has arrived. That is exactly where the New Testament takes this feast.</p>
+    </div>
+
+    <!-- SEASON -->
+    <h2 id="season"><span class="num">4.</span>The Opening of the Solemn Season</h2>
+    <p>The Feast of Trumpets does not stand alone. It is the doorway into the most serious nine days of the year. Right after the trumpet sounds on the first of the seventh month comes a steady march toward the Day of Atonement on the tenth, and then the joy of Tabernacles on the fifteenth.</p>
+
+    <p>Read in order, the season tells a story. First the trumpet sounds, calling the people to wake and assemble. Then comes the Day of Atonement, the day of deep humbling and cleansing before God. Then comes Tabernacles, the week of dwelling with God in rejoicing. The trumpet is the alarm that says the most holy days are now upon you, so set your heart in order.</p>
+
+    <p>The prophets used the trumpet exactly this way, as a call to wake the people before a great day of the LORD drew near.</p>
+    <div class="scripture">
+      <div class="ref">Joel 2:1</div>
+      <p>"Blow ye the trumpet in Zion, and sound an alarm in my holy mountain: let all the inhabitants of the land tremble: for the day of the LORD cometh, for it is nigh at hand."</p>
+    </div>
+
+    <p>So even within the Old Testament calendar, the trumpet is forward looking. It points past itself, down the road, to the days of reckoning and rejoicing that are coming. That forward lean is the heart of why this feast matters so much to the believer.</p>
+
+    <!-- NEW TESTAMENT -->
+    <div class="page-break"></div>
+    <h2 id="nt"><span class="num">5.</span>The Feast in the New Testament</h2>
+    <p class="lead">Here the feast opens up into its fullest meaning. The trumpet that gathered Israel, that sounded the alarm, that announced the King, that proclaimed liberty, becomes in the New Testament the very trumpet of God that will sound at the return of the Lord Jesus Christ.</p>
+
+    <h3>The Trump of God and the Resurrection</h3>
+    <p>When Paul describes the day the Lord returns and the dead in Christ are raised, he reaches for this exact image. The Lord descends with a shout and with the trump of God, and the graves give up the saints.</p>
+    <div class="scripture">
+      <div class="ref">1 Thessalonians 4:16-17</div>
+      <p>"For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first: Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord."</p>
+    </div>
+
+    <p>Paul says the same thing to the Corinthians, and there he names the trumpet plainly as the last trump. At its sound the dead are raised incorruptible and the living are changed in an instant.</p>
+    <div class="scripture">
+      <div class="ref">1 Corinthians 15:51-52</div>
+      <p>"Behold, I shew you a mystery; We shall not all sleep, but we shall all be changed, In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed."</p>
+    </div>
+
+    <h3>The Trumpet That Gathers the Elect</h3>
+    <p>The Lord Jesus Himself tied His return to a trumpet that gathers His people from the ends of the earth. This is the gathering use of the trumpet, now stretched across the whole world.</p>
+    <div class="scripture">
+      <div class="ref">Matthew 24:30-31</div>
+      <p>"And then shall appear the sign of the Son of man in heaven... And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other."</p>
+    </div>
+
+    <p>Notice carefully when the Lord places this trumpet. He sets it after the tribulation of those days, not before it. The same chapter says it plainly.</p>
+    <div class="scripture">
+      <div class="ref">Matthew 24:29</div>
+      <p>"Immediately after the tribulation of those days shall the sun be darkened... and the powers of the heavens shall be shaken."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Where the Trumpet Falls in the Last Days</div>
+      <p>The Lord places the great trumpet and the gathering of His elect immediately after the tribulation, and before the wrath of God is poured out on the wicked. This is why we hold that the church passes through the tribulation, is gathered to the Lord at the last trump, and is then kept from the wrath that follows. The trumpet is the sound of that gathering, not a secret signal years ahead of it.</p>
+    </div>
+
+    <h3>The Seventh Trumpet and the Kingdom</h3>
+    <p>In the book of Revelation, the final trumpet announces that the kingdoms of this world have at last become the kingdom of our Lord. This is the trumpet in its royal use, declaring that the King has taken His throne.</p>
+    <div class="scripture">
+      <div class="ref">Revelation 11:15</div>
+      <p>"And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Christ; and he shall reign for ever and ever."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teaching Point</div>
+      <p>Every use of the trumpet that Israel knew comes together at the return of Christ. The dead are gathered and raised. The last alarm has sounded. The King is openly crowned over the earth. And the great liberty of the redeemed creation begins. The little silver trumpet over the tabernacle was always a small picture of this one enormous blast.</p>
+    </div>
+
+    <!-- FALL FEASTS -->
+    <h2 id="fall"><span class="num">6.</span>The Fall Feasts and the Second Coming</h2>
+    <p>There is a pattern in the feasts that helps us see why the Feast of Trumpets points where it does. The feasts of the LORD fall into two seasons, and those two seasons line up with the two comings of Christ.</p>
+
+    <h3>The Spring Feasts and the First Coming</h3>
+    <p>The spring feasts were fulfilled in the first coming of the Lord, right on their appointed days. Christ our Passover was crucified at Passover. He was the unleavened bread, without the leaven of sin, laid in the tomb during Unleavened Bread. He rose as the firstfruits of them that slept at the time of Firstfruits. And the Holy Ghost was poured out on the church at the Feast of Weeks, which we know as Pentecost.</p>
+    <div class="scripture">
+      <div class="ref">1 Corinthians 5:7</div>
+      <p>"For even Christ our passover is sacrificed for us."</p>
+    </div>
+
+    <h3>The Fall Feasts and the Second Coming</h3>
+    <p>The fall feasts have not yet seen their great fulfillment, and they point toward the Lord's return. The Feast of Trumpets points to the day He descends with the trump of God to gather and raise His people. The Day of Atonement points to the great reckoning and the final cleansing of His people. The Feast of Tabernacles points to the day He dwells with us and we dwell with Him in His kingdom.</p>
+
+    <div class="keypoint">
+      <div class="label">Why This Matters for the Feast of Trumpets</div>
+      <p>The spring feasts were fulfilled on their very days, so we have good reason to honor the fall feasts as pictures of what is still to come. The Feast of Trumpets is the next great signpost on the calendar of God. When we keep it, we are rehearsing the day the trumpet sounds and the Lord returns. We do not set dates, for no man knows the day or the hour, but we keep watch and stay ready, which is exactly what the feast was made to teach.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">A Word of Caution</div>
+      <p>Some teachers try to use this feast to pin down the year or the day of the Lord's return, and a few even read the words "no man knoweth the day or the hour" as a coded reference to this feast beginning on the new moon. Hold such claims very loosely. The Lord plainly said no man knows that day, and our calling is readiness, not date setting. Teach the pattern as a pattern, and let the timing rest in the hands of God.</p>
+    </div>
+
+    <!-- RABBINIC -->
+    <div class="page-break"></div>
+    <h2 id="rabbinic"><span class="num">7.</span>Rabbinic Traditions</h2>
+    <p>Over the centuries a large body of custom grew up around this feast in Judaism, and it is worth knowing, as long as we keep it in its place. These are traditions of men, not commandments of God, and we do not bind anyone to them.</p>
+
+    <p>In rabbinic practice the feast came to be called Rosh Hashanah, which means the head of the year, and it is kept as a new year. Yet Scripture itself names the first month, the month of the Passover, as the beginning of months. So the idea of a new year in the seventh month is a tradition laid on top of the calendar God gave, not the reckoning God commanded.</p>
+
+    <p>The day also became known as a day of judgment in the rabbinic mind, the time when books are opened in heaven and a person's standing for the year is weighed. This grew into the season often called the days of awe, the ten days from this feast to the Day of Atonement, given to repentance and the mending of wrongs. Other customs followed: the sounding of the horn in long sequences of blasts, the casting of crumbs into flowing water as a picture of sins carried away, and the eating of apples dipped in honey as a wish for a sweet year.</p>
+
+    <div class="keypoint">
+      <div class="label">How to Weigh These Customs</div>
+      <p>Some of these traditions hold a true thread. The trumpet really does call us to wake and repent, and the season really does lean toward the Day of Atonement. A believer may use that theme of readiness and self examination as a teaching tool. But the new year reckoning, the books and the wishes for a sweet year, and the customs of crumbs and honey are man-made. We may explain them, we may even borrow a picture that points to Christ, but we never preach them as commands of God.</p>
+    </div>
+
+    <!-- EARLY CHURCH -->
+    <h2 id="early"><span class="num">8.</span>The Early Church and the Feasts</h2>
+    <p>The first believers were Jews who already kept the feasts, and for a season they continued in them while preaching Christ. We see Paul mindful of the appointed times, hurrying to be at Jerusalem for Pentecost, and reasoning in the synagogues on the Sabbath. The feasts were not treated as forbidden ground by the early church; they were the familiar rhythm of life for many of the first disciples.</p>
+    <div class="scripture">
+      <div class="ref">Acts 20:16</div>
+      <p>"...for he hasted, if it were possible for him, to be at Jerusalem the day of Pentecost."</p>
+    </div>
+
+    <p>As the years passed and the church became largely Gentile, much of this practice fell away, and later councils pushed the church further from the Hebrew calendar. The Feast of Trumpets in particular has little direct record of formal observance in the early Gentile church, so we should be careful not to claim more than the history shows. What we can say plainly is this: the trumpet of God never left the faith. It stayed at the very center of the church's hope, in the resurrection and the return of the Lord, even where the feast day itself was no longer kept.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Keep this section short in your teaching. The honest picture is that the early Jewish believers kept the feasts and the wider church gradually let them go, while still holding the trumpet of God in its doctrine of the last things. Do not overstate a continuous Gentile observance of this particular feast, because the records do not bear that weight. Our case for keeping it rests on the commandment of God, not on a chain of church custom.</p>
+    </div>
+
+    <!-- HOW WE KEEP IT -->
+    <h2 id="keep"><span class="num">9.</span>How We Keep the Feast Now</h2>
+    <p class="lead">This brings us to the heart of the matter for the believer who walks in the whole counsel of God. The Feast of Trumpets is a feast of the LORD, set among His appointed times, and He never called it back. So we do not ask whether we may keep it. We ask how to keep it now that the true Lamb has come and the great trumpet still lies ahead.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:4</div>
+      <p>"These are the feasts of the LORD, even holy convocations, which ye shall proclaim in their seasons."</p>
+    </div>
+
+    <h3>Keep the Appointed Time</h3>
+    <p>We keep the feast on its day, the first day of the seventh month, when the new moon opens that holy month. It is a sabbath rest, so we set aside our servile work and give the day to the LORD. And it is a holy convocation, so we gather as the people of God rather than keeping it alone. The set day, the rest, and the gathering all rest on the plain command of Scripture, and they form the backbone of how we keep the feast.</p>
+
+    <h3>Sound the Trumpet as a Memorial</h3>
+    <p>The command calls this a memorial of the blowing of trumpets, so we blow the trumpet. The sounding of the horn is not a tradition added by men; it is the very thing the feast is named for. When the trumpet sounds in our assembly, it preaches a sermon without a word. It gathers us, it warns us, it announces our King, and it tells us to be ready for the day the trump of God will sound for real.</p>
+
+    <h3>Do Not Offer the Fire Offering</h3>
+    <p>The one part of the old command we do not perform is the offering made by fire. The animal offerings of the feasts belonged to the sacrificial system, and that whole system has been fulfilled in the once for all sacrifice of the Lord Jesus Christ. We do not slay a Passover lamb, and in the same way we do not bring the burnt offering of this feast. To do so would treat the finished work of Christ as though it were still missing. The feast remains; the blood offering is finished in Him.</p>
+    <div class="scripture">
+      <div class="ref">Hebrews 10:12</div>
+      <p>"But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God."</p>
+    </div>
+
+    <h3>Proclaim the King and the Coming Day</h3>
+    <p>Above all, we keep the feast looking forward. We use the trumpet to proclaim the Lord Jesus as King and to stir one another to be ready for His return. The feast becomes a yearly rehearsal of the day He descends with the trump of God. We examine our hearts, we make our walk straight before Him, and we lift our eyes to the eastern sky. This is the readiness the feast was built to teach, and it is the readiness the Lord commanded of every servant who waits for his master.</p>
+    <div class="scripture">
+      <div class="ref">Matthew 24:44</div>
+      <p>"Therefore be ye also ready: for in such an hour as ye think not the Son of man cometh."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">The Whole Lesson in One Sentence</div>
+      <p>We keep the feast God commanded on its appointed day, we sound the trumpet as a living memorial, we let Christ be the finished sacrifice where the old fire offering stood, and we lift the whole feast toward the day the trump of God will gather us to the King.</p>
+    </div>
+
+    <!-- PRACTICE -->
+    <h2 id="practice"><span class="num">10.</span>Setting It in Practice Today</h2>
+    <p>So how does an assembly actually keep this feast in a way that is faithful and clear? Here is a plain pattern that holds the commandment and the tradition in their right places.</p>
+
+    <h3>Keep What God Commanded</h3>
+    <p>Set apart the first day of the seventh month as a holy convocation and a sabbath rest. Gather the people of God. Rest from servile work. Sound the trumpet as the memorial the LORD named. These few things rest on the written word, and they are the center of how we keep the day.</p>
+
+    <h3>Fill the Day with the Word of the Trumpet</h3>
+    <p>Build the gathering around the meaning of the sound. Read the passages where the trumpet gathers, warns, announces the King, and proclaims liberty. Read the promise of the trump of God and the resurrection. Let the day be a teaching day and a watching day, calling every heart to readiness for the Lord's return.</p>
+
+    <h3>Weigh the Traditions Honestly</h3>
+    <p>If a tradition carries a true picture, you may use it as a teaching tool, as long as no one is told it is a command. The theme of repentance and self examination leading toward the Day of Atonement is worth keeping before the people. The customs of a new year, of apples and honey, of crumbs cast on the water, may be explained as Jewish tradition, but they bind no believer's conscience and they are not the substance of the feast.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>If the class asks, "must we blow a real trumpet, or is it only symbolic?", answer from the command. The feast is named a memorial of the blowing of trumpets, so an actual sounding of the horn is the most faithful way to keep it, and it is a powerful teaching moment for young and old. If no horn is available, the day is still kept by the rest, the gathering, and the proclaiming of the coming of the Lord. The conscience stays free, and Christ and His return stay central.</p>
+    </div>
+
+    <!-- ============ CONCLUSION ============ -->
+    <div class="conclusion">
+      <h2 style="margin-top:0;">Be Ready for the Trump</h2>
+      <p>The Feast of Trumpets is the sound of waiting that ends in a sound of glory. For Israel it gathered the camp, warned of war, crowned the King, and proclaimed liberty. For the believer it does all of that and more, because it points straight to the day the Lord Himself will descend with the trump of God, raise the dead in Christ, and gather His own to meet Him in the air.</p>
+      <p>So we keep the feast, and we keep it leaning forward. We blow the trumpet each year as a living memorial, knowing that one day a far greater trumpet will sound, and the waiting will be over. Until then we watch, we walk in His commandments, and we keep our hearts ready for the King.</p>
+      <div class="scripture">
+        <div class="ref">1 Corinthians 15:52</div>
+        <p>"In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed."</p>
+      </div>
+    </div>
+
+    <!-- ============ QUESTIONS ============ -->
+    <div class="page-break"></div>
+    <h2 id="questions"><span class="num">11.</span>Discipleship Questions</h2>
+    <p>Answer in your own words from the Scriptures we have studied.</p>
+
+    <div class="questions">
+      <div class="q">
+        <div class="qtext">On what day of the calendar is the Feast of Trumpets kept, and what three things does Scripture command for that day?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">List the four uses of the trumpet in Israel that we studied. How does each one come together at the return of Christ?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Where does the Lord place the great trumpet and the gathering of His elect in Matthew 24, before or after the tribulation? Give the verse.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How do the spring feasts and the fall feasts line up with the two comings of Christ? Where does the Feast of Trumpets fit in that pattern?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Which part of the old command for this feast do we no longer perform, and why?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Name two rabbinic traditions attached to this feast and explain why they are traditions of men rather than commandments of God.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Why should we be careful about anyone who uses this feast to set the date of the Lord's return? What did the Lord say about that day?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">In one sentence, how does a believer keep this feast faithfully today while keeping Christ at the center?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+    </div>
+
+    <!-- ============ ANSWER KEY ============ -->
+    <div class="page-break"></div>
+    <h2><span class="num">&#10003;</span>Teacher Answer Key</h2>
+    <div class="answer-key">
+      <div class="ak">It is kept on the first day of the seventh month (Leviticus 23:24). Scripture commands a sabbath rest with no servile work, a holy convocation or set apart gathering, and the blowing of trumpets. In the days of the Temple an offering made by fire was also commanded, which has since been fulfilled in Christ.</div>
+      <div class="ak">The trumpet gathered the assembly (Numbers 10:2-3), sounded the alarm and called to war (Numbers 10:9), announced the King and the holy days (Numbers 10:10, Psalm 47:5), and proclaimed liberty in the jubilee (Leviticus 25:9-10). At the Lord's return all four meet: His people are gathered and raised, the last alarm sounds, the King is openly crowned, and the great liberty of the redeemed begins.</div>
+      <div class="ak">The Lord places the trumpet and the gathering immediately after the tribulation, not before it. Matthew 24:29-31 says, "Immediately after the tribulation of those days," then He sends His angels "with a great sound of a trumpet" to gather the elect. This is why we hold that the church passes through the tribulation and is gathered at the last trump, then kept from the wrath that follows.</div>
+      <div class="ak">The spring feasts were fulfilled at the first coming: Passover, Unleavened Bread, Firstfruits, and Weeks. The fall feasts point to the second coming. The Feast of Trumpets points to the day the Lord descends with the trump of God to raise the dead and gather His people, making it the next great signpost on God's calendar.</div>
+      <div class="ak">We no longer bring the offering made by fire. That offering belonged to the sacrificial system, which has been fulfilled once for all in the sacrifice of the Lord Jesus Christ (Hebrews 10:12). The feast remains, but the blood offering is finished in Him, just as we no longer slay a Passover lamb.</div>
+      <div class="ak">Examples include the new year reckoning called Rosh Hashanah, the season of the days of awe, the casting of crumbs on water, and apples dipped in honey. These are traditions of men because Scripture names the first month as the beginning of months, and it commands none of these customs. They may be explained or used as pictures, but they are not binding commands.</div>
+      <div class="ak">We should be careful because the Lord plainly said that no man knows the day or the hour (Matthew 24:36). Our calling is readiness, not date setting. We may teach the prophetic pattern of the feast, but we leave the timing in the hands of God and refuse to bind the people to a predicted date.</div>
+      <div class="ak">We keep the feast on its appointed day with rest, gathering, and the sounding of the trumpet, we treat Christ as the finished sacrifice where the old fire offering stood, and we lift the whole feast toward the day the trump of God will gather us to the King, watching and walking in His commandments until He comes.</div>
+    </div>
+
+  </div><!-- /body-region -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <div class="verse">Study to shew thyself approved unto God &middot; 2 Timothy 2:15</div>
+    <div class="small">Work the Word &middot; Pronomian Teaching Series</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>

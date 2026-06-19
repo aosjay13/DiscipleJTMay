@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Passover Seder Plate in the Light of Christ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson-dark:#7A1F1F;
+    --crimson-light:#9B3434;
+    --parchment:#FAF6EE;
+    --gold:#C9A84C;
+    --ink:#2B2622;
+    --cream:#FBF3E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .page-wrap{
+    max-width:8.5in;
+    margin:0 auto;
+    background:var(--parchment);
+  }
+
+  /* ===== Crimson header bookend ===== */
+  .doc-header{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:38px 32px 30px;
+    border-bottom:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-header .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .doc-header h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+  .doc-header .subtitle{
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream);
+    opacity:.92;
+  }
+  .doc-header .anchor{
+    margin-top:14px;
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--gold);
+  }
+
+  /* ===== Body region with gold corner brackets ===== */
+  .body-region{
+    position:relative;
+    padding:40px 46px 46px;
+  }
+  .body-region::before,
+  .body-region::after{
+    content:"";
+    position:absolute;
+    width:42px; height:42px;
+    border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .body-region::before{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .body-region::after{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  .corner-br, .corner-bl{
+    position:absolute; width:42px; height:42px; border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .corner-br{ top:14px; right:14px; border-left:none; border-bottom:none; }
+  .corner-bl{ bottom:14px; left:14px; border-right:none; border-top:none; }
+
+  h2{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-dark);
+    font-size:23px;
+    margin:34px 0 6px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    break-after:avoid;
+  }
+  h2 .num{ color:var(--gold); margin-right:8px; }
+
+  h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-light);
+    font-size:18px;
+    margin:22px 0 4px;
+    break-after:avoid;
+  }
+
+  p{ margin:0 0 14px; }
+
+  .lead{ font-size:19px; }
+
+  /* Dropcap */
+  .dropcap::first-letter{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    float:left;
+    font-size:64px;
+    line-height:50px;
+    padding:6px 10px 0 0;
+  }
+
+  /* ===== Table of contents ===== */
+  .toc{
+    background:#fff;
+    border:1px solid #e3d9c4;
+    border-left:5px solid var(--gold);
+    padding:20px 26px;
+    margin:8px 0 10px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toc h2{
+    border:none; margin:0 0 8px; padding:0; font-size:19px;
+  }
+  .toc ol{ margin:0; padding-left:22px; columns:2; column-gap:34px; }
+  .toc li{ margin-bottom:5px; break-inside:avoid; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+
+  /* ===== Scripture box ===== */
+  .scripture{
+    background:#fff;
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:16px 22px 12px;
+    margin:16px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .scripture .ref{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--crimson-dark);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .scripture p{ font-style:italic; margin:0 0 6px; }
+
+  /* ===== Keypoint panel (crimson border) ===== */
+  .keypoint{
+    border:2px solid var(--crimson-light);
+    border-radius:4px;
+    background:#fff;
+    padding:16px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .keypoint .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .keypoint p:last-child{ margin-bottom:0; }
+
+  /* ===== Teacher / Bonus note (dashed gold) ===== */
+  .note{
+    border:2px dashed var(--gold);
+    border-radius:4px;
+    background:#FBF7EC;
+    padding:15px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .note .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:#8a7320;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .note p:last-child{ margin-bottom:0; }
+
+  /* ===== Element header tag ===== */
+  .element-tag{
+    display:inline-block;
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cream);
+    background:var(--crimson-light);
+    padding:3px 12px;
+    border-radius:3px;
+    margin-bottom:4px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .verdict{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:.5px;
+    color:var(--crimson-dark);
+    margin:2px 0 12px;
+  }
+  .verdict strong{ color:var(--crimson-dark); }
+
+  /* ===== Conclusion block ===== */
+  .conclusion{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px 32px;
+    margin:30px 0 8px;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .conclusion h2{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+  }
+  .conclusion p{ margin-bottom:12px; }
+  .conclusion .scripture{ background:rgba(255,255,255,.08); border-top-color:var(--gold); }
+  .conclusion .scripture .ref{ color:var(--gold); }
+  .conclusion .scripture p{ color:var(--cream); }
+
+  /* ===== Discipleship questions ===== */
+  .questions{ counter-reset:q; }
+  .q{
+    counter-increment:q;
+    position:relative;
+    padding-left:46px;
+    margin:0 0 22px;
+    break-inside:avoid;
+  }
+  .q::before{
+    content:counter(q);
+    position:absolute;
+    left:0; top:-2px;
+    width:30px; height:30px;
+    background:var(--crimson-dark);
+    color:var(--cream);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .q .qtext{ font-weight:600; margin-bottom:10px; }
+  .answer-line{
+    border-bottom:1px solid #c9bfa6;
+    height:24px;
+    margin:0 0 8px;
+  }
+
+  /* ===== Answer key ===== */
+  .answer-key{ counter-reset:a; }
+  .ak{
+    counter-increment:a;
+    position:relative;
+    padding-left:40px;
+    margin-bottom:16px;
+    break-inside:avoid;
+  }
+  .ak::before{
+    content:counter(a);
+    position:absolute; left:0; top:0;
+    width:26px; height:26px;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ===== Crimson footer bookend ===== */
+  .doc-footer{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:24px 32px;
+    border-top:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-footer .verse{ font-family:'Cinzel', serif; color:var(--gold); letter-spacing:1px; font-size:14px; margin-bottom:6px; }
+  .doc-footer .small{ font-size:13px; opacity:.9; }
+
+  .page-break{ break-before:page; }
+
+  /* ===== Print rules ===== */
+  @page{
+    size:letter portrait;
+    margin:0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'EB Garamond', serif;
+      font-size:10px;
+      color:#7A1F1F;
+    }
+  }
+
+  @media print{
+    body{ font-size:12.5pt; background:#fff; }
+    .page-wrap{ max-width:none; margin:0; }
+    .doc-header{ padding:26px 20px 22px; }
+    .doc-header h1{ font-size:26pt; }
+    .body-region{ padding:26px 20px 30px; }
+    h2{ font-size:16pt; }
+    h3{ font-size:13pt; }
+    a{ color:inherit; text-decoration:none; }
+    .no-print{ display:none !important; }
+  }
+
+  .print-tip{
+    max-width:8.5in;
+    margin:14px auto 0;
+    font-size:13px;
+    color:#7a6f57;
+    text-align:center;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <div class="eyebrow">Work the Word &middot; Pronomian Teaching</div>
+    <h1>The Passover Seder Plate<br>in the Light of Christ</h1>
+    <div class="subtitle">Keeping the Feast Now That the Lamb Has Come</div>
+    <div class="anchor">Christ Our Passover Is Sacrificed for Us &middot; 1 Corinthians 5:7</div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-region">
+    <span class="corner-br"></span>
+    <span class="corner-bl"></span>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <h2>What This Teaching Covers</h2>
+      <ol>
+        <li><a href="#story">The Story of the Passover</a></li>
+        <li><a href="#intro">The Feast That Remains</a></li>
+        <li><a href="#two">Commandment and Tradition</a></li>
+        <li><a href="#center">The Center of the Plate</a></li>
+        <li><a href="#shankbone">The Shankbone</a></li>
+        <li><a href="#egg">The Egg</a></li>
+        <li><a href="#maror">The Bitter Herbs</a></li>
+        <li><a href="#chazeret">The Second Bitter Herb</a></li>
+        <li><a href="#charoset">The Sweet Paste</a></li>
+        <li><a href="#karpas">The Spring Vegetable</a></li>
+        <li><a href="#matzah">The Unleavened Bread</a></li>
+        <li><a href="#cup">The Cup</a></li>
+        <li><a href="#setting">Setting the Plate Today</a></li>
+        <li><a href="#questions">Discipleship Questions</a></li>
+      </ol>
+    </nav>
+
+    <!-- INTRO -->
+    <!-- STORY -->
+    <h2 id="story"><span class="num">1.</span>The Story of the Passover</h2>
+    <p class="lead dropcap">Before we look at a single dish on the plate, we need the story that the plate was made to remember. It runs in three movements. It begins on a dark night in Egypt, it returns on a borrowed upstairs room the night before the cross, and it finds its end at Golgotha, where the true Lamb of God was slain. Hold all three together and the whole table opens up.</p>
+
+    <h3>The First Passover in Egypt</h3>
+    <p>Israel had been slaves in Egypt for generations, crushed under hard bondage, crying out under the whip. God heard them, and He raised up Moses to bring them out. Plague after plague fell on Egypt, yet Pharaoh would not let the people go. So God prepared one final judgment, and with it He gave His people a way to be spared.</p>
+    <p>On the tenth day of the first month, every household was to take a lamb without blemish and keep it until the fourteenth day. At evening they were to kill it, then take its blood and strike it on the two side posts and the upper post of the door. That blood was the sign. When the judgment passed through the land that night, death would pass over every house that was covered by the blood of the lamb.</p>
+    <div class="scripture">
+      <div class="ref">Exodus 12:13</div>
+      <p>"And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt."</p>
+    </div>
+    <p>Inside, they ate the lamb roasted with fire, with unleavened bread and bitter herbs, dressed and ready to leave at a moment's notice. That night the firstborn of Egypt died, but Israel was spared by the blood, and Pharaoh finally drove them out. God commanded that this night be kept every year as a memorial, so that no generation would forget how the LORD redeemed them with an outstretched arm.</p>
+    <div class="keypoint">
+      <div class="label">The Pattern to Watch</div>
+      <p>A lamb without blemish. Its blood applied as a sign. Death passing over all who are covered by it. Hold that pattern in your mind, because it does not stay in Egypt. It is a shadow, and the One who casts it is still to come.</p>
+    </div>
+
+    <h3>The Passover We Call the Last Supper</h3>
+    <p>Fifteen hundred years later, on the night before He was crucified, Jesus sat down with His disciples to keep this very feast. What we have come to call the Last Supper was a Passover meal. He had longed for it.</p>
+    <div class="scripture">
+      <div class="ref">Luke 22:15</div>
+      <p>"And he said unto them, With desire I have desired to eat this passover with you before I suffer."</p>
+    </div>
+    <p>In the middle of that ancient meal, Jesus did something new. He took the unleavened bread, gave thanks, broke it, and gave it to them, saying it was His body given for them. Then He took the cup after supper and called it the new covenant in His blood, shed for the remission of sins. The lamb of Egypt had always pointed somewhere. Now, at His own table, the Lord quietly revealed that it had been pointing to Him all along.</p>
+    <div class="scripture">
+      <div class="ref">Luke 22:19-20</div>
+      <p>"And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me. Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you."</p>
+    </div>
+    <p>This is the meal we keep as the Communion, and it was born here, inside the Passover, given by the Lord Himself.</p>
+
+    <h3>The Cross and the Lamb of God</h3>
+    <p>The very next day, Jesus was led out and crucified. Long before, when John saw Him coming, he had already named who He was.</p>
+    <div class="scripture">
+      <div class="ref">John 1:29</div>
+      <p>"Behold the Lamb of God, which taketh away the sin of the world."</p>
+    </div>
+    <p>Everything that happened at the cross answered the first Passover point for point. As a lamb without blemish was required, He was without sin. As the lamb's blood spared Israel from death, His blood covers us and death passes over the soul that is under it. And just as the law of the Passover lamb said that not one of its bones could be broken, the soldiers came to break the legs of the crucified men, but finding Jesus already dead, they did not break His.</p>
+    <div class="scripture">
+      <div class="ref">John 19:36</div>
+      <p>"For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken."</p>
+    </div>
+    <p>This is why Paul could say it so plainly: Christ our Passover is sacrificed for us. The lamb in Egypt was the picture. The Lord Jesus, slain at Passover, is the substance. The shadow had finally met the body that cast it.</p>
+    <div class="keypoint">
+      <div class="label">Why the Story Comes First</div>
+      <p>The plate we are about to study is a memorial of this story. Once you see that the whole thing was always pointing to Christ, you can look at every item on the table and ask the right question: does this remember the Lamb who has come, or does it cling to a sacrifice still treated as missing? That single question will guide the rest of this teaching.</p>
+    </div>
+
+    <!-- FEAST REMAINS -->
+    <h2 id="intro"><span class="num">2.</span>The Feast That Remains</h2>
+    <p class="lead">The Passover is not a Jewish holiday that the church left behind. It is a feast of the LORD, given by His own command, and He never called it back. When the children of Israel came out of Egypt, God told them to keep this night every year, and He attached no expiration date to it.</p>
+
+    <div class="scripture">
+      <div class="ref">Exodus 12:14</div>
+      <p>"And this day shall be unto you for a memorial; and ye shall keep it a feast to the LORD throughout your generations; ye shall keep it a feast by an ordinance for ever."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:5</div>
+      <p>"In the fourteenth day of the first month at even is the LORD's passover."</p>
+    </div>
+
+    <p>Notice the language. It is the LORD's passover, one of the LORD's feasts, and it is to be kept for ever. The believer who walks in the whole counsel of God does not ask whether he is allowed to keep Passover. He asks how to keep it now that the true Lamb has come and the great work is finished.</p>
+
+    <p>That is the question this teaching answers. The plate that sits at the center of the Passover meal grew up over many centuries, and not every piece of it stands on the same ground. Some of it rests on the written commandment of God. Some of it rests on the traditions of men who were trying to remember a sacrifice they could no longer offer. Our task is to keep what God commanded, to weigh the traditions with honesty, and to let the finished work of Christ fill the whole table with meaning.</p>
+
+    <!-- TWO FOUNDATIONS -->
+    <h2 id="two"><span class="num">3.</span>Two Foundations: Commandment and Tradition</h2>
+    <p>Before we touch a single item, we have to separate two things that are often blended together. The first foundation is the written commandment of God. The second is the tradition of the elders. Both can teach us, but they do not carry the same weight, and the believer must never let the second one push out the first.</p>
+
+    <p>Scripture itself names only a few things for the Passover table. The lamb, roasted with fire. Unleavened bread. Bitter herbs. That is the commanded triad.</p>
+
+    <div class="scripture">
+      <div class="ref">Exodus 12:8</div>
+      <p>"And they shall eat the flesh in that night, roast with fire, and unleavened bread; and with bitter herbs they shall eat it."</p>
+    </div>
+
+    <p>Everything else on the modern plate, the egg, the sweet paste, the spring vegetable, the second bitter herb, the salt water, the four cups, comes from later Jewish tradition. Much of it was shaped after the Temple was destroyed in 70 AD, when the people could no longer offer the lamb and reached for symbols to fill the empty space where the sacrifice used to be.</p>
+
+    <p>This matters because the Lord Himself drew a sharp line between God's commandment and man's tradition, and He warned against letting the one swallow the other.</p>
+
+    <div class="scripture">
+      <div class="ref">Mark 7:8-9</div>
+      <p>"For laying aside the commandment of God, ye hold the tradition of men... Full well ye reject the commandment of God, that ye may keep your own tradition."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">The Rule for the Whole Table</div>
+      <p>Keep what God commanded as commanded. Use the traditions of men only as far as they help us teach the truth, never as a law that binds the conscience, and never in a way that contradicts Scripture. A tradition that points to Christ is a good servant. A tradition that buries the commandment is a bad master.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>This is the single most important point in the lesson, so do not rush it. Most people have never been told that the Seder plate is mostly rabbinic tradition built around the missing sacrifice. Once the class sees that clearly, every element afterward becomes easy to weigh. Spend the time here.</p>
+    </div>
+
+    <!-- CENTER -->
+    <h2 id="center"><span class="num">4.</span>The Center of the Plate Has Changed</h2>
+    <p>Here is the heart of the whole matter. Rabbinic Judaism rebuilt the Seder around an absence. The Temple was gone, the lamb could no longer be offered, so the plate became a careful memorial of a sacrifice that was missing. Every roasted symbol on it whispers the same sorrow: we cannot do what God commanded, so we remember it instead.</p>
+
+    <p>For the believer in Christ, the center of the plate is not an absence. It is a Presence. The sacrifice is not missing. It has been offered once, perfectly, for ever.</p>
+
+    <div class="scripture">
+      <div class="ref">John 1:29</div>
+      <p>"Behold the Lamb of God, which taketh away the sin of the world."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">1 Corinthians 5:7</div>
+      <p>"Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 10:12</div>
+      <p>"But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God."</p>
+    </div>
+
+    <p>This is where Pronomian teaching parts company with both error on either side. We do not throw away the feast, as if the law of God were abolished. The feast stands. But neither do we keep slaughtering lambs or mourn an empty Temple as though Messiah had never come. The animal sacrifice, the part of the law tied to the altar and the priesthood, found its fulfillment in Christ. The lamb was a shadow. The body that cast the shadow is the Lord Jesus Himself.</p>
+
+    <div class="scripture">
+      <div class="ref">Colossians 2:16-17</div>
+      <p>"Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: which are a shadow of things to come; but the body is of Christ."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">The Pronomian Reading</div>
+      <p>The feast days are a shadow whose substance belongs to Christ. A shadow that has met its substance is not discarded; it is finally understood. So we keep the feast that God commanded, and we keep it seeing Christ in every part of it. The ceremonial lamb is fulfilled. The appointed time is still kept.</p>
+    </div>
+
+    <p>With that settled, we can walk the plate one piece at a time. For each item we will ask three questions. What does Scripture actually command? What is tradition? And what does it become now that the Lamb has come?</p>
+
+    <!-- SHANKBONE -->
+    <div class="page-break"></div>
+    <h2 id="shankbone"><span class="num">5.</span>The Shankbone</h2>
+    <span class="element-tag">Zeroa &middot; Roasted Bone</span>
+    <p class="verdict"><strong>Scripture:</strong> points to the lamb &nbsp;&middot;&nbsp; <strong>The bone itself:</strong> tradition &nbsp;&middot;&nbsp; <strong>Now:</strong> fulfilled in Christ</p>
+
+    <h3>What Scripture Commands</h3>
+    <p>The commandment was a roasted lamb, not a bare bone. The lamb was the very heart of the night. Its blood went on the doorposts, and the LORD passed over every house that was covered by it.</p>
+    <div class="scripture">
+      <div class="ref">Exodus 12:7, 13</div>
+      <p>"And they shall take of the blood, and strike it on the two side posts and on the upper door post... And when I see the blood, I will pass over you."</p>
+    </div>
+
+    <h3>What Tradition Made of It</h3>
+    <p>After the Temple fell, no lamb could be offered, because the law forbade the sacrifice anywhere but the place God chose. So the sages set a single roasted bone on the plate to stand in for the lamb that was missing. They even forbade lifting it or eating it, lest it look like a sacrifice offered in the wrong place. The bone is a monument to a sacrifice they could no longer make.</p>
+
+    <h3>What It Becomes in Christ</h3>
+    <p>This is the most striking change of all. The Jewish plate keeps a silent, uneaten bone for a Lamb that has not come. We hold the opposite truth. The Lamb has come, and not one of His bones was broken, exactly as the Passover law required of the lamb.</p>
+    <div class="scripture">
+      <div class="ref">Exodus 12:46</div>
+      <p>"...neither shall ye break a bone thereof."</p>
+    </div>
+    <div class="scripture">
+      <div class="ref">John 19:36</div>
+      <p>"For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The unbroken bone of the Passover lamb was a prophecy. On the cross, when the soldiers broke the legs of the two beside Him but found Jesus already dead, the law of the lamb was kept to the letter. The believer does not need a bone to remember an absent sacrifice. He looks to a risen Lord whose unbroken body proves He is the true Passover.</p>
+    </div>
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>A believer keeping Passover may still place a roasted bone on the table purely as a visual teaching aid for the lamb of Exodus 12, and then point straight to John 19:36. That is honest. What we never do is treat the bone as a required substitute for an offering we are sad we cannot make, because we are not sad. Our sacrifice is finished and our Lamb is alive.</p>
+    </div>
+
+    <!-- EGG -->
+    <h2 id="egg"><span class="num">6.</span>The Egg</h2>
+    <span class="element-tag">Beitzah &middot; Roasted Egg</span>
+    <p class="verdict"><strong>Scripture:</strong> not commanded &nbsp;&middot;&nbsp; <strong>The egg:</strong> tradition of mourning &nbsp;&middot;&nbsp; <strong>Now:</strong> our mourning has turned to joy</p>
+
+    <h3>What Scripture Commands</h3>
+    <p>Nothing. There is no egg anywhere in the Passover commandment. The egg stands for a second Temple offering, the festival peace offering, that was eaten alongside the lamb on the feast.</p>
+
+    <h3>What Tradition Made of It</h3>
+    <p>In Jewish custom the egg is a food of mourners, round and unbroken like the cycle of grief. It was placed on the plate to mourn the destroyed Temple and the offerings that could no longer be brought. So the egg, like the bone, is built around loss.</p>
+
+    <h3>What It Becomes in Christ</h3>
+    <p>The believer is not in mourning over a lost altar. The veil of the Temple was torn from top to bottom the moment Christ died, and a new and living way was opened to God. We do not grieve the end of the old sacrifices; we rejoice that the perfect sacrifice replaced them.</p>
+    <div class="scripture">
+      <div class="ref">Hebrews 9:26</div>
+      <p>"...but now once in the end of the world hath he appeared to put away sin by the sacrifice of himself."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The egg is the clearest example of a tradition built on sorrow that simply does not fit the believer's table. It is not commanded, and the grief it expresses has been answered by the cross. A believer may leave it off the plate entirely with a clear conscience. If anyone keeps it, it should only be as a marker that the old offerings have given way to a better one, never as mourning.</p>
+    </div>
+
+    <!-- MAROR -->
+    <h2 id="maror"><span class="num">7.</span>The Bitter Herbs</h2>
+    <span class="element-tag">Maror &middot; Bitter Herbs</span>
+    <p class="verdict"><strong>Scripture:</strong> commanded &nbsp;&middot;&nbsp; <strong>Keep it</strong> &nbsp;&middot;&nbsp; <strong>Now:</strong> the bitterness of bondage to sin</p>
+
+    <h3>What Scripture Commands</h3>
+    <p>The bitter herbs are one of the three things God actually named for the meal, right alongside the lamb and the unleavened bread. This one is not optional and not merely tradition. It is part of the written command, repeated even for those who kept the second Passover.</p>
+    <div class="scripture">
+      <div class="ref">Numbers 9:11</div>
+      <p>"...they shall eat it with unleavened bread and bitter herbs."</p>
+    </div>
+
+    <h3>What It Means</h3>
+    <p>The herbs carry the taste of slavery. The lives of Israel were made bitter with hard bondage in Egypt, and the sharp herb puts that bitterness on the tongue so the memory is felt, not just spoken. Scripture binds the bitterness to the redemption on purpose. You cannot taste the sweetness of being set free until you have tasted what you were freed from.</p>
+
+    <h3>What It Becomes in Christ</h3>
+    <p>Egypt is a picture of our slavery to sin. The bitter herb reminds the believer of the cruelty of the bondage Christ brought us out of. We were not in light bondage. We were dead in trespasses and could not free ourselves. The sharpness of the herb is the honest taste of what sin costs.</p>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>Keep the bitter herbs without hesitation. They are commanded, and they preach a true gospel: that we remember the misery of sin so that the deliverance of Christ tastes as sweet as it truly is. A faith that never tastes the bitterness of what it was saved from grows shallow.</p>
+    </div>
+
+    <!-- CHAZERET -->
+    <h2 id="chazeret"><span class="num">8.</span>The Second Bitter Herb</h2>
+    <span class="element-tag">Chazeret &middot; Second Bitter Herb</span>
+    <p class="verdict"><strong>Scripture:</strong> the herb is commanded &nbsp;&middot;&nbsp; <strong>A second one:</strong> tradition &nbsp;&middot;&nbsp; <strong>Now:</strong> the slow trap of sin</p>
+
+    <h3>What Scripture Commands</h3>
+    <p>Scripture commands bitter herbs. The custom of placing two separate bitter herbs on the plate comes from a rabbinic reading of the plural word in the Hebrew text, taking the plural to require at least two kinds. That is a tradition drawn from grammar, not a separate command.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Do not lean your teaching on the Hebrew grammar argument, since it is a rabbinic inference rather than a plain command, and a sharp listener could push back on it. The stronger ground is simply this: God commanded bitter herbs, and a believer is free to use one or more without binding anyone's conscience to a number.</p>
+    </div>
+
+    <h3>What It Can Teach</h3>
+    <p>The second herb is usually romaine lettuce, which is sweet and tender when it first sprouts and turns hard and bitter as it grows. That picture preaches well. Israel entered Egypt in comfort and honor, and the sweetness slowly hardened into slavery. Sin works the same way. It rarely begins with chains. It begins with ease and welcome, and only later shows its bitter root.</p>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>Use the second herb if it helps you teach how sin entices before it enslaves. Just do not present a second herb as a command from God. It is a tradition with a useful lesson, and that is exactly how the believer should hold it.</p>
+    </div>
+
+    <!-- CHAROSET -->
+    <div class="page-break"></div>
+    <h2 id="charoset"><span class="num">9.</span>The Sweet Paste</h2>
+    <span class="element-tag">Charoset &middot; Sweet Paste</span>
+    <p class="verdict"><strong>Scripture:</strong> not commanded &nbsp;&middot;&nbsp; <strong>Tradition</strong> &nbsp;&middot;&nbsp; <strong>Now:</strong> sweet hope inside hard labor</p>
+
+    <h3>What Scripture Commands</h3>
+    <p>The sweet paste is not commanded anywhere in the Torah. The word for it does not appear there. It is entirely a tradition, though a thoughtful and beautiful one.</p>
+
+    <h3>What It Pictures</h3>
+    <p>The paste is thick and earthy, made to look like the mortar and clay the Israelites used to make bricks under the whip. So the very food that tastes sweet is shaped like the mortar of their suffering. It holds two truths together: the labor was hard, yet God kept His people alive and gave them hope in the middle of it.</p>
+
+    <h3>What It Can Teach</h3>
+    <p>For the believer the sweet paste is a fitting picture of grace at work even in our former bondage. While we were still slaves to sin, God was already preserving us and preparing to deliver us. The sweetness in the mortar is the mercy of God reaching into the hardest place. There is no command to eat it, but there is a real lesson in it.</p>
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>The research traditions attach some vivid stories to this paste, including legends about the women of Israel and hidden word meanings. Those are interesting as Jewish lore, but do not preach them as Scripture. Teach the paste simply as a man-made symbol of grace and hope inside hard bondage, and keep the weight of the lesson on the written word.</p>
+    </div>
+
+    <!-- KARPAS -->
+    <h2 id="karpas"><span class="num">10.</span>The Spring Vegetable</h2>
+    <span class="element-tag">Karpas &middot; Spring Vegetable</span>
+    <p class="verdict"><strong>Scripture:</strong> not commanded &nbsp;&middot;&nbsp; <strong>Tradition</strong> &nbsp;&middot;&nbsp; <strong>Now:</strong> tears of bondage, hope of new life</p>
+
+    <h3>What Scripture Commands</h3>
+    <p>The spring vegetable, dipped in salt water, is not a Passover command. It is a tradition that grew up to open the meal, partly to stir the children to ask questions about the night.</p>
+
+    <h3>What It Pictures</h3>
+    <p>The green vegetable speaks of new life and spring, since Passover falls in the month of the firstfruits of the year. The salt water it is dipped in speaks of the tears that Israel wept under slavery. So the first taste of the meal joins fresh life with the memory of weeping.</p>
+
+    <h3>What It Can Teach</h3>
+    <p>This is an easy and true picture for the believer. We came up out of the salt water of our own tears and bondage into new life. The green of spring is the resurrection life that Christ gives. There is no command here, but the symbol carries a clean gospel shape: out of weeping into new life.</p>
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Some traditions tie hidden number codes and old word histories to this vegetable. Those are clever but contested, and they are not where the strength of the lesson lies. Keep it plain: green for new life, salt water for the tears of slavery, and Christ as the One who brings us through.</p>
+    </div>
+
+    <!-- MATZAH -->
+    <h2 id="matzah"><span class="num">11.</span>The Unleavened Bread</h2>
+    <span class="element-tag">Matzah &middot; Unleavened Bread</span>
+    <p class="verdict"><strong>Scripture:</strong> commanded &nbsp;&middot;&nbsp; <strong>Keep it</strong> &nbsp;&middot;&nbsp; <strong>Now:</strong> the body of Christ, sincerity and truth</p>
+
+    <h3>What Scripture Commands</h3>
+    <p>The unleavened bread is one of the three commanded elements, and the whole feast that follows is named for it. Israel ate it because they left Egypt in haste, with no time for the bread to rise. It is the bread of affliction.</p>
+    <div class="scripture">
+      <div class="ref">Deuteronomy 16:3</div>
+      <p>"Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste."</p>
+    </div>
+
+    <h3>What It Becomes in Christ</h3>
+    <p>Leaven in Scripture is a picture of sin, which puffs up and spreads quietly through the whole lump. Bread without leaven is therefore a picture of a life and a Savior without sin. When Paul tells the church to keep the feast, he says to keep it with the unleavened bread of sincerity and truth.</p>
+    <div class="scripture">
+      <div class="ref">1 Corinthians 5:8</div>
+      <p>"Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth."</p>
+    </div>
+    <p>More than this, the Lord took the unleavened bread at His own Passover, broke it, and gave it as His body. The sinless bread is the sinless Christ, given for us.</p>
+    <div class="scripture">
+      <div class="ref">Luke 22:19</div>
+      <p>"And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The unleavened bread is striped from baking and pierced with small holes so it can cook through. Long before the rabbis ever made it that way, the prophets said the Messiah would be pierced, and that by His stripes we would be healed. The believer holds that bread and sees the Lord who was wounded for us, the true Bread of Life who came down from heaven.</p>
+    </div>
+    <div class="note">
+      <div class="label">This Is the Communion</div>
+      <p>This broken bread, taken together with the cup that follows, is the Communion the Lord gave us. He gave it at the Passover, and at Passover is when we keep it, one time a year. The fuller meaning of the cup and the Communion is taken up in the next section.</p>
+    </div>
+
+    <!-- CUP -->
+    <h2 id="cup"><span class="num">12.</span>The Cup</h2>
+    <span class="element-tag">The Cup of Redemption</span>
+    <p class="verdict"><strong>Scripture:</strong> wine at the meal &nbsp;&middot;&nbsp; <strong>Four cups:</strong> tradition &nbsp;&middot;&nbsp; <strong>Now:</strong> the blood of the new covenant</p>
+
+    <h3>What Scripture Commands and What Tradition Added</h3>
+    <p>Wine belonged to the festival meal, but the practice of four set cups, each with its own name, is a later tradition built on the four promises of redemption in Exodus 6:6-7. The promises are God's word; the count of four cups is the tradition that frames them.</p>
+
+    <h3>What It Becomes in Christ</h3>
+    <p>At the Passover, after supper, the Lord took the cup and made it the sign of His own blood poured out. The cup that tradition called the cup of redemption became, in His hands, the cup of the new covenant in His blood.</p>
+    <div class="scripture">
+      <div class="ref">Luke 22:20</div>
+      <p>"...This cup is the new testament in my blood, which is shed for you."</p>
+    </div>
+    <div class="scripture">
+      <div class="ref">1 Corinthians 11:26</div>
+      <p>"For as often as ye eat this bread, and drink this cup, ye do shew the Lord's death till he come."</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>This is the great bridge between the old feast and the believer's table. The bread and the cup of the Lord's Supper did not appear from nowhere. The Lord lifted them out of the Passover and filled them with Himself. When we take communion, we are keeping the deepest part of the Passover in the way He commanded, remembering His death until He comes.</p>
+    </div>
+    <div class="keypoint">
+      <div class="label">This Is the Communion</div>
+      <p>The bread and the cup together are the Communion, the Lord's Supper. The Lord gave them at the Passover, and that is the time we keep them. We take the Communion one time a year, at Passover, in the appointed season the Lord Himself chose for it. This is not a separate rite invented later; it is the very heart of the Passover, kept exactly where He placed it.</p>
+    </div>
+
+    <!-- SETTING THE PLATE -->
+    <div class="page-break"></div>
+    <h2 id="setting"><span class="num">13.</span>Setting the Plate Today</h2>
+    <p>So how does a believer who walks in the commandments of God actually keep this feast now? Here is a plain summary that holds the commandment and the tradition in their right places.</p>
+
+    <h3>Keep What God Commanded</h3>
+    <p>Keep the appointed time of Passover, for it is the LORD's feast for ever. On the table, keep the unleavened bread and the bitter herbs, since both are commanded. Above all, keep the bread and the cup as the Lord gave them, remembering His body and His blood. These are the parts that rest on the written word, and they are the center of the believer's table.</p>
+
+    <h3>Handle the Lamb Rightly</h3>
+    <p>Do not slaughter a Passover lamb. The lamb was a shadow, and Christ our Passover has already been sacrificed for us. If a roasted bone is placed on the table, let it serve only to teach the lamb of Exodus 12 and to point straight to the Lamb of God whose bones were not broken. Never treat it as a substitute offering for a sacrifice we wish we could make, because the perfect sacrifice is finished.</p>
+
+    <h3>Weigh the Traditions Honestly</h3>
+    <p>The sweet paste and the spring vegetable may be kept as teaching pictures, since they preach grace and new life, as long as no one is told they are commands. The second bitter herb may be used to show how sin entices before it enslaves. The egg, built on mourning a lost Temple, fits the believer's table least of all, and may be left off without any loss, since our grief over the old sacrifices was answered at the cross.</p>
+
+    <div class="keypoint">
+      <div class="label">The Whole Lesson in One Sentence</div>
+      <p>We keep the feast God commanded, we let Christ be the center where the lamb once stood, and we hold every man-made tradition loosely, using only what points to Him and binding no one's conscience to the rest.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>If the class asks, "are we required to hold a full Seder?", answer carefully. We are commanded to keep the feast of Passover and Unleavened Bread, and the Lord commanded the bread and the cup. The elaborate plate with all six items is a tradition, not a command. A believer may use a fuller table as a rich teaching tool, or keep a simple table with the commanded elements and the Lord's Supper. Either way, the conscience stays free and Christ stays central.</p>
+    </div>
+
+    <!-- ============ CONCLUSION ============ -->
+    <div class="conclusion">
+      <h2 style="margin-top:0;">Keep the Feast</h2>
+      <p>The Passover plate, in the hands of those still waiting, is a careful memorial of an absence. In the hands of the believer it becomes a table of fulfillment. The lamb has come. The blood has been shed. The bread of affliction is the sinless body given for us, and the cup of redemption is the new covenant in His blood.</p>
+      <p>So we do not abandon the feast, and we do not return to its shadows as though the substance had never arrived. We keep it, and we keep it looking full in the face of the Lord Jesus, who desired with great desire to eat that Passover with His own before He suffered.</p>
+      <div class="scripture">
+        <div class="ref">1 Corinthians 5:7-8</div>
+        <p>"For even Christ our passover is sacrificed for us: therefore let us keep the feast... with the unleavened bread of sincerity and truth."</p>
+      </div>
+    </div>
+
+    <!-- ============ QUESTIONS ============ -->
+    <div class="page-break"></div>
+    <h2 id="questions"><span class="num">14.</span>Discipleship Questions</h2>
+    <p>Answer in your own words from the Scriptures we have studied.</p>
+
+    <div class="questions">
+      <div class="q">
+        <div class="qtext">Does the command to keep the Passover have an end date in Scripture? Quote the phrase from Exodus 12:14 that answers this.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What is the difference between the commandment of God and the tradition of men, and which warning did the Lord give about confusing them?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Why does the rabbinic plate keep a bone for the lamb instead of a lamb? How is the believer's situation the opposite of theirs?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How was the law of the Passover lamb in Exodus 12:46 fulfilled at the cross? Give the verse from John.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Which items on the plate are commanded in Scripture, and which are traditions of men?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Why does the egg fit the believer's table least of all? What truth answers the mourning behind it?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What does leaven picture in Scripture, and how does that make the unleavened bread a picture of Christ?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How did the bread and the cup of the Lord's Supper come out of the Passover meal?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+    </div>
+
+    <!-- ============ ANSWER KEY ============ -->
+    <div class="page-break"></div>
+    <h2><span class="num">&#10003;</span>Teacher Answer Key</h2>
+    <div class="answer-key">
+      <div class="ak">No. It is given for ever. Exodus 12:14 says to keep it "a feast by an ordinance for ever," throughout all generations. It is the LORD's feast, not a custom that was meant to expire.</div>
+      <div class="ak">The commandment of God is His written word and carries binding authority. The tradition of men is human custom and does not. In Mark 7:8-9 the Lord rebuked those who laid aside the commandment of God to hold their own tradition, even rejecting the commandment to keep the tradition.</div>
+      <div class="ak">After the Temple fell, the lamb could no longer be lawfully offered, so the bone became a memorial of a missing sacrifice. The believer's situation is the reverse: the Lamb has come and the sacrifice is finished, so we look to a present, living Christ rather than an absent offering.</div>
+      <div class="ak">Exodus 12:46 said not to break a bone of the lamb. At the cross the soldiers broke the legs of the two beside Jesus, but finding Him already dead they did not break His. John 19:36 says this happened so the scripture would be fulfilled, "A bone of him shall not be broken."</div>
+      <div class="ak">Commanded: the unleavened bread and the bitter herbs (and originally the lamb, now fulfilled in Christ), along with the bread and cup the Lord gave. Traditions of men: the egg, the sweet paste, the spring vegetable, the second bitter herb, the salt water, and the count of four cups.</div>
+      <div class="ak">The egg is a food of mourning, placed to grieve the lost Temple and its offerings. The believer is not in mourning, because the veil was torn and the perfect sacrifice was made once for all (Hebrews 9:26). Our grief over the old sacrifices was answered at the cross, so the egg may simply be left off.</div>
+      <div class="ak">Leaven pictures sin, which puffs up and spreads through the whole lump. Bread without leaven therefore pictures a sinless life, and Paul calls it the bread of sincerity and truth (1 Corinthians 5:8). The Lord took that bread, broke it, and called it His body given for us (Luke 22:19).</div>
+      <div class="ak">At His Passover, after supper, the Lord took the unleavened bread as His body and the cup as the new covenant in His blood (Luke 22:19-20). The Lord's Supper is the deepest part of the Passover kept exactly as He commanded, showing His death until He comes (1 Corinthians 11:26).</div>
+    </div>
+
+  </div><!-- /body-region -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <div class="verse">Study to shew thyself approved unto God &middot; 2 Timothy 2:15</div>
+    <div class="small">Work the Word &middot; Pronomian Teaching Series</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>

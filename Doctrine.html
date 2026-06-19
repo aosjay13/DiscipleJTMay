@@ -295,6 +295,38 @@
   }
   .doc-card .read::after { content: ' \2192'; }
 
+  /* ── SUBCATEGORY (within a category) ── */
+  .subcategory { margin-top: 2.1rem; }
+  .subcat-head {
+    display: flex; align-items: baseline; gap: 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+  .subcat-head h4 {
+    font-family: 'Cinzel', serif; font-size: 0.96rem; font-weight: 600;
+    color: var(--crimson); letter-spacing: 0.03em;
+  }
+  .subcat-head .count {
+    font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.16em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .subcat-note { color: var(--ink-soft); font-style: italic; font-size: 0.95rem; margin: 0 0 1rem; }
+
+  /* placeholder cards, teaching to come */
+  .doc-card.placeholder {
+    cursor: default; opacity: 0.72;
+    border-left-color: #D4B97A88;
+    background: #F7F1E2;
+  }
+  .doc-card.placeholder:hover {
+    transform: none; box-shadow: none;
+    border-left-color: #D4B97A88; background: #F7F1E2;
+  }
+  .doc-card.placeholder:hover h4 { color: var(--ink); }
+  .doc-card.placeholder .coming {
+    margin-top: 0.9rem; font-family: 'Cinzel', serif; font-size: 0.62rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); opacity: 0.85;
+  }
+
   /* ── STUDY THE WORD ── */
   .study-panel {
     margin-top: 1.8rem;
@@ -418,6 +450,8 @@
     /* Keep a category heading with its cards, never strand it at a page foot. */
     .category-head { break-after: avoid; page-break-after: avoid; }
     .cat-note { break-after: avoid; page-break-after: avoid; }
+    .subcat-head { break-after: avoid; page-break-after: avoid; }
+    .subcat-note { break-after: avoid; page-break-after: avoid; }
     /* Cards stay whole; large categories are allowed to flow across pages
        so they do not push a blank sheet (avoid break-inside on the wrapper). */
     .category { break-inside: auto; page-break-inside: auto; }
@@ -584,6 +618,56 @@
           <p>The witches' sabbats and the counterfeit of God's feasts.</p>
           <span class="read">Read</span>
         </a>
+      </div>
+
+      <!-- MOEDIM TEACHINGS (subcategory) -->
+      <div class="subcategory" id="sub-moedim">
+        <div class="subcat-head"><h4>Moedim Teachings</h4><span class="count">Seven Feasts</span></div>
+        <p class="subcat-note">The seven appointed times of the Lord, taken one at a time and seen in the light of Christ.</p>
+        <div class="doc-grid">
+          <a class="doc-card" href="./The_Passover.html">
+            <span class="doc-tag">The First Feast</span>
+            <h4>Passover</h4>
+            <p>The Seder plate and the feast of redemption, seen in the light of Christ our Passover.</p>
+            <span class="read">Read</span>
+          </a>
+          <div class="doc-card placeholder">
+            <span class="doc-tag">The Second Feast</span>
+            <h4>Unleavened Bread</h4>
+            <p>The feast of the sinless bread, kept seven days before the Lord.</p>
+            <span class="coming">Teaching to come&hellip;</span>
+          </div>
+          <div class="doc-card placeholder">
+            <span class="doc-tag">The Third Feast</span>
+            <h4>First Fruits</h4>
+            <p>The waving of the first sheaf, and the firstfruits of them that slept.</p>
+            <span class="coming">Teaching to come&hellip;</span>
+          </div>
+          <div class="doc-card placeholder">
+            <span class="doc-tag">The Fourth Feast</span>
+            <h4>Pentecost</h4>
+            <p>The feast of weeks, the giving of the Law, and the giving of the Spirit.</p>
+            <span class="coming">Teaching to come&hellip;</span>
+          </div>
+          <div class="doc-card placeholder">
+            <span class="doc-tag">The Fifth Feast</span>
+            <h4>Trumpets</h4>
+            <p>The blowing of the trumpet and the day no man knows.</p>
+            <span class="coming">Teaching to come&hellip;</span>
+          </div>
+          <div class="doc-card placeholder">
+            <span class="doc-tag">The Sixth Feast</span>
+            <h4>Atonement</h4>
+            <p>The most holy day, the afflicting of the soul, and the blood of the covenant.</p>
+            <span class="coming">Teaching to come&hellip;</span>
+          </div>
+          <div class="doc-card placeholder">
+            <span class="doc-tag">The Seventh Feast</span>
+            <h4>Tabernacles</h4>
+            <p>The feast of booths, the ingathering, and God dwelling with His people.</p>
+            <span class="coming">Teaching to come&hellip;</span>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Feast of Unleavened Bread</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson-dark:#7A1F1F;
+    --crimson-light:#9B3434;
+    --parchment:#FAF6EE;
+    --gold:#C9A84C;
+    --ink:#2B2622;
+    --cream:#FBF3E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:#EDE4CF;
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .page-wrap{
+    max-width:8.5in;
+    margin:0 auto;
+    background:var(--parchment);
+  }
+
+  /* ===== Crimson header bookend ===== */
+  .doc-header{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:38px 32px 30px;
+    border-bottom:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-header .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .doc-header h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+  .doc-header .subtitle{
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream);
+    opacity:.92;
+  }
+  .doc-header .anchor{
+    margin-top:14px;
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--gold);
+  }
+
+  /* ===== Body region with gold corner brackets ===== */
+  .body-region{
+    position:relative;
+    padding:40px 46px 46px;
+  }
+  .body-region::before,
+  .body-region::after{
+    content:"";
+    position:absolute;
+    width:42px; height:42px;
+    border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .body-region::before{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .body-region::after{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  .corner-br, .corner-bl{
+    position:absolute; width:42px; height:42px; border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .corner-br{ top:14px; right:14px; border-left:none; border-bottom:none; }
+  .corner-bl{ bottom:14px; left:14px; border-right:none; border-top:none; }
+
+  h2{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-dark);
+    font-size:23px;
+    margin:34px 0 6px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    break-after:avoid;
+  }
+  h2 .num{ color:var(--gold); margin-right:8px; }
+
+  h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-light);
+    font-size:18px;
+    margin:22px 0 4px;
+    break-after:avoid;
+  }
+
+  p{ margin:0 0 14px; }
+
+  .lead{ font-size:19px; }
+
+  /* Dropcap */
+  .dropcap::first-letter{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    float:left;
+    font-size:64px;
+    line-height:50px;
+    padding:6px 10px 0 0;
+  }
+
+  /* ===== Table of contents ===== */
+  .toc{
+    background:#fff;
+    border:1px solid #e3d9c4;
+    border-left:5px solid var(--gold);
+    padding:20px 26px;
+    margin:8px 0 10px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toc h2{
+    border:none; margin:0 0 8px; padding:0; font-size:19px;
+  }
+  .toc ol{ margin:0; padding-left:22px; columns:2; column-gap:34px; }
+  .toc li{ margin-bottom:5px; break-inside:avoid; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+
+  /* ===== Scripture box ===== */
+  .scripture{
+    background:#fff;
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:16px 22px 12px;
+    margin:16px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .scripture .ref{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--crimson-dark);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .scripture p{ font-style:italic; margin:0 0 6px; }
+
+  /* ===== Keypoint panel (crimson border) ===== */
+  .keypoint{
+    border:2px solid var(--crimson-light);
+    border-radius:4px;
+    background:#fff;
+    padding:16px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .keypoint .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .keypoint p:last-child{ margin-bottom:0; }
+
+  /* ===== Teacher / Bonus note (dashed gold) ===== */
+  .note{
+    border:2px dashed var(--gold);
+    border-radius:4px;
+    background:#FBF7EC;
+    padding:15px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .note .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:#8a7320;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .note p:last-child{ margin-bottom:0; }
+
+  /* ===== Element header tag ===== */
+  .element-tag{
+    display:inline-block;
+    font-family:'Cinzel', serif;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cream);
+    background:var(--crimson-light);
+    padding:3px 12px;
+    border-radius:3px;
+    margin-bottom:4px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .verdict{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:.5px;
+    color:var(--crimson-dark);
+    margin:2px 0 12px;
+  }
+  .verdict strong{ color:var(--crimson-dark); }
+
+  /* ===== Conclusion block ===== */
+  .conclusion{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px 32px;
+    margin:30px 0 8px;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .conclusion h2{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+  }
+  .conclusion p{ margin-bottom:12px; }
+  .conclusion .scripture{ background:rgba(255,255,255,.08); border-top-color:var(--gold); }
+  .conclusion .scripture .ref{ color:var(--gold); }
+  .conclusion .scripture p{ color:var(--cream); }
+
+  /* ===== Discipleship questions ===== */
+  .questions{ counter-reset:q; }
+  .q{
+    counter-increment:q;
+    position:relative;
+    padding-left:46px;
+    margin:0 0 22px;
+    break-inside:avoid;
+  }
+  .q::before{
+    content:counter(q);
+    position:absolute;
+    left:0; top:-2px;
+    width:30px; height:30px;
+    background:var(--crimson-dark);
+    color:var(--cream);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .q .qtext{ font-weight:600; margin-bottom:10px; }
+  .answer-line{
+    border-bottom:1px solid #c9bfa6;
+    height:24px;
+    margin:0 0 8px;
+  }
+
+  /* ===== Answer key ===== */
+  .answer-key{ counter-reset:a; }
+  .ak{
+    counter-increment:a;
+    position:relative;
+    padding-left:40px;
+    margin-bottom:16px;
+    break-inside:avoid;
+  }
+  .ak::before{
+    content:counter(a);
+    position:absolute; left:0; top:0;
+    width:26px; height:26px;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ===== Crimson footer bookend ===== */
+  .doc-footer{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:24px 32px;
+    border-top:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-footer .verse{ font-family:'Cinzel', serif; color:var(--gold); letter-spacing:1px; font-size:14px; margin-bottom:6px; }
+  .doc-footer .small{ font-size:13px; opacity:.9; }
+
+  .page-break{ break-before:page; }
+
+  /* ===== Print rules ===== */
+  @page{
+    size:letter portrait;
+    margin:0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'EB Garamond', serif;
+      font-size:10px;
+      color:#7A1F1F;
+    }
+  }
+
+  @media print{
+    body{ font-size:12.5pt; background:#fff; }
+    .page-wrap{ max-width:none; margin:0; }
+    .doc-header{ padding:26px 20px 22px; }
+    .doc-header h1{ font-size:26pt; }
+    .body-region{ padding:26px 20px 30px; }
+    h2{ font-size:16pt; }
+    h3{ font-size:13pt; }
+    a{ color:inherit; text-decoration:none; }
+    .no-print{ display:none !important; }
+  }
+
+  .print-tip{
+    max-width:8.5in;
+    margin:14px auto 0;
+    font-size:13px;
+    color:#7a6f57;
+    text-align:center;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <div class="eyebrow">Work the Word &middot; Pronomian Teaching</div>
+    <h1>The Feast of Unleavened Bread</h1>
+    <div class="subtitle">Purging the Leaven, Walking in the Sinless Bread</div>
+    <div class="anchor">Let Us Keep the Feast &middot; 1 Corinthians 5:8</div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-region">
+    <span class="corner-br"></span>
+    <span class="corner-bl"></span>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <h2>What This Teaching Covers</h2>
+      <ol>
+        <li><a href="#story">The Story Behind the Bread</a></li>
+        <li><a href="#commandment">The Commandment of God</a></li>
+        <li><a href="#leaven">What Leaven Pictures</a></li>
+        <li><a href="#seven">The Seven Days</a></li>
+        <li><a href="#sabbaths">The Two High Sabbaths</a></li>
+        <li><a href="#redsea">The Red Sea Crossing</a></li>
+        <li><a href="#firstfruits">Firstfruits Within the Week</a></li>
+        <li><a href="#christ">Christ the Sinless Bread</a></li>
+        <li><a href="#keepfeast">The Apostolic Command</a></li>
+        <li><a href="#today">Keeping the Feast Today</a></li>
+        <li><a href="#questions">Discipleship Questions</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. THE STORY -->
+    <h2 id="story"><span class="num">1.</span>The Story Behind the Bread</h2>
+    <p class="lead dropcap">The Feast of Unleavened Bread is rooted in the night Israel left Egypt. It is not a separate event from the Passover but the immediate continuation of it. The blood of the lamb saved them from death, and the unleavened bread carried them out the door. To understand this bread, you must stand with Israel at the moment they were told to go.</p>
+
+    <p>When the final plague struck Egypt and Pharaoh at last drove the children of Israel out, the departure was sudden and violent. The people had been making bread, but there was no time to let the dough rise. They snatched it up as it was, wrapped their kneading troughs in their clothes, and ran.</p>
+
+    <div class="scripture">
+      <div class="ref">Exodus 12:39</div>
+      <p>"And they baked unleavened cakes of the dough which they brought forth out of Egypt, for it was not leavened; because they were thrust out of Egypt, and could not tarry, neither had they prepared for themselves any victual."</p>
+    </div>
+
+    <p>That is the first unleavened bread. It was not a recipe. It was a consequence. God moved so suddenly to redeem His people that there was no time for the bread to rise. The lack of leaven testified to the fact that their deliverance was entirely the work of God, not the preparation of men. They had no time to prepare. They could only follow.</p>
+
+    <div class="scripture">
+      <div class="ref">Deuteronomy 16:3</div>
+      <p>"Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste: that thou mayest remember the day when thou camest forth out of the land of Egypt all the days of thy life."</p>
+    </div>
+
+    <p>God named it the bread of affliction and commanded Israel to eat it every year so that the memory would never fade. Every generation that bites into flat, plain bread during this feast is tasting the haste of a people who could do nothing to save themselves and were carried out by the hand of the Almighty.</p>
+
+    <div class="keypoint">
+      <div class="label">The Pattern to Watch</div>
+      <p>Unleavened bread was born from haste and helplessness. Israel did not contribute to their own deliverance. The bread they carried was bread that never had time to be touched by leaven. Hold that picture, because the same pattern appears at the cross: a salvation accomplished entirely by God, through a Lamb who was never touched by sin.</p>
+    </div>
+
+
+    <!-- 2. THE COMMANDMENT -->
+    <h2 id="commandment"><span class="num">2.</span>The Commandment of God</h2>
+    <p>God did not leave this feast as a fond memory of the Exodus. He made it a commandment. Leviticus 23 sets it in its place among the appointed times of the Lord, and the instructions are direct and unmistakable.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:6&ndash;8</div>
+      <p>"And on the fifteenth day of the same month is the feast of unleavened bread unto the LORD: seven days ye must eat unleavened bread. In the first day ye shall have an holy convocation: ye shall do no servile work therein. But ye shall offer an offering made by fire unto the LORD seven days: in the seventh day is an holy convocation: ye shall do no servile work therein."</p>
+    </div>
+
+    <p>The feast begins on the fifteenth day of the first month, the day after the Passover lamb is slain, and runs for seven full days through the twenty-first. Two things are commanded of the people. First, they must eat unleavened bread for seven days. Second, they must remove all leaven from their homes entirely.</p>
+
+    <div class="scripture">
+      <div class="ref">Exodus 12:15</div>
+      <p>"Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses: for whosoever eateth leavened bread from the first day until the seventh day, that soul shall be cut off from Israel."</p>
+    </div>
+
+    <p>Notice the weight of the penalty. To eat leaven during this week was to be cut off from the people of God. This is not a suggestion or a cultural tradition. It is a commandment with a severe consequence attached to it, and there is no expiration date set upon it anywhere in Scripture.</p>
+
+    <div class="keypoint">
+      <div class="label">Two Commands, One Week</div>
+      <p>The feast carries a positive command and a negative command. The positive: eat unleavened bread every day for seven days. The negative: purge every crumb of leaven from your house. The first is about what you take in. The second is about what you throw out. Together they form a complete picture of sanctification.</p>
+    </div>
+
+
+    <!-- 3. WHAT LEAVEN PICTURES -->
+    <h2 id="leaven"><span class="num">3.</span>What Leaven Pictures in Scripture</h2>
+    <p>To understand why God commanded the removal of leaven, you have to understand what leaven is and what it pictures throughout the whole of Scripture.</p>
+
+    <p>In the ancient world, leaven was not the tidy packet of yeast you buy at the store. It was a piece of old, fermented dough saved from a previous batch. You would take that small lump of decaying dough and knead it into fresh flour and water. The fermentation would spread invisibly through the entire new lump until the whole mass had risen. Leaven is, by its very nature, a product of decay, and it works by spreading silently until it has touched everything.</p>
+
+    <div class="scripture">
+      <div class="ref">1 Corinthians 5:6</div>
+      <p>"Your glorying is not good. Know ye not that a little leaven leaveneth the whole lump?"</p>
+    </div>
+
+    <p>This is why Scripture consistently uses leaven as a picture of sin, corruption, and false doctrine. A little sin tolerated in a life, a little false teaching tolerated in a congregation, will not stay small. It spreads. It ferments. It puffs up the whole lump until the entire thing is corrupted.</p>
+
+    <p>The Lord Jesus Himself used leaven as a warning. He told His disciples to beware of the leaven of the Pharisees, which was hypocrisy. He warned of the leaven of the Sadducees, which was false doctrine. And in the parable of the leaven in Matthew 13:33, a woman hid leaven in three measures of meal until the whole was leavened, a sober picture of corruption working its way quietly through what should have been pure.</p>
+
+    <div class="scripture">
+      <div class="ref">Matthew 16:6</div>
+      <p>"Then Jesus said unto them, Take heed and beware of the leaven of the Pharisees and of the Sadducees."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>Leaven is not neutral. Everywhere it appears in Scripture as a symbol, it carries the weight of corruption, decay, and the invisible spreading of evil. That is why God commanded it out of the house. The physical act of purging leaven teaches the spiritual necessity of purging sin. You cannot leave a little leaven in the corner and call the house clean.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Some will point to Leviticus 7:13 and Leviticus 23:17, where leavened bread appears in certain peace offerings and the wave offering at Pentecost. These do not contradict the symbolism. In those contexts the leavened bread represents the worshippers themselves, who are sinful people coming before a holy God. The leaven in those offerings is honest about the condition of the offerer. During the Feast of Unleavened Bread, the call is different: the people are told to put sin out and walk in purity. Both uses reinforce the same truth.</p>
+    </div>
+
+
+    <!-- 4. THE SEVEN DAYS -->
+    <h2 id="seven"><span class="num">4.</span>The Seven Days</h2>
+    <p>The feast lasts seven days, from Nisan 15 through Nisan 21. This is not an arbitrary number. Seven in Scripture speaks of completion and fullness. The seven days of Unleavened Bread teach that sanctification is not a moment but a walk, not a single decision but a daily discipline carried through to the end.</p>
+
+    <p>Each morning for seven days the believer eats unleavened bread. Each day the house remains free of leaven. The repetition is the lesson. God did not say, "Remove the leaven for one night and be done with it." He said seven days. The number tells you this is the whole of the matter, the full span of the life of faith. From the day you are redeemed by the blood of the Lamb until the day you stand before Him, the call is the same: put away the leaven and walk in sincerity and truth.</p>
+
+    <div class="scripture">
+      <div class="ref">Exodus 13:7</div>
+      <p>"Unleavened bread shall be eaten seven days; and there shall no leavened bread be seen with thee, neither shall there be leaven seen with thee in all thy quarters."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The Passover lamb saves you in a single night. The Feast of Unleavened Bread shapes you over seven days. Justification is a moment. Sanctification is a walk. The feast teaches both, and they cannot be separated. The blood of the Lamb delivers you from death, and the removal of leaven calls you to live a life worthy of the deliverance you have received.</p>
+    </div>
+
+
+    <!-- 5. THE TWO HIGH SABBATHS -->
+    <div class="page-break"></div>
+    <h2 id="sabbaths"><span class="num">5.</span>The Two High Sabbaths</h2>
+    <p>The seven-day feast is bookended by two holy convocations: one on the first day and one on the seventh. These are not ordinary days. They are High Sabbaths, days set apart from the weekly cycle, in which no customary work is to be done and the people are to gather before the Lord.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:7&ndash;8</div>
+      <p>"In the first day ye shall have an holy convocation: ye shall do no servile work therein... in the seventh day is an holy convocation: ye shall do no servile work therein."</p>
+    </div>
+
+    <p>The word convocation means a called assembly. God is not simply asking His people to rest privately. He is commanding them to gather together. The community must assemble. The story must be told in company. The worship must be shared.</p>
+
+    <p>The first High Sabbath, on Nisan 15, follows immediately after the Passover lamb has been slain. It is the day of rest after the night of redemption. The blood has been shed, death has passed over, and now the redeemed rest in what God has done. For the believer in Christ, this pictures the rest that follows the finished work of the cross. The Lamb has been slain, and we rest in it.</p>
+
+    <p>The seventh day, Nisan 21, carries its own weight. It is the close of the feast, the final day, and tradition and biblical chronology together point to this day as the anniversary of one of the most powerful acts of God in all of Scripture: the crossing of the Red Sea.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>The High Sabbaths of the feasts are distinct from the weekly seventh-day Sabbath. The weekly Sabbath falls on the seventh day of the week and is perpetual. The annual High Sabbaths fall on specific calendar dates and may land on any day of the week. Both carry the command to rest and to gather, and both are to be honored by the believer who walks in the commandments of God.</p>
+    </div>
+
+
+    <!-- 6. THE RED SEA CROSSING -->
+    <h2 id="redsea"><span class="num">6.</span>The Red Sea and the Seventh Day</h2>
+    <p>The seventh day of the Feast of Unleavened Bread marks the anniversary of the crossing of the Red Sea. After leaving Egypt, the children of Israel did not walk straight into freedom. God led them by a circuitous route and brought them to the shore of the sea with Pharaoh's army closing in behind them. They were trapped. The sea was before them, the mountains on either side, and the chariots at their back.</p>
+
+    <div class="scripture">
+      <div class="ref">Exodus 14:13&ndash;14</div>
+      <p>"And Moses said unto the people, Fear ye not, stand still, and see the salvation of the LORD, which he will shew to you to day: for the Egyptians whom ye have seen to day, ye shall see them again no more for ever. The LORD shall fight for you, and ye shall hold your peace."</p>
+    </div>
+
+    <p>God brought them deliberately to a place where human strength was utterly useless. There was no way out by their own hand. And then He opened the sea, moved the pillar of cloud and fire between His people and the enemy, and brought them through on dry ground. When the waters closed over Pharaoh's army, the bondage of Egypt was finished for ever.</p>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The Red Sea crossing on the final day of the feast teaches one of the hardest and most necessary lessons of the walk of faith. God will lead His people into places of total vulnerability, places where there is no plan B and no human solution, so that their trust must rest entirely on Him. The journey of sanctification is not a path of human strength. It is a path of divine deliverance, and the closing day of the feast celebrates the God who fights for His people when they cannot fight for themselves.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>This is a powerful day for congregational worship. Pastors and teachers can draw on the narrative of Pi-hahiroth to encourage anyone in the room who is facing a Red Sea moment, an impossible situation with no way forward except through the hand of God. The seventh day of the feast turns the closing assembly into a celebration of faith over fear.</p>
+    </div>
+
+
+    <!-- 7. FIRSTFRUITS WITHIN THE WEEK -->
+    <h2 id="firstfruits"><span class="num">7.</span>Firstfruits Within the Week</h2>
+    <p>Embedded within the seven days of the Feast of Unleavened Bread is another appointed time that connects the theology of redemption to the theology of resurrection: the Firstfruits ceremony.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:10&ndash;11</div>
+      <p>"Speak unto the children of Israel, and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest: And he shall wave the sheaf before the LORD, to be accepted for you: on the morrow after the sabbath the priest shall wave it."</p>
+    </div>
+
+    <p>On the day after the weekly Sabbath that falls during the feast week, the priest took the very first sheaf of the barley harvest, the firstfruits, and waved it before the Lord. This was not the whole harvest. It was the first cutting, the guarantee that the rest of the crop would follow. By offering the first and best to God, Israel acknowledged that everything they had came from His hand.</p>
+
+    <p>The firstfruits sheaf also began a fifty-day countdown, the Counting of the Omer, leading directly to the Feast of Weeks, which we know as Pentecost. Redemption from Egypt, the walk of sanctification through the week of Unleavened Bread, and the giving of the law and the Spirit at Pentecost are all bound together by this single thread of counting.</p>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The firstfruits offering is a down payment. The first sheaf guarantees the full harvest. This is exactly the picture Paul will use when he calls the resurrection of Christ the firstfruits of those who have fallen asleep. The full harvest of resurrected believers is guaranteed by the single sheaf that came up first. The Feast of Unleavened Bread is the week that holds both the bread of affliction and the sheaf of hope.</p>
+    </div>
+
+
+    <!-- 8. CHRIST THE SINLESS BREAD -->
+    <div class="page-break"></div>
+    <h2 id="christ"><span class="num">8.</span>Christ the Sinless Bread</h2>
+    <p>Everything we have studied in the Old Testament foundations comes to its fulfillment in the person and work of the Lord Jesus Christ. The Feast of Unleavened Bread is not merely about remembering Egypt. It is about seeing the Messiah.</p>
+
+    <h3>The Bread Without Leaven Is the Body Without Sin</h3>
+    <p>Unleavened bread, by definition, is bread from which the agent of corruption has been removed. It cannot rise, it cannot puff up, and it cannot decay in the way that leavened bread does. In exactly the same manner, the Lord Jesus lived a life entirely without the leaven of sin. He was tested in all points as we are, yet without sin.</p>
+
+    <div class="scripture">
+      <div class="ref">1 Peter 2:22</div>
+      <p>"Who did no sin, neither was guile found in his mouth."</p>
+    </div>
+
+    <p>When Jesus took the unleavened bread at His last Passover, broke it, and gave it to His disciples, He was not choosing an arbitrary symbol. The bread He held was the bread God had designed from the beginning to picture a body without corruption.</p>
+
+    <div class="scripture">
+      <div class="ref">Luke 22:19</div>
+      <p>"And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me."</p>
+    </div>
+
+    <h3>Pierced and Striped</h3>
+    <p>The traditional unleavened bread is pierced with small holes and marked with stripes during the baking process to prevent it from rising. These are practical details of baking, but they carry a prophetic weight that cannot be ignored. The prophet Isaiah, writing centuries before the cross, described the Messiah in precisely these terms.</p>
+
+    <div class="scripture">
+      <div class="ref">Isaiah 53:5</div>
+      <p>"But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The unleavened bread is a portrait of the Messiah in every detail. It is flat because it has no leaven, just as He had no sin. It is pierced and striped, just as He was pierced for our transgressions and by His stripes we are healed. When the believer eats the matzah during this feast, he is not simply remembering Egypt. He is partaking, in picture and in truth, of the Bread of Life who came down from heaven and was given for the life of the world.</p>
+    </div>
+
+    <h3>The Firstfruits of the Resurrection</h3>
+    <p>The day of Firstfruits, falling on the day after the Sabbath during this very feast week, is the day the Messiah rose from the dead. Paul makes the connection explicit and unmistakable.</p>
+
+    <div class="scripture">
+      <div class="ref">1 Corinthians 15:20</div>
+      <p>"But now is Christ risen from the dead, and become the firstfruits of them that slept."</p>
+    </div>
+
+    <p>Just as the priest waved the first barley sheaf as a guarantee that the full harvest would follow, the bodily resurrection of Jesus is the guarantee that a vast harvest of believers will be raised at His coming. The architecture of the Levitical calendar was not a human invention. It was designed by the Creator to announce the precise redemptive timeline of His Son.</p>
+
+    <div class="keypoint">
+      <div class="label">The Week in Full</div>
+      <p>Stand back and see the whole week. On Passover the Lamb is slain. On the first day of Unleavened Bread, the redeemed rest in the finished work. Throughout the seven days, the leaven is purged and the sinless bread is eaten. On Firstfruits, the sheaf is raised, and Christ rises from the dead. Every piece of the calendar is a portrait of the Gospel, painted centuries before the cross was raised on Golgotha.</p>
+    </div>
+
+
+    <!-- 9. THE APOSTOLIC COMMAND -->
+    <h2 id="keepfeast"><span class="num">9.</span>The Apostolic Command: Keep the Feast</h2>
+    <p>One of the strongest arguments for the continued observance of this feast comes directly from the Apostle Paul. Writing to the predominantly Gentile church at Corinth, Paul addresses a case of gross immorality in the congregation and uses the language and the framework of the Feast of Unleavened Bread to do it.</p>
+
+    <div class="scripture">
+      <div class="ref">1 Corinthians 5:6&ndash;8</div>
+      <p>"Your glorying is not good. Know ye not that a little leaven leaveneth the whole lump? Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us: Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth."</p>
+    </div>
+
+    <p>There are several things in this passage that demand careful attention.</p>
+
+    <h3>The Leaven Is Sin</h3>
+    <p>Paul identifies the leaven directly. It is "malice and wickedness." The tolerated sin in the Corinthian church was spreading through the whole congregation like yeast through dough. Paul does not spiritualize the metaphor into something harmless. He says a little leaven leavens the whole lump, and he commands them to purge it out.</p>
+
+    <h3>The Command to Keep the Feast</h3>
+    <p>Paul writes plainly: "Let us keep the feast." This is not an invitation to hold some vague, perpetual attitude of good behavior. Paul's entire argument is built on the physical reality of the feast. The metaphor of purging leaven only carries its full weight if the church at Corinth was actually engaged in the practice of removing leaven from their homes and eating unleavened bread. The physical discipline is the foundation on which the spiritual lesson stands.</p>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>Paul did not tell Gentile believers to stop keeping the feast. He told them to keep it rightly. "Not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth." The feast stands. The command to keep it stands. What changes is the depth of meaning: we now keep it knowing that Christ our Passover has been sacrificed for us, and the unleavened bread we eat is the bread of sincerity, truth, and the sinless Savior.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>Antinomian interpreters will try to reduce this passage to a purely spiritual metaphor with no connection to the actual feast. Press back on that reading. Ask the class: why would Paul use the imagery of purging leaven and keeping the feast if the Corinthians had no idea what those things meant in practice? The language only works if the physical observance was known and active. The early church kept the feasts of the Lord. Paul is not introducing a new idea here. He is correcting how they keep what they are already keeping.</p>
+    </div>
+
+
+    <!-- 10. KEEPING THE FEAST TODAY -->
+    <div class="page-break"></div>
+    <h2 id="today"><span class="num">10.</span>Keeping the Feast Today</h2>
+    <p>Having traced the feast from its origins in Egypt through its fulfillment in Christ and its continuation in the apostolic church, the practical question remains: how does a believer keep the Feast of Unleavened Bread today?</p>
+
+    <p>The answer rests on the same foundation that governs all Pronomian practice. We are not keeping this feast to earn our salvation. We are already fully justified by the blood of the Messiah. We are not imitating Rabbinic Judaism or binding ourselves to traditions invented centuries after the apostolic era. We are obeying a commandment of God, and we are doing it with our eyes on Christ.</p>
+
+    <h3>Purging the Leaven From the Home</h3>
+    <p>In the weeks leading up to the spring feasts, believers go through their homes and remove every product that contains leaven. Breads, cereals, crackers, baked goods, anything with yeast, baking powder, or baking soda is either consumed before the feast, given away, or discarded. Pantries are emptied. Refrigerators are cleaned. The search reaches into the corners, the cushions, and the back of every cupboard.</p>
+
+    <p>This is not a pointless ritual. It is one of the most powerful teaching tools God ever gave to a family. The difficulty of finding every hidden crumb in a modern home mirrors the difficulty of identifying every hidden sin in the human heart. When a parent is on their hands and knees pulling old crackers from behind the couch, the lesson preaches itself: sin hides. Sin is subtle. Sin gets into places you forgot to check. And God requires that it all come out.</p>
+
+    <div class="keypoint">
+      <div class="label">The Spiritual Leaven</div>
+      <p>The physical removal of leaven opens the door to a deeper spiritual discipline. During this week, believers are called to examine their lives for the spiritual leaven that has crept in: pride, unforgiveness, bitterness, compromise with the world, ungodly media, destructive habits. The feast functions as an annual spiritual audit, a set-apart season for honest self-examination and the ruthless removal of anything that corrupts the walk of faith.</p>
+    </div>
+
+    <h3>Eating the Unleavened Bread</h3>
+    <p>For seven days, believers replace their standard bread with matzah or other unleavened alternatives. Every meal becomes a reminder. The flat, simple bread that does not puff up speaks of humility. It speaks of the haste of God's deliverance. And it speaks of the sinless body of the Lord Jesus, given for us.</p>
+
+    <p>When you eat the bread, remember the Exodus. Remember the cross. Remember that you are partaking, in picture, of the Bread of Life who sustains you through the wilderness of this present age.</p>
+
+    <h3>Honoring the High Sabbaths</h3>
+    <p>The first and seventh days of the feast are holy convocations, days of rest and assembly. Believers honor these days by ceasing from their regular work and gathering with other believers to worship, to read the Scriptures of the feast, and to remember the mighty acts of God. The first day recalls the rest after redemption. The seventh day recalls the Red Sea crossing and the God who fights for His people.</p>
+
+    <h3>Celebrating Firstfruits</h3>
+    <p>On the Sunday during the feast week, believers celebrate the resurrection of the Messiah. While there is no functioning Temple and no Levitical priesthood to wave a barley sheaf before the Lord, the spiritual reality of the day is alive and glorious. Christ is risen, the firstfruits of them that slept, and His resurrection guarantees ours. This is the day to sing, to read the resurrection accounts from the Gospels, and to give thanks for the hope of eternal life.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>For families new to keeping the feast, start simply. Remove the leaven from the house. Buy matzah and eat it at every meal. Rest on the first and seventh days if at all possible. Read the Exodus narrative and 1 Corinthians 5 together as a family. The feast does not require perfection on the first attempt. It requires obedience and a willing heart. The depth and the richness will grow year after year.</p>
+    </div>
+
+
+    <!-- ============ CONCLUSION ============ -->
+    <div class="conclusion">
+      <h2 style="margin-top:0;">Keep the Feast</h2>
+      <p>The Feast of Unleavened Bread is not a relic. It is not a burden. It is a living commandment that shapes the believer's walk from the inside out. It teaches what the cross accomplished and what the Christian life requires. The blood of the Passover Lamb delivers you. The seven days of unleavened bread call you to walk in the deliverance you have received, putting out the old leaven of sin and feeding daily on the sinless Bread of Life.</p>
+      <p>In every generation, in every household that keeps this feast, the same truth is rehearsed: God redeems suddenly, God sanctifies thoroughly, and God requires His people to walk in purity. The physical act of searching the house for hidden crumbs and eating the plain bread of affliction is not beneath the dignity of the Gospel. It is the Gospel, acted out in the kitchen and at the table, where the deepest lessons are often learned.</p>
+      <div class="scripture">
+        <div class="ref">1 Corinthians 5:7&ndash;8</div>
+        <p>"For even Christ our passover is sacrificed for us: Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth."</p>
+      </div>
+    </div>
+
+    <!-- ============ QUESTIONS ============ -->
+    <div class="page-break"></div>
+    <h2 id="questions"><span class="num">11.</span>Discipleship Questions</h2>
+    <p>Answer in your own words from the Scriptures we have studied.</p>
+
+    <div class="questions">
+      <div class="q">
+        <div class="qtext">Why was the bread unleavened on the night Israel left Egypt? What does the haste teach us about God's part and man's part in redemption?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What are the two commands God gives for this feast, one positive and one negative? Give the Scripture for each.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What does leaven picture throughout Scripture? Give at least two passages where leaven is used as a symbol of corruption or sin.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Why does the feast last seven days instead of one? What does the number seven teach about the life of sanctification?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What happened on the seventh day of the feast, and what does the Red Sea crossing teach the believer about seasons of impossible difficulty?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How does the unleavened bread picture Christ? Include both the sinlessness of His life and the physical marks of the bread.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">In 1 Corinthians 5:7&ndash;8, what does Paul command the Gentile believers at Corinth to do? What does this tell us about whether the feast still stands for the church?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How does Paul connect the resurrection of Christ to the Firstfruits ceremony in 1 Corinthians 15:20? What is the "guarantee" that the firstfruits sheaf represents?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+    </div>
+
+    <!-- ============ ANSWER KEY ============ -->
+    <div class="page-break"></div>
+    <h2><span class="num">&#10003;</span>Teacher Answer Key</h2>
+    <div class="answer-key">
+      <div class="ak">The bread was unleavened because Israel was thrust out of Egypt in such haste that there was no time for the dough to rise (Exodus 12:39). This teaches that the deliverance was entirely the work of God. Man contributed nothing. They could not even finish making bread. The lack of leaven in the bread is a picture of the lack of human contribution to redemption.</div>
+      <div class="ak">The positive command is to eat unleavened bread for seven days (Leviticus 23:6, Deuteronomy 16:3). The negative command is to remove all leaven from the house (Exodus 12:15). Together they picture putting off the old nature of sin and putting on the new nature of sincerity and truth.</div>
+      <div class="ak">Leaven pictures sin, corruption, and false doctrine. In 1 Corinthians 5:6 Paul says a little leaven leavens the whole lump. In Matthew 16:6 Jesus warns against the leaven of the Pharisees and Sadducees. Paul names leaven directly as "malice and wickedness" in 1 Corinthians 5:8.</div>
+      <div class="ak">Seven speaks of completion and fullness. The seven-day feast teaches that sanctification is not a single moment but a daily walk that spans the whole life of the believer. Just as the Passover lamb saves in a night, the week of unleavened bread shapes the redeemed person over time, day by day, meal by meal.</div>
+      <div class="ak">The seventh day marks the crossing of the Red Sea (Exodus 14). God deliberately led Israel to a place where they were trapped between the sea and Pharaoh's army, with no human solution. Then He opened the sea and fought for them. This teaches the believer that God will lead His people into places of total vulnerability so that their trust must rest entirely on Him, and that He alone secures the passage from death to life.</div>
+      <div class="ak">The unleavened bread has no leaven, picturing Christ who had no sin (1 Peter 2:22). The bread is also pierced with holes and marked with stripes during baking, which pictures the Messiah who was pierced for our transgressions and by whose stripes we are healed (Isaiah 53:5). When we eat the matzah, we are partaking of the Bread of Life whose sinless body was given for us (Luke 22:19).</div>
+      <div class="ak">Paul commands the Corinthian believers, a predominantly Gentile church, to "keep the feast" with the unleavened bread of sincerity and truth, not with the old leaven of malice and wickedness (1 Corinthians 5:8). This tells us that the feast was not abolished by the cross. The apostle did not tell them to stop. He told them to keep it rightly, with Christ as the center.</div>
+      <div class="ak">In 1 Corinthians 15:20, Paul declares that Christ is risen from the dead and become the firstfruits of them that slept. Just as the first barley sheaf waved before the Lord was a guarantee that the full harvest would follow, the resurrection of Christ is the divine guarantee that all who belong to Him will be raised at His coming. The single sheaf promises the whole field.</div>
+    </div>
+
+  </div><!-- /body-region -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <div class="verse">Study to shew thyself approved unto God &middot; 2 Timothy 2:15</div>
+    <div class="small">Work the Word &middot; Pronomian Teaching Series</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>

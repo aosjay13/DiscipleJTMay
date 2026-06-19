@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Salt of the Earth</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+    --green:       #2c4a3e;
+    --green-acc:   #4a8c72;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2.3rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em.term { font-style: italic; color: var(--crimson); font-weight: 500; }
+
+  .group-intro {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── SCRIPTURE ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+
+  /* ── KEYPOINT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+  .keypoint p {
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .keypoint p + p { margin-top: 0.7rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── BONUS / NOTE PANEL ── */
+  .bonus {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '✦'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus strong { color: var(--ink); }
+
+  /* ── CONCLUSION (crimson) ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  .conclusion-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #EDE0C4;
+  }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── DISCUSSION / QUESTIONS ── */
+  .qpage { page-break-before: always; break-before: page; }
+  .block-head {
+    text-align: center;
+    margin: 2.5rem 0 1.8rem;
+  }
+  .block-head .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .block-head h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 700;
+    color: var(--crimson);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .block-head .rule { display: flex; align-items: center; gap: 0.6rem; max-width: 220px; margin: 0.9rem auto 0; }
+  .block-head .rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .block-head .rule i { color: var(--gold-light); font-style: normal; }
+
+  .qlist { list-style: none; counter-reset: q; }
+  .qlist > li {
+    counter-increment: q;
+    margin-bottom: 1.4rem;
+    padding-left: 2.6rem;
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .qlist > li::before {
+    content: counter(q);
+    position: absolute;
+    left: 0; top: -0.1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--crimson);
+    width: 1.9rem; height: 1.9rem;
+    border: 1px solid var(--gold-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--cream);
+  }
+  .qlist .q-text { font-size: 1.05rem; line-height: 1.7; color: var(--ink-mid); }
+  .qlist .q-ref { display: block; margin-top: 0.3rem; font-size: 0.85rem; font-style: italic; color: var(--ink-soft); }
+  .qlist .answer-lines { margin-top: 0.7rem; }
+  .qlist .answer-lines span {
+    display: block;
+    border-bottom: 1px solid #C9A84C55;
+    height: 1.5rem;
+  }
+
+  /* ── ANSWER KEY (teacher) ── */
+  .keypage { page-break-before: always; break-before: page; }
+  .teacher-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  .akey { list-style: none; counter-reset: a; }
+  .akey > li {
+    counter-increment: a;
+    margin-bottom: 1.3rem;
+    padding: 1rem 1.3rem 1rem 1.3rem;
+    background: var(--cream);
+    border-left: 3px solid var(--green-acc);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .akey > li .anum {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .akey > li .anum::before { content: 'Answer ' counter(a); }
+  .akey .a-q { font-style: italic; color: var(--crimson); font-size: 0.98rem; margin-bottom: 0.5rem; }
+  .akey .a-body { font-size: 1.0rem; line-height: 1.78; color: var(--ink-mid); }
+  .akey .a-body strong { color: var(--ink); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page { size: 8.5in 11in; margin: 0.5in; }
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .section { page-break-inside: avoid; }
+    .scripture, .keypoint, .bonus { page-break-inside: avoid; break-inside: avoid; }
+    .conclusion, .doc-header, .doc-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .qlist > li, .akey > li { page-break-inside: avoid; break-inside: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">A Discipleship Teaching</p>
+    <h1 class="doc-title">The Salt of the Earth</h1>
+    <p class="doc-subtitle">What It Means to Preserve, Season, and Stand for God in a Corrupt World</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">When the Lord sat down on the mountain to teach His disciples, He did not begin by telling them to go change the world with great programs or loud crusades. He told them what they already were. He said plainly, "Ye are the salt of the earth." It is a short sentence, and it is easy to read past, yet it carries the whole calling of a believer in a single picture. To understand what the Lord is asking of us, we have to understand what salt did in the world He was speaking to.</p>
+      <p>Salt was one of the most valued substances of the ancient world. It preserved meat against rot, it seasoned food and drew out its flavor, it sealed solemn agreements, and it healed and purified. Every person hearing those words knew exactly what salt was for. So when the Lord called His people the salt of the earth, He was telling them that their presence in the world is meant to do for the world what salt does for food. In this lesson we will trace that picture through both the Old Testament and the New, ask what it actually looks like to live as salt, and hear the Lord's warning about salt that has lost its savour.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span>The Words of the Lord</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span>What Salt Meant to Israel</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>Salt Preserves Against Corruption</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>Salt Seasons and Sets Apart</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>Salt That Has Lost Its Savour</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>Have Salt in Yourselves</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Words of the Lord</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord spoke of salt in three of the Gospels, and each saying adds something to the picture. In the Sermon on the Mount He names what His people are and warns what happens when salt fails. The calling and the warning come together in one breath.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:13</span>
+          <span class="scripture-text">Ye are the salt of the earth: but if the salt have lost his savour, wherewith shall it be salted? it is thenceforth good for nothing, but to be cast out, and to be trodden under foot of men.</span>
+        </div>
+
+        <p>Notice that the Lord does not say "try to become salt" or "act a little more like salt." He says <em class="term">ye are</em>. This is who the disciple already is by grace, set in the world for a purpose. The same truth appears when Luke records the saying, where the Lord stresses that salt which has gone flat cannot be made useful again by any human effort.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Luke 14:34&ndash;35</span>
+          <span class="scripture-text">Salt is good: but if the salt have lost his savour, wherewith shall it be seasoned? It is neither fit for the land, nor yet for the dunghill; but men cast it out. He that hath ears to hear, let him hear.</span>
+        </div>
+
+        <p>Then in Mark the Lord turns the picture inward and gives the command that holds it all together. The salt is not only for the world outside, it is something the believer is to keep within.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Mark 9:50</span>
+          <span class="scripture-text">Salt is good: but if the salt have lost his saltness, wherewith will ye season it? Have salt in yourselves, and have peace one with another.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Heart of the Picture</p>
+          <p>To be the salt of the earth is to be a preserving, seasoning, distinct presence in a decaying world. It is who the believer already is in Christ, and it is something to be guarded so that it is never lost.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">What Salt Meant to Israel</h2>
+      </div>
+      <div class="section-body">
+        <p>Before we can hear the Lord's words rightly, we have to stand where His listeners stood. The people of Israel had handled salt all their lives, and the Scriptures they knew were full of it. Salt was bound up with the worship of God, with the keeping of covenant, and even with the works of His prophets.</p>
+
+        <p class="group-intro">Salt in the offerings and the covenant.</p>
+
+        <p>Every grain offering brought to the altar had to be seasoned with salt. God called it the <em class="term">salt of the covenant</em>, and He commanded that it never be left out. Salt does not spoil and does not break down, so it became the sign of a bond that endures.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Leviticus 2:13</span>
+          <span class="scripture-text">And every oblation of thy meat offering shalt thou season with salt; neither shalt thou suffer the salt of the covenant of thy God to be lacking from thy meat offering: with all thine offerings thou shalt offer salt.</span>
+        </div>
+
+        <p>The portions given to the priests were sealed the same way, by a covenant of salt that could not be broken. And when God promised the throne to David and his sons, He described that lasting promise with the very same words.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Numbers 18:19</span>
+          <span class="scripture-text">...it is a covenant of salt for ever before the LORD unto thee and to thy seed with thee.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Chronicles 13:5</span>
+          <span class="scripture-text">Ought ye not to know that the LORD God of Israel gave the kingdom over Israel to David for ever, even to him and to his sons by a covenant of salt?</span>
+        </div>
+
+        <p class="group-intro">Salt that healed and made fruitful.</p>
+
+        <p>Salt was not only a sign, it was also used. When the men of Jericho told Elisha that their water was bad and their ground barren, the prophet did not pour out a remedy of his own making. He took salt, cast it into the spring, and the word of the Lord healed the waters so that they brought life instead of death.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Kings 2:21&ndash;22</span>
+          <span class="scripture-text">And he went forth unto the spring of the waters, and cast the salt in there, and said, Thus saith the LORD, I have healed these waters; there shall not be from thence any more death or barren land. So the waters were healed unto this day...</span>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">A Teaching Note</p>
+          <p>Salt has two faces in Scripture, and both matter for this lesson. Where God's people are faithful, salt heals waters, seasons offerings, and seals lasting covenants. Where there is rebellion, salt also marks barrenness and judgment. Abimelech sowed a conquered city with salt to leave it desolate (Judges 9:45), and Lot's wife became a pillar of salt when she looked back toward Sodom (Genesis 19:26). The same salt that preserves the faithful stands as a witness against those who turn away.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Salt Preserves Against Corruption</h2>
+      </div>
+      <div class="section-body">
+        <p>In a world with no refrigeration, salt was how a man kept meat from rotting. It held back decay. This is the first thing the Lord means when He calls His people the salt of the earth. The world, left to itself, runs toward corruption, and the presence of God's people is meant to slow that rot and hold back the spread of wickedness.</p>
+
+        <p>We see this in the account of Sodom. When God came down to judge that city, He was willing to spare the whole place for the sake of a small number of righteous people living in it. The righteous were the salt of Sodom. As long as they were there, judgment was held back.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 18:32</span>
+          <span class="scripture-text">...Peradventure ten shall be found there. And he said, I will not destroy it for ten's sake.</span>
+        </div>
+
+        <p>The lesson is sobering. There were not even ten righteous in Sodom, and the salt was so scarce that the city could not be preserved. Yet the principle stands across the whole of Scripture. A faithful remnant, even a small one, restrains the corruption of a whole people. Noah was a preacher of righteousness in a generation given over to violence, and his household alone was carried through the flood. The presence of the righteous matters more than the world will ever admit.</p>
+
+        <p>This preserving work does not happen by retreating from the world. Salt does no good sitting sealed in the bag. It has to be rubbed into the meat. The Lord prayed not that His people would be taken out of the world, but that they would be kept from the evil while they remained in it.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 17:15</span>
+          <span class="scripture-text">I pray not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Salt at Work</p>
+          <p>The believer preserves the world not by blending into it, but by living a holy and righteous life right in the middle of it. The light that exposes darkness and the salt that holds back rot are the same faithful life, lived openly where men can see it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Salt Seasons and Sets Apart</h2>
+      </div>
+      <div class="section-body">
+        <p>Salt does more than preserve. It seasons. A meal without salt is flat and tasteless, and a pinch of salt makes the difference between bland and good. The believer is meant to add a flavor to the world that nothing else can give, the savor of the knowledge of God. Paul takes the very same picture and applies it to the way we speak.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 4:6</span>
+          <span class="scripture-text">Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man.</span>
+        </div>
+
+        <p>Speech seasoned with salt is speech that carries grace and truth together, that makes the listener thirsty for God rather than driving him away. It is not flattery and it is not harshness. It is the plain, gracious word of a life that has been with the Lord.</p>
+
+        <p>Salt also sets a thing apart. Salted food tastes different, and a salted life looks different. From the beginning, God meant His people to be marked off from the nations around them, distinct in how they lived and how they worshiped. When Israel walked in obedience, the surrounding nations were meant to look at them and see a wisdom and a nearness to God that no one else had.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 4:6&ndash;7</span>
+          <span class="scripture-text">Keep therefore and do them; for this is your wisdom and your understanding in the sight of the nations, which shall hear all these statutes, and say, Surely this great nation is a wise and understanding people. For what nation is there so great, who hath God so nigh unto them...</span>
+        </div>
+
+        <p>That distinctness is exactly what makes salt useful. Salt that tastes like everything around it is no longer salt at all. The believer who looks, talks, and lives just like the world has nothing to season it with. Peter calls God's people a peculiar people, a people set apart, and the reason given is that they were called out of darkness into light so that they might show forth His praise.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 2:9</span>
+          <span class="scripture-text">But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Set Apart on Purpose</p>
+          <p>Holiness is not a way to earn God's favor, for salvation is by grace through faith. It is the savor of a life already saved. A people who walk in God's ways stand out, and that very difference is what seasons the world and draws others to taste and see that the Lord is good.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Salt That Has Lost Its Savour</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord did not leave the picture on a comfortable note. He added a warning that ought to make every believer stop and think. Salt can lose its savour. When it does, it is good for nothing, fit only to be thrown out and trodden underfoot. The thing that was made to preserve and season becomes worthless.</p>
+
+        <p>How does salt lose its savour? It happens through mixture and compromise. Salt that has been so diluted and blended with other things that it no longer tastes like salt can no longer do its work. The same is true of the believer. When a Christian becomes so mixed with the world, so conformed to its ways and its appetites, that there is no longer any real difference, the saltiness is gone. Paul names the danger and the remedy in one verse.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 12:2</span>
+          <span class="scripture-text">And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</span>
+        </div>
+
+        <p>The church at Laodicea is a sad picture of salt gone flat. They were neither cold nor hot but lukewarm, comfortable and self-satisfied, blended so thoroughly into their surroundings that the Lord said He would spue them out of His mouth. They thought they were rich and in need of nothing, and did not know that they had become wretched and poor and blind.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 3:15&ndash;16</span>
+          <span class="scripture-text">I know thy works, that thou art neither cold nor hot... So then because thou art lukewarm, and neither cold nor hot, I will spue thee out of my mouth.</span>
+        </div>
+
+        <p>The warning is not meant to terrify the faithful, but to call the careless back. The Lord loved Laodicea, and His next word to them was to repent. Salt that has been kept from mixture stays useful. The believer keeps his savour by staying separate from the world's corruption and close to the Lord.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 6:17</span>
+          <span class="scripture-text">Wherefore come out from among them, and be ye separate, saith the Lord, and touch not the unclean thing; and I will receive you.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Have Salt in Yourselves</h2>
+      </div>
+      <div class="section-body">
+        <p>In Mark's account the Lord turns the picture inward. Before the salt can do anything for the world outside, it has to be real within. "Have salt in yourselves," He says, and then immediately, "and have peace one with another." The two belong together. A people who carry the savor of God within them, who are right with Him and right with each other, are the salt the world needs.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Mark 9:50</span>
+          <span class="scripture-text">...Have salt in yourselves, and have peace one with another.</span>
+        </div>
+
+        <p>How is that inward saltiness kept? It is kept the same way it was always meant to be kept, by walking in the ways of God out of love for Him. Obedience does not save us, for we are saved by grace through faith. But obedience is the savor of a saved life, the fruit that proves the root is alive. The one who loves the Lord keeps His commandments, and that life of glad obedience is exactly the flavor the world has never tasted.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 14:15</span>
+          <span class="scripture-text">If ye love me, keep my commandments.</span>
+        </div>
+
+        <p>So the salt is kept fresh by the word and by the Spirit. The believer who stays in the Scriptures, who walks in peace with his brethren, and who keeps himself unspotted from the world, will not lose his savour. He becomes what the Lord said he already was, a preserving and seasoning presence that points a corrupt world back to its Maker.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:16</span>
+          <span class="scripture-text">Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion">
+      <p class="conclusion-label">In Summary</p>
+      <h2 class="conclusion-title">Be What He Has Already Called You</h2>
+      <div class="conclusion-body">
+        <p>To be the salt of the earth is not a burden laid on you to perform, it is a calling the Lord has already placed upon you in His grace. You are salt. The question He sets before you is whether you will keep your savour or lose it.</p>
+        <p>Salt that stays separate from the world <em>preserves</em> it, holding back the rot of corruption by a holy life lived openly. Salt that keeps its flavor <em>seasons</em> the world, drawing men toward the goodness of God by speech full of grace and a life that is plainly different. And salt that has salt in itself walks in <em>peace</em>, faithful within before it ever works without.</p>
+        <p>Guard your saltiness. Stay close to the word, glad in obedience, unmixed with the world, and at peace with the brethren. Then the Lord who called you the salt of the earth will use you to do for a decaying world exactly what salt was made to do.</p>
+      </div>
+    </div>
+
+    <!-- DISCIPLESHIP QUESTIONS -->
+    <div class="qpage">
+      <div class="block-head">
+        <span class="eyebrow">For Discussion and Study</span>
+        <h2>Discipleship Questions</h2>
+        <div class="rule"><span></span><i>✦</i><span></span></div>
+      </div>
+
+      <ol class="qlist">
+        <li>
+          <div class="q-text">In Matthew 5:13 the Lord says "ye are the salt of the earth," not "try to become salt." What does that wording teach us about the believer's identity and calling?</div>
+          <span class="q-ref">Matthew 5:13</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Why was salt commanded for every offering, and what did God mean by calling it "the salt of the covenant"?</div>
+          <span class="q-ref">Leviticus 2:13; Numbers 18:19</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">In the account of Elisha at Jericho, what actually healed the waters? What does this show about how God uses His people and their works?</div>
+          <span class="q-ref">2 Kings 2:21-22</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Name the two sides of salt seen in Scripture, the preserving side and the side of judgment. Give an example of each.</div>
+          <span class="q-ref">2 Kings 2:21; Judges 9:45; Genesis 19:26</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">How does the account of Sodom show that even a small number of righteous people can preserve a place? What was the sobering result there?</div>
+          <span class="q-ref">Genesis 18:32</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">Salt has to be rubbed into the meat to do any good. The Lord prayed not that we be taken out of the world. What does this teach about how the believer is to live as salt?</div>
+          <span class="q-ref">John 17:15</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">What does it mean for our speech to be "seasoned with salt"? What kind of speech is that, and what kind is it not?</div>
+          <span class="q-ref">Colossians 4:6</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">How does salt lose its savour, and what does that picture look like in the life of a believer? Use Laodicea as an example.</div>
+          <span class="q-ref">Matthew 5:13; Revelation 3:15-16</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">If salvation is by grace through faith, how do holiness and obedience fit into the picture of being salt? Are they the mechanism of salvation, or something else?</div>
+          <span class="q-ref">1 Peter 2:9; John 14:15</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+        <li>
+          <div class="q-text">In Mark 9:50 the Lord ties "have salt in yourselves" to "have peace one with another." Why are these two commands joined together?</div>
+          <span class="q-ref">Mark 9:50</span>
+          <div class="answer-lines"><span></span><span></span></div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- TEACHER ANSWER KEY -->
+    <div class="keypage">
+      <div class="block-head">
+        <span class="eyebrow">Teacher's Guide</span>
+        <h2>Answer Key</h2>
+        <div class="rule"><span></span><i>✦</i><span></span></div>
+      </div>
+      <p class="teacher-note">For the teacher. This page prints after the worksheet for your reference during class discussion.</p>
+
+      <ol class="akey">
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What does "ye are the salt of the earth" teach about identity?</div>
+          <div class="a-body">It teaches that being salt is who the believer <strong>already is</strong> by God's grace, not something he works up by his own effort. The Lord states it as a present fact. The believer's task is not to manufacture saltiness but to keep and not lose the savor he has been given, living out in the world what God has already made him to be.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Why salt on every offering, and what is "the salt of the covenant"?</div>
+          <div class="a-body">Salt does not spoil or break down, so it became the sign of a <strong>bond that endures</strong>. God required it on every grain offering and used the phrase "covenant of salt" for promises that would not be broken, including the priestly portions and the throne of David. Salt pointed to the lasting, unbreakable faithfulness of God's covenant with His people.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What healed the waters at Jericho?</div>
+          <div class="a-body">The <strong>word of the Lord</strong> healed the waters, not the salt by itself. Elisha said "Thus saith the LORD, I have healed these waters." God chose to use the salt and the prophet as the means, but the power was His. It pictures how God works His preserving and healing purposes through His people while the power and the credit remain His own.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">The two sides of salt, with examples.</div>
+          <div class="a-body">The <strong>preserving side</strong>: salt seasons offerings, seals covenants, and heals the waters at Jericho (2 Kings 2:21). The <strong>judgment side</strong>: Abimelech sowed a conquered city with salt to make it barren (Judges 9:45), and Lot's wife became a pillar of salt for looking back to Sodom (Genesis 19:26). The same substance preserves the faithful and stands as a witness against the rebellious.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What does Sodom show about the righteous, and the sobering result?</div>
+          <div class="a-body">God was willing to spare the whole city for the sake of even <strong>ten righteous people</strong>. A faithful remnant restrains judgment and preserves a place, as salt holds back rot. The sobering result is that not even ten could be found, the salt was too scarce, and the city was destroyed. It shows how much the presence of the righteous matters, and how dangerous it is when they are absent.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">How is the believer to live as salt in the world?</div>
+          <div class="a-body">Salt does no good sealed in the bag; it must be <strong>rubbed into the meat</strong>. The Lord prayed not that we be taken out of the world but kept from the evil in it (John 17:15). So the believer is not to retreat into isolation, but to live a holy and distinct life right in the middle of the world, present and engaged, yet unmixed with its corruption.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">What is speech "seasoned with salt"?</div>
+          <div class="a-body">It is speech that carries <strong>grace and truth together</strong>, that makes the listener thirsty for God rather than driving him away. It is not flattery, and it is not harshness. It is the gracious, honest word of a life that has walked with the Lord, the kind of answer that draws others toward Him.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">How does salt lose its savour, and what did that look like at Laodicea?</div>
+          <div class="a-body">Salt loses its savour through <strong>mixture and compromise</strong>, when it is so blended with other things that it no longer tastes like salt. In a believer this is conformity to the world until there is no real difference left. Laodicea was lukewarm, comfortable, and self-satisfied, so blended in that the Lord warned He would spue them out, yet He called them to repent because He still loved them.</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">How do holiness and obedience fit with grace?</div>
+          <div class="a-body">They are <strong>the fruit and savor of a saved life, not the mechanism of salvation</strong>. We are saved by grace through faith. Holiness and obedience flow out of love for the Lord and make the believer distinct, and that very difference is what seasons the world. The peculiar, set-apart life shows forth His praises (1 Peter 2:9); the one who loves Him keeps His commandments (John 14:15).</div>
+        </li>
+        <li>
+          <span class="anum"></span>
+          <div class="a-q">Why join "have salt in yourselves" to "have peace one with another"?</div>
+          <div class="a-body">Because the salt must be <strong>real within before it can work without</strong>. A people who carry the savor of God inwardly, who are right with Him and at peace with each other, are the salt the world needs. Strife and division ruin the witness. Inward saltiness and peace among the brethren belong together, and both are kept by walking close to the Lord.</div>
+        </li>
+      </ol>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Ye are the salt of the earth &middot; Matthew 5:13 &middot; Have salt in yourselves, and have peace one with another &middot; Mark 9:50</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

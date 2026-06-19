@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Feast of First Fruits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson-dark:#7A1F1F;
+    --crimson-light:#9B3434;
+    --parchment:#FAF6EE;
+    --gold:#C9A84C;
+    --ink:#2B2622;
+    --cream:#FBF3E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:#EDE4CF;
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .page-wrap{
+    max-width:8.5in;
+    margin:0 auto;
+    background:var(--parchment);
+  }
+
+  /* ===== Crimson header bookend ===== */
+  .doc-header{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:38px 32px 30px;
+    border-bottom:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-header .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .doc-header h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+  .doc-header .subtitle{
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream);
+    opacity:.92;
+  }
+  .doc-header .anchor{
+    margin-top:14px;
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--gold);
+  }
+
+  /* ===== Body region with gold corner brackets ===== */
+  .body-region{
+    position:relative;
+    padding:40px 46px 46px;
+  }
+  .body-region::before,
+  .body-region::after{
+    content:"";
+    position:absolute;
+    width:42px; height:42px;
+    border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .body-region::before{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .body-region::after{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  .corner-br, .corner-bl{
+    position:absolute; width:42px; height:42px; border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .corner-br{ top:14px; right:14px; border-left:none; border-bottom:none; }
+  .corner-bl{ bottom:14px; left:14px; border-right:none; border-top:none; }
+
+  h2{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-dark);
+    font-size:23px;
+    margin:34px 0 6px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    break-after:avoid;
+  }
+  h2 .num{ color:var(--gold); margin-right:8px; }
+
+  h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-light);
+    font-size:18px;
+    margin:22px 0 4px;
+    break-after:avoid;
+  }
+
+  p{ margin:0 0 14px; }
+
+  .lead{ font-size:19px; }
+
+  /* Dropcap */
+  .dropcap::first-letter{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    float:left;
+    font-size:64px;
+    line-height:50px;
+    padding:6px 10px 0 0;
+  }
+
+  /* ===== Table of contents ===== */
+  .toc{
+    background:#fff;
+    border:1px solid #e3d9c4;
+    border-left:5px solid var(--gold);
+    padding:20px 26px;
+    margin:8px 0 10px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toc h2{
+    border:none; margin:0 0 8px; padding:0; font-size:19px;
+  }
+  .toc ol{ margin:0; padding-left:22px; columns:2; column-gap:34px; }
+  .toc li{ margin-bottom:5px; break-inside:avoid; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+
+  /* ===== Scripture box ===== */
+  .scripture{
+    background:#fff;
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:16px 22px 12px;
+    margin:16px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .scripture .ref{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--crimson-dark);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .scripture p{ font-style:italic; margin:0 0 6px; }
+
+  /* ===== Keypoint panel (crimson border) ===== */
+  .keypoint{
+    border:2px solid var(--crimson-light);
+    border-radius:4px;
+    background:#fff;
+    padding:16px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .keypoint .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .keypoint p:last-child{ margin-bottom:0; }
+
+  /* ===== Teacher / Bonus note (dashed gold) ===== */
+  .note{
+    border:2px dashed var(--gold);
+    border-radius:4px;
+    background:#FBF7EC;
+    padding:15px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .note .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:#8a7320;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .note p:last-child{ margin-bottom:0; }
+
+  /* ===== Conclusion block ===== */
+  .conclusion{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px 32px;
+    margin:30px 0 8px;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .conclusion h2{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+  }
+  .conclusion p{ margin-bottom:12px; }
+  .conclusion .scripture{ background:rgba(255,255,255,.08); border-top-color:var(--gold); }
+  .conclusion .scripture .ref{ color:var(--gold); }
+  .conclusion .scripture p{ color:var(--cream); }
+
+  /* ===== Discipleship questions ===== */
+  .questions{ counter-reset:q; }
+  .q{
+    counter-increment:q;
+    position:relative;
+    padding-left:46px;
+    margin:0 0 22px;
+    break-inside:avoid;
+  }
+  .q::before{
+    content:counter(q);
+    position:absolute;
+    left:0; top:-2px;
+    width:30px; height:30px;
+    background:var(--crimson-dark);
+    color:var(--cream);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .q .qtext{ font-weight:600; margin-bottom:10px; }
+  .answer-line{
+    border-bottom:1px solid #c9bfa6;
+    height:24px;
+    margin:0 0 8px;
+  }
+
+  /* ===== Answer key ===== */
+  .answer-key{ counter-reset:a; }
+  .ak{
+    counter-increment:a;
+    position:relative;
+    padding-left:40px;
+    margin-bottom:16px;
+    break-inside:avoid;
+  }
+  .ak::before{
+    content:counter(a);
+    position:absolute; left:0; top:0;
+    width:26px; height:26px;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  /* ===== Crimson footer bookend ===== */
+  .doc-footer{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:24px 32px;
+    border-top:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-footer .verse{ font-family:'Cinzel', serif; color:var(--gold); letter-spacing:1px; font-size:14px; margin-bottom:6px; }
+  .doc-footer .small{ font-size:13px; opacity:.9; }
+
+  .page-break{ break-before:page; }
+
+  /* ===== Print rules ===== */
+  @page{
+    size:letter portrait;
+    margin:0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'EB Garamond', serif;
+      font-size:10px;
+      color:#7A1F1F;
+    }
+  }
+
+  @media print{
+    body{ font-size:12.5pt; background:#fff; }
+    .page-wrap{ max-width:none; margin:0; }
+    .doc-header{ padding:26px 20px 22px; }
+    .doc-header h1{ font-size:26pt; }
+    .body-region{ padding:26px 20px 30px; }
+    h2{ font-size:16pt; }
+    h3{ font-size:13pt; }
+    a{ color:inherit; text-decoration:none; }
+    .no-print{ display:none !important; }
+  }
+
+  .print-tip{
+    max-width:8.5in;
+    margin:14px auto 0;
+    font-size:13px;
+    color:#7a6f57;
+    text-align:center;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <div class="eyebrow">Work the Word &middot; Pronomian Teaching</div>
+    <h1>The Feast of First Fruits</h1>
+    <div class="subtitle">Christ Is Risen, the First Fruits of Them That Slept</div>
+    <div class="anchor">Christ the Firstfruits; Afterward They That Are Christ's at His Coming &middot; 1 Corinthians 15:23</div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-region">
+    <span class="corner-br"></span>
+    <span class="corner-bl"></span>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <h2>What This Teaching Covers</h2>
+      <ol>
+        <li><a href="#intro">What First Fruits Is</a></li>
+        <li><a href="#ch1">The Command in the Law</a></li>
+        <li><a href="#ch2">The Meaning of the Wave Sheaf</a></li>
+        <li><a href="#ch3">Christ Our First Fruits</a></li>
+        <li><a href="#ch4">The First Fruits of the Spirit and the Church</a></li>
+        <li><a href="#ch5">Keeping First Fruits Today</a></li>
+        <li><a href="#questions">Discipleship Questions</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. INTRODUCTION -->
+    <h2 id="intro"><span class="num">1.</span>What First Fruits Is</h2>
+    <p class="lead dropcap">Among the appointed times of God there is a quiet feast that carries one of the loudest truths in all of Scripture. The Feast of First Fruits looks like a simple harvest custom, a single sheaf of barley lifted up before the LORD. Yet it points directly to the morning the tomb was found empty. We anchor this study in 1 Corinthians 15:20: "But now is Christ risen from the dead, and become the firstfruits of them that slept." The first sheaf was always a promise that the full harvest was coming, and the resurrection of Jesus is the promise that ours is coming too.</p>
+
+    <p>First Fruits is one of the spring appointed times of the LORD, listed among His feasts in Leviticus 23. It falls in the season of barley harvest in the land of Israel, in the early part of spring. The instruction was simple. Before the people gathered in any of the new grain for themselves, they brought the very first sheaf of the harvest to the priest, who lifted it up and waved it before the LORD. Only after that first sheaf was given to God could the rest of the harvest be eaten.</p>
+
+    <p>This feast sits inside a larger cluster of spring days. Passover comes first, then the seven days of Unleavened Bread, and the wave sheaf of First Fruits is presented on the morrow after the weekly Sabbath that falls during that week. From that day the people counted seven full weeks to arrive at the Feast of Weeks, which the New Testament calls Pentecost. So First Fruits is the starting gun of the count to Pentecost, and it marks the beginning, not the fullness, of the harvest.</p>
+
+    <h3>A Note on the Terms</h3>
+    <p><strong><em>Bikkurim:</em></strong> the Hebrew word for "first fruits," the earliest and best portion of a harvest, set apart and given to the LORD before any of the rest is used.</p>
+    <p><strong><em>Omer:</em></strong> a measure of grain, and the name given to the wave sheaf itself. From this comes the long-standing practice of "counting the omer," numbering the days from First Fruits to Pentecost.</p>
+    <p><strong><em>Reshit:</em></strong> "the beginning" or "the first." The first sheaf was the reshit of the harvest, a small beginning that guaranteed the great ingathering still to come.</p>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>These three Hebrew words are worth writing on the board. <em>Bikkurim</em> names the feast itself. <em>Omer</em> names what is waved and opens the count to Pentecost. <em>Reshit</em> carries the theological weight: the first portion that guarantees the whole. When the class reaches chapter three and sees Paul call Christ the firstfruits, these terms will already be in their hands.</p>
+    </div>
+
+
+    <!-- 2. THE COMMAND IN THE LAW -->
+    <h2 id="ch1"><span class="num">2.</span>The Command in the Law</h2>
+    <p>The clearest instruction for this feast is given in Leviticus 23, right alongside Passover and Unleavened Bread.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:10&ndash;11</div>
+      <p>"Speak unto the children of Israel, and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest: And he shall wave the sheaf before the LORD, to be accepted for you: on the morrow after the sabbath the priest shall wave it."</p>
+    </div>
+
+    <p>Notice the careful timing. The sheaf was waved on "the morrow after the sabbath." This is the day after the weekly Sabbath that falls within the Feast of Unleavened Bread, which always lands on the first day of the week. Keep that detail in mind, because it becomes very important when we come to the resurrection.</p>
+
+    <p>The feast was never meant to stand alone. An offering went up with the sheaf.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:12&ndash;14</div>
+      <p>"And ye shall offer that day when ye wave the sheaf an he lamb without blemish of the first year for a burnt offering unto the LORD. And the meat offering thereof shall be two tenth deals of fine flour mingled with oil, an offering made by fire unto the LORD for a sweet savour... And ye shall eat neither bread, nor parched corn, nor green ears, until the selfsame day that ye have brought an offering unto your God: it shall be a statute for ever throughout your generations in all your dwellings."</p>
+    </div>
+
+    <p>Two things stand out. First, the people could not eat any of the new grain until that first sheaf had been given to God. The harvest belonged to the LORD before it belonged to them. Second, the offering of the lamb, the fine flour, and the oil was part of the ceremonial service of the earthly sanctuary. As with all of the moedim, we keep the day itself, but the system of animal sacrifice that was attached to it has been fulfilled in Christ and is no longer carried out. We will return to that point in the final chapter.</p>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The phrase "a statute for ever throughout your generations" carries the same weight here as it does for every other appointed time. God did not set an expiration date on this feast. The day stands. What has changed is that the sacrificial system attached to the day has been fulfilled by Christ, so the believer keeps the appointed time without returning to the shadow of the altar.</p>
+    </div>
+
+    <p>The same feast appears in the other books of the Law as well, which shows how firmly it was set into the life of Israel.</p>
+
+    <div class="scripture">
+      <div class="ref">Numbers 28:26</div>
+      <p>"Also in the day of the firstfruits, when ye bring a new meat offering unto the LORD, after your weeks be out, ye shall have an holy convocation; ye shall do no servile work."</p>
+    </div>
+
+    <p>Deuteronomy 26 adds the heart behind the offering. When the worshipper brought his first fruits, he was to stand before the priest and recite the story of how the LORD brought Israel out of Egypt with a mighty hand and gave them the land. The first of the harvest was tied to remembrance. Every basket of first fruits was a confession that the land, the harvest, and the redemption all came from God.</p>
+
+
+    <!-- 3. THE MEANING OF THE WAVE SHEAF -->
+    <div class="page-break"></div>
+    <h2 id="ch2"><span class="num">3.</span>The Meaning of the Wave Sheaf</h2>
+    <p>Before we reach the fulfillment, it is worth dwelling on what the feast taught the worshipper. The wave sheaf carried at least three clear lessons.</p>
+
+    <h3>Consecration: God Gets the First</h3>
+    <p>The first and best of the harvest went to the LORD before anything was kept back. This was the opposite of giving God the leftovers. The principle runs all through Scripture. The first of the flock, the firstborn, the first of the increase, all were set apart as holy to God. To give the first is to declare that everything belongs to Him and that He is trusted to provide the rest.</p>
+
+    <h3>Thanksgiving: The Harvest Is a Gift</h3>
+    <p>The grain did not come from the cleverness of the farmer alone. It came as a gift from the hand of God, who sends the rain and the sun and gives the increase. Lifting up the first sheaf was an act of gratitude, a way of saying that the provision was recognized and the Provider was honored.</p>
+
+    <h3>Hope: The First Promises the Rest</h3>
+    <p>This is the heart of the feast. A single sheaf is a small thing compared to a whole field, yet the first sheaf was a guarantee. If the first of the grain was ripe and good, the full harvest was certain to follow. The first fruits were a promise of the great ingathering still to come. Hold onto that picture, because the New Testament builds the entire doctrine of the resurrection upon it.</p>
+
+    <div class="keypoint">
+      <div class="label">Three Lessons in One Sheaf</div>
+      <p>Consecration says the first belongs to God. Thanksgiving says the harvest comes from God. Hope says the first sheaf guarantees the full harvest. All three meet in Christ. He was consecrated and set apart. He is the gift of God to the world. And His resurrection is the guarantee that every believer will rise after Him.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Bonus &middot; Rabbinic Traditions</div>
+      <p>In later centuries, Jewish practice developed an elaborate ceremony for bringing first fruits, attached especially to the Feast of Weeks. According to the Mishnah, landowners would gather the choicest of the seven species of the land, place them in decorated baskets, and travel up to Jerusalem in a festive procession with music. A worshipper would present his basket to the priest and recite the words of Deuteronomy 26, retelling the story of Israel's redemption from Egypt and entry into the land.</p>
+      <p>One detail is worth noting for those holding the faith of Jesus. The later rabbinic rules restricted who could recite that declaration of belonging, limiting it in certain cases for converts and for women. Yet under the New Covenant, the Gentile who comes to faith is grafted into the olive tree and made a fellow citizen with the saints. The grafted-in believer can stand and confess the works of God as fully as any natural-born son of Israel. What human tradition narrowed, the gospel opened wide.</p>
+    </div>
+
+
+    <!-- 4. CHRIST OUR FIRST FRUITS -->
+    <h2 id="ch3"><span class="num">4.</span>Christ Our First Fruits</h2>
+    <p>Now the shadow meets the substance. Remember the timing of the feast. The wave sheaf was lifted up on the morrow after the Sabbath, the first day of the week, during Unleavened Bread. That is the very day Jesus rose from the dead. While the priest in the temple was lifting up the first sheaf of the harvest, the true First Fruits was rising out of the grave.</p>
+
+    <div class="scripture">
+      <div class="ref">1 Corinthians 15:20&ndash;23</div>
+      <p>"But now is Christ risen from the dead, and become the firstfruits of them that slept. For since by man came death, by man came also the resurrection of the dead. For as in Adam all die, even so in Christ shall all be made alive. But every man in his own order: Christ the firstfruits; afterward they that are Christ's at his coming."</p>
+    </div>
+
+    <p>Paul does not reach for this word by accident. He calls Jesus the firstfruits because the feast already taught the lesson. The first sheaf was a small beginning that guaranteed the whole harvest. In the same way, the risen Christ is the beginning of the resurrection, and His rising is the guarantee that all who belong to Him will rise also. He is the first sheaf. We are the great field that follows.</p>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>This is why the resurrection is not merely a happy ending to the gospel story. It is the seal of certainty on every promise God has made to the believer. Because the First Fruits has been raised, the harvest is no longer in doubt. Death has been answered. The grave could not hold the first sheaf, and it will not hold those who are joined to Him.</p>
+    </div>
+
+    <p>There is also a beautiful order in the spring feasts. Passover shows the Lamb slain for our deliverance. Unleavened Bread shows His body laid in the tomb, free of the leaven of sin. First Fruits shows Him risen on the third day. The feasts were never random. They were a rehearsal, laid down centuries in advance, of the very work the Messiah would accomplish.</p>
+
+    <div class="keypoint">
+      <div class="label">The Spring Feasts in Order</div>
+      <p>Passover: the Lamb is slain. Unleavened Bread: the sinless body rests in the tomb. First Fruits: the resurrection on the first day of the week. Three feasts, three acts of redemption, each one landing on its appointed day. The calendar of heaven was never an accident. It was a prophecy written in days.</p>
+    </div>
+
+
+    <!-- 5. THE FIRST FRUITS OF THE SPIRIT AND THE CHURCH -->
+    <div class="page-break"></div>
+    <h2 id="ch4"><span class="num">5.</span>The First Fruits of the Spirit and the Church</h2>
+    <p>The picture does not stop at the resurrection of Jesus. The New Testament uses the same harvest language to describe the work of God in the believer right now.</p>
+
+    <h3>The First Fruits of the Spirit</h3>
+    <p>When we are born again, we receive the Holy Spirit as a down payment on a far greater inheritance. Paul calls this gift the firstfruits, the first portion that promises the full harvest of redemption still to come.</p>
+
+    <div class="scripture">
+      <div class="ref">Romans 8:23</div>
+      <p>"And not only they, but ourselves also, which have the firstfruits of the Spirit, even we ourselves groan within ourselves, waiting for the adoption, to wit, the redemption of our body."</p>
+    </div>
+
+    <p>The Spirit living in us is the first sheaf of a coming harvest. It is the guarantee that our bodies will be raised and fully redeemed when Christ returns. The same word that described the resurrection of Jesus now describes the present deposit of the Spirit. The first portion has been given, so the rest is certain.</p>
+
+    <h3>A Kind of First Fruits Among His Creatures</h3>
+    <p>Believers themselves are described as first fruits, set apart as the early portion of God's new creation.</p>
+
+    <div class="scripture">
+      <div class="ref">James 1:18</div>
+      <p>"Of his own will begat he us with the word of truth, that we should be a kind of firstfruits of his creatures."</p>
+    </div>
+
+    <p>Just as the first sheaf was lifted up and given wholly to God, so the people of God are a consecrated people, set apart and belonging to Him. The book of Revelation echoes this, calling the redeemed firstfruits unto God and unto the Lamb, a people purchased and holy. We will not press every detail of that passage here, since the fuller study of it belongs elsewhere, but the thread is clear. The harvest language that began with a sheaf of barley runs all the way to the throne of God.</p>
+
+    <div class="keypoint">
+      <div class="label">Teaching Point</div>
+      <p>The word "firstfruits" touches three realities in the New Testament. Christ is the firstfruits of the resurrection. The Spirit is the firstfruits of our inheritance. And believers are the firstfruits of God's new creation. Every use carries the same promise: the first portion has been given, and the fullness is certain to follow.</p>
+    </div>
+
+
+    <!-- 6. KEEPING FIRST FRUITS TODAY -->
+    <h2 id="ch5"><span class="num">6.</span>Keeping First Fruits Today</h2>
+    <p>If this feast points so clearly to the resurrection, how do we honor it now? We keep it the way we keep all of the appointed times, with the heart of a redeemed people rather than the hand of the priest at the altar.</p>
+
+    <h3>What We No Longer Do</h3>
+    <p>We do not bring a lamb to be slain, nor offer the burnt offering and the meat offering described in Leviticus 23. That sacrificial service was the ceremonial work attached to the day, and it was fulfilled when Christ offered Himself once for all. The day itself was never abolished. The animal sacrifice was, because the substance it pointed to has come. We keep the appointed time, but we do not return to the shadow now that the body has arrived.</p>
+
+    <h3>What We Do</h3>
+    <p>We gather as a holy convocation and we rejoice in the risen Lord. First Fruits is, for the believer, a celebration of the resurrection that landed on this very day. We read the Scriptures that tie the feast together, from Leviticus 23 to 1 Corinthians 15. We give thanks for the provision of God, both in the harvest of the field and in the harvest of souls. And we remember that the first sheaf, Christ Himself, has been raised, so our hope is sure.</p>
+
+    <h3>A Heart of First Fruits</h3>
+    <p>The feast also shapes how we live. If God receives the first and the best, then we give Him the first of our time, our strength, and our increase, not the leftovers. The same chapter that commands the wave sheaf also commands generosity toward the poor.</p>
+
+    <div class="scripture">
+      <div class="ref">Leviticus 23:22</div>
+      <p>"And when ye reap the harvest of your land, thou shalt not make clean riddance of the corners of thy field when thou reapest, neither shalt thou gather any gleaning of thy harvest: thou shalt leave them unto the poor, and to the stranger: I am the LORD your God."</p>
+    </div>
+
+    <p>The harvest was never to be hoarded. Some was always left for the poor and the stranger. A people who have received the first fruits of the Spirit are a people who share freely, because they know that everything they hold came as a gift from the LORD in the first place.</p>
+
+    <div class="keypoint">
+      <div class="label">A Word of Balance</div>
+      <p>We keep this feast in joy, never in fear, and never as a way to earn what Christ has already won. We were not saved by lifting a sheaf, and we are not made more accepted by observing a day. We keep First Fruits because we have been saved by grace through faith, and the risen First Fruits is our living hope. We honor the day because the One it pointed to is alive, and because in Him our own resurrection is as certain as the first ripe sheaf was a promise of the full and coming harvest.</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Teacher's Note</div>
+      <p>For families new to keeping this feast, the simplest way to begin is to gather on the Sunday during the Feast of Unleavened Bread, read 1 Corinthians 15:20&ndash;23 and Leviticus 23:9&ndash;14 together, and celebrate the resurrection of our Lord. Give thanks for what God has provided. Talk about what it means that Christ is the first sheaf and we are the harvest that follows. The depth will grow each year as the feast becomes part of the rhythm of the household.</p>
+    </div>
+
+
+    <!-- ============ CONCLUSION ============ -->
+    <div class="conclusion">
+      <h2 style="margin-top:0;">The First Sheaf Has Been Raised</h2>
+      <p>The Feast of First Fruits was never a minor detail in the calendar of heaven. It was a prophetic appointment, set centuries before the cross, waiting for the morning when the tomb would be found empty and the risen Christ would fulfill every picture the feast had ever drawn.</p>
+      <p>He is the first sheaf lifted up before the Father. He is the guarantee that the full harvest is coming. Because He rose, we will rise. Because the first portion has been given, the fullness is certain. And the people of God who keep this day do not celebrate a memory. They celebrate a living hope, anchored in a Savior who walked out of the grave on the very day the priest was waving the barley sheaf before the Lord.</p>
+      <div class="scripture">
+        <div class="ref">1 Corinthians 15:20</div>
+        <p>"But now is Christ risen from the dead, and become the firstfruits of them that slept."</p>
+      </div>
+    </div>
+
+    <!-- ============ QUESTIONS ============ -->
+    <div class="page-break"></div>
+    <h2 id="questions"><span class="num">7.</span>Discipleship Questions</h2>
+    <p>Answer in your own words from the Scriptures we have studied.</p>
+
+    <div class="questions">
+      <div class="q">
+        <div class="qtext">What is the Feast of First Fruits, and where does it fall in relation to Passover and Unleavened Bread? On what day of the week was the wave sheaf always presented?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">According to Leviticus 23:14, what were the people forbidden to do until the first sheaf had been offered? What does this teach about who the harvest belongs to?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">Name the three lessons the wave sheaf taught the worshipper. Which of the three does the New Testament build the doctrine of the resurrection upon?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How does Paul connect the resurrection of Christ to the Feast of First Fruits in 1 Corinthians 15:20&ndash;23? What is the "guarantee" that the first sheaf represents?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">List the order of the three spring feasts and what each one pictures in the work of Christ.</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">In Romans 8:23, Paul calls the Holy Spirit the "firstfruits." What is the full harvest that the Spirit guarantees to the believer?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">What part of the First Fruits observance has been fulfilled in Christ and is no longer carried out? What part of the observance still stands?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+      <div class="q">
+        <div class="qtext">How does the command in Leviticus 23:22 to leave gleanings for the poor connect to the heart of the First Fruits feast? What does it teach about a people who have received the firstfruits of the Spirit?</div>
+        <div class="answer-line"></div>
+        <div class="answer-line"></div>
+      </div>
+    </div>
+
+    <!-- ============ ANSWER KEY ============ -->
+    <div class="page-break"></div>
+    <h2><span class="num">&#10003;</span>Teacher Answer Key</h2>
+    <div class="answer-key">
+      <div class="ak">First Fruits is one of the spring appointed times of the LORD in Leviticus 23. It falls during the Feast of Unleavened Bread, which immediately follows Passover. The wave sheaf was presented on the morrow after the weekly Sabbath, which always places it on the first day of the week.</div>
+      <div class="ak">The people could not eat any bread, parched corn, or green ears of the new harvest until the first sheaf had been brought as an offering to God (Leviticus 23:14). This teaches that the harvest belonged to the LORD before it belonged to them. God receives the first and the best.</div>
+      <div class="ak">The three lessons are consecration (God gets the first), thanksgiving (the harvest is a gift from His hand), and hope (the first sheaf guarantees the full harvest). The New Testament builds the doctrine of the resurrection on the third lesson: the first sheaf promises the rest, and the risen Christ promises our resurrection.</div>
+      <div class="ak">Paul declares that Christ is risen from the dead and become the firstfruits of them that slept (1 Corinthians 15:20). Just as the first barley sheaf was a guarantee that the whole harvest would follow, the bodily resurrection of Jesus is the guarantee that all who belong to Him will be raised at His coming. The single sheaf promises the whole field.</div>
+      <div class="ak">Passover: the Lamb is slain for our deliverance. Unleavened Bread: His sinless body is laid in the tomb, free of the leaven of sin. First Fruits: He rises from the dead on the first day of the week. Three feasts, three acts of redemption, each landing on its appointed day.</div>
+      <div class="ak">The full harvest the Spirit guarantees is the redemption of our body (Romans 8:23). The Spirit living in us is the first portion, the down payment, of a far greater inheritance. Because the first portion has been given, the bodily resurrection and full redemption of the believer at Christ's return is certain.</div>
+      <div class="ak">The animal sacrifice attached to the day, the burnt offering of a lamb with the fine flour and oil, has been fulfilled in Christ and is no longer carried out. The appointed time itself still stands. We keep the day as a holy convocation, celebrating the resurrection of our Lord, reading the Scriptures that tie the feast together, and giving thanks for the provision of God.</div>
+      <div class="ak">God commanded that the corners of the field and the gleanings of the harvest be left for the poor and the stranger (Leviticus 23:22). The harvest was never to be hoarded. A people who have received the firstfruits of the Spirit are a people who share freely, because they know that everything they hold came as a gift from the LORD. Generosity is the natural fruit of a heart that has tasted the firstfruits of God's grace.</div>
+    </div>
+
+  </div><!-- /body-region -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <div class="verse">Study to shew thyself approved unto God &middot; 2 Timothy 2:15</div>
+    <div class="small">Work the Word &middot; Pronomian Teaching Series</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>

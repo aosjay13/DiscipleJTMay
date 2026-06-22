@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Atonement &middot; The Blood of Christ and the Reconciliation of Man to God</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">The Atonement</h1>
+    <p class="doc-subtitle">The Blood of Christ and the Reconciliation of Man to God</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>The whole of Scripture moves toward one great event, the death of the Son of God upon the cross for the sins of man. This is the atonement, the work by which a holy God and a sinful people are brought back together. The word itself carries the meaning of a covering, a price paid, a reconciliation made. By the blood of Christ the sinner who was far off is brought near, his sins are covered and carried away, and the broken bond between God and man is made whole.</p>
+      <p>To understand the atonement we must begin where God began, with the altar and the blood of the appointed sacrifices. Those offerings were never the true and final payment, but a shadow and a picture pointing forward to the Lamb of God. When Christ came, He fulfilled what every lamb and bullock had foretold, offering His own blood once for all. We will trace the matter from the shadow to the substance, that the believer may see the depth of what was purchased for him at so dear a price.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Need: Sin Has Separated Man from God</h2>
+      </div>
+      <div class="section-body">
+        <p>Before we can grasp the cure, we must feel the wound. The atonement answers a real and dreadful problem, the separation of man from God by sin. God is holy, and His law is the expression of His holy nature. When man transgressed that law, he did not merely break a rule, he severed himself from the life and fellowship of his Maker. Sin earns death, and a great gulf was fixed between the creature and the Creator.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 59:2</span>
+          <span class="scripture-text">But your iniquities have separated between you and your God, and your sins have hid his face from you, that he will not hear.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 3:23</span>
+          <span class="scripture-text">For all have sinned, and come short of the glory of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 6:23</span>
+          <span class="scripture-text">For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.</span>
+        </div>
+
+        <p>Here is the plight of every soul born of Adam. Sin has separated us from God and hidden His face. All have sinned, none excepted, and the just wage of that sin is death. If the matter ended here, there would be no hope, for no man can bridge the gulf his own sin has opened. The atonement is God's answer to a problem that man could never solve for himself.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Why Atonement Is Needed</p>
+          <p>Sin is the transgression of God's holy law, and it separates the sinner from God and brings the sentence of death. No work of man can repair the breach. The atonement exists because man was helpless and God was merciful.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Shadow: The Blood of the Appointed Sacrifices</h2>
+      </div>
+      <div class="section-body">
+        <p>God in His mercy did not leave man without a picture of the remedy to come. Under the old covenant He appointed an altar, a priesthood, and the blood of clean animals to make atonement for sin. The life of the creature was in its blood, and that blood was given upon the altar to cover the sin of the people. This whole system was a shadow, a teaching picture, pointing forward to a greater offering it could not itself provide.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Leviticus 17:11</span>
+          <span class="scripture-text">For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 9:22</span>
+          <span class="scripture-text">And almost all things are by the law purged with blood; and without shedding of blood is no remission.</span>
+        </div>
+
+        <p>The principle is fixed and runs through the whole of Scripture, that without shedding of blood is no remission. Sin is not waved away by good intentions. A life must be given. Yet the blood of bulls and goats, though commanded by God, was never the true payment. It covered for a season and pointed forward, but it could not finally take sin away.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 10:1, 4</span>
+          <span class="scripture-text">For the law having a shadow of good things to come, and not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect... For it is not possible that the blood of bulls and of goats should take away sins.</span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Keep the distinction clear and Pronomian. The sacrificial and priestly system was a shadow of Christ, and that shadow has been fulfilled in Him and is not repeated. We do not return to animal sacrifice, for the substance has come. This is wholly different from the moral commandments of God, which express His unchanging character and remain. The shadow that pointed to the cross is fulfilled at the cross. The law that defines righteousness still stands.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Substance: Christ the Lamb of God</h2>
+      </div>
+      <div class="section-body">
+        <p>Every lamb laid upon every altar was a finger pointing forward to one Person. When John the Baptist saw Jesus, he named Him by the very office the sacrifices had foreshadowed. Here at last was the true offering, not a beast that could only cover, but the spotless Son of God who could take sin away.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 1:29</span>
+          <span class="scripture-text">The next day John seeth Jesus coming unto him, and saith, Behold the Lamb of God, which taketh away the sin of the world.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 53:5&ndash;6</span>
+          <span class="scripture-text">But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed. All we like sheep have gone astray; we have turned every one to his own way; and the LORD hath laid on him the iniquity of us all.</span>
+        </div>
+
+        <p>Isaiah saw it centuries before the cross. The Servant would be wounded for our transgressions and bruised for our iniquities, and the LORD would lay on Him the iniquity of us all. This is the heart of the atonement, that the guilt which belonged to us was placed upon Him, and the punishment we deserved fell on Him in our stead. He stood in the sinner's place and bore the sinner's penalty.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 2:24</span>
+          <span class="scripture-text">Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Lamb Foreshadowed and Revealed</p>
+          <p>What every sacrifice pictured, Christ fulfilled. He is the Lamb of God who takes away sin, not for a season but for ever. The iniquity of us all was laid on Him, and He bore our sins in His own body on the tree.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Once for All: The Final and Perfect Offering</h2>
+      </div>
+      <div class="section-body">
+        <p>The old sacrifices were offered again and again, year by year, for they could never finish the work. The offering of Christ was different in its very nature. It was made one time, and it was complete. He does not die again and again. He died once, and that single offering was so perfect and so sufficient that it need never be repeated.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 9:12</span>
+          <span class="scripture-text">Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 10:10, 12</span>
+          <span class="scripture-text">By the which will we are sanctified through the offering of the body of Jesus Christ once for all... But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God.</span>
+        </div>
+
+        <p>See the great words once for all and for ever. The animal offerings left the priest forever standing, forever offering, the work never done. But Christ, having made one sacrifice for sins, sat down. The sitting down declares the work finished. There is no more offering to be made, for the one offering of the Son of God has obtained eternal redemption.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 7:26&ndash;27</span>
+          <span class="scripture-text">For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens; Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people's: for this he did once, when he offered up himself.</span>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Our High Priest</p>
+          <p>Christ is not only the Lamb but the Priest who offered it, and the Priest was Himself the offering. The Aaronic priests offered first for their own sins, then for the people, and never finished. Christ, holy and undefiled, offered up Himself one time, and in that one act both priesthood and sacrifice reached their end and their fulfillment in Him.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">What the Atonement Accomplished</h2>
+      </div>
+      <div class="section-body">
+        <p>The cross was not a tragedy or a defeat. It accomplished a mighty work with many parts, all flowing from the one offering of Christ. By His blood we are redeemed, bought back out of bondage. We are justified, declared righteous before God. We are reconciled, the enmity removed and peace restored. And we are cleansed, our sins washed away as far as the east is from the west.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 5:8&ndash;9</span>
+          <span class="scripture-text">But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us. Much more then, being now justified by his blood, we shall be saved from wrath through him.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 5:18&ndash;19</span>
+          <span class="scripture-text">And all things are of God, who hath reconciled us to himself by Jesus Christ, and hath given to us the ministry of reconciliation; To wit, that God was in Christ, reconciling the world unto himself, not imputing their trespasses unto them.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 1:7</span>
+          <span class="scripture-text">In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 1:7</span>
+          <span class="scripture-text">But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Jesus Christ his Son cleanseth us from all sin.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Fruits of the Cross</p>
+          <p>By the blood of Christ the sinner is redeemed from bondage, justified before God, reconciled to the Father, and cleansed from all sin. The wrath we deserved is turned away, and the love of God is poured out on those who were once His enemies.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Received by Faith, Issuing in Obedience</h2>
+      </div>
+      <div class="section-body">
+        <p>So great a salvation is laid hold of in one way only, by faith. The atonement is not applied to a man because he is good, nor earned by any work of his hands. It is received as a gift, trusted and rested upon. Yet the faith that receives the cross is never a barren faith. The soul that has been bought by such a price is set free from sin to serve God, and walks henceforth in glad obedience to His commandments.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 3:24&ndash;25</span>
+          <span class="scripture-text">Being justified freely by his grace through the redemption that is in Christ Jesus: Whom God hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Titus 2:14</span>
+          <span class="scripture-text">Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works.</span>
+        </div>
+
+        <p>Mark the purpose stated in Titus. Christ gave Himself to redeem us from all iniquity and to purify unto Himself a people zealous of good works. The atonement does not free us to sin, it frees us from sin. The blood that washes away our guilt also lays claim to our lives, that we who were ransomed at such cost should walk in holiness and keep the commandments of the God who bought us.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 6:19&ndash;20</span>
+          <span class="scripture-text">What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own? For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God's.</span>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Bought With a Price</p>
+          <p>The believer is not his own, for he was bought with the blood of the Son of God. This is the ground of all obedience. We keep His commandments not to earn what was freely given, but because we belong to Him who ransomed us, and we glorify God in the body and spirit that are now His.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">The Blood That Brings Us Home</h3>
+      <div class="conclusion-body">
+        <p>From the wound of sin to the healing of the cross, the atonement tells one story. Man was separated from God by his transgression and stood under the sentence of death. The blood of the appointed sacrifices covered for a season and pointed forward, but could never take sin away. Then the Lamb of God came, bore our iniquity in His own body, and offered Himself once for all. The Priest was the offering, the work was finished, and He sat down at the right hand of God.</p>
+        <p>This is the love of God laid bare, that while we were yet sinners Christ died for us. Let no man add to that finished work, for nothing can be added to it. And let no man receive it carelessly, for we were bought with a price. The blood that redeems us also claims us, freeing us from iniquity and making us a people zealous of good works, who walk in the commandments of the God who brought us home.</p>
+        <p><em>In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Without shedding of blood is no remission &middot; Hebrews 9:22</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

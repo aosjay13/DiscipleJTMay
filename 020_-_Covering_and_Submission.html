@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Covering and Submission &middot; Honoring God-Given Authority in Humility</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Covering and Submission</h1>
+    <p class="doc-subtitle">Honoring God-Given Authority in Humility</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>God is a God of order, and He has set authority in His house for the good of His people. He has given shepherds to lead the flock, elders to oversee the assembly, and an order among His people that they might be cared for, taught, and kept. To submit to this God-given authority, and to walk under the covering of faithful leaders, is not weakness or bondage. It is the wisdom of a humble heart that trusts the order God has appointed.</p>
+      <p>Yet this is a subject that must be taught with great care, for it has been twisted in two directions. Some despise all authority and will be led by no one, to their own harm. Others have used the language of covering and submission to lord it over the flock and to demand an obedience that belongs to God alone. We will set the matter where Scripture sets it, that we may honor true authority gladly, while remembering that all earthly authority stands under the higher authority of God and His commandments.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">God Has Established Authority for Our Good</h2>
+      </div>
+      <div class="section-body">
+        <p>All true authority comes from God. He is the source of all rule, and He has appointed order among men so that life may be peaceful and His people cared for. When we honor rightful authority, we are honoring the God who established it. This is the foundation. Authority is not a human invention to be resented, but a gift of God ordained for our blessing and protection.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 13:1</span>
+          <span class="scripture-text">Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 2:13&ndash;14</span>
+          <span class="scripture-text">Submit yourselves to every ordinance of man for the Lord's sake: whether it be to the king, as supreme; Or unto governors, as unto them that are sent by him for the punishment of evildoers, and for the praise of them that do well.</span>
+        </div>
+
+        <p>Notice that we submit for the Lord's sake. Our submission to those God has set over us is ultimately an act of obedience and trust toward God Himself. He has ordained that there be order, that the evildoer be restrained and the faithful praised. To walk in humble submission to rightful authority is to walk in step with the God of order, not under the heel of mere men.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Authority Comes from God</p>
+          <p>All rightful authority is ordained of God for the good of His people. We submit to it for the Lord's sake, honoring the One who established order. Authority rightly understood is a gift for our protection and blessing, not a burden to be despised.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Submission to Spiritual Leaders in the Church</h2>
+      </div>
+      <div class="section-body">
+        <p>Within the church God has given shepherds and overseers to lead and feed the flock. These are the elders and pastors who labor in the word and watch for the souls of the people. Scripture calls us to know them, to esteem them highly in love for their work's sake, and to submit ourselves to their faithful leading. This is the covering under which the believer is taught, guarded, and helped to grow.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 13:17</span>
+          <span class="scripture-text">Obey them that have the rule over you, and submit yourselves: for they watch for your souls, as they that must give account, that they may do it with joy, and not with grief: for that is unprofitable for you.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Thessalonians 5:12&ndash;13</span>
+          <span class="scripture-text">And we beseech you, brethren, to know them which labour among you, and are over you in the Lord, and admonish you; And to esteem them very highly in love for their work's sake. And be at peace among yourselves.</span>
+        </div>
+
+        <p>See the reason given for this submission, that they watch for your souls and must give account. A faithful leader carries a weighty charge before God for the people in his care. To follow such a shepherd gladly, rather than to make his work a grief, is for the good of the whole flock. The covering of godly leadership is a mercy, sheltering the believer from error and from the wolves that would scatter the sheep.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">For Their Work's Sake</p>
+          <p>We esteem our leaders highly not because they are great men but for their work's sake, the holy labor of watching over souls. Honor is given to the office and the faithful work, and a humble flock makes that work a joy rather than a grief, which Scripture says is for their own good.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">True Authority Is Servant Leadership</h2>
+      </div>
+      <div class="section-body">
+        <p>We must now turn the matter around and look at it from the side of those who lead, for the Lord defined authority in His kingdom in a way the world never imagined. Among the rulers of the nations, the great ones lord it over the people and throw their weight about. The Lord forbade this utterly among His own. In His kingdom the greatest is the servant of all, and the one who would lead must first stoop to serve.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 20:25&ndash;28</span>
+          <span class="scripture-text">But Jesus called them unto him, and said, Ye know that the princes of the Gentiles exercise dominion over them, and they that are great exercise authority upon them. But it shall not be so among you: but whosoever will be great among you, let him be your minister; And whosoever will be chief among you, let him be your servant: Even as the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 5:2&ndash;3</span>
+          <span class="scripture-text">Feed the flock of God which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind; Neither as being lords over God's heritage, but being ensamples to the flock.</span>
+        </div>
+
+        <p>Mark the Lord's plain command, it shall not be so among you. The leader in Christ's church is not a lord over God's heritage but an example to the flock, leading by service and by a holy life rather than by domination. The flock is called God's heritage, never the property of the shepherd. The undershepherd tends sheep that belong to God, and he will answer to God for how he has treated them.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Teach this section as the guard upon the others. Submission is real, but it is given to servant leaders who lead as Christ led, not to men who lord it over the flock. The Lord said plainly, <em>it shall not be so among you.</em> Any leader who uses the language of covering and submission to control, to demand blind obedience, or to enrich himself has departed from the very pattern Christ commanded. The flock is God's heritage, not any man's possession.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">The Limit of Submission: We Must Obey God Rather Than Men</h2>
+      </div>
+      <div class="section-body">
+        <p>Here we reach a truth that keeps all submission in its proper place. No earthly authority is absolute. Every ruler, every leader, every covering stands under the higher authority of God. When any man commands what God forbids, or forbids what God commands, the believer must obey God and not man. Our submission to authority is real, but it is never a submission that would have us sin against the Lord.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 5:29</span>
+          <span class="scripture-text">Then Peter and the other apostles answered and said, We ought to obey God rather than men.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 4:19</span>
+          <span class="scripture-text">But Peter and John answered and said unto them, Whether it be right in the sight of God to hearken unto you more than unto God, judge ye.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 3:17&ndash;18</span>
+          <span class="scripture-text">If it be so, our God whom we serve is able to deliver us from the burning fiery furnace, and he will deliver us out of thine hand, O king. But if not, be it known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up.</span>
+        </div>
+
+        <p>The apostles honored the council, yet when commanded to stop preaching Christ they answered that they must obey God rather than men. The three Hebrews honored the king, yet would not bow to his image. This is the line that no authority may cross. A leader is to be followed as he follows Christ and His commandments. When he calls the people away from God's word, the duty to obey God comes first, and faithful submission to God may require us to refuse a man.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">God's Authority Is Highest</p>
+          <p>All earthly authority stands beneath the authority of God. We obey leaders as they lead us according to His word, but when any man commands sin or forbids obedience to God, we must obey God rather than men. No covering may ever require us to disobey the Lord.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Mutual Submission and a Humble Spirit</h2>
+      </div>
+      <div class="section-body">
+        <p>Submission is not only the duty of the flock toward its leaders. Scripture calls all believers to a spirit of humility toward one another, each esteeming others, each clothed with lowliness. The leader serves the flock, the flock honors the leader, and all the saints submit themselves one to another in the fear of God. This mutual lowliness is the soil in which godly order grows without becoming harsh or proud.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 5:21</span>
+          <span class="scripture-text">Submitting yourselves one to another in the fear of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 5:5</span>
+          <span class="scripture-text">Likewise, ye younger, submit yourselves unto the elder. Yea, all of you be subject one to another, and be clothed with humility: for God resisteth the proud, and giveth grace to the humble.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Philippians 2:3&ndash;4</span>
+          <span class="scripture-text">Let nothing be done through strife or vainglory; but in lowliness of mind let each esteem other better than themselves. Look not every man on his own things, but every man also on the things of others.</span>
+        </div>
+
+        <p>Here is the spirit that makes the whole order sweet. God resists the proud and gives grace to the humble, whether that pride be found in a rebellious follower or a domineering leader. When each esteems the other better than himself, the leader leads in humility and the flock follows in trust, and the house of God is at peace. Pride poisons authority on both sides. Humility heals it.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Grace to the Humble</p>
+          <p>The same word that tells the younger to submit tells all to be clothed with humility and subject one to another. Authority and submission are not a contest of pride but a fellowship of lowliness, where God gives His grace to the humble on every side.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Blessing of Walking in God's Order</h2>
+      </div>
+      <div class="section-body">
+        <p>When the people of God walk in His appointed order, with leaders who serve and a flock that honors, the result is peace, growth, and blessing. Order in the house of God is not a cage but a shelter. Under faithful covering the believer is fed, protected from error, helped in his weakness, and built up in the faith. The God of order is also the God of peace, and where His order is kept in humility, His peace follows.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:40</span>
+          <span class="scripture-text">Let all things be done decently and in order.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 14:33</span>
+          <span class="scripture-text">For God is not the author of confusion, but of peace, as in all churches of the saints.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:11&ndash;13</span>
+          <span class="scripture-text">And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ.</span>
+        </div>
+
+        <p>See the purpose for which God gave leaders to His church, for the perfecting of the saints and the edifying of the body. The whole aim of godly order and faithful covering is that the people grow up into Christ, strong in the faith and unified in the truth. Submission rightly given and authority rightly used work together toward this glorious end, a people built up into the fulness of Christ.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Order Unto Maturity</p>
+          <p>God gives leaders and order to His church for the perfecting of the saints and the building up of the body. Walking in His order, with humble leaders and a willing flock, brings peace and growth, that we may all come to the unity of the faith and the fulness of Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Humble Order Under the Lordship of Christ</h3>
+      <div class="conclusion-body">
+        <p>God has set authority in His house for the good of His people, and He calls us to submit to it for the Lord's sake. We honor our leaders, esteem them highly for their work, and walk gladly under the covering of those who watch for our souls. Yet this authority is servant leadership after the pattern of Christ, who came not to be ministered unto but to minister. The flock is God's heritage, never a man's possession, and no leader may lord it over those Christ has bought with His own blood.</p>
+        <p>Above every earthly authority stands the Lord Himself. We obey our leaders as they follow Christ and His commandments, but we must obey God rather than men when the two ever conflict. Clothed in humility on every side, leaders serving and people honoring, the house of God walks in decent order and holy peace, and the saints are built up into the fulness of Christ. This is the covering and submission God intends, not bondage to men, but a humble walk in the order of the God of peace.</p>
+        <p><em>Submitting yourselves one to another in the fear of God.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Let all things be done decently and in order &middot; 1 Corinthians 14:40</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

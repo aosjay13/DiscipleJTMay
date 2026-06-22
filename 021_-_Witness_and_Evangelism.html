@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Witness and Evangelism &middot; Proclaiming the Gospel Without Shame</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Witness and Evangelism</h1>
+    <p class="doc-subtitle">Proclaiming the Gospel Without Shame</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>The last command our Lord gave before He ascended was a command to go. He sent His people into all the world to preach the gospel, to make disciples, and to bear witness of Him to every nation. This is the work of evangelism, the carrying of the good news to those who have not heard, that they might believe and be saved. It is not the task of a few special men only, but the calling of the whole church, every believer a witness of what the Lord has done.</p>
+      <p>We live in a day when many are ashamed of the gospel, or fearful of the cost of speaking it. Yet the gospel is the power of God unto salvation, and the love of Christ constrains us to share it. We will look at the command to go, the message we are to carry, the boldness God supplies, and the manner in which we are to witness, that the people of God may take up this work gladly and without shame, knowing that the whole counsel of God stands behind their testimony.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Great Commission: Go and Make Disciples</h2>
+      </div>
+      <div class="section-body">
+        <p>The marching orders of the church come from the mouth of the risen Lord. He sent His followers to go into all the world, to make disciples of every nation, and to teach them to observe all that He had commanded. This is no small or partial work. It reaches to the ends of the earth, and it aims not merely at decisions but at disciples, followers who are taught and trained to obey their Lord.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 28:19&ndash;20</span>
+          <span class="scripture-text">Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Mark 16:15</span>
+          <span class="scripture-text">And he said unto them, Go ye into all the world, and preach the gospel to every creature.</span>
+        </div>
+
+        <p>Mark the full shape of the commission. We are not only to win converts but to make disciples, teaching them to observe all things whatsoever the Lord has commanded. Evangelism that stops at a profession and never leads on to obedience has only done half the work. The goal is a disciple, a learner and follower of Christ, brought to faith and then taught to walk in the commandments of his Lord.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Disciples, Not Just Decisions</p>
+          <p>The Great Commission sends us to make disciples of all nations, baptizing them and teaching them to observe all that Christ commanded. The aim is not a bare profession but a true follower, brought to faith and trained to obey. And the Lord promises His presence with us in the work, even unto the end of the world.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Message: The Gospel of Christ Crucified and Risen</h2>
+      </div>
+      <div class="section-body">
+        <p>We must be clear about the message we carry, for the power is in the gospel itself and not in our cleverness. The good news is the death of Christ for our sins, His burial, and His rising again the third day, according to the Scriptures. This is the heart of our witness. Salvation comes by grace through faith in this crucified and risen Lord, and it is this message, plainly told, that God uses to save.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 15:3&ndash;4</span>
+          <span class="scripture-text">For I delivered unto you first of all that which I also received, how that Christ died for our sins according to the scriptures; And that he was buried, and that he rose again the third day according to the scriptures.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 10:9</span>
+          <span class="scripture-text">That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 4:12</span>
+          <span class="scripture-text">Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.</span>
+        </div>
+
+        <p>Here is the message in its purity. Christ died for our sins and rose again, and there is salvation in no other name. We do not preach ourselves, nor a set of rules by which men may earn heaven, but a Saviour who has done the saving work and now calls men to trust Him. The gospel of grace is the only message that has power to raise the dead in sin to life.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Keep the gospel and the call to obedience in their right order. We preach Christ crucified and risen, and men are saved by grace through faith in Him, not by their works. Yet the same gospel calls the saved to repent and to follow Christ in obedience, as the Great Commission says, teaching them to observe all things He commanded. We never preach law-keeping as the way of salvation. We preach the Saviour, and then we teach the saved to walk in His commandments as the fruit of the new life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Call to Repentance and Faith</h2>
+      </div>
+      <div class="section-body">
+        <p>The gospel is not only news to be believed but a call to be heeded. When the message of Christ is preached, men are summoned to repent of their sins and turn to God in faith. This was the cry of John the Baptist, of the Lord Jesus, and of the apostles. To witness faithfully is to call men not merely to admire Christ but to forsake their sins and trust Him as Lord and Saviour.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 2:38</span>
+          <span class="scripture-text">Then Peter said unto them, Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 17:30</span>
+          <span class="scripture-text">And the times of this ignorance God winked at; but now commandeth all men every where to repent.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 20:21</span>
+          <span class="scripture-text">Testifying both to the Jews, and also to the Greeks, repentance toward God, and faith toward our Lord Jesus Christ.</span>
+        </div>
+
+        <p>See the two parts of the call that Paul summed up, repentance toward God and faith toward our Lord Jesus Christ. The sinner is to turn from his sin and turn to the Saviour. A witness that never calls for repentance leaves men comfortable in their sins. A witness that never points to faith in Christ leaves men in despair. We hold both together, calling men to turn from sin and to trust the One who alone can save.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Repentance Toward God, Faith Toward Christ</p>
+          <p>Faithful witness calls men to repent of their sins and to believe on the Lord Jesus. God now commands all men everywhere to repent. We do not soften the call, but we deliver it in love, summoning sinners to turn from their sin to the Saviour who receives all who come.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Not Ashamed of the Gospel</h2>
+      </div>
+      <div class="section-body">
+        <p>One of the greatest hindrances to witness is shame, the fear of what men will think or do. Yet Paul declared he was not ashamed of the gospel, for he knew it to be the power of God unto salvation. When we grasp what the gospel is and what it does, shame is driven out. We are not peddling a foolish tale but carrying the very power of God to rescue the perishing. There is no cause for shame in such a message.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 1:16</span>
+          <span class="scripture-text">For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 1:7&ndash;8</span>
+          <span class="scripture-text">For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind. Be not thou therefore ashamed of the testimony of our Lord, nor of me his prisoner: but be thou partaker of the afflictions of the gospel according to the power of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Mark 8:38</span>
+          <span class="scripture-text">Whosoever therefore shall be ashamed of me and of my words in this adulterous and sinful generation; of him also shall the Son of man be ashamed, when he cometh in the glory of his Father with the holy angels.</span>
+        </div>
+
+        <p>The Lord spoke a sobering word about shame, that if we are ashamed of Him before men, He will be ashamed of us before His Father. But God has not given us the spirit of fear, but of power and love and a sound mind. The same Spirit who fell upon the trembling disciples and made them bold preachers is given to us. We need not be ashamed, for the gospel is the power of God, and the Spirit of God stands with the faithful witness.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Power, Not Fear</p>
+          <p>Fear silences witness, but God has not given us a spirit of fear. He has given power, love, and a sound mind. The gospel itself is the power of God unto salvation, so the witness carries not a weak word but the mightiest message in the world. Shame has no place where such power is known.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Boldness by the Power of the Holy Ghost</h2>
+      </div>
+      <div class="section-body">
+        <p>The boldness to witness is not summoned up by our own will but supplied by the Holy Ghost. The Lord told the disciples to wait until they were endued with power from on high, and when the Spirit came, those same fearful men turned the world upside down with their preaching. The witness of the church has always gone forward in the power of the Spirit, and we depend on Him still for boldness and for fruit.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 1:8</span>
+          <span class="scripture-text">But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 4:31</span>
+          <span class="scripture-text">And when they had prayed, the place was shaken where they were assembled together; and they were all filled with the Holy Ghost, and they spake the word of God with boldness.</span>
+        </div>
+
+        <p>Mark how the boldness came. They prayed, the place was shaken, they were filled with the Holy Ghost, and they spake the word with boldness. The same power is available to us. When we feel our weakness and our fear, we are not left to ourselves. We may pray, as they did, and look to the Spirit of God to fill us and embolden us, that we too may speak His word without fear.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Power from On High</p>
+          <p>The boldness to witness comes from the Holy Ghost, not from our own strength. The disciples received power when the Spirit came upon them, and they spake the word with boldness. We look to the same Spirit, praying for His filling, that we may be faithful and fearless witnesses of Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Witness in Word and in Life</h2>
+      </div>
+      <div class="section-body">
+        <p>Our witness is borne not only by what we say but by how we live. The gospel on our lips must be matched by Christ in our walk, or our words will ring hollow. A holy life adorns the message and gives it weight, while a careless life dishonors it. We are to let our light shine, to be ready always to give an answer, and to speak the truth with gentleness and respect, that our witness may be both faithful and winsome.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:16</span>
+          <span class="scripture-text">Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 3:15</span>
+          <span class="scripture-text">But sanctify the Lord God in your hearts: and be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 4:5&ndash;6</span>
+          <span class="scripture-text">Walk in wisdom toward them that are without, redeeming the time. Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man.</span>
+        </div>
+
+        <p>See how word and life are joined. Our good works lead men to glorify God, our ready answer gives the reason for our hope, and our speech is to be with grace, seasoned with salt. The witness who lives what he proclaims, and who speaks with both boldness and gentleness, commends the gospel to those who watch and listen. We are to be wise toward those without, redeeming the time, making the most of every door the Lord opens.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Salt and Light Together</p>
+          <p>The Lord called His people both salt and light. The light of a holy life draws the eye to the Father, and the salt of gracious, truthful speech gives savor to our witness. Word and life together make a testimony that is hard to deny, the message preached and the message lived standing as one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Go, and Be Witnesses Unto Him</h3>
+      <div class="conclusion-body">
+        <p>The risen Lord has sent His people into all the world to preach the gospel and make disciples of every nation. The message we carry is Christ crucified and risen, salvation by grace through faith in His name, with a call to repentance toward God and faith toward our Lord Jesus. There is no other name by which men may be saved, and the gospel is the very power of God unto salvation. In such a message there is no cause for shame.</p>
+        <p>We go in the power of the Holy Ghost, who turned trembling disciples into bold witnesses and stands ready to fill and embolden us still. We bear our witness in word and in life, our light shining, our speech seasoned with grace, our walk adorning the gospel we proclaim. And we make disciples in the full sense the Lord intended, leading them to faith and teaching them to observe all that He commanded. Let us then go, unashamed and unafraid, for He is with us alway, even unto the end of the world.</p>
+        <p><em>Ye shall be witnesses unto me, unto the uttermost part of the earth.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; I am not ashamed of the gospel of Christ &middot; Romans 1:16</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

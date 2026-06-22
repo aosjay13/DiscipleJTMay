@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signs of the Times &middot; Watching for the Coming of the Lord</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Signs of the Times</h1>
+    <p class="doc-subtitle">Watching for the Coming of the Lord</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>The Lord Jesus rebuked the men of His day because they could read the face of the sky but could not discern the signs of the times. They watched the clouds to tell tomorrow's weather, yet they were blind to the great work God was doing before their very eyes. He calls His people to a better discernment, to read the signs He has given so that we may know the season we are in and be ready for His coming.</p>
+      <p>Scripture does not leave the believer in the dark about the days before the return of Christ. Our Lord and His apostles told us plainly what would mark the closing of the age, that we should not be caught sleeping. These signs are given not to feed idle curiosity, nor to fix a date upon the calendar, but to keep us awake, sober, and faithful. We will look at what God has told us to watch for, and how a believer ought to live in the light of it.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">Discern the Season, Do Not Set the Date</h2>
+      </div>
+      <div class="section-body">
+        <p>We must begin with the boundary the Lord Himself set. He commanded us to watch and to discern the season, yet He forbade us to fix the day or the hour. These two stand together. To ignore the signs is to be caught sleeping. To set a date is to claim a knowledge God has kept in His own hand. The faithful servant walks the narrow path between carelessness and presumption, awake and watching, but not running ahead of God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 16:2&ndash;3</span>
+          <span class="scripture-text">He answered and said unto them, When it is evening, ye say, It will be fair weather: for the sky is red. And in the morning, It will be foul weather to day: for the sky is red and lowring. O ye hypocrites, ye can discern the face of the sky; but can ye not discern the signs of the times?</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:36</span>
+          <span class="scripture-text">But of that day and hour knoweth no man, no, not the angels of heaven, but my Father only.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 1:7</span>
+          <span class="scripture-text">And he said unto them, It is not for you to know the times or the seasons, which the Father hath put in his own power.</span>
+        </div>
+
+        <p>Hold these words with care. We are to discern the signs of the times, yet of that day and hour knoweth no man. The signs tell us the season is near, as the budding tree tells us summer is at hand, but they do not hand us a calendar. Let no man despise the signs, and let no man presume to name the day. Both errors miss the Lord's command, which is simply to watch and be ready.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Guard the people against date-setting in every form, including dates tied to the feasts. The Lord said plainly that no man knows the day or the hour. The signs are given to show us the <em>season</em>, not to mark a square on the calendar. When men set dates, the date passes, faith is shaken, and scoffers are given occasion to mock. Teach the signs soberly, and let the lesson always be readiness, never a countdown.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Deception, False Christs, and False Prophets</h2>
+      </div>
+      <div class="section-body">
+        <p>When the disciples asked what would be the sign of His coming, the very first thing the Lord named was deception. Before wars and famines, before anything else, He warned that many would come in His name to lead the people astray. The closing of the age is marked above all by a flood of false christs, false prophets, and false teaching, so cunning that it would deceive many.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:4&ndash;5</span>
+          <span class="scripture-text">And Jesus answered and said unto them, Take heed that no man deceive you. For many shall come in my name, saying, I am Christ; and shall deceive many.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:11, 24</span>
+          <span class="scripture-text">And many false prophets shall rise, and shall deceive many... For there shall arise false Christs, and false prophets, and shall shew great signs and wonders; insomuch that, if it were possible, they shall deceive the very elect.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 4:3&ndash;4</span>
+          <span class="scripture-text">For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears; And they shall turn away their ears from the truth, and shall be turned unto fables.</span>
+        </div>
+
+        <p>This is a sign that asks for watchfulness more than excitement. The danger is not only out in the world but pressing in upon the church, where men will not endure sound doctrine and gather teachers to tickle their ears. The believer's safeguard is the word of God rightly kept. He who is grounded in sound doctrine and the commandments of God is not easily swept away by every wind that blows.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The First Sign Is Deception</p>
+          <p>The Lord's first warning about the last days was take heed that no man deceive you. False christs, false prophets, and false teaching will multiply and deceive many. The guard against deception is to be rooted in sound doctrine and the word of God, holding fast to the truth once delivered.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Wars, Famines, and Birth Pains</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord went on to speak of wars and rumours of wars, of nation rising against nation, of famines and pestilences and earthquakes in many places. Yet He gave a careful word about these. They are the beginning of sorrows, not the end itself. The picture He used is of birth pains, which start, and grow, and come closer together as the hour of birth draws near. These troubles are real signs, but they are the early pangs, not the final hour.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:6&ndash;8</span>
+          <span class="scripture-text">And ye shall hear of wars and rumours of wars: see that ye be not troubled: for all these things must come to pass, but the end is not yet. For nation shall rise against nation, and kingdom against kingdom: and there shall be famines, and pestilences, and earthquakes, in divers places. All these are the beginning of sorrows.</span>
+        </div>
+
+        <p>Notice the Lord's pastoral care in the midst of it. He says see that ye be not troubled. The believer is not to be thrown into panic by wars and disasters, as though God had lost His throne. These things must come to pass, and the Lord foretold them so that when we see them we would not be shaken but would know that He reigns and His word stands. The pangs grow, but they are leading to a birth, not to ruin.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">The Beginning of Sorrows</p>
+          <p>Wars, famines, and earthquakes are called the beginning of sorrows, like the first pains of childbirth. They mark the season but not the final hour. Read like birth pains, they grow nearer and stronger as the day approaches, and they remind the watching believer that the deliverance draws near.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Persecution, Apostasy, and the Love of Many Growing Cold</h2>
+      </div>
+      <div class="section-body">
+        <p>Among the signs the Lord named was a hard one for His own people, that they would be hated and persecuted for His name's sake. Alongside this outward pressure He warned of an inward falling away, a turning of many from the faith, and a cooling of love as iniquity abounds. The last days bring not only trouble from without but a great sifting within, where the true and the false are separated.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:9&ndash;10</span>
+          <span class="scripture-text">Then shall they deliver you up to be afflicted, and shall kill you: and ye shall be hated of all nations for my name's sake. And then shall many be offended, and shall betray one another, and shall hate one another.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:12&ndash;13</span>
+          <span class="scripture-text">And because iniquity shall abound, the love of many shall wax cold. But he that shall endure unto the end, the same shall be saved.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Thessalonians 2:3</span>
+          <span class="scripture-text">Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition.</span>
+        </div>
+
+        <p>Here is a sober word. Paul says that day shall not come until the falling away comes first and the man of sin is revealed. The believer should not be surprised when many turn back, when love grows cold, and when faithfulness becomes costly. The Lord's promise is to the one who endures unto the end. In a day of apostasy and cooling love, steadfast obedience and enduring faith are themselves a testimony that the Lord is near.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">A Great Sifting</p>
+          <p>The last days bring persecution from without and a falling away within, with the love of many waxing cold as iniquity abounds. Yet the promise stands sure: he that shall endure unto the end, the same shall be saved. The call of every sign is to endure in faith and obedience.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Gospel Preached, and the Days of Noah</h2>
+      </div>
+      <div class="section-body">
+        <p>Not every sign is dark. The Lord gave one great sign of hope, that the gospel of the kingdom would be preached in all the world for a witness unto all nations, and then the end would come. The same age that grows in deception and apostasy also sees the good news carried to the ends of the earth. Side by side with this, the Lord said the days of His coming would be like the days of Noah, when men carried on heedless until the flood swept them away.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:14</span>
+          <span class="scripture-text">And this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:37&ndash;39</span>
+          <span class="scripture-text">But as the days of Noe were, so shall also the coming of the Son of man be. For as in the days that were before the flood they were eating and drinking, marrying and giving in marriage, until the day that Noe entered into the ark, And knew not until the flood came, and took them all away; so shall also the coming of the Son of man be.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Peter 3:3&ndash;4</span>
+          <span class="scripture-text">Knowing this first, that there shall come in the last days scoffers, walking after their own lusts, And saying, Where is the promise of his coming? for since the fathers fell asleep, all things continue as they were from the beginning of the creation.</span>
+        </div>
+
+        <p>See the two pictures together. The gospel spreads to all nations, while the world grows careless and the scoffers mock, asking where is the promise of His coming. The men of Noah's day knew not until the flood came. So it will be again, the world eating and drinking and going about its business, blind to the hour, until the day breaks upon them. The believer is called to be like Noah, warned by God and preparing while there is yet time.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Witness and Warning</p>
+          <p>The gospel preached to all nations is a sign of hope and a call to labor while it is day. The days of Noah are a sign of warning, that the world will carry on heedless until the end overtakes it. Together they press the believer to share the gospel and to live ready, not asleep with the careless world.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Watch, Be Ready, and Live Faithfully</h2>
+      </div>
+      <div class="section-body">
+        <p>The purpose of every sign is gathered up in one command of the Lord, to watch. He did not give us the signs to make us anxious or to send us chasing after dates, but to keep us awake and faithful. The servant who watches is the one found doing his Master's will when the Lord returns. The signs are a summons to readiness, to holy living, and to faithful labor in the time that remains.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:42, 44</span>
+          <span class="scripture-text">Watch therefore: for ye know not what hour your Lord doth come... Therefore be ye also ready: for in such an hour as ye think not the Son of man cometh.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Luke 21:28</span>
+          <span class="scripture-text">And when these things begin to come to pass, then look up, and lift up your heads; for your redemption draweth nigh.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Peter 3:11</span>
+          <span class="scripture-text">Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness.</span>
+        </div>
+
+        <p>Hear how the signs are meant to land upon the heart. When these things begin to come to pass, we are to look up, for our redemption draws nigh. And Peter asks the question that every sign presses upon us, what manner of persons ought we to be in all holy conversation and godliness. The right response to the signs of the times is not fear and not date-setting, but a holy life, a watchful heart, and faithful obedience to the commandments of God until the King appears.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Whole Lesson: Watch and Be Ready</p>
+          <p>Every sign points to one duty, to watch and be ready. We are not to be anxious and not to set dates, but to lift up our heads, live holy lives, labor in the gospel, and keep the commandments of God. The watching servant is the one the Lord will find faithful when He comes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Look Up, for Your Redemption Draweth Nigh</h3>
+      <div class="conclusion-body">
+        <p>The Lord has not left us in the dark. He told us to watch for deception and false christs, for wars and famines that are the beginning of sorrows, for persecution and apostasy and a love grown cold, and for the gospel carried to all nations while a careless world sleeps as in the days of Noah. These signs mark the season and tell us the day draws near, even as our Lord forbade us to name the hour, which the Father has kept in His own power.</p>
+        <p>So let us read the signs as the Lord intended, neither despising them nor twisting them into a calendar. When we see these things begin to come to pass, we lift up our heads, for our redemption draws nigh. And we ask the question Peter set before us, what manner of persons ought we to be. The answer is a people who watch, who live holy and obedient lives, who labor in the gospel, and who are found faithful when the King returns in glory.</p>
+        <p><em>Watch therefore: for ye know not what hour your Lord doth come.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Watch therefore, for ye know not what hour &middot; Matthew 24:42</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eternity &middot; The Final State of the Righteous and the Lost</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Eternity</h1>
+    <p class="doc-subtitle">The Final State of the Righteous and the Lost</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>Beyond the return of Christ, beyond His reign upon the earth, the eye of faith looks to a further horizon still. There is a state that has no end, a final and everlasting condition for every soul that has ever lived. This is eternity, the unending ages that follow the close of this present world and the judgment of all men. To study it is to look upon the things that abide when all else has passed away, and to weigh how we shall live in light of where we shall dwell for ever.</p>
+      <p>Scripture does not leave us to guess about these last things. It tells of the resurrection of all the dead, of a great judgment before the throne of God, of a new heaven and a new earth for the redeemed, and of an everlasting separation between the saved and the lost. We will trace what God has revealed, soberly and plainly, that the hope of the righteous may be strengthened and the warning to the lost may be heard while there is yet time to turn.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Resurrection of All the Dead</h2>
+      </div>
+      <div class="section-body">
+        <p>Eternity for the body begins with resurrection. Scripture teaches that all the dead shall rise, both the just and the unjust. The grave is not the final word over any man. There is a resurrection of life for those who are Christ's, and a resurrection of damnation for those who are not. Every soul that has ever lived will stand again, raised to face what lies beyond.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 5:28&ndash;29</span>
+          <span class="scripture-text">Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice, And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 24:15</span>
+          <span class="scripture-text">And have hope toward God, which they themselves also allow, that there shall be a resurrection of the dead, both of the just and unjust.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 12:2</span>
+          <span class="scripture-text">And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.</span>
+        </div>
+
+        <p>Mark the two resurrections, the one to life and the other to damnation. This is the great divide that eternity makes plain. The redeemed are raised to everlasting life, their bodies made glorious and incorruptible. The lost are raised to judgment and shame. The hour is coming, said the Lord, when all that are in the graves shall hear His voice and come forth, every one to his appointed end.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">All Shall Rise</p>
+          <p>The grave holds no man for ever. All the dead, both the just and the unjust, shall be raised at the voice of the Son of God, some to the resurrection of life and some to the resurrection of damnation. Eternity is bodily and real, not a vague shadow but a true rising of all the dead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Great White Throne Judgment</h2>
+      </div>
+      <div class="section-body">
+        <p>After the resurrection comes the judgment. Scripture shows us a great white throne, before which the dead stand to be judged. The books are opened, and men are judged according to their works, every deed brought into the light. This is the final reckoning, where the secrets of all hearts are laid bare before the God who sees all and forgets nothing.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 20:11&ndash;12</span>
+          <span class="scripture-text">And I saw a great white throne, and him that sat on it, from whose face the earth and the heaven fled away; and there was found no place for them. And I saw the dead, small and great, stand before God; and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 9:27</span>
+          <span class="scripture-text">And as it is appointed unto men once to die, but after this the judgment.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 20:15</span>
+          <span class="scripture-text">And whosoever was not found written in the book of life was cast into the lake of fire.</span>
+        </div>
+
+        <p>Notice that two kinds of books are opened. There are the books of works, by which men are judged, and there is the book of life, in which the names of the redeemed are written. The deciding matter is whether a man's name is found in the book of life. Those written there belong to Christ and are saved by His grace. Those not found written there are judged by their works, and no man is saved by his works, for all have sinned.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Guard the gospel here with care. The lost are judged according to their works, and by works no man can stand, for all have sinned. The redeemed are not saved by their works but by grace, their names written in the book of life through faith in Christ. Their works follow as the fruit and evidence of saving faith, not as the price of salvation. Teach the judgment soberly, never letting it become a doctrine of salvation by works, and never letting it be dismissed as though deeds do not matter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Everlasting State of the Lost</h2>
+      </div>
+      <div class="section-body">
+        <p>We come now to a solemn truth that must be spoken plainly, though it grieves us to speak it. Those who die in their sins, whose names are not written in the book of life, pass into an everlasting separation from God. Scripture calls it the second death, the lake of fire, a place of outer darkness and unending loss. This is no light matter, and the Lord Himself spoke of it more than any other.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 20:14</span>
+          <span class="scripture-text">And death and hell were cast into the lake of fire. This is the second death.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 25:46</span>
+          <span class="scripture-text">And these shall go away into everlasting punishment: but the righteous into life eternal.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Thessalonians 1:9</span>
+          <span class="scripture-text">Who shall be punished with everlasting destruction from the presence of the Lord, and from the glory of his power.</span>
+        </div>
+
+        <p>The hardest weight of this judgment is to be shut out from the presence of the Lord, away from His glory and His goodness for ever. We do not speak of these things to frighten for frightening's sake, but because they are true, and because love warns. The same Lord who is full of grace and mercy declared these things, that men might flee from the wrath to come and lay hold of the life He freely offers.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">A Warning Spoken in Love</p>
+          <p>Those who die without Christ face the second death, an everlasting separation from the presence of the Lord. This sober truth is not told to terrify but to warn, that men might turn while there is time. Love does not hide the danger but points the way of escape.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">A New Heaven and a New Earth</h2>
+      </div>
+      <div class="section-body">
+        <p>For the redeemed, eternity is not a vague drifting among the clouds but a renewed creation, a new heaven and a new earth wherein dwelleth righteousness. The present world, marred by sin and groaning under the curse, will give way to a creation made new and clean. There the people of God will dwell in bodies raised and glorified, in a world where sin and its sorrows have no place.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 21:1</span>
+          <span class="scripture-text">And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Peter 3:13</span>
+          <span class="scripture-text">Nevertheless we, according to his promise, look for new heavens and a new earth, wherein dwelleth righteousness.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 65:17</span>
+          <span class="scripture-text">For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind.</span>
+        </div>
+
+        <p>This is the hope set before the believer, a creation in which righteousness is at home. The sin that has spoiled everything will be gone, and the curse lifted at last. The redeemed do not look merely to escape this world but to inherit a better one, the new heavens and new earth that God Himself will make, where His will is done and His righteousness dwells for ever.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Where Righteousness Dwells</p>
+          <p>The believer's eternal home is a new heaven and new earth wherein dwelleth righteousness. The whole creation, now groaning under the curse, will be made new and clean. This is no flight from the body or the world, but the renewing of all things under the reign of God.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">God Dwelling With His People</h2>
+      </div>
+      <div class="section-body">
+        <p>The crown and glory of eternity is not the place but the Person. The greatest joy of the new creation is that God Himself will dwell with His people, face to face, with every sorrow wiped away. The long story of sin's separation is over. The fellowship that was broken in the garden is restored and made perfect for ever. To be with God, to see His face, is the believer's deepest and final blessedness.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 21:3&ndash;4</span>
+          <span class="scripture-text">And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God. And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 22:3&ndash;4</span>
+          <span class="scripture-text">And there shall be no more curse: but the throne of God and of the Lamb shall be in it; and his servants shall serve him: And they shall see his face; and his name shall be in their foreheads.</span>
+        </div>
+
+        <p>Hear what is promised. No more death, no more sorrow, no more crying, no more pain, and every tear wiped away by the hand of God. The curse is gone, and His servants shall see His face. This is heaven's heart, not merely a place of rest but the unbroken presence of God with His people. All the longing of the redeemed finds its end in this, to dwell with God and to behold Him for ever.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Tabernacle of God With Men</p>
+          <p>The glory of eternity is God dwelling with His people, every tear wiped away, death and sorrow and pain forever gone. His servants shall see His face. The deepest joy of heaven is not the gift but the Giver, the unbroken presence of God Himself with the redeemed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Living Now in Light of Eternity</h2>
+      </div>
+      <div class="section-body">
+        <p>If these things are so, then eternity must shape the way we live today. The certainty of the resurrection, the judgment, and the world to come is not given to feed idle speculation but to make us holy, watchful, and faithful. The one who truly believes he will stand before God and dwell in a new creation will set his heart on things above and walk in obedience here below.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 3:1&ndash;2</span>
+          <span class="scripture-text">If ye then be risen with Christ, seek those things which are above, where Christ sitteth on the right hand of God. Set your affection on things above, not on things on the earth.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Peter 3:11</span>
+          <span class="scripture-text">Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 3:2&ndash;3</span>
+          <span class="scripture-text">Beloved, now are we the sons of God, and it doth not yet appear what we shall be: but we know that, when he shall appear, we shall be like him; for we shall see him as he is. And every man that hath this hope in him purifieth himself, even as he is pure.</span>
+        </div>
+
+        <p>See how the hope of eternity works in the heart. Every man that has this hope purifies himself, even as Christ is pure. The promise of seeing Him and being made like Him draws the believer to holiness now. We set our affection on things above, we live as those who must give account, and we walk in glad obedience to the commandments of God, knowing that the things we labor for here will follow us into the everlasting day.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Hope That Purifies</p>
+          <p>The hope of eternity is not idle comfort but a purifying power. The one who knows he shall see Christ and be made like Him sets his heart above and walks in holiness now. What we shall be presses upon what we ought to be, drawing us to obedience in the light of the world to come.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">The Everlasting Day</h3>
+      <div class="conclusion-body">
+        <p>All the dead shall rise, the just and the unjust, and all shall stand before the great white throne to be judged. Those whose names are not found in the book of life pass into the second death, an everlasting separation from the presence of the Lord. But those who are Christ's, washed in His blood and written in His book, inherit a new heaven and a new earth wherein dwelleth righteousness, where God Himself dwells with His people and wipes away every tear.</p>
+        <p>This is eternity, the unending day toward which all of Scripture moves. We speak its warning in love, that men might flee the wrath to come, and we hold its hope with joy, for our Lord has prepared a place for His own. Let us then live as people of eternity, setting our affection on things above, purifying ourselves as He is pure, and walking in faithful obedience until the day we see His face and dwell with Him for ever.</p>
+        <p><em>And they shall see his face; and his name shall be in their foreheads.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; A new heaven and a new earth, wherein dwelleth righteousness &middot; 2 Peter 3:13</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Church Discipline &middot; Restoring the Erring and Keeping the Assembly Pure</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Church Discipline</h1>
+    <p class="doc-subtitle">Restoring the Erring and Keeping the Assembly Pure</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>The church is the household of God, and like every household it must be governed in love and in order. When a brother falls into sin, the Lord has not left us without a path to walk. He gave plain instruction for how His people are to deal with sin in the assembly, that the erring might be won back and the body kept pure. This is what we mean by church discipline, the loving and orderly correction of sin among the people of God.</p>
+      <p>Many shrink from this word, for it has been abused by harsh men and neglected by careless ones. Yet rightly understood it is one of the kindest works the church can do. Its aim is never to wound or to cast off, but to recover a soul and to guard the flock. We will trace the Lord's own pattern, given in Matthew the eighteenth chapter, and the further counsel of the apostles, so that discipline among us may be done as Scripture commands, in grace and truth together.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Heart of Discipline Is Restoration</h2>
+      </div>
+      <div class="section-body">
+        <p>Before we look at the steps, we must settle the aim. The goal of all church discipline is to win the brother, to recover the one who has wandered, and to restore him to fellowship with God and with His people. It is the work of a shepherd going after a straying sheep, not the work of a judge eager to condemn. If we lose this aim, discipline becomes cruelty. If we hold it fast, even the hardest step is an act of love.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 18:15</span>
+          <span class="scripture-text">Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 6:1</span>
+          <span class="scripture-text">Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 5:19&ndash;20</span>
+          <span class="scripture-text">Brethren, if any of you do err from the truth, and one convert him; Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.</span>
+        </div>
+
+        <p>Mark the words of the Lord, that if he shall hear thee, thou hast gained thy brother. That is the prize, a brother gained, a soul saved from death, a sinner turned back from the error of his way. And mark the spirit Paul commands, that we restore in meekness, considering ourselves, lest we also be tempted. The one who corrects must do so humbly, knowing he too is a sinner saved by grace.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Aim Is to Gain the Brother</p>
+          <p>Church discipline exists to restore, not to destroy. Its goal is a brother gained and a soul saved from death. It is carried out in meekness by those who remember their own weakness, seeking always the recovery of the one who has fallen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The First Step: Go to Him Alone</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord's pattern begins in the smallest and most private way. When a brother sins, the first step is not to tell others, not to spread the matter abroad, but to go to him alone. This guards his name and gives him every chance to repent quietly, without shame before the whole assembly. Most matters, dealt with in this gentle and private way, need go no further.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 18:15</span>
+          <span class="scripture-text">Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Proverbs 17:9</span>
+          <span class="scripture-text">He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends.</span>
+        </div>
+
+        <p>Here is wisdom that spares much sorrow. The matter is kept between the two, and if the brother hears, it ends there, his fault covered and his soul recovered. To run first to others, to whisper and to spread the matter, is the way of gossip and not of love. The Lord would have us seek our brother first, face to face, in private, before ever the circle is widened.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Stress this first step strongly, for it is the one most often skipped. The flesh would rather talk <em>about</em> a brother than talk <em>to</em> him. Yet the Lord commands the private word first. Teach the people that carrying a brother's fault straight to others, before going to him alone, is itself a sin against him and against the Lord's plain command. Most offences die quietly at this first step, and the brother is gained without anyone else ever knowing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Second and Third Steps: Witnesses, Then the Church</h2>
+      </div>
+      <div class="section-body">
+        <p>If the private word is refused, the Lord does not yet allow the matter to be broadcast. He gives a second step, to take one or two more, that every word may be established by witnesses. Only if this also fails is the matter at last brought before the church. The steps widen slowly and reluctantly, always giving the erring brother another chance to repent before the circle grows.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 18:16</span>
+          <span class="scripture-text">But if he will not hear thee, then take with thee one or two more, that in the mouth of two or three witnesses every word may be established.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 18:17</span>
+          <span class="scripture-text">And if he shall neglect to hear them, tell it unto the church: but if he neglect to hear the church, let him be unto thee as an heathen man and a publican.</span>
+        </div>
+
+        <p>Notice the careful order. First one, then two or three, then the whole church, each step taken only when the one before is refused. This pattern of two or three witnesses is the same righteous standard God set in His law, that no man be condemned on a single voice. The Lord did not invent a new harshness, but built His church's order upon the just and merciful principles of God's own commandments.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Established by Witnesses</p>
+          <p>The requirement of two or three witnesses comes straight from the law of God, which forbids condemning any man on the word of one alone. This guards the accused from slander and false charges, and ensures that when the church does act, it acts on truth established and not on rumor.</p>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Slow to Widen, Quick to Forgive</p>
+          <p>Each step is taken only when the last is refused. The aim at every stage is repentance, and at every stage the door stands open for the brother to be restored. The church moves slowly and reluctantly toward the final step, longing for the sinner to turn before it is ever reached.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">When the Unrepentant Must Be Put Away</h2>
+      </div>
+      <div class="section-body">
+        <p>There comes a point, when every step has been refused and the sinner will not repent, that the church must put him away from its fellowship. This is the hardest of all the steps, yet Scripture commands it. Open and unrepentant sin, left unchecked in the body, spreads like leaven and defiles the whole. For the sake of the flock, and even for the sake of the sinner himself, the unrepentant must be removed from the fellowship of the saints.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 5:11, 13</span>
+          <span class="scripture-text">But now I have written unto you not to keep company, if any man that is called a brother be a fornicator, or covetous, or an idolater, or a railer, or a drunkard, or an extortioner; with such an one no not to eat... Therefore put away from among yourselves that wicked person.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 5:6&ndash;7</span>
+          <span class="scripture-text">Your glorying is not good. Know ye not that a little leaven leaveneth the whole lump? Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Thessalonians 3:6</span>
+          <span class="scripture-text">Now we command you, brethren, in the name of our Lord Jesus Christ, that ye withdraw yourselves from every brother that walketh disorderly, and not after the tradition which ye received of us.</span>
+        </div>
+
+        <p>This putting away is grievous, but it is not done in hatred. Even here the aim is recovery. The sinner is removed so that he may feel the weight of his sin, be brought to shame and repentance, and at last be restored. And the church is kept pure, the leaven purged, that the whole body be not defiled. It is a solemn act of the whole assembly, never the private vengeance of one offended man.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>This step is reserved for serious and unrepentant sin, named plainly by Paul, and it is the act of the gathered church under its leaders, not of an individual settling a grudge. Two errors must be avoided. The careless church ignores open sin and lets the leaven spread. The harsh church casts people out swiftly and without grace. Walk the Lord's path between them: patient through every step, grieved when the final step is reached, and always longing for the day of restoration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Goal of Putting Away Is Repentance and Restoration</h2>
+      </div>
+      <div class="section-body">
+        <p>We must never forget where this road is meant to lead. Even the putting away of a sinner is aimed at his repentance and return. Paul, who commanded the Corinthians to remove the wicked man, later commanded them to forgive and receive him again when he repented, lest he be swallowed up with too much sorrow. The end of discipline is not a soul cast off for ever, but a soul brought home.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 5:5</span>
+          <span class="scripture-text">To deliver such an one unto Satan for the destruction of the flesh, that the spirit may be saved in the day of the Lord Jesus.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 2:6&ndash;8</span>
+          <span class="scripture-text">Sufficient to such a man is this punishment, which was inflicted of many. So that contrariwise ye ought rather to forgive him, and comfort him, lest perhaps such a one should be swallowed up with overmuch sorrow. Wherefore I beseech you that ye would confirm your love toward him.</span>
+        </div>
+
+        <p>See the whole purpose laid bare. The man was put away that his spirit might be saved in the day of the Lord. And when he repented, the church was charged to forgive him, comfort him, and confirm their love toward him. Discipline that refuses to restore the repentant has forgotten its own aim. The church must be as ready to welcome back the returning sinner as it was grieved to put him away.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Ready to Welcome Home</p>
+          <p>The purpose of putting away is that the spirit may be saved. When the sinner repents, the church must forgive, comfort, and confirm its love toward him. A repentant brother is to be received with joy, for this is the very outcome discipline was always seeking.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Discipline Done in Love, Truth, and Humility</h2>
+      </div>
+      <div class="section-body">
+        <p>All of this must be carried out in a certain spirit, or it will do more harm than good. Discipline is to be done in love, never in pride or anger. It is to be done in truth, according to the standard of God's commandments and not the shifting opinions of men. And it is to be done in humility, by people who know they themselves stand only by grace. Without this spirit, even right steps become a wounding thing.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 7:5</span>
+          <span class="scripture-text">Thou hypocrite, first cast out the beam out of thine own eye; and then shalt thou see clearly to cast out the mote out of thy brother's eye.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:15</span>
+          <span class="scripture-text">But speaking the truth in love, may grow up into him in all things, which is the head, even Christ.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 2:24&ndash;25</span>
+          <span class="scripture-text">And the servant of the Lord must not strive; but be gentle unto all men, apt to teach, patient, In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth.</span>
+        </div>
+
+        <p>Here is the spirit the Lord requires. We deal with our own sin first, then see clearly to help our brother. We speak the truth, but always in love. We are gentle, patient, and meek, instructing in the hope that God will grant repentance. This is what keeps discipline from becoming a club in the hands of the proud. It is the gentle, grieving work of a people who love both the holiness of God and the soul of their brother.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Truth and Love Together</p>
+          <p>Truth without love grows harsh, and love without truth grows soft. The Lord binds the two together, that we speak the truth in love. Faithful discipline holds God's standard high and holds the erring brother dear at the same moment, refusing to let go of either.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Correction That Seeks to Save</h3>
+      <div class="conclusion-body">
+        <p>Church discipline is no harsh invention of men but the Lord's own provision for His household. When a brother sins, we go to him alone, then with witnesses, then before the church, each step taken slowly and only when the last is refused, and always longing for him to repent. When the unrepentant must at last be put away, it is done in grief, for the purging of the leaven and for the saving of his spirit in the day of the Lord. And when he turns again, the church stands ready to forgive, to comfort, and to confirm its love.</p>
+        <p>Through every step the aim is the same, to gain the brother and to keep the body pure. It is carried out in love, in truth according to the commandments of God, and in the humility of those who know their own need of grace. Let no church neglect this duty, and let no church abuse it. Done as the Lord commands, it is among the kindest and most faithful labors a people can render, the loving correction that seeks not to cast off but to save.</p>
+        <p><em>If he shall hear thee, thou hast gained thy brother.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Thou hast gained thy brother &middot; Matthew 18:15</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

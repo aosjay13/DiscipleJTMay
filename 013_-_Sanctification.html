@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanctification &middot; The Believer Set Apart and Made Holy</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Sanctification</h1>
+    <p class="doc-subtitle">The Believer Set Apart and Made Holy</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>When a soul is saved by grace through faith, the work of God in that life has only begun. Justification is the moment God declares the believer righteous on account of Christ. Sanctification is the work that follows, the lifelong setting apart of that believer unto God and the steady making of him holy. The first is finished in an instant and never repeated. The second is begun at the new birth and carried on by the Holy Ghost until the believer is brought home.</p>
+      <p>To be sanctified is to be set apart. It carries two truths together. The believer is set apart by God for God, taken out of the common use of the world and claimed as His own. And the believer is then made holy in practice, his heart and his walk brought ever closer to the standard of God's own righteousness. We will trace both, for Scripture holds them together and never tears them apart.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">What Sanctification Means</h2>
+      </div>
+      <div class="section-body">
+        <p>The word sanctify means to set apart, to make holy, to consecrate to a sacred use. In Scripture, things were sanctified when they were taken from common use and given wholly to God. The Sabbath was sanctified, the tabernacle and its vessels were sanctified, and the people of Israel were called to be a sanctified nation. To sanctify a thing was to mark it off as belonging to God and no longer to the world.</p>
+        <p>So it is with the believer. At salvation God claims him, sets His mark upon him, and separates him from the mass of the perishing world. This is the believer's standing. He is holy because God has set him apart. Yet the same Scriptures that declare him set apart also call him to live the part, to become in his daily walk what God has already declared him to be.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Thessalonians 4:3&ndash;4</span>
+          <span class="scripture-text">For this is the will of God, even your sanctification, that ye should abstain from fornication: That every one of you should know how to possess his vessel in sanctification and honour.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Leviticus 20:7&ndash;8</span>
+          <span class="scripture-text">Sanctify yourselves therefore, and be ye holy: for I am the LORD your God. And ye shall keep my statutes, and do them: I am the LORD which sanctify you.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Heart of It</p>
+          <p>Notice the order in Leviticus. The LORD says I am the LORD which sanctify you, and in the same breath He says ye shall keep my statutes, and do them. God is the one who sets His people apart, and the people show that they are set apart by keeping His commandments. The work is His, and the walk is theirs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Work of the Holy Ghost</h2>
+      </div>
+      <div class="section-body">
+        <p>Sanctification is not something the believer manufactures by his own strength. It is the work of the Holy Ghost within him. The same Spirit who seals the believer at salvation then labors in him to put sin to death and to bring forth holiness. The believer is not passive, for he must yield and obey, but the power to change comes from God and not from the flesh.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Thessalonians 2:13</span>
+          <span class="scripture-text">But we are bound to give thanks alway to God for you, brethren beloved of the Lord, because God hath from the beginning chosen you to salvation through sanctification of the Spirit and belief of the truth.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 1:2</span>
+          <span class="scripture-text">Elect according to the foreknowledge of God the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ: Grace unto you, and peace, be multiplied.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 8:13</span>
+          <span class="scripture-text">For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live.</span>
+        </div>
+
+        <p>Mark the words of Romans, that we mortify the deeds of the body through the Spirit. The killing of sin is real work, and the believer does it, yet he does it through the Spirit and not by raw willpower. This is the joining of God's power and the believer's obedience that runs through the whole of sanctification.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Sealed, Then Sanctified</p>
+          <p>The Spirit who sanctifies is the same Spirit who sealed the believer at the new birth. The sealing marks him as God's possession. The sanctifying makes him fit for the Master's use. The one secures him, the other shapes him, and both are the gracious work of God toward those He has claimed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Set Apart in Standing, Made Holy in Walk</h2>
+      </div>
+      <div class="section-body">
+        <p>Scripture speaks of sanctification in two ways, and the believer must hold both. In one sense the believer is already sanctified, set apart once for all by God at the moment of salvation. In another sense the believer is being sanctified, growing day by day into the holiness God requires. The first is his settled position before God. The second is his daily progress in practice.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 6:11</span>
+          <span class="scripture-text">And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.</span>
+        </div>
+
+        <p>Here Paul tells the Corinthians they are already sanctified, set apart, washed, claimed by God. Yet to those same believers he gives command after command to forsake sin and pursue holiness. They are set apart in standing, and they are called to grow holy in walk. There is no contradiction. The settled standing is the ground, and the daily growth is the fruit.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 7:1</span>
+          <span class="scripture-text">Having therefore these promises, dearly beloved, let us cleanse ourselves from all filthiness of the flesh and spirit, perfecting holiness in the fear of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 12:14</span>
+          <span class="scripture-text">Follow peace with all men, and holiness, without which no man shall see the Lord.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Both Held Together</p>
+          <p>The believer is holy because God has set him apart, and the believer pursues holiness because God commands him to grow. To claim the standing while despising the walk is to deceive oneself. To labor at the walk while doubting the standing is to fall into bondage. Grace gives the standing, and grace empowers the walk.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">The Standard of Holiness Is God's Law</h2>
+      </div>
+      <div class="section-body">
+        <p>If the believer is called to grow in holiness, we must ask what holiness looks like. We are not left to guess or to invent our own measure. The standard of holiness is the unchanging righteousness of God, and that righteousness is revealed in His commandments. Sin is the transgression of the law, and holiness is the keeping of it. To grow in sanctification is to grow in conformity to the very commandments that express God's holy character.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 1:15&ndash;16</span>
+          <span class="scripture-text">But as he which hath called you is holy, so be ye holy in all manner of conversation; Because it is written, Be ye holy; for I am holy.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 7:12</span>
+          <span class="scripture-text">Wherefore the law is holy, and the commandment holy, and just, and good.</span>
+        </div>
+
+        <p>Peter draws his call to holiness straight out of the commandments God gave, for the words be ye holy, for I am holy are quoted from the law itself. The believer who would be holy is therefore the believer who returns to the commandments of God as the lamp unto his feet. This is no return to bondage and no attempt to earn salvation. It is the saved soul learning to walk in the holiness God has set apart for him.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 2:6</span>
+          <span class="scripture-text">He that saith he abideth in him ought himself also so to walk, even as he walked.</span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Guard this point carefully against two errors. The first error says that because we keep the commandments we are sanctified, making holiness the cause of salvation. The second error says that because we are saved we may ignore the commandments altogether. Both are wrong. We keep the commandments <em>because</em> God has sanctified us, and our obedience is the evidence and the outworking of the holiness He has already given. The Law is the standard of the walk, never the ground of the standing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">A Lifelong and Growing Work</h2>
+      </div>
+      <div class="section-body">
+        <p>Sanctification is not finished in a day. It is the patient work of a lifetime, in which the believer is changed from one degree of glory to another. There will be growth, and there will be struggle. The flesh wars against the Spirit, and the believer must take up the fight daily. Yet the direction of a sanctified life is always upward and onward, pressing toward the likeness of Christ.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 3:18</span>
+          <span class="scripture-text">But we all, with open face beholding as in a glass the glory of the Lord, are changed into the same image from glory to glory, even as by the Spirit of the Lord.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Philippians 1:6</span>
+          <span class="scripture-text">Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Philippians 3:13&ndash;14</span>
+          <span class="scripture-text">Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize of the high calling of God in Christ Jesus.</span>
+        </div>
+
+        <p>Paul, far along in his walk, still said he had not yet arrived but pressed on toward the mark. So it is for every believer. The work is real, the progress is real, and the One who began it will finish it. We do not sanctify ourselves into salvation. We grow, by the Spirit, into the holiness for which our salvation has set us apart.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Both Gift and Pursuit</p>
+          <p>Holiness is given and holiness is pursued. God sets the believer apart as a gift of grace, and God then calls the believer to chase after holiness with all his heart. The pursuit never earns the gift. The pursuit proves that the gift is real and living within.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Fruit and the End of Sanctification</h2>
+      </div>
+      <div class="section-body">
+        <p>What does a sanctified life produce, and where does it lead? The fruit of sanctification is holiness in the present and the fullness of eternal life at the last. As the believer yields to the Spirit and keeps the commandments of God, sin loses its grip and righteousness takes root. The end of that road is everlasting life with God, the soul made fit at last for His holy presence.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 6:22</span>
+          <span class="scripture-text">But now being made free from sin, and become servants to God, ye have your fruit unto holiness, and the end everlasting life.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Thessalonians 5:23</span>
+          <span class="scripture-text">And the very God of peace sanctify you wholly; and I pray God your whole spirit and soul and body be preserved blameless unto the coming of our Lord Jesus Christ.</span>
+        </div>
+
+        <p>The aim of the whole work is that the believer be preserved blameless unto the coming of the Lord. God sets him apart, the Spirit makes him holy, the commandments mark out his path, and the goal is a life wholly given to God and kept until Christ returns. This is sanctification, begun at the new birth and carried on without ceasing until the day we see Him.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Fruit Unto Holiness</p>
+          <p>Romans says the believer made free from sin has his fruit unto holiness, and the end everlasting life. Sanctification bears real fruit now in a changed and obedient life, and it leads at the last to the everlasting life God has promised. The road of holiness runs all the way home.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Set Apart by Grace, Made Holy by the Spirit</h3>
+      <div class="conclusion-body">
+        <p>Sanctification is the steady work of God in the saved soul. He sets the believer apart at salvation, claiming him as His own and declaring him holy. Then by His Spirit He labors within that believer to make him holy in walk, conforming him to the righteousness revealed in the commandments. The standing is settled and never moves. The walk grows day by day until the believer is brought home.</p>
+        <p>Let no one trust in his own holiness to save him, for that work belongs to the grace of God received by faith. And let no saved soul despise the call to holiness, for the same God who saved us has set us apart to be holy, and His Spirit gives us the power to obey. We are sanctified by God, we are being sanctified by His Spirit, and we shall be preserved blameless unto the coming of our Lord.</p>
+        <p><em>Follow peace with all men, and holiness, without which no man shall see the Lord.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Be ye holy; for I am holy &middot; 1 Peter 1:16</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resisting the Devil &middot; Submit to God, and the Enemy Will Flee</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Resisting the Devil</h1>
+    <p class="doc-subtitle">Submit to God, and the Enemy Will Flee</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>The believer has a real enemy, and the Scriptures call him by many names, the devil, Satan, the adversary, the tempter, the accuser of the brethren. Yet the Bible never leaves the child of God in fear of him. Instead it gives a clear and confident command, to resist the devil, with the sure promise that he will flee. The same God who warns us of the enemy has given us all we need to stand against him and to send him fleeing.</p>
+      <p>The key to this victory is found in a single verse from James, which sets the order plainly. Submit yourselves therefore to God. Resist the devil, and he will flee from you. Notice that submission comes first, and resistance second. The power to resist the devil flows out of submission to God. A soul truly yielded to God is a soul the enemy cannot stand before. We will look at the order of this verse, the nature of our defeated foe, the ways he attacks, and how the believer stands and resists in the victory of Christ.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">Submit to God First, Then Resist</h2>
+      </div>
+      <div class="section-body">
+        <p>Everything in the believer's warfare against the enemy begins here. James gives the order, and it must not be reversed. First we submit ourselves to God, yielding our whole life to His rule, and only then do we resist the devil. The strength to resist is not our own. It flows from a heart wholly surrendered to God, for the enemy cannot prevail against a soul that is truly the Lord's.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 4:7</span>
+          <span class="scripture-text">Submit yourselves therefore to God. Resist the devil, and he will flee from you.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 4:8, 10</span>
+          <span class="scripture-text">Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded... Humble yourselves in the sight of the Lord, and he shall lift you up.</span>
+        </div>
+
+        <p>See how James surrounds the command to resist with calls to submission, to draw near to God, to cleanse our hands, to purify our hearts, and to humble ourselves before the Lord. This is the soil in which true resistance grows. The proud and the disobedient have no power against the enemy, for they have given him a foothold. But the humble soul, submitted and drawn near to God, resists the devil and watches him flee.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Order Cannot Be Reversed</p>
+          <p>Submission to God comes first, then resistance to the devil. The power to resist flows from a heart yielded to God. A proud or disobedient soul gives the enemy a foothold, but the humble soul submitted to God resists him and he flees.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">A Defeated Foe, Conquered at the Cross</h2>
+      </div>
+      <div class="section-body">
+        <p>We resist the devil not as those uncertain of the outcome, but as those who stand on a victory already won. At the cross, Christ defeated the devil and stripped him of his power. The enemy is real and dangerous, but he is a conquered foe, and the believer resists him from the ground of Christ's triumph, not from a place of fear or doubt.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 2:14</span>
+          <span class="scripture-text">Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 3:8</span>
+          <span class="scripture-text">He that committeth sin is of the devil; for the devil sinneth from the beginning. For this purpose the Son of God was manifested, that he might destroy the works of the devil.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 2:15</span>
+          <span class="scripture-text">And having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it.</span>
+        </div>
+
+        <p>Mark the language of victory. Christ came to destroy the works of the devil, to destroy him that had the power of death, and He spoiled and triumphed over the powers of darkness openly. The believer does not fight to gain a victory but stands in a victory already won. We resist the enemy as a defeated foe, on the ground of the finished work of Christ, and that is why he must flee.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Standing on a Finished Victory</p>
+          <p>The devil is a conquered enemy, defeated at the cross where Christ destroyed his works and triumphed over the powers of darkness openly. We do not fight to win a victory but stand in one already won. This is why the believer can resist without fear.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Know His Devices: Temptation, Accusation, Deception</h2>
+      </div>
+      <div class="section-body">
+        <p>To resist the enemy, we do well to know how he works, for we are not to be ignorant of his devices. He comes as the tempter, drawing us toward sin. He comes as the accuser, heaping guilt and condemnation upon us. And he comes as the deceiver, twisting the truth and spreading lies. Knowing his tactics, we are not caught off guard but ready to stand against them.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 2:11</span>
+          <span class="scripture-text">Lest Satan should get an advantage of us: for we are not ignorant of his devices.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 8:44</span>
+          <span class="scripture-text">He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 12:10&ndash;11</span>
+          <span class="scripture-text">For the accuser of our brethren is cast down, which accused them before our God day and night. And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.</span>
+        </div>
+
+        <p>See the threefold work of the enemy and the answer to each. He tempts, and we resist by the word of God as the Lord did in the wilderness. He accuses, and we overcome by the blood of the Lamb, pointing not to our own goodness but to the finished work of Christ. He deceives, and we stand in the truth, for he is a liar and the father of it. Knowing his devices, we meet each one with the weapons God has given.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Be balanced and sober here, neither ignoring the enemy nor giving him undue attention. We are not to be ignorant of his devices, but neither are we to grow fearful or to see a demon behind every trouble. The believer's focus is to be on Christ and on submission to God, not on the enemy. Teach the people to recognize temptation, accusation, and deception for what they are, and to answer each with the word of God and the blood of the Lamb, resting always in the victory of Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Be Sober and Watchful</h2>
+      </div>
+      <div class="section-body">
+        <p>Resisting the enemy calls for a watchful and sober spirit. Peter warns that the devil prowls like a roaring lion, seeking whom he may devour, and he tells us to be vigilant. This is not a call to fear but to alertness, a steady watchfulness that does not grow careless or give the enemy an opening through sloth, pride, or unguarded sin.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 5:8&ndash;9</span>
+          <span class="scripture-text">Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour: Whom resist stedfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:27</span>
+          <span class="scripture-text">Neither give place to the devil.</span>
+        </div>
+
+        <p>Notice Peter's instruction, to resist steadfast in the faith. We are not to give place to the devil, not to leave a door open through unconfessed sin or careless living. The lion roars to frighten, but the believer who is sober, watchful, and steadfast in the faith stands firm and gives him no opening. Watchfulness is simply the alertness of a soldier who knows there is an enemy and refuses to be caught off guard.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Give No Place</p>
+          <p>We are to be sober and vigilant, resisting steadfast in the faith, and giving no place to the devil. This is alertness, not fear. The believer who guards against careless sin and stands firm in faith gives the enemy no opening, and the roaring lion cannot devour him.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Weapons of Our Resistance</h2>
+      </div>
+      <div class="section-body">
+        <p>We do not resist the enemy with our own strength or cleverness, but with the weapons God has given. The word of God turns back temptation, as the Lord showed in the wilderness. The blood of the Lamb answers every accusation. The name of Jesus carries authority over the powers of darkness. And prayer keeps us in constant dependence on the Lord. These are the weapons of our resistance, mighty through God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 4:10&ndash;11</span>
+          <span class="scripture-text">Then saith Jesus unto him, Get thee hence, Satan: for it is written, Thou shalt worship the Lord thy God, and him only shalt thou serve. Then the devil leaveth him, and, behold, angels came and ministered unto him.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 12:11</span>
+          <span class="scripture-text">And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 6:11</span>
+          <span class="scripture-text">Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.</span>
+        </div>
+
+        <p>See how the Lord resisted, answering the tempter with it is written, and the devil left Him. So we resist with the word of God in our mouths and the blood of the Lamb as our plea. We put on the whole armor of God, take the name of Jesus in faith, and pray without ceasing. These are not weapons of the flesh but the very provision of God, and against them the enemy cannot stand.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Mighty Through God</p>
+          <p>Our weapons against the enemy are the word of God, the blood of the Lamb, the name of Jesus, the whole armor of God, and prayer. We resist as the Lord did, answering with it is written. These weapons are mighty through God, and the enemy cannot stand against them.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">He Will Flee: The Certain Promise</h2>
+      </div>
+      <div class="section-body">
+        <p>We end where James began, with the sure promise attached to the command. Resist the devil, and he will flee from you. This is not a hope but a certainty. The same God who commands us to resist promises the result. The enemy who could not stand before Christ cannot stand before the believer who resists him in Christ's name and in the power of His finished work.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 4:7</span>
+          <span class="scripture-text">Submit yourselves therefore to God. Resist the devil, and he will flee from you.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 16:20</span>
+          <span class="scripture-text">And the God of peace shall bruise Satan under your feet shortly. The grace of our Lord Jesus Christ be with you. Amen.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 4:4</span>
+          <span class="scripture-text">Ye are of God, little children, and have overcome them: because greater is he that is in you, than he that is in the world.</span>
+        </div>
+
+        <p>Hold fast to this confidence. Greater is He that is in us than he that is in the world. The God of peace shall bruise Satan under our feet. When we submit to God and resist the enemy, he will flee, for he cannot do otherwise. The believer fights from a place of certain victory, knowing the outcome is already secured by the One who dwells within him and who has already overcome.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Greater Is He That Is in You</p>
+          <p>The promise is certain. Resist the devil, and he will flee. Greater is He that is in us than he that is in the world, and the God of peace will bruise Satan under our feet. The believer resists from a place of victory already secured by Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Submitted to God, Standing in Victory</h3>
+      <div class="conclusion-body">
+        <p>The believer has a real enemy, but a defeated one, conquered at the cross where Christ destroyed his works and triumphed over the powers of darkness openly. We are not to fear him, but to resist him, and the order is everything. We submit ourselves to God first, drawing near to Him, cleansing our hands, humbling our hearts, and from that surrendered place we resist the enemy and he flees. We know his devices of temptation, accusation, and deception, and we answer each with the word of God and the blood of the Lamb.</p>
+        <p>So let us be sober and watchful, giving no place to the devil, standing steadfast in the faith and clothed in the whole armor of God. We resist not in our own strength but in the victory of Christ, for greater is He that is in us than he that is in the world. And we rest on the certain promise that the God of peace will bruise Satan under our feet. Submit yourselves to God, resist the devil, and he will flee from you.</p>
+        <p><em>Submit yourselves therefore to God. Resist the devil, and he will flee from you.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Resist the devil, and he will flee from you &middot; James 4:7</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

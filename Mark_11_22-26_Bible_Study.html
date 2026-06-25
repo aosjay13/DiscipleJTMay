@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark 11:22-26 - Faith, Prayer, and Forgiveness</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 320px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PASSAGE (top scripture, full text) ── */
+  .passage {
+    margin: 2.5rem 0 0;
+    padding: 1.8rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+  }
+  .passage-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .passage p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    font-style: italic;
+  }
+  .passage .ref {
+    display: block;
+    margin-top: 0.9rem;
+    font-style: normal;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-align: right;
+  }
+
+  /* ── INTRO LEAD ── */
+  .lead {
+    margin: 2.2rem 0 0;
+    padding-bottom: 1.8rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .lead-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .lead p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .lead p + p { margin-top: 1rem; }
+
+  /* ── SECTION (major numbered division) ── */
+  .division {
+    margin-top: 2.8rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .division-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 1.1rem;
+  }
+  .division-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.15rem;
+  }
+  .division-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .division-body {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.4rem;
+  }
+  .division-body + .division-body { margin-top: -0.4rem; }
+
+  /* ── VERSE BLOCK (verse-by-verse) ── */
+  .verse {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold-light);
+  }
+  .verse-head {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .verse-quote {
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 0.7rem;
+  }
+  .verse-body {
+    font-size: 1rem;
+    line-height: 1.78;
+    color: var(--ink-mid);
+  }
+  .verse-body + .verse-body { margin-top: 0.7rem; }
+
+  /* ── SCRIPTURE BLOCK (related verses) ── */
+  .scripture-block {
+    margin-top: 1.6rem;
+    padding: 1.4rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .scripture-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.06em;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+
+  /* ── TEACHER NOTE PANEL ── */
+  .note-panel {
+    margin: 1.6rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #FBF4DD;
+    border: 1px dashed var(--gold-light);
+  }
+  .note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.55rem;
+  }
+  .note-panel p { font-size: 0.97rem; line-height: 1.75; color: var(--ink-mid); }
+  .note-panel p + p { margin-top: 0.7rem; }
+
+  /* ── KEY POINT PANEL ── */
+  .key-panel {
+    margin: 1.6rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--parchment);
+    border-left: 4px solid var(--gold);
+  }
+  .key-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.55rem;
+  }
+  .key-panel p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── CONCLUSION BLOCK ── */
+  .conclusion {
+    margin-top: 2.8rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A2520 0%, #3D3829 100%);
+    color: var(--gold-pale);
+    position: relative;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.9rem;
+  }
+  .conclusion p { font-size: 1.03rem; line-height: 1.82; color: var(--gold-pale); }
+  .conclusion p + p { margin-top: 1rem; }
+
+  /* ── DISCUSSION QUESTIONS ── */
+  .discussion {
+    margin-top: 2.8rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .discussion ol { list-style: none; counter-reset: q; padding: 0; }
+  .discussion li {
+    counter-increment: q;
+    margin-bottom: 1.6rem;
+    padding-left: 2.2rem;
+    position: relative;
+  }
+  .discussion li::before {
+    content: counter(q);
+    position: absolute;
+    left: 0; top: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    border: 1px solid var(--gold-light);
+    width: 1.5rem; height: 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+  }
+  .discussion .q-text { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); margin-bottom: 0.6rem; }
+  .answer-line { border-bottom: 1px solid #D4B97A88; height: 1.4rem; margin: 0.5rem 0; }
+
+  /* ── ANSWER KEY ── */
+  .answer-key {
+    margin: 1.6rem 0 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+  }
+  .answer-key .scripture-label { margin-bottom: 1rem; }
+  .answer-key ol { list-style: none; counter-reset: a; padding: 0; }
+  .answer-key li { counter-increment: a; margin-bottom: 1rem; font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); }
+  .answer-key li::before {
+    content: counter(a) ". ";
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 0.85rem;
+  }
+
+  /* ── FOOTER ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+
+    .doc-header, .doc-footer, .conclusion {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .division, .discussion { page-break-before: always; break-before: page; }
+    .division:first-of-type { page-break-before: auto; break-before: auto; }
+    .lead, .passage { page-break-after: avoid; }
+    .division-header { page-break-after: avoid; break-after: avoid; }
+
+    .passage,
+    .scripture-block,
+    .scripture-entry,
+    .verse,
+    .note-panel,
+    .key-panel,
+    .conclusion,
+    .answer-key,
+    .discussion li { page-break-inside: avoid; break-inside: avoid; }
+
+    .doc-footer { page-break-before: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦</span>
+    <h1 class="doc-title">Faith, Prayer, and Forgiveness</h1>
+    <p class="doc-subtitle">A Study of Mark 11:22&ndash;26</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+    <p class="doc-subtitle" style="margin-top:1rem;">Work the Word &middot; Monthly Bible Study</p>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- THE PASSAGE -->
+    <div class="passage">
+      <p class="passage-label">The Passage</p>
+      <p>And Jesus answering saith unto them, Have faith in God. For verily I say unto you, That whosoever shall say unto this mountain, Be thou removed, and be thou cast into the sea; and shall not doubt in his heart, but shall believe that those things which he saith shall come to pass; he shall have whatsoever he saith. Therefore I say unto you, What things soever ye desire, when ye pray, believe that ye receive them, and ye shall have them. And when ye stand praying, forgive, if ye have ought against any: that your Father also which is in heaven may forgive you your trespasses. But if ye do not forgive, neither will your Father which is in heaven forgive your trespasses.
+      <span class="ref">Mark 11:22&ndash;26</span></p>
+    </div>
+
+    <!-- INTRO -->
+    <div class="lead">
+      <p class="lead-label">Where We Are Standing</p>
+      <p>These five verses are spoken on the road between Bethany and Jerusalem, in the last week of the Lord's earthly ministry. He has already ridden into the city, He has already driven the buyers and sellers out of the temple, and now He is walking back toward the city with His disciples. The words on faith, prayer, and forgiveness do not float free. They grow directly out of a withered fig tree the disciples are staring at, and that fig tree is tied to the temple they had just seen cleansed the day before.</p>
+      <p>To understand what the Lord means, we have to read the whole scene He is standing in. Mark has wrapped the story of the temple inside the story of the fig tree on purpose, so that one explains the other. We will walk through that frame first, then take the passage verse by verse, then gather the related Scriptures that the Lord is leaning on.</p>
+    </div>
+
+    <!-- DIVISION 1: THE SURROUNDING STORY -->
+    <div class="division">
+      <div class="division-header">
+        <span class="division-num">Section One</span>
+        <h2 class="division-title">The Surrounding Story: The Fig Tree and the Temple</h2>
+      </div>
+
+      <p class="division-body">Mark builds this chapter as a single connected scene. He often takes one story, splits it in two, and sets a second story in the middle, so that the outer story interprets the inner one. That is exactly what happens here. The cursing of the fig tree opens the frame, the cleansing of the temple sits in the middle, and the withered fig tree closes the frame. Read together, they say the same thing.</p>
+
+      <div class="verse">
+        <p class="verse-head">The Triumphal Entry &middot; Mark 11:1&ndash;11</p>
+        <p class="verse-body">The Lord enters Jerusalem to shouts of Hosanna. He goes straight into the temple, looks around at everything, and because the hour is late He returns to Bethany with the twelve. He has inspected the house of God, and what He saw there is about to be answered the next morning.</p>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">The Fig Tree Cursed &middot; Mark 11:12&ndash;14</p>
+        <p class="verse-quote">"And seeing a fig tree afar off having leaves, he came, if haply he might find any thing thereon: and when he came to it, he found nothing but leaves... And Jesus answered and said unto it, No man eat fruit of thee hereafter for ever."</p>
+        <p class="verse-body">The tree was full of leaves, which is a promise of fruit, yet it carried no fruit. It made a show of life but fed no one. The Lord speaks a word of judgment against it. A fig tree is a picture the prophets used again and again for the nation and for the people of God, so the disciples would have felt the weight of this.</p>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">The Temple Cleansed &middot; Mark 11:15&ndash;19</p>
+        <p class="verse-quote">"My house shall be called of all nations the house of prayer? but ye have made it a den of thieves."</p>
+        <p class="verse-body">Here is the heart of the frame. The temple, like the fig tree, was covered in leaves. It had crowds, sacrifices, money, and busy religious traffic, but it bore no fruit toward God. It had become a market instead of a house of prayer. The Lord overturns the tables, and notice the word He uses for what the temple was meant to be: a house of prayer. Hold that word. It is the seed of everything He teaches in our passage.</p>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">The Fig Tree Withered &middot; Mark 11:20&ndash;21</p>
+        <p class="verse-quote">"And in the morning, as they passed by, they saw the fig tree dried up from the roots. And Peter calling to remembrance saith unto him, Master, behold, the fig tree which thou cursedst is withered away."</p>
+        <p class="verse-body">The tree is not just wilted. It is dead from the roots. The judgment was total and it was real. Peter is amazed that the word of the Lord did exactly what He said it would. That amazement is what the Lord answers, and His answer is our passage. So the teaching on faith and prayer is His reply to a stunned disciple who has just watched a spoken word come to pass.</p>
+      </div>
+
+      <div class="key-panel">
+        <p class="key-label">The Key to the Frame</p>
+        <p>The fruitless fig tree and the fruitless temple are the same lesson. Both looked alive. Both produced nothing for God. Both came under His judgment. Against that dark background the Lord turns to His disciples and points them to the opposite of dead religion: living faith, real prayer, and a forgiving heart. He is showing them what the temple was supposed to be, and what their own lives are now called to be.</p>
+      </div>
+    </div>
+
+    <!-- DIVISION 2: VERSE BY VERSE -->
+    <div class="division">
+      <div class="division-header">
+        <span class="division-num">Section Two</span>
+        <h2 class="division-title">The Passage Verse by Verse</h2>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">Verse 22 &middot; The Ground of It All</p>
+        <p class="verse-quote">"And Jesus answering saith unto them, Have faith in God."</p>
+        <p class="verse-body">Everything that follows rests on this command. The Lord does not say have faith in faith, or have faith in your own words. He says have faith in God. The power is never in the speaker and never in the saying. It is in the God who hears. The withered tree proved that the word of God carries authority, and the disciple who would walk in that authority must first be anchored in God Himself.</p>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">Verse 23 &middot; The Mountain and the Sea</p>
+        <p class="verse-quote">"That whosoever shall say unto this mountain, Be thou removed, and be thou cast into the sea; and shall not doubt in his heart, but shall believe that those things which he saith shall come to pass; he shall have whatsoever he saith."</p>
+        <p class="verse-body">They are standing near the Mount of Olives, in sight of the temple mount, with the whole weight of that corrupt religious system in front of them. The Lord uses a mountain as His picture of something that looks immovable. To human strength these obstacles cannot be shifted, yet a heart joined to God in believing prayer sees God move them.</p>
+        <p class="verse-body">Two conditions are placed side by side. The man must not doubt in his heart, and he must believe that what he says shall come to pass. This is not a trick of positive thinking. It is settled trust in a God who is able. The believing is inward and real, not a performance of confident words over an unbelieving heart.</p>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">Verse 24 &middot; Believing Prayer</p>
+        <p class="verse-quote">"Therefore I say unto you, What things soever ye desire, when ye pray, believe that ye receive them, and ye shall have them."</p>
+        <p class="verse-body">Now the Lord moves from the dramatic picture of the mountain to ordinary, daily prayer. The word therefore ties it back. The same trust that moves mountains is the trust we are to carry into the prayer closet. We are to pray with real expectation, believing that God hears and answers, not approaching Him as though He were deaf or unwilling.</p>
+        <p class="verse-body">This verse has been badly twisted by those who teach that a believer can name anything he wants and force God to deliver it. That is not faith, it is the will of man dressed up in religious language. Scripture itself sets the boundary, and we will gather those verses below. True believing prayer always desires what God desires, and asks inside His revealed will.</p>
+      </div>
+
+      <div class="note-panel">
+        <p class="note-label">Teacher Note &middot; Guarding Against a False Reading</p>
+        <p>This is the verse the prosperity teachers love to lift out of its setting. Read alone, verse 24 can be made to sound like a blank check for every selfish wish. Read in context, it is the opposite. The Lord has just judged a tree and a temple that were full of self and empty of God. He is not now handing His disciples a tool for getting their own way. He is teaching them to trust the Father.</p>
+        <p>Lead the class to let Scripture interpret Scripture. First John 5:14 tells us the confidence we have is that if we ask any thing according to His will, He heareth us. James 4:3 warns that we ask and receive not because we ask amiss, to spend it on our own lusts. Set verse 24 beside these and the meaning holds: believing prayer is bold, but it is bowed. It asks much, because it asks in line with the Father's heart.</p>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">Verse 25 &middot; Forgive While You Stand Praying</p>
+        <p class="verse-quote">"And when ye stand praying, forgive, if ye have ought against any: that your Father also which is in heaven may forgive you your trespasses."</p>
+        <p class="verse-body">Here the Lord turns the key. Standing was a common posture for prayer among His people, so this simply means whenever you come to pray. And right there, in the act of prayer, He commands a heart check. If you are holding something against anyone, let it go. The Lord ties the open channel of prayer directly to a forgiving heart.</p>
+        <p class="verse-body">Notice how this answers the temple scene. The temple was meant to be a house of prayer, but it had become a place of greed and grasping. The Lord now teaches His people that real prayer cannot live alongside an unforgiving, grasping heart. The two cannot share the same chest.</p>
+      </div>
+
+      <div class="verse">
+        <p class="verse-head">Verse 26 &middot; The Sober Warning</p>
+        <p class="verse-quote">"But if ye do not forgive, neither will your Father which is in heaven forgive your trespasses."</p>
+        <p class="verse-body">This is one of the most searching sentences the Lord ever spoke. Our forgiveness from the Father is bound up with our willingness to forgive others. This is not earning salvation by works. It is the plain truth that a heart truly touched by God's mercy will show mercy, and a heart that refuses to forgive reveals that it has never really laid hold of the forgiveness it claims. The Lord says the same thing in the Sermon on the Mount and again in the parable of the unforgiving servant.</p>
+      </div>
+
+      <div class="key-panel">
+        <p class="key-label">The Shape of the Teaching</p>
+        <p>See the order the Lord builds. Faith in God comes first, for it is the foundation. Believing prayer comes next, for it is faith reaching up to the Father. Forgiveness comes last and binds it all, for prayer that rises from a bitter heart is hindered. Faith, prayer, and forgiveness are not three separate topics. They are one living relationship with God, the very thing the dead temple had lost.</p>
+      </div>
+    </div>
+
+    <!-- DIVISION 3: RELATED VERSES -->
+    <div class="division">
+      <div class="division-header">
+        <span class="division-num">Section Three</span>
+        <h2 class="division-title">Every Related Verse, Gathered by Theme</h2>
+      </div>
+
+      <p class="division-body">The Lord is not introducing new ideas here. He is drawing up threads that run through the whole of Scripture. Below are the passages that stand behind each part of His teaching, so the class can see how the Bible explains itself.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">On the Fig Tree as a Picture of the People</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 13:6&ndash;9</span>
+          <span class="scripture-text">A certain man had a fig tree planted in his vineyard; and he came and sought fruit thereon, and found none... Lord, let it alone this year also, till I shall dig about it, and dung it: and if it bear fruit, well: and if not, then after that thou shalt cut it down.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 8:13</span>
+          <span class="scripture-text">I will surely consume them, saith the LORD: there shall be no grapes on the vine, nor figs on the fig tree, and the leaf shall fade.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hosea 9:10</span>
+          <span class="scripture-text">I found Israel like grapes in the wilderness; I saw your fathers as the firstripe in the fig tree at her first time.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Micah 7:1</span>
+          <span class="scripture-text">Woe is me!... there is no cluster to eat: my soul desired the firstripe fruit.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 5:1&ndash;7</span>
+          <span class="scripture-text">He looked that it should bring forth grapes, and it brought forth wild grapes... he looked for judgment, but behold oppression; for righteousness, but behold a cry.</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">On Faith That Moves Mountains</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 21:21&ndash;22</span>
+          <span class="scripture-text">If ye have faith, and doubt not... ye shall say unto this mountain, Be thou removed, and be thou cast into the sea; it shall be done. And all things, whatsoever ye shall ask in prayer, believing, ye shall receive.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 17:20</span>
+          <span class="scripture-text">If ye have faith as a grain of mustard seed, ye shall say unto this mountain, Remove hence to yonder place; and it shall remove; and nothing shall be impossible unto you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 17:6</span>
+          <span class="scripture-text">If ye had faith as a grain of mustard seed, ye might say unto this sycamine tree, Be thou plucked up by the root, and be thou planted in the sea; and it should obey you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 11:1, 6</span>
+          <span class="scripture-text">Now faith is the substance of things hoped for, the evidence of things not seen... But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 10:17</span>
+          <span class="scripture-text">So then faith cometh by hearing, and hearing by the word of God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 1:6&ndash;7</span>
+          <span class="scripture-text">But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed. For let not that man think that he shall receive any thing of the Lord.</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">On Believing Prayer and Its Boundaries</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 John 5:14&ndash;15</span>
+          <span class="scripture-text">And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us: and if we know that he hear us, whatsoever we ask, we know that we have the petitions that we desired of him.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 4:2&ndash;3</span>
+          <span class="scripture-text">Ye have not, because ye ask not. Ye ask, and receive not, because ye ask amiss, that ye may consume it upon your lusts.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 14:13&ndash;14</span>
+          <span class="scripture-text">And whatsoever ye shall ask in my name, that will I do, that the Father may be glorified in the Son.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 15:7</span>
+          <span class="scripture-text">If ye abide in me, and my words abide in you, ye shall ask what ye will, and it shall be done unto you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 7:7&ndash;11</span>
+          <span class="scripture-text">Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you... how much more shall your Father which is in heaven give good things to them that ask him?</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 37:4</span>
+          <span class="scripture-text">Delight thyself also in the LORD; and he shall give thee the desires of thine heart.</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">On Forgiving as the Condition of Being Forgiven</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 6:14&ndash;15</span>
+          <span class="scripture-text">For if ye forgive men their trespasses, your heavenly Father will also forgive you: but if ye forgive not men their trespasses, neither will your Father forgive your trespasses.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 18:21&ndash;35</span>
+          <span class="scripture-text">So likewise shall my heavenly Father do also unto you, if ye from your hearts forgive not every one his brother their trespasses.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 6:37</span>
+          <span class="scripture-text">Forgive, and ye shall be forgiven.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 4:32</span>
+          <span class="scripture-text">And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Colossians 3:13</span>
+          <span class="scripture-text">Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 5:23&ndash;24</span>
+          <span class="scripture-text">Leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.</span>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">On the Temple as a House of Prayer Under Judgment</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 56:7</span>
+          <span class="scripture-text">Even them will I bring to my holy mountain, and make them joyful in my house of prayer... for mine house shall be called an house of prayer for all people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 7:11</span>
+          <span class="scripture-text">Is this house, which is called by my name, become a den of robbers in your eyes? Behold, even I have seen it, saith the LORD.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 13:1&ndash;2</span>
+          <span class="scripture-text">Seest thou these great buildings? there shall not be left one stone upon another, that shall not be thrown down.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIVISION 4: THE WHOLE MEANING -->
+    <div class="division">
+      <div class="division-header">
+        <span class="division-num">Section Four</span>
+        <h2 class="division-title">The Total Context and Full Meaning</h2>
+      </div>
+
+      <p class="division-body">Put the whole scene together and the message is clear. The Lord had come to His own house and found it like the fig tree, full of leaves and empty of fruit. He pronounced judgment on both. Then He turned to the small band of men who would carry His name forward and showed them the way of life that the temple had abandoned. Where the temple grasped, they were to trust. Where the temple performed, they were to pray. Where the temple held people at arm's length, they were to forgive.</p>
+
+      <p class="division-body">So this passage is not really a lesson about getting things from God. It is a lesson about being rightly joined to God. Faith leans the whole weight of the soul on Him. Prayer brings every desire to Him and trusts His answer. Forgiveness keeps the heart soft and the channel open. These three together are the living alternative to dead, fruitless religion. They are what God has always wanted from His people, and what He still wants from us.</p>
+
+      <div class="conclusion">
+        <p class="conclusion-label">Bringing It Home</p>
+        <p>The withered fig tree is a warning we should not pass over lightly. It is possible to be covered in religious leaves and bear no fruit. It is possible to stand in the house of God and still be far from the heart of God. The Lord's remedy is not more activity. It is faith in God, believing prayer, and a forgiving heart.</p>
+        <p>As we study together, let each of us ask the Lord to search us. Is my faith resting on God Himself, or on my own words and works? Do I pray believing that my Father hears me? Is there anyone I am refusing to forgive, and if so, what is that doing to my walk with Him? The same Lord who withered a barren tree can also make a barren heart fruitful, if we will come to Him in trust and let go of what we have held against others.</p>
+      </div>
+    </div>
+
+    <!-- DISCUSSION -->
+    <div class="discussion">
+      <div class="division-header">
+        <span class="division-num">For the Study</span>
+        <h2 class="division-title">Questions for Discussion</h2>
+      </div>
+
+      <ol>
+        <li>
+          <p class="q-text">Why did Mark place the cleansing of the temple in the middle of the fig tree story? What does the fig tree teach us about the temple, and about ourselves?</p>
+          <div class="answer-line"></div>
+          <div class="answer-line"></div>
+        </li>
+        <li>
+          <p class="q-text">The Lord begins with "Have faith in God," not "have faith in your words." Why does that distinction matter when we read verses 23 and 24?</p>
+          <div class="answer-line"></div>
+          <div class="answer-line"></div>
+        </li>
+        <li>
+          <p class="q-text">How do 1 John 5:14 and James 4:3 keep us from misreading verse 24 as a promise that God will give us anything we want?</p>
+          <div class="answer-line"></div>
+          <div class="answer-line"></div>
+        </li>
+        <li>
+          <p class="q-text">Why does the Lord connect answered prayer so closely with a forgiving heart? What happens to our prayers when we refuse to forgive?</p>
+          <div class="answer-line"></div>
+          <div class="answer-line"></div>
+        </li>
+        <li>
+          <p class="q-text">Verse 26 is sobering. How do we hold together the truth that we are saved by grace and the truth that an unforgiving heart blocks our own forgiveness?</p>
+          <div class="answer-line"></div>
+          <div class="answer-line"></div>
+        </li>
+        <li>
+          <p class="q-text">Is there a "mountain" in your own life that looks immovable? What would it look like to bring it to God in believing prayer this week?</p>
+          <div class="answer-line"></div>
+          <div class="answer-line"></div>
+        </li>
+      </ol>
+
+      <div class="answer-key">
+        <p class="scripture-label">Leader's Answer Key</p>
+        <ol>
+          <li>Mark wraps the temple inside the fig tree on purpose. Both looked alive yet bore no fruit, and both came under judgment. The fig tree interprets the temple, and together they warn us that an outward show of religion without real fruit for God invites His judgment.</li>
+          <li>The power is in God, never in the speaker. Faith in God keeps the teaching from becoming a formula about saying the right words. The mountain moves because God moves it, not because the believer commands it by his own authority.</li>
+          <li>Both verses set the boundary that believing prayer asks according to God's will and not to feed our own desires. They show that the bold promise of verse 24 lives inside surrender to the Father, so faith asks much yet always bows to what He wills.</li>
+          <li>The Lord ties the open channel of prayer to a forgiving heart. A bitter, grasping heart is the very thing that ruined the temple. Refusing to forgive hardens us and hinders our fellowship with God, so our prayers are blocked.</li>
+          <li>Salvation is by grace through faith, and forgiving others is the fruit and evidence of a heart that has truly received that grace. An unforgiving heart shows that a person has not really laid hold of the mercy he claims, which is why it stands as a barrier.</li>
+          <li>Answers will vary. Encourage honest sharing and steer the class toward naming the obstacle, surrendering it to God, and praying with real expectation while letting go of any grudge that might hinder them.</li>
+        </ol>
+      </div>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Sola Scriptura &middot; Have faith in God &middot; Mark 11:22</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

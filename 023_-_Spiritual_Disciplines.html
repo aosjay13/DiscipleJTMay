@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiritual Disciplines &middot; Prayer, Fasting, the Word, and Waiting on the Lord</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Spiritual Disciplines</h1>
+    <p class="doc-subtitle">Prayer, Fasting, the Word, and Waiting on the Lord</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>From the earliest days of the church, God's people have given themselves to certain disciplines of the heart, prayer, fasting, the reading and pondering of Scripture, and a patient waiting upon the Lord. These are not strange or extra burdens laid upon the believer beyond his salvation. They are the ordinary means by which a soul already saved by grace grows in nearness to God and strength to obey Him.</p>
+      <p>None of these disciplines saves a man, and none of them may be turned into a law that earns merit before God. Yet neglect them and the soul grows thin, and the walk grows weak. Rightly understood, the spiritual disciplines are not burdens added to grace but channels through which grace does its deepening work in us. We will look at prayer, fasting, meditation on the word, and waiting on the Lord, and learn how each is rooted in glad obedience rather than empty performance.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">Disciplines That Train the Heart Toward Godliness</h2>
+      </div>
+      <div class="section-body">
+        <p>Scripture likens the life of faith to training, the steady exercise by which the soul grows strong in what God has already begun. Just as the body grows strong only by use, so the soul grows strong in godliness only by the steady practice of those things God has appointed for our good. The spiritual disciplines are this kind of training, not works that earn salvation, but exercises that strengthen what grace has already given.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Timothy 4:7&ndash;8</span>
+          <span class="scripture-text">But refuse profane and old wives' fables, and exercise thyself rather unto godliness. For bodily exercise profiteth little: but godliness is profitable unto all things, having promise of the life that now is, and of that which is to come.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 5:14</span>
+          <span class="scripture-text">But strong meat belongeth to them that are of full age, even those who by reason of use have their senses exercised to discern both good and evil.</span>
+        </div>
+
+        <p>Like the athlete or the soldier, the believer does not drift into maturity. He exercises himself by reason of use, training his senses to discern good from evil. The disciplines we now consider, prayer, fasting, meditation on the word, and waiting on the Lord, are the appointed exercises by which the Holy Ghost shapes a soul into the likeness of Christ.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Exercise, Not Earning</p>
+          <p>Spiritual disciplines exercise the soul unto godliness. They do not earn salvation, which is by grace through faith alone. The disciplines are how a soul already saved grows strong in that grace and presses on toward maturity in Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Prayer, the Believer's Continual Communion</h2>
+      </div>
+      <div class="section-body">
+        <p>Of all the disciplines, none is more constant than prayer. Scripture commands us to pray always, without ceasing, in every circumstance of life. Prayer is not a duty reserved for crisis or for the close of day. It is the believer's continual breath, the ongoing conversation of a child with his Father, carried on through every hour.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Luke 18:1</span>
+          <span class="scripture-text">And he spake a parable unto them to this end, that men ought always to pray, and not to faint.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Thessalonians 5:17</span>
+          <span class="scripture-text">Pray without ceasing.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Philippians 4:6&ndash;7</span>
+          <span class="scripture-text">Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.</span>
+        </div>
+
+        <p>Paul does not tell us to pray only when troubled, but in every thing, with thanksgiving mingled into every request. And see the fruit promised, a peace that passes understanding, guarding the heart and mind. Prayer is not primarily about getting what we ask, though God does answer, but about the nearness to God it produces in the one who prays without ceasing.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Enter Into Thy Closet</p>
+          <p><strong>Matthew 6:6</strong> <em>But thou, when thou prayest, enter into thy closet, and when thou hast shut thy door, pray to thy Father which is in secret; and thy Father which seeth in secret shall reward thee openly.</em> The Lord points us first to private, secret prayer, away from the eyes of men. Public prayer has its place, but the root of a praying life is the secret place, where no eye but the Father's sees and no ear but His hears.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Fasting, Humbling the Soul Before God</h2>
+      </div>
+      <div class="section-body">
+        <p>Fasting is the voluntary setting aside of food, for a time, that the soul might give itself more fully to seeking God. It is not a means of impressing God or men, nor a hunger strike to force His hand, but a humbling of the body that the heart might be more attentive and more earnest before the Lord.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 6:16&ndash;18</span>
+          <span class="scripture-text">Moreover when ye fast, be not, as the hypocrites, of a sad countenance: for they disfigure their faces, that they may appear unto men to fast. Verily I say unto you, They have their reward. But thou, when thou fastest, anoint thine head, and wash thy face; That thou appear not unto men to fast, but unto thy Father which is in secret: and thy Father, which seeth in secret, shall reward thee.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Joel 2:12</span>
+          <span class="scripture-text">Therefore also now, saith the LORD, turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 13:2&ndash;3</span>
+          <span class="scripture-text">As they ministered to the Lord, and fasted, the Holy Ghost said, Separate me Barnabas and Saul for the work whereunto I have called them. And when they had fasted and prayed, and laid their hands on them, they sent them away.</span>
+        </div>
+
+        <p>The Lord assumed His disciples would fast, and only warned against doing it for show. Joel calls fasting an expression of a heart wholly turned to God. In Acts the church fasted and prayed together before sending out its first missionaries, fasting joined to seeking God's will and direction. Fasting humbles the body so the spirit might be the more earnest and attentive to the voice of God.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Fasting is voluntary and is never to be commanded as a test of righteousness, nor practiced for the praise of men. Teach it as a tool of earnestness before God in seasons of seeking direction, repentance, or intercession, always guided by wisdom regarding health and circumstance, and never as a means of manipulating God or impressing others.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Meditation on Scripture, Feeding the Soul on the Word</h2>
+      </div>
+      <div class="section-body">
+        <p>To meditate on Scripture is to ponder it slowly, to turn it over in the heart, to let it sink deep rather than passing quickly over its surface. The blessed man of the Psalms is described not as one who merely owns the law or hears it read, but as one whose delight is in the law of the LORD, and who meditates in it day and night.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 1:2&ndash;3</span>
+          <span class="scripture-text">But his delight is in the law of the LORD; and in his law doth he meditate day and night. And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Joshua 1:8</span>
+          <span class="scripture-text">This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt have good success.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 119:11</span>
+          <span class="scripture-text">Thy word have I hid in mine heart, that I might not sin against thee.</span>
+        </div>
+
+        <p>Notice the purpose tied to meditation in Joshua, that thou mayest observe to do according to all that is written. Meditation is never meant to end in mere intellectual delight, but in obedience. We hide the word in our hearts that we might not sin, and as we ponder it day and night, our roots go deep like a tree by the rivers of water, bearing fruit and not withering even in dry seasons.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Meditation Leads to Obedience</p>
+          <p>The purpose of meditating on Scripture is not idle reflection but doing. We ponder the word that we might obey it, hiding it in our hearts as a guard against sin. As Psalm 119:105 says, <em>Thy word is a lamp unto my feet, and a light unto my path.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Waiting on the Lord, Strength for the Patient Soul</h2>
+      </div>
+      <div class="section-body">
+        <p>There is a discipline less active than the others but no less needful, the discipline of waiting on the Lord. It is the patient trust that refuses to run ahead of God, that rests in His timing even when the answer is delayed and the way is unclear. Scripture promises great strength to the soul that learns to wait.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 40:31</span>
+          <span class="scripture-text">But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 27:14</span>
+          <span class="scripture-text">Wait on the LORD: be of good courage, and he shall strengthen thine heart: wait, I say, on the LORD.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Lamentations 3:25&ndash;26</span>
+          <span class="scripture-text">The LORD is good unto them that wait for him, to the soul that seeketh him. It is good that a man should both hope and quietly wait for the salvation of the LORD.</span>
+        </div>
+
+        <p>Waiting is not idleness or despair. It is an active trust that keeps hoping and keeps seeking even while it waits quietly. The promise to those who wait is not merely endurance but renewed strength, soaring like eagles, running without weariness. The soul that learns to wait on the Lord discovers a strength no impatience could ever provide.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Quietly Wait</p>
+          <p>Lamentations pairs hope with quiet waiting, not a restless demanding of God but a settled trust that He is good to the soul that seeks Him. The discipline of waiting trains the believer out of impatience and into a deeper confidence in the Lord's timing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Disciplines of the Heart, Not Performance for Men</h2>
+      </div>
+      <div class="section-body">
+        <p>We must close where the Lord Himself begins every teaching on these disciplines, with the heart. Prayer, fasting, meditation, and waiting are worthless, even harmful, if practiced to be seen of men or to earn merit before God. They are means of grace for a heart already saved, exercises of love and obedience, never badges of superior righteousness.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Samuel 15:22</span>
+          <span class="scripture-text">And Samuel said, Hath the LORD as great delight in burnt offerings and sacrifices, as in obeying the voice of the LORD? Behold, to obey is better than sacrifice, and to hearken than the fat of rams.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 6:1</span>
+          <span class="scripture-text">Take heed that ye do not your alms before men, to be seen of them: otherwise ye have no reward of your Father which is in heaven.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 5:22&ndash;23</span>
+          <span class="scripture-text">But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.</span>
+        </div>
+
+        <p>Obedience from the heart matters more to God than the outward form of any discipline. These practices are never ends in themselves. They are means by which the Spirit cultivates love, joy, peace, and self-control within us. Practiced rightly, in secret and from a heart that loves God, prayer, fasting, meditation, and waiting become the quiet, steady rhythm of a life increasingly conformed to Christ.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Heart Behind the Discipline</p>
+          <p>God does not delight in the outward form of any discipline performed without the heart's true devotion. Practiced from love and humility, these disciplines bear the fruit of the Spirit. Practiced for show, they profit nothing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">The Steady Rhythm of a Life That Walks With God</h3>
+      <div class="conclusion-body">
+        <p>From the secret place of prayer to the humbled body in fasting, from the heart fed on Scripture to the soul that quietly waits, these disciplines are the ordinary means by which God deepens His own work in the believer. None of them save us, and none may be turned into a law by which we measure our righteousness or another's. They are the channels through which grace continues its work in a heart already made alive in Christ.</p>
+        <p>Let us then take up prayer without ceasing, fasting in secret before our Father, meditation that leads to obedience, and patient waiting that renews our strength. Practiced in love rather than for show, these disciplines will not earn God's favor, for that favor is already ours in Christ, but they will deepen the very life He has given, until our prayer, our fasting, our feeding on the word, and our waiting all become the steady rhythm of a soul that walks closely with God.</p>
+        <p><em>Pray without ceasing.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Pray without ceasing &middot; 1 Thessalonians 5:17</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

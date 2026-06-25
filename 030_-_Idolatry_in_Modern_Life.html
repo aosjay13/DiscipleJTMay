@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idolatry in Modern Life &middot; The Gods That Compete for the Heart</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Idolatry in Modern Life</h1>
+    <p class="doc-subtitle">The Gods That Compete for the Heart</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>When we hear the word idolatry, we may picture carved images in ancient temples, statues of wood and stone bowed down to by people long ago. We may suppose the sin is far from us, a relic of a pagan past. But idolatry is not chiefly about statues. It is about the heart. An idol is anything that takes the place in our lives that belongs to God alone, anything we love, trust, serve, or fear more than Him. By that measure, idolatry is as present in our modern world as it ever was in the ancient one.</p>
+      <p>The first and second commandments stand unchanged, that we shall have no other gods before the LORD, and that we shall not bow down to any graven image. These commandments still bind the people of God, and they search far deeper than the outward act. They reach to the throne of the heart, demanding that God hold first place there, undivided and supreme. We will look at what idolatry truly is, and then at the gods that compete for the modern heart, money, comfort, the approval of men, self, and even the good things God has given, that we may tear down every idol and give God His rightful place.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">Idolatry Is a Matter of the Heart</h2>
+      </div>
+      <div class="section-body">
+        <p>At its root, idolatry is giving to something or someone the devotion that belongs to God alone. The commandments against it are the first of all, for they guard the supreme place God must hold in our lives. An idol need not be a statue. It is whatever rules the heart in God's place, whatever we serve and treasure above Him.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Exodus 20:3&ndash;5</span>
+          <span class="scripture-text">Thou shalt have no other gods before me. Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth: Thou shalt not bow down thyself to them, nor serve them: for I the LORD thy God am a jealous God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 5:21</span>
+          <span class="scripture-text">Little children, keep yourselves from idols. Amen.</span>
+        </div>
+
+        <p>Notice that John wrote this warning not to pagans but to believers, and not in a temple full of statues but to the church. He knew that idols arise in the heart wherever God is crowded out of His place. The first commandment is positive as well as negative. It not only forbids other gods, it commands that the LORD be our God, holding the throne of the heart undivided. Idolatry is whatever pushes Him from that throne.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">An Idol Is Anything That Takes God's Place</p>
+          <p>Idolatry is giving to anything the love, trust, and devotion that belong to God alone. An idol need not be carved from wood or stone. It is whatever rules the heart in God's place. The first commandment demands that the LORD hold the throne of the heart, undivided and supreme.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Idol of Money</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord named one rival to God directly, calling it by name. He said that no man can serve two masters, God and mammon, which is wealth. Money is a useful servant but a deadly master. When the heart sets its trust and its treasure on riches, money has become a god, and the love of it has been the ruin of many souls.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 6:24</span>
+          <span class="scripture-text">No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Timothy 6:9&ndash;10</span>
+          <span class="scripture-text">But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition. For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 3:5</span>
+          <span class="scripture-text">Mortify therefore your members which are upon the earth; fornication, uncleanness, inordinate affection, evil concupiscence, and covetousness, which is idolatry.</span>
+        </div>
+
+        <p>Mark that Paul calls covetousness idolatry plainly. The greedy heart that sets its hope on riches has made a god of gold. We cannot serve God and mammon both, for one will hold our heart. Money itself is not evil, and the believer may possess and use it for good. But when the love of it takes root, it pulls men from the faith and pierces them with many sorrows. The cure is to trust God rather than wealth and to hold our riches with open hands.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Servant or Master</p>
+          <p>Money makes a useful servant but a deadly master. The Lord said we cannot serve both God and mammon. When wealth holds our trust and our treasure, it has become an idol. Covetousness is named as idolatry, and the love of money has drawn many away from the faith.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Idols of Comfort, Pleasure, and Appetite</h2>
+      </div>
+      <div class="section-body">
+        <p>There is an idolatry of the appetites, where comfort, pleasure, and the cravings of the body take the place of God. Paul wrote with tears of those whose god was their belly, who lived for the satisfaction of their fleshly desires. In an age devoted to ease and entertainment, this is among the most common idols of all, the worship of self-indulgence and the endless pursuit of pleasure.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Philippians 3:18&ndash;19</span>
+          <span class="scripture-text">(For many walk, of whom I have told you often, and now tell you even weeping, that they are the enemies of the cross of Christ: Whose end is destruction, whose God is their belly, and whose glory is in their shame, who mind earthly things.)</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 3:4</span>
+          <span class="scripture-text">Traitors, heady, highminded, lovers of pleasures more than lovers of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 13:14</span>
+          <span class="scripture-text">But put ye on the Lord Jesus Christ, and make not provision for the flesh, to fulfil the lusts thereof.</span>
+        </div>
+
+        <p>Paul names the danger of our day before it came, lovers of pleasures more than lovers of God. When ease and amusement and the satisfaction of every craving become the aim of life, the belly has become the god. The believer is not forbidden all comfort or rest, for God gives us richly all things to enjoy. But when the pursuit of pleasure rules us, it must be torn down, that we may put on the Lord Jesus Christ and not make provision for the flesh.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">When the Belly Becomes God</p>
+          <p>The idolatry of appetite makes a god of comfort, pleasure, and self-indulgence. Paul warned of those whose god is their belly and who love pleasure more than God. We may enjoy God's good gifts, but when the pursuit of pleasure rules the heart, it has become an idol to be torn down.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">The Idol of the Approval of Men</h2>
+      </div>
+      <div class="section-body">
+        <p>Another god that rules many hearts is the praise and approval of other people. When we live for the opinion of men, fearing their rejection and craving their applause, we have made an idol of their favor. This idol is subtle, for it can drive even religious people to do good things for the wrong reason, to be seen and praised rather than to please God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 12:42&ndash;43</span>
+          <span class="scripture-text">Nevertheless among the chief rulers also many believed on him; but because of the Pharisees they did not confess him, lest they should be put out of the synagogue: For they loved the praise of men more than the praise of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 1:10</span>
+          <span class="scripture-text">For do I now persuade men, or God? or do I seek to please men? for if I yet pleased men, I should not be the servant of Christ.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Proverbs 29:25</span>
+          <span class="scripture-text">The fear of man bringeth a snare: but whoso putteth his trust in the LORD shall be safe.</span>
+        </div>
+
+        <p>See how the love of men's praise kept the rulers from confessing Christ, for they loved the praise of men more than the praise of God. The fear of man is a snare, binding the soul to the opinions of others rather than to the will of God. Paul knew that he could not be the servant of Christ and the pleaser of men at once. The cure for this idol is to seek the approval of God above all, and to fear Him rather than men.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">The Fear of Man</p>
+          <p>Living for the approval of men makes an idol of their favor and the fear of their rejection. It can even drive religious people to act for praise rather than to please God. The fear of man is a snare, but the one who trusts in the LORD and seeks His approval above all is set free.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Idol of Self</h2>
+      </div>
+      <div class="section-body">
+        <p>Perhaps the deepest idol of all is self, the worship of our own will, our own glory, our own way. This is the root idol from which many others spring, the pride that puts self upon the throne and bows to no one. The age in which we live exalts self above all, urging every man to live for himself and to make himself the center of his world. But the call of Christ runs exactly opposite, to deny self and follow Him.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Luke 9:23</span>
+          <span class="scripture-text">And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 3:1&ndash;2</span>
+          <span class="scripture-text">This know also, that in the last days perilous times shall come. For men shall be lovers of their own selves, covetous, boasters, proud, blasphemers, disobedient to parents, unthankful, unholy.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 2:20</span>
+          <span class="scripture-text">I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me: and the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.</span>
+        </div>
+
+        <p>Paul foretold that the last days would be marked by men who are lovers of their own selves. This is idolatry at its root, the self enthroned where God should be. But the Lord calls us to deny self, to take up the cross, and to follow Him. Paul testifies that he was crucified with Christ, that self had been put to death, and Christ now lived in him. The idol of self is broken only at the cross, where we die to ourselves that Christ may reign.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Self Upon the Throne</p>
+          <p>The deepest idol is self, the worship of our own will and glory. It is the root from which many idols spring. The age exalts self, but Christ calls us to deny self, take up the cross, and follow Him. This idol is broken only at the cross, where we die that Christ may live in us.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">When Good Things Become Idols</h2>
+      </div>
+      <div class="section-body">
+        <p>Not every idol is an evil thing. Some of the most powerful idols are good gifts of God that we have loved out of their proper place. Family, work, and the blessings of life are good, given by God for our joy. But when we love them more than God, even these good things become idols. The Lord made this searching test plain, that whoever loves father or mother, son or daughter, more than Him is not worthy of Him.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 10:37</span>
+          <span class="scripture-text">He that loveth father or mother more than me is not worthy of me: and he that loveth son or daughter more than me is not worthy of me.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 22:37&ndash;38</span>
+          <span class="scripture-text">Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind. This is the first and great commandment.</span>
+        </div>
+
+        <p>The Lord does not forbid us to love our families. He commands it elsewhere, and rightly ordered love for our own is a duty and a joy. What He forbids is loving them more than God, setting any good thing above Him in our hearts. God must be loved with all the heart, soul, and mind, and every other love must take its place beneath that supreme love. When a good gift is loved above the Giver, it has quietly become an idol.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Handle this point with care and balance. We are not teaching that family, work, or rest are evil. They are good gifts of God, and we are commanded to love and provide for our own. The point is one of order, that God must hold first place, and every other love must take its place beneath Him. A good thing becomes an idol only when it is loved more than God or set in His place. Help the people test their hearts for what they truly treasure most, without despising the good gifts God has given.</p>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Love in Right Order</p>
+          <p>Even good gifts like family become idols when loved more than God. The Lord commands us to love God with all the heart, soul, and mind, and every other love must take its place beneath that supreme love. The good gift must never be loved above the Giver.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">No Other Gods Before Him</h3>
+      <div class="conclusion-body">
+        <p>Idolatry did not end with the smashing of ancient statues. It lives on wherever the heart gives to anything the love, trust, and devotion that belong to God alone. The modern idols are money and mammon, comfort and pleasure, the approval of men, the worship of self, and even the good gifts of God loved out of their proper place. The first and second commandments still search us, demanding that the LORD hold the throne of the heart, undivided and supreme.</p>
+        <p>Let us then keep ourselves from idols, examining our hearts to see what we truly treasure, trust, and serve above all. Whatever has climbed onto the throne that belongs to God must be torn down, that He alone may reign there. We are to love the Lord our God with all the heart, soul, and mind, and to let every lesser love take its rightful place beneath Him. This is the call of the first commandment, as binding today as on the day it was given, that we shall have no other gods before Him.</p>
+        <p><em>Little children, keep yourselves from idols.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Thou shalt have no other gods before me &middot; Exodus 20:3</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

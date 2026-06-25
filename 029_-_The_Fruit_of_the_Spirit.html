@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fruit of the Spirit &middot; The Character of Christ Formed in Us</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">The Fruit of the Spirit</h1>
+    <p class="doc-subtitle">The Character of Christ Formed in Us</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>When the Spirit of God takes up residence in a believer, He begins to grow something beautiful within. Paul calls it the fruit of the Spirit, a cluster of graces that together form the very character of Christ in the heart of His people. Love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, and temperance are not nine separate fruits but one fruit with many parts, the single harvest of a life surrendered to the Spirit of God.</p>
+      <p>This fruit is not something we manufacture by our own effort, any more than a branch can produce grapes by striving. It grows naturally where the Spirit dwells and the believer abides in Christ. Yet it does not grow in the careless or the rebellious, for it is the fruit of those who walk in the Spirit and not after the flesh. We will look at the nature of this fruit, at the contrast with the works of the flesh, at the graces themselves, and at how the believer is to walk so that this fruit may grow and ripen in his life.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Fruit of the Spirit Named</h2>
+      </div>
+      <div class="section-body">
+        <p>Paul sets before us the whole cluster of graces in a single sweep. Notice that he calls it the fruit, not the fruits, for these graces belong together as one harvest. Where the Spirit truly works, He produces not one of these in isolation but the whole, ripening together in the surrendered heart.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 5:22&ndash;23</span>
+          <span class="scripture-text">But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.</span>
+        </div>
+
+        <p>See how Paul closes the list, against such there is no law. These graces are the very things the law of God has always aimed to produce in His people, and so the law stands in full agreement with them, never against them. The Spirit does not lead us away from the righteousness God commands, but produces that righteousness as living fruit in the heart. The fruit of the Spirit is the law of God written upon the heart and flowering into character.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">One Fruit, Many Graces</p>
+          <p>The fruit of the Spirit is named as one fruit with nine parts, ripening together in the surrendered heart. And against such there is no law, for these graces are exactly what God's law has always sought to grow in His people. The Spirit and the law agree.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Flesh Against the Spirit</h2>
+      </div>
+      <div class="section-body">
+        <p>To understand the fruit of the Spirit, we must see it against its dark opposite, the works of the flesh. Within every believer there remains a war between the flesh and the Spirit, the old nature and the new. The flesh produces its own bitter crop, but the Spirit produces His good fruit, and these two are set against one another.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 5:17</span>
+          <span class="scripture-text">For the flesh lusteth against the Spirit, and the Spirit against the flesh: and these are contrary the one to the other: so that ye cannot do the things that ye would.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 5:19&ndash;21</span>
+          <span class="scripture-text">Now the works of the flesh are manifest, which are these; Adultery, fornication, uncleanness, lasciviousness, Idolatry, witchcraft, hatred, variance, emulations, wrath, strife, seditions, heresies, Envyings, murders, drunkenness, revellings, and such like: of the which I tell you before, as I have also told you in time past, that they which do such things shall not inherit the kingdom of God.</span>
+        </div>
+
+        <p>Mark the difference. The works of the flesh are called works, the labor of the old nature, while the produce of the Spirit is called fruit, the natural outgrowth of new life within. The flesh leads to death and shuts men out of the kingdom, while the Spirit leads to life and the character of Christ. The believer is called to put off the one and walk in the other, crucifying the flesh and yielding to the Spirit.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Works Versus Fruit</p>
+          <p>The flesh produces works, the strained labor of the old nature. The Spirit produces fruit, the living outgrowth of the new. One leads to death and exclusion from the kingdom, the other to life and the likeness of Christ. The two are forever contrary.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Love, Joy, and Peace: Fruit Toward God</h2>
+      </div>
+      <div class="section-body">
+        <p>The first three graces in Paul's list flow from the believer's settled relationship with God. Love is the foundation of all, the very nature of God shed abroad in our hearts. Joy is the deep gladness that does not depend on circumstances but rests in the Lord. Peace is the quiet of a heart reconciled to God and resting in His care. These three are the inward riches of a soul at home with God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 5:5</span>
+          <span class="scripture-text">And hope maketh not ashamed; because the love of God is shed abroad in our hearts by the Holy Ghost which is given unto us.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 13:4&ndash;7</span>
+          <span class="scripture-text">Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up, Doth not behave itself unseemly, seeketh not her own, is not easily provoked, thinketh no evil; Rejoiceth not in iniquity, but rejoiceth in the truth; Beareth all things, believeth all things, hopeth all things, endureth all things.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Philippians 4:7</span>
+          <span class="scripture-text">And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.</span>
+        </div>
+
+        <p>Love stands first, for it is the greatest of all and the root from which the rest grow. The love the Spirit produces is the patient, kind, self-giving love that Paul describes, the very love of God poured into our hearts. From this love flow a joy that the world cannot give or take away and a peace that passes understanding, guarding the heart through every storm. These are the fruit of a soul that knows and loves its God.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Love, the Root of All</p>
+          <p>Love stands first and greatest, the love of God shed abroad in our hearts. From it flow joy that rests in the Lord and peace that passes understanding. These three graces are the inward riches of a heart reconciled to and resting in God.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Longsuffering, Gentleness, and Goodness: Fruit Toward Others</h2>
+      </div>
+      <div class="section-body">
+        <p>The next three graces turn outward, shaping how the believer treats other people. Longsuffering is patience that endures wrong without retaliating, bearing with others as God bears with us. Gentleness, or kindness, is a tender goodwill that seeks the good of others. Goodness is active generosity, a heart that does good and blesses. Together they make the believer a means of grace to those around him.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 4:32</span>
+          <span class="scripture-text">And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 3:12&ndash;13</span>
+          <span class="scripture-text">Put on therefore, as the elect of God, holy and beloved, bowels of mercies, kindness, humbleness of mind, meekness, longsuffering; Forbearing one another, and forgiving one another, if any man have a quarrel against any: even as Christ forgave you, so also do ye.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Thessalonians 5:15</span>
+          <span class="scripture-text">See that none render evil for evil unto any man; but ever follow that which is good, both among yourselves, and to all men.</span>
+        </div>
+
+        <p>The pattern for all three is God Himself, who is longsuffering toward us, kind in all His dealings, and good to all. We are to forgive even as God for Christ's sake has forgiven us, to bear with one another, and to follow that which is good toward all men. As the Spirit grows these graces in us, we become to others what God has been to us, patient, kind, and good.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">As God Has Been to Us</p>
+          <p>Longsuffering, gentleness, and goodness shape how we treat others, and the pattern is God's own dealing with us. We forgive as we have been forgiven, bear with others as God bears with us, and do good as He is good to all. The fruit makes us a blessing to those around us.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Faith, Meekness, and Temperance: Fruit in the Inner Walk</h2>
+      </div>
+      <div class="section-body">
+        <p>The final three graces have to do with the believer's own inner steadiness and self-government. Faith, here meaning faithfulness, is the reliability of a trustworthy soul. Meekness is strength under control, a humble and teachable spirit, never weakness but power yielded to God. Temperance is self-control, the mastery of appetite and impulse. These graces hold the inner life in good order under the rule of the Spirit.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 9:25</span>
+          <span class="scripture-text">And every man that striveth for the mastery is temperate in all things. Now they do it to obtain a corruptible crown; but we an incorruptible.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Proverbs 16:32</span>
+          <span class="scripture-text">He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Peter 1:5&ndash;6</span>
+          <span class="scripture-text">And beside this, giving all diligence, add to your faith virtue; and to virtue knowledge; And to knowledge temperance; and to temperance patience; and to patience godliness.</span>
+        </div>
+
+        <p>The Scripture prizes the one who rules his own spirit above the one who conquers a city. Meekness is not weakness but great strength held under the hand of God, as we see in Christ Himself, who was meek and lowly yet mighty. Temperance brings the appetites and passions under control, that they may serve God rather than rule us. These graces, grown by the Spirit, give the believer a steady and well-governed soul.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Strength Under God's Hand</p>
+          <p>Faithfulness, meekness, and temperance govern the inner life. Meekness is not weakness but strength yielded to God, and temperance is mastery over appetite and impulse. The one who rules his own spirit is greater than the conqueror of cities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Abiding in Christ and Walking in the Spirit</h2>
+      </div>
+      <div class="section-body">
+        <p>How then does this fruit grow? Not by gritted teeth and self-effort, but by abiding in Christ and walking in the Spirit. The branch bears fruit only as it stays joined to the vine, drawing its life from Christ. And the believer bears the fruit of the Spirit only as he walks in the Spirit day by day, yielding to His leading and putting the flesh to death.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 15:4&ndash;5</span>
+          <span class="scripture-text">Abide in me, and I in you. As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me. I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 5:16, 25</span>
+          <span class="scripture-text">This I say then, Walk in the Spirit, and ye shall not fulfil the lust of the flesh... If we live in the Spirit, let us also walk in the Spirit.</span>
+        </div>
+
+        <p>The Lord says it plainly, without me ye can do nothing. The fruit grows as we abide, staying close to Christ in prayer, in His word, and in obedience, while the Spirit does His quiet work within. We walk in the Spirit, yielding to Him and not to the flesh, and the fruit ripens in its season. Our part is to abide and to walk. The growing of the fruit is the work of God.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Abide and Walk</p>
+          <p>The fruit of the Spirit grows not by striving but by abiding in Christ and walking in the Spirit. The branch bears fruit only as it stays joined to the vine. Our part is to abide and to yield. The growing of the fruit is the work of God within us.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">The Character of Christ Growing in Us</h3>
+      <div class="conclusion-body">
+        <p>The fruit of the Spirit is the character of Christ formed in His people, one fruit with many parts, love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, and temperance, ripening together in the surrendered heart. It stands against the bitter works of the flesh, and where it grows, the law of God finds its fulfillment, for against such there is no law. These graces shape our walk with God, our dealings with others, and the government of our own souls.</p>
+        <p>This fruit is not the achievement of human effort but the produce of the Spirit in those who abide in Christ and walk in Him. As we stay joined to the vine and yield to the Spirit day by day, He grows in us the very likeness of our Lord. Let us then abide closely in Christ, walk in the Spirit, and crucify the flesh, that the fruit of the Spirit may ripen in our lives to the glory of God and the blessing of all around us.</p>
+        <p><em>The fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Against such there is no law &middot; Galatians 5:23</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

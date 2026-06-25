@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persecution and Suffering &middot; Standing Faithful When the Truth Costs Us</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Persecution and Suffering</h1>
+    <p class="doc-subtitle">Standing Faithful When the Truth Costs Us</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>To follow Christ faithfully has always carried a cost. The Lord never hid this from His disciples, but told them plainly that the world which hated Him would hate them also. Standing on the truth of God's word, keeping His commandments in a world that has cast them off, and bearing witness to Christ will at times bring opposition, mockery, loss, and hardship. This is the suffering of the faithful, and Scripture prepares us for it so that we are not caught off guard.</p>
+      <p>Yet the Bible does not leave the suffering believer in despair. It surrounds the hard truth of persecution with greater truths of comfort, the nearness of God, the certainty of His reward, the refining purpose of trials, and the unshakable hope set before us. We will look honestly at why suffering comes to those who follow Christ, and more fully at how God sustains, strengthens, and rewards those who stand faithful through it. Our aim is not to dwell on the hardship but to find the courage and comfort God provides.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Faithful Should Expect Opposition</h2>
+      </div>
+      <div class="section-body">
+        <p>We begin by facing the plain teaching of Scripture, that those who live godly in Christ will meet opposition. This is not a sign that something has gone wrong, but a thing the Lord foretold. When we understand beforehand that the world's hostility is to be expected, we are not shaken or surprised when it comes, but steadied by the knowledge that our Lord walked this road before us.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 15:18&ndash;19</span>
+          <span class="scripture-text">If the world hate you, ye know that it hated me before it hated you. If ye were of the world, the world would love his own: but because ye are not of the world, but I have chosen you out of the world, therefore the world hateth you.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 3:12</span>
+          <span class="scripture-text">Yea, and all that will live godly in Christ Jesus shall suffer persecution.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 4:12</span>
+          <span class="scripture-text">Beloved, think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you.</span>
+        </div>
+
+        <p>Peter tells us not to think it strange when trial comes. The Lord chose us out of the world, and so the world no longer counts us its own. To belong to Christ is to no longer belong to a world set against Him. The opposition of the world, then, is not proof of God's displeasure but often the very mark of faithfulness, the sign that we are walking the same path our Master walked.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Not a Strange Thing</p>
+          <p>Scripture teaches us to expect opposition when we live godly in Christ. It is not a sign of failure or of God's displeasure, but a thing the Lord foretold. Knowing this beforehand keeps us steady, so we are not shaken when the trial comes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Blessed Are They Who Are Persecuted for Righteousness</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord did a remarkable thing in His Sermon on the Mount. He took the very thing men dread, persecution, and called it blessed. To suffer for righteousness' sake, to be reviled for the name of Christ, is not a curse but a cause for rejoicing, for it places us in the company of the prophets and points us to a great reward in heaven.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:10&ndash;12</span>
+          <span class="scripture-text">Blessed are they which are persecuted for righteousness' sake: for theirs is the kingdom of heaven. Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake. Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 4:14</span>
+          <span class="scripture-text">If ye be reproached for the name of Christ, happy are ye; for the spirit of glory and of God resteth upon you.</span>
+        </div>
+
+        <p>This turns the world's thinking upside down. What the world counts as shame, heaven counts as blessing. When we are reproached for the name of Christ, the spirit of glory rests upon us, and a great reward is laid up in heaven. The Lord even calls us to rejoice, not because the hardship is pleasant, but because of what it signifies and what it secures. We stand where the prophets stood, and we look to the reward they now enjoy.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Be careful to distinguish suffering for righteousness from suffering brought on by our own sin or foolishness. Peter draws this line plainly, that none should suffer as an evildoer, but if any suffer as a Christian, let him glorify God. The blessing belongs to those who suffer for the name of Christ and for obedience to God, not to those who bring trouble on themselves by wrongdoing. Teach the people to make sure their suffering is for righteousness before they claim the blessing of it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">God Is Near to the Suffering and Supplies His Grace</h2>
+      </div>
+      <div class="section-body">
+        <p>The believer never suffers alone. In every trial God draws near, and His grace is made sufficient for whatever we face. He does not always remove the hardship, but He always supplies the strength to bear it, and His presence is nearest to those who are broken and pressed down. This is the deep comfort of the suffering saint, that the God of all comfort is with him in the fire.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 12:9</span>
+          <span class="scripture-text">And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 34:18</span>
+          <span class="scripture-text">The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 1:3&ndash;4</span>
+          <span class="scripture-text">Blessed be God, even the Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort; Who comforteth us in all our tribulation, that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God.</span>
+        </div>
+
+        <p>Hear the Lord's word to Paul in his trouble, that My grace is sufficient for thee. God's strength is made perfect in our weakness, so that the very place of our frailty becomes the place where His power rests upon us. He is the Father of mercies and the God of all comfort, near to the broken-hearted, comforting us in all our tribulation. We are never left to bear the weight alone.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Grace Sufficient for the Trial</p>
+          <p>God is near to those who suffer, and His grace is sufficient for every trial. He may not remove the hardship, but He gives strength to bear it, His power resting upon us in our weakness. The God of all comfort is closest to the broken-hearted.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Suffering Refines and Strengthens Faith</h2>
+      </div>
+      <div class="section-body">
+        <p>God does not waste our suffering. In His hands even hardship becomes a tool for good, refining our faith as fire refines gold, working patience, character, and hope in those who endure. This does not make the suffering pleasant, but it does give it meaning. We are not merely surviving trials, we are being shaped by them into the likeness of Christ.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 1:2&ndash;4</span>
+          <span class="scripture-text">My brethren, count it all joy when ye fall into divers temptations; Knowing this, that the trying of your faith worketh patience. But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 5:3&ndash;5</span>
+          <span class="scripture-text">And not only so, but we glory in tribulations also: knowing that tribulation worketh patience; And patience, experience; and experience, hope: And hope maketh not ashamed; because the love of God is shed abroad in our hearts by the Holy Ghost which is given unto us.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 1:7</span>
+          <span class="scripture-text">That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Jesus Christ.</span>
+        </div>
+
+        <p>See the chain that Paul traces, that tribulation works patience, patience works experience, and experience works hope, a hope that does not disappoint. James says the same, that trials work patience unto maturity. Peter compares the trial of our faith to gold refined in fire, made precious and proven. God is doing something in us through the hardship, building a faith that is tested, strong, and enduring.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Faith Tried Like Gold</p>
+          <p>God uses suffering to refine faith as fire refines gold, burning away the dross and proving what is real. The trial of our faith is called more precious than gold. What feels like loss is, in God's hands, the making of a stronger and purer faith.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Following the Footsteps of Christ and the Faithful</h2>
+      </div>
+      <div class="section-body">
+        <p>When we suffer for righteousness, we walk a path already trodden by our Lord and by a great host of the faithful before us. Christ Himself suffered, leaving us an example. The prophets and apostles suffered. A whole cloud of witnesses endured hardship for the faith. We are not alone on this road, but in the best of company, following the very footsteps of Christ.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 2:21</span>
+          <span class="scripture-text">For even hereunto were ye called: because Christ also suffered for us, leaving us an example, that ye should follow his steps.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 12:1&ndash;2</span>
+          <span class="scripture-text">Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us, Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God.</span>
+        </div>
+
+        <p>Look at how the Lord endured. For the joy that was set before Him He endured the cross, despising the shame, and now sits at the right hand of God. He is our example and our forerunner, and He calls us to run our race looking unto Him. We are surrounded by a great cloud of witnesses who endured before us, and we follow in the footsteps of the Saviour who suffered and then entered into glory.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">In the Footsteps of Christ</p>
+          <p>When we suffer for the faith, we follow the steps of Christ, who suffered for us and left us an example. Surrounded by a great cloud of faithful witnesses, we run our race looking unto Jesus, who endured the cross for the joy set before Him and is now seated in glory.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Hope That Outweighs the Suffering</h2>
+      </div>
+      <div class="section-body">
+        <p>Above all, the believer's suffering is held in the light of a hope so great that it outweighs every hardship. Whatever we endure now is light and momentary compared to the eternal weight of glory that awaits us. The sufferings of this present time are not worthy to be compared with the glory that shall be revealed. This hope does not deny the reality of the pain, but it sets it against an infinitely greater joy to come.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 8:18</span>
+          <span class="scripture-text">For I reckon that the sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 4:17</span>
+          <span class="scripture-text">For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 21:4</span>
+          <span class="scripture-text">And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.</span>
+        </div>
+
+        <p>This is the hope that carries the suffering saint through. A day is coming when God Himself will wipe away every tear, when death and sorrow and pain will be no more. The afflictions of this life, real as they are, are but for a moment, and they are working for us an eternal weight of glory beyond all comparison. We do not lose heart, for we look not at the things which are seen and passing, but at the things unseen and eternal.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">A Far More Exceeding Weight of Glory</p>
+          <p>The suffering of this life is real, but it is light and brief beside the eternal glory that awaits the faithful. God will wipe away every tear, and pain will be no more. This hope does not deny our pain but sets it against a joy so great that it outweighs all we endure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Faithful Through the Fire, Looking Unto Jesus</h3>
+      <div class="conclusion-body">
+        <p>To follow Christ and keep the commandments of God in a world set against Him will at times bring opposition and suffering. Scripture does not hide this, but neither does it leave us without hope. We are taught to expect the trial and not think it strange, to count it blessed when we suffer for righteousness, and to know that God draws near to the broken-hearted with grace sufficient for every hour. He wastes none of our suffering, but uses it to refine our faith like gold and to shape us into the likeness of His Son.</p>
+        <p>We walk a road already trodden by our Lord and by a great cloud of faithful witnesses, and we run it looking unto Jesus, who endured the cross and is now seated in glory. And over all our suffering shines a hope so great that it outweighs every hardship, the eternal weight of glory, the day when God will wipe away every tear. So let us stand faithful through whatever comes, without bitterness and without fear, for our Lord is with us now and our reward is sure.</p>
+        <p><em>The sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; My grace is sufficient for thee &middot; 2 Corinthians 12:9</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

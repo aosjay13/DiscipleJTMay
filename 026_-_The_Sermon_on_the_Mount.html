@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sermon on the Mount &middot; The King's Pattern for Kingdom Living</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">The Sermon on the Mount</h1>
+    <p class="doc-subtitle">The King's Pattern for Kingdom Living</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>In the fifth, sixth, and seventh chapters of Matthew, the Lord Jesus gave the greatest sermon ever preached. Seated upon a mountainside before His disciples and the gathered crowds, the King laid out the pattern of life in His kingdom. Here He described the character of His people, their place in the world, their relationship to the law of God, and the deep, heart-level righteousness He requires. No teaching has searched the human heart more deeply or set the standard of holiness higher.</p>
+      <p>The Sermon on the Mount is not a ladder by which men climb to heaven by their own works, for salvation is by grace through faith. Rather it is the description of how those who belong to the King are to live, a righteousness that flows from a changed heart and reaches far beyond mere outward keeping of rules. We cannot cover every verse in one teaching, but we will trace the great movements of the sermon, that we may sit again at the feet of the King and learn the pattern of kingdom living.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The Beatitudes: The Character of the Blessed</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord begins not with commands but with blessings, painting a portrait of the character He forms in His people. The blessed are not the proud, the self-sufficient, or the worldly great, but the poor in spirit, the mourners, the meek, those who hunger for righteousness, the merciful, the pure in heart, the peacemakers. This is the inward shape of a kingdom citizen, and to each He attaches a promise.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:3&ndash;6</span>
+          <span class="scripture-text">Blessed are the poor in spirit: for theirs is the kingdom of heaven. Blessed are they that mourn: for they shall be comforted. Blessed are the meek: for they shall inherit the earth. Blessed are they which do hunger and thirst after righteousness: for they shall be filled.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:7&ndash;9</span>
+          <span class="scripture-text">Blessed are the merciful: for they shall obtain mercy. Blessed are the pure in heart: for they shall see God. Blessed are the peacemakers: for they shall be called the children of God.</span>
+        </div>
+
+        <p>See how the kingdom turns the world's values upside down. The world admires the rich, the strong, and the self-assured. The King blesses the humble, the broken-hearted, the meek, and the merciful. These are not natural traits men summon up, but the fruit of God's grace at work within. The Beatitudes describe what a soul looks like once the King has begun His work in it.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Inward Shape of the Kingdom</p>
+          <p>The Beatitudes describe the character God forms in His people, the poor in spirit, the meek, the merciful, the pure in heart. These are not the world's idea of greatness but the marks of grace at work. The blessed life begins with a humble and changed heart.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Salt and Light in the World</h2>
+      </div>
+      <div class="section-body">
+        <p>Having described the character of His people, the Lord shows their place in the world. They are to be salt and light, a preserving and illuminating presence in a decaying and darkened age. The believer is not to withdraw and hide, but to live out his faith openly, that others may see his good works and glorify God. The hidden life of grace is meant to shine outward for the good of the world and the glory of the Father.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:13</span>
+          <span class="scripture-text">Ye are the salt of the earth: but if the salt have lost his savour, wherewith shall it be salted? it is thenceforth good for nothing, but to be cast out, and to be trodden under foot of men.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:14&ndash;16</span>
+          <span class="scripture-text">Ye are the light of the world. A city that is set on an hill cannot be hid. Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house. Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.</span>
+        </div>
+
+        <p>Notice the purpose of the shining light, that men may see your good works and glorify your Father. Our salt preserves, our light reveals, and both point beyond ourselves to God. A believer whose faith makes no difference in the world is like salt that has lost its savour, good for nothing. The King calls His people to a visible, savory, shining holiness that draws the eyes of men to the Father in heaven.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Not Under a Bushel</p>
+          <p>The light of a holy life is not to be hidden but set on a candlestick to give light to all. Good works done before men are not done for our own praise but for the glory of God. Salt and light are meant to be out in the world, making a difference others can see and taste.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Christ Did Not Destroy the Law but Fulfilled It</h2>
+      </div>
+      <div class="section-body">
+        <p>We come now to the heart of the sermon's teaching on the law of God, and to one of the most important passages in all of Scripture for understanding the believer's relationship to God's commandments. The Lord declares plainly that He did not come to destroy the law or the prophets, but to fulfil them, and that the law stands firm so long as heaven and earth remain.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:17&ndash;18</span>
+          <span class="scripture-text">Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:19</span>
+          <span class="scripture-text">Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven.</span>
+        </div>
+
+        <p>The Lord could not have spoken more clearly. He did not abolish the commandments of God, but upheld them. Not the smallest stroke of the law would pass away, and those who keep and teach the commandments are called great in the kingdom, while those who break the least of them and teach others to do so are called least. The King Himself honored His Father's law and called His people to do the same.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>This passage is foundational. To fulfil does not mean to abolish, for the Lord said in the same breath that He came not to destroy. He fulfilled the law by keeping it perfectly, by being the substance of what its shadows pictured, and by writing it on the hearts of His people. The sacrificial and ceremonial shadows He fulfilled and they are not repeated, as the once-for-all offering of Christ. But the moral commandments of God, which express His unchanging character, stand firm, and the Lord plainly honors those who do and teach them. Keep this distinction clear.</p>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Not One Jot or Tittle</p>
+          <p>Christ did not come to destroy the law but to fulfil it. Not the smallest part of God's law passes away while heaven and earth remain. Those who keep and teach the commandments are called great in the kingdom of heaven. The King upholds His Father's law.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">A Righteousness of the Heart</h2>
+      </div>
+      <div class="section-body">
+        <p>Far from lowering the standard of the law, the Lord deepened it, driving it down from the outward act to the inward heart. The scribes and Pharisees kept the letter while their hearts were full of sin, and the Lord said our righteousness must exceed theirs. He showed that the command against murder reaches to anger, and the command against adultery reaches to lust. God's law was always meant to govern the heart and not merely the hands.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:20</span>
+          <span class="scripture-text">For I say unto you, That except your righteousness shall exceed the righteousness of the scribes and Pharisees, ye shall in no case enter into the kingdom of heaven.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:21&ndash;22</span>
+          <span class="scripture-text">Ye have heard that it was said by them of old time, Thou shalt not kill; and whosoever shall kill shall be in danger of the judgment: But I say unto you, That whosoever is angry with his brother without a cause shall be in danger of the judgment.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:27&ndash;28</span>
+          <span class="scripture-text">Ye have heard that it was said by them of old time, Thou shalt not commit adultery: But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.</span>
+        </div>
+
+        <p>The Lord was not contradicting the law of Moses but stripping away the shallow readings men had laid upon it, restoring its true depth. The Pharisees thought themselves righteous because they had not murdered or committed the outward act of adultery. The King shows that God sees the anger and the lust within, and that true righteousness is a matter of the heart. He calls us to a holiness that goes all the way down.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Deeper, Not Lower</p>
+          <p>Christ did not weaken the law but deepened it, reaching past the outward act to the heart behind it. Anger is the root of murder, lust the root of adultery. True righteousness exceeds the mere outward keeping of the Pharisees and governs the heart itself.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Kingdom Priorities: Treasure, Trust, and the Father's Care</h2>
+      </div>
+      <div class="section-body">
+        <p>In the sixth chapter the Lord turns to the heart's treasure and the soul's trust. He warns against laying up treasure on earth and calls us to lay up treasure in heaven, for where our treasure is, there our heart will be also. He calls us away from anxious care over food and clothing, pointing us to a Father who feeds the birds and clothes the lilies, and who knows our every need.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 6:19&ndash;21</span>
+          <span class="scripture-text">Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal: But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal: For where your treasure is, there will your heart be also.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 6:31&ndash;32</span>
+          <span class="scripture-text">Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed? (For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 6:33</span>
+          <span class="scripture-text">But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you.</span>
+        </div>
+
+        <p>Here is the great ordering word of the kingdom, seek ye first the kingdom of God, and his righteousness. When God and His righteousness hold first place in the heart, the anxious cares of life are quieted, for we trust the Father to provide. The believer is freed from the grasping fear that drives the world, because he treasures heaven above earth and rests in the care of a Father who knows his every need.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Seek First the Kingdom</p>
+          <p>Where our treasure lies, there our heart follows. The Lord calls us to lay up treasure in heaven and to seek first the kingdom of God and His righteousness, trusting the Father for our daily needs. Right priorities free the soul from anxious care.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Two Ways: Hearing and Doing</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord brings His great sermon to a close with a series of sharp choices. There are two gates and two ways, the broad road that leads to destruction and the narrow way that leads to life. There are two kinds of trees known by their fruit. And there are two builders, one wise and one foolish, the difference between them being not whether they heard the words of Christ, but whether they did them.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 7:13&ndash;14</span>
+          <span class="scripture-text">Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat: Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 7:21</span>
+          <span class="scripture-text">Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 7:24&ndash;25</span>
+          <span class="scripture-text">Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock: And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock.</span>
+        </div>
+
+        <p>The whole sermon comes to rest on this one point, the difference between hearing and doing. It is not enough to admire the words of Christ or even to say Lord, Lord. The one who builds his house on the rock is the one who hears these sayings and does them. The doer, not the hearer only, stands firm when the storms come. The King calls us not merely to listen to His pattern of kingdom living, but to walk in it.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Hear and Do</p>
+          <p>The sermon ends with a choice between two ways, two trees, and two builders. The wise man hears the words of Christ and does them, building his house on the rock that stands through every storm. To hear without doing is to build on sand. The King calls us to obey.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Sitting at the Feet of the King</h3>
+      <div class="conclusion-body">
+        <p>In the Sermon on the Mount the King set forth the pattern of life in His kingdom. He blessed the humble and the meek, called His people to be salt and light, upheld the law of God and deepened it to the level of the heart, ordered our treasure and our trust toward heaven, and brought it all to rest on the difference between hearing and doing. From beginning to end He described a righteousness that flows from a changed heart and reaches into every corner of life.</p>
+        <p>This sermon is not a ladder to climb toward salvation, which is the free gift of God by grace through faith. It is the portrait of how the saved are to live under the reign of their King. He did not come to destroy the law but to fulfil it, and He calls those who do and teach His commandments great in the kingdom of heaven. Let us then not merely hear these sayings but do them, building our house upon the rock, that we may stand firm when the storms come and walk faithfully in the pattern our King has given.</p>
+        <p><em>Whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; I am not come to destroy, but to fulfil &middot; Matthew 5:17</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

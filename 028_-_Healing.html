@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healing &middot; The God Who Heals, Yesterday, Today, and For Ever</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Healing</h1>
+    <p class="doc-subtitle">The God Who Heals, Yesterday, Today, and For Ever</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>Among the names by which God revealed Himself to His people is one that speaks tender comfort to every suffering soul, the LORD that healeth thee. From the earliest days God showed Himself to be a healer of His people, and through the ministry of Christ and the apostles, healing flowed freely as a sign of the kingdom drawing near. The God of Scripture is a God who heals, and the testimony of His healing power runs from Genesis to the book of Revelation.</p>
+      <p>God still heals today, because He never changed. He is the same yesterday, and today, and for ever, and the compassion that moved Him to heal in the days of Christ moves Him still. We will look at the God who heals, at healing in the ministry of Jesus, at the place of healing in the atonement, at how the church is to seek healing in faith and prayer, and at the wisdom of trusting God's sovereign will in all things. Our aim is to build a strong and steady faith in the Healer, while resting humbly in His perfect wisdom.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">The LORD That Healeth: God's Unchanging Nature</h2>
+      </div>
+      <div class="section-body">
+        <p>Healing is rooted in who God is, not merely in what He does. He revealed Himself to Israel as their healer, taking it as one of His own names. And because God does not change, this name still belongs to Him. The God who declared Himself the healer of His people has not laid that name aside, for He is the same forever and His compassions fail not.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Exodus 15:26</span>
+          <span class="scripture-text">And said, If thou wilt diligently hearken to the voice of the LORD thy God, and wilt do that which is right in his sight, and wilt give ear to his commandments, and keep all his statutes, I will put none of these diseases upon thee, which I have brought upon the Egyptians: for I am the LORD that healeth thee.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Malachi 3:6</span>
+          <span class="scripture-text">For I am the LORD, I change not; therefore ye sons of Jacob are not consumed.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 103:2&ndash;3</span>
+          <span class="scripture-text">Bless the LORD, O my soul, and forget not all his benefits: Who forgiveth all thine iniquities; who healeth all thy diseases.</span>
+        </div>
+
+        <p>Notice that healing stands beside the forgiveness of sins among the benefits of God. He who forgives our iniquities is the same who heals our diseases. And because He declares I am the LORD, I change not, the name He revealed as the healer of His people is His name still. The unchanging God remains the God who heals, for His nature has not altered with the passing of the ages.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The Healer Has Not Changed</p>
+          <p>God revealed Himself as the LORD that healeth thee, and He declares I change not. Because healing flows from His unchanging nature, He is the God who heals still. The same compassion that moved Him of old moves Him today, for He is forever the same.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Healing in the Ministry of Jesus</h2>
+      </div>
+      <div class="section-body">
+        <p>When the Son of God walked among men, healing poured from His hands as a great sign that the kingdom of God had drawn near. He healed the sick, opened blind eyes, cleansed the lepers, and raised the dead. The Gospels tell us He healed all manner of sickness, turning none away, moved with compassion toward the suffering multitudes who came to Him.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 4:23</span>
+          <span class="scripture-text">And Jesus went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 14:14</span>
+          <span class="scripture-text">And Jesus went forth, and saw a great multitude, and was moved with compassion toward them, and he healed their sick.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 10:38</span>
+          <span class="scripture-text">How God anointed Jesus of Nazareth with the Holy Ghost and with power: who went about doing good, and healing all that were oppressed of the devil; for God was with him.</span>
+        </div>
+
+        <p>See the heart behind His healing, that He was moved with compassion. The healing ministry of Jesus was not a display of power for its own sake, but the overflow of His love for the suffering and a sign that God had visited His people. He went about doing good and healing all that were oppressed, for God was with Him. In His healing we see the very heart of God toward the afflicted.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Moved With Compassion</p>
+          <p>The healing of Jesus flowed from compassion, not mere display. He went about doing good, healing all who came, as a sign that the kingdom of God had drawn near. In His mercy toward the sick we see the unchanging heart of God toward all who suffer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Healing and the Atonement</h2>
+      </div>
+      <div class="section-body">
+        <p>The healing of the body is not separate from the saving work of Christ. The prophet Isaiah, foretelling the suffering of the Servant, joined our healing to His wounds, declaring that with His stripes we are healed. The same cross that purchased the forgiveness of our sins also secured healing for the people of God, and Matthew points us to this when he records the healing ministry of Christ.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 53:4&ndash;5</span>
+          <span class="scripture-text">Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of God, and afflicted. But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 8:16&ndash;17</span>
+          <span class="scripture-text">When the even was come, they brought unto him many that were possessed with devils: and he cast out the spirits with his word, and healed all that were sick: That it might be fulfilled which was spoken by Esaias the prophet, saying, Himself took our infirmities, and bare our sicknesses.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 2:24</span>
+          <span class="scripture-text">Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.</span>
+        </div>
+
+        <p>Matthew tells us plainly that the healing ministry of Jesus fulfilled Isaiah's word, that He took our infirmities and bare our sicknesses. The provision for our healing was made in the work of Christ. This gives the believer firm ground to pray for healing in faith, knowing it is part of what the Lord has secured, while leaving the time and manner of every healing in the hands of our wise and loving God.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Teach that healing is provided in the atonement, giving real ground for faith, while guarding against two errors. Do not teach that every believer will always be healed instantly in this life, for Scripture itself shows faithful saints who remained ill, and the full redemption of the body awaits the resurrection. And never lay guilt on the sick by suggesting that continued sickness always means a lack of faith. Hold firmly that God heals, pray boldly for healing, and rest humbly in His sovereign will and timing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">The Church Is to Pray for the Sick</h2>
+      </div>
+      <div class="section-body">
+        <p>The Lord did not withdraw the ministry of healing when He ascended, but committed it to His church. James gives plain instruction for the sick to call for the elders, who are to pray over them and anoint them with oil in the name of the Lord. The promise attached is that the prayer of faith shall save the sick, and the Lord shall raise him up.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 5:14&ndash;15</span>
+          <span class="scripture-text">Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord: And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 5:16</span>
+          <span class="scripture-text">Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Mark 16:18</span>
+          <span class="scripture-text">They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover.</span>
+        </div>
+
+        <p>Here is the clear pattern for the church. The sick call for the elders, hands are laid on them, oil is applied in the name of the Lord, and the prayer of faith is offered. The effectual fervent prayer of a righteous man avails much. This is not a relic of a bygone age but a standing instruction to the church, given that God's people might continue to bring the sick before the Healer and see Him work.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Call for the Elders</p>
+          <p>The church is commanded to pray for the sick, the elders anointing with oil in the name of the Lord, the prayer of faith offered in expectation. This standing instruction was never withdrawn. God's people are to bring the sick to the Healer and trust Him to work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Faith, the Sovereign Will of God, and the Means He Provides</h2>
+      </div>
+      <div class="section-body">
+        <p>We pray for healing in faith, yet we always submit our requests to the sovereign will of God, who knows what is best and whose timing is perfect. Faith is not a force that commands God, but a trust that rests in Him. The Lord may heal at once, or in time, or through the means He has provided, or He may give grace to bear an affliction for a season for purposes we cannot yet see.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 5:14&ndash;15</span>
+          <span class="scripture-text">And this is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us: And if we know that he hear us, whatsoever we ask, we know that we have the petitions that we desired of him.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 12:8&ndash;9</span>
+          <span class="scripture-text">For this thing I besought the Lord thrice, that it might depart from me. And he said unto me, My grace is sufficient for thee: for my strength is made perfect in weakness. Most gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me.</span>
+        </div>
+
+        <p>Even Paul, a man of great faith through whom God worked mighty healings, was not delivered from his own thorn, but was given grace sufficient to bear it. This teaches us a holy balance. We ask boldly, believing God heals, yet we trust His wisdom when His answer is grace to endure rather than immediate deliverance. And we thank God for the means He has provided as well, for He is the source of all true healing, by whatever path it comes.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Bold to Ask, Humble to Trust</p>
+          <p>We pray for healing boldly, believing God heals, yet humbly, submitting to His perfect will and timing. He may heal at once, in time, through the means He provides, or give grace to endure. Faith rests in the Healer rather than demanding of Him, trusting that He always does what is good.</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Be gentle and wise in pastoral practice. Encourage strong faith in God as Healer and pray expectantly for the sick. At the same time, never shame those who remain ill or who make use of physicians and medicine, for God is the giver of all healing and works through many means. Luke himself was called the beloved physician. Hold the people's faith high and their hearts tender, pointing always to the goodness and wisdom of God.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Same God, Yesterday, Today, and For Ever</h2>
+      </div>
+      <div class="section-body">
+        <p>The ground of all our confidence in healing is the unchanging Christ. He who healed in Galilee and through the apostles is the same Lord today, and He has not lost His power or His compassion. Because He never changes, the church may come to Him in every generation, expecting the God who heals to be the God who heals still, until the day when sickness and death are no more.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 13:8</span>
+          <span class="scripture-text">Jesus Christ the same yesterday, and to day, and for ever.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 4:30</span>
+          <span class="scripture-text">By stretching forth thine hand to heal; and that signs and wonders may be done by the name of thy holy child Jesus.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 21:4</span>
+          <span class="scripture-text">And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.</span>
+        </div>
+
+        <p>The early church prayed boldly that God would stretch forth His hand to heal, and He answered. We may pray the same prayer, for Jesus Christ is the same yesterday, today, and for ever. And we hold the greater hope as well, that a day is coming when the Healer will banish sickness and death entirely, wiping away every tear. Until then, we trust the unchanging Healer, who still stretches forth His hand among His people.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">He Heals Still</p>
+          <p>Because Jesus Christ is the same yesterday, today, and for ever, the God who healed of old heals still. The church may pray boldly for the sick in every generation, and look in hope to the day when the Healer banishes sickness and death for ever.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Trusting the Hand of the Healer</h3>
+      <div class="conclusion-body">
+        <p>God revealed Himself as the LORD that healeth thee, and because He never changes, He is the God who heals still. In the ministry of Jesus, healing flowed from compassion as a sign of the kingdom, and the provision for our healing was secured in the wounds of Christ, for with His stripes we are healed. He committed to His church the ministry of praying for the sick, anointing with oil, and laying on of hands, an instruction never withdrawn.</p>
+        <p>So let us come to the Healer with bold and expectant faith, believing that God heals today because He never changed. Yet let us come also in humility, submitting to His sovereign will and perfect timing, thanking Him for every means of healing He provides, and never laying guilt on those who still suffer. Whether He heals in an instant, in time, or gives grace to endure, He is good, and His hand is stretched forth still. Jesus Christ is the same yesterday, today, and for ever.</p>
+        <p><em>I am the LORD that healeth thee.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Jesus Christ the same yesterday, and to day, and for ever &middot; Hebrews 13:8</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

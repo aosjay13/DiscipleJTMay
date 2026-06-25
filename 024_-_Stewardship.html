@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stewardship &middot; Faithful Management of All God Has Entrusted to Us</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-ornament {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.1rem;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto 0;
+    max-width: 280px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 2.6rem 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .intro p { font-size: 1.06rem; line-height: 1.75; color: var(--ink-mid); }
+  .intro p + p { margin-top: 1rem; }
+
+  /* ── SECTION ── */
+  .section { margin-top: 2.6rem; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--rule-solid);
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+
+  .section-body p { font-size: 1.05rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 1.05rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em { color: var(--ink-soft); }
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture {
+    background: var(--cream);
+    border-top: 3px solid var(--gold-light);
+    border-radius: 2px;
+    padding: 1.3rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 0 #E8D49A inset, 0 2px 8px var(--shadow);
+  }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .scripture-text { font-style: italic; font-size: 1.04rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── KEYPOINT PANEL ── */
+  .keypoint {
+    background: #FBF7EC;
+    border-left: 4px solid var(--crimson);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .keypoint p:not(.keypoint-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    background: var(--gold-pale);
+    border: 1px solid #E2CE92;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .bonus p:not(.bonus-label) { font-size: 1.02rem; line-height: 1.7; color: var(--ink-mid); }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .tnote {
+    border: 1px dashed var(--gold-light);
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+    background: #FCFAF3;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .tnote p:not(.tnote-label) { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); }
+  .tnote em { color: var(--ink-mid); }
+
+  /* ── CONCLUSION ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2rem;
+    background: linear-gradient(135deg, #2A1414, #3D1E1E);
+    border-radius: 3px;
+    color: var(--gold-pale);
+    box-shadow: 0 4px 18px var(--shadow);
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FBF5E6;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .conclusion-body p { font-size: 1.04rem; line-height: 1.75; color: #EBDFC4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-pale); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem 2rem 2.2rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament {
+    font-size: 1rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════
+     PRINT — 8.5 x 11, page breaks + numbers
+     ════════════════════════════════════════ */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 9pt;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      max-width: none;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+    }
+    .page::before, .page::after { display: none; }
+
+    .doc-header,
+    .doc-footer,
+    .conclusion,
+    .scripture,
+    .keypoint,
+    .bonus,
+    .tnote {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* keep blocks whole, but let inner text reflow if too tall */
+    .scripture, .keypoint, .bonus, .tnote { break-inside: avoid; }
+    .section-header { break-after: avoid; }
+    .section-title, .section-num { break-after: avoid; }
+    .conclusion { break-inside: auto; }
+
+    /* start each major section on its own page after the first */
+    .section { break-before: page; }
+    .section:first-of-type { break-before: auto; }
+
+    .doc-footer { break-before: page; }
+
+    .doc-body { padding: 0.2in 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="header-eyebrow">A Pronomian Teaching</p>
+    <h1 class="doc-title">Stewardship</h1>
+    <p class="doc-subtitle">Faithful Management of All God Has Entrusted to Us</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- BODY -->
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p>A steward is one who manages what belongs to another. He does not own the house, the goods, or the lands he oversees, but he is trusted to care for them on behalf of the true owner, and he must one day give account of how he has done. This is the picture Scripture gives of the believer's whole life before God. We own nothing in the final sense. Everything we have and everything we are has been entrusted to us by God, and we are His stewards.</p>
+      <p>Many think of stewardship only in terms of money and tithing, and giving is indeed a part of it. But stewardship reaches much further. It takes in our time, our gifts and abilities, our possessions, our relationships, and even the gospel itself, which God has placed in our hands to keep and to share. We will look at the wide scope of what God has entrusted to us, and at the faithfulness He requires of every steward who will one day stand before Him to give account.</p>
+    </section>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">Everything Belongs to God</h2>
+      </div>
+      <div class="section-body">
+        <p>The foundation of all stewardship is this, that God owns everything. The earth and all its fullness are His. The cattle on a thousand hills are His. Even the silver and the gold belong to Him. We came into the world with nothing, and we will carry nothing out. What we hold for a season we hold only as a trust from the hand of God, who is the true owner of all.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 24:1</span>
+          <span class="scripture-text">The earth is the LORD'S, and the fulness thereof; the world, and they that dwell therein.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Haggai 2:8</span>
+          <span class="scripture-text">The silver is mine, and the gold is mine, saith the LORD of hosts.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Timothy 6:7</span>
+          <span class="scripture-text">For we brought nothing into this world, and it is certain we can carry nothing out.</span>
+        </div>
+
+        <p>This truth changes everything about how we hold our possessions and our lives. If all belongs to God, then nothing is ultimately ours to hoard or to waste. We are managers of another's property, trusted for a time. The question is never whether God has a claim on what we have, for He owns it all. The question is whether we will manage His property faithfully.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">God Owns It All</p>
+          <p>The earth and everything in it belong to the Lord. We brought nothing into the world and will carry nothing out. All we have is entrusted to us for a season, and we hold it as stewards of the One who owns it all.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Faithfulness Is What God Requires of a Steward</h2>
+      </div>
+      <div class="section-body">
+        <p>Since we are stewards and not owners, the one thing God asks of us is faithfulness. A steward is not measured by how much he was given, but by how faithfully he managed it. The Lord told a parable of servants entrusted with their master's goods, and the praise fell not on the one who had the most, but on each who proved faithful with what he was given.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 4:2</span>
+          <span class="scripture-text">Moreover it is required in stewards, that a man be found faithful.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 25:21</span>
+          <span class="scripture-text">His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Luke 16:10</span>
+          <span class="scripture-text">He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much.</span>
+        </div>
+
+        <p>Notice that faithfulness in little is the test of faithfulness in much. God watches how we handle the small trusts, the ordinary days, the modest resources, the quiet duties, for these reveal the heart. The servant who is faithful over a few things is given charge of many, and enters into the joy of his lord. Faithfulness, not size or success, is the measure of a good steward.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Faithful in the Least</p>
+          <p>God does not require that we be given much, only that we be faithful with what we have. The one faithful in small things is trusted with greater. Stewardship is proved not in grand moments but in the steady, faithful handling of the everyday trusts God places in our care.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">Stewards of Time</h2>
+      </div>
+      <div class="section-body">
+        <p>One of the most precious trusts God gives is time, and it is one we can never recover once spent. Our days are numbered and brief, a vapor that appears and quickly vanishes. The wise steward does not squander his hours but uses them well, mindful that the time given to him is a gift to be invested for God and not wasted.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Psalm 90:12</span>
+          <span class="scripture-text">So teach us to number our days, that we may apply our hearts unto wisdom.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 5:15&ndash;16</span>
+          <span class="scripture-text">See then that ye walk circumspectly, not as fools, but as wise, Redeeming the time, because the days are evil.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 4:14</span>
+          <span class="scripture-text">Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapour, that appeareth for a little time, and then vanisheth away.</span>
+        </div>
+
+        <p>To redeem the time means to buy it back from waste, to make the most of every opportunity before it slips away. We are not to drift through our days as fools, but to walk wisely, numbering our days and applying our hearts unto wisdom. The faithful steward of time gives his hours to what matters, to God, to his family, to good labor, and to the work of the kingdom, rather than letting them leak away on what profits nothing.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Redeem the Time</p>
+          <p>Time is a trust we cannot recover once spent. Our days are few and pass like a vapor. The wise steward numbers his days, walks circumspectly, and redeems the time, giving his hours to what truly matters before they vanish away.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Stewards of Gifts and Abilities</h2>
+      </div>
+      <div class="section-body">
+        <p>God has given to every believer gifts and abilities, and these too are a trust to be managed. No one is left empty-handed. Each has received some gift, some capacity, some grace from God, and we are called to use what we have received in the service of others and the glory of God. To bury a gift in idleness is the way of the unfaithful servant. To employ it for God is the way of the faithful.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 4:10</span>
+          <span class="scripture-text">As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 12:6</span>
+          <span class="scripture-text">Having then gifts differing according to the grace that is given to us, whether prophecy, let us prophesy according to the proportion of faith.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 25:25&ndash;27</span>
+          <span class="scripture-text">And I was afraid, and went and hid thy talent in the earth: lo, there thou hast that is thine. His lord answered and said unto him, Thou wicked and slothful servant... Thou oughtest therefore to have put my money to the exchangers, and then at my coming I should have received mine own with usury.</span>
+        </div>
+
+        <p>The servant who hid his talent was called wicked and slothful, not because he lost it, but because he did nothing with it. So it is with the gifts God has given us. They are entrusted to be used, not buried. Peter calls us good stewards of the manifold grace of God, ministering our gifts one to another. Whatever ability God has placed in your hand, He gave it to be invested in His service, not hidden away.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Do Not Bury the Gift</p>
+          <p>Every believer has received some gift from God, and it is given to be used in serving others. The unfaithful servant buried his talent and was condemned for doing nothing. The faithful steward puts his gifts to work, ministering the grace of God to those around him.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">Stewards of Resources and Relationships</h2>
+      </div>
+      <div class="section-body">
+        <p>Our possessions and our relationships are also trusts from God. The tithe is the established beginning of our giving, the floor and not the ceiling, and beyond it we are called to be generous, ready to give, and free from the love of money. And the people God has placed in our lives, our families, our brethren, our neighbors, are entrusted to us to love, to serve, and to care for faithfully.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Timothy 6:17&ndash;19</span>
+          <span class="scripture-text">Charge them that are rich in this world, that they be not highminded, nor trust in uncertain riches, but in the living God, who giveth us richly all things to enjoy; That they do good, that they be rich in good works, ready to distribute, willing to communicate; Laying up in store for themselves a good foundation against the time to come, that they may lay hold on eternal life.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Timothy 5:8</span>
+          <span class="scripture-text">But if any provide not for his own, and specially for those of his own house, he hath denied the faith, and is worse than an infidel.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Galatians 6:10</span>
+          <span class="scripture-text">As we have therefore opportunity, let us do good unto all men, especially unto them who are of the household of faith.</span>
+        </div>
+
+        <p>See how stewardship reaches into both purse and home. We are to hold our riches loosely, trusting God rather than wealth, ready to distribute and rich in good works. And we are to provide faithfully for our own households, for to neglect them is to deny the faith. The resources in our hands and the people in our care are God's trust to us, to be managed with generosity and faithful love.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Connect this to the existing teaching on the tithe without repeating it. The tithe is the established starting point of giving, rooted before the law in Abraham and Melchizedek and enduring under the Melchizedek order. Stewardship of resources builds upon that foundation, calling the believer beyond the tithe to a whole life of generosity, provision for his household, and good works toward the household of faith and toward all men.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">Stewards of the Gospel, and the Day of Account</h2>
+      </div>
+      <div class="section-body">
+        <p>The greatest trust of all is the gospel itself. God has committed His truth into the hands of His people, not to be hidden or kept to ourselves, but to be guarded and shared. Paul spoke of being put in trust with the gospel, a stewardship of the mysteries of God. And over all our stewardship hangs the certainty of the day of account, when every steward must answer to his Lord.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Thessalonians 2:4</span>
+          <span class="scripture-text">But as we were allowed of God to be put in trust with the gospel, even so we speak; not as pleasing men, but God, which trieth our hearts.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 4:1</span>
+          <span class="scripture-text">Let a man so account of us, as of the ministers of Christ, and stewards of the mysteries of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 14:12</span>
+          <span class="scripture-text">So then every one of us shall give account of himself to God.</span>
+        </div>
+
+        <p>Here is the sober and clarifying truth that crowns all stewardship, that every one of us shall give account of himself to God. The day is coming when we will answer for how we managed the time, the gifts, the resources, the relationships, and the gospel entrusted to us. This is not given to make us anxious but to make us faithful, that we might be found good stewards when the Master returns and calls for the reckoning.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">We Shall Give Account</p>
+          <p>The gospel itself is a trust committed to God's people to guard and to share. And every steward will one day give account to God for all that was entrusted to him. This certainty calls us not to fear but to faithfulness, that we may hear our Lord say, well done.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Good and Faithful Stewards</h3>
+      <div class="conclusion-body">
+        <p>Everything we have belongs to God, and we hold it only as stewards entrusted with another's property. Our time, our gifts, our possessions, our relationships, and the gospel itself are all trusts from His hand, given not to be hoarded, wasted, or buried, but to be managed faithfully for His glory and the good of others. What God requires of every steward is not greatness but faithfulness, proved most often in the small and ordinary trusts of daily life.</p>
+        <p>The day of account is coming, when each of us shall answer to God for what we have done with all He committed to our care. Let us then number our days and redeem the time, employ our gifts in service, hold our resources with open and generous hands, love and provide for those in our keeping, and guard and share the gospel entrusted to us. So living, we shall be found good and faithful stewards, and shall enter into the joy of our Lord.</p>
+        <p><em>It is required in stewards, that a man be found faithful.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; It is required in stewards, that a man be found faithful &middot; 1 Corinthians 4:2</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

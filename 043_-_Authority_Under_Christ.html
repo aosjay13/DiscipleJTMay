@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authority Under Christ &middot; How All Authority Flows From and Returns to the Lord</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SCRIPTURE CALLOUT (cream box, gold top border) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.78; font-size: 1rem; }
+  .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── KEY POINT PANEL (crimson border) ── */
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .keypoint p { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  /* ── TWO-COLUMN COMPARISON GRID ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.8rem 0;
+    break-inside: avoid;
+  }
+  .compare-col {
+    padding: 1.1rem 1.3rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+  }
+  .compare-col.mechanism { border-top: 3px solid var(--gold-light); }
+  .compare-col.evidence  { border-top: 3px solid var(--crimson-lt); }
+  .compare-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .compare-col.mechanism .compare-title { color: var(--gold); }
+  .compare-col.evidence  .compare-title { color: var(--crimson); }
+  .compare-body { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); }
+
+  /* ── BONUS / DASHED PANEL ── */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+
+  /* ── TEACHER'S NOTE (dashed gold, italic) ── */
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.4rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .teacher-note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .teacher-note p {
+    font-size: 0.95rem;
+    line-height: 1.74;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .teacher-note p + p { margin-top: 0.6rem; }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* dark gradient conclusion block */
+  .conclusion {
+    margin: 2rem 0 0;
+    padding: 1.8rem 1.8rem;
+    background: linear-gradient(135deg, #2A2622, #3D3829);
+    border-left: 4px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .conclusion p { font-size: 1.02rem; line-height: 1.82; color: #E8DFC8; }
+  .conclusion p + p { margin-top: 0.8rem; }
+
+  /* ── FOOTER (crimson, matching the lessons) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, 0.75in margins, page numbers) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .scripture, .keypoint, .compare-col, .bonus, .teacher-note, .conclusion {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* good breaks: start each major part on a fresh page, keep blocks whole */
+    .section-head { break-before: page; page-break-before: always; }
+    .section-head:first-of-type { break-before: auto; page-break-before: auto; }
+    .preamble { break-after: avoid; }
+    .section-head, .sub-head { break-after: avoid; page-break-after: avoid; }
+    .scripture, .keypoint, .compare, .bonus, .teacher-note, .conclusion { break-inside: avoid; page-break-inside: avoid; }
+    .doc-footer { break-before: avoid; page-break-before: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    .compare { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">A Core Pronomian Foundation</p>
+    <h1 class="doc-title">Authority Under Christ</h1>
+    <p class="doc-subtitle">How all spiritual authority, submission, and governance flow down from Christ, are exercised as service, and return in account to Him</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">The Question of Where Authority Comes From</p>
+      <p>Authority is one of the most misunderstood things in the church and in the world. To many it is a dirty word, a thing that crushes and controls, and they want none of it. To others it is a prize to be seized, a way to lift themselves over others and have their own way. Both have missed what authority truly is, because both have lost sight of where it comes from. Authority is not a possession to be grabbed and not a weight to be feared. It is a trust handed down from above, and everything depends on remembering whose it is.</p>
+      <p>The whole Christian understanding of authority stands or falls on one truth: all authority belongs to Christ. He did not borrow it or earn a share of it among equals. It is His, given to Him by the Father, over heaven and earth, over the church, over every power that exists. No one else owns any authority at all. Whatever authority a man holds, in the home, in the church, or in the nation, he holds as a steward, on loan from the One to whom it truly belongs. He did not create it and he cannot keep it. He answers for it.</p>
+      <p>This teaching follows authority along its path. We will see that all authority begins in Christ, the single source from which every true authority flows. We will see how He delegates it downward into the various spheres of life, never giving it away but lending it to be used under Him. We will see that the authority He gives is always for service and never for domination, shaped by His own example. And we will see that all of it returns to Him in account, so that everyone who holds authority will answer to the One who lent it. From Christ it flows, and to Christ it returns.</p>
+    </section>
+
+    <!-- PART ONE -->
+    <div class="section-head">
+      <p class="section-eyebrow">Part One</p>
+      <h2 class="section-title">All Authority Begins in Christ</h2>
+    </div>
+
+    <p class="body-text">We start at the source, because authority cannot be understood from the middle. Everything that has authority got it from somewhere, and if we trace any true authority back far enough, we arrive at one place, the throne of Christ. He is the headwaters from which every stream of legitimate authority flows. There is no authority that began on its own, no power that owns itself. It all begins in Him.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Matthew 28:18</span>
+      <span class="scripture-text">And Jesus came and spake unto them, saying, All power is given unto me in heaven and in earth.</span>
+    </div>
+
+    <p class="body-text">Hear the totality of it. All power, all authority, in heaven and in earth, is given unto Christ. Not some of it, not most of it, but all of it. There is no realm where His authority does not reach, no corner of heaven or earth outside His dominion. And notice the word given. Even Christ in His exalted humanity speaks of authority as given to Him by the Father. Authority by its very nature is a thing received, handed down, never self-generated. If the Son receives His authority from the Father, then surely no man holds authority except as something received.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Colossians 1:16&ndash;18</span>
+      <span class="scripture-text">For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him: And he is before all things, and by him all things consist. And he is the head of the body, the church: and in all things he might have the preeminence.</span>
+    </div>
+
+    <p class="body-text">See how far His authority reaches. Thrones, dominions, principalities, and powers, every structure of authority that exists, visible and invisible, was created by Him and for Him. They do not stand on their own. By Him all things hold together. And He is the head of the church, that in all things He might have the preeminence, the first place, the supremacy. This is the foundation of everything we will say. Christ is the source and the owner of all authority. Whatever any creature holds, he holds under the One who made it and owns it.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Single Source</span>
+      <p>All authority in heaven and earth belongs to Christ, given to Him by the Father, reaching every realm without exception. Every throne and power was created by Him and for Him. No creature owns any authority of its own. Authority is by nature received, and Christ is the source from which every true authority flows.</p>
+    </div>
+
+    <!-- PART TWO -->
+    <div class="section-head">
+      <p class="section-eyebrow">Part Two</p>
+      <h2 class="section-title">He Delegates Authority Into the Spheres of Life</h2>
+    </div>
+
+    <p class="body-text">Since all authority is Christ&rsquo;s, the authority that anyone else exercises must be delegated, lent from Him for a purpose. And this is exactly what Scripture shows. Christ does not keep all authority locked up in heaven. He delegates it downward into the ordered spheres of life, the home, the church, and the civil government, so that His will may be done on earth through human stewards. These stewards do not own the authority. They carry it on His behalf, and only within the bounds He set.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Romans 13:1</span>
+      <span class="scripture-text">Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God.</span>
+    </div>
+
+    <p class="body-text">Here is civil authority, and notice its source. There is no power but of God. The governing authorities are ordained by God, set in place by Him, holding a delegated trust. This is why we honor lawful authority, not because the people in office are always good, but because the office itself is a thing God established. The authority is real because it is lent from above. The ruler is, whether he knows it or not, a steward of an authority that belongs to Christ.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Hebrews 13:17</span>
+      <span class="scripture-text">Obey them that have the rule over you, and submit yourselves: for they watch for your souls, as they that must give account, that they may do it with joy, and not with grief: for that is unprofitable for you.</span>
+      <span class="scripture-ref">Ephesians 5:23</span>
+      <span class="scripture-text">For the husband is the head of the wife, even as Christ is the head of the church: and he is the saviour of the body.</span>
+    </div>
+
+    <p class="body-text">Here are two more spheres. In the church, those who have the rule watch for souls as those who must give account, a delegated and accountable trust. In the home, the husband is given a headship, and the pattern set for it is Christ&rsquo;s headship over the church. In every case the authority is delegated and bounded. The leader in the church answers to Christ for the souls he tends. The head of the home is measured against the self-giving headship of Christ. None of them invented their authority, and none may use it however they please. It is lent, and it is bounded by the will and the example of the One who lent it.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Make clear that delegated authority is always limited authority. Because the authority belongs to Christ and is only lent, no human authority is absolute, and none may command what Christ forbids or forbid what Christ commands. When earthly authority orders disobedience to God, the steward has stepped outside the bounds of his trust, and the higher loyalty to Christ governs. The apostles said plainly that we must obey God rather than men.</p>
+      <p>This guards against two errors at once. It refuses rebellion, since the offices are ordained by God and to be honored. And it refuses blind obedience, since no steward holds authority above the One who lent it. The bounds are set by Christ, and within them we submit, at them we draw the line.</p>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Delegated and Bounded</span>
+      <p>Christ delegates His authority into the spheres of home, church, and civil government, lending it to human stewards to carry on His behalf. This authority is real and to be honored, but it is always delegated and always bounded. No human authority is absolute, and none may command what Christ forbids. The trust is lent, and it is limited by the will of the One who lent it.</p>
+    </div>
+
+    <!-- PART THREE -->
+    <div class="section-head">
+      <p class="section-eyebrow">Part Three</p>
+      <h2 class="section-title">Authority Is for Service, Not Domination</h2>
+    </div>
+
+    <p class="body-text">Now we come to the way authority is meant to be used, and here Christ overturns everything the world believes. In the world, authority means being served, having power over others, lording it over those beneath. But Christ took the very idea of authority and turned it upside down. In His kingdom, the one who holds authority is the one who serves the most. The greatest is the servant of all. This is not a minor adjustment. It is a complete reversal of how power works among men.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Mark 10:42&ndash;45</span>
+      <span class="scripture-text">But Jesus called them to him, and saith unto them, Ye know that they which are accounted to rule over the Gentiles exercise lordship over them; and their great ones exercise authority upon them. But so shall it not be among you: but whosoever will be great among you, shall be your minister: And whosoever of you will be the chiefest, shall be servant of all. For even the Son of man came not to be ministered unto, but to minister, and to give his life a ransom for many.</span>
+    </div>
+
+    <p class="body-text">Read the words slowly, for they are the heart of authority under Christ. The rulers of the Gentiles lord it over people and throw their weight around. But so shall it not be among you. The one who would be great must be the servant. And the proof is Christ Himself, who came not to be served but to serve, and to give His life as a ransom. The One who holds all authority in heaven and earth washed feet and went to a cross. That is what authority looks like when it is held rightly. It pours itself out for those it leads.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Peter 5:2&ndash;3</span>
+      <span class="scripture-text">Feed the flock of God which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind; Neither as being lords over God&rsquo;s heritage, but being ensamples to the flock.</span>
+    </div>
+
+    <p class="body-text">Peter applies it directly to those who lead in the church. They are not to be lords over God&rsquo;s people but examples to them. They lead by going first, by serving, by setting a pattern, not by domineering. This is the test of all delegated authority. Does it serve those under it, as Christ served, or does it use them for itself? Authority that serves is authority held in the likeness of Christ. Authority that dominates has forgotten whose it is and twisted the trust into a weapon. The shape of true authority is a towel and a basin, not a throne grasped for self.</p>
+
+    <div class="compare">
+      <div class="compare-col mechanism">
+        <p class="compare-title">The World&rsquo;s Way</p>
+        <p class="compare-body">Authority means being served, having power over others, lording it over those beneath. The great one is the one others wait upon. Power is held for self and used to rise above. So it is among the Gentiles.</p>
+      </div>
+      <div class="compare-col evidence">
+        <p class="compare-title">The Way of Christ</p>
+        <p class="compare-body">Authority means serving, going first, pouring out for those one leads. The great one is the servant of all. Power is held as a trust and used to lift others. So shall it be among you, said the Lord.</p>
+      </div>
+    </div>
+
+    <!-- PART FOUR -->
+    <div class="section-head">
+      <p class="section-eyebrow">Part Four</p>
+      <h2 class="section-title">All Authority Returns to Christ in Account</h2>
+    </div>
+
+    <p class="body-text">We have followed authority from its source in Christ, down through the spheres of life, and into its right use as service. Now we follow it home. All authority that flows from Christ returns to Christ, for everyone who holds a delegated trust must one day give account for it. This is the truth that keeps authority humble and submission hopeful. The one who leads will answer to the Lord for how he led. And the one who submits does so as unto the Lord, who sees and will reward.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Hebrews 13:17</span>
+      <span class="scripture-text">Obey them that have the rule over you, and submit yourselves: for they watch for your souls, as they that must give account.</span>
+      <span class="scripture-ref">James 3:1</span>
+      <span class="scripture-text">My brethren, be not many masters, knowing that we shall receive the greater condemnation.</span>
+    </div>
+
+    <p class="body-text">Notice the weight laid on those who lead. They watch for souls as those who must give account. Teachers are warned that they will be judged more strictly. To hold authority is to carry a burden of accountability, not a license for ease. This is the great corrective to every abuse of power. The man who remembers he must answer to Christ for every soul under his care will not lord it over them. He will serve them with fear and love, knowing the books will be opened and the trust examined.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Colossians 3:23&ndash;24</span>
+      <span class="scripture-text">And whatsoever ye do, do it heartily, as to the Lord, and not unto men; Knowing that of the Lord ye shall receive the reward of the inheritance: for ye serve the Lord Christ.</span>
+    </div>
+
+    <p class="body-text">And see how this transforms submission. The one who submits to a delegated authority does it as to the Lord, not merely to men, and the Lord Himself will reward him. This lifts obedience out of the hands of imperfect human leaders and places it in the hands of Christ. Even when an earthly authority is weak or unworthy, the believer who submits in good conscience, within the bounds of God&rsquo;s will, is serving Christ and will receive his reward from Christ. The whole circuit is complete. Authority flows from Christ, is exercised as service under Him, and returns to Him in account, both for those who lead and for those who follow.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">The Circuit of Authority</p>
+      <p>See the whole movement as a single circuit. Authority begins at the throne of Christ, who owns it all. It flows downward as a delegated trust into the home, the church, and the nation, lent to stewards who never own it. It is meant to be used as service, in the likeness of the One who came not to be served but to serve. And it returns to Christ in account, as every steward answers for the trust and every servant receives his reward from the Lord. From Christ, under Christ, and back to Christ.</p>
+      <p>This circuit cures both the abuse of authority and the fear of it. The one who leads cannot be a tyrant, for the authority is not his and he must give account for it. The one who submits is never crushed, for he obeys within the bounds of God&rsquo;s will and serves the Lord who rewards him. No authority is final but Christ&rsquo;s, and that single truth sets everything else in its proper and safe place.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <div class="section-head" style="margin-top:0;padding-top:0;border-top:none;">
+        <p class="section-eyebrow">The Whole Counsel</p>
+        <h2 class="section-title">From Christ, Under Christ, and Back to Christ</h2>
+      </div>
+
+      <p class="body-text">Bring the whole path together and authority is no longer a thing to fear or to grasp. It is a trust that begins in Christ, who holds all power in heaven and earth, given Him by the Father. He delegates it downward into the home, the church, and the nation, lending it to human stewards who never own it and may never use it against His will. The authority He gives is always for service, never for domination, shaped by the Lord who came not to be served but to serve and to give His life a ransom. And all of it returns to Him in account, as every leader answers for his trust and every servant receives his reward from the Lord.</p>
+
+      <p class="body-text">This is why the believer can hold authority without pride and submit to authority without fear. The one who leads remembers the power is not his own and that he must answer for it, so he serves rather than lords. The one who follows submits within the bounds of God&rsquo;s will, as unto the Lord, who sees and rewards. And when any earthly authority demands what Christ forbids, the steward has overstepped his trust, and the higher loyalty to Christ governs. No authority on earth is absolute. Only Christ&rsquo;s is. Everything else is borrowed, bounded, and accountable. Hold that truth and the whole tangled question of authority and submission falls into peaceful order, for it all flows from Christ and it all returns to Him.</p>
+
+      <div class="conclusion">
+        <span class="conclusion-label">Where It All Rests</span>
+        <p>All authority belongs to Christ. What men hold, they hold as a delegated and bounded trust, to be used as service in His likeness, and to be answered for at His throne. No earthly authority is final, and none may command what Christ forbids. From Him it flows, under Him it is exercised, and to Him it returns in account.</p>
+        <p>Lead without pride, knowing the power is not your own. Submit without fear, knowing you serve the Lord who rewards. And in all things give Christ the preeminence, for the authority was always His.</p>
+      </div>
+
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 28:18</span>
+        <span class="scripture-text">All power is given unto me in heaven and in earth.</span>
+        <span class="scripture-ref">Colossians 1:18</span>
+        <span class="scripture-text">And he is the head of the body, the church: that in all things he might have the preeminence.</span>
+      </div>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; That in All Things He Might Have the Preeminence &middot; Colossians 1:18</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

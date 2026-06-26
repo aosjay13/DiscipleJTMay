@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pronomian Reading of Scripture &middot; Handling the Whole Counsel of God Without Contradiction</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson, matching the lessons) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SCRIPTURE CALLOUT (cream box, gold top border) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.78; font-size: 1rem; }
+  .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── KEY POINT PANEL (crimson border) ── */
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .keypoint p { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  /* ── TWO-COLUMN COMPARISON GRID ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.8rem 0;
+    break-inside: avoid;
+  }
+  .compare-col {
+    padding: 1.1rem 1.3rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+  }
+  .compare-col.mechanism { border-top: 3px solid var(--gold-light); }
+  .compare-col.evidence  { border-top: 3px solid var(--crimson-lt); }
+  .compare-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .compare-col.mechanism .compare-title { color: var(--gold); }
+  .compare-col.evidence  .compare-title { color: var(--crimson); }
+  .compare-body { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); }
+
+  /* ── BONUS / DASHED PANEL ── */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+
+  /* ── TEACHER'S NOTE (dashed gold, italic) ── */
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.4rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .teacher-note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .teacher-note p {
+    font-size: 0.95rem;
+    line-height: 1.74;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .teacher-note p + p { margin-top: 0.6rem; }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* dark gradient conclusion block */
+  .conclusion {
+    margin: 2rem 0 0;
+    padding: 1.8rem 1.8rem;
+    background: linear-gradient(135deg, #2A2622, #3D3829);
+    border-left: 4px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .conclusion p { font-size: 1.02rem; line-height: 1.82; color: #E8DFC8; }
+  .conclusion p + p { margin-top: 0.8rem; }
+
+  /* ── FOOTER (crimson, matching the lessons) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, 0.75in margins, page numbers) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .scripture, .keypoint, .compare-col, .bonus, .teacher-note, .conclusion {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* good breaks: start each major part on a fresh page, keep blocks whole */
+    .section-head { break-before: page; page-break-before: always; }
+    .section-head:first-of-type { break-before: auto; page-break-before: auto; }
+    .preamble { break-after: avoid; }
+    .section-head, .sub-head { break-after: avoid; page-break-after: avoid; }
+    .scripture, .keypoint, .compare, .bonus, .teacher-note, .conclusion { break-inside: avoid; page-break-inside: avoid; }
+    .doc-footer { break-before: avoid; page-break-before: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    .compare { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">A Core Pronomian Foundation</p>
+    <h1 class="doc-title">The Pronomian Reading of Scripture</h1>
+    <p class="doc-subtitle">How to handle the whole counsel of God consistently, so that law and grace and obedience no longer appear to contradict</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Why So Many Verses Seem to Fight</p>
+      <p>Pick up the Bible and read it honestly, and you will soon meet verses that seem to pull against each other. Paul says we are not under the law. Jesus says not one jot or tittle will pass from the law. Paul says a man is justified by faith without works. James says faith without works is dead. One writer says the believer is free, another says he is a servant of righteousness. A reader who does not know how to handle these will do one of two things. He will pick the verses he likes and quietly ignore the rest, or he will throw up his hands and decide the Bible simply contradicts itself.</p>
+      <p>But the contradictions are not in the Bible. They are in the way it is read. When a person reads with a faulty method, even a perfect book will seem to tangle. And most of the tangles in the church over law and grace come not from the text but from habits of reading that were never tested against the whole of Scripture. The verses do not fight each other. They fight the categories we bring to them. Change the method, and the verses that seemed to clash settle into harmony, each saying its own true thing without canceling the others.</p>
+      <p>This teaching is about that method. It is the capstone of the foundations, gathering into one place the way of reading that makes the whole counsel of God hold together. We will lay down four principles. Let Scripture interpret Scripture rather than letting one verse silence another. Read every part in the light of Christ, who is the center of all of it. Distinguish what is being discussed rather than flattening every use of a word into one meaning. And test every conclusion by the whole counsel of God rather than building a system on a handful of favorite texts. Read this way, and the Bible stops contradicting itself, because it never did.</p>
+    </section>
+
+    <!-- PART ONE -->
+    <div class="section-head">
+      <p class="section-eyebrow">Principle One</p>
+      <h2 class="section-title">Let Scripture Interpret Scripture</h2>
+    </div>
+
+    <p class="body-text">The first principle is the oldest and the safest. Scripture is its own best interpreter. No single verse stands alone as a law unto itself, free to overturn everything around it. Every verse sits within a larger body of truth, and the meaning of any one passage must agree with the rest. When a verse seems to teach something that contradicts the clear weight of Scripture, the problem is our reading of that verse, not the Bible. We do not let one text silence many. We let the many guard the one.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">2 Peter 1:20&ndash;21</span>
+      <span class="scripture-text">Knowing this first, that no prophecy of the scripture is of any private interpretation. For the prophecy came not in old time by the will of man: but holy men of God spake as they were moved by the Holy Ghost.</span>
+    </div>
+
+    <p class="body-text">No prophecy of Scripture is of any private interpretation. That is, no passage is to be cut off and read in isolation, made to mean whatever a man can squeeze from it apart from the rest. The whole of Scripture came from one Author, the Holy Spirit moving holy men, and one Author does not contradict Himself. Because there is one mind behind the whole book, the parts must agree. So the way to understand a hard verse is to read it in the light of the clear ones, letting the Spirit who wrote all of it teach us from all of it.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Isaiah 28:9&ndash;10</span>
+      <span class="scripture-text">Whom shall he teach knowledge? and whom shall he make to understand doctrine? them that are weaned from the milk, and drawn from the breasts. For precept must be upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little.</span>
+    </div>
+
+    <p class="body-text">Here is the method in God&rsquo;s own words. Precept upon precept, line upon line, here a little and there a little. Sound doctrine is built by gathering all that Scripture says on a matter, laying line beside line until the full picture appears. The man who builds his doctrine on one verse has built on a corner of the foundation and called it the whole house. The pronomian reader gathers the lines. He asks not only what one verse says about the law, but what all of them say together, and he lets the full counsel shape his understanding of each part.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Many Guard the One</span>
+      <p>Scripture is its own best interpreter, for it came from one Author who does not contradict Himself. No verse may be read in isolation or used to silence the rest. We build doctrine precept upon precept, line upon line, letting the clear passages guard our reading of the hard ones and the whole counsel shape each part.</p>
+    </div>
+
+    <!-- PART TWO -->
+    <div class="section-head">
+      <p class="section-eyebrow">Principle Two</p>
+      <h2 class="section-title">Read Everything in the Light of Christ</h2>
+    </div>
+
+    <p class="body-text">The second principle gives the whole Bible its center. Every part of Scripture, from the first page to the last, points to Christ. He is the thread that runs through all of it, the key that unlocks its meaning. The law, the prophets, the feasts, the sacrifices, the promises, all of them find their meaning in Him. So when we read any passage, we ask how it relates to Christ, where He stands in it, how it points to Him or flows from Him. Read this way, the Bible becomes one story rather than a pile of disconnected rules and tales.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 24:27</span>
+      <span class="scripture-text">And beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself.</span>
+      <span class="scripture-ref">John 5:39</span>
+      <span class="scripture-text">Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me.</span>
+    </div>
+
+    <p class="body-text">See how Christ Himself reads the Scriptures. Beginning at Moses and all the prophets, He showed how all of them spoke of Him. He says plainly that the Scriptures testify of Him. This is the great key. The whole Bible is about Christ. When we read the law, we see the righteousness He embodies and the standard He writes on our hearts. When we read the sacrifices, we see the cross to which they pointed. When we read the feasts, we see His first coming fulfilled and His return foretold. Christ is the center, and every line is read in His light.</p>
+
+    <div class="body-text">This is also what keeps us from two opposite errors. One reader sees Christ and concludes the law is now meaningless, as if the One who fulfilled it erased the righteousness it describes. Another reader clings to the shadows so tightly that he would rebuild the altar Christ has finished. Reading in the light of Christ corrects both. We see that He fulfilled the sacrifices and closed them, and that He upheld the moral law and wrote it within us. The same Christ does both, and reading everything in His light lets us tell which is which.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Guard this principle from a common abuse. To read everything in the light of Christ does not mean to read the law out of the Bible in the name of Christ. Some treat Jesus as an eraser, as though pointing to Him cancels everything that came before. But Christ Himself said He came not to destroy but to fulfil, and He expounded Moses rather than discarding him. Reading in His light means seeing how each part relates to Him, not using His name to delete the parts we find inconvenient.</p>
+      <p>The test is simple. Does your reading of Christ match the way Christ read the Scriptures? He upheld the moral law, fulfilled the sacrifices, and treated all of it as testifying of Him. A reading that uses Christ to abolish what He upheld has misused the very center it claims to honor.</p>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Christ Is the Center</span>
+      <p>The whole of Scripture testifies of Christ, and He is the key that unlocks it. We read every passage by asking where He stands in it. This makes the Bible one story rather than scattered pieces, and it keeps us from both errors: erasing the law in His name and rebuilding the shadows He fulfilled. We read as Christ Himself read.</p>
+    </div>
+
+    <!-- PART THREE -->
+    <div class="section-head">
+      <p class="section-eyebrow">Principle Three</p>
+      <h2 class="section-title">Distinguish What Is Being Discussed</h2>
+    </div>
+
+    <p class="body-text">The third principle clears away more confusion than any other, and it is the one most often neglected. A single word can carry more than one meaning, and a single subject can have more than one part. When we flatten every use of a word into one meaning, or treat a whole subject as one undivided block, we create contradictions that were never there. Careful reading asks, in each place, exactly what is being discussed, and refuses to force two different things under one label.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Romans 3:28</span>
+      <span class="scripture-text">Therefore we conclude that a man is justified by faith without the deeds of the law.</span>
+      <span class="scripture-ref">Romans 3:31</span>
+      <span class="scripture-text">Do we then make void the law through faith? God forbid: yea, we establish the law.</span>
+    </div>
+
+    <p class="body-text">Look at these two verses, only three apart, written by the same hand. In one, the deeds of the law do not justify. In the other, faith establishes the law. A careless reader sees a flat contradiction. A careful reader asks what is being discussed in each. In the first, Paul is discussing how a sinner is declared righteous, and the answer is by faith, not by law-keeping. In the second, he is discussing whether faith therefore cancels the law as a standard, and the answer is no, it upholds it. Two different questions, two true answers, no contradiction. The same word law is in view, but the matter under discussion is different.</p>
+
+    <div class="body-text">The same care unlocks the word law everywhere. Sometimes Scripture speaks of the sacrificial and priestly system, which was fulfilled and closed in Christ. Sometimes it speaks of the moral standard, which is written on the heart and remains. Sometimes it speaks of law-keeping as a false way of earning salvation, which is always condemned. Sometimes it speaks of the law as the description of a righteous life, which is always honored. One small word, several distinct things. The reader who asks which one is in view at each place will find the verses agree. The reader who flattens them all into one meaning will find a Bible at war with itself.</p>
+
+    <div class="compare">
+      <div class="compare-col mechanism">
+        <p class="compare-title">The Flattening Reader</p>
+        <p class="compare-body">Forces every use of a word into one meaning and treats a whole subject as one block. Sees contradictions everywhere, because verses about different things are jammed together. Must then pick favorites and ignore the rest.</p>
+      </div>
+      <div class="compare-col evidence">
+        <p class="compare-title">The Distinguishing Reader</p>
+        <p class="compare-body">Asks in each place exactly what is being discussed. Sees that one word can carry several meanings and one subject several parts. Finds the verses agree, because each is saying its own true thing about its own matter.</p>
+      </div>
+    </div>
+
+    <p class="body-text">This is the engine behind the whole pronomian reading. It is why we can say the sacrifices are finished and the moral law remains without contradicting ourselves, because we have distinguished what each passage discusses. It is why Paul and James agree, because one speaks of the root of justification and the other of the fruit of living faith. Learn to ask what is being discussed, and a hundred apparent contradictions dissolve, not by force, but by simply reading each verse for what it actually says.</p>
+
+    <!-- PART FOUR -->
+    <div class="section-head">
+      <p class="section-eyebrow">Principle Four</p>
+      <h2 class="section-title">Test Every Conclusion by the Whole Counsel</h2>
+    </div>
+
+    <p class="body-text">The fourth principle is the safeguard that keeps the first three honest. Once we have gathered the lines, read in the light of Christ, and distinguished what is discussed, we must test the conclusion we reach against the whole counsel of God. A true doctrine fits the entire Bible. A false one always has loose threads, verses it must explain away, passages it quietly avoids. If a teaching forces you to ignore whole sections of Scripture, the teaching is wrong, however clever it sounds.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Acts 20:27</span>
+      <span class="scripture-text">For I have not shunned to declare unto you all the counsel of God.</span>
+      <span class="scripture-ref">2 Timothy 3:16&ndash;17</span>
+      <span class="scripture-text">All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.</span>
+    </div>
+
+    <p class="body-text">Paul declared all the counsel of God, not the parts he preferred. And all Scripture, not some, is given by God and profitable for doctrine. This is the test. A sound doctrine accounts for all of it, the hard verses with the easy, the warnings with the promises, the law with the grace. When a believer reaches a conclusion, he should hold it up against the whole Bible and ask whether it leaves anything stranded. If it does, he must go back and read again, for the truth will harmonize the whole, never amputate part of it.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Psalm 119:160</span>
+      <span class="scripture-text">Thy word is true from the beginning: and every one of thy righteous judgments endureth for ever.</span>
+    </div>
+
+    <p class="body-text">The sum of God&rsquo;s word is truth. Not this verse against that one, but the whole taken together. The pronomian reading is simply the reading that refuses to leave any of it behind. It will not drop the law to keep grace, nor drop grace to keep the law, nor drop the warnings to keep assurance, nor drop assurance to keep the warnings. It holds the whole counsel, tests every conclusion against all of it, and trusts that the God who wrote one book meant it to be read as one. This is not a clever system imposed on Scripture. It is the humble willingness to let all of Scripture stand.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">Four Principles, One Method</p>
+      <p>See how the four work as one. Let Scripture interpret Scripture, so no verse stands alone. Read everything in the light of Christ, so the whole has a center. Distinguish what is being discussed, so different matters are not forced into one. And test every conclusion by the whole counsel, so nothing is left stranded. Together they form a single habit of reading, and that habit is the pronomian reading of Scripture. It is not a special key invented to defend a position. It is simply careful, reverent reading that takes the whole Bible as the word of one God.</p>
+      <p>This is why the pronomian position is not built on a few proof texts. It is built on a way of reading that lets every text speak. Test it the same way. Hold this teaching, and every teaching, against the whole counsel of God. The truth has nothing to fear from all of Scripture, for the truth is what all of Scripture, read rightly, actually says.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <div class="section-head" style="margin-top:0;padding-top:0;border-top:none;">
+        <p class="section-eyebrow">The Whole Counsel</p>
+        <h2 class="section-title">Reading So That the Whole Bible Stands</h2>
+      </div>
+
+      <p class="body-text">The verses never fought each other. The fault was in the reading. When Scripture is allowed to interpret Scripture, when every part is read in the light of Christ, when we ask in each place what is actually being discussed, and when every conclusion is tested against the whole counsel of God, the contradictions melt away. Paul and James shake hands. Law and grace stand together. Freedom and obedience are seen as one life. The warnings and the promises both keep their full weight. Nothing has to be ignored, explained away, or quietly dropped, because the truth harmonizes the whole.</p>
+
+      <p class="body-text">This is the foundation beneath all the others. Every teaching in this series rests on this way of reading, and any of them can be tested by it. The pronomian reading is not a trick to make the Bible say what we want. It is the opposite. It is the discipline of letting the Bible say everything it says, the law with the grace, the shadow with the substance, the gift with the call to endure. The God who breathed out every word meant for us to receive every word. So read precept upon precept, see Christ on every page, distinguish carefully what each passage discusses, and hold every conclusion up to the whole. Read this way, and you will find a Bible that does not contradict itself, because it never did. The contradictions were only ever in the reading, and the cure was always to read it whole.</p>
+
+      <div class="conclusion">
+        <span class="conclusion-label">Where It All Rests</span>
+        <p>Let Scripture interpret Scripture. Read everything in the light of Christ. Distinguish what is being discussed. Test every conclusion by the whole counsel of God. These four are one method, and that method is the pronomian reading. It does not bend the Bible to a system. It lets every word of the Bible stand.</p>
+        <p>The truth has nothing to fear from the whole of Scripture. Read it whole, and the verses that seemed to fight will rest in harmony, for one God wrote one book, and He meant it to be read as one.</p>
+      </div>
+
+      <div class="scripture">
+        <span class="scripture-ref">Psalm 119:160</span>
+        <span class="scripture-text">Thy word is true from the beginning: and every one of thy righteous judgments endureth for ever.</span>
+        <span class="scripture-ref">2 Timothy 2:15</span>
+        <span class="scripture-text">Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.</span>
+      </div>
+    </div>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Sola Scriptura &middot; Rightly Dividing the Word of Truth &middot; 2 Timothy 2:15</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis Chapter 1 &middot; Through the Word with Disciple J.T. May</title>
+<meta name="description" content="A verse by verse King James study of Genesis chapter 1, the beginning of all things, by Disciple J.T. May. Part of the Through the Word series.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* PAGE SHELL */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* HEADER (crimson bookend) */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* TOP NAV (cream, matches the listing pages) */
+  .site-nav {
+    position: sticky; top: 0; z-index: 5;
+    background: linear-gradient(to bottom, #F3EAD3, var(--cream));
+    border-bottom: 2px solid var(--rule-solid);
+    border-top: 1px solid #D4B97A55;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.4rem 0.2rem;
+    padding: 0.7rem 1rem;
+  }
+  .site-nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .site-nav a:hover { color: var(--crimson); background: rgba(122,31,31,0.06); }
+
+  /* BODY */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* PREAMBLE */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.55rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* TOC */
+  .toc {
+    margin: 2.4rem 0 0;
+    padding: 1.5rem 1.9rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.55rem; }
+  .toc-list a {
+    font-size: 0.97rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    min-width: 2.6rem;
+    flex-shrink: 0;
+  }
+
+  /* SECTION HEADINGS */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* SCRIPTURE CALLOUT (cream box, gold top border) */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.55rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.85; font-size: 1rem; }
+  .scripture-text .vn {
+    font-family: 'Cinzel', serif; font-style: normal; font-size: 0.62rem;
+    color: var(--gold); vertical-align: super; margin: 0 0.15rem 0 0.1rem; letter-spacing: 0.02em;
+  }
+
+  /* KEY POINT PANEL (crimson border) */
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .keypoint p { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  /* BONUS / DASHED PANEL */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+
+  /* TEACHER'S NOTE (dashed gold, italic) */
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.4rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .teacher-note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .teacher-note p {
+    font-size: 0.95rem;
+    line-height: 1.74;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .teacher-note p + p { margin-top: 0.6rem; }
+
+  /* CLOSING */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .conclusion {
+    margin: 2rem 0 0;
+    padding: 1.8rem 1.8rem;
+    background: linear-gradient(135deg, #2A2622, #3D3829);
+    border-left: 4px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .conclusion p { font-size: 1.02rem; line-height: 1.82; color: #E8DFC8; }
+  .conclusion p + p { margin-top: 0.8rem; }
+  .conclusion em { color: var(--gold-light); font-style: italic; }
+
+  /* CHAPTER PAGER (prev / next) */
+  .chapter-pager {
+    display: flex; align-items: stretch; gap: 1rem;
+    margin: 2.6rem 0 0; padding-top: 1.8rem;
+    border-top: 1px solid var(--rule);
+  }
+  .pager-link {
+    font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--crimson); text-decoration: none;
+    padding: 0.7rem 1.1rem; background: var(--cream);
+    border: 1px solid #D4B97A77; border-left: 3px solid var(--gold-light);
+    transition: background 0.18s, transform 0.18s, border-color 0.18s;
+    display: flex; flex-direction: column; gap: 0.2rem;
+  }
+  .pager-link span { font-size: 0.58rem; letter-spacing: 0.16em; color: var(--gold); }
+  .pager-link:hover { background: #F6EFDD; transform: translateY(-2px); border-left-color: var(--crimson); }
+  .pager-link.next { margin-left: auto; text-align: right; }
+
+  /* FOOTER (crimson bookend) */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* PRINT (8.5 x 11 portrait, page numbers) */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .site-nav, .chapter-pager { display: none; }
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    .scripture, .keypoint, .bonus, .teacher-note, .conclusion {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    /* good breaks: each day starts a fresh page, blocks stay whole */
+    .section-head { break-before: page; page-break-before: always; }
+    .section-head:first-of-type { break-before: auto; page-break-before: auto; }
+    .preamble, .toc { break-after: avoid; page-break-after: avoid; }
+    .section-head, .sub-head { break-after: avoid; page-break-after: avoid; }
+    .scripture, .keypoint, .bonus, .teacher-note, .conclusion { break-inside: avoid; page-break-inside: avoid; }
+    .doc-footer { break-before: avoid; page-break-before: avoid; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    .chapter-pager { flex-direction: column; }
+    .pager-link.next { margin-left: 0; text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">Through the Word &middot; A Verse by Verse Study</p>
+    <h1 class="doc-title">Genesis Chapter One</h1>
+    <p class="doc-subtitle">In the beginning God created the heaven and the earth</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- TOP NAV -->
+  <nav class="site-nav">
+    <a href="./index.html">Home</a>
+    <a href="./Through%20the%20Word.html">Through the Word</a>
+    <a href="./Through%20the%20Word%20-%20Genesis.html">Book of Genesis</a>
+    <a href="#beginning">The Beginning</a>
+    <a href="#day1">Day One</a>
+    <a href="#day2">Day Two</a>
+    <a href="#day3">Day Three</a>
+    <a href="#day4">Day Four</a>
+    <a href="#day5">Day Five</a>
+    <a href="#day6">Day Six</a>
+  </nav>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Before We Begin</p>
+      <p class="dropcap">Genesis chapter one is the foundation stone of the whole Bible. Everything that follows is built here. Who God is, what the world is, what a man is, and why any of it matters, all of it begins on this page. Before there was a nation, a law, a temple, or a promise, there was God, and God created.</p>
+      <p>This chapter was never written to be read as a science paper, and we do us no favours when we force it to be one. It is the testimony of the Maker about His own work, given in plain words, so that a child can take hold of it and a long life can never wear it out. It tells us that the world is not an accident. It was made on purpose, by a Person, and when He looked at it He called it good.</p>
+      <p>We will walk through it the way we mean to walk through the whole of Scripture, slowly and verse by verse, holding every line up to the light of Christ. The same Word that spoke the world into being is the Word that was made flesh and dwelt among us. To read Genesis one rightly is to begin to see Jesus on the very first page.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">What This Chapter Covers</p>
+      <ul class="toc-list">
+        <li><a href="#beginning"><span class="toc-num">1&ndash;2</span><span>The Beginning</span></a></li>
+        <li><a href="#day1"><span class="toc-num">3&ndash;5</span><span>Day One: Light</span></a></li>
+        <li><a href="#day2"><span class="toc-num">6&ndash;8</span><span>Day Two: The Firmament</span></a></li>
+        <li><a href="#day3"><span class="toc-num">9&ndash;13</span><span>Day Three: Land, Seas, and the Living Earth</span></a></li>
+        <li><a href="#day4"><span class="toc-num">14&ndash;19</span><span>Day Four: The Lights and the Appointed Times</span></a></li>
+        <li><a href="#day5"><span class="toc-num">20&ndash;23</span><span>Day Five: The Waters and the Skies Come Alive</span></a></li>
+        <li><a href="#day6"><span class="toc-num">24&ndash;31</span><span>Day Six: The Beasts and the Image of God</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- THE BEGINNING -->
+    <div class="section-head" id="beginning">
+      <p class="section-eyebrow">Genesis 1:1&ndash;2</p>
+      <h2 class="section-title">The Beginning</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:1&ndash;2</span>
+      <span class="scripture-text"><span class="vn">1</span>In the beginning God created the heaven and the earth. <span class="vn">2</span>And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.</span>
+    </div>
+
+    <p class="body-text">The Bible opens with no argument for the existence of God. It does not try to prove Him. It simply announces Him. In the beginning God. He is already there before the beginning begins, because He Himself was never begun. Everything else in this chapter is made, but God is not made. He is the One who makes. That single word, created, marks the line between the Creator and everything that is not the Creator. He spoke into being what was not, out of nothing that we could point to and call a cause.</p>
+
+    <p class="body-text">Notice that the whole Godhead is present from the first two verses. God creates. The Spirit of God moves upon the face of the waters, brooding over the deep like a bird over its nest, ready to bring forth life and order. And the New Testament tells us plainly who the third was. All things were made by the Word, and without Him was not any thing made that was made. So the Father purposes, the Son speaks the worlds into frame, and the Spirit hovers to give them shape and life. The God of Genesis one is the same God we meet in the Gospel of John.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">John 1:1&ndash;3</span>
+      <span class="scripture-text"><span class="vn">1</span>In the beginning was the Word, and the Word was with God, and the Word was God. <span class="vn">2</span>The same was in the beginning with God. <span class="vn">3</span>All things were made by him; and without him was not any thing made that was made.</span>
+    </div>
+
+    <p class="body-text">The earth is described as without form and void, with darkness on the deep. This is not God failing and starting over. It is the raw beginning of His work, the unshaped and the empty, which He will now form and fill across six days. Watch the pattern as we go. The first three days God gives form, dividing light from dark, waters from waters, sea from dry land. The last three days God fills what He formed, putting lights in the sky, fish in the sea, birds in the air, beasts and man upon the land. He is a God of order, and He works on purpose.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold On To This</span>
+      <p>The world was made by the Word of God. That same Word would one day be made flesh and walk among us. The hands that flung the stars into place are the hands that were nailed to a tree for you. Creation and the cross belong to the same Lord.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Some teachers insert a long gap of ages between verse one and verse two, building whole systems on the words without form and void. The text does not demand a gap, and the doctrine of creation does not rest on one. Hold such ideas loosely. We will teach what the words plainly say, that God created, and then formed and filled what He had made, and we will not build a house on a verse that was never meant to carry it.</p>
+    </div>
+
+    <!-- DAY ONE -->
+    <div class="section-head" id="day1">
+      <p class="section-eyebrow">Genesis 1:3&ndash;5</p>
+      <h2 class="section-title">Day One: Light</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:3&ndash;5</span>
+      <span class="scripture-text"><span class="vn">3</span>And God said, Let there be light: and there was light. <span class="vn">4</span>And God saw the light, that it was good: and God divided the light from the darkness. <span class="vn">5</span>And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.</span>
+    </div>
+
+    <p class="body-text">God said, and it was. There is no straining, no struggle, no raw material He has to wrestle into shape. He speaks and the thing obeys. This is the power of the Word of God, and it will run all the way through Scripture, down to the day when a Man stood by a grave and said, Lazarus, come forth, and the dead man came out. The voice that called light out of darkness is the voice that calls the dead to life.</p>
+
+    <p class="body-text">Here is a wonder worth stopping for. There is light on the first day, but the sun is not made until the fourth. So where does this first light come from? It comes from God Himself. God is light, and in Him is no darkness at all. Long before there was a sun to shine, there was the Lord, and He is the true and original light. The sun is only a lamp He hung up later. The light was His before the lamp ever was.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">2 Corinthians 4:6</span>
+      <span class="scripture-text"><span class="vn">6</span>For God, who commanded the light to shine out of darkness, hath shined in our hearts, to give the light of the knowledge of the glory of God in the face of Jesus Christ.</span>
+    </div>
+
+    <p class="body-text">That is the gospel hidden in the first day. The God who said Let there be light is the same God who shines into a dark heart and gives it the light of Christ. If you have been born again, the first day of creation has happened inside of you. He spoke, and where there was darkness, there is now light.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">A Pattern Worth Seeing</p>
+      <p>Look closely at how the day is counted. The evening and the morning were the first day. The evening comes first, then the morning. In the reckoning of God, the day begins at sunset, not at midnight and not at sunrise. This is not a small thing. It is the very pattern by which the Sabbath and the appointed feasts are still kept, from one evening to the next evening. The clock of heaven was set on the first day of the world, and it has never changed.</p>
+    </div>
+
+    <!-- DAY TWO -->
+    <div class="section-head" id="day2">
+      <p class="section-eyebrow">Genesis 1:6&ndash;8</p>
+      <h2 class="section-title">Day Two: The Firmament</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:6&ndash;8</span>
+      <span class="scripture-text"><span class="vn">6</span>And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters. <span class="vn">7</span>And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so. <span class="vn">8</span>And God called the firmament Heaven. And the evening and the morning were the second day.</span>
+    </div>
+
+    <p class="body-text">On the second day God makes the firmament, the great expanse we look up into and call the sky, and He sets it as a divider between the waters below and the waters above. He gives it a name, Heaven, the same way a father names what belongs to him. To name a thing is to have authority over it, and God names His works one by one.</p>
+
+    <p class="body-text">There is one quiet detail here. On every other day the text pauses to say that God saw that it was good. On the second day that line is missing. The reason becomes clear on the third day, when the waters are finally gathered and the dry land appears. The work of dividing the waters is not finished until then, and so the verdict of good waits until the work is complete. God does not call a thing finished before it is finished. He works thoroughly, and He blesses what is brought to its proper end.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Many have tried to build detailed models of the waters above the firmament, from vapour canopies to ice shells and more. These are guesses, and good people disagree on them. Do not hang the authority of Genesis on any one of them. The plain teaching of the verse is simply that God ordered the world, dividing and arranging the waters by His own hand. We can hold the fact firmly and hold the theories loosely.</p>
+    </div>
+
+    <!-- DAY THREE -->
+    <div class="section-head" id="day3">
+      <p class="section-eyebrow">Genesis 1:9&ndash;13</p>
+      <h2 class="section-title">Day Three: Land, Seas, and the Living Earth</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:9&ndash;13</span>
+      <span class="scripture-text"><span class="vn">9</span>And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so. <span class="vn">10</span>And God called the dry land Earth; and the gathering together of the waters called he Seas: and God saw that it was good. <span class="vn">11</span>And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so. <span class="vn">12</span>And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good. <span class="vn">13</span>And the evening and the morning were the third day.</span>
+    </div>
+
+    <p class="body-text">The waters are gathered and the dry land rises up out of the sea. God names the Earth and the Seas, and now He says it is good, twice in this one day, because the forming work is finished and the filling is about to begin. Then the land is told to bring forth. Grass, herbs, and fruit trees come up at His command, each one carrying seed in itself and bringing forth after his kind.</p>
+
+    <p class="body-text">That little phrase, after his kind, is repeated all through this chapter, and it matters. God did not make one shapeless mass of life that drifts into anything at all. He made kinds, and He set the seed of each kind inside it, so that an apple tree brings forth apple trees and wheat brings forth wheat. There is order and faithfulness written into the seed. A thing reproduces what it is. We will see that truth carried up into the spiritual world before long, for whatsoever a man soweth, that shall he also reap.</p>
+
+    <p class="body-text">There is gospel here too, planted right in the ground. A seed must fall into the earth and seem to die before it can rise and bear much fruit. The Lord Jesus took that very picture from the third day of creation and made it the picture of His own death and rising. The pattern of the seed was set down at the beginning so that we would understand the cross when it came.</p>
+
+    <!-- DAY FOUR -->
+    <div class="section-head" id="day4">
+      <p class="section-eyebrow">Genesis 1:14&ndash;19</p>
+      <h2 class="section-title">Day Four: The Lights and the Appointed Times</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:14&ndash;19</span>
+      <span class="scripture-text"><span class="vn">14</span>And God said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years: <span class="vn">15</span>And let them be for lights in the firmament of the heaven to give light upon the earth: and it was so. <span class="vn">16</span>And God made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also. <span class="vn">17</span>And God set them in the firmament of the heaven to give light upon the earth, <span class="vn">18</span>And to rule over the day and over the night, and to divide the light from the darkness: and God saw that it was good. <span class="vn">19</span>And the evening and the morning were the fourth day.</span>
+    </div>
+
+    <p class="body-text">Now God hangs the lamps. The sun to rule the day, the moon to rule the night, and the stars, which the text mentions almost in passing, as if the whole vast field of stars were a small thing to the One who made it. He set them in place to give light and to divide day from night. But read verse fourteen slowly, because there is more here than light. He gave the lights a job to do. They are for signs, and for seasons, and for days, and for years.</p>
+
+    <p class="body-text">That word seasons does not mean spring and summer and fall and winter. It means appointed times. It is the very word that God will later use for His feasts, the set times He calls His people to meet with Him. So from the fourth day of the world, before there was a single man to keep them, the sun and the moon were set in the sky to mark out the calendar of God. The moon would mark the months and the new moons. The sun would mark the days and the years. The appointed times of the Lord were not invented later by men. They were written into the heavens at creation.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold On To This</span>
+      <p>The feasts of the Lord are not a Jewish add-on to the faith. Their clock was hung in the sky on the fourth day of creation, in the same breath that set the sun and the moon in place. When we keep the appointed times, we are keeping step with a calendar as old as the stars.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>The word translated seasons in verse fourteen is the same Hebrew word used for the appointed feasts in Leviticus twenty-three. That is a fair and honest observation from the text, and it is worth pointing out. Still, we do not rest the whole doctrine of the feasts on one word in one verse. We rest it on the whole counsel of Scripture, where the appointed times are commanded and kept from Moses to the prophets and honoured by the Lord Jesus Himself. The word in Genesis is a witness that agrees with the rest, not a lone proof we lean all our weight upon.</p>
+    </div>
+
+    <!-- DAY FIVE -->
+    <div class="section-head" id="day5">
+      <p class="section-eyebrow">Genesis 1:20&ndash;23</p>
+      <h2 class="section-title">Day Five: The Waters and the Skies Come Alive</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:20&ndash;23</span>
+      <span class="scripture-text"><span class="vn">20</span>And God said, Let the waters bring forth abundantly the moving creature that hath life, and fowl that may fly above the earth in the open firmament of heaven. <span class="vn">21</span>And God created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind: and God saw that it was good. <span class="vn">22</span>And God blessed them, saying, Be fruitful, and multiply, and fill the waters in the seas, and let fowl multiply in the earth. <span class="vn">23</span>And the evening and the morning were the fifth day.</span>
+    </div>
+
+    <p class="body-text">Now the filling begins in earnest. The seas that were gathered on the third day are told to swarm with life, and the sky that was set on the second day is given wings to fill it. Great whales and the smallest moving creature, every winged fowl, all of them after their kind. God loves abundance. He does not make life in a trickle. He makes it bring forth abundantly, until the waters teem and the air is full of song.</p>
+
+    <p class="body-text">And here we meet the first blessing in all the Bible. God blessed them, and the blessing is this, be fruitful, and multiply, and fill. The very first thing God blesses is life that gives life. That tells you something about His heart. He is not stingy and He is not grim. He delights to give, and He delights when what He gives goes on to give again.</p>
+
+    <!-- DAY SIX -->
+    <div class="section-head" id="day6">
+      <p class="section-eyebrow">Genesis 1:24&ndash;31</p>
+      <h2 class="section-title">Day Six: The Beasts and the Image of God</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:24&ndash;25</span>
+      <span class="scripture-text"><span class="vn">24</span>And God said, Let the earth bring forth the living creature after his kind, cattle, and creeping thing, and beast of the earth after his kind: and it was so. <span class="vn">25</span>And God made the beast of the earth after his kind, and cattle after their kind, and every thing that creepeth upon the earth after his kind: and God saw that it was good.</span>
+    </div>
+
+    <p class="body-text">The sixth day begins like the others, with the land bringing forth its creatures, the cattle and the creeping things and the wild beasts, each after his kind. But the day is not finished, and the best of all His works is still to come. God pauses, and for the first time in the chapter He speaks of Himself in a different way.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:26&ndash;28</span>
+      <span class="scripture-text"><span class="vn">26</span>And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth. <span class="vn">27</span>So God created man in his own image, in the image of God created he him; male and female created he them. <span class="vn">28</span>And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.</span>
+    </div>
+
+    <p class="body-text">Let us make man. Up to now God has simply said, Let there be, and it was so. But when He comes to make man, there is a holy conference within the Godhead, the Father, the Son, and the Spirit taking counsel together. Man is not flung out like the rest. Man is purposed and deliberated over, because man alone is to be made in the image of God. We are not gods, but we carry His image, stamped on us like the king&rsquo;s head on a coin. That is what gives every human being a worth that nothing else in creation has.</p>
+
+    <p class="body-text">That image is the reason murder is so grave, for to spill the blood of a man is to strike at the image of God Himself. It is the reason every person you will ever meet, born and unborn, weak and strong, is to be treated with honour. The dignity of man does not come from his usefulness or his strength. It comes from the image he bears.</p>
+
+    <p class="body-text">Notice also that God made them male and female. Two, and only two, made on purpose by God, and together they carry His image and are given the work of filling the earth. This is the order God laid down at the beginning, and the Lord Jesus pointed straight back to this verse when He taught on marriage. What God set in place on the sixth day, no age and no fashion of men can undo.</p>
+
+    <p class="body-text">Then comes the charge to have dominion and to subdue the earth. This is not a license to ruin and waste what God has made. It is the call to rule the way God rules, with care and wisdom, as a faithful steward who will answer to the Owner. The earth is the Lord&rsquo;s. We are set over it for a season, to tend it and keep it, and to give an account.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 1:29&ndash;31</span>
+      <span class="scripture-text"><span class="vn">29</span>And God said, Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree, in the which is the fruit of a tree yielding seed; to you it shall be for meat. <span class="vn">30</span>And to every beast of the earth, and to every fowl of the air, and to every thing that creepeth upon the earth, wherein there is life, I have given every green herb for meat: and it was so. <span class="vn">31</span>And God saw every thing that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.</span>
+    </div>
+
+    <p class="body-text">God gives the food. At the first, the table is spread with every herb and every fruit, given to man and beast alike. The eating of flesh, and the careful line God later draws between the clean and the unclean, comes further along in the story, and we will meet it in its place. Here at the beginning the picture is of peace and provision, a Maker who feeds everything He has made.</p>
+
+    <p class="body-text">Then comes the last word of the day, and it rises above all the others. On the earlier days God saw that it was good. Now He looks at the whole of it, crowned with man made in His image, and He says it was very good. The world He made is not evil. The body is not a prison. Matter is not a mistake. God made a good world and a good earth and good creatures and a good man, and He was pleased. Whatever has gone wrong since, and much has gone wrong, it did not come from the hand of God. He made it very good.</p>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <div class="conclusion">
+        <span class="conclusion-label">Where This Chapter Leads</span>
+        <p>The God who stands at the head of the Bible is the Maker of heaven and earth, and He made all things by His Word. That Word did not stay far off in the heavens. <em>The Word was made flesh, and dwelt among us.</em> The light He called out of darkness on the first day shines in full in the face of Jesus Christ. The seed He set in the ground points to a Saviour who would fall like a grain of wheat and rise to bear much fruit. Even the appointed times He hung in the sky were pointing forward to the One who would fulfil them.</p>
+        <p>The world He called very good was soon broken by sin, as we will read in the chapters just ahead. But God did not walk away from what He made. The Maker became the Redeemer. If you are in Christ, you are already a new creation, for the God who said <em>Let there be light</em> has shined in your heart. And if you have never come to Him, hear the good news of the first page. The One who made you is the One who is calling you, and He is able to make you new.</p>
+      </div>
+      <p class="body-text" style="margin-top:1.6rem;">If this study has stirred a question, or you want to know the Creator who is calling you, I would count it a joy to hear from you. Write to me at jtmay3@hotmail.com, and let us search the Scriptures together.</p>
+    </div>
+
+    <!-- PAGER -->
+    <nav class="chapter-pager">
+      <a class="pager-link prev" href="./Through%20the%20Word%20-%20Genesis.html"><span>Back to</span>Book of Genesis</a>
+      <a class="pager-link next" href="./Through%20the%20Word%20-%20Genesis%202.html"><span>Next Chapter</span>Genesis 2 &#8594;</a>
+    </nav>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &#10022; &#10022;</div>
+    <p class="footer-text">Work the Word &middot; Through the Word with Disciple J.T. May<br>Genesis 1 &middot; In the Beginning God</p>
+  </footer>
+
+</div>
+</body>
+</html>

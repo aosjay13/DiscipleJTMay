@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Through the Word - 1 Corinthians &middot; Disciple J.T. May</title>
+<meta name="description" content="Through the Word - 1 Corinthians. A verse by verse deep dive of The Book of 1 Corinthians, 16 chapters, by Disciple J.T. May. Rooted in the King James Bible.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --crimson-dk:  #2a1414;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* PAGE SHELL */
+  .page {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* HERO */
+  .site-hero {
+    text-align: center;
+    padding: 3.4rem 2rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .site-hero::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .emblem { width: 132px; height: 132px; margin: 0 auto 1.3rem; display: flex; align-items: center; justify-content: center; }
+  .emblem-svg { width: 132px; height: 132px; display: block; }
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.32em;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem;
+  }
+  .hero-role {
+    font-family: 'Cinzel', serif; font-size: clamp(0.78rem, 1.7vw, 0.95rem);
+    letter-spacing: 0.14em; color: var(--gold-pale); margin-top: 0.85rem;
+    text-transform: uppercase; opacity: 0.95;
+  }
+  .hero-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 700;
+    color: #FBF6E9; letter-spacing: 0.04em; line-height: 1.15;
+    text-transform: uppercase; text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .hero-verse {
+    font-style: italic; font-size: clamp(1rem, 2vw, 1.18rem); color: var(--gold-pale);
+    margin-top: 1.1rem; opacity: 0.94; max-width: 620px;
+    margin-left: auto; margin-right: auto; line-height: 1.7;
+  }
+  .hero-ref {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em;
+    color: var(--gold-light); text-transform: uppercase; margin-top: 0.7rem;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* NAV */
+  .site-nav {
+    position: sticky; top: 0; z-index: 5;
+    background: linear-gradient(to bottom, #F3EAD3, var(--cream));
+    border-bottom: 2px solid var(--rule-solid);
+    border-top: 1px solid #D4B97A55;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.4rem 0.2rem; padding: 0.7rem 1rem;
+  }
+  .site-nav a {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-mid); text-decoration: none;
+    padding: 0.45rem 0.95rem; border-radius: 2px; transition: color 0.2s, background 0.2s;
+  }
+  .site-nav a:hover { color: var(--crimson); background: rgba(122,31,31,0.06); }
+
+  /* BODY SECTIONS */
+  .section { padding: 2.8rem 3rem; border-bottom: 1px solid var(--rule); }
+  .section:last-of-type { border-bottom: none; }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.35rem, 3vw, 1.8rem); font-weight: 700;
+    color: var(--crimson); line-height: 1.25;
+  }
+  .section-lead { font-size: 1.08rem; line-height: 1.85; color: var(--ink-mid); margin-top: 1rem; max-width: 70ch; }
+  .section-lead + .section-lead { margin-top: 0.9rem; }
+
+  /* SCRIPTURE BOX */
+  .scripture {
+    margin: 1.8rem 0 0; padding: 1.3rem 1.6rem; background: var(--cream);
+    border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light);
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.1em;
+    color: var(--crimson); display: block; margin-bottom: 0.5rem;
+  }
+  .scripture-text { font-style: italic; color: var(--ink-mid); font-size: 1.04rem; line-height: 1.8; }
+
+  /* BOOK / CHAPTER GRID */
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.7rem;
+  }
+  .book-card {
+    display: flex; flex-direction: column; justify-content: space-between;
+    text-decoration: none; color: inherit;
+    padding: 0.85rem 0.95rem; min-height: 76px;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-left: 3px solid var(--gold-light);
+    transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s, background 0.18s;
+  }
+  .book-card:hover {
+    border-left-color: var(--crimson);
+    background: #F6EFDD;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--shadow);
+  }
+  .book-card .book-name {
+    font-family: 'Cinzel', serif; font-size: 0.98rem; font-weight: 600;
+    color: var(--ink); line-height: 1.25; transition: color 0.18s;
+  }
+  .book-card:hover .book-name { color: var(--crimson); }
+  .book-card .book-meta {
+    margin-top: 0.5rem; font-family: 'Cinzel', serif; font-size: 0.58rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
+  }
+
+  /* FOOTER */
+  .site-footer {
+    background: linear-gradient(135deg, var(--crimson-dk) 0%, var(--crimson) 100%);
+    color: var(--gold-pale); padding: 3rem 2rem 2.4rem; text-align: center; position: relative;
+  }
+  .site-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.32); pointer-events: none; }
+  .footer-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.7rem;
+  }
+  .footer-title { font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 700; color: #FBF6E9; line-height: 1.25; }
+  .footer-sub { font-style: italic; color: var(--gold-pale); margin-top: 0.8rem; opacity: 0.9; }
+  .social-group { margin-top: 2rem; }
+  .social-group .group-label {
+    font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold-light); margin-bottom: 1rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+  }
+  .social-group .group-label span { height: 1px; width: 40px; background: var(--gold-light); opacity: 0.5; }
+  .social-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; }
+  .social-link { text-decoration: none; color: var(--gold-pale); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; transition: transform 0.18s; }
+  .social-link:hover { transform: translateY(-3px); }
+  .social-icon {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: rgba(245,237,216,0.07); border: 1px solid var(--gold-light);
+    display: flex; align-items: center; justify-content: center; transition: background 0.18s;
+  }
+  .social-link:hover .social-icon { background: rgba(201,168,76,0.22); }
+  .social-icon svg { width: 24px; height: 24px; }
+  .social-icon svg [fill="currentColor"], .social-icon svg path[fill="currentColor"] { fill: var(--gold-pale); }
+  .social-label { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-pale); }
+  .footer-rule { display: flex; align-items: center; gap: 0.75rem; margin: 2.4rem auto 1.6rem; max-width: 280px; }
+  .footer-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.5; }
+  .footer-rule i { color: var(--gold-light); font-style: normal; }
+  .footer-fine {
+    font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold-light); line-height: 1.9;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .section { padding: 2rem 1.4rem; }
+    .site-hero { padding: 2.6rem 1.3rem 2rem; }
+    .book-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  }
+
+  /* PRINT (US Letter, 8.5 x 11) */
+  @page { size: letter portrait; margin: 0.5in; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .site-nav { display: none; }
+    .site-hero, .site-footer, .book-card, .social-icon {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    .social-link { color: #2a1414; }
+  }
+
+  /* PRINT PAGE NUMBERS + BREAK TUNING */
+  @media print {
+    @page {
+      margin: 0.6in 0.6in 0.8in;
+      @bottom-center {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Cinzel', serif; font-size: 8pt; letter-spacing: 0.12em; color: #7A1F1F;
+      }
+    }
+    .section-title { break-after: avoid; page-break-after: avoid; }
+    .eyebrow { break-after: avoid; page-break-after: avoid; }
+    .book-card { break-inside: avoid; page-break-inside: avoid; }
+    .scripture { break-inside: avoid; page-break-inside: avoid; }
+    .site-footer { break-inside: avoid; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <header class="site-hero" id="top">
+    <div class="emblem">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-label="Open Bible emblem">
+  <g fill="none" stroke="#C9A84C" stroke-width="1.6">
+    <circle cx="60" cy="60" r="55"/>
+    <circle cx="60" cy="60" r="48" stroke-width="0.9" opacity="0.7"/>
+  </g>
+  <g stroke="#C9A84C" stroke-width="1.1" stroke-linecap="round" opacity="0.85">
+    <line x1="60" y1="27" x2="60" y2="37"/>
+    <line x1="47" y1="31" x2="51" y2="40"/>
+    <line x1="73" y1="31" x2="69" y2="40"/>
+    <line x1="37" y1="41" x2="43" y2="47"/>
+    <line x1="83" y1="41" x2="77" y2="47"/>
+  </g>
+  <g stroke="#F5EDD8" stroke-width="1.7" stroke-linejoin="round" fill="none">
+    <path d="M60 55 C 52 50, 42 50, 34 54 L34 81 C42 77, 52 77, 60 82 Z"/>
+    <path d="M60 55 C 68 50, 78 50, 86 54 L86 81 C78 77, 68 77, 60 82 Z"/>
+    <line x1="60" y1="55" x2="60" y2="82"/>
+  </g>
+  <g stroke="#C9A84C" stroke-width="0.8" opacity="0.8" stroke-linecap="round">
+    <line x1="40" y1="59" x2="55" y2="57"/>
+    <line x1="40" y1="64" x2="55" y2="62"/>
+    <line x1="40" y1="69" x2="55" y2="67"/>
+    <line x1="65" y1="57" x2="80" y2="59"/>
+    <line x1="65" y1="62" x2="80" y2="64"/>
+    <line x1="65" y1="67" x2="80" y2="69"/>
+  </g>
+  <g fill="#C9A84C">
+    <path d="M22 64 l1.1 2.4 2.6.3 -1.9 1.7 .5 2.5 -2.3-1.3 -2.3 1.3 .5-2.5 -1.9-1.7 2.6-.3z"/>
+    <path d="M98 64 l1.1 2.4 2.6.3 -1.9 1.7 .5 2.5 -2.3-1.3 -2.3 1.3 .5-2.5 -1.9-1.7 2.6-.3z"/>
+  </g>
+  <text x="60" y="103" text-anchor="middle" font-family="Cinzel, serif" font-size="6.4" letter-spacing="1.6" fill="#C9A84C">SOLA SCRIPTURA</text>
+</svg>
+    </div>
+    <p class="hero-eyebrow">Through the Word</p>
+    <h1 class="hero-title">1 Corinthians</h1>
+    <p class="hero-role">The Epistles &middot; 16 Chapters</p>
+    <p class="hero-verse">For I delivered unto you first of all that which I also received, how that Christ died for our sins according to the scriptures; And that he was buried, and that he rose again the third day according to the scriptures.</p>
+    <p class="hero-ref">1 Corinthians 15:3-4 &middot; KJV</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="./index.html">Home</a>
+    <a href="./Through%20the%20Word.html">Through the Word</a>
+  </nav>
+
+  <!-- INTRO -->
+  <section class="section" id="intro">
+    <p class="eyebrow">The Epistles &middot; Book 46 of 66</p>
+    <h2 class="section-title">The Book of 1 Corinthians</h2>
+    <p class="section-lead">Paul writes to a church divided by factions, troubled by sin, and confused about spiritual gifts. He calls them back to the cross, to love, and to the resurrection that is the ground of all their hope.</p>
+    <div class="scripture">
+      <span class="scripture-ref">1 Corinthians 15:3-4</span>
+      <span class="scripture-text">For I delivered unto you first of all that which I also received, how that Christ died for our sins according to the scriptures; And that he was buried, and that he rose again the third day according to the scriptures.</span>
+    </div>
+  </section>
+
+  <!-- CHAPTERS -->
+  <section class="section" id="chapters">
+    <p class="eyebrow">16 Chapters</p>
+    <h2 class="section-title">Choose a Chapter</h2>
+    <p class="section-lead">Select a chapter below to begin the verse by verse study.</p>
+    <div class="book-grid">
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%201.html">
+          <span class="book-name">Chapter 1</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%202.html">
+          <span class="book-name">Chapter 2</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%203.html">
+          <span class="book-name">Chapter 3</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%204.html">
+          <span class="book-name">Chapter 4</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%205.html">
+          <span class="book-name">Chapter 5</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%206.html">
+          <span class="book-name">Chapter 6</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%207.html">
+          <span class="book-name">Chapter 7</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%208.html">
+          <span class="book-name">Chapter 8</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%209.html">
+          <span class="book-name">Chapter 9</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%2010.html">
+          <span class="book-name">Chapter 10</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%2011.html">
+          <span class="book-name">Chapter 11</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%2012.html">
+          <span class="book-name">Chapter 12</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%2013.html">
+          <span class="book-name">Chapter 13</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%2014.html">
+          <span class="book-name">Chapter 14</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%2015.html">
+          <span class="book-name">Chapter 15</span>
+        </a>
+        <a class="book-card" href="./Through%20the%20Word%20-%201%20Corinthians%2016.html">
+          <span class="book-name">Chapter 16</span>
+        </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="connect">
+    <p class="footer-eyebrow">Connect</p>
+    <h2 class="footer-title">Walk With Us</h2>
+    <p class="footer-sub">Follow along, hear the teaching, and join the fellowship of believers.</p>
+
+    <div class="social-group">
+      <p class="group-label"><span></span> Work the Word Church <span></span></p>
+      <div class="social-row">
+        <a class="social-link" href="https://www.facebook.com/WorktheWordMadisonWV" target="_blank" rel="noopener" aria-label="Work the Word Church on Facebook">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5C16.4 5.4 15.5 5.3 14.5 5.3c-2.1 0-3.5 1.3-3.5 3.6v2.3H8.6V14H11v7h2.5z"/></svg></span>
+          <span class="social-label">Facebook</span>
+        </a>
+        <a class="social-link" href="https://www.youtube.com/@WorkTheWordChurch" target="_blank" rel="noopener" aria-label="Work the Word Church on YouTube">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 0 0 2 8.2 31 31 0 0 0 1.7 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.6 7.9.6 7.9.6s6 0 7.9-.6A3 3 0 0 0 22 15.8 31 31 0 0 0 22.3 12 31 31 0 0 0 22 8.2zM10 15V9l5.2 3z"/></svg></span>
+          <span class="social-label">YouTube</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="social-group">
+      <p class="group-label"><span></span> Brother Justin May <span></span></p>
+      <div class="social-row">
+        <a class="social-link" href="https://www.facebook.com/disciplejtmay/" target="_blank" rel="noopener" aria-label="Brother Justin May on Facebook">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5C16.4 5.4 15.5 5.3 14.5 5.3c-2.1 0-3.5 1.3-3.5 3.6v2.3H8.6V14H11v7h2.5z"/></svg></span>
+          <span class="social-label">Facebook</span>
+        </a>
+        <a class="social-link" href="https://www.youtube.com/@DiscipleJTMay" target="_blank" rel="noopener" aria-label="Brother Justin May on YouTube">
+          <span class="social-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 0 0 2 8.2 31 31 0 0 0 1.7 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.6 7.9.6 7.9.6s6 0 7.9-.6A3 3 0 0 0 22 15.8 31 31 0 0 0 22.3 12 31 31 0 0 0 22 8.2zM10 15V9l5.2 3z"/></svg></span>
+          <span class="social-label">YouTube</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-rule"><span></span><i>&#10022;</i><span></span></div>
+    <p class="footer-fine">The Bible Teaching of Brother Justin May &middot; Pronomian in Theology<br>Sola Scriptura &middot; To the Law and to the Testimony &middot; Isaiah 8:20</p>
+  </footer>
+
+</div>
+</body>
+</html>

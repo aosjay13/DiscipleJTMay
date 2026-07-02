@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Book of Enoch &middot; A Scriptural Examination</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.55rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.4rem 0 0;
+    padding: 1.5rem 1.9rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.55rem; }
+  .toc-list a {
+    font-size: 0.97rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    min-width: 2.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SCRIPTURE CALLOUT (cream box, gold top border) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.78; font-size: 1rem; }
+  .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── KEY POINT PANEL (crimson border) ── */
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .keypoint p { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  /* ── TWO-COLUMN COMPARISON GRID ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.8rem 0;
+    break-inside: avoid;
+  }
+  .compare-col {
+    padding: 1.1rem 1.3rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+  }
+  .compare-col.shadow   { border-top: 3px solid var(--gold-light); }
+  .compare-col.remains  { border-top: 3px solid var(--crimson-lt); }
+  .compare-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .compare-col.shadow .compare-title  { color: var(--gold); }
+  .compare-col.remains .compare-title { color: var(--crimson); }
+  .compare-body { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); }
+  .compare-body ul { list-style: none; margin-top: 0.5rem; }
+  .compare-body li { padding-left: 1rem; position: relative; margin-bottom: 0.35rem; }
+  .compare-body li::before { content: '\2022'; position: absolute; left: 0; color: var(--gold-light); }
+
+  /* ── BONUS / DASHED PANEL ── */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus ul { margin-top: 0.6rem; padding-left: 1.2rem; }
+  .bonus li { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); margin-bottom: 0.4rem; }
+
+  /* ── TEACHER'S NOTE (dashed gold, italic) ── */
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.4rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .teacher-note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .teacher-note p {
+    font-size: 0.95rem;
+    line-height: 1.74;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .teacher-note p + p { margin-top: 0.6rem; }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* dark gradient conclusion block */
+  .conclusion {
+    margin: 2rem 0 0;
+    padding: 1.8rem 1.8rem;
+    background: linear-gradient(135deg, #2A2622, #3D3829);
+    border-left: 4px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .conclusion p { font-size: 1.02rem; line-height: 1.82; color: #E8DFC8; }
+  .conclusion p + p { margin-top: 0.8rem; }
+  .conclusion em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, 0.75in margins, page numbers) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .scripture, .keypoint, .compare-col, .bonus, .teacher-note, .conclusion {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* good breaks: start each major part on a fresh page, keep blocks whole */
+    .section-head { break-before: page; page-break-before: always; }
+    .section-head:first-of-type { break-before: auto; page-break-before: auto; }
+    .preamble, .toc { break-after: avoid; page-break-after: avoid; }
+    .section-head, .sub-head { break-after: avoid; page-break-after: avoid; }
+    .scripture, .keypoint, .compare, .bonus, .teacher-note, .conclusion { break-inside: avoid; page-break-inside: avoid; }
+    .doc-footer { break-before: avoid; page-break-before: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    .compare { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">A Scriptural Study</p>
+    <h1 class="doc-title">The Book of Enoch</h1>
+    <p class="doc-subtitle">Weighing an ancient writing against the full counsel of God&rsquo;s word</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Before We Begin</p>
+      <p class="dropcap">Almost every believer eventually runs into the Book of Enoch. Someone mentions it online, a video promises secrets the church has hidden, and the fact that the apostle Jude actually quotes it gets repeated as proof that it belongs in the Bible. It is a fair question to ask. If Jude cites it, why isn&rsquo;t it scripture? And if it isn&rsquo;t scripture, what do we do with it?</p>
+      <p>This study answers both questions honestly. We will look at what the Book of Enoch actually is, what the Bible actually says about the man Enoch, why Jude quoted the way he did, and where the line falls between a useful ancient writing and the inspired, closed word of God. None of this requires fear or evasion. Scripture is not threatened by an old book. It is simply the standard every other book is measured against.</p>
+      <p>Seven things are covered in order: what the Book of Enoch is and where it came from, what the Bible itself tells us about Enoch the man, why Jude quoted a line from it, how it relates to the fallen angels and the days of Noah, a brief survey of its contents, why it was never received into the canon, and finally how to make use of it without ever confusing it with scripture.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">What This Teaching Covers</p>
+      <ul class="toc-list">
+        <li><a href="#p1"><span class="toc-num">I</span><span>What Is the Book of Enoch</span></a></li>
+        <li><a href="#p2"><span class="toc-num">II</span><span>Enoch the Man, According to Scripture</span></a></li>
+        <li><a href="#p3"><span class="toc-num">III</span><span>Why Jude Quotes a Book That Is Not Scripture</span></a></li>
+        <li><a href="#p4"><span class="toc-num">IV</span><span>The Watchers, the Nephilim, and the Days of Noah</span></a></li>
+        <li><a href="#p5"><span class="toc-num">V</span><span>A Brief Survey of Its Contents</span></a></li>
+        <li><a href="#p6"><span class="toc-num">VI</span><span>Why It Was Never Received as Scripture</span></a></li>
+        <li><a href="#p7"><span class="toc-num">VII</span><span>How to Use This Book Rightly</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- ── PART ONE ── -->
+    <div class="section-head" id="p1">
+      <p class="section-eyebrow">Part One</p>
+      <h2 class="section-title">What Is the Book of Enoch</h2>
+    </div>
+
+    <p class="body-text">The name is a little misleading, because "the Book of Enoch" is not one document written by one hand. What most people mean by the phrase is a Jewish writing today called 1 Enoch, or the Ethiopic Enoch, a collection of five separate booklets stitched together under Enoch&rsquo;s name over a span of roughly two or three centuries before Christ. The men who wrote it were not Enoch himself. Enoch lived before the flood, in the earliest chapters of Genesis, while the material inside this book reflects the concerns and language of Jewish writers living centuries later, wrestling with angels, judgment, and the coming of the Messiah in the shadow of foreign empires.</p>
+
+    <p class="body-text">Writing under the name of a revered figure from the distant past was a known practice in that era. It was a way of framing a message as ancient wisdom rather than a new opinion. Scholars call this kind of writing pseudepigraphal, meaning it carries a false attribution of authorship, without necessarily accusing the writers of malice. Whatever the motive, the plain fact remains that Enoch himself did not write this book.</p>
+
+    <p class="body-text">The complete text survives today mainly in an ancient Ethiopic language called Ge&rsquo;ez, which is why it is often called the Ethiopic Enoch. Fragments in the original Aramaic were also found among the Dead Sea Scrolls at Qumran, confirming that portions of it were circulating among Jewish communities well before the time of Christ. Those fragments are valuable for dating the material, but they do not change what kind of document it is.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">Bonus</p>
+      <p>There are actually three different ancient books that carry Enoch&rsquo;s name, and they are easy to confuse.</p>
+      <ul>
+        <li><strong>1 Enoch</strong> (Ethiopic Enoch) is the one described above, and the one that contains the material closest to what Jude quotes.</li>
+        <li><strong>2 Enoch</strong> (Slavonic Enoch) survives only in Old Church Slavonic and describes Enoch&rsquo;s ascent through ten heavens. It was composed later and is a separate work entirely.</li>
+        <li><strong>3 Enoch</strong> (Hebrew Enoch) is later still, a Jewish mystical text from the early centuries after Christ, unrelated in authorship to the other two.</li>
+      </ul>
+      <p>When people speak of "the Book of Enoch," they almost always mean 1 Enoch. That is the one this study examines.</p>
+    </div>
+
+    <p class="body-text">Only one body in Christian history has ever treated 1 Enoch as scripture, the Ethiopian Orthodox Tewahedo Church and the related Eritrean Orthodox Church, which include it in their Old Testament to this day. Every other stream of the faith, ancient Judaism, the Catholic Church, the Eastern Orthodox communions outside Ethiopia, and the whole of Protestant Christianity, has consistently placed it outside the canon. That is not a modern decision made out of ignorance. It reflects a judgment held across nearly the entire body of believers for the better part of two thousand years.</p>
+
+    <!-- ── PART TWO ── -->
+    <div class="section-head" id="p2">
+      <p class="section-eyebrow">Part Two</p>
+      <h2 class="section-title">Enoch the Man, According to Scripture</h2>
+    </div>
+
+    <p class="body-text">Before asking what a book about Enoch says, it is worth asking what the Bible itself says about the man. The answer is short, but every word carries weight.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 5:21&ndash;24</span>
+      <span class="scripture-text">And Enoch lived sixty and five years, and begat Methuselah: and Enoch walked with God after he begat Methuselah three hundred years, and begat sons and daughters: and all the days of Enoch were three hundred sixty and five years: and Enoch walked with God: and he was not; for God took him.</span>
+    </div>
+
+    <p class="body-text">Genesis tells us four things plainly. Enoch was seventh from Adam in the genealogical line, he walked with God, his life on earth ended without death because God took him, and this happened at three hundred sixty five years of age, a strikingly short lifespan compared to the men around him who lived nearly a thousand years. The text does not tell us what Enoch said, what he wrote, or what he saw. It tells us how he lived and how his life ended.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Hebrews 11:5</span>
+      <span class="scripture-text">By faith Enoch was translated that he should not see death; and was not found, because God had translated him: for before his translation he had this testimony, that he pleased God.</span>
+    </div>
+
+    <p class="body-text">Hebrews confirms and explains Genesis. Enoch&rsquo;s removal from the earth was an act of faith on his part and an act of favor on God&rsquo;s part. The testimony that mattered was not a body of writings left behind. It was a life that pleased God. That is the sum of what scripture tells us directly about the man himself, apart from the one line Jude preserves, which we turn to next.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>Everything scripture says about Enoch fits on a few lines, and none of it describes a book he wrote or a body of hidden teaching he left behind. What made Enoch remarkable was a walk with God that pleased Him, not a library of visions. Any book claiming to record Enoch&rsquo;s words in detail is, at best, a much later writer&rsquo;s attempt to imagine what such a man might have said.</p>
+    </div>
+
+    <!-- ── PART THREE ── -->
+    <div class="section-head" id="p3">
+      <p class="section-eyebrow">Part Three</p>
+      <h2 class="section-title">Why Jude Quotes a Book That Is Not Scripture</h2>
+    </div>
+
+    <p class="body-text">This is the verse that starts most of the questions, and it deserves to be read in full and taken seriously rather than explained away.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Jude 1:14&ndash;15</span>
+      <span class="scripture-text">And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, the Lord cometh with ten thousands of his saints, to execute judgment upon all, and to convict all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard speeches which ungodly sinners have spoken against him.</span>
+    </div>
+
+    <p class="body-text">Jude, writing under the inspiration of the Holy Ghost, attributes this line to Enoch and calls it a prophecy. This is the strongest connection anywhere in the New Testament between scripture and the Enoch writings, and it should be handled honestly rather than minimized or overblown in either direction.</p>
+
+    <p class="sub-head">Quoting a Source Is Not the Same as Canonizing It</p>
+
+    <p class="body-text">The key principle is simple and it is not unique to Jude. An inspired writer can affirm a single true statement from an outside source without thereby certifying everything else that source ever said as the word of God. Paul does exactly this more than once.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Acts 17:28</span>
+      <span class="scripture-text">For in him we live, and move, and have our being; as certain also of your own poets have said, For we are also his offspring.</span>
+      <span class="scripture-ref">Titus 1:12&ndash;13</span>
+      <span class="scripture-text">One of themselves, even a prophet of their own, said, The Cretians are alway liars, evil beasts, slow bellies. This witness is true.</span>
+    </div>
+
+    <p class="body-text">In Athens, Paul quotes a line from pagan Greek poets to make a point about God as Creator. In Titus, he quotes a Cretan poet, traditionally identified as Epimenides, and even calls the statement true. No one concludes from this that the entire body of Greek poetry, or the whole of Epimenides&rsquo; writing, has become scripture. Paul recognized a true statement inside a non-inspired work and used it, under the guidance of the Holy Ghost, to make an inspired point. That is precisely what Jude does with the line attributed to Enoch.</p>
+
+    <p class="body-text">There is a real difference between Jude&rsquo;s use of Enoch and Paul&rsquo;s use of pagan poets, and it is worth being honest about it. Jude calls the line a prophecy and attributes it directly to Enoch by name, which carries more weight than a passing literary quotation. What this shows is that a true prophetic word, first spoken by Enoch himself long before the flood, was preserved and later written down by others centuries afterward, folded into a larger collection that also contains a great deal of extra material Enoch never spoke. Jude, under inspiration, recognized and confirmed the one authentic thread. He did not thereby endorse the whole cloth it had been woven into.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Be careful not to overcorrect in either direction on this point. It is wrong to say Jude&rsquo;s quotation proves nothing about the Book of Enoch, since it does confirm that a genuine word from the historical Enoch survived and reached Jude in some form. It is equally wrong to say the quotation proves the whole book is inspired scripture, since Jude confirms one sentence, not a hundred chapters of angel names, calendars, and visions. Teach both halves together. A true statement was preserved inside a much later, much larger work that mixes that truth with material scripture nowhere else confirms.</p>
+    </div>
+
+    <!-- ── PART FOUR ── -->
+    <div class="section-head" id="p4">
+      <p class="section-eyebrow">Part Four</p>
+      <h2 class="section-title">The Watchers, the Nephilim, and the Days of Noah</h2>
+    </div>
+
+    <p class="body-text">The largest section of 1 Enoch, called the Book of Watchers, expands on one of the strangest passages in Genesis, the account of the sons of God, the daughters of men, and the Nephilim born just before the flood. Scripture itself confirms the outline of this event in more than one place, and it is worth seeing what is actually confirmed before looking at what the Book of Enoch adds.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 6:1&ndash;4</span>
+      <span class="scripture-text">And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them, that the sons of God saw the daughters of men that they were fair; and they took them wives of all which they chose... There were giants in the earth in those days; and also after that, when the sons of God came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.</span>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">2 Peter 2:4&ndash;5</span>
+      <span class="scripture-text">For if God spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment; and spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly.</span>
+      <span class="scripture-ref">Jude 1:6</span>
+      <span class="scripture-text">And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.</span>
+    </div>
+
+    <p class="body-text">Between Genesis, Peter, and Jude, scripture confirms a real event: angels who sinned by leaving their proper place, a corruption on the earth connected to that sin, and a flood that judged the whole world for it. That much stands on the authority of God&rsquo;s word alone, with no need to appeal to any outside book to establish it.</p>
+
+    <p class="body-text">The Book of Watchers takes this same event and adds an extensive narrative around it, names for two hundred fallen angels, a chief among them called Shemihazah and another called Azazel, an account of these Watchers teaching mankind forbidden arts such as metalworking, weapons, cosmetics, and sorcery, and giant offspring who devour the earth&rsquo;s resources and turn on mankind before the flood removes them. It is a vivid, detailed story, and it is easy to see why it captures attention.</p>
+
+    <p class="body-text">None of those specific details, the angel names, the number two hundred, the list of forbidden arts, come from scripture. They come entirely from this one ancient writing. That does not make them necessarily false in every particular, since the writers may have preserved some genuine tradition, but it does mean none of it carries the weight of God&rsquo;s word, and none of it should be taught in the church as though scripture confirmed it. Scripture confirms the outline. The Book of Enoch fills in a great deal of coloring that scripture is simply silent about, and where scripture is silent, the wise course is to remain silent as well rather than to speak with confidence about names and numbers no inspired writer ever set down.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>Fallen angels, corruption before the flood, and worldwide judgment are established by scripture alone and need no outside source to defend them. The specific names, numbers, and secret teachings attached to that event belong to the Book of Enoch, not to the Bible, and should be presented as such whenever they come up.</p>
+    </div>
+
+    <!-- ── PART FIVE ── -->
+    <div class="section-head" id="p5">
+      <p class="section-eyebrow">Part Five</p>
+      <h2 class="section-title">A Brief Survey of Its Contents</h2>
+    </div>
+
+    <p class="body-text">1 Enoch is made up of five distinct booklets, likely written by different hands at different times and later gathered into one collection. Knowing the shape of the whole helps put the famous Watchers material in its proper place.</p>
+
+    <p class="sub-head">The Five Sections</p>
+    <p class="body-text">The Book of Watchers opens the collection and contains the material on the fallen angels described above, along with visions of judgment and the heavenly realm. The Book of Parables, also called the Similitudes, follows with visions centered on a heavenly figure called the Son of Man and a coming judgment, language that has drawn comparison to the Gospels. The Astronomical Book presents an elaborate solar calendar attributed to angelic revelation. The Book of Dream Visions includes an allegory of Israel&rsquo;s history told through animals, often called the Animal Apocalypse. The Epistle of Enoch closes the collection with exhortations, blessings, and woes addressed to the righteous and the wicked.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">Bonus</p>
+      <p>The Book of Parables is the section most often connected to New Testament language about the Son of Man, but it is worth knowing that this section is notably absent from the Aramaic fragments found at Qumran. That absence has led many scholars to date the Parables later than the rest of the collection, possibly even into the first century after Christ. If that dating is correct, any influence likely ran in the opposite direction of what popular teaching sometimes assumes, from the wider expectation of a coming Son of Man figure into the Parables, rather than from the Parables into the Gospels.</p>
+    </div>
+
+    <p class="body-text">Taken as a whole, the collection reflects the concerns of Jewish writers living under foreign rule in the centuries before Christ, wrestling with the problem of evil, the fate of the wicked, and the timing of God&rsquo;s judgment. That context makes it a genuinely interesting historical window into the world Jesus was born into. It does not make it scripture.</p>
+
+    <div class="compare">
+      <div class="compare-col shadow">
+        <p class="compare-title">Where It Overlaps With Scripture</p>
+        <div class="compare-body">
+          Themes confirmed elsewhere in God&rsquo;s word:
+          <ul>
+            <li>Angels who sinned before the flood</li>
+            <li>A global flood as judgment on corruption</li>
+            <li>A coming day of judgment for the wicked</li>
+            <li>One genuine prophetic line, quoted by Jude</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare-col remains">
+        <p class="compare-title">Where It Departs From Scripture</p>
+        <div class="compare-body">
+          Material scripture nowhere confirms:
+          <ul>
+            <li>Named Watchers and a count of two hundred</li>
+            <li>Forbidden arts taught to mankind by angels</li>
+            <li>A full angelic solar calendar</li>
+            <li>Extended dream visions treated as revelation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PART SIX ── -->
+    <div class="section-head" id="p6">
+      <p class="section-eyebrow">Part Six</p>
+      <h2 class="section-title">Why It Was Never Received as Scripture</h2>
+    </div>
+
+    <p class="body-text">The question of canon is really a question of recognition, not invention. The church did not vote books into scripture. Believers, across generations and across a wide range of independent communities, recognized which writings carried the authentic voice of God and received them as such, while other writings, however interesting or ancient, were consistently set aside.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">2 Timothy 3:16&ndash;17</span>
+      <span class="scripture-text">All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: that the man of God may be perfect, throughly furnished unto all good works.</span>
+    </div>
+
+    <p class="body-text">Three plain reasons kept 1 Enoch outside that recognized body of scripture. First, it was never traceable to Enoch&rsquo;s own hand. It was written under his name by later authors, a common practice of the era but not the same thing as prophetic authorship. Second, it was never received by Israel as scripture. Jesus Himself described the recognized Hebrew canon as the law of Moses, the prophets, and the psalms, and 1 Enoch stands outside every category of that recognized body.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 24:44</span>
+      <span class="scripture-text">And he said unto them, These are the words which I spake unto you, while I was yet with you, that all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me.</span>
+    </div>
+
+    <p class="body-text">Third, and just as important, the wider church across nearly every stream and every century made the same judgment. When one small regional tradition receives a book that the whole rest of the believing world, ancient Judaism included, consistently sets aside, the weight of evidence rests firmly with the consistent testimony, not the exception.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Deuteronomy 29:29</span>
+      <span class="scripture-text">The secret things belong unto the LORD our God: but those things which are revealed belong unto us and to our children for ever, that we may do all the words of this law.</span>
+    </div>
+
+    <p class="body-text">This verse is a good governing principle for the whole discussion. God has revealed what He wants His people to know, and it is sufficient. Chasing after secret angel names or hidden calendars that scripture never records is not a mark of deeper spirituality. It is a distraction from the things God has actually chosen to reveal, which are more than enough to build a faithful life on.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Revelation 22:18&ndash;19 is sometimes quoted as a direct warning against the Book of Enoch, but be careful with that application. In its own context, that warning concerns adding to or taking from the prophecy of the book of Revelation itself, not the canon as a whole. It should not be stretched to say more than it says. The stronger and more honest case against treating 1 Enoch as scripture rests on the three points above: unknown late authorship, absence from the Hebrew canon Jesus affirmed, and the consistent judgment of the believing church across history, not on a proof text pressed beyond its original scope.</p>
+    </div>
+
+    <!-- ── PART SEVEN ── -->
+    <div class="section-head" id="p7">
+      <p class="section-eyebrow">Part Seven</p>
+      <h2 class="section-title">How to Use This Book Rightly</h2>
+    </div>
+
+    <p class="body-text">None of this means the Book of Enoch is worthless or that curiosity about it is wrong. It can be read the way any other ancient Jewish writing can be read, as a window into how people in the centuries before Christ thought about angels, judgment, and the world to come. That kind of historical interest is legitimate and can even sharpen a believer&rsquo;s appreciation for the world the New Testament was written into.</p>
+
+    <p class="body-text">The line that must never be crossed is treating it as a source of doctrine. No teaching should ever rest on a detail found only in the Book of Enoch and nowhere in scripture. No sermon should present its angel names, its calendar, or its visions as though God had spoken them. Everything must still be tested against the word God has already given.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Thessalonians 5:21</span>
+      <span class="scripture-text">Prove all things; hold fast that which is good.</span>
+      <span class="scripture-ref">1 John 4:1</span>
+      <span class="scripture-text">Beloved, believe not every spirit, but try the spirits whether they are of God: because many false prophets are gone out into the world.</span>
+    </div>
+
+    <p class="body-text">Read it if you are curious, the way you might read any historical document. Learn from it what it can honestly teach about the world Jesus stepped into. But keep a firm hand on the line scripture itself draws, letting the closed, recognized word of God remain the only standard by which doctrine is built and taught.</p>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <div class="conclusion">
+        <span class="conclusion-label">In Summary</span>
+        <p>The Book of Enoch is a real ancient writing with a real history, and it deserves an honest answer rather than either dismissal or fascination. Enoch the man walked with God and was taken up without seeing death, exactly as Genesis and Hebrews describe, and nothing more needs to be added to that testimony. Jude, moved by the Holy Ghost, confirmed one true prophetic line that had reached him through this later collection, the same way Paul once confirmed a true line from a pagan poet, without thereby certifying every page around it.</p>
+        <p>Scripture alone already establishes the fallen angels, the corruption before the flood, and the judgment that followed. The Book of Enoch adds names, numbers, and visions that God&rsquo;s word never confirms, and that silence should be respected rather than filled in from an outside source. What God has revealed is <em>sufficient</em>, and it is that revealed word, not the secret things that belong to Him alone, that we are called to build our faith and our teaching upon.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &#10022; &#10022;</div>
+    <p class="footer-text">Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>Work the Word &middot; Pronomian Teaching Series</p>
+  </footer>
+
+</div>
+</body>
+</html>

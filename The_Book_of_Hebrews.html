@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Book of Hebrews: A Better Priest, A Better Covenant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson-dark:#7A1F1F;
+    --crimson-light:#9B3434;
+    --parchment:#FAF6EE;
+    --gold:#C9A84C;
+    --ink:#2B2622;
+    --cream:#FBF3E2;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background:#EDE4CF;
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+  }
+
+  .page-wrap{
+    max-width:8.5in;
+    margin:0 auto;
+    background:var(--parchment);
+  }
+
+  /* ===== Crimson header bookend ===== */
+  .doc-header{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:38px 32px 30px;
+    border-bottom:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-header .eyebrow{
+    font-family:'Cinzel', serif;
+    letter-spacing:3px;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .doc-header h1{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    font-size:34px;
+    line-height:1.2;
+    margin:0 0 8px;
+  }
+  .doc-header .subtitle{
+    font-style:italic;
+    font-size:19px;
+    color:var(--cream);
+    opacity:.92;
+  }
+  .doc-header .anchor{
+    margin-top:14px;
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--gold);
+  }
+
+  /* ===== Body region with gold corner brackets ===== */
+  .body-region{
+    position:relative;
+    padding:40px 46px 46px;
+  }
+  .body-region::before,
+  .body-region::after{
+    content:"";
+    position:absolute;
+    width:42px; height:42px;
+    border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .body-region::before{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .body-region::after{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  .corner-br, .corner-bl{
+    position:absolute; width:42px; height:42px; border:3px solid var(--gold);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .corner-br{ top:14px; right:14px; border-left:none; border-bottom:none; }
+  .corner-bl{ bottom:14px; left:14px; border-right:none; border-top:none; }
+
+  h2{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-dark);
+    font-size:23px;
+    margin:34px 0 6px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--gold);
+    break-after:avoid;
+  }
+  h2 .num{ color:var(--gold); margin-right:8px; }
+
+  h3{
+    font-family:'Cinzel', serif;
+    font-weight:600;
+    color:var(--crimson-light);
+    font-size:18px;
+    margin:22px 0 4px;
+    break-after:avoid;
+  }
+
+  p{ margin:0 0 14px; }
+
+  .lead{ font-size:19px; }
+
+  /* Dropcap */
+  .dropcap::first-letter{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    float:left;
+    font-size:64px;
+    line-height:50px;
+    padding:6px 10px 0 0;
+  }
+
+  /* ===== Table of contents ===== */
+  .toc{
+    background:#fff;
+    border:1px solid #e3d9c4;
+    border-left:5px solid var(--gold);
+    padding:20px 26px;
+    margin:8px 0 10px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toc h2{
+    border:none; margin:0 0 8px; padding:0; font-size:19px;
+  }
+  .toc ol{ margin:0; padding-left:22px; columns:2; column-gap:34px; }
+  .toc li{ margin-bottom:5px; break-inside:avoid; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+
+  /* ===== Scripture box ===== */
+  .scripture{
+    background:#fff;
+    border-top:4px solid var(--gold);
+    border-radius:2px;
+    padding:16px 22px 12px;
+    margin:16px 0;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .scripture .ref{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:1px;
+    color:var(--crimson-dark);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .scripture p{ font-style:italic; margin:0 0 6px; }
+  .scripture p:last-child{ margin-bottom:0; }
+
+  /* ===== Keypoint panel (crimson border) ===== */
+  .keypoint{
+    border:2px solid var(--crimson-light);
+    border-radius:4px;
+    background:#fff;
+    padding:16px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .keypoint .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:var(--crimson-dark);
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .keypoint p:last-child{ margin-bottom:0; }
+
+  /* ===== Teacher / Bonus note (dashed gold) ===== */
+  .note{
+    border:2px dashed var(--gold);
+    border-radius:4px;
+    background:#FBF7EC;
+    padding:15px 22px;
+    margin:18px 0;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .note .label{
+    font-family:'Cinzel', serif;
+    font-weight:700;
+    color:#8a7320;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+  }
+  .note p:last-child{ margin-bottom:0; }
+
+  /* ===== Conclusion block ===== */
+  .conclusion{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    border-radius:4px;
+    padding:28px 32px;
+    margin:30px 0 8px;
+    break-inside:avoid;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .conclusion h2{
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+  }
+  .conclusion p{ margin-bottom:12px; }
+  .conclusion p:last-child{ margin-bottom:0; }
+  .conclusion .scripture{ background:rgba(255,255,255,.08); border-top-color:var(--gold); }
+  .conclusion .scripture .ref{ color:var(--gold); }
+  .conclusion .scripture p{ color:var(--cream); }
+
+  /* ===== Crimson footer bookend ===== */
+  .doc-footer{
+    background:linear-gradient(135deg, var(--crimson-dark), var(--crimson-light));
+    color:var(--cream);
+    text-align:center;
+    padding:24px 32px;
+    border-top:4px solid var(--gold);
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .doc-footer .verse{ font-family:'Cinzel', serif; color:var(--gold); letter-spacing:1px; font-size:14px; margin-bottom:6px; }
+  .doc-footer .small{ font-size:13px; opacity:.9; }
+
+  .page-break{ break-before:page; }
+
+  /* ===== Print rules ===== */
+  @page{
+    size:letter portrait;
+    margin:0.75in;
+    @bottom-center{
+      content:"Page " counter(page) " of " counter(pages);
+      font-family:'EB Garamond', serif;
+      font-size:10px;
+      color:#7A1F1F;
+    }
+  }
+
+  @media print{
+    body{ font-size:12.5pt; background:#fff; }
+    .page-wrap{ max-width:none; margin:0; }
+    .doc-header{ padding:26px 20px 22px; }
+    .doc-header h1{ font-size:26pt; }
+    .body-region{ padding:26px 20px 30px; }
+    h2{ font-size:16pt; }
+    h3{ font-size:13pt; }
+    a{ color:inherit; text-decoration:none; }
+    .no-print{ display:none !important; }
+  }
+
+  .print-tip{
+    max-width:8.5in;
+    margin:14px auto 0;
+    font-size:13px;
+    color:#7a6f57;
+    text-align:center;
+    font-style:italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- ============ HEADER ============ -->
+  <header class="doc-header">
+    <div class="eyebrow">Work the Word &middot; Pronomian Teaching</div>
+    <h1>The Book of Hebrews</h1>
+    <div class="subtitle">A Better Priest, a Better Covenant, and the Law Written on the Heart</div>
+    <div class="anchor">Jesus Christ the Same Yesterday, and To Day, and For Ever &middot; Hebrews 13:8</div>
+  </header>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-region">
+    <span class="corner-br"></span>
+    <span class="corner-bl"></span>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <h2>What This Teaching Covers</h2>
+      <ol>
+        <li><a href="#setting">The Setting of the Letter</a></li>
+        <li><a href="#son">God Has Spoken by His Son</a></li>
+        <li><a href="#drift">So Great Salvation, Do Not Drift</a></li>
+        <li><a href="#moses">Greater Than Moses, and the Warning of Unbelief</a></li>
+        <li><a href="#rest">There Remaineth a Rest</a></li>
+        <li><a href="#melchizedek">A Priest After the Order of Melchizedek</a></li>
+        <li><a href="#change">The Priesthood Changed, and What Changed With It</a></li>
+        <li><a href="#covenant">A Better Covenant: the Law on the Heart</a></li>
+        <li><a href="#once">One Sacrifice, Once for All</a></li>
+        <li><a href="#faith">The Great Cloud of Witnesses</a></li>
+        <li><a href="#race">Run the Race, and the Love of a Father</a></li>
+        <li><a href="#camp">Outside the Camp: the Closing Charge</a></li>
+        <li><a href="#close">The Whole Letter in One Breath</a></li>
+      </ol>
+    </nav>
+
+    <!-- ===================== SETTING ===================== -->
+    <h2 id="setting"><span class="num">1.</span>The Setting of the Letter</h2>
+    <p class="lead dropcap">This letter was written to Hebrew believers who were under real pressure. They had come to Christ, and it had cost them. Some had lost property, some had suffered reproach, some had watched friends dragged away. Now the old life was calling them back, back to the temple, back to the priests, back to the smoke of the altar and the rhythm of the sacrifices they had known from childhood. The whole letter is written to keep them from turning around.</p>
+
+    <p>So the writer does not argue that the law of God is bad, and he never says the commandments of God have been thrown away. He says something more careful and more glorious. He says that the priesthood and the sacrifices of the old order were a shadow, and that the shadow has now met its substance in Jesus Christ. To go back to the shadow, now that the true body has come, is to walk backward. That is the burden of the whole book.</p>
+
+    <div class="keypoint">
+      <div class="label">The Thread to Hold</div>
+      <p>Hebrews is not a book about the end of God's law. It is a book about the end of the shadow. The Aaronic priesthood and its sacrifices pointed forward to a Lamb and a Priest they could not themselves provide. When the Lamb was slain and the Priest sat down, the shadow had done its work. The moral law of God, His Sabbath, His feasts, and His clean and unclean distinctions were never the shadow. The blood of bulls and goats was.</p>
+    </div>
+
+    <!-- ===================== THE SON ===================== -->
+    <h2 id="son"><span class="num">2.</span>God Has Spoken by His Son</h2>
+    <p>The letter opens with a sweep. God spoke before in many pieces and many ways through the prophets. Now He has spoken with a final word, and the word is a Person.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 1:1&ndash;2</div>
+      <p>"God, who at sundry times and in divers manners spake in time past unto the fathers by the prophets, Hath in these last days spoken unto us by his Son, whom he hath appointed heir of all things, by whom also he made the worlds;"</p>
+    </div>
+
+    <p>The Son is not one more prophet in the line. He is the One the prophets were pointing to. He made the worlds, He holds them up, and He has done what no prophet and no priest could do. He purged our sins Himself, and then He sat down.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 1:3</div>
+      <p>"Who being the brightness of his glory, and the express image of his person, and upholding all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;"</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Watch the Posture</div>
+      <p>Under the old order no priest ever sat down in the holy place, because the work was never finished. There was always another sacrifice tomorrow. When the writer says the Son sat down, he is telling us the sacrifice is complete. Keep this picture in mind. It comes back with force in chapters nine and ten.</p>
+    </div>
+
+    <p>The chapter goes on to show the Son set high above the angels, the very messengers Israel held in such honor. If the Son is above the angels who delivered the law at Sinai, then the voice that now speaks in Him carries a weight we cannot ignore.</p>
+
+    <!-- ===================== DRIFT ===================== -->
+    <h2 id="drift"><span class="num">3.</span>So Great Salvation, Do Not Drift</h2>
+    <p>Here comes the first of the great warnings in this letter. The danger is not always a loud rebellion. Often it is a quiet slipping away, a slow drift, a letting go of what we once held.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 2:1</div>
+      <p>"Therefore we ought to give the more earnest heed to the things which we have heard, lest at any time we should let them slip."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 2:3</div>
+      <p>"How shall we escape, if we neglect so great salvation; which at the first began to be spoken by the Lord, and was confirmed unto us by them that heard him;"</p>
+    </div>
+
+    <p>Then the letter turns to why the Son came down so low. He was made lower than the angels for a season, so that He could taste death for us and break the grip of the one who held death over our heads.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 2:9</div>
+      <p>"But we see Jesus, who was made a little lower than the angels for the suffering of death, crowned with glory and honour; that he by the grace of God should taste death for every man."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 2:14&ndash;15</div>
+      <p>"Forasmuch then as the children are partakers of flesh and blood, he also himself likewise took part of the same; that through death he might destroy him that had the power of death, that is, the devil; And deliver them who through fear of death were all their lifetime subject to bondage."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Why He Took Flesh</div>
+      <p>He became one of us so He could die for us, and He died so that the fear of death would no longer rule us. This is grace from first to last. Our standing before God does not rest on our record. It rests on His finished work.</p>
+    </div>
+
+    <!-- ===================== MOSES ===================== -->
+    <h2 id="moses" class="page-break"><span class="num">4.</span>Greater Than Moses, and the Warning of Unbelief</h2>
+    <p>Moses was faithful, and the letter honors him. But Moses was faithful as a servant in God's house. Christ is faithful as a Son over the house, and the house is us.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 3:1&ndash;2</div>
+      <p>"Wherefore, holy brethren, partakers of the heavenly calling, consider the Apostle and High Priest of our profession, Christ Jesus; Who was faithful to him that appointed him, as also Moses was faithful in all his house."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 3:5&ndash;6</div>
+      <p>"And Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after; But Christ as a son over his own house; whose house are we, if we hold fast the confidence and the rejoicing of the hope firm unto the end."</p>
+    </div>
+
+    <p>The writer then reaches back to the wilderness. A whole generation came out of Egypt, saw the wonders of God, and still did not enter the promised rest. Why not? The answer is one word. Unbelief.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 3:12</div>
+      <p>"Take heed, brethren, lest there be in any of you an evil heart of unbelief, in departing from the living God."</p>
+    </div>
+
+    <p>This is the hinge into chapter four. The rest that the wilderness generation missed was never only a plot of land. It was a deeper rest, and it was still open.</p>
+
+    <!-- ===================== REST ===================== -->
+    <h2 id="rest"><span class="num">5.</span>There Remaineth a Rest</h2>
+    <p>Chapter four holds one of the clearest lines in the whole letter for us. God finished His work of creation and rested on the seventh day. Israel entered Canaan under Joshua, yet the writer says a rest still remains, which means Canaan was not the whole of it. The rest of God is still held out to His people.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 4:9&ndash;11</div>
+      <p>"There remaineth therefore a rest to the people of God. For he that is entered into his rest, he also hath ceased from his own works, as God did from his. Let us labour therefore to enter into that rest, lest any man fall after the same example of unbelief."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">On the Word "Rest"</div>
+      <p>The word rendered "rest" in verse nine is a word that means a Sabbath keeping, a seventh-day rest. The writer chooses it on purpose. He roots the whole idea in creation, in the seventh day when God rested, and he says that pattern of rest still stands for the people of God. This does not empty the Sabbath of meaning. It fills it. The weekly Sabbath is a sign and a foretaste of a rest that reaches all the way to the kingdom to come. We keep the day, and in keeping it we lean toward the greater rest it promises.</p>
+    </div>
+
+    <p>Chapter four closes by lifting our eyes to the Priest who lets us come near without fear. He knows our weakness from the inside, because He was tempted as we are, yet He never sinned.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 4:14&ndash;16</div>
+      <p>"Seeing then that we have a great high priest, that is passed into the heavens, Jesus the Son of God, let us hold fast our profession. For we have not an high priest which cannot be touched with the feeling of our infirmities; but was in all points tempted like as we are, yet without sin. Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need."</p>
+    </div>
+
+    <!-- ===================== MELCHIZEDEK ===================== -->
+    <h2 id="melchizedek" class="page-break"><span class="num">6.</span>A Priest After the Order of Melchizedek</h2>
+    <p>Now the letter reaches its heart. Jesus is our High Priest, but here is the difficulty the Hebrew reader would feel at once. Jesus came from the tribe of Judah, and no priest under the law of Moses could come from Judah. Priests came from the line of Aaron, in the tribe of Levi. So how can Jesus be a priest at all?</p>
+
+    <p>The answer is that there is an older priesthood than Aaron's, and Scripture named it long before Sinai. God swore to His Son that He would be a priest of a different order altogether.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 5:5&ndash;6</div>
+      <p>"So also Christ glorified not himself to be made an high priest; but he that said unto him, Thou art my Son, to day have I begotten thee. As he saith also in another place, Thou art a priest for ever after the order of Melchisedec."</p>
+    </div>
+
+    <p>To understand this we go back to Abraham. Long before Aaron, long before the law was given at Sinai, Abraham met a priest-king named Melchizedek, and Abraham gave him a tenth of everything.</p>
+
+    <div class="scripture">
+      <div class="ref">Genesis 14:18&ndash;20</div>
+      <p>"And Melchizedek king of Salem brought forth bread and wine: and he was the priest of the most high God. And he blessed him, and said, Blessed be Abram of the most high God, possessor of heaven and earth: And blessed be the most high God, which hath delivered thine enemies into thy hand. And he gave him tithes of all."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 7:1&ndash;3</div>
+      <p>"For this Melchisedec, king of Salem, priest of the most high God, who met Abraham returning from the slaughter of the kings, and blessed him; To whom also Abraham gave a tenth part of all; first being by interpretation King of righteousness, and after that also King of Salem, which is, King of peace; Without father, without mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of God; abideth a priest continually."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">The Tithe Rests on an Older Order</div>
+      <p>Notice the order of events. Abraham paid a tenth to a priest of the most high God centuries before the tribe of Levi existed and centuries before the law of Moses was given. The tithe did not begin with the Levitical system, so it does not end when that system is fulfilled. It rests on the priesthood of Melchizedek, and that is the very order Christ belongs to. Our High Priest lives forever after the order of Melchizedek, so the tithe brought to Him and to His work stands on ground older and deeper than Sinai.</p>
+    </div>
+
+    <!-- ===================== CHANGE OF LAW ===================== -->
+    <h2 id="change"><span class="num">7.</span>The Priesthood Changed, and What Changed With It</h2>
+    <p>Here is a verse that people quote too quickly and read too broadly. Because Christ is a priest of the order of Melchizedek and not of Aaron, the writer says there has been a change in the law. We must read carefully to see exactly which law he means.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 7:11&ndash;12</div>
+      <p>"If therefore perfection were by the Levitical priesthood, (for under it the people received the law,) what further need was there that another priest should rise after the order of Melchisedec, and not be called after the order of Aaron? For the priesthood being changed, there is made of necessity a change also of the law."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 7:14</div>
+      <p>"For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">Which Law Was Changed</div>
+      <p>Read verse twelve inside its own argument. The whole passage is about who may serve as priest. The law that had to change is the law that restricted the priesthood to the sons of Aaron in the tribe of Levi. Since Christ came from Judah, that restriction had to give way so that He could serve as our Priest. This verse is speaking about the law that governs the priesthood, not about the moral law of God, not about the Sabbath, and not about the feasts. To read it as though the writer erased the commandments of God is to make him contradict the very thing he is about to say in the next chapter, that God writes His laws on our hearts.</p>
+    </div>
+
+    <p>The strength of this new priesthood is that it never ends. Aaron died, and his sons died, and the office passed on again and again. Our Priest never dies, so His priesthood never passes to another. That is why He can save completely and pray for us without ceasing.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 7:24&ndash;25</div>
+      <p>"But this man, because he continueth ever, hath an unchangeable priesthood. Wherefore he is able also to save them to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 7:26&ndash;27</div>
+      <p>"For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens; Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people's: for this he did once, when he offered up himself."</p>
+    </div>
+
+    <!-- ===================== COVENANT ===================== -->
+    <h2 id="covenant" class="page-break"><span class="num">8.</span>A Better Covenant: the Law on the Heart</h2>
+    <p>Chapter eight names the ministry of Christ a better ministry, and the covenant He mediates a better covenant. This is the passage where some hear the word "better" and jump to the conclusion that the law is gone. But look at what the better covenant actually contains, because the writer quotes the prophet to tell us.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 8:1</div>
+      <p>"Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens;"</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 8:6</div>
+      <p>"But now hath he obtained a more excellent ministry, by how much also he is the mediator of a better covenant, which was established upon better promises."</p>
+    </div>
+
+    <p>Now hear the promise of that better covenant, drawn straight from the prophet Jeremiah. The heart of the new covenant is not a covenant without law. It is a covenant where the law is moved from stone tablets into living hearts.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 8:10</div>
+      <p>"For this is the covenant that I will make with the house of Israel after those days, saith the Lord; I will put my laws into their mind, and write them in their hearts: and I will be to them a God, and they shall be to me a people."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Jeremiah 31:33</div>
+      <p>"But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">The Pronomian Heart of Hebrews</div>
+      <p>Read the promise closely. God does not say He will do away with His law. He says He will write the same law that was on stone into the mind and heart of His people. The old covenant asked for obedience from the outside. The better covenant produces obedience from the inside, by the Spirit. So the new covenant is not the absence of God's law. It is the law brought home, loved rather than merely obeyed. What is better is not that the commandments left us, but that God put them within us.</p>
+    </div>
+
+    <!-- ===================== ONE SACRIFICE ===================== -->
+    <h2 id="once"><span class="num">9.</span>One Sacrifice, Once for All</h2>
+    <p>Chapters nine and ten bring the sacrificial system to its rest. The old tabernacle, its holy places, and its endless offerings were a copy of a greater reality in heaven. Christ did not enter a tent made by hands. He entered heaven itself, and He carried His own blood, not the blood of animals.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 9:11&ndash;12</div>
+      <p>"But Christ being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands, that is to say, not of this building; Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 9:24</div>
+      <p>"For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us:"</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 9:27&ndash;28</div>
+      <p>"And as it is appointed unto men once to die, but after this the judgment: So Christ was once offered to bear the sins of many; and unto them that look for him shall he appear the second time without sin unto salvation."</p>
+    </div>
+
+    <p>Then chapter ten states the point plainly. The law had a shadow of the good things coming, and a shadow can never make anyone perfect. That is why the sacrifices had to be repeated year after year. They pointed forward, but they could not finish the work. Christ finished it in one offering.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 10:1</div>
+      <p>"For the law having a shadow of good things to come, and not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 10:10</div>
+      <p>"By the which will we are sanctified through the offering of the body of Jesus Christ once for all."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 10:12&ndash;14</div>
+      <p>"But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God; From henceforth expecting till his enemies be made his footstool. For by one offering he hath perfected for ever them that are sanctified."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">The Shadow That Was Fulfilled</div>
+      <p>When Hebrews speaks of a shadow passing, it is speaking of the sacrificial and priestly system, the blood of bulls and goats offered year by year. That is the shadow, and Christ is the substance. Notice again how the writer returns to the covenant promise here in chapter ten, verses sixteen and seventeen. Even while he lays the animal sacrifices to rest, he repeats that God writes His laws on our hearts. The offerings are finished. The law of God written within us is not.</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 10:16&ndash;17</div>
+      <p>"This is the covenant that I will make with them after those days, saith the Lord, I will put my laws into their hearts, and in their minds will I write them; And their sins and iniquities will I remember no more."</p>
+    </div>
+
+    <p>Chapter ten closes with a sober warning and a tender promise side by side. To turn away willfully after knowing the truth is a fearful thing, because there is no other sacrifice to run to. Yet the writer will not leave his people in fear. He calls them to live by faith and not to draw back.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 10:38&ndash;39</div>
+      <p>"Now the just shall live by faith: but if any man draw back, my soul shall have no pleasure in him. But we are not of them who draw back unto perdition; but of them that believe to the saving of the soul."</p>
+    </div>
+
+    <!-- ===================== FAITH ===================== -->
+    <h2 id="faith" class="page-break"><span class="num">10.</span>The Great Cloud of Witnesses</h2>
+    <p>Chapter eleven is the roll call of faith. The writer defines faith, then walks us through the men and women who lived by it. And notice the shape of their faith. In every case, faith showed itself in obedience. Abel offered, Noah built, Abraham went out. Faith was never a bare feeling. It moved their feet.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 11:1</div>
+      <p>"Now faith is the substance of things hoped for, the evidence of things not seen."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 11:6</div>
+      <p>"But without faith it is impossible to please him: for he that cometh to God must believe that he is, and that he is a rewarder of them that diligently seek him."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 11:8</div>
+      <p>"By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went."</p>
+    </div>
+
+    <div class="keypoint">
+      <div class="label">Faith and Obedience Are Friends, Not Rivals</div>
+      <p>Every hero of chapter eleven was justified by faith, not by works. Yet in each one, that faith obeyed. This is exactly the balance we hold. We are saved by grace through faith alone, and never by our keeping of the law. But true faith always walks. Obedience is the fruit that grows on the tree of faith. It is the evidence of a saved heart, never the price of a saved soul.</p>
+    </div>
+
+    <!-- ===================== RACE ===================== -->
+    <h2 id="race"><span class="num">11.</span>Run the Race, and the Love of a Father</h2>
+    <p>Because that great cloud of faithful witnesses has gone before us, chapter twelve calls us to run our own race with endurance, with our eyes fixed on the One who ran it first and finished it perfectly.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 12:1&ndash;2</div>
+      <p>"Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us, Looking unto Jesus the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of God."</p>
+    </div>
+
+    <p>The chapter then speaks of the Lord's correction of His children. This is meant to comfort, not to crush. When a father corrects, it is a sign of love and of belonging, not of rejection.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 12:6</div>
+      <p>"For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">A Word of Care</div>
+      <p>This passage is about the loving training of a Father who is raising His children, and it is written to steady weary hands and feeble knees. It is not a tool to explain away every hardship or to tell a grieving person that their loss was aimed at them as punishment. Handle it the way the writer does, gently, as the reassurance of a Father's love toward those who are His.</p>
+    </div>
+
+    <p>Chapter twelve ends by lifting our gaze to the unshakable kingdom we are receiving, and it calls us to serve God with reverence, for He remains holy and glorious.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 12:14</div>
+      <p>"Follow peace with all men, and holiness, without which no man shall see the Lord:"</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 12:28&ndash;29</div>
+      <p>"Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve God acceptably with reverence and godly fear: For our God is a consuming fire."</p>
+    </div>
+
+    <!-- ===================== CAMP ===================== -->
+    <h2 id="camp" class="page-break"><span class="num">12.</span>Outside the Camp: the Closing Charge</h2>
+    <p>Chapter thirteen brings the great truths down into daily life. Love one another. Welcome strangers. Honor marriage. Be content, because God has promised never to leave us.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 13:1&ndash;2</div>
+      <p>"Let brotherly love continue. Be not forgetful to entertain strangers: for thereby some have entertained angels unawares."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 13:4</div>
+      <p>"Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 13:5</div>
+      <p>"Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee."</p>
+    </div>
+
+    <p>Then comes the anchor verse of the whole book, the one that ties the shadow and the substance together. The One who is our Priest never changes.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 13:8</div>
+      <p>"Jesus Christ the same yesterday, and to day, and for ever."</p>
+    </div>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 13:9</div>
+      <p>"Be not carried about with divers and strange doctrines. For it is a good thing that the heart be established with grace; not with meats, which have not profited them that have been occupied therein."</p>
+    </div>
+
+    <div class="note">
+      <div class="label">On the "Meats" in Verse Nine</div>
+      <p>Read verse nine with the very next verse, where the writer speaks of the altar. The whole context is the temple service, the ceremonial portions eaten by those who ministered at the altar, and the traditions built up around that ritual eating. He is saying the heart is settled by grace, not by ritual meals tied to the old sacrificial system. He is not overturning the clean and unclean distinctions God set apart from the days of Noah and wrote into His law. Those distinctions mark a people set apart. The ritual meats of a fulfilled altar are a different matter entirely.</p>
+    </div>
+
+    <p>The writer then paints the final picture. Jesus suffered outside the gate of the city, outside the camp, and he calls us to go out to Him there, bearing the reproach He bore, because our true home is not in this world but in the city to come.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 13:12&ndash;14</div>
+      <p>"Wherefore Jesus also, that he might sanctify the people with his own blood, suffered without the gate. Let us go forth therefore unto him without the camp, bearing his reproach. For here have we no continuing city, but we seek one to come."</p>
+    </div>
+
+    <p>The letter ends with a benediction that gathers up everything it has taught. The everlasting covenant, the great Shepherd, the God of peace working His will inside us.</p>
+
+    <div class="scripture">
+      <div class="ref">Hebrews 13:20&ndash;21</div>
+      <p>"Now the God of peace, that brought again from the dead our Lord Jesus, that great shepherd of the sheep, through the blood of the everlasting covenant, Make you perfect in every good work to do his will, working in you that which is well-pleasing in his sight, through Jesus Christ; to whom be glory for ever and ever. Amen."</p>
+    </div>
+
+    <!-- ===================== CONCLUSION ===================== -->
+    <div class="conclusion" id="close">
+      <h2>The Whole Letter in One Breath</h2>
+      <p>Hebrews was written to keep tired believers from turning back to a system that was only ever a shadow. The animal sacrifices could not perfect anyone. The Aaronic priests died and had to be replaced. The blood of bulls and goats had to be offered again and again, because it pointed forward to a Lamb it could not itself be.</p>
+      <p>Then the Lamb came. Christ, our High Priest after the order of Melchizedek, offered Himself once, entered heaven itself, sat down, and lives forever to pray for us. The shadow met its substance, and the substance is a Person. So the sacrificial and priestly system has done its work and rests in Him.</p>
+      <p>But hear the balance of this letter to the end. The very same covenant that finishes the animal sacrifices is the covenant that writes God's law upon the heart. Hebrews never lays the commandments of God in the grave. It lays the shadow there, and it lifts the law up into a living heart, loved and kept by the Spirit. A rest remains for the people of God. A law is written within the people of God. And the Priest who secures it all is the same yesterday, today, and forever.</p>
+      <div class="scripture">
+        <div class="ref">Hebrews 13:8</div>
+        <p>"Jesus Christ the same yesterday, and to day, and for ever."</p>
+      </div>
+    </div>
+
+  </div><!-- end body-region -->
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="doc-footer">
+    <div class="verse">Study to shew thyself approved unto God &middot; 2 Timothy 2:15</div>
+    <div class="small">Work the Word &middot; Pronomian Teaching Series</div>
+  </footer>
+
+</div><!-- end page-wrap -->
+
+<p class="print-tip no-print">To print with page numbers, use your browser's print dialog and enable "Headers and footers" if the footer does not appear.</p>
+
+</body>
+</html>

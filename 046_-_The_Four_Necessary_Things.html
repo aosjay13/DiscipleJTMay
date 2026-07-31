@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Four Necessary Things &middot; Acts 15 and the Question of Obedience</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* HEADER */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 1.1rem; }
+  .doc-eyebrow { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .doc-title { font-family: 'Cinzel', serif; font-size: clamp(1.55rem, 4vw, 2.35rem); font-weight: 700; color: #FBF6E9; letter-spacing: 0.03em; line-height: 1.22; text-transform: uppercase; text-shadow: 0 2px 6px rgba(0,0,0,0.28); }
+  .doc-subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(0.95rem, 2vw, 1.12rem); color: var(--gold-pale); margin-top: 0.9rem; opacity: 0.93; }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* BODY */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  .intro { margin: 2.7rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .intro-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+  .intro p { font-size: 1.07rem; line-height: 1.85; color: var(--ink-mid); text-align: justify; }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter { font-family: 'Cinzel', serif; font-size: 3.4rem; font-weight: 700; float: left; line-height: 0.82; padding: 0.1rem 0.6rem 0 0; color: var(--crimson); }
+
+  .toc { margin: 2.4rem 0; padding: 1.6rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.95rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.7rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 2rem; flex-shrink: 0; }
+
+  .article { margin-top: 2.8rem; padding-top: 2.4rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.85rem; margin-bottom: 1.1rem; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.2rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.28rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.85; color: var(--ink-mid); text-align: justify; margin-bottom: 1.3rem; }
+  .article-body:last-child { margin-bottom: 0; }
+  .article-body strong { color: var(--crimson); font-weight: 600; }
+
+  .subhead { font-family: 'Cinzel', serif; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin: 1.9rem 0 0.85rem; }
+
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--crimson-lt); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 0.7rem; }
+
+  .scripture-block { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+
+  .keypoint { margin: 1.7rem 0; padding: 1.1rem 1.4rem; background: #FBF7EE; border-left: 4px solid var(--crimson); }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.6rem; }
+  .keypoint-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  .bonus-panel { margin: 1.8rem 0; padding: 1.3rem 1.5rem; background: var(--gold-pale); border: 1px dashed var(--gold-light); }
+  .bonus-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson-lt); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem; }
+  .bonus-star { color: var(--gold); font-size: 0.85rem; }
+  .bonus-body { font-size: 0.98rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus-body p + p { margin-top: 0.7rem; }
+
+  .teacher-note { margin: 1.8rem 0; padding: 1.3rem 1.5rem; background: var(--parchment); border: 1px dashed var(--gold-light); }
+  .teacher-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .teacher-body { font-size: 0.96rem; line-height: 1.78; color: var(--ink-soft); }
+  .teacher-body p + p { margin-top: 0.7rem; }
+
+  .list { margin: 1.1rem 0 1.1rem 1.4rem; }
+  .list li { font-size: 1.02rem; line-height: 1.8; color: var(--ink-mid); margin-bottom: 0.6rem; break-inside: avoid; }
+  .list li strong { color: var(--crimson); font-weight: 600; }
+
+  .conclusion { margin-top: 3rem; padding: 2.2rem 2.4rem; background: linear-gradient(135deg, #5E1717 0%, #7A1F1F 100%); color: var(--gold-pale); position: relative; }
+  .conclusion::after { content: ''; position: absolute; inset: 9px; border: 1px solid rgba(201,168,76,0.35); pointer-events: none; }
+  .conclusion-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .conclusion p { font-size: 1.03rem; line-height: 1.85; color: #F6EFE0; text-align: justify; }
+  .conclusion p + p { margin-top: 0.85rem; }
+
+  /* FOOTER */
+  .doc-footer {
+    text-align: center;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 10px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-verse { font-family: 'EB Garamond', serif; font-style: italic; font-size: 0.95rem; color: var(--gold-pale); margin-top: 0.7rem; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.6rem; }
+
+  /* PRINT */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; font-size: 11pt; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-body { padding: 0 0 1rem; }
+    .doc-header, .doc-footer, .conclusion { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .doc-header { padding: 2rem 1.5rem 1.6rem; }
+
+    .scripture-block, .scripture-entry, .section, .keypoint,
+    .bonus-panel, .teacher-note, .list li, .toc-list li {
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .article-header, .section-title, .subhead, .scripture-label,
+    .conclusion-label, .keypoint-label { page-break-after: avoid; break-after: avoid; }
+    .article-body { orphans: 3; widows: 3; }
+    .toc { page-break-after: always; break-after: page; }
+    .print-new-page { page-break-before: always; break-before: page; }
+    .conclusion { page-break-before: auto; }
+    .doc-footer { page-break-before: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.2rem 1.4rem 1.6rem; }
+    .conclusion { padding: 1.5rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">Pronomian Teaching Series</p>
+    <h1 class="doc-title">The Four Necessary Things</h1>
+    <p class="doc-subtitle">Acts 15, the Jerusalem Council, and the Question of Obedience</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">Few passages in the New Testament are pressed into service against obedience more often than Acts chapter fifteen. The argument is made simply. The apostles gathered at Jerusalem, considered what to require of Gentile believers, and settled on four items. Since God's commandments run to far more than four, the reasoning goes, everything else must have been quietly set aside. Believers today are told they are free from the Sabbath, free from the appointed times, free from the dietary distinctions, free from anything not named in that short list.</p>
+      <p>That reading collapses the moment we ask what question the council was actually convened to answer. A council answers the question put before it. It does not silently abolish every subject it never discussed. When we read the chapter carefully, watch the men who wrote the letter, and follow what they themselves did afterward, a very different picture emerges. The four things were not a ceiling placed over the Gentiles. They were a doorway opened to them.</p>
+    </section>
+
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span> The Question Actually Before the Council</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span> Peter's Testimony and the Yoke</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span> The Verdict of James and the Verse Everyone Skips</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span> Where the Four Things Came From</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span> What the Letter Never Mentions</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span> What the Apostles Did After the Council</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span> Faith, Fruit, and the Order of Things</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span> Answering the Objection Plainly</a></li>
+      </ul>
+    </nav>
+
+    <article class="article" id="s1">
+      <div class="article-header">
+        <span class="article-num">I.</span>
+        <h2 class="article-title">The Question Actually Before the Council</h2>
+      </div>
+
+      <p class="article-body">Luke tells us exactly what started the dispute, and he tells us in the very first verse of the chapter. Certain men came down from Judaea and began teaching something specific. Read their claim slowly, because everything in the chapter turns on it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Charge That Started It</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 15:1</span>
+          <span class="scripture-text">And certain men which came down from Judaea taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 15:5</span>
+          <span class="scripture-text">But there rose up certain of the sect of the Pharisees which believed, saying, That it was needful to circumcise them, and to command them to keep the law of Moses.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Notice the three words at the end of verse one: <strong>ye cannot be saved</strong>. That is the whole controversy. The question was never whether a Gentile believer ought to walk uprightly, honor his parents, keep himself from idols, or remember the day the Lord set apart. The question was whether a Gentile had to become a circumcised proselyte, entering through the ritual door of conversion, in order to be counted saved at all.</p>
+
+      <p class="article-body">That is a question about the ground of salvation. It is not a question about the shape of a believer's life. The men in verse five wanted circumcision made a requirement for standing before God, and they wanted the Gentiles placed under the full apparatus of proselyte conversion as the price of admission. The council said no. It said no because salvation has never been purchased by any work of man, and grafting a ritual requirement onto grace corrupts the gospel itself.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Key Point</p>
+        <p class="keypoint-body">The Jerusalem Council was called to settle how a man is saved, not to settle how a saved man should live. Reading Acts 15 as a list of permitted commandments answers a question the apostles were never asked.</p>
+      </div>
+    </article>
+
+    <article class="article" id="s2">
+      <div class="article-header">
+        <span class="article-num">II.</span>
+        <h2 class="article-title">Peter's Testimony and the Yoke</h2>
+      </div>
+
+      <p class="article-body">Peter stands up and appeals to what God had already done in the house of Cornelius. He does not argue from theory. He argues from the plain fact that God gave the Holy Ghost to uncircumcised Gentiles who believed, before any ritual step was taken.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Peter Before the Council</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 15:7-9</span>
+          <span class="scripture-text">And when there had been much disputing, Peter rose up, and said unto them, Men and brethren, ye know how that a good while ago God made choice among us, that the Gentiles by my mouth should hear the word of the gospel, and believe. And God, which knoweth the hearts, bare them witness, giving them the Holy Ghost, even as he did unto us; And put no difference between us and them, purifying their hearts by faith.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 15:10-11</span>
+          <span class="scripture-text">Now therefore why tempt ye God, to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear? But we believe that through the grace of the Lord Jesus Christ we shall be saved, even as they.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Verse eleven is the hinge. Peter is not saying the Gentiles are exempt from something the Jews still carry. He says the opposite. He says <strong>we shall be saved even as they</strong>, by grace, on the same terms, in the same way. The Jew is not saved by circumcision either. Both stand on grace or neither stands at all.</p>
+
+      <p class="subhead">What Is the Yoke?</p>
+
+      <p class="article-body">Much has been built on this one word. It is worth being careful here, because the yoke cannot mean what many assume it means. If the yoke were simply God's law, we would have Peter contradicting the plain testimony of scripture in a dozen places.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Character of God's Commandments</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 John 5:3</span>
+          <span class="scripture-text">For this is the love of God, that we keep his commandments: and his commandments are not grievous.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 30:11</span>
+          <span class="scripture-text">For this commandment which I command thee this day, it is not hidden from thee, neither is it far off.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 19:7-8</span>
+          <span class="scripture-text">The law of the LORD is perfect, converting the soul: the testimony of the LORD is sure, making wise the simple. The statutes of the LORD are right, rejoicing the heart: the commandment of the LORD is pure, enlightening the eyes.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 11:29-30</span>
+          <span class="scripture-text">Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Scripture does not describe God's instruction as an unbearable weight. It describes it as perfect, right, pure, near at hand, and a joy to the heart. Something else is being named in Acts 15:10. In context, the yoke is the demand made in verses one and five: the requirement that a man earn his standing before God through the ritual gateway of conversion, and carry the whole system as the price of being accepted. That is a load no one has ever borne successfully, because no one has ever kept anything perfectly enough to purchase righteousness. Paul says the same thing when he warns that a man who seeks justification by circumcision has made himself a debtor to do the whole law, and has fallen from grace as a method of salvation.</p>
+
+      <div class="teacher-note">
+        <p class="teacher-label">Teacher's Note</p>
+        <p class="teacher-body">Be honest with students about this point. The word translated yoke is not defined for us in the passage, and sincere believers read it differently. Some take it as the full weight of the sacrificial and priestly system, some as the accumulated traditions layered on top of the written word, some as the burden of works-righteousness itself. What can be said with confidence is what it cannot mean, because scripture will not allow God's own commandments to be called an intolerable burden. Teach the boundary firmly and hold the precise identification loosely.</p>
+      </div>
+    </article>
+
+    <article class="article" id="s3">
+      <div class="article-header">
+        <span class="article-num">III.</span>
+        <h2 class="article-title">The Verdict of James and the Verse Everyone Skips</h2>
+      </div>
+
+      <p class="article-body">James gives the sentence of the council. Most teaching on this chapter quotes verses nineteen and twenty and stops there. The very next verse is the one that explains the whole decision, and it is almost always left out.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Sentence of James</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 15:19-21</span>
+          <span class="scripture-text">Wherefore my sentence is, that we trouble not them, which from among the Gentiles are turned to God: But that we write unto them, that they abstain from pollutions of idols, and from fornication, and from things strangled, and from blood. For Moses of old time hath in every city them that preach him, being read in the synagogues every sabbath day.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Read verse twenty and verse twenty-one together, because James joined them with the word <em>for</em>. He is giving the reason for his ruling. Write these four things to them, <strong>because</strong> Moses is preached in every city and read in the synagogues every Sabbath day.</p>
+
+      <p class="article-body">If the council had just abolished the rest of God's instruction for Gentile believers, verse twenty-one is nonsense. Why would James close a ruling that supposedly frees Gentiles from the law by pointing out that the law is taught publicly every single week in every city they live in? That sentence only makes sense one way. The four items are what the new believer needs immediately, before he can sit at the table with anyone. The rest he will learn week by week as he sits and hears, the way any new disciple learns.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Key Point</p>
+        <p class="keypoint-body">Verse twenty-one is not an afterthought. It is the reason attached to the ruling. James expected these Gentile converts to be in the assembly every Sabbath, hearing the word taught, growing into the fullness of it over time. He was not writing a permanent four-item constitution. He was clearing the entrance so they could walk in and start learning.</p>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>Consider the practical situation. A pagan converts. He has grown up eating food from the idol temple, drinking blood in ritual meals, and living in a culture where sexual immorality was woven into worship itself. He cannot yet sit down and share a meal with Jewish believers because everything about his table would offend. The four items address exactly that gap. They are the immediate, urgent break with pagan worship that makes fellowship possible from day one. Everything else comes through teaching, and teaching takes time.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="s4">
+      <div class="article-header">
+        <span class="article-num">IV.</span>
+        <h2 class="article-title">Where the Four Things Came From</h2>
+      </div>
+
+      <p class="article-body">Here is the detail that undoes the popular reading entirely. The four requirements were not newly invented by the apostles. They were drawn straight out of the law of Moses, from the section that specifically governs the stranger who dwells among Israel. James did not replace Torah with a shorter list. He quoted Torah.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Source of the Four</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 17:8-9</span>
+          <span class="scripture-text">And thou shalt say unto them, Whatsoever man there be of the house of Israel, or of the strangers which sojourn among you, that offereth a burnt offering or sacrifice, And bringeth it not unto the door of the tabernacle of the congregation, to offer it unto the LORD; even that man shall be cut off from among his people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 17:10</span>
+          <span class="scripture-text">And whatsoever man there be of the house of Israel, or of the strangers that sojourn among you, that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 17:13</span>
+          <span class="scripture-text">And whatsoever man there be of the children of Israel, or of the strangers that sojourn among you, which hunteth and catcheth any beast or fowl that may be eaten; he shall even pour out the blood thereof, and cover it with dust.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 18:26</span>
+          <span class="scripture-text">Ye shall therefore keep my statutes and my judgments, and shall not commit any of these abominations; neither any of your own nation, nor any stranger that sojourneth among you.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Line them up. Pollutions of idols answers to sacrifice offered away from the Lord and to the worship of other gods. Blood and things strangled answer to the prohibition on eating blood and the requirement to drain it properly. Fornication answers to the whole catalogue of sexual sin in Leviticus eighteen, which closes by binding the stranger to the same standard as the native born.</p>
+
+      <p class="article-body">This is decisive. If the council intended to release Gentiles from the law of Moses, it is a strange thing that every single requirement they issued was lifted from the law of Moses. What they did was point the new convert to the very passage that had always governed the stranger joining himself to the covenant people, and start him there.</p>
+
+      <div class="teacher-note">
+        <p class="teacher-label">Teacher's Note</p>
+        <p class="teacher-body">The parallel with Leviticus seventeen and eighteen is strong and worth teaching, but do not overstate it as though James named the chapter. He did not. What we have is four requirements that correspond closely to four prohibitions binding on the sojourner in that section, in roughly the same order. Present it as a compelling correspondence that fits the evidence, not as a stated citation.</p>
+      </div>
+    </article>
+
+    <article class="article print-new-page" id="s5">
+      <div class="article-header">
+        <span class="article-num">V.</span>
+        <h2 class="article-title">What the Letter Never Mentions</h2>
+      </div>
+
+      <p class="article-body">Suppose for a moment the popular reading is correct, and the four items are the complete and exclusive set of obligations placed on Gentile believers. Follow that all the way out and see where it lands.</p>
+
+      <p class="article-body">The letter says nothing about murder. Nothing about theft. Nothing about bearing false witness. Nothing about honoring father and mother. Nothing about coveting. Nothing about taking the Lord's name in vain. If the list is exhaustive, then a Gentile believer in the first century was free to lie, steal, and kill, so long as he stayed away from strangled meat.</p>
+
+      <p class="article-body">No one believes that. Every honest reader admits at once that the moral commandments obviously still applied. But the instant that admission is made, the argument has already been surrendered. The list is no longer exhaustive. It is a starting point, and now the only remaining question is who decides which of the unmentioned commandments carried forward and which did not. Scripture decides, not our preferences.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Key Point</p>
+        <p class="keypoint-body">A list that omits murder and theft cannot be a complete statement of Christian duty. Everyone recognizes this instinctively for the commandments they already intend to keep. The same logic applies to the commandments they would rather set down.</p>
+      </div>
+
+      <p class="article-body">And this is where the Sabbath question answers itself. The Sabbath is not omitted from the chapter. It is named in verse twenty-one. James assumes without argument that these Gentile believers will be in the assembly every Sabbath day hearing the word taught. He does not command it because he does not have to. It is simply the assumed rhythm of the community they were joining.</p>
+    </article>
+
+    <article class="article" id="s6">
+      <div class="article-header">
+        <span class="article-num">VI.</span>
+        <h2 class="article-title">What the Apostles Did After the Council</h2>
+      </div>
+
+      <p class="article-body">If Acts 15 abolished obedience, the men who wrote it never got the message. Watch what Paul does after the council, in the same book, written by the same author.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Paul After Jerusalem</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 18:21</span>
+          <span class="scripture-text">But bade them farewell, saying, I must by all means keep this feast that cometh in Jerusalem: but I will return again unto you, if God will. And he sailed from Ephesus.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 20:6</span>
+          <span class="scripture-text">And we sailed away from Philippi after the days of unleavened bread, and came unto them to Troas in five days; where we abode seven days.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 21:23-24</span>
+          <span class="scripture-text">Do therefore this that we say to thee: We have four men which have a vow on them; Them take, and purify thyself with them, and be at charges with them, that they may shave their heads: and all may know that those things, whereof they were informed concerning thee, are nothing; but that thou thyself also walkest orderly, and keepest the law.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 24:14</span>
+          <span class="scripture-text">But this I confess unto thee, that after the way which they call heresy, so worship I the God of my fathers, believing all things which are written in the law and in the prophets.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 25:8</span>
+          <span class="scripture-text">While he answered for himself, Neither against the law of the Jews, neither against the temple, nor yet against Caesar, have I offended any thing at all.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Acts twenty-one deserves particular attention. It happens years after the council. James is present. The elders are present. They tell Paul that a rumor is circulating that he teaches men to forsake Moses, and they instruct him to publicly demonstrate that the rumor is false, that he himself walks orderly and keeps the law. Paul complies. He does not object that the council settled all of that. He does not say the law was abolished at Jerusalem. He goes into the temple and proves the accusation false.</p>
+
+      <p class="article-body">In the very same passage, the elders restate the letter to the Gentiles, and they restate it exactly as it was written, four items and nothing more. They saw no conflict between the letter and Paul demonstrating his own obedience. There is no conflict, because the letter never abolished anything.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Paul on the Law in His Letters</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 3:31</span>
+          <span class="scripture-text">Do we then make void the law through faith? God forbid: yea, we establish the law.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 7:12</span>
+          <span class="scripture-text">Wherefore the law is holy, and the commandment holy, and just, and good.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 5:7-8</span>
+          <span class="scripture-text">Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us: Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 7:19</span>
+          <span class="scripture-text">Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of God.</span>
+        </div>
+      </div>
+
+      <p class="article-body">First Corinthians chapter seven verse nineteen is a remarkable sentence when you sit with it. Paul, writing to a Gentile congregation, says circumcision counts for nothing and uncircumcision counts for nothing, and then names what does count: keeping the commandments of God. That verse alone settles the matter. Paul removes the ritual entrance requirement in exactly the way the council did, and in the same breath upholds obedience.</p>
+
+      <p class="article-body">And in First Corinthians five he tells a Gentile church to keep the feast. He does not tell them it was abolished. He tells them how to keep it rightly, with sincerity and truth, because Christ our Passover is sacrificed for us.</p>
+    </article>
+
+    <article class="article" id="s7">
+      <div class="article-header">
+        <span class="article-num">VII.</span>
+        <h2 class="article-title">Faith, Fruit, and the Order of Things</h2>
+      </div>
+
+      <p class="article-body">All of this rests on getting the order right, and the order matters more than almost anything else in this discussion.</p>
+
+      <p class="article-body">We are saved by grace through faith, and that is not of ourselves. Nothing we do earns it, adds to it, or secures it. The council said so plainly and we say so plainly. But a person who has been saved does not stay the same. Obedience is not the price of the gift. It is the evidence that the gift was received.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Grace and Its Fruit</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 2:8-10</span>
+          <span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 14:15</span>
+          <span class="scripture-text">If ye love me, keep my commandments.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 John 2:4</span>
+          <span class="scripture-text">He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 5:17-19</span>
+          <span class="scripture-text">Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled. Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, shall be called great in the kingdom of heaven.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Ephesians two is the whole thing in three verses. Verses eight and nine cut off every claim of merit. Verse ten tells us what we were saved for: good works which God prepared beforehand that we should walk in them. Salvation is the beginning of obedience, not the end of it.</p>
+
+      <p class="subhead">Growth Takes Time</p>
+
+      <p class="article-body">There is also something pastoral here that the council understood well. New believers are not handed everything at once. They are fed, taught, and grown.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Pattern of Discipleship</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 5:12-14</span>
+          <span class="scripture-text">For when for the time ye ought to be teachers, ye have need that one teach you again which be the first principles of the oracles of God; and are become such as have need of milk, and not of strong meat. For every one that useth milk is unskilful in the word of righteousness: for he is a babe. But strong meat belongeth to them that are of full age, even those who by reason of use have their senses exercised to discern both good and evil.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Peter 2:2</span>
+          <span class="scripture-text">As newborn babes, desire the sincere milk of the word, that ye may grow thereby.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The four things were milk. James said so in his own way when he pointed to the synagogues and the Sabbath reading. Start here, break with the idol temple immediately, and then sit under the word and grow. That is discipleship, and it is exactly how the Lord commissioned it, teaching them to observe all things whatsoever he commanded.</p>
+    </article>
+
+    <article class="article" id="s8">
+      <div class="article-header">
+        <span class="article-num">VIII.</span>
+        <h2 class="article-title">Answering the Objection Plainly</h2>
+      </div>
+
+      <p class="article-body">Set the pieces side by side and the answer is not difficult.</p>
+
+      <ul class="list">
+        <li><strong>The question asked was about salvation.</strong> Verse one says it plainly. Certain men taught that a Gentile could not be saved without circumcision. That is what the council answered, and it answered no.</li>
+        <li><strong>The answer given was about grace.</strong> Peter said hearts are purified by faith and that Jew and Gentile alike are saved by the grace of the Lord Jesus Christ. Nothing is added to that.</li>
+        <li><strong>The four requirements came out of the law.</strong> They correspond to the very statutes that had always governed the stranger dwelling among the covenant people. Torah was not replaced with a shorter list. A portion of Torah was named as the immediate starting point.</li>
+        <li><strong>The reason given points forward, not backward.</strong> Moses is read in the synagogues every Sabbath. The council expected these believers to keep hearing and keep growing.</li>
+        <li><strong>The list is obviously incomplete.</strong> It omits murder, theft, false witness, and honoring parents. No one treats it as exhaustive when the omitted commandment is one they already keep.</li>
+        <li><strong>The men who wrote it kept the commandments.</strong> Paul kept the feasts, kept the appointed times, purified himself in the temple to prove he walked orderly, and told a Gentile church that what counts is keeping the commandments of God.</li>
+      </ul>
+
+      <p class="article-body">So the answer to the question is this. The apostles were not telling Gentile believers to ignore God's commandments. They were removing a false requirement that had been laid on the door of salvation, and they were setting a new convert's feet on the first four steps of a road they expected him to keep walking.</p>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>There is a mirror image error worth naming, because it is just as dangerous. Some read Acts 15 correctly, see that obedience continues, and then swing so far that they begin treating their own obedience as the thing that secures them. That is the exact error the council condemned, only wearing different clothes. The men in verse five were not wrong to value the commandments. They were wrong to make a commandment the doorway into salvation.</p>
+          <p>Guard both sides. Grace alone saves. Obedience alone is the evidence. The moment obedience becomes the ground of standing rather than the fruit of it, we have walked right back into Acts 15:1 and called it faithfulness.</p>
+        </div>
+      </div>
+    </article>
+
+    <div class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <p>The Jerusalem Council did not lower the standard of holiness. It refused to let anyone raise a toll gate in front of the cross. A Gentile coming out of paganism did not need to be surgically converted into a Jew to belong to Christ. He needed to believe, and he was received on the spot, exactly as Cornelius was received.</p>
+      <p>Then he was told four things, and told where to go every Sabbath to learn the rest. Break with the idol temple. Break with sexual sin. Break with the blood of the pagan table. Come in, sit down, and hear the word taught. That is not a shorter religion. That is a door held open and a lifetime of learning on the other side of it.</p>
+      <p>So when someone says the apostles freed us from the commandments in Acts fifteen, take them gently to verse twenty-one and let James finish his sentence. He never intended those four things to be the end of the matter. He expected them to be the beginning.</p>
+    </div>
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-verse">Study to shew thyself approved unto God · 2 Timothy 2:15</p>
+    <p class="footer-text">Work the Word · Pronomian Teaching Series</p>
+  </footer>
+
+</div>
+</body>
+</html>

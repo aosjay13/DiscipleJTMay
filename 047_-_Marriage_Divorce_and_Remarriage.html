@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marriage, Divorce, and Remarriage &middot; A Pronomian Teaching</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; page-break-inside: avoid; break-inside: avoid; }
+  .toc-list a {
+    font-size: 0.95rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    min-width: 2.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em.term { font-style: italic; color: var(--crimson); font-weight: 500; }
+
+  .sub-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 1.6rem 0 0.6rem;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* ── SCRIPTURE ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+  .scripture .scripture-ref + .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── KEYPOINT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+  .keypoint p { font-size: 1.04rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── CUSTOM / DEFINITION CARD ── */
+  .custom {
+    margin: 1.4rem 0;
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    background: var(--cream);
+    padding: 1.4rem 1.6rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .custom-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.7rem;
+  }
+  .custom-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--crimson);
+    letter-spacing: 0.02em;
+  }
+  .custom-meaning { font-style: italic; font-size: 0.95rem; color: var(--ink-soft); }
+  .custom-body { font-size: 1.04rem; line-height: 1.82; color: var(--ink-mid); }
+  .custom-body p + p { margin-top: 0.7rem; }
+  .custom-body strong { color: var(--ink); }
+  .custom-echo {
+    margin-top: 0.9rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .custom-echo strong {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '✦'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER'S NOTE PANEL ── */
+  .tnote {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--parchment);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .tnote-label::before { content: '✦'; color: var(--gold-light); }
+  .tnote p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .tnote p + p { margin-top: 0.8rem; }
+  .tnote strong { color: var(--ink); }
+
+  /* ── GROUNDS LIST ── */
+  .grounds { list-style: none; margin: 1.4rem 0; }
+  .grounds > li {
+    padding: 1rem 1.3rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold-light);
+    margin-bottom: 0.9rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .grounds > li strong {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .grounds > li span { font-size: 1.02rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── CONCLUSION (crimson) ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  .conclusion-body { font-size: 1.05rem; line-height: 1.85; color: #EDE0C4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
+
+  /* ── PRINT (8.5in x 11in portrait) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+  @media print {
+    body { background: white; padding: 0; font-size: 11pt; }
+    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page::before, .page::after { display: none; }
+    .doc-body { padding: 0; }
+    .doc-header { padding: 1.6rem 1.4rem 1.2rem; margin-bottom: 0.4rem; }
+    .doc-footer { padding: 1.4rem; margin-top: 1.6rem; }
+    .scripture, .keypoint, .bonus, .tnote, .custom,
+    .grounds > li, .toc, .toc-list li, .conclusion { page-break-inside: avoid; break-inside: avoid; }
+    .section-header, .sub-title, .intro-label, .toc-title { page-break-after: avoid; break-after: avoid; }
+    .section { margin-top: 1.8rem; padding-top: 1.4rem; }
+    .print-new-page { page-break-before: always; break-before: page; }
+    .doc-header, .doc-footer, .conclusion, .keypoint, .scripture,
+    .bonus, .custom, .grounds > li, .toc {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">Pronomian Teaching Series</p>
+    <h1 class="doc-title">Marriage, Divorce,<br>and Remarriage</h1>
+    <p class="doc-subtitle">What the Scripture Establishes, What It Permits, and What It Forbids</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">Few subjects are handled worse in the modern church than this one. On one side stand those who treat the marriage covenant as though it were a lease, dissolved at will and renewed at pleasure. On the other stand those who bind burdens on wounded people that the Scripture never bound, telling the abandoned wife and the betrayed husband that they must carry a life sentence for a covenant somebody else broke. Both errors come from the same root: reading a verse or two in isolation instead of receiving the whole counsel of God.</p>
+      <p>This teaching takes the long way around on purpose. We begin where God began, at the creation of the first marriage, because everything Christ says on the subject He says by pointing back there. Then we look at how a marriage was actually made in Israel, because the words the Scripture uses assume a world of customs that most readers today have never been shown. Once those customs are in view, passages that have puzzled believers for centuries begin to read plainly. Only then do we come to the hard questions of divorce and remarriage, and we come to them with the text in hand rather than with the traditions of men.</p>
+      <p>Our aim is not to make this subject comfortable. It is to make it clear.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span><span>Marriage as God Instituted It</span></a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span><span>Marriage Is a Covenant, and God Is the Witness</span></a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span><span>How a Marriage Was Made in Ancient Israel</span></a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span><span>Betrothal, and Why It Unlocks the New Testament</span></a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span><span>The Duties the Covenant Placed on Each Party</span></a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span><span>What the Law Actually Says About Divorce</span></a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span><span>The Question the Pharisees Brought to Christ</span></a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span><span>The Words of the Master</span></a></li>
+        <li><a href="#s9"><span class="toc-num">IX.</span><span>The Apostolic Instruction to the Assemblies</span></a></li>
+        <li><a href="#s10"><span class="toc-num">X.</span><span>The Grounds the Scripture Recognizes</span></a></li>
+        <li><a href="#s11"><span class="toc-num">XI.</span><span>Remarriage: When It Is Adultery and When It Is Not</span></a></li>
+        <li><a href="#s12"><span class="toc-num">XII.</span><span>Unions the Scripture Forbids Outright</span></a></li>
+        <li><a href="#s13"><span class="toc-num">XIII.</span><span>Grace for Those Already Divorced</span></a></li>
+        <li><a href="#s14"><span class="toc-num">XIV.</span><span>Counsel for the Household and the Assembly</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">Marriage as God Instituted It</h2>
+      </div>
+      <div class="section-body">
+        <p>Marriage is not a human invention that God later regulated. It is the first institution God established, given before the fall, before the flood, before Abraham, and before Sinai. It belongs to the created order itself. That is why it binds every man and woman on earth and not merely those who are in covenant with God.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 2:18</span>
+          <span class="scripture-text">And the LORD God said, It is not good that the man should be alone; I will make him an help meet for him.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 2:21&ndash;24</span>
+          <span class="scripture-text">And the LORD God caused a deep sleep to fall upon Adam, and he slept: and he took one of his ribs, and closed up the flesh instead thereof; And the rib, which the LORD God had taken from man, made he a woman, and brought her unto the man. And Adam said, This is now bone of my bones, and flesh of my flesh: she shall be called Woman, because she was taken out of Man. Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.</span>
+        </div>
+
+        <p>Four things are settled in that single passage, and every later teaching on marriage rests on them. First, marriage is between a man and a woman, because the woman was made for the man and brought to him by God Himself. Second, it involves a leaving, a public and permanent departure from the household of origin. Third, it involves a cleaving, a word that carries the sense of being glued or welded, not merely placed side by side. Fourth, it produces a new reality, one flesh, which did not exist before the covenant was made.</p>
+
+        <p>Notice also who officiated. No priest was present, because there was no priesthood yet. No elders witnessed it, because there were no other people. God brought the woman to the man, and that act constituted the marriage. From the very beginning, marriage is something God does, not merely something a society records.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>Because marriage was instituted at creation rather than at Sinai, its standard is not limited to Israel and it did not pass away with the Levitical priesthood. It is written into the design of humanity itself. This is precisely the argument Christ Himself makes when the subject is raised, and it is the reason He answers a legal question by quoting Genesis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">Marriage Is a Covenant, and God Is the Witness</h2>
+      </div>
+      <div class="section-body">
+        <p>The Scripture never speaks of marriage as a private arrangement between two consenting adults. It speaks of it as a covenant, and it names God as the witness to that covenant. This is the single most important thing a believer can grasp about marriage, because it explains why breaking it is not simply a disappointment but a treachery.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Malachi 2:14&ndash;16</span>
+          <span class="scripture-text">Yet ye say, Wherefore? Because the LORD hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant. And did not he make one? Yet had he the residue of the spirit. And wherefore one? That he might seek a godly seed. Therefore take heed to your spirit, and let none deal treacherously against the wife of his youth. For the LORD, the God of Israel, saith that he hateth putting away: for one covereth violence with his garment, saith the LORD of hosts: therefore take heed to your spirit, that ye deal not treacherously.</span>
+        </div>
+
+        <p>Read that passage carefully, because it is commonly cited in a way that flattens it. God says three things here that must be held together. He says He was a witness to the covenant. He says the man dealt treacherously in breaking it. And He says He hates putting away. He does not say He forbids it absolutely; He says He hates it. That distinction will matter greatly later, because the same God who says He hates putting away is the God who wrote the law regulating it, and who describes Himself as having done it.</p>
+
+        <p>The prophet also identifies the underlying sin. It is not paperwork; it is treachery. The man is condemned for covering violence with his garment, that is, for using the form of legality to conceal a cruelty. God is not fooled by a properly executed document when the heart behind it is faithless.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Proverbs 2:17</span>
+          <span class="scripture-text">Which forsaketh the guide of her youth, and forgetteth the covenant of her God.</span>
+        </div>
+
+        <p>Note the phrase there: the covenant of her God. The marriage covenant is called God's covenant, not merely the woman's. It belongs to Him. That is why a man cannot dissolve it on his own authority any more than a debtor can cancel his own note.</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>In Scripture, covenants are regularly confirmed by three things: a spoken vow, a physical sign, and a shared meal or offering. Marriage in Israel had all three. There were vows and public declarations, the consummation of the union, and a wedding feast that could last a full week. When the Scripture later describes God's relationship with Israel as a marriage, and Christ's relationship with the church as a betrothal, it is not reaching for a poetic image. It is using the covenant pattern that marriage was designed to display from the beginning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section print-new-page" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">How a Marriage Was Made in Ancient Israel</h2>
+      </div>
+      <div class="section-body">
+        <p>The Scripture assumes its readers know how marriages were made. It rarely explains the customs because the first hearers lived inside them. Modern readers do not, and that gap is the source of a great deal of confusion. What follows is drawn from the Scripture itself, supported where useful by the record of Jewish practice preserved in the Mishnah and in marriage documents that have survived from antiquity. These traditions are witnesses that help us hear the text as the first hearers heard it. They are not additional revelation, and where they go beyond what the Scripture says, we say so plainly.</p>
+
+        <div class="custom">
+          <div class="custom-head">
+            <span class="custom-name">The Arrangement</span>
+            <span class="custom-meaning">shiddukhin</span>
+          </div>
+          <div class="custom-body">
+            <p>A marriage began not with private romance but with a negotiation between families, usually conducted by the father of the groom or a trusted representative acting on his behalf. Terms were discussed, suitability was weighed, and the consent of the bride and her household was sought.</p>
+          </div>
+          <div class="custom-echo">
+            <strong>In Scripture</strong>
+            Abraham sends his eldest servant to find a wife for Isaac, and the servant negotiates with Rebekah's family, who then call her and ask directly, "Wilt thou go with this man?" Her consent is recorded before the match is concluded. Genesis 24 remains the fullest picture in the Bible of how this stage worked.
+          </div>
+        </div>
+
+        <div class="custom">
+          <div class="custom-head">
+            <span class="custom-name">The Bride Price</span>
+            <span class="custom-meaning">mohar</span>
+          </div>
+          <div class="custom-body">
+            <p>The groom paid a substantial price to the bride's father. This was not the purchase of a woman as property; it was a costly public pledge that the man was able and willing to provide, and it compensated the family for the loss of a daughter's labor and presence. A man who could not pay could serve for it instead.</p>
+          </div>
+          <div class="custom-echo">
+            <strong>In Scripture</strong>
+            Exodus 22:16&ndash;17 sets the standard price of a virgin. Jacob served seven years for Rachel, and then seven more. Saul, seeking David's death, set the bride price for Michal at a hundred Philistine foreskins rather than silver. In every case the principle holds: a bride was obtained at real cost to the bridegroom.
+          </div>
+        </div>
+
+        <div class="custom">
+          <div class="custom-head">
+            <span class="custom-name">The Written Covenant</span>
+            <span class="custom-meaning">ketubah</span>
+          </div>
+          <div class="custom-body">
+            <p>A written marriage document set out what the husband owed his wife: her maintenance, her support, and a sum payable to her if he died or if he divorced her. Its purpose was to protect the woman. It made abandonment expensive and it guaranteed that a discarded or widowed wife would not be destitute.</p>
+            <p>Written marriage contracts of exactly this kind have survived from the Jewish community at Elephantine in Egypt, dating to roughly five centuries before Christ, and from the Judean desert in the century after Him. This is not speculation; the documents themselves have been recovered and read.</p>
+          </div>
+          <div class="custom-echo">
+            <strong>In Scripture</strong>
+            The Law itself already assumes written instruments in marriage matters, requiring a written bill of divorcement in Deuteronomy 24:1. A culture that required divorce in writing plainly understood marriage as a documented legal covenant, not a private understanding.
+          </div>
+        </div>
+
+        <div class="custom">
+          <div class="custom-head">
+            <span class="custom-name">The Betrothal</span>
+            <span class="custom-meaning">erusin, also called kiddushin</span>
+          </div>
+          <div class="custom-body">
+            <p>This is the stage most foreign to modern readers, and the most important. Betrothal was not an engagement in the modern sense. It was the legally binding beginning of the marriage. From the moment of betrothal the woman was called the man's wife, unfaithfulness on her part was adultery rather than fornication, and the union could only be dissolved by a formal bill of divorcement.</p>
+            <p>Yet the couple did not yet live together. The bride remained in her father's house, commonly for about a year, while the groom made ready. A blessing was pronounced over a cup of wine at the betrothal, and gifts were given to the bride.</p>
+          </div>
+          <div class="custom-echo">
+            <strong>In Scripture</strong>
+            Deuteronomy 22:23&ndash;24 treats a betrothed virgin as a married woman, calling her "his neighbour's wife" though the wedding had not yet occurred. Deuteronomy 20:7 excuses a betrothed man from war lest he die before taking his wife.
+          </div>
+        </div>
+
+        <div class="custom">
+          <div class="custom-head">
+            <span class="custom-name">The Prepared Place</span>
+          </div>
+          <div class="custom-body">
+            <p>During the betrothal year the groom's work was to make a home ready. In that society sons commonly did not move away but built onto the father's house, adding a chamber for the new couple. The bride's work was to prepare herself and her household goods. Neither party knew the exact day the wedding would be called.</p>
+          </div>
+          <div class="custom-echo">
+            <strong>In Scripture</strong>
+            The bridegroom coming forth from his chamber is a familiar image in Psalm 19:5 and Joel 2:16. The canopy under which the couple was joined, the chuppah, takes its name from that same chamber.
+          </div>
+        </div>
+
+        <div class="custom">
+          <div class="custom-head">
+            <span class="custom-name">The Wedding</span>
+            <span class="custom-meaning">nissuin</span>
+          </div>
+          <div class="custom-body">
+            <p>When the time came, the groom went to fetch his bride, often at night, accompanied by his companions and by torches and lamps. The bride was taken to the prepared chamber, the marriage was consummated, and the feast began.</p>
+          </div>
+          <div class="custom-echo">
+            <strong>In Scripture</strong>
+            The parable of the ten virgins in Matthew 25 is built entirely on this custom: a night arrival, a cry raised, lamps needed, and a door shut against the unprepared. John the Baptist calls himself the friend of the bridegroom in John 3:29, a recognized role in the wedding party.
+          </div>
+        </div>
+
+        <div class="custom">
+          <div class="custom-head">
+            <span class="custom-name">The Seven Day Feast</span>
+          </div>
+          <div class="custom-body">
+            <p>The wedding celebration ran a full week. The whole village shared in it, which is one more reason marriage was never a private matter. It was a public covenant witnessed by an entire community.</p>
+          </div>
+          <div class="custom-echo">
+            <strong>In Scripture</strong>
+            Laban tells Jacob to "fulfil her week" before receiving Rachel in Genesis 29:27. Samson's wedding feast in Judges 14:12 likewise runs seven days. And the newly married man was released from military service and public duty for a full year, Deuteronomy 24:5, that he might "cheer up his wife which he hath taken."
+          </div>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Some popular teaching on the Hebrew wedding goes further than the evidence allows, and a careful teacher should know where the line falls. The two stage structure of betrothal and wedding, the bride price, the written marriage document, the year of waiting, the night procession, the friend of the bridegroom, and the seven day feast are all well attested in Scripture, in the Mishnah, or in surviving documents.</p>
+          <p>Other details commonly preached are homiletical rather than documented. The claim that the bride sealed her acceptance by drinking a cup the groom offered, and the claim that only the father could declare the chamber ready so that the groom himself did not know the day, are illustrations built on the customs rather than facts drawn from them. They preach beautifully and they may well reflect real practice, but they should be offered as illustration, not asserted as history. The doctrine of Christ's return rests on the plain words of Scripture, not on a wedding custom.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Betrothal, and Why It Unlocks the New Testament</h2>
+      </div>
+      <div class="section-body">
+        <p>Once betrothal is understood, several passages that trouble readers become immediately plain.</p>
+
+        <p class="sub-title">Joseph and Mary</p>
+        <p>Readers often stumble over Joseph's situation. If he and Mary were only engaged, why does the text call him her husband, and why would he need to divorce her?</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 1:18&ndash;19</span>
+          <span class="scripture-text">Now the birth of Jesus Christ was on this wise: When as his mother Mary was espoused to Joseph, before they came together, she was found with child of the Holy Ghost. Then Joseph her husband, being a just man, and not willing to make her a publick example, was minded to put her away privily.</span>
+        </div>
+
+        <p>The passage is exact. They were espoused, that is, betrothed. They had not yet come together, so the wedding had not occurred and they were not living as husband and wife. Yet he is called her husband, because betrothal made him so, and his only lawful remedy was to put her away, that is, to divorce her. And note the character of the man: being just, he sought the quietest lawful path rather than the most public one. Righteousness and mercy were not at war in him.</p>
+
+        <p class="sub-title">The Bridegroom Who Comes at an Unknown Hour</p>
+        <p>Christ repeatedly casts Himself as a bridegroom in the middle of a betrothal. He has paid the price. He has departed to His Father's house. He is preparing a place. He will return for His bride, and the day is not announced in advance.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 14:2&ndash;3</span>
+          <span class="scripture-text">In my Father's house are many mansions: if it were not so, I would have told you. I go to prepare a place for you. And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 25:6</span>
+          <span class="scripture-text">And at midnight there was a cry made, Behold, the bridegroom cometh; go ye out to meet him.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 19:7&ndash;8</span>
+          <span class="scripture-text">Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready. And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>The believer stands today in the betrothal period. The price has been paid, the covenant is legally binding, and the bride is not yet gathered home. This is why the New Testament speaks so urgently about faithfulness during the waiting. A betrothed bride who gives herself to another is not merely unwise; under the covenant she is an adulteress. That is the weight behind every warning about spiritual adultery in the epistles.</p>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>Look at what the bride is clothed in at the marriage supper: fine linen, and the text tells us plainly that the linen is the righteousness of saints. Notice that it was <strong>granted</strong> to her. She did not weave it herself. Yet she wears it, and it is called hers, and she is described as having made herself ready. Here in one verse is the whole balance of grace and obedience. The garment is a gift, and the wearing of it is her life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Duties the Covenant Placed on Each Party</h2>
+      </div>
+      <div class="section-body">
+        <p>The Law did not leave the obligations of marriage to sentiment. It named them. And it attached a consequence when a husband failed to meet them.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Exodus 21:10&ndash;11</span>
+          <span class="scripture-text">If he take him another wife; her food, her raiment, and her duty of marriage, shall he not diminish. And if he do not these three unto her, then shall she go out free without money.</span>
+        </div>
+
+        <p>Three obligations are named: provision, covering, and marital affection. These were owed even to a woman in the most vulnerable legal position in Israelite society. If the husband withheld them, she went out free, and she went out without owing him anything. Whatever else this passage establishes, it establishes that God does not regard a woman as permanently bound to a man who has abandoned his end of the covenant entirely.</p>
+
+        <p>The New Testament raises rather than lowers the standard, because it grounds the husband's duty in the sacrifice of Christ.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 5:22&ndash;25</span>
+          <span class="scripture-text">Wives, submit yourselves unto your own husbands, as unto the Lord. For the husband is the head of the wife, even as Christ is the head of the church: and he is the saviour of the body. Therefore as the church is subject unto Christ, so let the wives be to their own husbands in every thing. Husbands, love your wives, even as Christ also loved the church, and gave himself for it.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 5:31&ndash;33</span>
+          <span class="scripture-text">For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh. This is a great mystery: but I speak concerning Christ and the church. Nevertheless let every one of you in particular so love his wife even as himself; and the wife see that she reverence her husband.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Peter 3:7</span>
+          <span class="scripture-text">Likewise, ye husbands, dwell with them according to knowledge, giving honour unto the wife, as unto the weaker vessel, and as being heirs together of the grace of life; that your prayers be not hindered.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>Headship in Scripture is a burden of responsibility before it is a position of authority. The standard set for the husband is the cross, a love that gives itself away for the good of the other. A man who uses the language of headship to justify harshness, neglect, or cruelty has not understood the passage; he has inverted it. Peter goes so far as to say that a husband who fails to honor his wife will find his own prayers obstructed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section print-new-page" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">What the Law Actually Says About Divorce</h2>
+      </div>
+      <div class="section-body">
+        <p>There is one passage in the Law that regulates divorce directly, and it is regularly misread. It is worth reading slowly and in full, watching where the actual commandment falls.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 24:1&ndash;4</span>
+          <span class="scripture-text">When a man hath taken a wife, and married her, and it come to pass that she find no favour in his eyes, because he hath found some uncleanness in her: then let him write her a bill of divorcement, and give it in her hand, and send her out of his house. And when she is departed out of his house, she may go and be another man's wife. And if the latter husband hate her, and write her a bill of divorcement, and giveth it in her hand, and sendeth her out of his house; or if the latter husband die, which took her to be his wife; Her former husband, which sent her away, may not take her again to be his wife, after that she is defiled; for that is abomination before the LORD: and thou shalt not cause the land to sin, which the LORD thy God giveth thee for an inheritance.</span>
+        </div>
+
+        <p>The command in this passage is not "divorce your wife if you find fault." The command is the prohibition at the end: a man who has divorced his wife may not take her back after she has been married to another. Everything before that is the setting, describing a situation that already existed in a fallen world.</p>
+
+        <p>What the Law does within that setting is protective. It requires the man to put it in writing, to place the document into her own hand, and to send her out of his house. Each requirement guards the woman. The writing makes the divorce provable, so that she cannot later be accused of adultery when she remarries. Placing it in her hand puts the evidence in her possession rather than his. And the passage explicitly acknowledges that she "may go and be another man's wife." The Law that regulated divorce also contemplated remarriage without condemning it.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>The phrase "some uncleanness" is deliberately not defined in the text, and every attempt to nail it down precisely from this verse alone has produced controversy rather than clarity. It clearly does not mean adultery, because adultery under the Law carried the death penalty rather than a bill of divorce. Beyond that, honest teachers have differed for two thousand years. Do not stake a doctrine on a single undefined phrase. Let the words of Christ, who addresses this passage directly, govern the conclusion instead.</p>
+        </div>
+
+        <p>There is one further passage that must be weighed by anyone who claims the Scripture treats divorce as always and in every case sin. God describes Himself as having issued one.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Jeremiah 3:8</span>
+          <span class="scripture-text">And I saw, when for all the causes whereby backsliding Israel committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Judah feared not, but went and played the harlot also.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>God, who says He hates putting away, describes Himself as having put away a covenant partner who committed persistent adultery, and He describes doing so lawfully with a written bill. He never transgresses His own Law. This settles a critical point: divorce and sin are not simply the same thing. Divorce is always the evidence that a covenant has been broken. It is not always the breaking of it. The guilt lies with the one who broke faith, and treating the innocent party as though they had done the breaking is an injustice the Scripture does not support.</p>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>The Law also carried a provision that shows how seriously God guarded a widow's place in the covenant community. If a married man died childless, his brother was to take the widow and raise up a son in the dead brother's name, so that the family line and inheritance would not be extinguished. If he refused, the matter was brought before the elders and his refusal was marked publicly by the removal of his shoe.</p>
+          <p>This is the background of the book of Ruth. When Boaz redeems Ruth, the nearer kinsman declines and confirms it by the drawing off of a shoe, a custom the text pauses to explain even to its own ancient readers. Marriage in Israel was never merely personal. It carried the weight of inheritance, name, and the promise itself, and the line that flowed from that redemption ran straight to David and to Christ.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VII -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">Section VII</span>
+        <h2 class="section-title">The Question the Pharisees Brought to Christ</h2>
+      </div>
+      <div class="section-body">
+        <p>When the Pharisees come to Christ about divorce, they are not asking an open question. They are asking Him to take a side in a live and bitter dispute between two schools of teaching, and they are hoping the answer will damage Him either way.</p>
+
+        <p>By the first century, the rabbinic schools had divided sharply over what the undefined phrase in Deuteronomy 24 meant. The school of Shammai held the strict view, that it referred to a matter of sexual indecency and nothing else. The school of Hillel held that it could mean nearly anything the husband found displeasing, and the tradition preserved in the Mishnah records the example of a wife who spoiled her husband's meal. Later teachers stretched it further still, to a man simply finding another woman more attractive. The permissive view had become dominant in practice, and the result was widespread casual divorce initiated by men against women who had no comparable recourse.</p>
+
+        <p>That is the argument standing behind the exact wording of their question.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 19:3</span>
+          <span class="scripture-text">The Pharisees also came unto him, tempting him, and saying unto him, Is it lawful for a man to put away his wife for every cause?</span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>The Hillel and Shammai dispute is genuinely preserved in Jewish legal tradition, and it illuminates the question the Pharisees asked with striking precision. Use it as a lamp on the passage. But remember what it is: a record of how men were arguing about the Law, not the Law itself. Rabbinic tradition is a witness to the world the text was spoken into. It is never the authority that settles what the text means. The answer Christ gives settles that, and He gives it by going somewhere neither school had gone.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VIII -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">Section VIII</span>
+        <h2 class="section-title">The Words of the Master</h2>
+      </div>
+      <div class="section-body">
+        <p>Christ refuses the terms of the debate. He does not argue about how loosely a phrase in Deuteronomy may be read. He goes behind Deuteronomy altogether, back to the garden.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 19:4&ndash;9</span>
+          <span class="scripture-text">And he answered and said unto them, Have ye not read, that he which made them at the beginning made them male and female, And said, For this cause shall a man leave father and mother, and shall cleave to his wife: and they twain shall be one flesh? Wherefore they are no more twain, but one flesh. What therefore God hath joined together, let not man put asunder. They say unto him, Why did Moses then command to give a writing of divorcement, and to put her away? He saith unto them, Moses because of the hardness of your hearts suffered you to put away your wives: but from the beginning it was not so. And I say unto you, Whosoever shall put away his wife, except it be for fornication, and shall marry another, committeth adultery: and whoso marrieth her which is put away doth commit adultery.</span>
+        </div>
+
+        <p>Several things deserve close attention here.</p>
+
+        <p>First, Christ corrects their language. They say Moses commanded divorce; He says Moses suffered it, that is, permitted and regulated it, because of the hardness of men's hearts. The provision in Deuteronomy was never God's design. It was God's restraint placed on an evil that men were already committing, limiting the damage they could do.</p>
+
+        <p>Second, He locates the true standard at the beginning, not at Sinai. The creation ordinance outranks the concession. This is exactly the Pronomian way of reading the Law: not that some commandments are cancelled, but that they must be read in their proper weight and order, with the permanent design governing the concession granted to human hardness.</p>
+
+        <p>Third, He gives an exception, and He gives it plainly: "except it be for fornication." The wording matters. He does not answer the Pharisees with "never, under any circumstance." He rejects the loose view while affirming that sexual covenant breaking is a genuine ground.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:31&ndash;32</span>
+          <span class="scripture-text">It hath been said, Whosoever shall put away his wife, let him give her a writing of divorcement: But I say unto you, That whosoever shall put away his wife, saving for the cause of fornication, causeth her to commit adultery: and whosoever shall marry her that is divorced committeth adultery.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Mark 10:11&ndash;12</span>
+          <span class="scripture-text">And he saith unto them, Whosoever shall put away his wife, and marry another, committeth adultery against her. And if a woman shall put away her husband, and be married to another, she committeth adultery.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Luke 16:18</span>
+          <span class="scripture-text">Whosoever putteth away his wife, and marrieth another, committeth adultery: and whosoever marrieth her that is put away from her husband committeth adultery.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>Christ's teaching cuts against the permissive school with full force. A man who discards his wife because he is tired of her and takes another has not remarried; he has committed adultery, and the Master says so without softening it. That is the direct target of every one of these sayings, and it should be preached that way. The exception He names is not a loophole for the discontented. It is a recognition that the covenant can be broken by the guilty party in a way that leaves the innocent party genuinely free.</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Mark and Luke record the saying without the exception clause; Matthew records it twice with the exception included. Faithful believers have explained this differently, and a teacher should be candid about that rather than pretending the question does not exist. The reading taken here is the plain and harmonizing one: Matthew preserves the full saying with its qualification, while Mark and Luke record the main thrust of it for audiences who were not embroiled in the Hillel and Shammai dispute. A statement of principle is not overturned because a briefer account of it omits the qualification. We do not build a doctrine that binds the innocent for life on an argument from silence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IX -->
+    <section class="section" id="s9">
+      <div class="section-header">
+        <span class="section-num">Section IX</span>
+        <h2 class="section-title">The Apostolic Instruction to the Assemblies</h2>
+      </div>
+      <div class="section-body">
+        <p>Paul addresses real congregations facing situations Christ had not spoken to directly, and he is careful to mark which is which.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 7:10&ndash;11</span>
+          <span class="scripture-text">And unto the married I command, yet not I, but the Lord, Let not the wife depart from her husband: But and if she depart, let her remain unmarried, or be reconciled to her husband: and let not the husband put away his wife.</span>
+        </div>
+
+        <p>Notice the order of preference. Reconciliation is the goal. Where a believer has separated from a believing spouse without a scriptural ground, the instruction is to remain unmarried and pursue restoration. A believer does not get to walk away from a covenant simply because the marriage has grown hard, and then treat the next person as a fresh start.</p>
+
+        <p>But Paul then addresses a case Christ had not spoken to: the believer married to an unbeliever who refuses to stay.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 7:12&ndash;15</span>
+          <span class="scripture-text">But to the rest speak I, not the Lord: If any brother hath a wife that believeth not, and she be pleased to dwell with him, let him not put her away. And the woman which hath an husband that believeth not, and if he be pleased to dwell with her, let her not leave him. For the unbelieving husband is sanctified by the wife, and the unbelieving wife is sanctified by the husband: else were your children unclean; but now are they holy. But if the unbelieving depart, let him depart. A brother or a sister is not under bondage in such cases: but God hath called us to peace.</span>
+        </div>
+
+        <p>The believer is not permitted to initiate the separation. If the unbeliever leaves, however, the believer is not under bondage. Paul does not say the believer must chase, must never remarry, or must spend a lifetime waiting on someone who has abandoned the covenant and the faith. He says the believer is not in bondage, and he grounds it in the fact that God has called us to peace.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 7:2&ndash;3</span>
+          <span class="scripture-text">For the woman which hath an husband is bound by the law to her husband so long as he liveth; but if the husband be dead, she is loosed from the law of her husband. So then if, while her husband liveth, she be married to another man, she shall be called an adulteress: but if her husband be dead, she is free from that law; so that she is no adulteress, though she be married to another man.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 7:39</span>
+          <span class="scripture-text">The wife is bound by the law as long as her husband liveth; but if her husband be dead, she is at liberty to be married to whom she will; only in the Lord.</span>
+        </div>
+
+        <p>Death dissolves the marriage bond completely, and remarriage after the death of a spouse is nowhere discouraged. Paul adds only one qualification, and it is a weighty one: the new marriage is to be "only in the Lord."</p>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>Paul also says something that a marriage-obsessed culture badly needs to hear. In the same chapter he writes, "Art thou bound unto a wife? seek not to be loosed. Art thou loosed from a wife? seek not a wife. But and if thou marry, thou hast not sinned." Marriage is honorable and good, and singleness is not a defect or a waiting room. Some serve God unmarried and serve Him well. The assembly should stop treating unmarried believers as though something has gone wrong with them.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION X -->
+    <section class="section" id="s10">
+      <div class="section-header">
+        <span class="section-num">Section X</span>
+        <h2 class="section-title">The Grounds the Scripture Recognizes</h2>
+      </div>
+      <div class="section-body">
+        <p>Pulling the whole testimony together, the Scripture recognizes the following situations in which the marriage bond is dissolved or a party is released from it. This is a short list on purpose. Anything not on it is not a ground.</p>
+
+        <ul class="grounds">
+          <li>
+            <strong>Death</strong>
+            <span>The clearest and least disputed. The surviving spouse is free to remarry, only in the Lord. Romans 7:2&ndash;3 and 1 Corinthians 7:39.</span>
+          </li>
+          <li>
+            <strong>Sexual Covenant Breaking</strong>
+            <span>The exception Christ Himself names. Where a spouse has broken the one flesh union by joining themselves to another, the innocent party is not bound to continue. Matthew 5:32 and Matthew 19:9.</span>
+          </li>
+          <li>
+            <strong>Desertion by an Unbeliever</strong>
+            <span>Where an unbelieving spouse departs and will not dwell with the believer, the believer is not under bondage. 1 Corinthians 7:15.</span>
+          </li>
+        </ul>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>A fourth situation must be handled with care, and a teacher should present it honestly as an application rather than as a fourth explicit clause. Exodus 21:10&ndash;11 establishes that a husband owes his wife food, clothing, and marital duty, and that where he withholds all three she goes out free. Many faithful teachers reason from this that total desertion of the covenant obligations, including sustained physical violence that makes the home unsafe, constitutes an abandonment of the marriage by the offending party whether or not he has formally left the house.</p>
+          <p>Two things should be said plainly alongside that. First, this is a conclusion drawn by reasoning from a principle, not a verse that states it in those words, and it should be taught that way. Second, and far more urgently: no reading of Scripture requires anyone to remain in a place where they or their children are in physical danger. Separation for safety is not divorce, and getting to safety is never something an elder should discourage or delay while doctrine is being sorted out. Get people safe first. Work through the covenant questions afterward.</p>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>What is not on the list is as instructive as what is. Boredom is not a ground. Falling out of love is not a ground. Growing apart, financial stress, discovering incompatibility, or meeting someone who seems better suited are not grounds. These are precisely the "every cause" reasons the permissive school allowed, and they are exactly what Christ was refusing when He answered the Pharisees.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XI -->
+    <section class="section" id="s11">
+      <div class="section-header">
+        <span class="section-num">Section XI</span>
+        <h2 class="section-title">Remarriage: When It Is Adultery and When It Is Not</h2>
+      </div>
+      <div class="section-body">
+        <p>This is where believers most often need clear teaching, and where the church has most often given them either license or cruelty.</p>
+
+        <p class="sub-title">When remarriage is adultery</p>
+        <p>When a person discards a spouse without scriptural ground and marries another, Christ calls the new union adultery. That is not a harsh interpretation; it is the plain reading of Matthew 19:9, Mark 10:11&ndash;12, and Luke 16:18. The man who trades his wife for a newer life has not entered a second marriage in God's sight. He has entered an ongoing sin, and he should be called to repentance rather than congratulated.</p>
+
+        <p class="sub-title">When remarriage is not adultery</p>
+        <p>Where the covenant has been genuinely broken by death, by sexual unfaithfulness, or by the desertion of an unbelieving spouse, the innocent party is free. The Law itself, in the very chapter that regulates divorce, states that a divorced woman "may go and be another man's wife." Paul states that the deserted believer "is not under bondage." To insist that such a person must remain alone for life is to bind where the Scripture has loosed, and that is not a small thing.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>The consistent principle running through the whole subject is this: <strong>God holds the covenant breaker responsible, not the one who was broken against.</strong> Every warning Christ gives is aimed at the man doing the discarding. Not one of them is aimed at the abandoned. When a church reverses that and lays its heaviest burdens on the person who was betrayed, it has stood the passage on its head.</p>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>Deuteronomy 24 adds one restriction that is worth noticing. A man who divorced his wife could not take her back after she had married another. The purpose was almost certainly to prevent a man from treating marriage as reversible at his convenience, passing a woman back and forth, and to close the door on scheming. It is a fence built to make the covenant weighty and to protect the woman from being used as a pawn. Even the concession to human hardness came with a wall around it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XII -->
+    <section class="section" id="s12">
+      <div class="section-header">
+        <span class="section-num">Section XII</span>
+        <h2 class="section-title">Unions the Scripture Forbids Outright</h2>
+      </div>
+      <div class="section-body">
+        <p>Alongside the question of ending a marriage stands the question of which unions God never recognizes to begin with.</p>
+
+        <p class="sub-title">Adultery and fornication</p>
+        <p>The seventh commandment stands, and the New Testament repeats and intensifies it rather than relaxing it.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Hebrews 13:4</span>
+          <span class="scripture-text">Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 6:16</span>
+          <span class="scripture-text">What? know ye not that he which is joined to an harlot is one body? for two, saith he, shall be one flesh.</span>
+        </div>
+
+        <p>That second verse deserves a moment. Paul applies the creation language of one flesh to a union with a harlot. Physical union is never casual and never merely physical. It creates a bond whether the parties intended one or not, which is exactly why the Scripture treats it so seriously.</p>
+
+        <p class="sub-title">Same sex unions</p>
+        <p>The creation ordinance is male and female, and Christ affirms it in answering the Pharisees. The Law forbids the act directly in Leviticus 18:22, and the apostolic writings restate it. This is not a matter on which the Scripture is unclear or divided.</p>
+
+        <p class="sub-title">Unions forbidden by kinship</p>
+        <p>Leviticus 18 lists relations within which marriage and sexual union are prohibited. These boundaries protect the family and predate Israel's civil administration.</p>
+
+        <p class="sub-title">Unequal yoking</p>
+        <p>A believer is instructed to marry "only in the Lord."</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 6:14</span>
+          <span class="scripture-text">Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?</span>
+        </div>
+
+        <p>This is a command about entering a marriage, not a command to abandon one already entered. Paul is emphatic that a believer already married to an unbeliever should stay if the unbeliever is willing.</p>
+
+        <p class="sub-title">Plural marriage</p>
+        <p>The Scripture records polygamy without ever commanding it, and every account of it in the narrative is a record of grief. Sarah and Hagar, Leah and Rachel, Hannah and Peninnah, and finally Solomon, whose wives turned away his heart. The Law warned the king directly not to multiply wives to himself, and he did it anyway.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Kings 11:3&ndash;4</span>
+          <span class="scripture-text">And he had seven hundred wives, princesses, and three hundred concubines: and his wives turned away his heart. For it came to pass, when Solomon was old, that his wives turned away his heart after other gods: and his heart was not perfect with the LORD his God, as was the heart of David his father.</span>
+        </div>
+
+        <p>The creation standard is two becoming one flesh, and the requirement that overseers and deacons be the husband of one wife makes plain that plural marriage has no place among those who lead God's people.</p>
+      </div>
+    </section>
+
+    <!-- SECTION XIII -->
+    <section class="section print-new-page" id="s13">
+      <div class="section-header">
+        <span class="section-num">Section XIII</span>
+        <h2 class="section-title">Grace for Those Already Divorced</h2>
+      </div>
+      <div class="section-body">
+        <p>Some who read this teaching will already be divorced, and some will know that the fault was at least partly their own. This section is for them, and it is not an afterthought.</p>
+
+        <p>The gospel does not have a category of sin that grace cannot reach. Salvation is by grace through faith in Christ alone, never by an unblemished record, and there is no exception written into that promise for those whose failure happened in a marriage. Paul lists adultery among the sins that keep men out of the kingdom, and then says something that ought to stop every accusing mouth.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Corinthians 6:9&ndash;11</span>
+          <span class="scripture-text">Know ye not that the unrighteous shall not inherit the kingdom of God? Be not deceived: neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind, Nor thieves, nor covetous, nor drunkards, nor revilers, nor extortioners, shall inherit the kingdom of God. And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.</span>
+        </div>
+
+        <p>Such <em>were</em> some of you. That is written to a real congregation containing real people with real histories. The blood of Christ is not weaker than a divorce decree.</p>
+
+        <p>Consider how the Master Himself handled a woman with exactly this history. He met her at a well, told her plainly that she had had five husbands and that the man she was with was not her husband, and He did not soften the fact. Neither did He drive her off. He gave her living water and sent her back into her own town as the first person in the gospel of John to tell a city that she had found the Christ. Truth and mercy in the same conversation, from the same mouth.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Key Point</p>
+          <p>Repentance means turning from the sin, not undoing the past. A person who divorced wrongly cannot travel backward and reverse it, and the Law itself forbids some reversals. What they can do is confess it honestly, stop justifying it, honor whatever obligations remain, and walk in obedience from this day forward. That is what repentance has always meant. God does not require what cannot be done, and He never asks anyone to live under a condemnation that Christ has already carried.</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">Teacher's Note</p>
+          <p>Take special care in how this section is preached. A teaching on marriage will always be heard by people carrying wounds you cannot see: the abandoned, the betrayed, the one who signed papers she never wanted to sign. Preach the standard without flinching, and preach the grace without hedging. Do not use the pulpit to relitigate the past of anyone sitting in the room. And where someone comes for counsel afterward, listen a great deal longer than you speak.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XIV -->
+    <section class="section" id="s14">
+      <div class="section-header">
+        <span class="section-num">Section XIV</span>
+        <h2 class="section-title">Counsel for the Household and the Assembly</h2>
+      </div>
+      <div class="section-body">
+        <p>Doctrine that never touches the ground is of little use. Here is how this teaching should shape practice.</p>
+
+        <p class="sub-title">For those considering marriage</p>
+        <p>Enter it knowing it is a covenant before God and not a contract you may exit. Marry in the Lord. Involve your household and your assembly rather than treating it as a private decision, because the Scripture never treats it as one. And count the cost before the vow rather than after it.</p>
+
+        <p class="sub-title">For those already married</p>
+        <p>Guard the covenant in the small things, because that is where it is usually lost. Husbands, the standard is the cross, and a man who will not lay himself down for his wife has not begun to lead her. Wives, honor the covenant and the man in it. Both of you, keep short accounts and refuse to let bitterness overwinter.</p>
+
+        <p class="sub-title">For those in a struggling marriage</p>
+        <p>Seek reconciliation first, and seek it with real help rather than alone. Bring in godly counsel early rather than after the damage is past repair. Hardness of heart is what made the concession in Deuteronomy necessary in the first place, and a soft heart is the one thing most likely to make it unnecessary in your house. If there is danger, get to safety immediately and sort the rest out from a safe place.</p>
+
+        <p class="sub-title">For elders and teachers</p>
+        <p>Handle these cases with the whole counsel of God and with actual knowledge of the particulars. Do not issue rulings from the pulpit on situations you have not sat down with. Hold the standard, protect the vulnerable, pursue reconciliation where it is possible, and do not bind consciences where the Scripture has left people free.</p>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion">
+          <p class="conclusion-label">Conclusion</p>
+          <h3 class="conclusion-title">What God Hath Joined Together</h3>
+          <div class="conclusion-body">
+            <p>Marriage is the oldest institution on earth and the one God chose to picture His own covenant love. That is why the enemy of our souls has worked so hard to cheapen it, and why the assembly must hold it high. The standard has never moved. One man and one woman, joined by God, for life.</p>
+            <p>Yet the same Scripture that raises the standard also protects the wounded. The God who says He hates putting away is the God who required that a divorced woman be given the document in her own hand so that no man could later accuse her. He does not defend the covenant by sacrificing the person the covenant was meant to protect.</p>
+            <p>So we hold both. We teach the permanence of marriage without apology, and we refuse to lay on the abandoned and the betrayed a burden the Master never laid on them. <em>What therefore God hath joined together, let not man put asunder.</em> And what man has already torn apart, let the church meet with truth in one hand and mercy in the other, exactly as our Lord did at a well in Samaria.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">
+      Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>
+      Work the Word &middot; Pronomian Teaching Series
+    </p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

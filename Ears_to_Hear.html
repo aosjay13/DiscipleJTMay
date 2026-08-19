@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ears to Hear &middot; A Teaching on Hearing and Doing</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:        #8B6914;
+  --gold-light:  #C9A84C;
+  --gold-pale:   #F5EDD8;
+  --crimson:     #7A1F1F;
+  --crimson-lt:  #9B3434;
+  --ink:         #1C1A17;
+  --ink-mid:     #3D3829;
+  --ink-soft:    #6B6047;
+  --parchment:   #FAF6EE;
+  --cream:       #F2EBD9;
+  --rule:        #C9A84C44;
+  --rule-solid:  #C9A84C;
+  --shadow:      rgba(28,26,23,0.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #EDE4CF;
+  font-family: 'EB Garamond', Georgia, serif;
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+}
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--parchment);
+  border: 1px solid #D4B97A;
+  box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+  position: relative;
+}
+
+.page::before, .page::after {
+  content: '';
+  position: absolute;
+  width: 40px; height: 40px;
+  border-color: var(--gold-light);
+  border-style: solid;
+  pointer-events: none;
+}
+.page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+.page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+.doc-header {
+  text-align: center;
+  padding: 3.5rem 3rem 2.5rem;
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+  color: var(--gold-pale);
+  position: relative;
+  overflow: hidden;
+}
+.doc-header::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(201,168,76,0.4);
+  pointer-events: none;
+}
+
+.header-ornament {
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  letter-spacing: 0.4em;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.doc-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.doc-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+  color: var(--gold-light);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0.6rem;
+}
+
+.header-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem auto 0;
+  max-width: 320px;
+}
+.header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+.header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+.doc-body { padding: 0 3rem 3rem; }
+
+.doc-footer {
+  text-align: center;
+  padding: 2.4rem 2rem;
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+  color: var(--gold-pale);
+  position: relative;
+  overflow: hidden;
+}
+.doc-footer::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(201,168,76,0.4);
+  pointer-events: none;
+}
+.footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+.footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.5rem; }
+
+.preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+.preamble-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+.preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+.preamble p + p { margin-top: 0.9rem; }
+
+.toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+.toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+.toc-list li { margin-bottom: 0.35rem; break-inside: avoid; }
+.toc-list a { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; }
+.toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 1.6rem; flex-shrink: 0; }
+
+.article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+.article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; }
+.article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+.article-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+.article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+
+.section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+.section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+.section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+.section-body p + p { margin-top: 0.8rem; }
+
+.scripture-block { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+.scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+.scripture-entry:last-child { margin-bottom: 0; }
+.scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+.scripture-text { color: var(--ink-mid); font-style: italic; }
+
+.phase { margin: 1.8rem 0; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A44; border-left: 4px solid var(--gold); }
+.phase-header { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+.phase-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; line-height: 1.3; }
+.sub-phase { margin: 1.1rem 0 0.5rem; padding: 0.9rem 1.1rem; background: var(--parchment); border-left: 2px solid var(--gold-light); }
+.sub-phase-title { font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 0.7rem; letter-spacing: 0.03em; }
+.phase-scripture { margin: 0.5rem 0; font-size: 0.95rem; line-height: 1.75; color: var(--ink-mid); }
+.phase-ref { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); font-style: normal; display: inline-block; margin-bottom: 0.15rem; letter-spacing: 0.04em; }
+.phase-note { margin-top: 1rem; padding: 0.8rem 1rem; background: #F5EDD8; border: 1px dashed #C9A84C88; font-size: 0.92rem; line-height: 1.7; color: var(--ink-soft); font-style: italic; }
+
+.gift-item { margin: 0.6rem 0; padding: 0.5rem 0 0.5rem 1rem; border-left: 2px solid #D4B97A55; font-size: 1rem; line-height: 1.75; color: var(--ink-mid); }
+.gift-name { font-weight: 600; font-style: italic; color: var(--ink); }
+
+.quals-list { list-style: none; padding: 0; margin: 0.6rem 0; columns: 2; column-gap: 1.5rem; }
+.quals-list li { padding: 0.2rem 0 0.2rem 1.2rem; position: relative; font-size: 0.975rem; line-height: 1.65; break-inside: avoid; color: var(--ink-mid); }
+.quals-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-light); font-size: 0.6rem; top: 0.45rem; }
+
+.bonus-panel {
+  margin: 1.8rem 0;
+  padding: 1.3rem 1.5rem;
+  background: var(--gold-pale);
+  border: 1px solid #D4B97A66;
+  border-top: 3px solid var(--crimson-lt);
+  position: relative;
+}
+.bonus-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--crimson-lt);
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.bonus-star { color: var(--gold); font-size: 0.85rem; }
+.bonus-body { font-size: 0.98rem; line-height: 1.75; color: var(--ink-mid); }
+.bonus-body p + p { margin-top: 0.8rem; }
+
+/* Two-column contrast table */
+.contrast-table { width: 100%; border-collapse: collapse; margin: 1.8rem 0; font-size: 0.95rem; }
+.contrast-table thead th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+  color: var(--gold-pale);
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border: 1px solid #6A1A1A;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.contrast-table td {
+  padding: 0.85rem 1rem;
+  border: 1px solid #D4B97A66;
+  vertical-align: top;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  width: 50%;
+}
+.contrast-table tbody tr:nth-child(odd) td { background: var(--cream); }
+.contrast-table tbody tr:nth-child(even) td { background: var(--parchment); }
+
+.pull-line {
+  margin: 1.8rem 0;
+  padding: 1.1rem 1.6rem;
+  border-left: 4px solid var(--crimson-lt);
+  background: var(--gold-pale);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* ── PRINT ── */
+@page {
+  size: 8.5in 11in;
+  margin: 0.75in;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: 'Cinzel', serif;
+    font-size: 9pt;
+    color: #8B6914;
+  }
+}
+
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+  .page::before, .page::after { display: none; }
+
+  .doc-header, .doc-footer {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .scripture-block, .scripture-entry, .section, .phase, .sub-phase,
+  .gift-item, .quals-list li, .toc-list li, .bonus-panel,
+  .pull-line, .contrast-table tr {
+    page-break-inside: avoid; break-inside: avoid;
+  }
+
+  .article-header, .section-title, .phase-header, .phase-title { page-break-after: avoid; break-after: avoid; }
+  .preamble, .toc { page-break-after: avoid; }
+  .doc-footer { page-break-before: avoid; }
+
+  .print-new-page { page-break-before: always; break-before: page; }
+}
+
+@media (max-width: 600px) {
+  .doc-body { padding: 0 1.4rem 2rem; }
+  .doc-header { padding: 2rem 1.4rem 1.4rem; }
+  .toc-list { columns: 1; }
+  .quals-list { columns: 1; }
+  .contrast-table { font-size: 0.88rem; }
+  .contrast-table td, .contrast-table thead th { padding: 0.6rem 0.7rem; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <h1 class="doc-title">Ears to Hear</h1>
+    <p class="doc-subtitle">A Teaching on Hearing and Doing &nbsp;·&nbsp; August 19, 2026</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <section class="preamble">
+      <p class="preamble-label">Primary Texts</p>
+      <p><strong>Matthew 13:9</strong> &nbsp;·&nbsp; <em>"Who hath ears to hear, let him hear."</em></p>
+      <p><strong>2 Kings 22:10-13</strong> &nbsp;·&nbsp; <em>"And Shaphan the scribe shewed the king, saying, Hilkiah the priest hath delivered me a book. And Shaphan read it before the king. And it came to pass, when the king had heard the words of the book of the law, that he rent his clothes... for great is the wrath of the LORD that is kindled against us, because our fathers have not hearkened unto the words of this book, to do according unto all that which is written concerning us."</em></p>
+      <p>The recurring admonition of Christ, "Who hath ears to hear, let him hear," is not a request for closer attention. It is a demand for obedience. In Scripture the act of hearing is bound inseparably to the act of doing, and an ear that hears without changing anything has not truly heard. The rediscovery of the Book of the Law in the reign of Josiah gives us the clearest picture in the Old Testament of what happens when a generation that has lost the standard finally hears it read aloud.</p>
+    </section>
+
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#sec1"><span class="toc-num">I.</span>The Command Christ Kept Repeating</a></li>
+        <li><a href="#sec2"><span class="toc-num">II.</span>What Hearing Means in Scripture</a></li>
+        <li><a href="#sec3"><span class="toc-num">III.</span>The Ear Is a Gift, and It Is Consecrated</a></li>
+        <li><a href="#sec4"><span class="toc-num">IV.</span>The Silence of a Lawless Generation</a></li>
+        <li><a href="#sec5"><span class="toc-num">V.</span>The Book Was Lost Inside the House of God</a></li>
+        <li><a href="#sec6"><span class="toc-num">VI.</span>The Awakening of the Ear</a></li>
+        <li><a href="#sec7"><span class="toc-num">VII.</span>Godly Sorrow, Not Merely Emotion</a></li>
+        <li><a href="#sec8"><span class="toc-num">VIII.</span>Two Ways of Hearing the Same Word</a></li>
+        <li><a href="#sec9"><span class="toc-num">IX.</span>How an Ear Becomes Deaf</a></li>
+        <li><a href="#sec10"><span class="toc-num">X.</span>The Promise to the Hearing Heart</a></li>
+      </ul>
+    </nav>
+
+    <article class="article" id="sec1">
+      <div class="article-header">
+        <span class="article-num">Part I</span>
+        <h2 class="article-title">The Command Christ Kept Repeating</h2>
+      </div>
+      <p class="article-body">Of all the sayings of Jesus, few are repeated as often as this one. He says it after the parable of the sower, after speaking of John the Baptist, after the parable of the wheat and the tares, and after the parable of the leaven. He says it in Mark and in Luke. Then, after the resurrection and the ascension, He says it seven more times from heaven, once to each of the seven churches of Asia. The same sentence, closing letter after letter: <em>he that hath an ear, let him hear what the Spirit saith unto the churches.</em></p>
+      <p class="article-body">A phrase repeated that many times in Scripture is never decoration. It is a hinge. And notice what it assumes. It does not assume the message was unclear. It does not assume the speaker was too quiet. In every single instance, the word has already been spoken plainly and publicly. The variable is never the speaking. The variable is the ear.</p>
+      <p class="article-body">Notice also the structure of the phrase. It is conditional. <em>Who hath ears to hear.</em> Christ is openly acknowledging that a crowd can be standing in front of Him, physically able to hear every syllable, and still not have ears to hear. Two men can sit under the same teaching and walk out into two different eternities. The difference is not intelligence, education, or attendance. The difference is what the ear is willing to submit to.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Where the Phrase Appears</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 11:15 · 13:9 · 13:43</span>
+          <span class="scripture-text">Who hath ears to hear, let him hear.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 4:9, 23 · Luke 8:8 · 14:35</span>
+          <span class="scripture-text">He that hath ears to hear, let him hear.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Revelation 2:7, 11, 17, 29 · 3:6, 13, 22</span>
+          <span class="scripture-text">He that hath an ear, let him hear what the Spirit saith unto the churches.</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec2">
+      <div class="article-header">
+        <span class="article-num">Part II</span>
+        <h2 class="article-title">What Hearing Means in Scripture</h2>
+      </div>
+      <p class="article-body">Modern English has separated hearing from obeying. We treat hearing as a matter of the ear and obeying as a matter of the will, two different acts, and we assume a person can do the first without the second. Scripture does not carry that separation. The Hebrew word behind the great confession of Israel, <em>shema</em>, means to hear, to listen, and to obey, all in one motion. When Moses said "Hear, O Israel," he was not asking for quiet in the room. He was calling for the whole life of the nation to be aligned with what was about to be said.</p>
+      <p class="article-body">You see it plainly at Sinai. When the covenant was read in the hearing of the people, their answer was not "we have heard and we will consider it." Their answer was <em>all that the LORD hath said will we do, and be obedient.</em> Hearing and doing came out of their mouths as a single response, because in Scripture that is what hearing is.</p>
+      <p class="article-body">This is why the New Testament can speak of the obedience of faith without contradiction, and why James can say that a man who hears and does not do has deceived himself. He has not merely been lazy. He has misunderstood what hearing was for.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 6:4-6</span>
+          <span class="scripture-text">Hear, O Israel: The LORD our God is one LORD: and thou shalt love the LORD thy God with all thine heart... and these words, which I command thee this day, shall be in thine heart.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 24:7</span>
+          <span class="scripture-text">All that the LORD hath said will we do, and be obedient.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 1:22</span>
+          <span class="scripture-text">But be ye doers of the word, and not hearers only, deceiving your own selves.</span>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>There is an old rabbinic observation about the order of the words in Exodus 24:7. The people say <em>we will do</em> before they say <em>and be obedient</em>, which in the Hebrew reads closer to "we will do and we will hear." They committed themselves to the doing before they had heard the full contents.</p>
+          <p>Whether or not one presses the grammar that far, the instinct behind it is right and it is the instinct this whole teaching is after. A heart that has already settled the question of obedience hears very differently from a heart that is still deciding whether the terms are acceptable. The second heart is not listening. It is negotiating.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec3">
+      <div class="article-header">
+        <span class="article-num">Part III</span>
+        <h2 class="article-title">The Ear Is a Gift, and It Is Consecrated</h2>
+      </div>
+      <p class="article-body">Before anyone can be held responsible for hearing, we have to establish where the hearing ear comes from. Scripture is direct about it. The hearing ear is not an achievement of the diligent, it is a work of God. Solomon says the LORD made both the hearing ear and the seeing eye. Moses told an entire generation that God had not yet given them a heart to perceive or ears to hear. Isaiah describes the ear being wakened morning by morning, as something done to him rather than something he manufactured.</p>
+      <p class="article-body">Then Scripture does something remarkable. It takes the ear, the organ of hearing, and makes it the place where consecration is marked. When a priest was ordained, blood was applied to the tip of his right ear before anything else. When a cleansed leper was restored to the congregation, blood was applied to the tip of his right ear. Twice, at the two great moments of being set apart to God, the mark goes on the ear.</p>
+
+      <div class="phase">
+        <p class="phase-header">The Deepest Picture</p>
+        <p class="phase-title">The Awl Through the Ear</p>
+        <div class="sub-phase">
+          <p class="sub-phase-title">Freedom Offered, and Refused</p>
+          <div class="phase-scripture">
+            <span class="phase-ref">Exodus 21:5-6</span><br>
+            <em>"And if the servant shall plainly say, I love my master, my wife, and my children; I will not go out free: then his master shall bring him unto the judges; he shall also bring him to the door, or unto the door post; and his master shall bore his ear through with an aul; and he shall serve him for ever."</em>
+          </div>
+          <p>The timing is the whole point. This does not happen when the servant is purchased. It happens in the seventh year, at the exact moment the law says he may walk out a free man. The awl is not a punishment and it is not a chain. It is the permanent, visible answer to a question nobody forced him to answer, and the reason given is love.</p>
+        </div>
+        <div class="sub-phase">
+          <p class="sub-phase-title">First, This Is Christ</p>
+          <div class="phase-scripture">
+            <span class="phase-ref">Psalm 40:6-8</span><br>
+            <em>"Sacrifice and offering thou didst not desire; mine ears hast thou opened... Lo, I come: in the volume of the book it is written of me, I delight to do thy will, O my God."</em>
+          </div>
+          <p>The Hebrew in that verse is the language of digging or piercing. And Hebrews 10 takes this exact psalm, quotes it, and places it in the mouth of Christ at His coming into the world: <em>Lo, I come to do thy will, O God.</em> Scripture itself identifies the willing servant with the pierced ear.</p>
+          <p>Lay Exodus 21:5 alongside Him and every clause fits. He loved the Master, the Father. He loved the wife, the church He gave Himself for. He loved the children God had given Him. He would not go out free. He was pierced at a door, and He serves for ever.</p>
+        </div>
+        <div class="phase-note">Then, and only then, it reaches us. Paul, James, Peter, and Jude each open a letter by calling himself a bondslave. We are told plainly that we are not our own, that we were bought with a price. Our servanthood is real, but it is derivative. We are marked servants because He was the willing Servant first.</div>
+      </div>
+
+      <div class="pull-line">The mark of belonging to God is placed on the organ of hearing. The ear is where the servant is identified, which means a church that has stopped listening has not merely lost a habit. It has forgotten whose it is.</div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Proverbs 20:12</span>
+          <span class="scripture-text">The hearing ear, and the seeing eye, the LORD hath made even both of them.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 50:5</span>
+          <span class="scripture-text">The Lord GOD hath opened mine ear, and I was not rebellious, neither turned away back.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 8:23 · 14:14</span>
+          <span class="scripture-text">Blood applied upon the tip of the right ear, first at the ordaining of the priest, then at the cleansing of the leper.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 6:19-20</span>
+          <span class="scripture-text">Ye are not your own... for ye are bought with a price.</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec4">
+      <div class="article-header">
+        <span class="article-num">Part IV</span>
+        <h2 class="article-title">The Silence of a Lawless Generation</h2>
+      </div>
+      <p class="article-body">Josiah did not inherit a healthy kingdom. His grandfather Manasseh reigned fifty-five years, the longest reign in the history of Judah, and used it to build altars to foreign gods inside the temple courts, to practice sorcery, to pass his own children through the fire, and to fill Jerusalem with innocent blood. His father Amon reigned two years and did the same. By the time an eight-year-old boy was placed on the throne, an entire generation had grown up, married, raised children, and died without ever hearing the Law of God read.</p>
+      <p class="article-body">Understand what that means practically. The people of Judah in Josiah's youth were not rebels who had heard the commandments and defied them. They were something more pitiable. They had simply never been told. Their religion was still running, the temple still stood, priests still served, offerings were still brought. But the standard by which all of it was supposed to be measured had gone quiet, and nobody had noticed the silence.</p>
+      <p class="article-body">This is how lawlessness actually arrives. It does not usually announce itself. It moves in during a long stretch of years when nobody reads the Book out loud, and it establishes itself as normal before anyone thinks to object. Once the standard is gone, a society does not become neutral. It manufactures its own standard, and every man does what is right in his own eyes.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Kings 21:1-6, 16</span>
+          <span class="scripture-text">Manasseh's fifty-five years, the altars in the house of the LORD, and innocent blood shed very much, till he had filled Jerusalem from one end to another.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Judges 21:25</span>
+          <span class="scripture-text">In those days there was no king in Israel: every man did that which was right in his own eyes.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Amos 8:11</span>
+          <span class="scripture-text">Behold, the days come, saith the Lord GOD, that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of the LORD.</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec5">
+      <div class="article-header">
+        <span class="article-num">Part V</span>
+        <h2 class="article-title">The Book Was Lost Inside the House of God</h2>
+      </div>
+      <p class="article-body">Here is the detail that should arrest every one of us. When the Book of the Law finally surfaces, it is not recovered from a foreign country, or dug out of a ruin, or brought back by a returning exile. Hilkiah the high priest finds it in the temple. It had been in the house of the Lord the entire time.</p>
+      <p class="article-body">And notice the circumstances of the discovery. Josiah had ordered a renovation. Money had been collected, carpenters and masons and builders had been hired, and the work was underway. The Book turns up in the middle of a well-funded, well-staffed, well-intentioned church repair project. They were fixing the building while the message of the building sat in a corner unread.</p>
+      <p class="article-body">That is the most convicting possibility in the whole narrative, and it is not a hypothetical. A congregation can maintain its facility, meet its budget, keep its calendar, ordain its leadership, and hold services every week, all while the actual commandments of God sit unopened and unpreached. The Book was never taken away from Judah. It was buried under the activity of the very people who were supposed to be reading it.</p>
+
+      <div class="pull-line">Judah did not lose the Word to an invading army. They lost it to a hundred years of not opening it.</div>
+
+      <div class="section">
+        <p class="section-title">Hilkiah's Discovery</p>
+        <div class="section-body">
+          <p><em>"And Hilkiah the high priest said unto Shaphan the scribe, I have found the book of the law in the house of the LORD."</em> (2 Kings 22:8)</p>
+          <p>Read Shaphan's report to the king in verses 9 and 10 and you can hear how ordinary this seemed to everyone but Josiah. Shaphan gives the budget update first. The men are working, the money has been distributed to the workmen, everything is on schedule. Then, almost as an afterthought, he mentions that the priest handed him a book. Only when it is read aloud does the room change.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec6">
+      <div class="article-header">
+        <span class="article-num">Part VI</span>
+        <h2 class="article-title">The Awakening of the Ear</h2>
+      </div>
+      <p class="article-body">Shaphan read it before the king, and when Josiah heard the words of the book of the law, he tore his clothes. That is the moment this teaching turns on, and there is a detail in the parallel account that makes it far more searching than it first appears.</p>
+      <p class="article-body">Second Chronicles tells us that Josiah began seeking the God of David in the eighth year of his reign, when he was sixteen, and began purging Judah of the high places and the carved images in the twelfth year, when he was twenty. The Book was not found until the eighteenth year, when he was twenty-six. Which means Josiah had been sincerely reforming his kingdom for six years before he ever read the standard he was reforming it by.</p>
+      <p class="article-body">He was not a hypocrite. He was zealous, he was genuine, and he was operating on inherited practice, good instinct, and whatever fragments of truth had survived. And when the actual text was finally read in his hearing, he tore his clothes. Not because he had been rebellious, but because he discovered how much further the commandments went than what had been handed down to him.</p>
+      <p class="article-body">That is the danger for sincere believers in every generation. It is entirely possible to love God, mean well, work hard, and still be measuring by a tradition rather than by the Word. The only remedy is the one Josiah stumbled into, which is to actually read it, in full, out loud, and let it correct the things we assumed were fine.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Chronicles 34:3</span>
+          <span class="scripture-text">In the eighth year of his reign, while he was yet young, he began to seek after the God of David his father: and in the twelfth year he began to purge Judah and Jerusalem.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Kings 22:11</span>
+          <span class="scripture-text">And it came to pass, when the king had heard the words of the book of the law, that he rent his clothes.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Kings 23:2</span>
+          <span class="scripture-text">And he read in their ears all the words of the book of the covenant which was found in the house of the LORD.</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">All the Words</p>
+        <div class="section-body">
+          <p>Look carefully at what Josiah did next, because it is the pattern this teaching is calling us back to. He did not extract a verse. He did not summarize. He gathered the elders, the priests, the prophets, and all the people, small and great, and read in their ears <em>all the words</em> of the book. The whole thing, in context, in public.</p>
+          <p>A single verse can be made to serve almost any purpose. The whole counsel of God cannot. That is precisely why the whole counsel is harder to hear and why it is the only thing that produces genuine reformation.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec7">
+      <div class="article-header">
+        <span class="article-num">Part VII</span>
+        <h2 class="article-title">Godly Sorrow, Not Merely Emotion</h2>
+      </div>
+      <p class="article-body">Josiah tore his clothes, and we should be careful here, because torn clothes can be theater. Scripture makes the distinction for us. When God answers the king through the prophetess Huldah, He does not commend the garment. He commends the heart behind it: <em>because thine heart was tender, and thou hast humbled thyself before the LORD.</em> The tearing was evidence of something, not the thing itself.</p>
+      <p class="article-body">Paul draws the same line between two sorrows that can look identical from the outside. Godly sorrow works repentance, a turning, an actual change of direction. The sorrow of the world works death. It feels bad, it may even weep, and it changes nothing. Joel put it plainly generations earlier: rend your heart, and not your garments.</p>
+      <p class="article-body">The clearest test is what happens in the days after. Josiah's grief moved immediately into action. He enquired of the Lord, he gathered the nation, he read the Book publicly, he made a covenant, and then he spent the rest of the chapter systematically removing every idolatrous thing his fathers had installed. Sorrow that stops at the feeling has not yet become repentance.</p>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>Scripture gives us the exact opposite case, and it happens one generation later in the same family. In Jeremiah 36, a scroll of God's words is read aloud to Josiah's son Jehoiakim. The king is sitting by the fire. As each three or four columns are read, he cuts them off with a penknife and throws them into the flames until the entire scroll is burned.</p>
+          <p>Then Jeremiah writes this: <em>Yet they were not afraid, nor rent their garments.</em> That is a deliberate echo of his father in 2 Kings 22:11, and the contrast is the point. Same family. Same Book. Same God speaking. One tore his clothes, the other cut up the scroll. The Word had not changed at all between them. The ear had.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec8">
+      <div class="article-header">
+        <span class="article-num">Part VIII</span>
+        <h2 class="article-title">Two Ways of Hearing the Same Word</h2>
+      </div>
+      <p class="article-body">Josiah's own explanation of his fear names the issue precisely. He is not afraid because his fathers failed to hear the words of the book. He is afraid because they failed to hear them <em>to do according unto all that which is written.</em> The failure was never at the level of information. It was at the level of response.</p>
+      <p class="article-body">Two people can sit under the same reading of Scripture and process it in two entirely different ways. One treats it as an experience to be felt. The other treats it as a command to be obeyed. Both of them heard. Only one of them has ears to hear.</p>
+
+      <table class="contrast-table">
+        <thead>
+          <tr>
+            <th>Lawless Hearing</th>
+            <th>Law-Abiding Hearing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Treats the reading of Scripture as an emotional experience that requires no change in behavior.</td>
+            <td>Treats the reading of Scripture as a command calling for immediate alignment.</td>
+          </tr>
+          <tr>
+            <td>Holds that God's moral law has been set aside and no longer defines Christian living.</td>
+            <td>Holds that God's moral law remains the abiding standard of righteousness for the believer.</td>
+          </tr>
+          <tr>
+            <td>Takes a verse in isolation and builds a position on it.</td>
+            <td>Reads the whole counsel in context and lets it correct the position.</td>
+          </tr>
+          <tr>
+            <td>Hears the Word and remains passive.</td>
+            <td>Hears the Word and takes decisive action against sin and idolatry.</td>
+          </tr>
+          <tr>
+            <td>Measures itself against the culture, or against other believers.</td>
+            <td>Measures itself against what is written.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="article-body">Scripture nowhere treats the commandments of God as expired. Christ said explicitly that He did not come to destroy the law or the prophets. Paul, having spent three chapters establishing that no man is justified by the deeds of the law, immediately asks whether faith therefore makes the law void, and answers his own question as forcefully as the Greek allows: God forbid, we establish the law. He calls the commandment holy, just, and good. John defines sin itself as the transgression of the law, and says that a man who claims to know God while disregarding His commandments is a liar.</p>
+
+      <div class="section">
+        <p class="section-title">Where the Law Belongs, and Where It Does Not</p>
+        <div class="section-body">
+          <p>This must be held carefully, because there are two ditches and both of them are fatal. The law is not the means of salvation. No one is ever justified by keeping it, and Scripture says so without qualification. Salvation is by grace through faith, it is the gift of God, and it is not of works, so that no one can boast about it.</p>
+          <p>But the same passage that says we are not saved by works says in the very next breath that we are created in Christ Jesus unto good works, which God prepared beforehand that we should walk in them. Grace does not lower the standard. Titus says grace teaches us to deny ungodliness and worldly lusts and to live soberly, righteously, and godly in this present world.</p>
+          <p>So the law is not the ladder we climb to God. It is the description of what a redeemed life looks like once He has come to us. To use it as a ladder is legalism. To discard it as a description is lawlessness. Josiah's fathers fell into the second, and it cost a nation.</p>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 5:17-18</span>
+          <span class="scripture-text">Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 3:31</span>
+          <span class="scripture-text">Do we then make void the law through faith? God forbid: yea, we establish the law.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 7:12</span>
+          <span class="scripture-text">Wherefore the law is holy, and the commandment holy, and just, and good.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 John 3:4 · 2:3-4</span>
+          <span class="scripture-text">Sin is the transgression of the law... he that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 2:8-10</span>
+          <span class="scripture-text">For by grace are ye saved through faith... not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 33:31-32</span>
+          <span class="scripture-text">They hear thy words, but they will not do them... and, lo, thou art unto them as a very lovely song of one that hath a pleasant voice.</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec9">
+      <div class="article-header">
+        <span class="article-num">Part IX</span>
+        <h2 class="article-title">How an Ear Becomes Deaf</h2>
+      </div>
+      <p class="article-body">If the hearing ear is a gift of God, it is also something a person can lose the use of. Scripture is unsparing about this, and it describes the process rather than treating it as a single catastrophic event.</p>
+      <p class="article-body">Zechariah gives the fullest anatomy of it. The people refused to hearken. They pulled away the shoulder, the picture of an ox shrugging out from under a yoke it has decided not to carry. They stopped their ears so they would not hear. And then, last, they made their hearts as an adamant stone. Notice the order. The refusing came first, the hardening came last. The heart did not turn to stone and then stop listening. It stopped listening, and over time it turned to stone.</p>
+      <p class="article-body">Isaiah was sent to a people whose ears had already grown heavy, and Stephen, standing before the council with the full weight of Israel's history behind him, could find no more damning charge than to call them uncircumcised in heart and ears. Paul warned Timothy that a time would come when people would not endure sound doctrine, and would instead gather teachers for themselves according to their own desires, having itching ears. That phrase is worth sitting with. The ear is not idle in that verse. It is very active. It is simply shopping.</p>
+
+      <div class="pull-line">A deaf ear is rarely the result of a decision. It is the result of a hundred small refusals, each one reasonable at the time.</div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Zechariah 7:11-12</span>
+          <span class="scripture-text">But they refused to hearken, and pulled away the shoulder, and stopped their ears, that they should not hear. Yea, they made their hearts as an adamant stone.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 6:9-10</span>
+          <span class="scripture-text">Hear ye indeed, but understand not... make the heart of this people fat, and make their ears heavy, and shut their eyes.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 7:51</span>
+          <span class="scripture-text">Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Holy Ghost.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Timothy 4:3-4</span>
+          <span class="scripture-text">They will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears.</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec10">
+      <div class="article-header">
+        <span class="article-num">Part X</span>
+        <h2 class="article-title">The Promise to the Hearing Heart</h2>
+      </div>
+      <p class="article-body">The word Huldah brought back to Josiah was not soft. Judgment on Judah was coming and it was not going to be revoked. But God attached a personal promise to one man in that kingdom, and He gave the reason for it in plain words. Because his heart was tender, because he humbled himself, because he wept before the LORD, God said He had heard him, and Josiah would be gathered to his grave in peace.</p>
+      <p class="article-body">Consider what that establishes. Josiah did not stop the judgment. He could not undo Manasseh's fifty-five years, and God did not pretend otherwise. What a tender ear obtained was mercy, favor, and the ear of God in return. God had been listening to a man who was listening to Him.</p>
+      <p class="article-body">Isaiah says the same thing from God's own perspective, and it is one of the most staggering sentences in the prophets. The God who fills heaven and earth, who asks what house anyone could possibly build for Him, says there is one kind of man He will look to: the poor, the contrite in spirit, and the one who trembles at His word. Of everything in creation, that is what draws His attention.</p>
+      <p class="article-body">That is where this teaching lands. We are not being called to admire God's Word, or to defend it in argument, or to be moved by it on a Wednesday night and unchanged by Friday. We are being called to tremble at it, to let it correct what we have inherited, and to answer it with our lives. Jesus said His sheep hear His voice, and He said it in the same breath as the thing that proves it, which is that they follow Him.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Scriptural References</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Kings 22:19-20</span>
+          <span class="scripture-text">Because thine heart was tender, and thou hast humbled thyself before the LORD... I also have heard thee, saith the LORD.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 66:2</span>
+          <span class="scripture-text">But to this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 10:27</span>
+          <span class="scripture-text">My sheep hear my voice, and I know them, and they follow me.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 7:24</span>
+          <span class="scripture-text">Whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock.</span>
+        </div>
+      </div>
+
+      <div class="pull-line">The Book was found in the house of the Lord. It had never left. The only question that has ever mattered is whether anyone will open it, read it in full, and then go do what it says.</div>
+
+      <p class="article-body" style="text-align:center; font-family:'Cinzel',serif; font-size:1rem; color:var(--crimson); letter-spacing:0.06em; margin-top:2rem;">Who hath ears to hear, let him hear.</p>
+    </article>
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Ears to Hear &nbsp;·&nbsp; August 19, 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sower and the Soil</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 1rem; }
+  .doc-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; color: var(--cream); letter-spacing: 0.04em; line-height: 1.25; text-transform: uppercase; }
+  .doc-subtitle { font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 1.8vw, 0.95rem); color: var(--gold-light); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.6rem; }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  .doc-body { padding: 0 3rem 3rem; }
+
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+  .preamble p + p { margin-top: 1rem; }
+
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.35rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 1.6rem; flex-shrink: 0; }
+
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 0.8rem; }
+
+  .scripture-block { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+
+  .phase { margin: 1.8rem 0; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A44; border-left: 4px solid var(--gold); }
+  .phase-header { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .phase-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; line-height: 1.3; }
+  .sub-phase { margin: 1.1rem 0 0.5rem; padding: 0.9rem 1.1rem; background: var(--parchment); border-left: 2px solid var(--gold-light); }
+  .sub-phase-title { font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 0.7rem; letter-spacing: 0.03em; }
+  .phase-scripture { margin: 0.5rem 0; font-size: 0.95rem; line-height: 1.75; color: var(--ink-mid); }
+  .phase-ref { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); font-style: normal; display: inline-block; margin-bottom: 0.15rem; letter-spacing: 0.04em; }
+  .phase-note { margin-top: 1rem; padding: 0.8rem 1rem; background: #F5EDD8; border: 1px dashed #C9A84C88; font-size: 0.92rem; line-height: 1.7; color: var(--ink-soft); font-style: italic; }
+
+  .gift-item { margin: 0.6rem 0; padding: 0.5rem 0 0.5rem 1rem; border-left: 2px solid #D4B97A55; font-size: 1rem; line-height: 1.75; color: var(--ink-mid); }
+  .gift-name { font-weight: 600; font-style: italic; color: var(--ink); }
+
+  .quals-list { list-style: none; padding: 0; margin: 0.6rem 0; columns: 2; column-gap: 1.5rem; }
+  .quals-list li { padding: 0.2rem 0 0.2rem 1.2rem; position: relative; font-size: 0.975rem; line-height: 1.65; break-inside: avoid; color: var(--ink-mid); }
+  .quals-list li::before { content: '✦'; position: absolute; left: 0; color: var(--gold-light); font-size: 0.6rem; top: 0.45rem; }
+
+  .bonus-panel { margin: 1.8rem 0; padding: 1.3rem 1.5rem; background: var(--gold-pale); border: 1px solid #D4B97A66; border-top: 3px solid var(--crimson-lt); position: relative; }
+  .bonus-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson-lt); margin-bottom: 0.7rem; display: flex; align-items: center; gap: 0.5rem; }
+  .bonus-star { color: var(--gold); font-size: 0.85rem; }
+  .bonus-body { font-size: 0.98rem; line-height: 1.75; color: var(--ink-mid); }
+  .bonus-body p + p { margin-top: 0.75rem; }
+
+  /* Gospel comparison table, built from the same tokens */
+  .compare { margin: 1.8rem 0; overflow-x: auto; }
+  .compare-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .compare table { width: 100%; border-collapse: collapse; background: var(--cream); border: 1px solid #D4B97A66; }
+  .compare th { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); background: var(--gold-pale); border-bottom: 2px solid var(--gold-light); padding: 0.6rem 0.7rem; text-align: left; vertical-align: bottom; }
+  .compare td { font-size: 0.88rem; line-height: 1.6; color: var(--ink-mid); padding: 0.6rem 0.7rem; border-bottom: 1px solid #D4B97A44; vertical-align: top; }
+  .compare tr:last-child td { border-bottom: none; }
+  .compare .row-label { font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); width: 17%; }
+  .compare em { color: var(--ink-mid); }
+
+  .doc-footer {
+    text-align: center;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 10px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.5rem; }
+
+  /* ── PRINT ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .compare, .compare th, .compare td, .scripture-block, .section, .bonus-panel { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    .scripture-block, .scripture-entry, .section, .phase, .sub-phase,
+    .gift-item, .quals-list li, .toc-list li, .bonus-panel, .compare tr {
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .article-header, .section-title, .phase-header, .phase-title, .compare-title { page-break-after: avoid; break-after: avoid; }
+    .preamble, .toc { page-break-after: avoid; }
+    .doc-footer { page-break-before: avoid; }
+    .print-new-page { page-break-before: always; break-before: page; }
+    .compare { overflow-x: visible; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+    .toc-list { columns: 1; }
+    .quals-list { columns: 1; }
+    .compare table { min-width: 540px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <h1 class="doc-title">The Sower and the Soil</h1>
+    <p class="doc-subtitle">The Parable in Matthew, Mark, and Luke</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <section class="preamble">
+      <p class="preamble-label">Preamble</p>
+      <p>Three of the four gospels record this parable, and in all three Jesus turns around and explains it himself, line by line. That is rare. Most parables are left standing on their own. This one he unpacks, and in Mark he tells the twelve that if they cannot get hold of this one, they will not get hold of any of them.</p>
+      <p>One sower goes out. One kind of seed leaves his hand. Four grounds receive it. The sower does not change, and the seed does not change. Only the ground changes. Everything this parable teaches rests on that one fact, and every reason Jesus gives for the four outcomes traces back through the prophets to what scripture had already said about seed, soil, roots, thorns, and hearts.</p>
+    </section>
+
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#sec1"><span class="toc-num">I.</span>Where the Parable Stands</a></li>
+        <li><a href="#sec2"><span class="toc-num">II.</span>The Three Accounts Side by Side</a></li>
+        <li><a href="#sec3"><span class="toc-num">III.</span>Why He Taught in Parables</a></li>
+        <li><a href="#sec4"><span class="toc-num">IV.</span>The Seed Is the Word</a></li>
+        <li><a href="#sec5"><span class="toc-num">V.</span>The Ground Is the Heart</a></li>
+        <li><a href="#sec6"><span class="toc-num">VI.</span>The Wayside</a></li>
+        <li><a href="#sec7"><span class="toc-num">VII.</span>The Stony Ground</a></li>
+        <li><a href="#sec8"><span class="toc-num">VIII.</span>The Thorny Ground</a></li>
+        <li><a href="#sec9"><span class="toc-num">IX.</span>The Good Ground</a></li>
+        <li><a href="#sec10"><span class="toc-num">X.</span>The Sower and the Yield</a></li>
+        <li><a href="#sec11"><span class="toc-num">XI.</span>Ground Can Be Broken</a></li>
+      </ul>
+    </nav>
+
+    <article class="article" id="sec1">
+      <div class="article-header">
+        <span class="article-num">I.</span>
+        <h2 class="article-title">Where the Parable Stands in Each Gospel</h2>
+      </div>
+      <p class="article-body">Placement is part of the teaching. Each writer sets the parable down in a particular spot, and in each case the surrounding material tells us something about why Jesus said it when he did.</p>
+
+      <div class="section">
+        <p class="section-title">Matthew 13:1–2</p>
+        <div class="section-body">
+          <p>Matthew opens with a time stamp: <em>“The same day went Jesus out of the house, and sat by the sea side.”</em> The same day as what? As Matthew 12, where the religious leaders credited his miracles to Beelzebub, demanded a sign, and were told that no sign would be given but the sign of Jonah. The parables begin the moment official rejection becomes public. Matthew alone calls the seed <em>“the word of the kingdom”</em> (13:19), and Matthew alone stacks seven kingdom parables in this chapter, with the sower placed first.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Mark 4:1–2</p>
+        <div class="section-body">
+          <p>Mark gives the same seaside setting and the same crowd so large that Jesus taught from a boat. Mark 3 has just ended with the Beelzebub charge and with his own family saying he was beside himself. Mark also gives us the single most important sentence about this parable's weight, in 4:13: <em>“Know ye not this parable? and how then will ye know all parables?”</em> Mark presents it as the key that fits every other lock.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Luke 8:4</p>
+        <div class="section-body">
+          <p>Luke drops the boat and the shoreline. His frame is the traveling ministry of Luke 8:1–3, the twelve and the women who supported the work out of their own means, with people coming <em>“out of every city.”</em> Luke also moves one scene. Matthew and Mark both place the arrival of Jesus' mother and brothers just before the parable (Matthew 12:46–50; Mark 3:31–35). Luke places it just after (Luke 8:19–21), where the words <em>“My mother and my brethren are these which hear the word of God, and do it”</em> land as a living portrait of the fourth soil.</p>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>Matthew and Mark both note that he sat in a ship and the multitude stood on the land. That is practical acoustics, since sound carries cleanly across water and a small bay makes a natural amphitheater. It is also a picture worth noticing: the sower is offshore, and the seed goes out over the water onto every kind of ground on the bank, with no way for the sower to sort the crowd first.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec2">
+      <div class="article-header">
+        <span class="article-num">II.</span>
+        <h2 class="article-title">The Three Accounts Side by Side</h2>
+      </div>
+      <p class="article-body">The three tellings agree on every essential and differ in small details, and the differences are not contradictions but additions. Each writer preserves something the other two leave out, so the fullest picture comes from laying all three next to each other rather than harmonizing them into one flattened version.</p>
+
+      <div class="compare">
+        <p class="compare-title">The Telling</p>
+        <table>
+          <thead>
+            <tr>
+              <th class="row-label">Detail</th>
+              <th>Matthew 13:3–9</th>
+              <th>Mark 4:3–9</th>
+              <th>Luke 8:5–8</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-label">Opening</td>
+              <td><em>“Behold, a sower went forth to sow”</em></td>
+              <td><em>“Hearken; Behold, there went out a sower to sow”</em></td>
+              <td><em>“A sower went out to sow his seed”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Wayside</td>
+              <td>Fowls came and devoured them up</td>
+              <td>Fowls of the air came and devoured it up</td>
+              <td>It was <em>trodden down</em>, and the fowls devoured it</td>
+            </tr>
+            <tr>
+              <td class="row-label">Stony</td>
+              <td>No deepness of earth; sun scorched it; no root; withered</td>
+              <td>No depth of earth; sun scorched it; no root; withered</td>
+              <td>Withered away, <em>because it lacked moisture</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Thorns</td>
+              <td>The thorns sprung up and choked them</td>
+              <td>The thorns grew up and choked it, <em>and it yielded no fruit</em></td>
+              <td>The thorns <em>sprang up with it</em> and choked it</td>
+            </tr>
+            <tr>
+              <td class="row-label">Yield</td>
+              <td>Hundredfold, sixtyfold, thirtyfold</td>
+              <td>Thirty, sixty, and an hundred</td>
+              <td>An hundredfold</td>
+            </tr>
+            <tr>
+              <td class="row-label">Closing cry</td>
+              <td><em>“Who hath ears to hear, let him hear”</em></td>
+              <td><em>“He that hath ears to hear, let him hear”</em></td>
+              <td>He <em>cried</em> it: <em>“He that hath ears to hear, let him hear”</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="compare">
+        <p class="compare-title">The Interpretation</p>
+        <table>
+          <thead>
+            <tr>
+              <th class="row-label">Point</th>
+              <th>Matthew 13:18–23</th>
+              <th>Mark 4:14–20</th>
+              <th>Luke 8:11–15</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-label">The seed</td>
+              <td><em>“The word of the kingdom”</em></td>
+              <td><em>“The sower soweth the word”</em></td>
+              <td><em>“The seed is the word of God”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Wayside failure</td>
+              <td>Heareth <em>“and understandeth it not”</em></td>
+              <td><em>“When they have heard”</em></td>
+              <td><em>“They that hear”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Who takes it</td>
+              <td>The wicked one</td>
+              <td>Satan, <em>immediately</em></td>
+              <td>The devil</td>
+            </tr>
+            <tr>
+              <td class="row-label">Why he takes it</td>
+              <td>Not stated</td>
+              <td>Not stated</td>
+              <td><em>“Lest they should believe and be saved”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Stony response</td>
+              <td><em>“Anon with joy receiveth it”</em></td>
+              <td><em>“Immediately receive it with gladness”</em></td>
+              <td>Receive it with joy; <em>“for a while believe”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">The root</td>
+              <td><em>“Hath he not root in himself”</em></td>
+              <td><em>“No root in themselves”</em></td>
+              <td><em>“These have no root”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">What tests it</td>
+              <td>Tribulation or persecution <em>because of the word</em></td>
+              <td>Affliction or persecution <em>for the word's sake</em></td>
+              <td><em>“In time of temptation fall away”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">The thorns</td>
+              <td>Care of this world; deceitfulness of riches</td>
+              <td>Cares; riches; <em>and the lusts of other things entering in</em></td>
+              <td>Cares; riches; <em>and pleasures of this life</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Thorn result</td>
+              <td><em>“He becometh unfruitful”</em></td>
+              <td><em>“It becometh unfruitful”</em></td>
+              <td><em>“Bring no fruit to perfection”</em></td>
+            </tr>
+            <tr>
+              <td class="row-label">Good ground</td>
+              <td>Heareth <em>and understandeth</em> it</td>
+              <td>Hear the word <em>and receive it</em></td>
+              <td>Honest and good heart; <em>keep it</em>; fruit <em>with patience</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <p class="section-title">What the composite gives us</p>
+        <div class="section-body">
+          <p>Lay the three descriptions of the good ground on top of one another and a sequence appears that no single gospel states by itself:</p>
+          <ul class="quals-list">
+            <li>Hear it (all three)</li>
+            <li>Understand it (Matthew)</li>
+            <li>Receive it (Mark)</li>
+            <li>Keep it (Luke)</li>
+            <li>Endure with it (Luke)</li>
+            <li>Bear fruit from it (all three)</li>
+          </ul>
+          <p>Every one of the failing soils breaks that chain at a different link. The wayside breaks it at understanding. The stony ground breaks it at keeping. The thorny ground breaks it at enduring. Only the fourth carries the seed all the way to harvest.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec3">
+      <div class="article-header">
+        <span class="article-num">III.</span>
+        <h2 class="article-title">Why He Taught in Parables</h2>
+      </div>
+      <p class="article-body">All three writers record the disciples asking the question, and all three record the same answer out of Isaiah. This section matters because it establishes the principle the parable itself illustrates: what a person receives from God's word is governed by the condition he brings to the hearing.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Answer in Three Forms</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 13:13</span>
+          <span class="scripture-text">“Therefore speak I to them in parables: because they seeing see not, and hearing they hear not, neither do they understand.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 4:11–12</span>
+          <span class="scripture-text">“Unto you it is given to know the mystery of the kingdom of God: but unto them that are without, all these things are done in parables: That seeing they may see, and not perceive; and hearing they may hear, and not understand; lest at any time they should be converted, and their sins should be forgiven them.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 8:10</span>
+          <span class="scripture-text">“Unto you it is given to know the mysteries of the kingdom of God: but to others in parables; that seeing they might not see, and hearing they might not understand.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 6:9–10</span>
+          <span class="scripture-text">“Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not. Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed.”</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Mercy and judgment in the same sentence</p>
+        <div class="section-body">
+          <p>Matthew's wording says <em>because</em> they see not. Mark's and Luke's say <em>that</em> they may not see. Both are true and they are not at war. The parable is a response to a hardness already present, and it is also a deliberate veiling. Jesus is not withholding truth from people who are hungry for it. Notice that in every account the disciples get the full explanation the moment they ask. The veil lifts for anyone who comes and asks.</p>
+          <p>And the veiling is itself a mercy. Greater light brings greater accountability, and Jesus says so directly in Luke 12:47–48: the servant who knew his lord's will and did it not is beaten with many stripes. To pour full, plain revelation on a heart determined to reject it is to increase its judgment. The parable slows that down.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">The governing rule Jesus attaches</p>
+        <div class="section-body">
+          <p>Matthew states the principle right before the interpretation: <em>“For whosoever hath, to him shall be given, and he shall have more abundance: but whosoever hath not, from him shall be taken away even that he hath”</em> (13:12). What you do with the light you already have determines whether more comes. That is why the same sermon can leave one man convicted and another man bored.</p>
+          <p>Mark and Luke both attach a command about listening right after the parable, and they use different words for it. Mark 4:24 says <em>“Take heed what ye hear.”</em> Luke 8:18 says <em>“Take heed therefore how ye hear.”</em> What, and how. Guard the content, and guard the manner. This parable makes the second one just as serious as the first.</p>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>Isaiah 6:9–10 is quoted more than any other Old Testament passage on the subject of hardened hearing. It shows up here in all three synoptic gospels, again in John 12:39–40, and again as Paul's closing word to the Jewish leaders in Rome in Acts 28:26–27. Jesus is not inventing a category for his generation. He is naming their condition using the words of the prophet who saw the Lord high and lifted up, and John adds the striking note in 12:41 that <em>“these things said Esaias, when he saw his glory, and spake of him.”</em></p>
+          <p>Matthew also tells us the parables themselves fulfill prophecy, quoting Psalm 78:2 in Matthew 13:35: <em>“I will open my mouth in parables; I will utter things which have been kept secret from the foundation of the world.”</em></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec4">
+      <div class="article-header">
+        <span class="article-num">IV.</span>
+        <h2 class="article-title">The Seed Is the Word</h2>
+      </div>
+      <p class="article-body">Luke says it flat out: <em>“The seed is the word of God”</em> (8:11). Matthew narrows it to <em>“the word of the kingdom”</em> (13:19). Mark keeps it simplest of all: <em>“The sower soweth the word”</em> (4:14). The image is not decoration. A seed does specific things, and scripture had already used it to describe exactly those things about God's word.</p>
+
+      <div class="phase">
+        <p class="phase-header">Why a seed</p>
+        <p class="phase-title">Four things a seed does that God's word also does</p>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">1. It carries life the soil did not give it</p>
+          <div class="phase-scripture"><span class="phase-ref">Genesis 1:11–12</span><br><em>“The herb yielding seed, and the fruit tree yielding fruit, whose seed is in itself, after his kind.”</em></div>
+          <div class="phase-scripture"><span class="phase-ref">1 Peter 1:23</span><br><em>“Being born again, not of corruptible seed, but of incorruptible, by the word of God, which liveth and abideth for ever.”</em></div>
+          <p class="phase-scripture">Dirt cannot manufacture life. It can only host it. The new birth comes by the word, not from the man.</p>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">2. It works hidden before it works visibly</p>
+          <div class="phase-scripture"><span class="phase-ref">Mark 4:26–27</span><br><em>“So is the kingdom of God, as if a man should cast seed into the ground; and should sleep, and rise night and day, and the seed should spring and grow up, he knoweth not how.”</em></div>
+          <p class="phase-scripture">Mark places this parable directly after the sower on purpose. Nothing shows above ground for days. The absence of visible results is not evidence that nothing is happening.</p>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">3. It cannot be improved by the ground, only received or refused</p>
+          <div class="phase-scripture"><span class="phase-ref">Isaiah 55:10–11</span><br><em>“For as the rain cometh down, and the snow from heaven... so shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please.”</em></div>
+          <p class="phase-scripture">Isaiah's picture is rain, seed to the sower, and bread to the eater, and then the direct application to God's word. It never comes back empty.</p>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">4. It reproduces after its own kind</p>
+          <div class="phase-scripture"><span class="phase-ref">James 1:21</span><br><em>“Receive with meekness the engrafted word, which is able to save your souls.”</em></div>
+          <p class="phase-scripture">Fruit carries seed inside it. A hearer who bears fruit is carrying the same seed that produced him, which is how the field becomes a sower.</p>
+        </div>
+
+        <div class="phase-note">Because the seed is incorruptible and the sower is faithful, Jesus removes two variables before the parable even begins. The word is not the problem. The sowing is not the problem. Whatever explains the three failures has to be found in the ground.</div>
+      </div>
+    </article>
+
+    <article class="article" id="sec5">
+      <div class="article-header">
+        <span class="article-num">V.</span>
+        <h2 class="article-title">The Ground Is the Heart</h2>
+      </div>
+      <p class="article-body">Jesus does not leave this to inference either. Matthew 13:19 says the wicked one catches away <em>“that which was sown in his heart.”</em> Mark 4:15 says Satan takes away <em>“the word that was sown in their hearts.”</em> Luke 8:12 says the devil takes the word <em>“out of their hearts,”</em> and 8:15 names the good ground as <em>“an honest and good heart.”</em> Ground means heart, on his own authority.</p>
+
+      <div class="section">
+        <p class="section-title">Why ground, of all the images available</p>
+        <div class="section-body">
+          <p>Genesis 2:7 says the LORD God formed man of the dust of the ground. The man was taken out of the soil, and in Hebrew the two words sit right next to each other: <em>adam</em> from <em>adamah</em>. When Jesus wants a picture of the human heart, he reaches for the very substance the human being was made from. The figure is not borrowed from farming and applied to theology. It runs the other direction.</p>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Prophets Had Already Used It</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 4:3–4</span>
+          <span class="scripture-text">“Break up your fallow ground, and sow not among thorns. Circumcise yourselves to the LORD, and take away the foreskins of your heart.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hosea 10:12</span>
+          <span class="scripture-text">“Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek the LORD, till he come and rain righteousness upon you.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 36:26</span>
+          <span class="scripture-text">“A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Proverbs 4:23</span>
+          <span class="scripture-text">“Keep thy heart with all diligence; for out of it are the issues of life.”</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Fallow ground</p>
+        <div class="section-body">
+          <p>Jeremiah and Hosea both use the same term, and it is worth being precise about it. Fallow ground is not wilderness that was never touched. It is a field that was worked once and then left, so it went hard and grew over. Both prophets are speaking to a covenant people, not to pagans. That is the diagnosis lying underneath three of the four soils in the parable. The problem is not that these people never had anything to do with God's word. The problem is what happened to the field afterward.</p>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>Notice the order in Hosea 10:12. Break up the fallow ground first, then <em>“till he come and rain righteousness upon you.”</em> The ground is broken before the rain falls, not after. Waiting for the outpouring before doing the hard work of clearing has the sequence backwards.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec6">
+      <div class="article-header">
+        <span class="article-num">VI.</span>
+        <h2 class="article-title">The Wayside: Hearing Without Understanding</h2>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Three Statements</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 13:19</span>
+          <span class="scripture-text">“When any one heareth the word of the kingdom, and understandeth it not, then cometh the wicked one, and catcheth away that which was sown in his heart.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 4:15</span>
+          <span class="scripture-text">“When they have heard, Satan cometh immediately, and taketh away the word that was sown in their hearts.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 8:12</span>
+          <span class="scripture-text">“Those by the way side are they that hear; then cometh the devil, and taketh away the word out of their hearts, lest they should believe and be saved.”</span>
+        </div>
+      </div>
+
+      <p class="article-body">In Galilee a sower broadcast his seed by hand across an open field, and footpaths ran through and along those fields. Villagers used them daily. Here is the thing worth pausing on: the path is not different dirt. It is the same soil as the rest of the field, packed hard by feet. Nothing was added to it and nothing was taken away. It simply had traffic and no plow. Luke alone adds the detail <em>“and it was trodden down”</em> (8:5). The seed never gets below the surface, so it lies out in the open, and the birds finish the job.</p>
+
+      <div class="section">
+        <p class="section-title">The word Luke chose</p>
+        <div class="section-body">
+          <p>Luke's <em>“trodden down”</em> renders a Greek verb that carries more than foot traffic. It is the same word Jesus uses in Matthew 7:6 for swine trampling pearls underfoot, and the same word Hebrews 10:29 uses for treading the Son of God under foot. It carries contempt. Seed on a path is not merely neglected. It is walked on.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Matthew names the exact failure</p>
+        <div class="section-body">
+          <p>Only Matthew supplies the missing word: he <em>“understandeth it not.”</em> The Greek verb means to put together, to bring the pieces into connection so the sense appears. It is the same verb Matthew uses in 13:23 for the good ground, which <em>“heareth the word, and understandeth it.”</em> So the first soil and the fourth are defined by the presence or absence of the same single thing.</p>
+          <p>This is not about intelligence. Understanding in scripture is a moral posture before it is a mental capacity. The failure at the wayside happens in the few inches between the ear and the heart, and it happens before the devil ever shows up. He is second on the scene, not first.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">How ground gets that hard</p>
+        <div class="section-body">
+          <p>A path is not built. It is worn. It forms by the same feet going the same way over and over until nothing can penetrate. That is the whole doctrine of hardening in scripture, and it is always described as a process rather than an event.</p>
+          <p>Zechariah 7:11–12 traces the steps in order: they refused to hearken, pulled away the shoulder, stopped their ears, and then <em>“made their hearts as an adamant stone, lest they should hear the law.”</em> Notice the purpose clause at the end. The hardening was aimed at the hearing. It was a defense mechanism, built deliberately, to keep the word from getting in.</p>
+          <p>Hebrews says the same in the present tense to believers: <em>“To day if ye will hear his voice, harden not your hearts”</em> (3:15), and <em>“exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin”</em> (3:13). Hardening is gradual, deceptive, and it can happen to people who are still in the room.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">The birds, and what Jesus says they are</p>
+        <div class="section-body">
+          <p>He identifies them three ways: the wicked one, Satan, the devil. Scripture uses birds this way elsewhere. Abram had to drive the fowls off his sacrifice in Genesis 15:11. The baker's dream in Genesis 40:17–19 has birds eating out of the basket, and it is a sign of judgment. Revelation 18:2 describes fallen Babylon as a hold for every foul spirit and <em>“a cage of every unclean and hateful bird.”</em></p>
+          <p>Mark supplies the timing: Satan comes <em>immediately.</em> No window is allowed. Truth that has not gone below the surface stays retrievable only briefly, and the enemy knows the size of that window better than we do.</p>
+          <p>Luke supplies the motive, and it is the plainest statement of satanic strategy in the gospels: <em>“lest they should believe and be saved.”</em> Paul states the identical thing without the parable in 2 Corinthians 4:3–4, that <em>“the god of this world hath blinded the minds of them which believe not, lest the light of the glorious gospel of Christ, who is the image of God, should shine unto them.”</em> The target is not the sermon. The target is comprehension, because comprehension is the doorway to belief.</p>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>It is easy to picture the wayside hearer as the hostile outsider, arms folded at the back. But look at where the path is. It runs through the field. It has been in the presence of more sowing than any other ground in the parable, season after season. That is exactly how it got hard.</p>
+          <p>The most regular attender in a congregation can be the wayside. Familiarity with the word is not the same as penetration by it, and long exposure without response does not produce neutrality. It produces pavement.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec7">
+      <div class="article-header">
+        <span class="article-num">VII.</span>
+        <h2 class="article-title">The Stony Ground: Joy Without Root</h2>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Three Statements</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 13:20–21</span>
+          <span class="scripture-text">“He that heareth the word, and anon with joy receiveth it; Yet hath he not root in himself, but dureth for a while: for when tribulation or persecution ariseth because of the word, by and by he is offended.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 4:16–17</span>
+          <span class="scripture-text">“Who, when they have heard the word, immediately receive it with gladness; And have no root in themselves, and so endure but for a time: afterward, when affliction or persecution ariseth for the word's sake, immediately they are offended.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 8:13</span>
+          <span class="scripture-text">“They on the rock are they, which, when they hear, receive the word with joy; and these have no root, which for a while believe, and in time of temptation fall away.”</span>
+        </div>
+      </div>
+
+      <p class="article-body">This is not a field with loose rocks lying around in it. The Galilean hill country runs on limestone shelf, and in many places a few inches of soil sit directly on solid bedrock. From the surface it looks exactly like the rest of the field. You only find out by digging, or by planting.</p>
+
+      <div class="section">
+        <p class="section-title">Why it comes up first</p>
+        <div class="section-body">
+          <p>Mark 4:5 says <em>“immediately it sprang up, because it had no depth of earth.”</em> Read that carefully. It sprang up faster <em>because</em> the soil was shallow. The rock holds heat, the root has nowhere to go down, and so everything the plant has goes up. The quickest, greenest growth in the field is the growth that will not survive the summer.</p>
+          <p>That single line should reorder how we evaluate response to preaching. Speed of visible response is not a measure of depth. In this parable it is actually a warning sign.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">All three name joy</p>
+        <div class="section-body">
+          <p>Matthew says <em>“anon with joy.”</em> Mark says <em>“immediately... with gladness.”</em> Luke says <em>“with joy.”</em> Not one of the three treats this as pretending. The emotion is real. The gladness is genuine.</p>
+          <p>So joy at hearing the word is not the evidence of good ground. Joy is present in soil that fails. Israel sang at the Red Sea in Exodus 15:1–21, and three days later at Marah they murmured over water (Exodus 15:22–24). The song was not fake. It just had no root system underneath it.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">What is missing, precisely</p>
+        <div class="section-body">
+          <p>Mark's wording is exact: <em>“no root in themselves.”</em> The deficiency is not in the seed, and not in the sowing. Every seed contains the root. The rock is what refused it room.</p>
+          <p>Luke adds his own diagnosis on the front end: it withered <em>“because it lacked moisture”</em> (8:6). Not sunlight, not seed, not sincerity. Water. And scripture regularly ties water to the Spirit and to the word: rivers of living water in John 7:38–39, and <em>“the washing of water by the word”</em> in Ephesians 5:26. A plant with a shallow root can survive on surface dew for a few weeks. It cannot reach what it needs when the surface dries.</p>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">How Roots Are Made</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 1:2–3</span>
+          <span class="scripture-text">“But his delight is in the law of the LORD; and in his law doth he meditate day and night. And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 17:8</span>
+          <span class="scripture-text">“For he shall be as a tree planted by the waters, and that spreadeth out her roots by the river, and shall not see when heat cometh, but her leaf shall be green; and shall not be careful in the year of drought, neither shall cease from yielding fruit.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Colossians 2:6–7</span>
+          <span class="scripture-text">“As ye have therefore received Christ Jesus the Lord, so walk ye in him: Rooted and built up in him, and stablished in the faith, as ye have been taught.”</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">The sun is not the villain</p>
+        <div class="section-body">
+          <p>Here is the detail most readings skip. The same sun that scorches the shallow plant is the sun that ripens the deep one into fruit. Jeremiah 17:8 says the rooted tree <em>“shall not see when heat cometh.”</em> Same heat, opposite result, and the only difference in the whole equation is the root.</p>
+          <p>Malachi 4:1–2 sets one day two ways: it burns as an oven for the proud, and for those who fear his name <em>“shall the Sun of righteousness arise with healing in his wings.”</em> James 1:2–4 says the trying of faith works patience, and 1 Peter 1:7 calls the trial of faith more precious than gold that is tried in the fire. Pressure was never meant to be avoided. It was meant to be survived, and then to produce something.</p>
+          <p>Notice also the qualifier Matthew and Mark both include: tribulation or persecution <em>because of the word</em>, <em>for the word's sake.</em> This is not random misfortune. It is the specific cost that attaches to the seed itself. Luke widens it to <em>“time of temptation,”</em> which covers the quieter pressures that do not look like persecution.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">“Offended”</p>
+        <div class="section-body">
+          <p>The word behind <em>offended</em> is the one we get scandal from, and it means to be tripped by a snare or a stumbling block. It is not hurt feelings. It is a fall.</p>
+          <p>Jesus uses that same word in his own end-times warning in Matthew 24:9–13: <em>“then shall many be offended”</em>, iniquity abounds, the love of many waxes cold, <em>“but he that shall endure unto the end, the same shall be saved.”</em> The stony ground is the short version of that whole passage.</p>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p><strong>On Luke's phrase “for a while believe.”</strong> Luke does not say these people pretended, and he does not say they only appeared to believe. He says they believed for a while, and then in time of temptation fell away. Scripture is willing to speak that plainly in other places too. Paul writes <em>“by which also ye are saved, if ye keep in memory what I preached unto you, unless ye have believed in vain”</em> (1 Corinthians 15:2). Hebrews 3:14 says we are made partakers of Christ <em>“if we hold the beginning of our confidence stedfast unto the end.”</em> John 6:66 records that many of his own disciples went back and walked no more with him. Peter warns that it would have been better not to have known the way of righteousness than to know it and turn from the holy commandment (2 Peter 2:21).</p>
+          <p>The honest reading is that a real beginning is not the same as a finish, and the parable is a warning, not a filing system. Which leads to the hopeful half: God's answer to this exact soil is a promise. <em>“I will take away the stony heart out of your flesh, and I will give you an heart of flesh”</em> (Ezekiel 36:26). Bedrock under the topsoil can be broken and hauled out. It is hard work, it takes time, and it is the one job the plant cannot do for itself.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec8">
+      <div class="article-header">
+        <span class="article-num">VIII.</span>
+        <h2 class="article-title">The Thorny Ground: Growth Without Room</h2>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Three Statements</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 13:22</span>
+          <span class="scripture-text">“He also that received seed among the thorns is he that heareth the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 4:19</span>
+          <span class="scripture-text">“And the cares of this world, and the deceitfulness of riches, and the lusts of other things entering in, choke the word, and it becometh unfruitful.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 8:14</span>
+          <span class="scripture-text">“That which fell among thorns are they, which, when they have heard, go forth, and are choked with cares and riches and pleasures of this life, and bring no fruit to perfection.”</span>
+        </div>
+      </div>
+
+      <p class="article-body">This is good soil. That is what makes it the most dangerous ground in the parable. It is deep, it holds moisture, it is fertile enough to grow anything, and thorns want it for exactly the same reasons wheat does. There is no defect here at all. The problem is occupancy.</p>
+
+      <div class="section">
+        <p class="section-title">Luke's precision</p>
+        <div class="section-body">
+          <p>Luke 8:7 says <em>“the thorns sprang up with it.”</em> With it. Same field, same season, same water, same nutrients, growing side by side. Mark 4:7 adds the outcome: <em>“the thorns grew up, and choked it, and it yielded no fruit.”</em></p>
+          <p>Which means the thorn roots were already in the ground before the seed ever landed. This field was sown without being cleared. Jeremiah had given the instruction centuries earlier: <em>“Break up your fallow ground, and sow not among thorns”</em> (Jeremiah 4:3). Ground gets cleared first, or the crop is contested from day one.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Where thorns came from</p>
+        <div class="section-body">
+          <p>Genesis 3:17–18 is the origin: <em>“cursed is the ground for thy sake... Thorns also and thistles shall it bring forth to thee.”</em> Thorns are what the ground produces on its own after the fall. They require no planting, no watering, and no attention. They are the default output of cursed soil.</p>
+          <p>So this is not neutral competition between two crops. It is the ground's own fallen productivity growing up alongside the word of God, and it has a head start.</p>
+        </div>
+      </div>
+
+      <div class="phase">
+        <p class="phase-header">The Thorns Named</p>
+        <p class="phase-title">Four chokers across the three accounts</p>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">1. The cares of this world (all three)</p>
+          <div class="phase-scripture"><span class="phase-ref">Luke 21:34</span><br><em>“Take heed to yourselves, lest at any time your hearts be overcharged with surfeiting, and drunkenness, and cares of this life, and so that day come upon you unawares.”</em></div>
+          <p class="phase-scripture">Cares are usually not sins. Jesus lists food and clothing in Matthew 6:25–34, which are legitimate needs. Martha in Luke 10:41 was <em>“careful and troubled about many things”</em> while she was serving him. Her distraction was ministry. A care becomes a thorn when a legitimate concern is given more room than the word.</p>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">2. The deceitfulness of riches (Matthew and Mark)</p>
+          <div class="phase-scripture"><span class="phase-ref">Revelation 3:17</span><br><em>“Because thou sayest, I am rich, and increased with goods, and have need of nothing; and knowest not that thou art wretched, and miserable, and poor, and blind, and naked.”</em></div>
+          <p class="phase-scripture">Notice that Jesus does not say riches choke the word. He says the <em>deceitfulness</em> of riches does. The lie is that money can carry weight it was never able to carry: security, identity, and rest. Proverbs 23:5 says riches <em>“make themselves wings; they fly away as an eagle toward heaven.”</em> Paul says those determined to be rich fall into a snare and pierce themselves through with many sorrows (1 Timothy 6:9–10). Laodicea shows the deceit at full strength: the man is poorest exactly where he feels safest.</p>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">3. The lusts of other things entering in (Mark alone)</p>
+          <div class="phase-scripture"><span class="phase-ref">1 John 2:15–17</span><br><em>“All that is in the world, the lust of the flesh, and the lust of the eyes, and the pride of life, is not of the Father, but is of the world.”</em></div>
+          <p class="phase-scripture">Mark refuses to let the list be narrowed. He does not say other sins. He says <em>other things</em>, and he adds that they are <em>entering in</em>, which is present and ongoing. Anything at all can take the role, and something is always arriving.</p>
+        </div>
+
+        <div class="sub-phase">
+          <p class="sub-phase-title">4. The pleasures of this life (Luke alone)</p>
+          <div class="phase-scripture"><span class="phase-ref">Hebrews 11:25</span><br><em>“Choosing rather to suffer affliction with the people of God, than to enjoy the pleasures of sin for a season.”</em></div>
+          <p class="phase-scripture">Paul's list of last-days characteristics includes <em>“lovers of pleasures more than lovers of God”</em> (2 Timothy 3:4). The comparative is the whole point. Pleasure is not condemned. Pleasure that outranks God is.</p>
+        </div>
+
+        <div class="phase-note">Put the three lists together and the picture is complete: worry, money, appetite, and enjoyment. Nothing on that list is unusual, and nothing on it is scandalous. That is precisely why this soil catches so many.</div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">The verb “choke”</p>
+        <div class="section-body">
+          <p>All three writers use the same word, and it means to throttle or to strangle, to press in from every side until breathing stops. Luke uses the very same verb a few chapters later, in 8:42, for the crowd thronging Jesus so tightly he could barely move.</p>
+          <p>That is the whole character of this soil. It is not an attack. It is crowding. There is no devil snatching anything away here, and no persecution scorching anything. Nobody picks a day to be strangled. It happens by degrees, in ordinary weeks, while everything still looks green.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">The outcome Luke describes</p>
+        <div class="section-body">
+          <p>Matthew and Mark say the hearer <em>“becometh unfruitful.”</em> Luke says something slightly different and worth dwelling on: they <em>“bring no fruit to perfection.”</em> The verb behind that phrase means to carry all the way through to completion, and it appears nowhere else in the New Testament.</p>
+          <p>So the point is not that nothing grew. Something grew. It just never came to maturity. That is the fig tree of Matthew 21:19 with a full canopy of leaves and no figs on it. It is Hosea 10:1, <em>“Israel is an empty vine, he bringeth forth fruit unto himself.”</em> It is Jude 12, <em>“trees whose fruit withereth, without fruit.”</em> There is foliage. There is activity. There is no harvest.</p>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>Of the four grounds, this is the only one where the failure is not about something that happened to the seed. Nothing took it and nothing burned it. The failure is about what else was allowed to keep growing next to it.</p>
+          <p>Which means there is no crisis to point back to. The wayside hearer could tell you the sermon he shrugged off. The stony ground hearer could name the trouble that broke him. The thorny ground hearer usually cannot name the day he stopped bearing fruit, because there wasn't one.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec9">
+      <div class="article-header">
+        <span class="article-num">IX.</span>
+        <h2 class="article-title">The Good Ground: Hearing That Holds</h2>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Three Statements</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 13:23</span>
+          <span class="scripture-text">“But he that received seed into the good ground is he that heareth the word, and understandeth it; which also beareth fruit, and bringeth forth, some an hundredfold, some sixty, some thirty.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 4:20</span>
+          <span class="scripture-text">“And these are they which are sown on good ground; such as hear the word, and receive it, and bring forth fruit, some thirtyfold, some sixty, and some an hundred.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 8:15</span>
+          <span class="scripture-text">“But that on the good ground are they, which in an honest and good heart, having heard the word, keep it, and bring forth fruit with patience.”</span>
+        </div>
+      </div>
+
+      <p class="article-body">Three descriptions of one soil, and each supplies something the others leave out. Matthew gives understanding, Mark gives reception, Luke gives honesty, retention, and endurance. Read together they describe not a moment but a whole course of behavior toward the word of God.</p>
+
+      <div class="section">
+        <p class="section-title">“An honest and good heart”</p>
+        <div class="section-body">
+          <p>Luke's phrase is not a claim of sinlessness, and it is not saying some people are simply born as better dirt. It describes a posture toward truth: willingness to be told something you did not want to hear, and willingness to let it stand once it is verified.</p>
+          <p>Acts 17:11 shows exactly what that looks like in practice. The Bereans <em>“received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.”</em> Readiness plus verification. That is neither gullibility nor resistance, and Luke, who wrote both books, is describing the same heart in both places.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">“Keep it”</p>
+        <div class="section-body">
+          <p>The verb Luke uses means to hold down, to hold fast, to retain in one's possession. It is not passive storage. It is grip.</p>
+          <p>This is the decisive distinction in the whole parable, because all four grounds receive the seed. Every one of them. The good ground is not marked out by a better first reception. Three of the four soils received something and then lost it. The fourth held on. Hebrews 10:23 says <em>“let us hold fast the profession of our faith without wavering,”</em> and Hebrews 3:6 makes the holding fast the evidence of belonging to the house.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">“With patience”</p>
+        <div class="section-body">
+          <p>The word means endurance under load, staying under the weight rather than getting out from under it. Luke alone attaches it to the fruit, and it is the element that finally separates the four soils, because time is what exposes them all.</p>
+          <p>Look at the clock in the parable. The wayside fails in seconds, before the seed is even out of sight. The stony ground fails in a season, as soon as the sun comes up. The thorns take longer, a whole growing year, and the plant is alive the entire time. Only the fourth ground is still bearing at harvest. Three of the four look fine at some point on the calendar, so any evaluation taken early will misclassify the field.</p>
+        </div>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Endurance and the Promise</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 10:36</span>
+          <span class="scripture-text">“For ye have need of patience, that, after ye have done the will of God, ye might receive the promise.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 2:7</span>
+          <span class="scripture-text">“To them who by patient continuance in well doing seek for glory and honour and immortality, eternal life.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 1:4</span>
+          <span class="scripture-text">“But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Revelation 14:12</span>
+          <span class="scripture-text">“Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus.”</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">What the fruit actually is</p>
+        <div class="section-body">
+          <p>Jesus does not define fruit here, because the rest of scripture already does, and it answers in several complementary ways.</p>
+          <ul class="quals-list">
+            <li>Character: the fruit of the Spirit, Galatians 5:22–23</li>
+            <li>Conduct: by their fruits ye shall know them, Matthew 7:16–20</li>
+            <li>Obedience: doers of the word, James 1:22</li>
+            <li>Good works: fruitful in every good work, Colossians 1:10</li>
+            <li>Growth in others: the gospel bringing forth fruit, Colossians 1:6</li>
+            <li>Worship: the fruit of our lips, Hebrews 13:15</li>
+          </ul>
+          <p>And John 15:4–5 supplies the mechanism: <em>“As the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me... without me ye can do nothing.”</em> Fruit is not squeezed out of a plant by effort. It is what a rooted, connected, living plant does on its own, in season.</p>
+          <p>One more thing about fruit that this parable depends on. Every fruit carries seed inside it, as Genesis 1:11–12 established on the third day. The good ground does not simply survive. It becomes a supply of seed for the next field, which is why the parable ends in multiplication rather than in mere endurance.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec10">
+      <div class="article-header">
+        <span class="article-num">X.</span>
+        <h2 class="article-title">The Sower and the Yield</h2>
+      </div>
+      <p class="article-body">Jesus never identifies the sower in the interpretation of this parable. Mark says only <em>“The sower soweth the word”</em> (4:14). But in the very next parable, the wheat and the tares, he does name one: <em>“He that soweth the good seed is the Son of man”</em> (Matthew 13:37). Christ is the sower first, and everyone who carries his word afterward is sowing the same seed out of the same bag.</p>
+
+      <div class="section">
+        <p class="section-title">He does not survey the ground first</p>
+        <div class="section-body">
+          <p>Read the parable again and notice what the sower never does. He does not test the soil, sort the crowd, or hold back seed from the path he can plainly see. He broadcasts. Some of that seed lands in the open, in full view of the birds, and he throws it anyway.</p>
+          <p>Ecclesiastes 11:6 gives the same instruction: <em>“In the morning sow thy seed, and in the evening withhold not thine hand: for thou knowest not whether shall prosper, either this or that, or whether they both shall be alike good.”</em> The sower is accountable for the sowing. He is not accountable for the soil, and he is not qualified to pre-judge it.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">He is not the one who gives the increase</p>
+        <div class="section-body">
+          <p>Paul states it without any figure at all: <em>“I have planted, Apollos watered; but God gave the increase. So then neither is he that planteth any thing, neither he that watereth; but God that giveth the increase”</em> (1 Corinthians 3:6–7). This keeps the parable from being read as a performance review of the preacher. A sower cannot make a seed germinate and cannot make a root go down.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Thirty, sixty, a hundred</p>
+        <div class="section-body">
+          <p>Matthew counts down from the hundred, Mark counts up to it, and Luke names only the hundredfold. Nothing doctrinal hangs on the order, but the number itself is worth understanding. A hundredfold return was not a normal harvest in that world. It was extraordinary, and scripture treats it as a mark of blessing: <em>“Then Isaac sowed in that land, and received in the same year an hundredfold: and the LORD blessed him”</em> (Genesis 26:12).</p>
+          <p>So the good ground's outcome is not simply that the process worked. It is a return wildly out of proportion to what was put in.</p>
+          <p>And notice what is not said. Nobody in the good ground bears nothing. The yields differ, but the bearing does not. Different measures, same category, and the parable never suggests the thirtyfold field belongs with the thorns.</p>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus</p>
+        <div class="bonus-body">
+          <p>Mark 4:13 makes a large claim for this parable: <em>“Know ye not this parable? and how then will ye know all parables?”</em> He is saying that this one is the key to the rest of them, and the reason is right in the structure. Every parable is seed. Every hearer is ground. What any listener walks away with is decided by the soil he brought into the room, and that principle applies to the parable of the sower itself.</p>
+          <p>Which is why all three gospels end the telling the same way, with a cry rather than a conclusion: <em>“He that hath ears to hear, let him hear.”</em></p>
+        </div>
+      </div>
+    </article>
+
+    <article class="article" id="sec11">
+      <div class="article-header">
+        <span class="article-num">XI.</span>
+        <h2 class="article-title">Ground Can Be Broken</h2>
+      </div>
+      <p class="article-body">It is easy to hear this parable as a sorting mechanism, as though every listener were permanently assigned to one of four categories and there was nothing to be done about it. But no farmer alive treats soil that way. A path gets plowed. Rock gets dug out and hauled to the edge of the field. Thorns get cut and burned. Bad ground is a job, not a verdict, and that is exactly how scripture speaks about the human heart.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Work, and the Promise</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 4:3</span>
+          <span class="scripture-text">“Break up your fallow ground, and sow not among thorns.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hosea 10:12</span>
+          <span class="scripture-text">“Break up your fallow ground: for it is time to seek the LORD, till he come and rain righteousness upon you.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 36:26</span>
+          <span class="scripture-text">“I will take away the stony heart out of your flesh, and I will give you an heart of flesh.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 3:13</span>
+          <span class="scripture-text">“But exhort one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin.”</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 1:21</span>
+          <span class="scripture-text">“Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.”</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Each soil has a corresponding remedy</p>
+        <div class="section-body">
+          <p>The wayside needs the ground opened, which is what conviction does. Hebrews 4:12 describes the word as living and powerful and sharper than any two-edged sword, and a blade in the ground is a plow.</p>
+          <p>The stony ground needs depth, and depth is made slowly. Psalm 1 says it comes by delighting in his law and meditating in it day and night. There is no shortcut to a root system.</p>
+          <p>The thorny ground needs clearing, and clearing means removing something, not adding anything. It is the only one of the four remedies that requires giving something up.</p>
+          <p>And the good ground needs guarding, because a field left alone will not stay clear. Proverbs 4:23 says to keep the heart with all diligence, and the reason is given in the same verse: out of it are the issues of life.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Where the parable lands</p>
+        <div class="section-body">
+          <p>Mark and Luke both follow the interpretation with a command about listening, and they aim at different targets. Mark 4:24 says <em>“Take heed what ye hear.”</em> Luke 8:18 says <em>“Take heed therefore how ye hear.”</em> Content and manner, both under orders.</p>
+          <p>Then Luke does something the others do not. He puts the arrival of Jesus' mother and brothers immediately after (8:19–21), and he closes it with a sentence that is the fourth soil with a face on it: <em>“My mother and my brethren are these which hear the word of God, and do it.”</em></p>
+          <p>Hear it, and do it. That is the good ground in seven words, and it is the only ground in the parable that ends with a harvest.</p>
+        </div>
+      </div>
+    </article>
+
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-text">Hear the word of God, and do it · Luke 8:21</p>
+  </footer>
+
+</div>
+</body>
+</html>

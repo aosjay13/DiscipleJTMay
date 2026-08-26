@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcohol in the Bible &middot; Wine, Strong Drink, and the Believer&rsquo;s Walk</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .header-ornament {
+    font-size: 1.2rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 0.9rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.55rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.4rem 0 0;
+    padding: 1.5rem 1.9rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.55rem; break-inside: avoid; }
+  .toc-list a {
+    font-size: 0.97rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    min-width: 2.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SCRIPTURE CALLOUT (cream box, gold top border) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.78; font-size: 1rem; }
+  .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── KEY POINT PANEL (crimson border) ── */
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .keypoint p { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  /* ── TWO-COLUMN COMPARISON GRID ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.8rem 0;
+    break-inside: avoid;
+  }
+  .compare-col {
+    padding: 1.1rem 1.3rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+  }
+  .compare-col.shadow   { border-top: 3px solid var(--gold-light); }
+  .compare-col.remains  { border-top: 3px solid var(--crimson-lt); }
+  .compare-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .compare-col.shadow .compare-title  { color: var(--gold); }
+  .compare-col.remains .compare-title { color: var(--crimson); }
+  .compare-body { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); }
+  .compare-body ul { list-style: none; margin-top: 0.5rem; }
+  .compare-body li { padding-left: 1rem; position: relative; margin-bottom: 0.35rem; }
+  .compare-body li::before { content: '\2022'; position: absolute; left: 0; color: var(--gold-light); }
+
+  /* ── DATA TABLE ── */
+  .table-wrap { margin: 1.8rem 0; overflow-x: auto; break-inside: avoid; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+  .compare-table thead tr { background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .compare-table th { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: #FBF5E6; padding: 0.6rem 0.8rem; text-align: left; font-weight: 500; }
+  .compare-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); vertical-align: top; line-height: 1.5; }
+  .compare-table tbody tr { break-inside: avoid; }
+  .compare-table tbody tr:nth-child(even) td { background: rgba(242,235,217,0.45); }
+  .compare-table .col-name { font-family: 'Cinzel', serif; font-size: 0.86rem; color: var(--ink); font-weight: 600; }
+  .compare-table .col-origin { font-style: italic; color: var(--ink-soft); }
+  .compare-table .col-strong { color: var(--crimson); font-weight: 600; }
+  .table-caption { font-size: 0.86rem; font-style: italic; color: var(--ink-soft); margin-top: 0.7rem; line-height: 1.6; }
+
+  /* ── BONUS / DASHED PANEL ── */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+
+  /* ── TEACHER'S NOTE (dashed gold, italic) ── */
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.4rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .teacher-note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .teacher-note p {
+    font-size: 0.95rem;
+    line-height: 1.74;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .teacher-note p + p { margin-top: 0.6rem; }
+
+  /* ── PLAIN LIST ── */
+  .plain-list { list-style: none; margin: 1rem 0 1.4rem; }
+  .plain-list li {
+    position: relative;
+    padding-left: 1.3rem;
+    margin-bottom: 0.55rem;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ink-mid);
+    break-inside: avoid;
+  }
+  .plain-list li::before { content: '\2726'; position: absolute; left: 0; color: var(--gold-light); font-size: 0.75rem; top: 0.3rem; }
+  .plain-list strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* dark gradient conclusion block */
+  .conclusion {
+    margin: 2rem 0 0;
+    padding: 1.8rem 1.8rem;
+    background: linear-gradient(135deg, #2A2622, #3D3829);
+    border-left: 4px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .conclusion p { font-size: 1.02rem; line-height: 1.82; color: #E8DFC8; }
+  .conclusion p + p { margin-top: 0.8rem; }
+  .conclusion em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, 0.75in margins, page numbers) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; font-size: 11pt; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-body { padding: 0 0 1rem; }
+    .doc-header, .doc-footer, .part-divider {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .scripture, .keypoint, .compare-col, .bonus, .teacher-note, .conclusion,
+    .toc, .compare-table thead tr, .compare-table tbody tr:nth-child(even) td {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* keep meaningful units whole */
+    .scripture, .keypoint, .compare, .compare-col, .bonus, .teacher-note,
+    .conclusion, .toc, .table-wrap, .toc-list li, .plain-list li, .compare-table tr,
+    .objection, .part-divider {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    /* never strand a heading at the foot of a page */
+    .section-head, .sub-head, .preamble-label, .toc-title { break-after: avoid; page-break-after: avoid; }
+    .section-head { break-before: auto; page-break-before: auto; }
+    .preamble, .toc { break-after: avoid; page-break-after: avoid; }
+    .body-text { orphans: 3; widows: 3; }
+    .doc-footer { break-before: avoid; page-break-before: avoid; }
+    /* optional forced page break utility */
+    .print-new-page { break-before: page; page-break-before: always; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    .compare { grid-template-columns: 1fr; }
+    .compare-table { font-size: 0.84rem; }
+  }
+
+  /* ── PART DIVIDER ── */
+  .part-divider {
+    margin: 3.4rem 0 0;
+    padding: 1.4rem 1.5rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    text-align: center;
+    position: relative;
+    break-inside: avoid;
+    break-after: avoid;
+  }
+  .part-divider::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .part-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .part-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #FBF5E6;
+  }
+  .part-divider + .section-head { border-top: none; padding-top: 1.6rem; margin-top: 1.4rem; }
+
+  .toc-part {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin: 1rem 0 0.5rem;
+    list-style: none;
+  }
+  .toc-list li.toc-part:first-child { margin-top: 0; }
+
+  /* ── OBJECTION BLOCK ── */
+  .objection {
+    margin: 1.9rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-left: 4px solid var(--gold);
+    break-inside: avoid;
+  }
+  .objection-q {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.45;
+    margin-bottom: 0.7rem;
+  }
+  .objection p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .objection p + p { margin-top: 0.7rem; }
+  .objection .obj-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">Living the Faith &middot; Sobriety and Consecration</p>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">Alcohol in the Bible</h1>
+    <p class="doc-subtitle">Wine, Strong Drink, and the Believer&rsquo;s Walk</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Introduction</p>
+      <p class="dropcap">Few subjects have been handled more carelessly in the modern church than this one. On one side stand those who wave the whole matter away, pointing to a wedding in Cana as though it were a license for anything. On the other side stand those who declare every drop of every substance defiling, and who then find themselves unable to explain the vinegar in their own pantry or the vanilla in the cake. Both have skipped the labor of actually reading what the Word says, and both leave the believer without a standard he can stand on.</p>
+      <p>This study takes the long way. We will look at the words Scripture actually uses and what they described, at the first appearances of wine in the Bible and what came of them, at the plain warnings God gives, and at the men and women He set apart and told to touch none of it. We will lay out the Nazarite law in full, verse by verse, because that law is the one most often quoted in fragments and most often misused. We will then face the passages that are commonly raised against a call to sobriety, and answer them from the text rather than around it. Finally we will handle the practical question of alcohol in cooking, in extracts, and in food, which is a different question entirely and must not be confused with the first.</p>
+      <p>The conclusion this study reaches is stated plainly at the outset so no one has to guess where it is going. The believer does not drink strong drink. Not a glass, not a sip, not socially, not privately. That standard does not rest on a single proof text pulled out of context. It rests on who we have been made in Christ, and on what God has always required of the men He set in that office.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li class="toc-part">Part One &middot; The Substance Itself</li>
+        <li><a href="#s1"><span class="toc-num">I.</span>The Words Scripture Uses</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span>What Strong Drink Was, and What It Is Now</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>The First Mentions and What Came of Them</a></li>
+
+        <li class="toc-part">Part Two &middot; What God Warns Against</li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>The Warnings of the Wise</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>The Woes of the Prophets</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>Drunkenness and the Kingdom</a></li>
+
+        <li class="toc-part">Part Three &middot; The Consecrated</li>
+        <li><a href="#s7"><span class="toc-num">VII.</span>The Priest in Service</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span>The King on the Throne</a></li>
+        <li><a href="#s9"><span class="toc-num">IX.</span>The Law of the Nazarite in Full</a></li>
+        <li><a href="#s10"><span class="toc-num">X.</span>The Lifelong Nazarites</a></li>
+        <li><a href="#s11"><span class="toc-num">XI.</span>The Rechabites and Daniel</a></li>
+
+        <li class="toc-part">Part Four &middot; The Believer&rsquo;s Standing</li>
+        <li><a href="#s12"><span class="toc-num">XII.</span>Kings and Priests Unto God</a></li>
+        <li><a href="#s13"><span class="toc-num">XIII.</span>The Body as the Temple</a></li>
+        <li><a href="#s14"><span class="toc-num">XIV.</span>Filled With the Spirit, Not With Wine</a></li>
+        <li><a href="#s15"><span class="toc-num">XV.</span>The Charge to Be Sober</a></li>
+
+        <li class="toc-part">Part Five &middot; The Hard Passages</li>
+        <li><a href="#s16"><span class="toc-num">XVI.</span>Objections Answered From the Text</a></li>
+
+        <li class="toc-part">Part Six &middot; Alcohol in Food</li>
+        <li><a href="#s17"><span class="toc-num">XVII.</span>A Different Question Entirely</a></li>
+        <li><a href="#s18"><span class="toc-num">XVIII.</span>Where Alcohol Sits in the Kitchen</a></li>
+        <li><a href="#s19"><span class="toc-num">XIX.</span>What Survives the Heat</a></li>
+        <li><a href="#s20"><span class="toc-num">XX.</span>The Week of Unleavened Bread</a></li>
+        <li><a href="#s21"><span class="toc-num">XXI.</span>Practical Counsel for the Kitchen</a></li>
+      </ul>
+    </nav>
+
+    <!-- ══════════ PART ONE ══════════ -->
+    <div class="part-divider">
+      <span class="part-num">Part One</span>
+      <span class="part-name">The Substance Itself</span>
+    </div>
+
+    <!-- SECTION I -->
+    <div class="section-head" id="s1">
+      <p class="section-eyebrow">Defining Our Terms</p>
+      <h2 class="section-title">I. The Words Scripture Uses</h2>
+    </div>
+
+    <p class="body-text">A great deal of confusion on this subject comes from reading one English word where the Bible used several different ones. Before we can weigh a single argument, we have to know what the text is actually naming. The King James translators worked carefully here, and the distinctions they preserved are worth recovering.</p>
+
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Rendered As</th>
+            <th>What It Described</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-name">Yayin</td>
+            <td>Wine</td>
+            <td>The general word for the product of the grape. Used of both the fresh and the fermented, and used both in blessing and in judgment.</td>
+          </tr>
+          <tr>
+            <td class="col-name">Tirosh</td>
+            <td>New wine</td>
+            <td>The fresh juice of the harvest, gathered with the grain and the oil as a sign of God&rsquo;s blessing on the land.</td>
+          </tr>
+          <tr>
+            <td class="col-name">Shekar</td>
+            <td class="col-strong">Strong drink</td>
+            <td>An intoxicating drink made from something other than grapes: barley, dates, honey, or pomegranate. Stronger than table wine and made to intoxicate.</td>
+          </tr>
+          <tr>
+            <td class="col-name">Chomets</td>
+            <td>Vinegar</td>
+            <td>Wine or strong drink soured into acid. A common table item, dipped with bread.</td>
+          </tr>
+          <tr>
+            <td class="col-name">Oinos</td>
+            <td>Wine</td>
+            <td>The general Greek word covering the same range as yayin.</td>
+          </tr>
+          <tr>
+            <td class="col-name">Sikera</td>
+            <td class="col-strong">Strong drink</td>
+            <td>The Greek borrowing of shekar. It appears once in the New Testament, in the charge concerning John the Baptist.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="table-caption">Notice that wherever the Scripture wants to name the harder substance, it does not simply say wine. It says strong drink, and it almost always says it in the middle of a warning.</p>
+    </div>
+
+    <p class="body-text">This is the first thing to establish. Wine and strong drink are not the same thing in the Bible, and the two are almost never treated the same way. Wine appears in the Word in blessing and in cursing both. Strong drink appears in a favorable light in exactly one civil provision in the entire Law, which we will address directly in Part Five, and everywhere else it appears attached to ruin, to error, to woe, or to a command that God&rsquo;s consecrated ones keep away from it.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Distinction</span>
+      <p>Every time you meet the phrase <em>strong drink</em> in the King James Bible, ask what is happening in that passage. You will find a priest being warned on pain of death, a king being told it is not for him, a mother being told not to touch it while she carries a son, a prophet pronouncing woe, or a man being set apart to God and told to have nothing to do with it. That is the pattern, and the pattern is the doctrine.</p>
+    </div>
+
+    <!-- SECTION II -->
+    <div class="section-head" id="s2">
+      <p class="section-eyebrow">A Necessary Historical Fact</p>
+      <h2 class="section-title">II. What Strong Drink Was, and What It Is Now</h2>
+    </div>
+
+    <p class="body-text">Here is a point that no honest teacher can leave out, and it cuts in the direction of greater caution rather than less. When Scripture says strong drink, it is not describing what sits on the shelf of a modern liquor store.</p>
+
+    <p class="body-text">Fermentation has a natural ceiling. Yeast produces alcohol until the alcohol itself kills the yeast, and that happens somewhere in the range of twelve to fifteen percent. Nothing in the ancient world went higher than that by fermentation alone, and most of it went considerably lower. The strong drink of Scripture was a fermented beverage, strong by the standard of its day, but still a fermented beverage.</p>
+
+    <p class="body-text">Distillation is what breaks that ceiling. By heating a fermented liquid and capturing the vapor, the alcohol is concentrated far past anything fermentation can reach. Distilled spirits as a drink were not known in the ancient Near East. They came much later, out of medieval chemistry, and did not become common until far more recent centuries. Whiskey, vodka, rum, gin, and brandy all sit near forty percent alcohol, three to four times the strength of anything the Bible was describing.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Follow the Argument</span>
+      <p>If God warned His people away from a drink that was twelve percent, and pronounced woe on the men who were mighty to mingle it, no one can turn around and claim liberty for a substance three times its strength. The modern liquor cabinet is not permitted by a silence in Scripture. It falls under the warning with far more force than the drink the warning was originally written about.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Do not overstate this point in class. The claim is not that distilled liquor is a separate sin category invented after the Bible closed. The claim is that the warnings God gave against strong drink apply to it with greater weight, not less, because it is stronger than what the warnings named. That is an argument from the lesser to the greater, and it is sound. Avoid any suggestion that the ancients were drinking something harmless. Noah got drunk on it, and Lot did too.</p>
+    </div>
+
+    <!-- SECTION III -->
+    <div class="section-head" id="s3">
+      <p class="section-eyebrow">The Pattern Set Early</p>
+      <h2 class="section-title">III. The First Mentions and What Came of Them</h2>
+    </div>
+
+    <p class="body-text">Scripture has a way of setting a pattern the first time it touches a subject. Wine enters the Bible twice in quick succession in the book of Genesis, and both accounts end in shame. Neither is presented as a warning in so many words. The Holy Ghost simply records what happened and lets it stand.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 9:20&ndash;22</span>
+      <span class="scripture-text">And Noah began to be an husbandman, and he planted a vineyard: And he drank of the wine, and was drunken; and he was uncovered within his tent. And Ham, the father of Canaan, saw the nakedness of his father, and told his two brethren without.</span>
+    </div>
+
+    <p class="body-text">Consider who this is. Noah is the man God found righteous in a generation of violence, the preacher of righteousness, the one man on earth worth saving from the flood. He walked with God through a hundred and twenty years of building and ridicule. And the first recorded act of his new world ends with him drunk and naked in his tent, and with a curse falling on his own grandson out of it. If wine could bring down Noah, no man reading this page should imagine himself stronger.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 19:32&ndash;33</span>
+      <span class="scripture-text">Come, let us make our father drink wine, and we will lie with him, that we may preserve seed of our father. And they made their father drink wine that night: and the firstborn went in, and lay with her father; and he perceived not when she lay down, nor when she arose.</span>
+    </div>
+
+    <p class="body-text">The second account is worse. Lot, delivered out of Sodom by the mercy of God, is made drunk by his own daughters and fathers two nations that would war against Israel for centuries after. Notice the phrase: <em>he perceived not</em>. That is the exact danger. Drink does not merely loosen a man&rsquo;s judgment. It removes his knowledge of what he is doing while he is doing it. A man cannot repent in the moment of a sin he does not know he is committing.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Pattern</span>
+      <p>The two first appearances of wine in Scripture produce nakedness, a curse, incest, and two hostile nations. That is how the Word introduces the subject. Everything that follows in the Law and the Prophets is consistent with that opening.</p>
+    </div>
+
+    <!-- ══════════ PART TWO ══════════ -->
+    <div class="part-divider">
+      <span class="part-num">Part Two</span>
+      <span class="part-name">What God Warns Against</span>
+    </div>
+
+    <!-- SECTION IV -->
+    <div class="section-head" id="s4">
+      <p class="section-eyebrow">Wisdom Speaks</p>
+      <h2 class="section-title">IV. The Warnings of the Wise</h2>
+    </div>
+
+    <p class="body-text">The book of Proverbs does not treat this as a small matter or a question of preference. It personifies the substance as an enemy and describes its end with unusual vividness.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Proverbs 20:1</span>
+      <span class="scripture-text">Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.</span>
+    </div>
+
+    <p class="body-text">Weigh the words. Wine <em>mocks</em>, which is to say it makes a fool of the man who trusts it. Strong drink <em>rages</em>, which is a word for violence and uproar. And the man who is deceived by it is not called unfortunate or weak. He is called <em>not wise</em>. Scripture puts this in the category of folly, and folly in Proverbs is never morally neutral.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Proverbs 23:29&ndash;35</span>
+      <span class="scripture-text">Who hath woe? who hath sorrow? who hath contentions? who hath babbling? who hath wounds without cause? who hath redness of eyes? They that tarry long at the wine; they that go to seek mixed wine. Look not thou upon the wine when it is red, when it giveth his colour in the cup, when it moveth itself aright. At the last it biteth like a serpent, and stingeth like an adder. Thine eyes shall behold strange women, and thine heart shall utter perverse things. Yea, thou shalt be as he that lieth down in the midst of the sea, or as he that lieth upon the top of a mast. They have stricken me, shalt thou say, and I was not sick; they have beaten me, and I felt it not: when shall I awake? I will seek it yet again.</span>
+    </div>
+
+    <p class="body-text">This is one of the most searching passages in all of Scripture on any subject. Read what it actually commands: <em>Look not thou upon the wine.</em> The instruction is not merely to stop short of drunkenness. It is to keep the eye off the cup while it is still attractive, while it is red and moving in the glass and giving its color. God places the guard well back from the edge, because He knows how the thing works.</p>
+
+    <p class="body-text">And read where the passage ends. The man wakes battered, unable to remember being struck, and his very first thought is <em>I will seek it yet again</em>. That is bondage described three thousand years before anyone had a clinical word for it. The Holy Ghost knew exactly what this substance does to a man&rsquo;s will.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">A Word to Anyone Bound By This</p>
+      <p>If you are reading these verses and they describe your own life, hear this before you read another line. This teaching is not written to shame you. The last words of that passage are the honest cry of a man who cannot get free by wanting to, and God put them in His Book so you would know He sees it and is not surprised by it. Christ came for exactly this, and there is no bondage He cannot break. Do not carry it alone and do not try to fix it in secret. Tell your pastor. Tell someone who will pray with you and stay with you. If your body is physically dependent, speak to a doctor as well, because withdrawal from heavy drinking can be genuinely dangerous and the Lord is not honored by a man harming himself in his zeal to obey. There is no condemnation to them which are in Christ Jesus. Come out into the light and let the body of Christ help you.</p>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Proverbs 31:4&ndash;5</span>
+      <span class="scripture-text">It is not for kings, O Lemuel, it is not for kings to drink wine; nor for princes strong drink: Lest they drink, and forget the law, and pervert the judgment of any of the afflicted.</span>
+    </div>
+
+    <p class="body-text">Hold this passage. We will return to it in Part Four, because it is one of the two pillars on which this whole teaching stands. The reason given is not health and it is not appearance. It is that the drinking man <em>forgets the law</em> and <em>perverts judgment</em>. Those are the two things a believer can least afford to lose.</p>
+
+    <!-- SECTION V -->
+    <div class="section-head" id="s5">
+      <p class="section-eyebrow">The Prophets Cry Out</p>
+      <h2 class="section-title">V. The Woes of the Prophets</h2>
+    </div>
+
+    <p class="body-text">When the prophets list the sins that brought judgment on Israel and Judah, strong drink appears again and again, and not as a minor entry.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Isaiah 5:11&ndash;12</span>
+      <span class="scripture-text">Woe unto them that rise up early in the morning, that they may follow strong drink; that continue until night, till wine inflame them! And the harp, and the viol, the tabret, and pipe, and wine, are in their feasts: but they regard not the work of the LORD, neither consider the operation of his hands.</span>
+      <span class="scripture-ref">Isaiah 5:22</span>
+      <span class="scripture-text">Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:</span>
+    </div>
+
+    <p class="body-text">Verse twenty two is worth pausing over. The men under this woe are not falling down drunk in the street. They are the ones who can handle it, the men <em>mighty to drink</em>, who hold their liquor and are admired for it. God pronounces woe on the strong drinker precisely because he is strong. The capacity to drink without visible effect is not a defense in Scripture. It is named as the offense.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Isaiah 28:7</span>
+      <span class="scripture-text">But they also have erred through wine, and through strong drink are out of the way; the priest and the prophet have erred through strong drink, they are swallowed up of wine, they are out of the way through strong drink; they err in vision, they stumble in judgment.</span>
+    </div>
+
+    <p class="body-text">Read how the prophet hammers the phrase. Four times in one verse: strong drink, strong drink, wine, strong drink. And the men who fall are the priest and the prophet, the two offices charged with hearing from God and teaching His people. They <em>err in vision</em> and <em>stumble in judgment</em>. A man cannot be a clear channel for the Word of God and a customer of the cup at the same time.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Hosea 4:11</span>
+      <span class="scripture-text">Whoredom and wine and new wine take away the heart.</span>
+      <span class="scripture-ref">Habakkuk 2:15</span>
+      <span class="scripture-text">Woe unto him that giveth his neighbour drink, that puttest thy bottle to him, and makest him drunken also, that thou mayest look on their nakedness!</span>
+    </div>
+
+    <p class="body-text">Habakkuk adds a dimension that is easy to miss. There is a woe not only on the man who drinks, but on the man who <em>hands the bottle to his neighbour</em>. Whatever a believer decides for himself, he carries a responsibility for what he puts into another man&rsquo;s hand. That alone should settle the question of serving it in a Christian home.</p>
+
+    <!-- SECTION VI -->
+    <div class="section-head" id="s6">
+      <p class="section-eyebrow">The New Testament Witness</p>
+      <h2 class="section-title">VI. Drunkenness and the Kingdom</h2>
+    </div>
+
+    <p class="body-text">The apostles do not soften what the prophets said. Drunkenness is listed among the works of the flesh, and set beside sins nobody in the church would defend for a moment.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Galatians 5:19&ndash;21</span>
+      <span class="scripture-text">Now the works of the flesh are manifest, which are these; Adultery, fornication, uncleanness, lasciviousness, Idolatry, witchcraft, hatred, variance, emulations, wrath, strife, seditions, heresies, Envyings, murders, drunkenness, revellings, and such like: of the which I tell you before, as I have also told you in time past, that they which do such things shall not inherit the kingdom of God.</span>
+      <span class="scripture-ref">1 Corinthians 6:9&ndash;10</span>
+      <span class="scripture-text">Know ye not that the unrighteous shall not inherit the kingdom of God? Be not deceived: neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind, Nor thieves, nor covetous, nor drunkards, nor revilers, nor extortioners, shall inherit the kingdom of God.</span>
+    </div>
+
+    <p class="body-text">Notice the company Paul keeps the drunkard in. Idolatry. Witchcraft. Adultery. Murder. No believer would argue for a careful, moderate, occasional practice of any of those. Yet the same list carries drunkenness and revelling, and the same sentence falls on all of them. Whatever else is true, this is not a subject where the church can afford a casual posture.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Corinthians 5:11</span>
+      <span class="scripture-text">But now I have written unto you not to keep company, if any man that is called a brother be a fornicator, or covetous, or an idolater, or a railer, or a drunkard, or an extortioner; with such an one no not to eat.</span>
+    </div>
+
+    <p class="body-text">Paul goes further and makes it a matter of church discipline. A man who wears the name of brother and lives as a drunkard is not to be treated as though nothing is wrong. The assembly is instructed to withdraw, not out of cruelty but so the man will feel the weight of it and come to himself.</p>
+
+    <p class="body-text">The standard for those who lead is stated flatly in three separate letters. A bishop must be <em>not given to wine</em>. A deacon must be <em>not given to much wine</em>. The aged women likewise <em>not given to much wine</em>. Whatever latitude anyone imagines exists elsewhere, no one who stands before God&rsquo;s people to teach or serve has any room in this at all.</p>
+
+    <!-- ══════════ PART THREE ══════════ -->
+    <div class="part-divider">
+      <span class="part-num">Part Three</span>
+      <span class="part-name">The Consecrated</span>
+    </div>
+
+    <!-- SECTION VII -->
+    <div class="section-head" id="s7">
+      <p class="section-eyebrow">The First Pillar</p>
+      <h2 class="section-title">VII. The Priest in Service</h2>
+    </div>
+
+    <p class="body-text">We come now to the heart of this teaching. God gave a direct command on strong drink to a specific class of men, and He gave it in the shadow of two fresh graves.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Leviticus 10:1&ndash;2</span>
+      <span class="scripture-text">And Nadab and Abihu, the sons of Aaron, took either of them his censer, and put fire therein, and put incense thereon, and offered strange fire before the LORD, which he commanded them not. And there went out fire from the LORD, and devoured them, and they died before the LORD.</span>
+      <span class="scripture-ref">Leviticus 10:8&ndash;11</span>
+      <span class="scripture-text">And the LORD spake unto Aaron, saying, Do not drink wine nor strong drink, thou, nor thy sons with thee, when ye go into the tabernacle of the congregation, lest ye die: it shall be a statute for ever throughout your generations: And that ye may put difference between holy and unholy, and between clean and unclean; And that ye may teach the children of Israel all the statutes which the LORD hath spoken unto them by the hand of Moses.</span>
+    </div>
+
+    <p class="body-text">The placement is not accidental. Aaron&rsquo;s two sons offer strange fire and are consumed, and the very next word from God to Aaron is a prohibition on wine and strong drink for himself and his remaining sons. Scripture does not say outright that Nadab and Abihu were drinking. It puts the command where it puts it and lets the reader draw the line.</p>
+
+    <p class="body-text">Now look carefully at the three things this passage attaches to the command, because every one of them belongs to the believer today.</p>
+
+    <ul class="plain-list">
+      <li><strong>It is a statute for ever throughout your generations.</strong> This is not a temporary provision for the wilderness. God calls it perpetual.</li>
+      <li><strong>That ye may put difference between holy and unholy, and between clean and unclean.</strong> Discernment is the stated reason. The priest had to be able to tell holy from common, and drink destroys that faculty.</li>
+      <li><strong>That ye may teach the children of Israel all the statutes.</strong> The command is tied to the teaching office. A man who is to instruct others in the law of God must have an unclouded head.</li>
+    </ul>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Mark This</span>
+      <p>God did not forbid strong drink to the priest because it was unclean. He forbade it because of what it does to the man who must discern between holy and unholy and teach the statutes of God. Those two duties are laid on every believer in the New Testament, and they are never suspended.</p>
+    </div>
+
+    <p class="body-text">Someone will point to the qualifier, <em>when ye go into the tabernacle of the congregation</em>, and argue that the priest was free the rest of the time. Answer it directly and honestly. Yes, that qualifier is in the text, and under the Levitical order the priest served in courses. He went up for his weeks and returned home. That is exactly why this restriction is not the whole argument by itself. It becomes decisive only when joined to what the New Testament says about who the believer now is, which is the subject of Part Four. Under the new order, our service does not run in courses. There is no week when we step out of the priesthood and go home.</p>
+
+    <!-- SECTION VIII -->
+    <div class="section-head" id="s8">
+      <p class="section-eyebrow">The Second Pillar</p>
+      <h2 class="section-title">VIII. The King on the Throne</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Proverbs 31:4&ndash;5</span>
+      <span class="scripture-text">It is not for kings, O Lemuel, it is not for kings to drink wine; nor for princes strong drink: Lest they drink, and forget the law, and pervert the judgment of any of the afflicted.</span>
+    </div>
+
+    <p class="body-text">Here the prohibition is broader than the priestly one, and it comes with no qualifier at all. It does not say it is not for kings while they sit in judgment. It says <em>it is not for kings</em>, and it says it twice for emphasis. The king is never off duty. The throne does not run in courses. Wherever he is, he is the king, and the judgment of the afflicted may come before him at any hour.</p>
+
+    <p class="body-text">The two reasons given are the same two reasons that should stop any believer cold. He will <em>forget the law</em>, which is to say the commandments of God will slip from his mind and his grip. And he will <em>pervert the judgment of any of the afflicted</em>, which is to say the weakest person depending on him will be the one who pays for it.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Verses six and seven of that same chapter say to give strong drink to him that is ready to perish and wine to those of heavy hearts. Deal with this openly rather than skipping it, because someone will find it. The passage sets a contrast between the ruler who must keep his head and the dying man for whom drink serves as a mercy in his final hours. It is a medicinal and palliative use in an age with almost no other means of relief, and it stands in the text as the exact opposite of the recreational drinking a modern reader might try to build on it. It grants nothing to the man who is not perishing.</p>
+    </div>
+
+    <!-- SECTION IX -->
+    <div class="section-head print-new-page" id="s9">
+      <p class="section-eyebrow">The Law Given Whole</p>
+      <h2 class="section-title">IX. The Law of the Nazarite in Full</h2>
+    </div>
+
+    <p class="body-text">This is the passage most often quoted in pieces, and most often answered by someone producing the piece that was left out. So we will set the whole law before us, in order, and leave nothing back. Then we will draw from it what it actually teaches.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Numbers 6:1&ndash;8</span>
+      <span class="scripture-text">And the LORD spake unto Moses, saying, Speak unto the children of Israel, and say unto them, When either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto the LORD: He shall separate himself from wine and strong drink, and shall drink no vinegar of wine, or vinegar of strong drink, neither shall he drink any liquor of grapes, nor eat moist grapes, or dried. All the days of his separation shall he eat nothing that is made of the vine tree, from the kernels even to the husk. All the days of the vow of his separation there shall no razor come upon his head: until the days be fulfilled, in the which he separateth himself unto the LORD, he shall be holy, and shall let the locks of the hair of his head grow. All the days that he separateth himself unto the LORD he shall come at no dead body. He shall not make himself unclean for his father, or for his mother, for his brother, or for his sister, when they die: because the consecration of his God is upon his head. All the days of his separation he is holy unto the LORD.</span>
+    </div>
+
+    <p class="body-text">Three separations are laid on this person, and they cover the whole of a life. The mouth is separated from the vine in every form. The head is separated by the uncut hair, an outward sign anyone could see. And the body is separated from death, so completely that he may not even attend the burial of his own father or mother. The reason given for that last and hardest one is the key to the entire chapter: <em>because the consecration of his God is upon his head</em>.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Numbers 6:9&ndash;12</span>
+      <span class="scripture-text">And if any man die very suddenly by him, and he hath defiled the head of his consecration; then he shall shave his head in the day of his cleansing, on the seventh day shall he shave it. And on the eighth day he shall bring two turtles, or two young pigeons, to the priest, to the door of the tabernacle of the congregation: And the priest shall offer the one for a sin offering, and the other for a burnt offering, and make an atonement for him, for that he sinned by the dead, and shall hallow his head that day. And he shall consecrate unto the LORD the days of his separation, and shall bring a lamb of the first year for a trespass offering: but the days that were before shall be lost, because his separation was defiled.</span>
+    </div>
+
+    <p class="body-text">Weigh how serious God is about this. A man standing beside another who dies suddenly, through no fault of his own, has defiled his consecration. He must shave, bring a sin offering, a burnt offering, and a trespass offering, and then begin his count over from the beginning. <em>The days that were before shall be lost.</em> There is no partial credit in a consecration to God.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Numbers 6:13&ndash;20</span>
+      <span class="scripture-text">And this is the law of the Nazarite, when the days of his separation are fulfilled: he shall be brought unto the door of the tabernacle of the congregation: And he shall offer his offering unto the LORD, one he lamb of the first year without blemish for a burnt offering, and one ewe lamb of the first year without blemish for a sin offering, and one ram without blemish for peace offerings, And a basket of unleavened bread, cakes of fine flour mingled with oil, and wafers of unleavened bread anointed with oil, and their meat offering, and their drink offerings. And the priest shall bring them before the LORD, and shall offer his sin offering, and his burnt offering: And he shall offer the ram for a sacrifice of peace offerings unto the LORD, with the basket of unleavened bread: the priest shall offer also his meat offering, and his drink offering. And the Nazarite shall shave the head of his separation at the door of the tabernacle of the congregation, and shall take the hair of the head of his separation, and put it in the fire which is under the sacrifice of the peace offerings. And the priest shall take the shoulder of the ram sodden, and the two shoulder loaves out of the basket, and one unleavened wafer, and shall put them upon the hands of the Nazarite, after the hair of his head is shaven: And the priest shall wave them for a wave offering before the LORD: this is holy for the priest, with the wave breast and heave shoulder: and after that the Nazarite may drink wine.</span>
+      <span class="scripture-ref">Numbers 6:21</span>
+      <span class="scripture-text">This is the law of the Nazarite who hath vowed, and of his offering unto the LORD for his separation, beside that that his hand shall get: according to the vow which he vowed, so he must do after the law of his separation.</span>
+    </div>
+
+    <p class="body-text">There it is, the whole law, including the closing clause that is usually produced as a rebuttal: <em>and after that the Nazarite may drink wine</em>. We have not hidden it and we do not need to. Look at what it actually establishes.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">What Verse Twenty Actually Proves</span>
+      <p>The release clause exists because <em>this particular kind</em> of Nazarite vow had a fixed term. A man vowed for a set number of days, and when the days were fulfilled he brought his offerings, shaved his head, and the separation ended. The permission to drink afterward is simply the formal statement that the vow is over.</p>
+      <p>Which means the release is tied to the ending of the consecration, not to the substance being harmless. Wine was forbidden to him precisely and only because he was consecrated. The moment the consecration ended, so did the restriction. The two rise and fall together.</p>
+      <p>Now ask the question that decides this whole study. When does the consecration of a blood-bought believer end? On what day does he shave his head, bring his ram, and go back to the world? There is no such day. And where there is no ending of the separation, there is no verse twenty.</p>
+    </div>
+
+    <!-- SECTION X -->
+    <div class="section-head" id="s10">
+      <p class="section-eyebrow">Separation Without an End</p>
+      <h2 class="section-title">X. The Lifelong Nazarites</h2>
+    </div>
+
+    <p class="body-text">This is not a theory we are imposing on the text. Scripture itself gives us the case of the permanent Nazarite, and in every such case there is no release clause, because there is no ending day.</p>
+
+    <p class="sub-head">Samson, Set Apart From the Womb</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Judges 13:4&ndash;5</span>
+      <span class="scripture-text">Now therefore beware, I pray thee, and drink not wine nor strong drink, and eat not any unclean thing: For, lo, thou shalt conceive, and bear a son; and no razor shall come on his head: for the child shall be a Nazarite unto God from the womb to the day of his death: and he shall begin to deliver Israel out of the hand of the Philistines.</span>
+    </div>
+
+    <p class="body-text">Read the phrase and do not hurry past it: <em>from the womb to the day of his death</em>. No fixed term. No offerings of release. No verse twenty. And note that the restriction fell on his mother before he was even born, so that the child would never taste it at any stage. God takes the consecration of a life seriously from its first moment.</p>
+
+    <p class="sub-head">Samuel, Given for All His Days</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Samuel 1:11</span>
+      <span class="scripture-text">And she vowed a vow, and said, O LORD of hosts, if thou wilt indeed look on the affliction of thine handmaid, and remember me, and not forget thine handmaid, but wilt give unto thine handmaid a man child, then I will give him unto the LORD all the days of his life, and there shall no razor come upon his head.</span>
+    </div>
+
+    <p class="body-text">Hannah gives her son to the LORD <em>all the days of his life</em>, with the Nazarite sign of the uncut head. And Samuel became the prophet through whom God spoke to a nation that had gone deaf, the man of whom it was said that the LORD let none of his words fall to the ground. A life wholly given, with no reserved day.</p>
+
+    <p class="sub-head">John the Baptist, and the Verse That Ties It All Together</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 1:15</span>
+      <span class="scripture-text">For he shall be great in the sight of the Lord, and shall drink neither wine nor strong drink; and he shall be filled with the Holy Ghost, even from his mother&rsquo;s womb.</span>
+    </div>
+
+    <p class="body-text">This is the single most important verse in this study, and it sits in the New Testament. The angel Gabriel, announcing the forerunner of the Messiah, gives two facts about him in one breath, joined by a simple conjunction. He shall drink neither wine nor strong drink, <strong>and</strong> he shall be filled with the Holy Ghost.</p>
+
+    <p class="body-text">The empty vessel and the filling are set side by side on purpose. Hold that thought, because Paul will say the very same thing to the whole church at Ephesus in almost the same words, and we will come to it shortly. And note again that this is the only occurrence of the Greek word for strong drink in the entire New Testament. When the New Testament finally says <em>strong drink</em>, it says it in a command to abstain.</p>
+
+    <p class="sub-head">Paul and the Vow</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Acts 18:18</span>
+      <span class="scripture-text">And Paul after this tarried there yet a good while, and then took his leave of the brethren, and sailed thence into Syria, and with him Priscilla and Aquila; having shorn his head in Cenchrea: for he had a vow.</span>
+      <span class="scripture-ref">Acts 21:23&ndash;24</span>
+      <span class="scripture-text">Do therefore this that we say to thee: We have four men which have a vow on them; Them take, and purify thyself with them, and be at charges with them, that they may shave their heads: and all may know that those things, whereof they were informed concerning thee, are nothing; but that thou thyself also walkest orderly, and keepest the law.</span>
+    </div>
+
+    <p class="body-text">Two things follow from these passages, and both matter. First, the Nazarite vow was still being kept by believers well after the resurrection, by the apostle Paul himself and by four men in the Jerusalem assembly. Nobody in the early church treated this as an abolished relic. Second, the stated purpose in Acts 21 is that all may know Paul <em>walketh orderly, and keepeth the law</em>. The apostle most often quoted against the law of God submits himself publicly to it, and the elders of the church name it as proof of his orderly walk.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Nazarite Pattern and the Believer</span>
+      <p>The Nazarite was separated in mouth, in head, and in body, and the reason given was the consecration of God upon him. The believer in Christ is separated in exactly the same three ways and for exactly the same reason. His body is a living sacrifice. His head is under the headship of Christ. And his mouth is to be an instrument of praise rather than of appetite.</p>
+      <p>The difference is that the Nazarite&rsquo;s separation ran for a term and the believer&rsquo;s does not. What was temporary for him is permanent for us. The pattern is not repealed in Christ. It is enlarged.</p>
+    </div>
+
+    <!-- SECTION XI -->
+    <div class="section-head" id="s11">
+      <p class="section-eyebrow">Two Witnesses</p>
+      <h2 class="section-title">XI. The Rechabites and Daniel</h2>
+    </div>
+
+    <p class="body-text">Scripture gives us two accounts of men who abstained without any command from God requiring it, and in both cases God&rsquo;s response tells us exactly how He regards that choice.</p>
+
+    <p class="sub-head">The Rechabites</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Jeremiah 35:5&ndash;6</span>
+      <span class="scripture-text">And I set before the sons of the house of the Rechabites pots full of wine, and cups, and I said unto them, Drink ye wine. But they said, We will drink no wine: for Jonadab the son of Rechab our father commanded us, saying, Ye shall drink no wine, neither ye, nor your sons for ever:</span>
+      <span class="scripture-ref">Jeremiah 35:18&ndash;19</span>
+      <span class="scripture-text">And Jeremiah said unto the house of the Rechabites, Thus saith the LORD of hosts, the God of Israel; Because ye have obeyed the commandment of Jonadab your father, and kept all his precepts, and done according unto all that he hath commanded you: Therefore thus saith the LORD of hosts, the God of Israel; Jonadab the son of Rechab shall not want a man to stand before me for ever.</span>
+    </div>
+
+    <p class="body-text">Study what happens here. God Himself instructs the prophet to set wine before these men and tell them to drink it. They refuse, holding to a rule their forefather gave them generations earlier. And God, who arranged the test, does not rebuke them for legalism. He holds them up before the whole nation as an example, and He gives them a perpetual blessing: <em>Jonadab the son of Rechab shall not want a man to stand before me for ever</em>.</p>
+
+    <p class="body-text">The lesson the LORD draws is stinging. These men kept a mere family tradition for centuries, while Judah would not keep the commandments of the living God spoken by His own prophets. If God honored abstinence held as a family rule, no one can call it error when a believer holds it out of reverence for Christ.</p>
+
+    <p class="sub-head">Daniel in Babylon</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Daniel 1:8</span>
+      <span class="scripture-text">But Daniel purposed in his heart that he would not defile himself with the portion of the king&rsquo;s meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself.</span>
+    </div>
+
+    <p class="body-text">Daniel is a young man taken captive, placed in the most powerful court on earth, offered the king&rsquo;s own table, and given every worldly reason to go along. He <em>purposed in his heart</em> beforehand, which is the only way any of this is ever done. The decision was made before the plate was set in front of him. And the outcome is recorded: he and his companions came out fairer and fatter in flesh than all the others, and God gave them knowledge and skill and understanding beyond the wise men of Babylon.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Purpose in Your Heart First</span>
+      <p>No one wins this at the table. Daniel settled it in advance, and so must we. A believer who has not decided beforehand what he will do when the glass is offered has already left the door open.</p>
+    </div>
+
+    <!-- ══════════ PART FOUR ══════════ -->
+    <div class="part-divider">
+      <span class="part-num">Part Four</span>
+      <span class="part-name">The Believer&rsquo;s Standing</span>
+    </div>
+
+    <!-- SECTION XII -->
+    <div class="section-head" id="s12">
+      <p class="section-eyebrow">The Argument Completed</p>
+      <h2 class="section-title">XII. Kings and Priests Unto God</h2>
+    </div>
+
+    <p class="body-text">Everything laid down so far now comes together. We have seen that God forbade strong drink to the priest, giving as His reason the need to discern holy from unholy and to teach the statutes. We have seen that He forbade it to the king with no qualifier at all, giving as His reason that the drinking ruler forgets the law and perverts judgment. The only question remaining is whether the believer in Christ stands in either of those offices.</p>
+
+    <p class="body-text">Scripture answers that he stands in both.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Peter 2:9</span>
+      <span class="scripture-text">But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:</span>
+      <span class="scripture-ref">Revelation 1:5&ndash;6</span>
+      <span class="scripture-text">And from Jesus Christ, who is the faithful witness, and the first begotten of the dead, and the prince of the kings of the earth. Unto him that loved us, and washed us from our sins in his own blood, And hath made us kings and priests unto God and his Father; to him be glory and dominion for ever and ever. Amen.</span>
+      <span class="scripture-ref">Revelation 5:9&ndash;10</span>
+      <span class="scripture-text">And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to God by thy blood out of every kindred, and tongue, and people, and nation; And hast made us unto our God kings and priests: and we shall reign on the earth.</span>
+    </div>
+
+    <p class="body-text">There is the whole argument in three passages. Peter calls the church a <em>royal priesthood</em>, joining both offices in a single phrase. John twice declares that Christ has made us <em>kings and priests unto God</em>. This is not a poetic flourish. It is the settled standing of every blood-bought believer.</p>
+
+    <p class="body-text">So put the pieces together and let the conclusion fall where it must.</p>
+
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>God Said</th>
+            <th>To Whom</th>
+            <th>Reason Given</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-name">Do not drink wine nor strong drink</td>
+            <td>The priest in the service of God</td>
+            <td>To discern holy from unholy, and to teach the statutes</td>
+          </tr>
+          <tr>
+            <td class="col-name">It is not for kings to drink wine, nor for princes strong drink</td>
+            <td>The king on his throne</td>
+            <td>Lest he forget the law and pervert the judgment of the afflicted</td>
+          </tr>
+          <tr>
+            <td class="col-name col-strong">Christ hath made us kings and priests unto God</td>
+            <td class="col-strong">Every believer, without exception</td>
+            <td class="col-strong">Redeemed by His blood, out of every nation, to reign</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="table-caption">The office carries the restriction. Scripture places the believer in the office. Therefore the restriction is ours.</p>
+    </div>
+
+    <p class="body-text">And our priesthood has one feature the Levitical priesthood never had. Aaron&rsquo;s sons served in courses and went home. Ours does not run in courses. There is no week when we are off duty, no evening when we cease to be a king, no hour when the judgment of some afflicted person may not land in our hands. The qualifier that limited the Levitical command has no place to attach itself in the new order, because we never leave the tabernacle. Our body <em>is</em> the tabernacle.</p>
+
+    <!-- SECTION XIII -->
+    <div class="section-head" id="s13">
+      <p class="section-eyebrow">The Temple We Carry</p>
+      <h2 class="section-title">XIII. The Body as the Temple</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Corinthians 6:19&ndash;20</span>
+      <span class="scripture-text">What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own? For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God&rsquo;s.</span>
+      <span class="scripture-ref">Romans 12:1</span>
+      <span class="scripture-text">I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.</span>
+    </div>
+
+    <p class="body-text">Two claims are made here that end the discussion of personal liberty. First, the body is not merely the believer&rsquo;s own property to manage as he sees fit. <em>Ye are not your own.</em> A purchase has been made, the price was the blood of Christ, and the title has changed hands. Second, that body is now the dwelling place of the Holy Ghost, which is to say it occupies the position the tabernacle once held.</p>
+
+    <p class="body-text">Recall then what God said to Aaron. Do not drink wine nor strong drink <em>when ye go into the tabernacle</em>. If the tabernacle is now the believer&rsquo;s own body, and the Spirit of God dwells in it continually and does not depart, then there is no moment when a believer is outside the tabernacle. The condition is met permanently. What Aaron observed for the weeks of his course, we observe for the whole of our lives, and for the same reason he did.</p>
+
+    <p class="body-text">Romans 12:1 seals it. A living sacrifice is set apart wholly, without a reserved portion. No Israelite ever brought an offering to the altar and kept back a piece for his own use. The word <em>holy</em> in that verse means exactly what it meant in Leviticus: separated to God, and not available for common purposes.</p>
+
+    <!-- SECTION XIV -->
+    <div class="section-head" id="s14">
+      <p class="section-eyebrow">The Choice of Filling</p>
+      <h2 class="section-title">XIV. Filled With the Spirit, Not With Wine</h2>
+    </div>
+
+    <div class="scripture">
+      <span class="scripture-ref">Ephesians 5:18</span>
+      <span class="scripture-text">And be not drunk with wine, wherein is excess; but be filled with the Spirit;</span>
+    </div>
+
+    <p class="body-text">This is the verse we set beside Luke 1:15 earlier, and now the connection can be made plain. Gabriel said of John: he shall drink neither wine nor strong drink, and he shall be filled with the Holy Ghost. Paul says to the whole church: be not drunk with wine, but be filled with the Spirit. The same two things, the same contrast, the same order.</p>
+
+    <p class="body-text">Paul is not simply forbidding one thing and commending another unrelated thing. He is setting two fillings against each other, and a vessel is filled with one or the other. Both work on the same faculties. Both loosen the tongue, both change the countenance, both alter what a man does and says. One counterfeits what the other gives. That is why the mockers at Pentecost could look at a hundred and twenty people full of the Holy Ghost and say <em>these men are full of new wine</em>. The outward stir looked similar enough to be confused, which is precisely why the two are contrasted here.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Heart of It</span>
+      <p>A believer who is pursuing the fullness of the Holy Ghost has no room and no appetite for the counterfeit. This is not finally a question of how many ounces are permitted. It is a question of what a man is reaching for when he wants his burden lifted, his tongue loosened, and his heart made glad. There is a filling appointed for that, and it is not in a bottle.</p>
+    </div>
+
+    <!-- SECTION XV -->
+    <div class="section-head" id="s15">
+      <p class="section-eyebrow">The Watchman&rsquo;s Charge</p>
+      <h2 class="section-title">XV. The Charge to Be Sober</h2>
+    </div>
+
+    <p class="body-text">The apostles return again and again to a single word in describing how the believer is to live in these last days. That word is <em>sober</em>, and in the New Testament it carries the plain sense of being clear-headed and unclouded, as well as the wider sense of self-governed.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Thessalonians 5:6&ndash;8</span>
+      <span class="scripture-text">Therefore let us not sleep, as do others; but let us watch and be sober. For they that sleep sleep in the night; and they that be drunken are drunken in the night. But let us, who are of the day, be sober, putting on the breastplate of faith and love; and for an helmet, the hope of salvation.</span>
+      <span class="scripture-ref">1 Peter 5:8</span>
+      <span class="scripture-text">Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about seeking whom he may devour:</span>
+      <span class="scripture-ref">1 Peter 1:13</span>
+      <span class="scripture-text">Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ;</span>
+      <span class="scripture-ref">Titus 2:11&ndash;12</span>
+      <span class="scripture-text">For the grace of God that bringeth salvation hath appeared to all men, Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world;</span>
+    </div>
+
+    <p class="body-text">Peter ties sobriety directly to spiritual warfare. The adversary walks about as a roaring lion looking for someone to devour, and the believer&rsquo;s first line of defense is a clear head. A lion does not take the alert animal in the middle of the herd. He takes the one that has wandered and slowed. Anything that dulls a believer&rsquo;s vigilance hands the enemy exactly what he is hunting for.</p>
+
+    <p class="body-text">And notice Titus. The grace of God is not described as the thing that excuses worldly lusts. It is described as the <em>teacher</em> that trains us to deny them and to live soberly in this present world. Grace does not lower the standard. It supplies the power to meet it.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Conclusion of Part Four</span>
+      <p>The believer does not drink strong drink. He is a priest, and God forbade it to His priests. He is a king, and God said it is not for kings. His body is the temple where the Spirit dwells without ceasing, so he never steps outside the tabernacle. He is called to be filled with the Holy Ghost rather than with the counterfeit. And he is charged to be sober and vigilant against an enemy who hunts the unguarded.</p>
+      <p>That is not one verse pressed too hard. That is the whole shape of Scripture, from Leviticus to Revelation, falling in one direction.</p>
+    </div>
+
+    <!-- ══════════ PART FIVE ══════════ -->
+    <div class="part-divider">
+      <span class="part-num">Part Five</span>
+      <span class="part-name">The Hard Passages</span>
+    </div>
+
+    <!-- SECTION XVI -->
+    <div class="section-head" id="s16">
+      <p class="section-eyebrow">Meeting the Rebuttals</p>
+      <h2 class="section-title">XVI. Objections Answered From the Text</h2>
+    </div>
+
+    <p class="body-text">A teaching is only as strong as its handling of the passages that seem to cut against it. Every one of the following will be raised sooner or later, usually by someone who has heard it raised by another. We will take them in turn, quote them in full, and answer them without evasion. Where a passage genuinely says something, we will say so.</p>
+
+    <div class="objection">
+      <p class="objection-q">1. Did not God tell Israel to buy strong drink with tithe money in Deuteronomy 14:26?</p>
+      <p><span class="obj-label">The Passage</span>He did, and the verse must be quoted honestly: <em>And thou shalt bestow that money for whatsoever thy soul lusteth after, for oxen, or for sheep, or for wine, or for strong drink, or for whatsoever thy soul desireth: and thou shalt eat there before the LORD thy God, and thou shalt rejoice, thou, and thine household.</em></p>
+      <p><span class="obj-label">The Answer</span>Three things must be said. First, this is a civil provision within the tithe law, addressed to the whole nation of Israel, permitting a purchase for the festival meal at the sanctuary. It is a permission granted to the common Israelite, not a command to anyone and not a commendation of the practice.</p>
+      <p>Second, and decisively, the very same Law that permits this to the common Israelite forbids it to the priest, and the wisdom literature forbids it to the king. God did not contradict Himself. He set one standard for the nation at large and a higher one for those He had placed in office. Nobody reads Leviticus 10 and concludes that Deuteronomy 14 overrides it for Aaron. The two stand together because they address different men.</p>
+      <p>Third, the New Testament moves every believer into the higher category. If the common Israelite had a liberty here that the priest and the king did not, and if Christ has now made us kings and priests unto God, then we are not standing where the common Israelite stood. We are standing where Aaron stood and where Lemuel&rsquo;s mother said the king must stand. The verse is real, and it grants nothing to a man in the priestly office.</p>
+    </div>
+
+    <div class="objection">
+      <p class="objection-q">2. Does not Numbers 6:20 say the Nazarite may drink wine afterward?</p>
+      <p><span class="obj-label">The Answer</span>It does, and Section IX quoted it in full for that reason. The clause exists because that form of the vow ran for a fixed term. When the days were fulfilled the man brought his offerings, shaved his head, and the separation formally ended. The permission to drink is the announcement that the consecration is over.</p>
+      <p>So the restriction was never about the substance being poisonous. It was about the man being consecrated. Restriction and consecration begin together and end together. Which means the objection actually proves the doctrine: wine is forbidden to the separated, and permitted to the unseparated.</p>
+      <p>Then ask the closing question. Samson was a Nazarite from the womb to the day of his death, and there is no verse twenty for him. Samuel was given to the LORD all the days of his life, and there is no verse twenty for him. John the Baptist was to drink neither wine nor strong drink, filled with the Spirit from his mother&rsquo;s womb, and there is no verse twenty for him. A believer redeemed by the blood of Christ has no ending day to his separation either. Where the consecration never lifts, the clause never triggers.</p>
+    </div>
+
+    <div class="objection">
+      <p class="objection-q">3. Did not Jesus turn water into wine at Cana?</p>
+      <p><span class="obj-label">The Answer</span>He did, and the account is in John chapter two. Several things are worth saying plainly. The word used is the general term for the product of the grape, and the text does not tell us its strength. What the text does tell us is that this was the first of the signs by which He manifested His glory, and the point of the account is His glory and His hour, not a dietary ruling.</p>
+      <p>Whatever the substance was, it was not <em>strong drink</em>. Scripture has a separate word for that and does not use it here. The passage therefore has nothing to say about the liquor cabinet even on the most generous reading of it.</p>
+      <p>And notice the burden this objection carries. To use Cana as a license, a man must argue that Christ supplied a large quantity of intoxicant to guests already well into a feast, in direct contradiction of the woe in Habakkuk on the man who gives his neighbour drink. The Lord fulfilled the Law perfectly and broke no part of it. A reading of this passage that puts Him under a prophetic woe has gone wrong somewhere.</p>
+    </div>
+
+    <div class="objection">
+      <p class="objection-q">4. Did not Paul tell Timothy to use a little wine?</p>
+      <p><span class="obj-label">The Passage</span><em>Drink no longer water, but use a little wine for thy stomach&rsquo;s sake and thine often infirmities.</em> (1 Timothy 5:23)</p>
+      <p><span class="obj-label">The Answer</span>Read every qualifier in the sentence, because there are four. It is written to <em>one named man</em>. It concerns <em>wine</em>, not strong drink. The quantity is <em>a little</em>. And the stated purpose is <em>medicinal</em>, for a stomach ailment and frequent infirmities in a place where the water itself was making him sick.</p>
+      <p>Observe also what the verse assumes. Paul has to tell Timothy to stop drinking only water, which means Timothy had been abstaining entirely. Paul does not rebuke him for that abstinence or call it legalism. He makes a narrow medical exception for a specific man with a specific ailment. A verse that has to override a young pastor&rsquo;s total abstinence cannot be used to argue that total abstinence was wrong.</p>
+    </div>
+
+    <div class="objection">
+      <p class="objection-q">5. Was Jesus not called a winebibber?</p>
+      <p><span class="obj-label">The Passage</span><em>For John came neither eating nor drinking, and they say, He hath a devil. The Son of man came eating and drinking, and they say, Behold a man gluttonous, and a winebibber, a friend of publicans and sinners. But wisdom is justified of her children.</em> (Matthew 11:18&ndash;19)</p>
+      <p><span class="obj-label">The Answer</span>This is the accusation of His enemies, and the Lord quotes it in order to expose how faithless the accusers were. Read the pair. John fasted, so they called him demon possessed. Jesus ate with people, so they called Him a glutton and a drunkard. The complaint was never about food or drink. It was that they would not receive either messenger no matter what he did.</p>
+      <p>To take a slander of the Pharisees and build a doctrine on it is a serious mistake. By the same method one could prove from the same verse that the Lord was a glutton, which no believer would say. He was also called a Samaritan, a blasphemer, and a man with a devil. Accusations of wicked men are recorded in Scripture; they are not endorsed by it.</p>
+    </div>
+
+    <div class="objection">
+      <p class="objection-q">6. What about the cup at the Lord&rsquo;s table?</p>
+      <p><span class="obj-label">The Answer</span>Take note of the exact words the Lord used. He did not call it wine. He said, <em>I will not drink henceforth of this fruit of the vine, until that day when I drink it new with you in my Father&rsquo;s kingdom.</em> The Holy Ghost preserved that phrase in three Gospels, and it describes the source rather than the strength.</p>
+      <p>Whatever a congregation uses at the table, it is a small ceremonial portion taken in remembrance of the blood of Christ, under the most solemn circumstances a believer ever enters, with a warning attached about discerning the Lord&rsquo;s body. Nothing about that ordinance grants anyone a glass at home on a Friday evening. To reason from the cup of the covenant to recreational drinking is to trade the holy for the common, which is the very discernment the priest was forbidden to lose.</p>
+    </div>
+
+    <div class="objection">
+      <p class="objection-q">7. Is it not legalism to add a rule Scripture does not state as a command?</p>
+      <p><span class="obj-label">The Answer</span>It would be, if that were what was happening. Legalism is the attempt to earn or maintain standing before God by performance, and nothing in this teaching touches the ground of salvation. We are saved by grace through faith in Christ alone, and not one drop of anything a man drinks or refuses adds to or subtracts from that finished work.</p>
+      <p>What this teaching does is take an office God assigned, read the requirements God attached to that office, and apply them to the men and women He placed in it. That is not adding to Scripture. That is reading it as a whole.</p>
+      <p>And remember the Rechabites. God Himself set the wine before them, told them to drink, and then blessed them perpetually for refusing on the strength of a rule their forefather gave them. If abstinence were mere legalism, that chapter could not exist.</p>
+    </div>
+
+    <!-- ══════════ PART SIX ══════════ -->
+    <div class="part-divider">
+      <span class="part-num">Part Six</span>
+      <span class="part-name">Alcohol in Food</span>
+    </div>
+
+    <!-- SECTION XVII -->
+    <div class="section-head" id="s17">
+      <p class="section-eyebrow">Drawing the Line Correctly</p>
+      <h2 class="section-title">XVII. A Different Question Entirely</h2>
+    </div>
+
+    <p class="body-text">Having settled that the believer does not drink, we must now handle a question that gets tangled with it constantly and should not be. A sister reaches for the vanilla extract, reads the label, finds it is thirty five percent alcohol, and wonders whether she has been sinning for years. A brother is handed a family recipe calling for wine in the pot roast. Someone asks about the vinegar in the pantry, which is made by fermenting alcohol in the first place.</p>
+
+    <p class="body-text">These are honest questions and they deserve an honest answer, which is this: <strong>the flavoring of food is not drinking.</strong> The two are different acts, and Scripture treats them differently.</p>
+
+    <p class="body-text">Start where the Law starts. The clean and unclean statutes deal with creatures. They divide the beasts, the fish, and the fowl, and tell us which may come to the table. They say nothing whatever about fermentation, and there is no category in the Law that makes a fermented substance unclean. We know this with certainty because of what God commanded at His own altar.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Numbers 15:10</span>
+      <span class="scripture-text">And thou shalt bring for a drink offering half an hin of wine, for an offering made by fire, of a sweet savour unto the LORD.</span>
+    </div>
+
+    <p class="body-text">God does not receive an unclean thing as a sweet savour. If the substance itself were defiling, He would never have commanded it poured out before Him. So the prohibition we established in Parts Three and Four is not a prohibition on a defiling substance. It is a prohibition on an <em>act</em>, the act of drinking, and it rests on the consecration of the one who would drink.</p>
+
+    <p class="body-text">Nothing in that prohibition is engaged by a teaspoon of extract in a cake. The consecrated man is not drinking. His head is not clouded. He cannot forget the law or pervert judgment over a pan sauce. Not one of the reasons God gave for the restriction is present in the act. To forbid it anyway would be to keep the letter of a rule while abandoning the reason God attached to it, which is the very error the Lord rebuked in the Pharisees.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Keep the Two Separate</span>
+      <p>Drinking is forbidden to the believer because of who he is and what drink does to him. Flavoring is a different act, in a different quantity, producing none of the effects the prohibition was given to prevent. Confusing the two makes the teaching easy to dismiss, because anyone can point at a bottle of vinegar and ask whether it is sin. Keep the line where God put it, and the teaching stands.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Guard against the opposite error too. A young believer who is trying to obey may hear the first half of this teaching and conclude that vanilla extract, soy sauce, and vinegar are all forbidden. If he is not given the rest of it he will either live under a burden God never laid on him, or he will discover the vinegar in his own pantry and quietly conclude that the whole teaching was overdrawn. Both outcomes are avoidable. Teach both halves together, every time.</p>
+    </div>
+
+    <!-- SECTION XVIII -->
+    <div class="section-head" id="s18">
+      <p class="section-eyebrow">A Practical Accounting</p>
+      <h2 class="section-title">XVIII. Where Alcohol Sits in the Kitchen</h2>
+    </div>
+
+    <p class="body-text">Most believers are surprised to learn how much alcohol has always been in an ordinary pantry. Some is added on purpose as a flavor carrier. Some simply arises wherever yeast meets sugar, which is to say nearly everywhere in the food supply. This list is not meant to alarm anyone. It is meant to show that a rule of absolute avoidance is not livable and was never what God asked.</p>
+
+    <p class="sub-head">Added on Purpose as a Solvent or Flavoring</p>
+
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Why It Contains Alcohol</th>
+            <th>Typical Strength</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-name">Vanilla extract</td>
+            <td>Alcohol is the solvent that pulls flavor out of the bean and holds it in suspension</td>
+            <td class="col-strong">About 35 percent</td>
+          </tr>
+          <tr>
+            <td class="col-name">Almond, lemon, peppermint, and other extracts</td>
+            <td>The same solvent method as vanilla</td>
+            <td class="col-strong">30 to 40 percent</td>
+          </tr>
+          <tr>
+            <td class="col-name">Rum, brandy, and bourbon flavorings</td>
+            <td>Either a genuine spirit or an alcohol-based imitation</td>
+            <td class="col-strong">Varies widely</td>
+          </tr>
+          <tr>
+            <td class="col-name">Some food colorings and flavor pastes</td>
+            <td>Alcohol keeps the color or flavor in solution</td>
+            <td class="col-origin">Small</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="table-caption">A teaspoon of vanilla spread across a full recipe works out to a trace amount per serving, and most of it flashes off in the oven.</p>
+    </div>
+
+    <p class="sub-head">Present Naturally Through Fermentation</p>
+
+    <ul class="plain-list">
+      <li><strong>Vinegar of every kind.</strong> Cider, wine, malt, and balsamic vinegar are all made by fermenting alcohol one step further into acid. A small residual remains. Vinegar was on the table in Israel, and Boaz handed it to Ruth with her bread.</li>
+      <li><strong>Soy sauce.</strong> Naturally brewed soy sauce carries roughly one to two percent alcohol from its fermentation.</li>
+      <li><strong>Bread and any yeast dough.</strong> The rise itself is fermentation. Most of the alcohol bakes off and a trace remains in the crumb.</li>
+      <li><strong>Kefir, kombucha, and some yogurts.</strong> Live cultures produce small amounts, sometimes approaching one percent.</li>
+      <li><strong>Very ripe fruit, especially bananas.</strong> Fruit ferments on its own as it softens.</li>
+      <li><strong>Fruit juices, particularly apple and orange.</strong> Trace natural fermentation occurs in the bottle.</li>
+      <li><strong>Commercially baked breads and rolls.</strong> The same yeast process, at scale.</li>
+    </ul>
+
+    <p class="sub-head">Cooked With on Purpose</p>
+
+    <ul class="plain-list">
+      <li><strong>Deglazing and pan sauces.</strong> Red wine in beef dishes and spaghetti sauce, white wine in chicken and seafood, sherry in soups and bisques.</li>
+      <li><strong>Braises and stews.</strong> Beef bourguignon, coq au vin, osso buco, wine-braised short ribs.</li>
+      <li><strong>Risotto.</strong> Nearly every traditional recipe begins with a splash of white wine into the rice.</li>
+      <li><strong>Beer batters and marinades.</strong> Beer battered fish, bratwurst simmered in beer, beer-based barbecue mops.</li>
+      <li><strong>Glazes and sauces.</strong> Bourbon or whiskey in barbecue sauce, ham glaze, and pan sauces.</li>
+      <li><strong>Asian cooking.</strong> Mirin and sake in Japanese dishes, Shaoxing wine in Chinese stir fry and braises.</li>
+      <li><strong>Desserts.</strong> Rum cake, bourbon balls, fruitcake, tiramisu, bread pudding sauce, cherries jubilee, bananas foster.</li>
+      <li><strong>Vodka sauce</strong> for pasta, where the spirit releases flavors the tomato holds back.</li>
+      <li><strong>Filled chocolates and candies</strong> carrying a liqueur center.</li>
+    </ul>
+
+    <div class="bonus">
+      <p class="bonus-label">Beyond the Kitchen</p>
+      <p>Alcohol is also the standard base for many everyday household items. Most mouthwash runs between fourteen and twenty six percent. Many liquid cough syrups, tinctures, and herbal drops are alcohol-based. Hand sanitizer is roughly sixty percent. None of these are drink, and none are a moral question, but they are worth knowing about for anyone trying to be consistent. A rule that would forbid vanilla extract would also forbid mouthwash and most cold medicine, which shows the rule itself was never the standard God set. The standard God set is about drinking, and none of these is drinking.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>There is one real exception in this section, and it should be named. A believer who has come out of bondage to drink should stay away from cooking wine, beer batters, rum cakes, and liqueur-filled candy altogether, and from anything where the taste of it is the point. This is not because a trace amount is sin. It is because the taste and the smell can wake something that took him years to put down, and no dish is worth that. Extracts and vinegar are a different matter and cause no such trouble. Handle this privately with the person rather than announcing it, and never let anyone feel he is under a heavier law than his brother. He is under a wiser guard, and that is a mercy.</p>
+    </div>
+
+    <!-- SECTION XIX -->
+    <div class="section-head" id="s19">
+      <p class="section-eyebrow">Honest Numbers</p>
+      <h2 class="section-title">XIX. What Survives the Heat</h2>
+    </div>
+
+    <p class="body-text">A common saying holds that all the alcohol burns off in cooking. That is not quite true, and we should not lean on a claim that will not hold up under examination. Laboratory testing has measured how much remains under different methods, and the honest picture is this: heat and time remove a great deal, but never all of it.</p>
+
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Alcohol Remaining</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-name">Added to a boiling liquid, then taken off the heat</td><td class="col-strong">About 85 percent</td></tr>
+          <tr><td class="col-name">Flamed in the pan</td><td class="col-strong">About 75 percent</td></tr>
+          <tr><td class="col-name">Stirred in and left overnight, no heat</td><td class="col-strong">About 70 percent</td></tr>
+          <tr><td class="col-name">Baked 25 minutes, not stirred into the mixture</td><td class="col-strong">About 45 percent</td></tr>
+          <tr><td class="col-name">Simmered or baked 15 minutes, stirred in</td><td class="col-strong">About 40 percent</td></tr>
+          <tr><td class="col-name">Simmered or baked 30 minutes, stirred in</td><td class="col-strong">About 35 percent</td></tr>
+          <tr><td class="col-name">Simmered or baked 1 hour</td><td class="col-strong">About 25 percent</td></tr>
+          <tr><td class="col-name">Simmered or baked 2 hours</td><td class="col-strong">About 10 percent</td></tr>
+          <tr><td class="col-name">Simmered or baked 2 and a half hours</td><td class="col-strong">About 5 percent</td></tr>
+        </tbody>
+      </table>
+      <p class="table-caption">Figures come from United States Department of Agriculture nutrient retention testing. They are percentages of what was added, not of the finished dish.</p>
+    </div>
+
+    <p class="body-text">The percentages sound higher than people expect until you remember what they are percentages <em>of</em>. Take a stew with one cup of red wine, simmered an hour, serving eight people. Roughly a quarter of that wine&rsquo;s alcohol remains, spread across eight plates. Each person receives something on the order of a teaspoon of wine, and receives it inside a bowl of food. The vanilla case is smaller still. One teaspoon of extract at thirty five percent, divided across three dozen cookies, with most of it driven off by the oven, leaves an amount that cannot be tasted or detected by any ordinary means.</p>
+
+    <p class="body-text">This is why the flavoring question and the drinking question are separate. No quantity in that table is capable of doing to a man what Scripture warns about. Nobody has ever forgotten the law over a cookie.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>These retention figures are laboratory data, not Scripture, and they are averages across test conditions. Actual results vary with the width of the pan, the depth of the liquid, and whether a lid is used, since a wide open pan loses far more than a covered pot. Present these numbers as helpful information for a decision of conscience, never as a doctrinal ruling.</p>
+    </div>
+
+    <!-- SECTION XX -->
+    <div class="section-head" id="s20">
+      <p class="section-eyebrow">The Appointed Times</p>
+      <h2 class="section-title">XX. The Week of Unleavened Bread</h2>
+    </div>
+
+    <p class="body-text">There is one season in the year where this becomes a commandment issue rather than a matter of conscience, and it has nothing to do with alcohol as such. It has to do with leaven.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Exodus 12:19</span>
+      <span class="scripture-text">Seven days shall there be no leaven found in your houses: for whosoever eateth that which is leavened, even that soul shall be cut off from the congregation of Israel, whether he be a stranger, or born in the land.</span>
+      <span class="scripture-ref">Exodus 13:7</span>
+      <span class="scripture-text">Unleavened bread shall be eaten seven days; and there shall no leavened bread be seen with thee, neither shall there be leaven seen with thee in all thy quarters.</span>
+    </div>
+
+    <p class="body-text">Beer and ale are made from grain that has been malted and fermented with yeast. During the seven days of Unleavened Bread they come out of the house along with the bread, the crackers, and the rest. That is not a preference, it is the plain command, and it applies to anything cooked with beer during that week as much as to the bottle itself. For a believer walking in the standard set out in Parts Three and Four, of course, the bottle is not in the house in the first place.</p>
+
+    <p class="body-text">Wine stands differently on the leaven question. Wine is the fruit of the vine and not of the grain, and it is fermented by the natural yeast on the grape skin rather than by baker&rsquo;s leaven. Wine and grape-based vinegar are therefore not a leaven problem during the feast. Grain-based extracts sit in a middle place. Distillation separates the alcohol from the grain entirely, so what comes out of the still is not a grain product in any meaningful sense, and many hold on that basis that vanilla extract raises no question. Others prefer to keep the whole matter clear of the house for seven days rather than parse it. Both positions are held by people who love the Lord and want to obey Him.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">A Practical Suggestion for the Feast Week</p>
+      <p>If you want to be careful without agonizing over it, do three simple things during the days of Unleavened Bread. Put out any beer or ale as you put out the bread. Check the label on your extracts, since many are made on a grain base, and either set them aside for the week or keep a small bottle of alcohol-free vanilla flavoring or vanilla powder in the cupboard for that season. Lean on grape-based vinegar for cooking, which raises no question at all. The rest of the year none of this needs a second thought.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>One further matter belongs here for households that take the clean and unclean distinction seriously. Some wines and vinegars are clarified with fining agents drawn from animal sources, including gelatin, egg white, casein, and isinglass, which comes from fish. These agents are filtered out and do not appear on the label as ingredients, so this is not a matter anyone can be charged with. Still, a household that wishes to be careful can look for products marked unfined, unfiltered, or vegan, which use no animal fining at all. Offer this as information for a private decision, not as a rule to be enforced.</p>
+    </div>
+
+    <!-- SECTION XXI -->
+    <div class="section-head" id="s21">
+      <p class="section-eyebrow">Walking It Out</p>
+      <h2 class="section-title">XXI. Practical Counsel for the Kitchen</h2>
+    </div>
+
+    <ul class="plain-list">
+      <li><strong>Use your extracts freely.</strong> Vanilla, almond, lemon, and the rest are flavor solvents, not drink. The amount per serving is a trace.</li>
+      <li><strong>Vinegar and soy sauce are not a question at all.</strong> Vinegar sat on the table in Israel and Boaz handed it to Ruth.</li>
+      <li><strong>Wine in a braise or a pan sauce is a lawful use of the substance,</strong> not a drink and not a violation of the standard this study has set out.</li>
+      <li><strong>Give it time on the heat when you can.</strong> A long simmer removes most of what was added, uncovered more than covered.</li>
+      <li><strong>Keep the bottle out of the house.</strong> The surest way to hold a standard is to remove the occasion for testing it, as Daniel did before the plate ever reached him.</li>
+      <li><strong>Consider the table before you cook.</strong> If someone coming has been delivered from drink, choose another recipe, and do not make an announcement about it either way.</li>
+      <li><strong>Tell people what is in the dish if they ask.</strong> No one should eat in ignorance something he would have declined.</li>
+      <li><strong>Keep the feast week clear of grain leaven.</strong> Beer and ale come out with the bread for those seven days.</li>
+      <li><strong>Do not make a test of fellowship out of a cake.</strong> Where a brother&rsquo;s conscience is not settled on extracts, give him room and do not press him.</li>
+    </ul>
+
+    <p class="sub-head">If You Would Rather Not Use It At All</p>
+
+    <p class="body-text">Some believers, out of conscience, family history, or a personal vow, would rather keep alcohol out of the cooking entirely. That is an honorable choice and Scripture gives full room for it. Here are workable substitutions so no one has to give up good food to keep a clear conscience.</p>
+
+    <ul class="plain-list">
+      <li><strong>For vanilla extract:</strong> glycerin-based vanilla flavoring, vanilla powder, or vanilla bean paste made without alcohol.</li>
+      <li><strong>For red wine:</strong> beef broth with a small splash of red wine vinegar or grape juice for acidity and depth.</li>
+      <li><strong>For white wine:</strong> chicken broth with a splash of white vinegar or lemon juice.</li>
+      <li><strong>For beer in batter:</strong> cold carbonated water or ginger ale, which give the same lift without the malt.</li>
+      <li><strong>For sherry or marsala:</strong> broth with a spoonful of grape juice and a drop of vinegar.</li>
+      <li><strong>For rum or brandy in desserts:</strong> extra vanilla, apple juice, or a splash of strong coffee, depending on the recipe.</li>
+    </ul>
+
+    <div class="scripture">
+      <span class="scripture-ref">Romans 14:21</span>
+      <span class="scripture-text">It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.</span>
+      <span class="scripture-ref">1 Corinthians 10:31&ndash;32</span>
+      <span class="scripture-text">Whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God. Give none offence, neither to the Jews, nor to the Gentiles, nor to the church of God:</span>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Be careful with Romans 14 in class. That chapter is regularly pressed into service to argue that God&rsquo;s commandments no longer bind, which it never says and cannot say without contradicting the whole counsel of Scripture. Paul is addressing matters where the Law has given no ruling, such as private fasting days and meat of uncertain origin from a pagan market. The principle of yielding a personal liberty for a brother&rsquo;s sake is sound and applies to the kitchen question. It does not extend to yielding a commandment of God for anyone&rsquo;s sake.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <section class="closing">
+      <div class="conclusion">
+        <span class="conclusion-label">Conclusion</span>
+        <p>Scripture is neither silent nor confused on this subject. It opens with Noah drunk and naked in his tent and Lot deceived by his own daughters. It runs through a priesthood forbidden the cup on pain of death, a throne where it is twice declared <em>it is not for kings</em>, a law of separation so thorough that the consecrated man could not touch a raisin, and a chorus of prophets crying woe over the men who were mighty to mingle strong drink. It closes with an apostolic charge to be sober and vigilant, and with the declaration that Christ has made us kings and priests unto God.</p>
+        <p>That is the whole shape of the Word, and it falls in one direction. The believer does not drink strong drink. He is a priest who never leaves the tabernacle, because his body <em>is</em> the tabernacle. He is a king who is never off the throne. His separation has no ending day and therefore no release. What he seeks when his heart is heavy is not a bottle but the filling appointed for him: <em>be not drunk with wine, wherein is excess; but be filled with the Spirit</em>.</p>
+        <p>And let the line be kept clean where God drew it. What is forbidden is the act of drinking, by the man God has consecrated. It was never a claim that the substance is unclean, for God Himself called the drink offering a sweet savour. So the sister with her vanilla and the cook with wine in his braise may proceed without fear, and no one should be burdened with a law God never gave. Guard the head. Guard the brother beside you. Put out the leaven for the seven days as the Lord commanded. And in the kitchen as in all things, <em>whether therefore ye eat, or drink, or whatsoever ye do, do all to the glory of God.</em></p>
+      </div>
+    </section>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>Work the Word &middot; Pronomian Teaching Series</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

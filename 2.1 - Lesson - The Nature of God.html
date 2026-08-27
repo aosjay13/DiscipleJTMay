@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discipleship Class - Level 1 - Lesson 2: The Nature of God</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --gold:#8B6914; --gold-light:#C9A84C; --gold-pale:#F5EDD8;
+    --ink:#1C1A17; --ink-mid:#3D3829; --ink-soft:#6B6047;
+    --parchment:#FAF6EE; --cream:#F2EBD9;
+    --crimson:#7A1F1F; --crimson-lt:#9B3434;
+    --rule:#C9A84C44; --rule-solid:#C9A84C;
+    --shadow:rgba(28,26,23,0.10);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    background:#EDE4CF;
+    font-family:'EB Garamond',Georgia,serif;
+    color:var(--ink);
+    line-height:1.6;
+    padding:2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page{
+    max-width:8.5in; margin:0 auto;
+    background:var(--parchment);
+    border:1px solid #D4B97A;
+    box-shadow:0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position:relative;
+  }
+  .page::before,.page::after{
+    content:''; position:absolute; width:40px; height:40px;
+    border-color:var(--gold-light); border-style:solid; pointer-events:none; z-index:3;
+  }
+  .page::before{top:12px;left:12px;border-width:2px 0 0 2px;}
+  .page::after{bottom:12px;right:12px;border-width:0 2px 2px 0;}
+
+  /* ── CRIMSON HEADER BOOKEND ── */
+  .doc-header{
+    text-align:center;
+    padding:2.6rem 2rem 2rem;
+    background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-lt) 100%);
+    position:relative; color:var(--gold-pale); overflow:hidden;
+    border-bottom:3px solid var(--gold-light);
+  }
+  .doc-header::after{
+    content:''; position:absolute; inset:12px;
+    border:1px solid rgba(201,168,76,0.4); pointer-events:none;
+  }
+  .header-ornament{font-size:1.1rem;color:var(--gold-light);letter-spacing:0.4em;display:block;margin-bottom:0.8rem;}
+  .header-eyebrow{
+    font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.26em;
+    text-transform:uppercase; color:var(--gold-light); margin-bottom:0.7rem;
+  }
+  .header-title{
+    font-family:'Cinzel',serif; font-size:clamp(1.7rem,4vw,2.4rem); font-weight:700;
+    color:#FBF6E9; letter-spacing:0.03em; line-height:1.15; text-transform:uppercase;
+    text-shadow:0 2px 6px rgba(0,0,0,0.3);
+  }
+  .header-subtitle{
+    font-family:'EB Garamond',serif; font-style:italic; font-size:clamp(0.95rem,2vw,1.12rem);
+    color:var(--gold-pale); margin-top:0.9rem; opacity:0.94;
+  }
+  .header-rule{display:flex; align-items:center; gap:0.75rem; margin:1.3rem auto 0; max-width:280px;}
+  .header-rule span{flex:1;height:1px;background:var(--gold-light);opacity:0.6;}
+  .header-rule i{color:var(--gold-light);font-style:normal;}
+
+  /* ── SHEETS (one printed page each; invisible on screen) ── */
+  .sheet-inner{padding:2.2rem 3rem 2.4rem;}
+  .sheet-band,.sheet-foot{display:none;}
+
+  /* ── NAME / DATE ── */
+  .meta-row{display:flex;gap:2rem;margin-bottom:1.3rem;}
+  .meta-field{display:flex;flex-direction:column;gap:4px;flex:1;}
+  .meta-label{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);}
+  .meta-line{border-bottom:1px solid var(--ink);height:1.4rem;}
+
+  /* ── LEAD PARAGRAPH ── */
+  .lead{font-size:1.05rem;color:var(--ink-mid);line-height:1.7;text-align:justify;margin-bottom:1.2rem;}
+
+  /* ── SECTIONS ── */
+  .section{margin-top:1.5rem;}
+  .section:first-of-type{margin-top:0;}
+  .section-header{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.6rem;border-bottom:1px solid var(--gold-light);padding-bottom:0.35rem;}
+  .section-num{font-family:'Cinzel',serif;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;background:var(--crimson);color:#FFF8EE;padding:0.18rem 0.55rem;flex-shrink:0;}
+  .section-title{font-family:'Cinzel',serif;font-size:1.02rem;font-weight:600;color:var(--crimson);letter-spacing:0.02em;}
+  .section p{font-size:1.02rem;color:var(--ink-mid);line-height:1.65;text-align:justify;margin-bottom:0.55rem;}
+  .section p:last-child{margin-bottom:0;}
+
+  /* ── SCRIPTURE BOX ── */
+  .scripture{background:var(--cream);border-left:3px solid var(--gold-light);border-top:1px solid #D4B97A55;padding:0.65rem 1rem;margin:0.6rem 0 0.7rem;}
+  .scripture p{font-style:italic;font-size:1rem;color:var(--ink-mid);line-height:1.6;margin:0;text-align:left;}
+  .scripture strong{font-family:'Cinzel',serif;font-style:normal;font-size:0.7rem;font-weight:600;color:var(--crimson);letter-spacing:0.05em;}
+
+  /* ── CLOSING LINE ── */
+  .turn-note{margin-top:1.4rem;padding-top:0.8rem;border-top:1px solid var(--rule);font-style:italic;font-size:0.98rem;color:var(--ink-soft);text-align:center;}
+
+  /* ── QUESTIONS ── */
+  .q-intro{font-size:1rem;color:var(--ink-soft);font-style:italic;text-align:center;margin-bottom:1.1rem;padding-bottom:0.7rem;border-bottom:1px solid var(--gold-light);}
+  .q{margin-bottom:1.15rem;}
+  .q:last-child{margin-bottom:0;}
+  .q-head{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;}
+  .q-num{font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;background:var(--crimson);color:#FFF8EE;padding:0.16rem 0.5rem;flex-shrink:0;}
+  .q-ref{font-family:'Cinzel',serif;font-size:0.78rem;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;}
+  .q-verse{background:var(--cream);border-left:3px solid var(--gold-light);border-top:1px solid #D4B97A55;padding:0.55rem 0.9rem;font-style:italic;font-size:0.98rem;color:var(--ink-mid);line-height:1.55;margin-bottom:0.5rem;}
+  .q-ask{font-size:1.02rem;color:var(--ink);line-height:1.6;margin-bottom:0.45rem;}
+  .answer-line{display:block;border-bottom:1px solid var(--rule-solid);height:1.75rem;width:100%;}
+
+  /* ── ANSWER KEY ── */
+  .key-banner{background:var(--gold);color:var(--parchment);font-family:'Cinzel',serif;text-align:center;padding:0.5rem;letter-spacing:0.18em;font-size:0.72rem;margin-bottom:1.1rem;text-transform:uppercase;}
+  .key-item{margin-bottom:0.7rem;padding-bottom:0.7rem;border-bottom:1px dashed var(--rule-solid);}
+  .key-question{font-family:'Cinzel',serif;font-size:0.78rem;font-weight:600;color:var(--crimson);margin-bottom:0.3rem;letter-spacing:0.02em;line-height:1.4;}
+  .key-answer{font-style:italic;font-size:0.98rem;color:var(--ink-mid);padding-left:0.9rem;border-left:2px solid var(--gold-light);line-height:1.55;}
+
+  /* ── CLOSING PANEL ── */
+  .closing{margin-top:1.5rem;background:var(--cream);border:1px solid #D4B97A55;border-top:3px solid var(--gold-light);padding:1rem 1.2rem;text-align:center;}
+  .closing-label{font-family:'Cinzel',serif;font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+  .closing p{font-size:1rem;color:var(--ink-mid);line-height:1.6;}
+  .closing em{color:var(--crimson);font-style:italic;}
+
+  /* ── TEACHER NOTE PANEL ── */
+  .teacher-note{margin-top:1.1rem;background:var(--cream);border:1px solid #D4B97A55;border-top:3px solid var(--gold-light);padding:0.9rem 1.1rem;}
+  .note-label{font-family:'Cinzel',serif;font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;}
+  .teacher-note p{font-size:0.96rem;color:var(--ink-mid);line-height:1.6;margin-bottom:0.45rem;text-align:justify;}
+  .teacher-note p:last-child{margin-bottom:0;}
+  .teacher-note strong{font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.04em;color:var(--crimson);}
+
+  /* ── CRIMSON FOOTER BOOKEND ── */
+  .doc-footer{
+    text-align:center; padding:2rem;
+    border-top:3px solid var(--gold-light);
+    background:linear-gradient(135deg,var(--crimson),var(--crimson-lt));
+  }
+  .footer-ornament{color:var(--gold-light);font-size:1.1rem;letter-spacing:0.4em;}
+  .footer-text{
+    font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.2em;
+    color:#FBF5E6; text-transform:uppercase; margin-top:0.6rem; line-height:1.9;
+  }
+
+  @media (max-width:600px){
+    .sheet-inner{padding:1.6rem 1.4rem 2rem;}
+    .doc-header{padding:2rem 1.4rem 1.6rem;}
+    .meta-row{gap:1rem;}
+  }
+
+  /* ══════════════════════════════════════════════════════
+     PRINT  ·  8.5in x 11in  ·  0.1in page margins
+     Each .sheet is exactly one printed page.
+     ══════════════════════════════════════════════════════ */
+  @page{ size:8.5in 11in; margin:0.1in; }
+
+  @media print{
+    body{background:#fff;padding:0;line-height:1.5;}
+    .page{max-width:100%;border:none;box-shadow:none;background:#fff;}
+    .page::before,.page::after{display:none;}
+
+    .sheet{
+      height:10.6in;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      background:var(--parchment);
+      break-after:page; page-break-after:always;
+      break-inside:avoid; page-break-inside:avoid;
+    }
+    .sheet:last-of-type{break-after:auto;page-break-after:auto;}
+
+    /* running crimson band on pages 2 and after */
+    .sheet-band{
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-lt) 100%);
+      border-bottom:2pt solid var(--gold-light);
+      color:var(--gold-pale);
+      font-family:'Cinzel',serif; font-size:6.8pt; letter-spacing:0.2em;
+      text-transform:uppercase; padding:5pt 0;
+    }
+
+    /* crimson page-number bar on every page */
+    .sheet-foot{
+      display:flex; align-items:center; justify-content:space-between;
+      flex:0 0 auto;
+      background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-lt) 100%);
+      border-top:2pt solid var(--gold-light);
+      color:var(--gold-pale);
+      font-family:'Cinzel',serif; font-size:6.5pt; letter-spacing:0.16em;
+      text-transform:uppercase; padding:5pt 26pt;
+    }
+    .sheet-foot i{color:var(--gold-light);font-style:normal;letter-spacing:0.3em;font-size:6pt;}
+
+    .sheet-inner{flex:1 1 auto; padding:0.30in 0.50in 0.22in; overflow:hidden;}
+
+    .doc-header{flex:0 0 auto; padding:0.26in 0.5in 0.22in; border-bottom:2.5pt solid var(--gold-light);}
+    .doc-header::after{inset:8pt;}
+    .header-ornament{font-size:8pt;margin-bottom:5pt;}
+    .header-eyebrow{font-size:6.8pt;margin-bottom:4pt;}
+    .header-title{font-size:21pt;}
+    .header-subtitle{font-size:10pt;margin-top:5pt;}
+    .header-rule{margin-top:7pt;max-width:2in;}
+
+    .doc-footer{display:none;}
+
+    /* type scale for paper */
+    .lead{font-size:10pt;line-height:1.45;margin-bottom:8pt;}
+    .section{margin-top:8pt;}
+    .section-header{margin-bottom:4pt;padding-bottom:2.5pt;}
+    .section-num{font-size:7pt;padding:1.5pt 4.5pt;}
+    .section-title{font-size:10.2pt;}
+    .section p{font-size:10pt;line-height:1.44;margin-bottom:4pt;}
+    .scripture{padding:4.5pt 9pt;margin:4pt 0 5pt;}
+    .scripture p{font-size:9.8pt;line-height:1.4;}
+    .scripture strong{font-size:7pt;}
+    .turn-note{font-size:9.6pt;margin-top:8pt;padding-top:5pt;}
+
+    .meta-row{margin-bottom:8pt;}
+    .meta-line{height:15pt;}
+    .meta-label{font-size:6.5pt;}
+
+    .q-intro{font-size:9.8pt;margin-bottom:7pt;padding-bottom:5pt;}
+    .q{margin-bottom:8pt;}
+    .q-head{margin-bottom:3.5pt;}
+    .q-num{font-size:7pt;padding:1.5pt 4.5pt;}
+    .q-ref{font-size:7.6pt;}
+    .q-verse{font-size:9.8pt;line-height:1.42;padding:5pt 8pt;margin-bottom:4.5pt;}
+    .q-ask{font-size:10.2pt;line-height:1.45;margin-bottom:4pt;}
+    .answer-line{height:22pt;}
+
+    .closing{margin-top:12pt;padding:8pt 12pt;}
+    .closing-label{font-size:6.6pt;margin-bottom:4pt;}
+    .closing p{font-size:9.6pt;line-height:1.45;}
+
+    .key-banner{font-size:7.4pt;padding:5pt;margin-bottom:9pt;}
+    .key-item{margin-bottom:6pt;padding-bottom:6pt;}
+    .key-question{font-size:8pt;margin-bottom:2.5pt;}
+    .key-answer{font-size:9.6pt;line-height:1.45;padding-left:8pt;}
+    .teacher-note{margin-top:9pt;padding:7pt 9pt;}
+    .note-label{font-size:6.6pt;margin-bottom:4pt;}
+    .teacher-note p{font-size:9.2pt;line-height:1.45;margin-bottom:4pt;}
+    .teacher-note strong{font-size:7.4pt;}
+
+    /* nothing small gets split down the middle */
+    .q,.key-item,.scripture,.q-verse,.section-header,.teacher-note,.closing{
+      break-inside:avoid; page-break-inside:avoid;
+    }
+    .section-header,.q-head,.key-question{break-after:avoid;page-break-after:avoid;}
+
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════ PAGE 1 · THE LESSON ═══════════════ -->
+  <section class="sheet">
+
+    <header class="doc-header">
+      <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+      <p class="header-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 2</p>
+      <h1 class="header-title">The Nature of God</h1>
+      <p class="header-subtitle">Knowing the God We Serve, and Walking With Him as He Is</p>
+      <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+    </header>
+
+    <div class="sheet-inner">
+
+      <p class="lead">Before we can walk with God, we have to know who He is. A wrong picture of God will produce a wrong walk every time. Some men picture a God who is angry and waiting to strike. Others picture a God so soft that sin no longer matters to Him. Neither one is the God of the Bible. Scripture gives us one God, and He has told us plainly what He is like.</p>
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-num">I</span>
+          <span class="section-title">One God, and He Does Not Change</span>
+        </div>
+        <div class="scripture">
+          <p><strong>Malachi 3:6</strong> &nbsp;&bull;&nbsp; For I am the LORD, I change not; therefore ye sons of Jacob are not consumed.</p>
+        </div>
+        <p>Many have been taught that the Old Testament gives us a God of wrath and the New Testament a God of love, as though God had a change of heart somewhere between Malachi and Matthew. Scripture will not allow it. The God who thundered on Sinai is the same God who wept at the grave of Lazarus, and Jesus Christ is the same yesterday, and to day, and for ever (Hebrews 13:8). What changed between the Testaments was not the character of God but the unfolding of His plan of redemption in Christ.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-num">II</span>
+          <span class="section-title">He Told Us Himself What He Is Like</span>
+        </div>
+        <div class="scripture">
+          <p><strong>Exodus 34:6&ndash;7</strong> &nbsp;&bull;&nbsp; The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth, keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty.</p>
+        </div>
+        <p>This is God describing God, and notice where He said it. Israel had just made the golden calf, and Moses had climbed the mountain a second time to receive the tables of the law again. At the very moment the LORD hands down His law, He proclaims Himself merciful and gracious. Mercy and commandment came from the same mouth, on the same mountain. But read it all the way through. He forgives iniquity, and He will by no means clear the guilty. Both halves are God.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-num">III</span>
+          <span class="section-title">His Love Always Comes First</span>
+        </div>
+        <div class="scripture">
+          <p><strong>Exodus 20:2</strong> &nbsp;&bull;&nbsp; I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage.</p>
+        </div>
+        <p>Before the LORD gave a single commandment at Sinai, He reminded Israel of what He had already done for them. They were not carried out of Egypt because they kept the law. They were delivered first, and then taught how a redeemed people live. That is the same order we find in the gospel, for while we were yet sinners, Christ died for us (Romans 5:8). Obedience is never the price of His love; it is the answer to it.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <span class="section-num">IV</span>
+          <span class="section-title">His Law Is His Character in Writing</span>
+        </div>
+        <div class="scripture">
+          <p><strong>1 John 5:3</strong> &nbsp;&bull;&nbsp; For this is the love of God, that we keep his commandments: and his commandments are not grievous.</p>
+        </div>
+        <p>If you want to know what God is like, read what He commands. He forbids lying because He cannot lie. He forbids stealing because He is a giver. He calls us to rest on the seventh day because He Himself rested on the seventh day. The law is holy, and just, and good (Romans 7:12), because the God who gave it is holy, and just, and good. The way a man treats the commandments of God will tell you much about what he believes God to be.</p>
+      </div>
+
+      <p class="turn-note">Now take up the questions. Read the verse over each one, then answer it in your own words.</p>
+
+    </div>
+
+    <div class="sheet-foot">
+      <span>The Nature of God</span><i>&#10022; &#10022; &#10022;</i><span>Page 1 of 3</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PAGE 2 · QUESTIONS 1 THROUGH 5 ═══════════════ -->
+  <section class="sheet">
+    <div class="sheet-band">Discipleship Class &nbsp;&middot;&nbsp; Level 1 &nbsp;&middot;&nbsp; Lesson 2 &nbsp;&middot;&nbsp; The Nature of God</div>
+
+    <div class="sheet-inner">
+
+      <div class="meta-row">
+        <div class="meta-field"><span class="meta-label">Name</span><div class="meta-line"></div></div>
+        <div class="meta-field"><span class="meta-label">Date</span><div class="meta-line"></div></div>
+      </div>
+
+      <p class="q-intro">Study Questions &nbsp;&middot;&nbsp; Read each verse, then answer in your own words</p>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">1</span><span class="q-ref">Malachi 3:6</span></div>
+        <p class="q-verse">For I am the LORD, I change not; therefore ye sons of Jacob are not consumed.</p>
+        <p class="q-ask">Does God ever change? What does that tell you about the God of the Old Testament and the God of the New?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">2</span><span class="q-ref">Exodus 34:6&ndash;7</span></div>
+        <p class="q-verse">The LORD, The LORD God, merciful and gracious, longsuffering, and abundant in goodness and truth, keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty.</p>
+        <p class="q-ask">In His own words, what is the LORD like? Name both the mercy and the justice you find in this verse.</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">3</span><span class="q-ref">1 John 4:8</span></div>
+        <p class="q-verse">He that loveth not knoweth not God; for God is love.</p>
+        <p class="q-ask">According to this verse, what is the nature of God?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">4</span><span class="q-ref">Leviticus 19:2</span></div>
+        <p class="q-verse">Speak unto all the congregation of the children of Israel, and say unto them, Ye shall be holy: for I the LORD your God am holy.</p>
+        <p class="q-ask">God is love, and God is also holy. What does His holiness call His people to be?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">5</span><span class="q-ref">Exodus 20:2</span></div>
+        <p class="q-verse">I am the LORD thy God, which have brought thee out of the land of Egypt, out of the house of bondage.</p>
+        <p class="q-ask">What had God already done for Israel before He gave them the Ten Commandments? What does that order teach us about grace and obedience?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+    </div>
+
+    <div class="sheet-foot">
+      <span>The Nature of God</span><i>&#10022; &#10022; &#10022;</i><span>Page 2 of 3</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PAGE 3 · QUESTIONS 6 THROUGH 10 ═══════════════ -->
+  <section class="sheet">
+    <div class="sheet-band">Discipleship Class &nbsp;&middot;&nbsp; Level 1 &nbsp;&middot;&nbsp; Lesson 2 &nbsp;&middot;&nbsp; The Nature of God</div>
+
+    <div class="sheet-inner">
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">6</span><span class="q-ref">Romans 5:8</span></div>
+        <p class="q-verse">But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.</p>
+        <p class="q-ask">At what point did God prove His love toward us? Did we have to clean ourselves up first?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">7</span><span class="q-ref">Romans 7:12</span></div>
+        <p class="q-verse">Wherefore the law is holy, and the commandment holy, and just, and good.</p>
+        <p class="q-ask">What does Paul say about the law of God? What does that tell you about the God who gave it?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">8</span><span class="q-ref">1 John 5:3</span></div>
+        <p class="q-verse">For this is the love of God, that we keep his commandments: and his commandments are not grievous.</p>
+        <p class="q-ask">How does John say we show our love back to God? Does he call it a burden?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">9</span><span class="q-ref">John 8:11</span></div>
+        <p class="q-verse">She said, No man, Lord. And Jesus said unto her, Neither do I condemn thee: go, and sin no more.</p>
+        <p class="q-ask">Jesus said two things to the woman taken in adultery. What were they, and why do we need both of them?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="q">
+        <div class="q-head"><span class="q-num">10</span><span class="q-ref">1 John 1:9</span></div>
+        <p class="q-verse">If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.</p>
+        <p class="q-ask">If you come to God confessing your sin and trusting Jesus Christ, what has He promised to do? What does that promise show you about His nature?</p>
+        <span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+
+      <div class="closing">
+        <p class="closing-label">&#10022; To Carry With You &#10022;</p>
+        <p>The God who saved you is the same God who gave the commandments. He loved you long before you ever obeyed Him, and now that you belong to Him He teaches you to walk in His ways. <em>Mercy and truth are met together; righteousness and peace have kissed each other.</em> Psalm 85:10</p>
+      </div>
+
+    </div>
+
+    <div class="sheet-foot">
+      <span>The Nature of God</span><i>&#10022; &#10022; &#10022;</i><span>Page 3 of 3</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PAGE 4 · ANSWER KEY (TEACHER) ═══════════════ -->
+  <section class="sheet">
+    <div class="sheet-band">Discipleship Class &nbsp;&middot;&nbsp; Level 1 &nbsp;&middot;&nbsp; Lesson 2 &nbsp;&middot;&nbsp; Answer Key</div>
+
+    <div class="sheet-inner">
+
+      <div class="key-banner">Teacher's Answer Key &nbsp;&middot;&nbsp; Not for Student Distribution</div>
+
+      <div class="key-item">
+        <p class="key-question">1. Does God ever change?</p>
+        <p class="key-answer">He does not change. The God of Sinai and the God of Calvary are the same God. What changed between the Testaments is the unfolding of His plan in Christ, not His character.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">2. In His own words, what is the LORD like?</p>
+        <p class="key-answer">Merciful, gracious, longsuffering, abundant in goodness and truth, forgiving iniquity, transgression and sin. And He will by no means clear the guilty. Mercy and justice both belong to Him.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">3. What is the nature of God?</p>
+        <p class="key-answer">God is love.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">4. What does His holiness call His people to be?</p>
+        <p class="key-answer">Holy, as He is holy. Peter repeats the same command in 1 Peter 1:15&ndash;16. His love never cancels His holiness; it makes a way for us to walk in it.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">5. What had God already done before He gave the commandments?</p>
+        <p class="key-answer">He had already brought Israel out of Egypt. Redemption came first, then the commandments. They did not obey in order to be delivered; they were delivered, and then taught to obey. Grace before commandment, in both covenants.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">6. At what point did God prove His love?</p>
+        <p class="key-answer">While we were yet sinners. We could not clean ourselves up first. His love came to us in the middle of our sin, and it is that love which changes us.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">7. What does Paul say about the law?</p>
+        <p class="key-answer">That it is holy, just and good, because it came from a holy, just and good God. The commandments are a written portrait of His character.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">8. How do we show our love back to God?</p>
+        <p class="key-answer">By keeping His commandments, and John says they are not grievous. Obedience is the response to His love, never the purchase price of it.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">9. What two things did Jesus say to the woman?</p>
+        <p class="key-answer">"Neither do I condemn thee," and "go, and sin no more." Mercy without the command would leave her in her sin; the command without mercy would leave her condemned. Christ gave both, and in doing so He showed us the Father.</p>
+      </div>
+
+      <div class="key-item">
+        <p class="key-question">10. What has He promised the one who confesses?</p>
+        <p class="key-answer">He is faithful and just to forgive our sins and to cleanse us from all unrighteousness. His nature toward the repentant is mercy, and He cleanses us so that we can walk in righteousness.</p>
+      </div>
+
+      <div class="teacher-note">
+        <p class="note-label">&#10022; Teacher's Note &middot; If a student raises Romans 5:13</p>
+        <p><strong>ROMANS 5:13</strong> &nbsp;Some teach from this verse that God overlooked sin until Sinai and only then began holding men accountable, as though God changed. The next verse answers it: death reigned from Adam to Moses. Men were dying for sin long before the tables of stone. God judged the flood generation, He judged Sodom, and He told Cain that sin lieth at the door. Abraham kept His charge, commandments, statutes and laws centuries before Sinai (Genesis 26:5). Sinai did not create God's righteousness. It wrote it down.</p>
+        <p><strong>GALATIANS 3:24</strong> &nbsp;The law is a schoolmaster to bring us to Christ, that we might be justified by faith. It brings us to Christ for righteousness, because it never could justify us. That does not leave us without a standard once we arrive. Paul settles it plainly: do we then make void the law through faith? God forbid: yea, we establish the law (Romans 3:31).</p>
+      </div>
+
+    </div>
+
+    <div class="sheet-foot">
+      <span>The Nature of God</span><i>&#10022; &#10022; &#10022;</i><span>Teacher's Answer Key</span>
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    <p class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</p>
+    <p class="footer-text">
+      Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>
+      Work the Word &middot; Discipleship Class &middot; Level 1 &middot; Lesson 2
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Discipleship? &middot; The Learner Who Follows the Master</title>
+<meta name="description" content="A full Bible teaching on discipleship, from the walk of Enoch to the Great Commission and the witness of the early church. Pronomian, King James Bible.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.55rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.4rem 0 0;
+    padding: 1.5rem 1.9rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.55rem; break-inside: avoid; }
+  .toc-list a {
+    font-size: 0.97rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    min-width: 2.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SCRIPTURE CALLOUT (cream box, gold top border) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.78; font-size: 1rem; display: block; }
+  .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── KEY POINT PANEL (crimson border) ── */
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .keypoint p { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  /* ── MARK ITEMS (numbered self-examination list) ── */
+  .mark-item {
+    margin: 1rem 0;
+    padding: 0.95rem 1.3rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A44;
+    border-left: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .mark-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+  .mark-item p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .mark-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-top: 0.45rem;
+  }
+
+  /* ── TWO-COLUMN COMPARISON GRID ── */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.8rem 0;
+    break-inside: avoid;
+  }
+  .compare-col {
+    padding: 1.1rem 1.3rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+  }
+  .compare-col.crowd    { border-top: 3px solid var(--gold-light); }
+  .compare-col.disciple { border-top: 3px solid var(--crimson-lt); }
+  .compare-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+  }
+  .compare-col.crowd .compare-title    { color: var(--gold); }
+  .compare-col.disciple .compare-title { color: var(--crimson); }
+  .compare-body { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); }
+  .compare-body ul { list-style: none; margin-top: 0.5rem; }
+  .compare-body li { padding-left: 1rem; position: relative; margin-bottom: 0.35rem; }
+  .compare-body li::before { content: '\2022'; position: absolute; left: 0; color: var(--gold-light); }
+
+  /* ── BONUS / DASHED PANEL ── */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+
+  /* ── TEACHER'S NOTE (dashed gold, italic) ── */
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.4rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .teacher-note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .teacher-note p {
+    font-size: 0.95rem;
+    line-height: 1.74;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .teacher-note p + p { margin-top: 0.6rem; }
+
+  /* ── EARLY WITNESS ENTRY (Apostolic Fathers) ── */
+  .witness {
+    margin: 1.5rem 0;
+    padding: 1.15rem 1.4rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-left: 3px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .witness-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--crimson);
+    display: block;
+    letter-spacing: 0.02em;
+  }
+  .witness-date {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin: 0.25rem 0 0.65rem;
+  }
+  .witness p { font-size: 0.99rem; line-height: 1.78; color: var(--ink-mid); }
+  .witness p + p { margin-top: 0.7rem; }
+  .witness q { font-style: italic; color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* dark gradient conclusion block */
+  .conclusion {
+    margin: 2rem 0 0;
+    padding: 1.8rem 1.8rem;
+    background: linear-gradient(135deg, #2A2622, #3D3829);
+    border-left: 4px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .conclusion p { font-size: 1.02rem; line-height: 1.82; color: #E8DFC8; }
+  .conclusion p + p { margin-top: 0.8rem; }
+  .conclusion em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, 0.75in margins, page numbers) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-body { padding: 0; }
+    .doc-header { padding: 1.7rem 1.4rem 1.4rem; }
+    .doc-footer { padding: 1.3rem 1.4rem; margin-top: 2rem; }
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .scripture, .keypoint, .compare-col, .bonus, .teacher-note,
+    .conclusion, .toc, .mark-item, .witness {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* good breaks: each major part starts a fresh page, small blocks stay whole */
+    .section-head { break-before: page; page-break-before: always; }
+    .section-head:first-of-type { break-before: auto; page-break-before: auto; }
+    .preamble, .toc { break-after: avoid; page-break-after: avoid; }
+    .section-head, .sub-head { break-after: avoid; page-break-after: avoid; }
+    .scripture, .keypoint, .compare, .bonus, .teacher-note,
+    .conclusion, .mark-item, .witness, .toc-list li {
+      break-inside: avoid; page-break-inside: avoid;
+    }
+    .body-text { orphans: 3; widows: 3; }
+    .closing { break-before: page; page-break-before: always; }
+    .doc-footer { break-before: avoid; page-break-before: avoid; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    .compare { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">A Teaching on the Believer&rsquo;s Walk</p>
+    <h1 class="doc-title">What Is Discipleship?</h1>
+    <p class="doc-subtitle">The learner who follows the Master, from the walk of Enoch to the witness of the early church</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Before We Begin</p>
+      <p class="dropcap">Ask most people what a disciple is and you will hear something like a follower, or a believer, or someone who goes to church. None of those answers is wrong, exactly, but none of them reaches the bottom of the word. In the New Testament a disciple is a learner who has bound his whole life to a master so that he might become like him. That is a much heavier thing than admiration, and it is a much warmer thing than mere membership.</p>
+      <p>The word matters because the Lord staked His final command on it. When Jesus stood with His disciples before He ascended, He did not tell them to gather crowds, and He did not tell them to collect professions. He told them to make disciples, to baptize them, and to teach them to observe all things whatsoever He had commanded. Everything the church is supposed to be doing sits inside that one sentence.</p>
+      <p>This teaching takes the subject up in eight parts. We begin with what the word actually means. Then we trace the pattern through the Old Testament, watch the Lord form the twelve, open the Great Commission, follow discipleship into Acts and the letters, listen to the generation that came right after the apostles, settle the question of grace and obedience, and finish with the marks a believer can measure himself by. Read it with your Bible open and prove every line by the Word.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">What This Teaching Covers</p>
+      <ul class="toc-list">
+        <li><a href="#p1"><span class="toc-num">I</span><span>What the Word Actually Means</span></a></li>
+        <li><a href="#p2"><span class="toc-num">II</span><span>The Pattern Set in the Old Testament</span></a></li>
+        <li><a href="#p3"><span class="toc-num">III</span><span>The Master and the Twelve</span></a></li>
+        <li><a href="#p4"><span class="toc-num">IV</span><span>The Great Commission: One Command</span></a></li>
+        <li><a href="#p5"><span class="toc-num">V</span><span>Discipleship in Acts and the Letters</span></a></li>
+        <li><a href="#p6"><span class="toc-num">VI</span><span>The Witness of the Early Church</span></a></li>
+        <li><a href="#p7"><span class="toc-num">VII</span><span>Grace, Faith, and Obedience Held Together</span></a></li>
+        <li><a href="#p8"><span class="toc-num">VIII</span><span>The Marks of a Disciple</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- ── PART ONE ── -->
+    <div class="section-head" id="p1">
+      <p class="section-eyebrow">Part One</p>
+      <h2 class="section-title">What the Word Actually Means</h2>
+    </div>
+
+    <p class="body-text">The Greek word translated disciple is <em>mathetes</em>, and it comes from a verb that simply means to learn. But it never meant a man who sat in a lecture and took notes. It meant an apprentice. It meant someone who attached himself to a teacher, followed him around, watched how he handled money and sorrow and enemies, and slowly took on the shape of the man he followed. The goal was never information. The goal was likeness.</p>
+
+    <p class="body-text">We do not have to guess at that, because Jesus defined the word Himself. He put it in one sentence, and the sentence tells us exactly what a disciple is aiming at.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 6:40</span>
+      <span class="scripture-text">The disciple is not above his master: but every one that is perfect shall be as his master.</span>
+      <span class="scripture-ref">Matthew 10:24&ndash;25</span>
+      <span class="scripture-text">The disciple is not above his master, nor the servant above his lord. It is enough for the disciple that he be as his master, and the servant as his lord.</span>
+    </div>
+
+    <p class="body-text">Read that again. It is enough for the disciple that he be as his master. The whole aim of discipleship is stated there. Not to know what Jesus knew, and not to say what Jesus said, but to become like Him. Everything else in this study is commentary on that one line.</p>
+
+    <p class="sub-head">The Command in the Commission</p>
+
+    <p class="body-text">There is a second word built on the same root, and it is the key to Matthew 28. It is the verb form, and it means to make someone a disciple. It appears only four times in the whole New Testament: in Matthew 13:52, in Matthew 27:57 of Joseph of Arimathaea, in Acts 14:21 of Paul and Barnabas, and in the Great Commission itself. When our King James Bible reads <em>go ye therefore, and teach all nations</em>, the word behind teach is that verb. The sense is to make disciples of all nations. We will come back to this in Part Four, because it changes how the whole verse reads.</p>
+
+    <p class="sub-head">The Word Is Not a Guarantee</p>
+
+    <p class="body-text">One caution before we go further. The word disciple in the Gospels does not always mean a saved man. It describes attachment, and attachment can be shallow. John records a day when the Lord said something hard and a crowd of His own disciples walked away from Him and never came back. Judas carried the name for three years. So the title alone proves nothing. What proves the matter is whether a man continues.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">John 6:66</span>
+      <span class="scripture-text">From that time many of his disciples went back, and walked no more with him.</span>
+      <span class="scripture-ref">John 8:31</span>
+      <span class="scripture-text">Then said Jesus to those Jews which believed on him, If ye continue in my word, then are ye my disciples indeed.</span>
+    </div>
+
+    <p class="sub-head">The Hebrew Side of the Word</p>
+
+    <p class="body-text">Here is something worth knowing. The noun disciple is almost absent from the Old Testament. The Hebrew word for a taught one shows up as disciples only in Isaiah, and a related word appears once of the temple musicians in First Chronicles 25:8, where the King James calls him the scholar. That is nearly the whole list.</p>
+
+    <p class="body-text">Some people take that and conclude that discipleship is a New Testament invention. That is exactly backwards. The Old Testament does not carry the idea in a noun; it carries it in verbs and relationships. Men walked with God. Fathers taught sons. Prophets raised up successors. The reality is everywhere, even where the label is not. And when Isaiah does reach for the word, he reaches for it in a promise about the people God Himself would teach.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Isaiah 8:16</span>
+      <span class="scripture-text">Bind up the testimony, seal the law among my disciples.</span>
+      <span class="scripture-ref">Isaiah 54:13</span>
+      <span class="scripture-text">And all thy children shall be taught of the LORD; and great shall be the peace of thy children.</span>
+      <span class="scripture-ref">John 6:45</span>
+      <span class="scripture-text">It is written in the prophets, And they shall be all taught of God. Every man therefore that hath heard, and hath learned of the Father, cometh unto me.</span>
+    </div>
+
+    <p class="body-text">Jesus quoted Isaiah 54:13 and applied it to Himself. The taught ones Isaiah promised are the people who come to Christ. Discipleship, then, is not a program the church invented. It is the fulfillment of something God promised long before the Gospels were written.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">A Word of Caution for the Teacher</span>
+      <p>You will hear preachers describe the first century rabbi and his students in vivid detail: that a student was told to be covered in the dust of his rabbi&rsquo;s feet, that Jewish boys moved through three tiers of schooling and were cut from the track at set ages, and that the yoke of a rabbi always meant that rabbi&rsquo;s personal interpretation of the law. These pictures preach well, and some of them contain truth. But nearly all of the source material for them comes from Jewish writings compiled around A.D. 200 and later, well after the New Testament was written.</p>
+      <p>Use them as illustration if they help, and say plainly that they are later background. Never build a doctrine on them, and never let an argument rest on them, because a man who knows the sources can knock the leg out from under you in one sentence. The definition of a disciple does not need them. Luke 6:40 is enough.</p>
+    </div>
+
+    <!-- ── PART TWO ── -->
+    <div class="section-head" id="p2">
+      <p class="section-eyebrow">Part Two</p>
+      <h2 class="section-title">The Pattern Set in the Old Testament</h2>
+    </div>
+
+    <p class="body-text">If discipleship is being with someone until you become like him, then the Old Testament is full of it. It begins with the simplest phrase in Scripture: a man walked with God.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 5:24</span>
+      <span class="scripture-text">And Enoch walked with God: and he was not; for God took him.</span>
+      <span class="scripture-ref">Genesis 17:1</span>
+      <span class="scripture-text">And when Abram was ninety years old and nine, the LORD appeared to Abram, and said unto him, I am the Almighty God; walk before me, and be thou perfect.</span>
+      <span class="scripture-ref">Deuteronomy 13:4</span>
+      <span class="scripture-text">Ye shall walk after the LORD your God, and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him.</span>
+    </div>
+
+    <p class="body-text">Notice the verbs. Walk after. Fear. Keep. Obey. Serve. Cleave. That is discipleship language, and it is sitting in the law of Moses centuries before anyone used the Greek word. Micah gathers the whole thing into one requirement: to do justly, to love mercy, and to walk humbly with thy God.</p>
+
+    <p class="sub-head">Men Who Trained Their Successors</p>
+
+    <p class="body-text">The Old Testament also gives us pairs, and the pairs are the clearest picture of discipleship in the whole Bible. Moses had Joshua. Joshua was called his minister, and he was the young man who would not leave the tabernacle when everyone else went home. He was in the room for forty years before he was ever handed the reins.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Exodus 33:11</span>
+      <span class="scripture-text">And the LORD spake unto Moses face to face, as a man speaketh unto his friend. And he turned again into the camp: but his servant Joshua, the son of Nun, a young man, departed not out of the tabernacle.</span>
+      <span class="scripture-ref">Numbers 27:18</span>
+      <span class="scripture-text">And the LORD said unto Moses, Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him.</span>
+    </div>
+
+    <p class="body-text">Elijah had Elisha. The call is one of the most physical pictures of discipleship in Scripture. The old prophet walked past the young man in a field and threw his coat on him, and that was the whole invitation. Elisha slaughtered his oxen, burned his plow, fed the people, and left. Then comes the line that tells you what the next years looked like.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Kings 19:21</span>
+      <span class="scripture-text">And he returned back from him, and took a yoke of oxen, and slew them, and boiled their flesh with the instruments of the oxen, and gave unto the people, and they did eat. Then he arose, and went after Elijah, and ministered unto him.</span>
+    </div>
+
+    <p class="body-text">He went after him, and he ministered unto him. That is years of carrying water and watching a man pray before there was ever a mantle to pick up. Eli trained Samuel to recognize the voice of God. Jethro corrected Moses on delegation and Moses took the correction. Naomi shaped Ruth. Mordecai shaped Esther. The pattern is everywhere once you start looking for it.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">Bonus &middot; The Mantle That Kept Working</p>
+      <p>When Elijah was taken up, Elisha asked for a double portion of his spirit, then picked up the mantle that fell and struck the water with it. Think about what that means. The ministry of Elijah did not end when Elijah left the ground. It kept going in the man he had trained, and it went further than it had gone before.</p>
+      <p>That is the whole argument for discipleship in one scene. A teacher who only teaches leaves a memory behind. A teacher who makes disciples leaves a ministry behind. If we are not pouring into someone, whatever God has given us ends when we do.</p>
+    </div>
+
+    <p class="sub-head">Schools of the Prophets</p>
+
+    <p class="body-text">There was also a community version of this. Scripture speaks of the sons of the prophets, companies of men gathered around Samuel and later around Elisha. They sat before their teacher, they lived together, and they grew in number until the building was too small.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">2 Kings 4:38</span>
+      <span class="scripture-text">And Elisha came again to Gilgal: and there was a dearth in the land; and the sons of the prophets were sitting before him.</span>
+      <span class="scripture-ref">2 Kings 6:1</span>
+      <span class="scripture-text">And the sons of the prophets said unto Elisha, Behold now, the place where we dwell with thee is too strait for us.</span>
+    </div>
+
+    <p class="sub-head">The Home Was the First Classroom</p>
+
+    <p class="body-text">Before there was ever a school, there was a household. God&rsquo;s primary plan for passing the faith along was never a building. It was a father talking to his children in the ordinary course of a day.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Deuteronomy 6:6&ndash;7</span>
+      <span class="scripture-text">And these words, which I command thee this day, shall be in thine heart: And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.</span>
+      <span class="scripture-ref">Genesis 18:19</span>
+      <span class="scripture-text">For I know him, that he will command his children and his household after him, and they shall keep the way of the LORD, to do justice and judgment.</span>
+    </div>
+
+    <p class="body-text">God chose Abraham with this in view. Not only that Abraham would believe, but that he would command his household after him. A man who is walking with God and not teaching his own family has left the first assignment undone.</p>
+
+    <p class="sub-head">Teaching the Law of God</p>
+
+    <p class="body-text">There is one more strand, and it is the one that gives discipleship its content. Ezra gives us the full cycle in a single verse, and the order of the three verbs is worth memorizing.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Ezra 7:10</span>
+      <span class="scripture-text">For Ezra had prepared his heart to seek the law of the LORD, and to do it, and to teach in Israel statutes and judgments.</span>
+      <span class="scripture-ref">Nehemiah 8:8</span>
+      <span class="scripture-text">So they read in the book in the law of God distinctly, and gave the sense, and caused them to understand the reading.</span>
+      <span class="scripture-ref">Malachi 2:7</span>
+      <span class="scripture-text">For the priest&rsquo;s lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of the LORD of hosts.</span>
+    </div>
+
+    <p class="body-text">Seek it, do it, then teach it. A man who teaches what he has not done is only handing out words. And notice what Nehemiah says the Levites did: they read it distinctly and gave the sense so the people understood. That is the work of a teacher, and it has not changed.</p>
+
+    <p class="sub-head">The Promise That Makes It Possible</p>
+
+    <p class="body-text">All of this would be hopeless if the human heart stayed what it was. So God promised to fix the heart itself, and to do in His people what no teacher could do from the outside.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Jeremiah 31:33</span>
+      <span class="scripture-text">But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.</span>
+      <span class="scripture-ref">Ezekiel 36:26&ndash;27</span>
+      <span class="scripture-text">A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</span>
+    </div>
+
+    <p class="body-text">Hold on to Ezekiel 36:27. God says He will put His Spirit within us and cause us to walk in His statutes. That single verse settles a great deal of argument. The new covenant does not remove the statutes; it produces obedience to them from the inside. Discipleship is teaching a man to live out what the Spirit is already working in him.</p>
+
+    <!-- ── PART THREE ── -->
+    <div class="section-head" id="p3">
+      <p class="section-eyebrow">Part Three</p>
+      <h2 class="section-title">The Master and the Twelve</h2>
+    </div>
+
+    <p class="body-text">When Jesus called men, He did not give a lecture and take applications. He said two words, and the two words carried a whole life inside them.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Matthew 4:19&ndash;20</span>
+      <span class="scripture-text">And he saith unto them, Follow me, and I will make you fishers of men. And they straightway left their nets, and followed him.</span>
+      <span class="scripture-ref">Luke 5:27&ndash;28</span>
+      <span class="scripture-text">And after these things he went forth, and saw a publican, named Levi, sitting at the receipt of custom: and he said unto him, Follow me. And he left all, rose up, and followed him.</span>
+    </div>
+
+    <p class="body-text">Follow me appears on the lips of Jesus around twenty times across the four Gospels. It is His standing invitation, and it always requires leaving something behind. Nets. A tax booth. A boat and a father. Not one man was told to think it over and get back to Him.</p>
+
+    <p class="sub-head">With Him Before Sent Out</p>
+
+    <p class="body-text">Mark gives us the founding principle of all discipleship in a single verse, and the order of the two clauses is everything.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Mark 3:14</span>
+      <span class="scripture-text">And he ordained twelve, that they should be with him, and that he might send them forth to preach.</span>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Order Matters</span>
+      <p>With Him first. Sent out second. The church constantly reverses these, handing a new believer a job before he has spent any time in the Lord&rsquo;s company. Jesus never did that. He kept twelve men beside Him for roughly three years before He turned them loose, and even then He sent them out in pairs and called them back to report.</p>
+    </div>
+
+    <p class="sub-head">Circles Around the Lord</p>
+
+    <p class="body-text">Not everyone who heard Jesus was in the same circle. There were multitudes who came for bread and healing. Inside that there was a wider body of disciples. Out of that group He appointed seventy and sent them ahead of Him. And out of them He chose twelve, whom He named apostles, after a night spent in prayer.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 6:12&ndash;13</span>
+      <span class="scripture-text">And it came to pass in those days, that he went out into a mountain to pray, and continued all night in prayer to God. And when it was day, he called unto him his disciples: and of them he chose twelve, whom also he named apostles.</span>
+      <span class="scripture-ref">Luke 10:1</span>
+      <span class="scripture-text">After these things the Lord appointed other seventy also, and sent them two and two before his face into every city and place, whither he himself would come.</span>
+    </div>
+
+    <p class="body-text">This tells us something practical. A man cannot pour himself into everyone at the same depth. Jesus taught crowds, trained seventy, and lived with twelve. If the Lord Himself worked in circles, a teacher today should not feel guilty for giving his closest attention to a few.</p>
+
+    <p class="sub-head">How He Trained Them</p>
+
+    <p class="body-text">His method was not a classroom. He taught in parables and let people chew on them. He asked questions instead of handing over answers. He sent the twelve out two by two with authority, and He did the same with the seventy, and when they came back He debriefed them and corrected their excitement. He rebuked them when they were wrong, and He restored Peter by a fire on the shore after Peter had failed publicly. Discipleship in the Gospels looks like real life shared over a long stretch of time.</p>
+
+    <p class="sub-head">Women Among the Disciples</p>
+
+    <p class="body-text">It is worth saying plainly that women learned at the Lord&rsquo;s feet too. Luke names women who traveled with the company and supported the ministry out of their own means. Mary sat at Jesus&rsquo; feet and heard His word, which is the posture of a student, and the Lord defended her right to be there. And in Acts, Tabitha is called a disciple outright.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 10:39</span>
+      <span class="scripture-text">And she had a sister called Mary, which also sat at Jesus&rsquo; feet, and heard his word.</span>
+      <span class="scripture-ref">Acts 9:36</span>
+      <span class="scripture-text">Now there was at Joppa a certain disciple named Tabitha, which by interpretation is called Dorcas: this woman was full of good works and almsdeeds which she did.</span>
+    </div>
+
+    <p class="body-text">The offices of leadership in the assembly are given to men, and Scripture is clear about that order. But learning Christ, growing in Him, and teaching what is good to the next generation belong to every believer, and the sisters in the faith have always carried a great share of that work.</p>
+
+    <p class="sub-head">The Cost He Never Hid</p>
+
+    <p class="body-text">Here is where modern preaching often softens what Jesus said. He did not recruit. He warned. Three times in one passage He says a man cannot be His disciple, and He tells the crowd to sit down and count the cost before they start.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 14:26&ndash;27</span>
+      <span class="scripture-text">If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple. And whosoever doth not bear his cross, and come after me, cannot be my disciple.</span>
+      <span class="scripture-ref">Luke 14:28</span>
+      <span class="scripture-text">For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it?</span>
+      <span class="scripture-ref">Luke 9:23</span>
+      <span class="scripture-text">And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.</span>
+    </div>
+
+    <p class="body-text">The word hate in Luke 14 is a Hebrew way of speaking about comparison, and Matthew 10:37 gives us the plain sense: he that loveth father or mother more than me is not worthy of me. Christ is not asking us to despise our families. He is asking to be first, ahead of everything else we love, including our own life.</p>
+
+    <div class="compare">
+      <div class="compare-col crowd">
+        <p class="compare-title">The Multitude</p>
+        <div class="compare-body">
+          <ul>
+            <li>Came for the loaves and the miracles</li>
+            <li>Followed while the teaching was easy</li>
+            <li>Walked away at a hard saying</li>
+            <li>Never counted any cost</li>
+            <li>Went back and walked no more with Him</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare-col disciple">
+        <p class="compare-title">The Disciple Indeed</p>
+        <div class="compare-body">
+          <ul>
+            <li>Left the nets and followed</li>
+            <li>Stayed when the saying was hard</li>
+            <li>Continued in His word</li>
+            <li>Counted the cost and paid it</li>
+            <li>Said, Lord, to whom shall we go?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="sub-head">The Tests He Gave</p>
+
+    <p class="body-text">The Lord gave three plain tests of a real disciple, and He gave all three in the Gospel of John. They are worth committing to memory, because they are the measuring line we will come back to in Part Eight.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">John 8:31&ndash;32</span>
+      <span class="scripture-text">If ye continue in my word, then are ye my disciples indeed; And ye shall know the truth, and the truth shall make you free.</span>
+      <span class="scripture-ref">John 13:35</span>
+      <span class="scripture-text">By this shall all men know that ye are my disciples, if ye have love one to another.</span>
+      <span class="scripture-ref">John 15:8</span>
+      <span class="scripture-text">Herein is my Father glorified, that ye bear much fruit; so shall ye be my disciples.</span>
+    </div>
+
+    <p class="body-text">Continue in His word. Love one another. Bear much fruit. Those are the Lord&rsquo;s own tests, not a preacher&rsquo;s checklist. A man who is failing all three should not comfort himself with a decision he made years ago.</p>
+
+    <!-- ── PART FOUR ── -->
+    <div class="section-head" id="p4">
+      <p class="section-eyebrow">Part Four</p>
+      <h2 class="section-title">The Great Commission: One Command</h2>
+    </div>
+
+    <p class="body-text">Everything we have seen so far comes to a point in the last words of Matthew. This is the marching order of the church, and it is worth reading slowly.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Matthew 28:18&ndash;20</span>
+      <span class="scripture-text">And Jesus came and spake unto them, saying, All power is given unto me in heaven and in earth. Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.</span>
+    </div>
+
+    <p class="body-text">Here is the structure. There is exactly one command in that sentence, and it is <em>teach all nations</em>, which as we saw in Part One means make disciples of all nations. Everything else hangs off of it and tells us how it is done: going, baptizing, and teaching them to observe. Three actions serving one goal.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Read the Commission Again</span>
+      <p>The command is not go. Going is how you reach them. The command is not baptize. Baptism is how they are marked as belonging to the Lord. The command is make disciples, and the last clause tells us what fills the years after the water: teaching them to observe all things whatsoever I have commanded you.</p>
+      <p>A church that preaches, counts decisions, and baptizes has done two thirds of a sentence. The third part, teaching obedience, is where most of the work actually lies, and it is the part most often left undone.</p>
+    </div>
+
+    <p class="sub-head">All Things Whatsoever I Have Commanded</p>
+
+    <p class="body-text">That last clause deserves a hard look, because it sets the content of discipleship. We are not told to teach them our favorite verses, or the parts of the Bible that are comfortable. We are told to teach them to observe all things whatsoever He commanded. And what did He command? He told us plainly that He had not come to abolish the standard God had given.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Matthew 5:17&ndash;19</span>
+      <span class="scripture-text">Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled. Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven.</span>
+      <span class="scripture-ref">John 14:15</span>
+      <span class="scripture-text">If ye love me, keep my commandments.</span>
+    </div>
+
+    <p class="body-text">Put the two passages side by side. In Matthew 5 the Lord commends the man who does and teaches the commandments. In Matthew 28 He tells us to teach the nations to observe all things He commanded. The Commission is not a departure from the law of God. It is the instruction to carry the whole counsel of God to the nations and teach men to walk in it.</p>
+
+    <p class="sub-head">The Other Accounts</p>
+
+    <p class="body-text">The other Gospel writers and Acts each record the sending in their own words, and together they fill out the picture. Mark stresses preaching to every creature. Luke adds that repentance and remission of sins should be preached in His name among all nations, and tells them to wait for power. John frames it as an extension of the Father&rsquo;s own sending. Acts adds the geography.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 24:47&ndash;49</span>
+      <span class="scripture-text">And that repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem. And ye are witnesses of these things. And, behold, I send the promise of my Father upon you: but tarry ye in the city of Jerusalem, until ye be endued with power from on high.</span>
+      <span class="scripture-ref">John 20:21</span>
+      <span class="scripture-text">Then said Jesus to them again, Peace be unto you: as my Father hath sent me, even so send I you.</span>
+      <span class="scripture-ref">Acts 1:8</span>
+      <span class="scripture-text">But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.</span>
+    </div>
+
+    <p class="body-text">Notice that the work was never meant to be done in human strength. They were told to wait for the Holy Ghost before they went. Discipleship is a spiritual work, and a man who tries it on willpower and good intentions will wear out.</p>
+
+    <p class="body-text">And do not miss the last promise of Matthew. <em>Lo, I am with you alway, even unto the end of the world.</em> The command is heavy, and the promise attached to it is heavier still. He does not send us out and then go somewhere else.</p>
+
+    <!-- ── PART FIVE ── -->
+    <div class="section-head" id="p5">
+      <p class="section-eyebrow">Part Five</p>
+      <h2 class="section-title">Discipleship in Acts and the Letters</h2>
+    </div>
+
+    <p class="body-text">Once you leave the Gospels, something interesting happens with the vocabulary. In the book of Acts, disciple is simply the ordinary word for a Christian. It appears close to thirty times, and Luke uses it the way we would use the word believer. In fact the famous verse about the name Christian shows us that the label came from outside.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Acts 11:26</span>
+      <span class="scripture-text">And it came to pass, that a whole year they assembled themselves with the church, and taught much people. And the disciples were called Christians first in Antioch.</span>
+    </div>
+
+    <p class="body-text">They were disciples first. Christian was what other people started calling them. That should settle a common confusion once and for all. Disciple is not an advanced grade of Christian reserved for the serious ones. In the New Testament they are the same person seen from a different angle.</p>
+
+    <p class="sub-head">The Shape of the First Church</p>
+
+    <p class="body-text">Watch what three thousand new converts were plugged into on the day they were baptized. Luke lists four things, and every one of them is a discipleship activity.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Acts 2:41&ndash;42</span>
+      <span class="scripture-text">Then they that gladly received his word were baptized: and the same day there were added unto them about three thousand souls. And they continued stedfastly in the apostles&rsquo; doctrine and fellowship, and in breaking of bread, and in prayers.</span>
+    </div>
+
+    <p class="body-text">Doctrine, fellowship, the breaking of bread, and prayers. Teaching, relationship, worship, and dependence on God. That is the diet of a growing disciple, and no one has improved on the list in two thousand years.</p>
+
+    <p class="sub-head">Paul at Work</p>
+
+    <p class="body-text">Paul&rsquo;s ministry is a running commentary on how discipleship is actually done. He preached, then went back to the same cities to strengthen the people he had won. He taught in public and in homes. He set up shop in a lecture hall in Ephesus and taught daily for two years until the whole province had heard. And when Apollos preached with fire but incomplete knowledge, a husband and wife quietly took him aside and filled in what was missing.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Acts 14:21&ndash;22</span>
+      <span class="scripture-text">And when they had preached the gospel to that city, and had taught many, they returned again to Lystra, and to Iconium, and Antioch, Confirming the souls of the disciples, and exhorting them to continue in the faith.</span>
+      <span class="scripture-ref">Acts 18:26</span>
+      <span class="scripture-text">And he began to speak boldly in the synagogue: whom when Aquila and Priscilla had heard, they took him unto them, and expounded unto him the way of God more perfectly.</span>
+      <span class="scripture-ref">Acts 20:20</span>
+      <span class="scripture-text">And how I kept back nothing that was profitable unto you, but have shewed you, and have taught you publickly, and from house to house.</span>
+    </div>
+
+    <p class="body-text">Publicly and from house to house. Both are needed. Preaching from a pulpit reaches many at a shallow depth. Sitting at a kitchen table reaches one at full depth. A ministry that does only the first will produce hearers, and a ministry that does only the second will never grow.</p>
+
+    <p class="sub-head">Imitation, Not Just Instruction</p>
+
+    <p class="body-text">Paul was not shy about telling people to copy him, and that only works if a man&rsquo;s life will bear the inspection.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Corinthians 11:1</span>
+      <span class="scripture-text">Be ye followers of me, even as I also am of Christ.</span>
+      <span class="scripture-ref">Philippians 4:9</span>
+      <span class="scripture-text">Those things, which ye have both learned, and received, and heard, and seen in me, do: and the God of peace shall be with you.</span>
+      <span class="scripture-ref">1 Thessalonians 2:11</span>
+      <span class="scripture-text">As ye know how we exhorted and comforted and charged every one of you, as a father doth his children.</span>
+    </div>
+
+    <p class="body-text">Learned, received, heard, and seen. Three of those four come through the ears, and the fourth comes through the eyes. People will imitate what they watch you do far more readily than what they hear you say. That is a sobering thought for anyone who teaches.</p>
+
+    <div class="bonus">
+      <p class="bonus-label">Bonus &middot; Count the Generations</p>
+      <p>Second Timothy 2:2 is the clearest discipleship strategy in the Bible, and most readers miss how far it reaches. Count the links: <em>the things that thou hast heard of me</em> (Paul) <em>among many witnesses, the same commit thou</em> (Timothy) <em>to faithful men</em> (a third group) <em>who shall be able to teach others also</em> (a fourth).</p>
+      <p>Four generations in one verse, and Paul is only present for the first. He is not asking Timothy to build a crowd. He is asking Timothy to invest in men who will still be reproducing after both of them are gone. If our discipleship stops with the person sitting in front of us, it has stopped two generations short of the pattern.</p>
+    </div>
+
+    <p class="sub-head">Growing Up Into Him</p>
+
+    <p class="body-text">The letters use different words for the same process. Paul calls it being perfected, presented, grown up, and formed. Peter calls it growing in grace. The writer of Hebrews rebukes people who should have been teachers by now and are still on milk.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Ephesians 4:11&ndash;13</span>
+      <span class="scripture-text">And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; for the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ.</span>
+      <span class="scripture-ref">Colossians 1:28</span>
+      <span class="scripture-text">Whom we preach, warning every man, and teaching every man in all wisdom; that we may present every man perfect in Christ Jesus.</span>
+      <span class="scripture-ref">Hebrews 5:13&ndash;14</span>
+      <span class="scripture-text">For every one that useth milk is unskilful in the word of righteousness: for he is a babe. But strong meat belongeth to them that are of full age, even those who by reason of use have their senses exercised to discern both good and evil.</span>
+    </div>
+
+    <p class="body-text">The ministry offices Christ gave the church exist for the perfecting of the saints and the work of the ministry. That is to say, leadership is not there to do all the work while everyone watches. It is there to equip the saints so that they do the work. A church where only the staff serve has misread Ephesians 4.</p>
+
+    <p class="sub-head">Older Teaching Younger</p>
+
+    <p class="body-text">Discipleship is also built into the ordinary structure of the assembly. Titus 2 describes an arrangement where the seasoned believers pour into the younger ones, men with men and women with women, in the ordinary business of home and work.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Titus 2:3&ndash;4</span>
+      <span class="scripture-text">The aged women likewise, that they be in behaviour as becometh holiness, not false accusers, not given to much wine, teachers of good things; That they may teach the young women to be sober, to love their husbands, to love their children.</span>
+      <span class="scripture-ref">Titus 2:6&ndash;7</span>
+      <span class="scripture-text">Young men likewise exhort to be sober minded. In all things shewing thyself a pattern of good works: in doctrine shewing uncorruptness, gravity, sincerity.</span>
+    </div>
+
+    <p class="sub-head">Correction Is Part of It</p>
+
+    <p class="body-text">A disciple who is never corrected is not being discipled. Scripture treats correction as a mark of love, not a failure of it, and it gives us a careful process so that correction restores rather than destroys.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Hebrews 12:11</span>
+      <span class="scripture-text">Now no chastening for the present seemeth to be joyous, but grievous: nevertheless afterward it yieldeth the peaceable fruit of righteousness unto them which are exercised thereby.</span>
+      <span class="scripture-ref">Galatians 6:1</span>
+      <span class="scripture-text">Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.</span>
+    </div>
+
+    <p class="sub-head">Why the Word Fades From the Letters</p>
+
+    <p class="body-text">Here is a fact worth knowing so that no one catches you off guard with it. The word disciple does not appear anywhere in the epistles. Not once. It is all over the Gospels and Acts, then it stops.</p>
+
+    <p class="body-text">The reason is simple enough. Disciple was the natural word while Jesus was physically walking ahead of men who could follow His footsteps. After the ascension the apostles reached for words that described the same people in their new situation: brethren, saints, believers, servants, children, and eventually Christians. The vocabulary changed. The reality did not change at all. Every command in the letters to grow, to obey, to imitate, and to teach others is discipleship under a different name.</p>
+
+    <!-- ── PART SIX ── -->
+    <div class="section-head" id="p6">
+      <p class="section-eyebrow">Part Six</p>
+      <h2 class="section-title">The Witness of the Early Church</h2>
+    </div>
+
+    <p class="body-text">Before we look at these writings, let us be clear about what they are and what they are not. The men below are not Scripture. They are not inspired, they are not an authority over the Word, and where they disagree with the Bible the Bible wins every time. We test them the way the Bereans tested Paul, by searching the Scriptures.</p>
+
+    <p class="body-text">But they are useful. These are the men who came immediately after the apostles, some of them taught by the apostles directly, and they show us what discipleship actually looked like in practice in the first and second centuries. That is worth knowing, and it is worth handling honestly, including the parts we would not agree with.</p>
+
+    <div class="witness">
+      <span class="witness-name">The Didache, or the Teaching of the Twelve Apostles</span>
+      <span class="witness-date">Date disputed &middot; roughly A.D. 50 to 120</span>
+      <p>This is an anonymous church manual, lost for centuries and rediscovered in 1873. Its first six chapters lay out what is called the Two Ways, a plain moral catechism contrasting the way of life with the way of death, built on love of God, love of neighbor, and the commandments.</p>
+      <p>The detail that matters most for our subject is in chapter seven. It instructs the church to baptize only after having said all these things first. In other words, the moral and doctrinal teaching came before the water. New converts were taught, then baptized, then folded into an ordered assembly that met, prayed, broke bread, tested traveling teachers, and appointed leaders. That is the Great Commission carried out in sequence.</p>
+    </div>
+
+    <div class="witness">
+      <span class="witness-name">Ignatius of Antioch</span>
+      <span class="witness-date">Letters written about A.D. 107 to 110</span>
+      <p>Ignatius was a bishop being marched to Rome to die, and he wrote letters along the way. Of all the early writers he uses the word disciple the most personally, and he uses it of himself. Facing the beasts at the end of a long life of ministry, he wrote, <q>Now I begin to be a disciple.</q></p>
+      <p>Think about that sentence. A man who had served Christ for decades did not consider himself finished. He believed that following the Master all the way, even to death, was where discipleship was heading. His whole theme is that a disciple imitates his Lord, and the imitation is shaped like a cross.</p>
+    </div>
+
+    <div class="witness">
+      <span class="witness-name">Polycarp of Smyrna</span>
+      <span class="witness-date">Letter about A.D. 110 to 135 &middot; Martyrdom about A.D. 155</span>
+      <p>Polycarp was taught by the apostle John and later taught Irenaeus, which makes him a living link in the chain of transmission. His letter to the Philippians is plain and practical, urging believers to walk in the commandment of the Lord and to be patterns of righteousness.</p>
+      <p>His most famous words came at the end. Told to curse Christ and go free, the old man answered that he had served Him eighty and six years, and that Christ had never done him any wrong, so how could he blaspheme his King and his Saviour. That is the best one sentence definition of lifelong discipleship outside the Bible.</p>
+    </div>
+
+    <div class="witness">
+      <span class="witness-name">Clement of Rome, the First Epistle</span>
+      <span class="witness-date">About A.D. 96</span>
+      <p>Written from Rome to Corinth to settle a leadership quarrel, this letter teaches discipleship as humility, obedience, and good order. It leans heavily on the Old Testament saints as examples to imitate, holds up the humility of Christ, and instructs households to teach the young to fear God. It also gives us the earliest description of orderly appointment to ministry outside the New Testament.</p>
+    </div>
+
+    <div class="witness">
+      <span class="witness-name">The Second Epistle of Clement</span>
+      <span class="witness-date">About A.D. 140 to 160</span>
+      <p>Despite the name this was not written by Clement of Rome and it is not a letter. It is a sermon, and it is the oldest complete Christian sermon we have outside the New Testament. Its whole burden is that a profession must be backed by a life. It asks how we confess Christ and answers, by doing what He says. It warns that merely calling Him Lord will not save us, and urges believers to confess Him by their works.</p>
+      <p>That is Matthew 7:21 preached to a congregation around the middle of the second century, and it is the same point James makes. The earliest preachers after the apostles were not confused about the relationship between faith and obedience.</p>
+    </div>
+
+    <div class="witness">
+      <span class="witness-name">Papias of Hierapolis</span>
+      <span class="witness-date">Early second century</span>
+      <p>Papias was a companion of Polycarp, and he tells us plainly how he learned. He said he preferred the living voice of those who had learned from the elders over what he could get out of books, and he questioned every traveler who had known them about what the apostles had said.</p>
+      <p>Whatever else we make of Papias, that single preference tells us how the faith was actually passed along in that generation. Not primarily through manuals, but through people, face to face. Which is exactly what Paul described in Second Timothy 2:2.</p>
+    </div>
+
+    <div class="witness">
+      <span class="witness-name">The Shepherd of Hermas</span>
+      <span class="witness-date">First half of the second century</span>
+      <p>A long work of visions, commandments, and parables, functioning as a manual of Christian formation. Its dominant concern is repentance, especially the question of what happens when a believer sins after baptism. Whatever one makes of its answers, it shows a church wrestling practically with how disciples keep growing and how they are restored when they fall.</p>
+    </div>
+
+    <div class="witness">
+      <span class="witness-name">Justin Martyr, First Apology</span>
+      <span class="witness-date">About A.D. 150 to 155</span>
+      <p>Justin was writing to explain Christians to a hostile emperor, and in doing so he described their practice. Converts were instructed, prayed, and fasted before baptism. Then on the assembly day the writings of the apostles and the prophets were read aloud, the one presiding gave a message urging the people to imitate the good things they had heard, prayers were offered, bread and wine were shared, and a collection was taken for the widows, orphans, sick, and prisoners.</p>
+      <p>Teaching, exhortation to obedience, worship, and care for the needy. A century after Pentecost, discipleship still had the same four ingredients Luke listed in Acts 2:42.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note &middot; Dates and Authorship</span>
+      <p>Be careful how confidently you date these. The Didache is genuinely disputed: some capable scholars place it as early as the middle of the first century and others put it well into the second, so say that it falls in a range rather than claiming it is definitely apostolic or definitely late. Ignatius survives in a short, a middle, and a long version, and the long version contains later additions, so quote only from the middle recension. Second Clement was not written by Clement. The Epistle of Barnabas was not written by the Barnabas of Acts.</p>
+      <p>There is also no unbroken chain of written discipleship manuals handed down from the apostles. Papias himself tells us the transmission was largely by living voice. Any claim to the contrary will not survive scrutiny.</p>
+    </div>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note &middot; Where These Writers Go Wrong</span>
+      <p>Two cautions in particular. The Epistle of Barnabas contains Two Ways material much like the Didache, but it reads the law of God as pure allegory, treating the dietary commandments as symbols of virtues and vices rather than as commands God actually gave. That is a serious error, and the wider church never received the book as Scripture. Use it as historical background only.</p>
+      <p>Second, Ignatius has passages in his letter to the Magnesians that set Christianity against Judaism sharply, and critics of the Sabbath quote him constantly. Handle it honestly and you will not be shaken. The oldest surviving Greek of that passage is ambiguous and can be read as living according to the Lord&rsquo;s life rather than the Lord&rsquo;s day, and the clearly Sunday wording is strongest in the later expanded version that scholars regard as interpolated. Beyond the text question, this is one bishop&rsquo;s polemic in a heated moment, not the teaching of Jesus or the apostles. We do not build doctrine on him, and we are not moved by those who do.</p>
+    </div>
+
+    <p class="body-text">Take the early witness as a whole and the shape is consistent. Teaching came before baptism. Baptism led into an ordered assembly. The assembly met to hear the Word and be urged toward obedience. Believers were expected to imitate their teachers, and their teachers were expected to be worth imitating. Discipleship was a whole life, and it was passed from person to person. That is the same pattern we have been reading in the Bible all along.</p>
+
+    <!-- ── PART SEVEN ── -->
+    <div class="section-head" id="p7">
+      <p class="section-eyebrow">Part Seven</p>
+      <h2 class="section-title">Grace, Faith, and Obedience Held Together</h2>
+    </div>
+
+    <p class="body-text">Now we come to the question that trips people up. If discipleship means being taught to obey everything Christ commanded, are we not right back to earning our salvation? The answer is no, and Paul settles it in three verses that must always be read together. Most people quote the first two and stop, which is where the trouble starts.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Ephesians 2:8&ndash;10</span>
+      <span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span>
+    </div>
+
+    <p class="body-text">Verses eight and nine slam the door on works as the ground of salvation. We are saved by grace, through faith, as a gift, and nothing we do earns it or adds to it. Then verse ten opens a different door entirely. We were created in Christ Jesus unto good works, which God prepared beforehand that we should walk in them. Works are not the cause of salvation. They are the purpose of it.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">The Line to Hold</span>
+      <p>Obedience is the fruit, never the root. We are not made His disciples by keeping commandments. We keep commandments because we have been made His, and because we love the One who gave them.</p>
+      <p>Get that order backwards in either direction and you fall into a ditch. Put obedience first and you have a religion of works that cannot save. Throw obedience out and you have a profession with no life in it, which cannot save either.</p>
+    </div>
+
+    <p class="body-text">Paul says the same thing to Titus in different words. The grace of God that brings salvation also teaches us how to live, and it produces a people who are eager to do good.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Titus 2:11&ndash;14</span>
+      <span class="scripture-text">For the grace of God that bringeth salvation hath appeared to all men, Teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly, in this present world; Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ; Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works.</span>
+    </div>
+
+    <p class="body-text">Grace itself is the teacher there. It does not leave a man where it found him. And Jesus tied love and obedience together so tightly that you cannot separate them without cutting the sentence in half.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">John 14:21</span>
+      <span class="scripture-text">He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father, and I will love him, and will manifest myself to him.</span>
+      <span class="scripture-ref">1 John 2:3&ndash;6</span>
+      <span class="scripture-text">And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him... He that saith he abideth in him ought himself also so to walk, even as he walked.</span>
+      <span class="scripture-ref">1 John 5:3</span>
+      <span class="scripture-text">For this is the love of God, that we keep his commandments: and his commandments are not grievous.</span>
+    </div>
+
+    <p class="body-text">John is not describing a burden. He says the commandments are not grievous. A man who has been given a new heart does not experience God&rsquo;s standard as a weight. He experiences it the way a son experiences his father&rsquo;s house rules, as the shape of belonging.</p>
+
+    <p class="sub-head">The Two Builders</p>
+
+    <p class="body-text">Jesus closed the Sermon on the Mount with the same principle in picture form. Two men, two houses, one storm. The difference between them was not what they heard. Both heard the same sayings. The difference was doing.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Matthew 7:21</span>
+      <span class="scripture-text">Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven.</span>
+      <span class="scripture-ref">James 1:22</span>
+      <span class="scripture-text">But be ye doers of the word, and not hearers only, deceiving your own selves.</span>
+      <span class="scripture-ref">James 2:26</span>
+      <span class="scripture-text">For as the body without the spirit is dead, so faith without works is dead also.</span>
+    </div>
+
+    <p class="body-text">James is not contradicting Paul. Paul is telling us how a man gets saved, and James is telling us how you can tell whether he was. A faith that produces nothing is not a smaller faith. James says it is a dead one.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note &middot; Handling Acts 15 Fairly</span>
+      <p>When this subject comes up, Acts 15 will come up with it. The Jerusalem council was asked one specific question: must a Gentile be circumcised and keep the law in order to be saved. The council answered no, and Peter grounded it in grace. That is the ground of salvation, and it is settled.</p>
+      <p>James then names four things and adds that Moses is read in the synagogues every Sabbath day. Most commentators read that last line as simply explaining why those four items were singled out. We read it as an expectation that these new Gentile believers would keep sitting under the reading of the law and learning as they went. Present both readings when you teach it. The verse by itself does not force either conclusion, and neither reading makes law keeping the ground of salvation. Overstating a verse is how a good position gets discredited.</p>
+    </div>
+
+    <!-- ── PART EIGHT ── -->
+    <div class="section-head" id="p8">
+      <p class="section-eyebrow">Part Eight</p>
+      <h2 class="section-title">The Marks of a Disciple</h2>
+    </div>
+
+    <p class="body-text">We will close with a measuring line. These eight marks come directly out of the passages we have covered, and every one of them is stated in Scripture rather than invented by a teacher. Read them slowly and let the Lord search you. This is not a scorecard for judging other people.</p>
+
+    <div class="mark-item">
+      <span class="mark-name">One &middot; He Continues in the Word</span>
+      <p>Not a season of interest, but a settled habit of staying in the Book. The Lord attached the phrase disciples indeed to this one, which makes it the first test rather than an optional extra.</p>
+      <span class="mark-ref">John 8:31 &middot; Acts 17:11</span>
+    </div>
+
+    <div class="mark-item">
+      <span class="mark-name">Two &middot; He Loves the Brethren</span>
+      <p>This is the mark Jesus said the world would use to identify us. Love for other believers, expressed in practice and not only in feeling, is a public sign that a man belongs to Christ.</p>
+      <span class="mark-ref">John 13:35 &middot; 1 John 3:14</span>
+    </div>
+
+    <div class="mark-item">
+      <span class="mark-name">Three &middot; He Bears Fruit That Remains</span>
+      <p>Fruit is not activity. It is the character of Christ and the results of a life joined to Him. The Lord specified that it should be much fruit, and that it should remain.</p>
+      <span class="mark-ref">John 15:8, 16 &middot; Galatians 5:22&ndash;23</span>
+    </div>
+
+    <div class="mark-item">
+      <span class="mark-name">Four &middot; He Keeps the Commandments Because He Loves</span>
+      <p>Obedience that flows out of love, not out of fear or the hope of earning something. The test is not perfection, it is direction. Does he walk as Christ walked, and does he return to that walk when he stumbles?</p>
+      <span class="mark-ref">John 14:15 &middot; 1 John 2:6 &middot; 1 John 5:3</span>
+    </div>
+
+    <div class="mark-item">
+      <span class="mark-name">Five &middot; He Is a Doer and Not a Hearer Only</span>
+      <p>The Word is applied and not merely admired. A man who takes notes for years and changes nothing has been deceiving himself, in James&rsquo; own words.</p>
+      <span class="mark-ref">James 1:22 &middot; Matthew 7:24</span>
+    </div>
+
+    <div class="mark-item">
+      <span class="mark-name">Six &middot; He Has Counted the Cost and Paid It</span>
+      <p>He has faced what following Christ will cost him in relationships, money, comfort, and reputation, and he has decided anyway. This is the mark most often skipped when people are brought into the church quickly.</p>
+      <span class="mark-ref">Luke 14:27&ndash;28, 33 &middot; Luke 9:23</span>
+    </div>
+
+    <div class="mark-item">
+      <span class="mark-name">Seven &middot; He Is Growing From Milk to Meat</span>
+      <p>There should be measurable difference between the believer of today and the believer of five years ago. Standing still is not neutral. Hebrews treats it as a rebuke.</p>
+      <span class="mark-ref">Hebrews 5:13&ndash;14 &middot; 2 Peter 3:18</span>
+    </div>
+
+    <div class="mark-item">
+      <span class="mark-name">Eight &middot; He Is Reproducing</span>
+      <p>He is pouring into someone else. This is the mark that turns a disciple into a disciple maker, and it is the one that most believers never reach. If you cannot name a person you are helping to follow Jesus, the Commission is not yet finished in you.</p>
+      <span class="mark-ref">2 Timothy 2:2 &middot; Matthew 28:19&ndash;20</span>
+    </div>
+
+    <div class="bonus">
+      <p class="bonus-label">Bonus &middot; Where to Start This Week</p>
+      <p>Discipleship is not complicated, it is just costly in time. If you want to begin, do three things. Pick one person and start meeting with them regularly, even if all you do at first is read a chapter together and pray. Open your home, because most of what people learn from you they will learn by watching you live. And start teaching your own household first, because Deuteronomy 6 and Genesis 18:19 both put the family ahead of everything else.</p>
+      <p>You do not need a curriculum to begin. You need a Bible, a table, and somebody sitting across from you.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <div class="conclusion">
+        <span class="conclusion-label">In Summary</span>
+        <p>A disciple is a learner who has attached his whole life to the Master in order to become like Him. That is what the word means, and the Lord said so plainly: <em>it is enough for the disciple that he be as his master.</em> The pattern runs the whole length of Scripture, from Enoch walking with God, to Joshua standing in the tabernacle, to Elisha running after Elijah, to twelve men called out of their boats and kept beside the Lord for three years before they were ever sent.</p>
+        <p>The last command Jesus gave His church was to make disciples, and He told us how it is done: go to them, baptize them, and teach them to observe all things whatsoever He commanded. Not some things. All things. The generation that came after the apostles understood that, taught converts before baptizing them, and expected a life of obedience to follow.</p>
+        <p>We are saved by grace through faith, and not by anything we do. But we are saved <em>unto</em> good works that God prepared beforehand for us to walk in. Obedience is the fruit and never the root. So examine yourself by the Lord&rsquo;s own tests: are you continuing in His word, loving the brethren, and bearing fruit that remains? And then look for the person God has put in front of you, because a disciple who is not making disciples has only received half of what he was given.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &#10022; &#10022;</div>
+    <p class="footer-text">Work the Word &middot; Pronomian Doctrine Library<br>Go Ye Therefore, and Teach All Nations &middot; Matthew 28:19</p>
+  </footer>
+
+</div>
+</body>
+</html>

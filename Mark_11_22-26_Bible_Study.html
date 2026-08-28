@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mark 11:22-26 - Faith, Prayer, and Forgiveness</title>
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Mark 11:22-26 - Faith, Prayer, and Forgiveness</title>
 <style>
   :root {
-    --gold:        #8B6914;
-    --gold-light:  #C9A84C;
-    --gold-pale:   #F5EDD8;
-    --crimson:     #7A1F1F;
-    --crimson-lt:  #9B3434;
-    --ink:         #1C1A17;
-    --ink-mid:     #3D3829;
-    --ink-soft:    #6B6047;
-    --parchment:   #FAF6EE;
-    --cream:       #F2EBD9;
-    --rule:        #C9A84C44;
-    --rule-solid:  #C9A84C;
-    --shadow:      rgba(28,26,23,0.10);
+    --gold:           #8B6914;
+    --gold-light:     #C9A84C;
+    --gold-pale:      #F5EDD8;
+    --ink:            #1C1A17;
+    --ink-mid:        #3D3829;
+    --ink-soft:       #6B6047;
+    --parchment:      #FAF6EE;
+    --cream:          #F2EBD9;
+    --crimson:        #7A1F1F;
+    --crimson-lt:     #9B3434;
+    --crimson-dk:     #2A1414;
+    --rule:           #C9A84C44;
+    --rule-solid:     #C9A84C;
+    --shadow:         rgba(28,26,23,0.10);
+    --crimson-dark:   #7A1F1F;
+    --crimson-light:  #9B3434;
+    --crimson-soft:   #9B3434;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +46,7 @@
 
   /* ── PAGE SHELL ── */
   .page {
-    max-width: 820px;
+    max-width: 940px;
     margin: 0 auto;
     background: var(--parchment);
     border: 1px solid #D4B97A;
@@ -56,6 +60,7 @@
     border-color: var(--gold-light);
     border-style: solid;
     pointer-events: none;
+    z-index: 3;
   }
   .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
   .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
@@ -63,55 +68,46 @@
   /* ── HEADER ── */
   .doc-header {
     text-align: center;
-    padding: 3.5rem 3rem 2.5rem;
+    padding: 3.4rem 3rem 2.6rem;
     background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
     color: var(--gold-pale);
+    border-bottom: 3px solid var(--gold-light);
     position: relative;
     overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .doc-header::after {
-    content: '';
-    position: absolute;
-    inset: 10px;
-    border: 1px solid rgba(201,168,76,0.4);
-    pointer-events: none;
-  }
-  .header-ornament {
-    font-size: 1.5rem;
-    color: var(--gold-light);
-    letter-spacing: 0.4em;
-    display: block;
-    margin-bottom: 1rem;
-  }
+  .doc-header::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 1.1rem; }
   .doc-title {
     font-family: 'Cinzel', serif;
     font-size: clamp(1.6rem, 4vw, 2.4rem);
     font-weight: 700;
-    color: var(--cream);
+    color: #FBF6E9;
     letter-spacing: 0.04em;
     line-height: 1.25;
     text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.30);
   }
   .doc-subtitle {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
-    color: var(--gold-light);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-top: 0.6rem;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    line-height: 1.6;
+    margin-top: 0.9rem;
+    opacity: 0.94;
   }
-  .header-rule {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 1.5rem auto 0;
-    max-width: 320px;
-  }
-  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
   .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
 
   /* ── BODY ── */
-  .doc-body { padding: 0 3rem 3rem; }
+    .doc-body {
+    padding: 0 3rem 3rem;
+  }
+  /* one uniform gap between the header and the first block on every page */
+  .doc-body > *:first-child { margin-top: 2.6rem; }
 
   /* ── PASSAGE (top scripture, full text) ── */
   .passage {
@@ -234,11 +230,14 @@
 
   /* ── SCRIPTURE BLOCK (related verses) ── */
   .scripture-block {
-    margin-top: 1.6rem;
-    padding: 1.4rem 1.6rem;
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
     background: var(--cream);
     border: 1px solid #D4B97A55;
-    border-top: 2px solid var(--gold-light);
+    border-top: 3px solid var(--gold-light);
+    box-shadow: 0 1px 0 #E8D49A inset;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
   .scripture-label {
     font-family: 'Cinzel', serif;
@@ -248,17 +247,18 @@
     color: var(--gold);
     margin-bottom: 1rem;
   }
-  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 1.02rem; line-height: 1.78; page-break-inside: avoid; break-inside: avoid; }
   .scripture-entry:last-child { margin-bottom: 0; }
   .scripture-ref {
+    display: block;
     font-family: 'Cinzel', serif;
     font-size: 0.78rem;
+    letter-spacing: 0.08em;
     color: var(--gold);
-    display: block;
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin-bottom: 0.45rem;
   }
-  .scripture-text { color: var(--ink-mid); font-style: italic; }
+  .scripture-text { font-style: italic; font-size: 1.02rem; line-height: 1.78; color: var(--ink-mid); }
 
   /* ── TEACHER NOTE PANEL ── */
   .note-panel {
@@ -297,11 +297,16 @@
 
   /* ── CONCLUSION BLOCK ── */
   .conclusion {
-    margin-top: 2.8rem;
-    padding: 2.2rem 2rem;
-    background: linear-gradient(135deg, #2A2520 0%, #3D3829 100%);
+    margin-top: 3rem;
+    padding: 2.2rem 2.2rem;
+    background: linear-gradient(135deg, #2A1414 0%, var(--crimson) 100%);
     color: var(--gold-pale);
+    border-left: 4px solid var(--gold-light);
     position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   .conclusion::after {
     content: '';
@@ -370,21 +375,27 @@
   /* ── FOOTER ── */
   .doc-footer {
     text-align: center;
-    padding: 2.4rem 2rem;
+    padding: 2.8rem 3rem 2.4rem;
     background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
     color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    margin-top: 0;
     position: relative;
     overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .doc-footer::after {
-    content: '';
-    position: absolute;
-    inset: 10px;
-    border: 1px solid rgba(201,168,76,0.4);
-    pointer-events: none;
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; font-size: 1.2rem; color: var(--gold-light); letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF6E9;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
   }
-  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
-  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.5rem; }
 
   /* ── PRINT ── */
   @page {
@@ -399,6 +410,15 @@
   }
 
   @media print {
+    /* shared print shell */
+    body { background: #FFFFFF; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { max-width: 100%; margin: 0; border: none; box-shadow: none; }
+    .page::before, .page::after { display: none; }
+    .site-nav { display: none; }
+    .doc-header, .site-hero, .doc-footer, .site-footer {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+
     body { background: white; padding: 0; }
     .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
     .page::before, .page::after { display: none; }
@@ -430,6 +450,16 @@
   @media (max-width: 600px) {
     .doc-body { padding: 0 1.4rem 2rem; }
     .doc-header { padding: 2rem 1.4rem 1.4rem; }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.6rem 2.5rem; }
+    .doc-header, .site-hero { padding: 2.2rem 1.3rem 1.8rem; }
+    .doc-footer, .site-footer { padding: 2rem 1.2rem 1.8rem; }
+    .doc-body { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .doc-header::after, .site-hero::after,
+    .doc-footer::after, .site-footer::after { inset: 8px; }
+    .page::before, .page::after { width: 24px; height: 24px; }
   }
 </style>
 </head>

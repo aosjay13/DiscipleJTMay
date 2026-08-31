@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="A word study of the Hebrew terms behind the English words statute, judgment, ordinance, and commandment, and what each one reveals about the law of God.">
+<title>Statutes, Judgments, Ordinances, and Commandments &middot; The Hebrew Words Behind the English</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
+    font-weight: 700;
+    color: #FBF5E6;
+    letter-spacing: 0.04em;
+    line-height: 1.28;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: #F1DFC0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.8rem;
+    line-height: 1.5;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.7; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.9rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble {
+    margin-top: 2.6rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .preamble-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .preamble p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .preamble p + p { margin-top: 1rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.55rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.4rem 0 0;
+    padding: 1.5rem 1.9rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.55rem; }
+  .toc-list a {
+    font-size: 0.97rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    min-width: 2.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section-head {
+    margin: 3rem 0 1.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .body-text {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.2rem;
+  }
+  .body-text:last-child { margin-bottom: 0; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 1.8rem 0 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SCRIPTURE CALLOUT (cream box, gold top border) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { color: var(--ink-mid); font-style: italic; line-height: 1.78; font-size: 1rem; }
+  .scripture-text + .scripture-ref { margin-top: 1rem; }
+
+  /* ── KEY POINT PANEL (crimson border) ── */
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .keypoint p { font-size: 1.0rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.7rem; }
+
+  /* ── WORD CARD (Hebrew and Greek word study) ── */
+  .word-card {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--crimson-lt);
+    break-inside: avoid;
+  }
+  .word-card-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+  .word-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.8rem;
+  }
+  .word-hebrew {
+    font-family: 'Times New Roman', 'David', 'Ezra SIL', serif;
+    font-size: 1.7rem;
+    color: var(--ink);
+    line-height: 1.2;
+    direction: rtl;
+    unicode-bidi: isolate;
+  }
+  .word-greek {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.45rem;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .word-translit {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .word-strongs {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+  .word-card dl { font-size: 0.98rem; line-height: 1.72; color: var(--ink-mid); }
+  .word-card dt {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 0.7rem;
+  }
+  .word-card dt:first-child { margin-top: 0; }
+  .word-card dd { margin-top: 0.15rem; }
+
+  /* ── TERM TABLE ── */
+  .term-table-wrap { margin: 1.8rem 0; break-inside: avoid; }
+  table.term-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    font-size: 0.95rem;
+  }
+  table.term-table caption {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: left;
+    padding-bottom: 0.55rem;
+  }
+  table.term-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    text-align: left;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--rule-solid);
+    vertical-align: bottom;
+  }
+  table.term-table td {
+    padding: 0.65rem 0.9rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-mid);
+    line-height: 1.6;
+    vertical-align: top;
+  }
+  table.term-table tr:last-child td { border-bottom: none; }
+  table.term-table td.term {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  /* ── BONUS / DASHED PANEL ── */
+  .bonus {
+    margin: 2rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+
+  /* ── TEACHER'S NOTE (dashed gold, italic) ── */
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.4rem;
+    background: #F5EDD8;
+    border: 1px dashed #C9A84C88;
+    break-inside: avoid;
+  }
+  .teacher-note-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .teacher-note p {
+    font-size: 0.95rem;
+    line-height: 1.74;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .teacher-note p + p { margin-top: 0.6rem; }
+
+  /* ── CLOSING ── */
+  .closing {
+    margin-top: 3rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* dark gradient conclusion block */
+  .conclusion {
+    margin: 2rem 0 0;
+    padding: 1.8rem 1.8rem;
+    background: linear-gradient(135deg, #2A2622, #3D3829);
+    border-left: 4px solid var(--gold-light);
+    break-inside: avoid;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+  .conclusion p { font-size: 1.02rem; line-height: 1.82; color: #E8DFC8; }
+  .conclusion p + p { margin-top: 0.8rem; }
+  .conclusion em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    position: relative;
+  }
+  .doc-footer::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, 0.75in margins, page numbers) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-header, .doc-footer {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .scripture, .keypoint, .word-card, .term-table, .bonus, .teacher-note, .conclusion, .toc {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    /* good breaks: start each major part on a fresh page, keep blocks whole */
+    .section-head { break-before: page; page-break-before: always; }
+    .section-head:first-of-type { break-before: auto; page-break-before: auto; }
+    .preamble, .toc { break-after: avoid; page-break-after: avoid; }
+    .section-head, .sub-head { break-after: avoid; page-break-after: avoid; }
+    .scripture, .keypoint, .word-card, .term-table-wrap, .bonus, .teacher-note, .conclusion { break-inside: avoid; page-break-inside: avoid; }
+    .doc-footer { break-before: avoid; page-break-before: avoid; }
+    p { orphans: 3; widows: 3; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.6rem; }
+    table.term-table { font-size: 0.87rem; }
+    table.term-table th, table.term-table td { padding: 0.5rem 0.55rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <p class="header-eyebrow">A Word Study in the Law</p>
+    <h1 class="doc-title">Statutes, Judgments, Ordinances, and Commandments</h1>
+    <p class="doc-subtitle">The Hebrew words behind the English, and what each one reveals about the law of God</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Before We Begin</p>
+      <p class="dropcap">Open your Bible to almost any chapter of Deuteronomy and you will run into a string of words piled one on top of another. The commandments, the statutes, and the judgments. His charge, his statutes, his judgments, and his commandments. Testimonies and precepts and ordinances. Most readers slide right past that pile. It sounds like the writer is simply reaching for every synonym he can find, the way a man might say great and mighty and powerful when he only means big.</p>
+      <p>That is not what is happening. Behind those English words stand different Hebrew words, each with its own root and its own picture. A commandment is not a statute. A statute is not a judgment. And the word ordinance, as we will see, is not a Hebrew word at all but an English word the translators reached for when they were carrying four different Hebrew words into our language. When we learn to hear the difference, whole passages open up that used to read like repetition.</p>
+      <p>This teaching takes those words one at a time. We will look at the root each one grows out of, the picture that root paints, how the Scripture actually uses it, and what the New Testament does with it. We will also stop and deal honestly with a popular system that tries to use these four words to sort the law into three neat bins with three different expiration dates. The words will not carry that weight, and it is better to know that up front than to build on it and have it collapse later.</p>
+      <p>Nothing here changes the doctrine we already hold. Salvation is the free gift of God, received by grace through faith in Jesus Christ, and no man is ever justified by keeping a statute or a judgment. What this study does is put better tools in your hand for reading the book. A man who knows the difference between a decree carved in stone and a verdict handed down from a bench will read Deuteronomy with sharper eyes.</p>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">What This Teaching Covers</p>
+      <ul class="toc-list">
+        <li><a href="#p1"><span class="toc-num">I</span><span>One Law, Many Words</span></a></li>
+        <li><a href="#p2"><span class="toc-num">II</span><span>The Commandment: The Charge of the King</span></a></li>
+        <li><a href="#p3"><span class="toc-num">III</span><span>The Statute: What Is Engraved and What Is Allotted</span></a></li>
+        <li><a href="#p4"><span class="toc-num">IV</span><span>The Judgment: The Ruling from the Bench</span></a></li>
+        <li><a href="#p5"><span class="toc-num">V</span><span>The Ordinance: An English Word, Not a Hebrew One</span></a></li>
+        <li><a href="#p6"><span class="toc-num">VI</span><span>The Companion Words: Testimonies, Precepts, and Charge</span></a></li>
+        <li><a href="#p7"><span class="toc-num">VII</span><span>Four Angles on One Law, Not Four Bins</span></a></li>
+        <li><a href="#p8"><span class="toc-num">VIII</span><span>What the New Testament Does With These Words</span></a></li>
+      </ul>
+    </nav>
+
+    <!-- ── PART ONE ── -->
+    <div class="section-head" id="p1">
+      <p class="section-eyebrow">Part One</p>
+      <h2 class="section-title">One Law, Many Words</h2>
+    </div>
+
+    <p class="body-text">Start with the umbrella. The Hebrew word rendered law in our Bibles is torah, and it does not begin life as a legal term at all. Its root is the verb yarah, which means to throw, to shoot, or to cast. It is the word used for shooting an arrow and for casting lots. From that comes the sense of pointing, aiming, directing, and from there the sense of teaching. A torah is instruction that aims you at a target. It is a father showing a son where to set his feet.</p>
+
+    <div class="word-card">
+      <span class="word-card-label">The Umbrella Word</span>
+      <div class="word-head">
+        <span class="word-hebrew">&#1514;&#1493;&#1465;&#1512;&#1464;&#1492;</span>
+        <span class="word-translit">Torah</span>
+        <span class="word-strongs">Strong&rsquo;s H8451</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>yarah (H3384), to throw, to shoot, to point, and so to direct or instruct.</dd>
+        <dt>Sense</dt>
+        <dd>Instruction, teaching, direction. The whole body of what God has taught His people.</dd>
+        <dt>How the King James renders it</dt>
+        <dd>Law, most commonly. The English word law carries a courtroom weight that the Hebrew does not always carry.</dd>
+      </dl>
+    </div>
+
+    <p class="body-text">Under that umbrella sit the more specific words. And the Scripture does not scatter them at random. Look at how carefully the writer of the longest chapter in the Bible works through them. Psalm 119 is a long meditation on the law of God, and it turns the same subject over and over by using a rotating set of terms. In the first eight verses alone, six different words appear.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Psalm 119:1&ndash;8</span>
+      <span class="scripture-text">Blessed are the undefiled in the way, who walk in the law of the LORD. Blessed are they that keep his testimonies, and that seek him with the whole heart. They also do no iniquity: they walk in his ways. Thou hast commanded us to keep thy precepts diligently. O that my ways were directed to keep thy statutes! Then shall I not be ashamed, when I have respect unto all thy commandments. I will praise thee with uprightness of heart, when I shall have learned thy righteous judgments. I will keep thy statutes: O forsake me not utterly.</span>
+    </div>
+
+    <p class="body-text">Way, law, testimonies, precepts, statutes, commandments, judgments. Seven terms in eight verses, and the psalm keeps that rotation going for a hundred and seventy six verses. A writer who was merely piling up synonyms would run out of steam by verse thirty. This man had a vocabulary because the subject had that many facets.</p>
+
+    <p class="body-text">Moses does the same thing when he introduces the whole body of instruction to the second generation.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Deuteronomy 4:44&ndash;45</span>
+      <span class="scripture-text">And this is the law which Moses set before the children of Israel: These are the testimonies, and the statutes, and the judgments, which Moses spake unto the children of Israel, after they came forth out of Egypt,</span>
+    </div>
+
+    <p class="body-text">Notice the order of the sentence. The law is the whole thing. Then the whole thing is broken out into testimonies, statutes, and judgments. The law is the category. The others are the contents. That single verse is the map for everything that follows in this study.</p>
+
+    <p class="sub-head">Four Hundred Years Before Sinai</p>
+
+    <p class="body-text">Before we go further, one verse worth holding in the mind. These categories did not begin at Sinai. Long before the mountain smoked, God said this about Abraham.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 26:5</span>
+      <span class="scripture-text">Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws.</span>
+    </div>
+
+    <p class="body-text">Charge, commandments, statutes, and laws. Four of our terms, in one sentence, about a man who lived centuries before the tablets were cut. Whatever these words mean, they describe something older than the nation of Israel and older than the covenant made at Horeb. God had a standard, He made it known, and Abraham kept it.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>Torah means instruction, not merely legislation. It is the whole body of what God has taught. Within it, the Scripture uses distinct words for distinct kinds of instruction, and it uses them consistently enough that we can trace the difference. Learning those words is not a rabbit trail. It is basic literacy for anyone who wants to read the first five books with understanding.</p>
+    </div>
+
+    <!-- ── PART TWO ── -->
+    <div class="section-head" id="p2">
+      <p class="section-eyebrow">Part Two</p>
+      <h2 class="section-title">The Commandment: The Charge of the King</h2>
+    </div>
+
+    <p class="body-text">The word behind commandment is mitzvah, and it grows straight out of the verb tsavah, which means to command, to charge, to lay an order on someone. The verb is used when a king gives orders to his servants, when a general gives orders to his army, when a father charges his household. It always assumes a difference in rank. Nobody issues a mitzvah to a superior.</p>
+
+    <div class="word-card">
+      <span class="word-card-label">Commandment</span>
+      <div class="word-head">
+        <span class="word-hebrew">&#1502;&#1460;&#1510;&#1456;&#1493;&#1464;&#1492;</span>
+        <span class="word-translit">Mitzvah</span>
+        <span class="word-strongs">Strong&rsquo;s H4687 &middot; plural mitzvot</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>tsavah (H6680), to command, to charge, to give orders, to appoint.</dd>
+        <dt>Picture</dt>
+        <dd>A direct order from one who holds the right to give it. The weight rests on the authority of the one commanding, not on the content of the command.</dd>
+        <dt>Greek counterpart</dt>
+        <dd>entole (G1785), the word Jesus uses when He says keep my commandments.</dd>
+      </dl>
+    </div>
+
+    <p class="body-text">This is why the word commandment carries the tone it carries. When Scripture calls something a commandment, the emphasis falls on who said it. It is not offered as advice, it is not proposed for our consideration, and it does not come with an argument attached. It is a charge from the throne. The reason it must be kept is that the One who spoke it has the right to speak it.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Deuteronomy 6:1</span>
+      <span class="scripture-text">Now these are the commandments, the statutes, and the judgments, which the LORD your God commanded to teach you, that ye might do them in the land whither ye go to possess it:</span>
+    </div>
+
+    <p class="body-text">Read that verse again and hear the verb. These are the commandments which the LORD commanded. The English sounds clumsy because the Hebrew is doing something deliberate. The noun mitzvah and the verb tsavah come from the same root. It is like saying these are the charges which the LORD charged you. The word itself points back to the Person who spoke.</p>
+
+    <p class="sub-head">The Ten Words</p>
+
+    <p class="body-text">Here is a detail that surprises people the first time they meet it. The Ten Commandments are never called the ten commandments in Hebrew. They are called the ten words.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Exodus 34:28</span>
+      <span class="scripture-text">And he was there with the LORD forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.</span>
+      <span class="scripture-ref">Deuteronomy 4:13</span>
+      <span class="scripture-text">And he declared unto you his covenant, which he commanded you to perform, even ten commandments; and he wrote them upon two tables of stone.</span>
+    </div>
+
+    <div class="bonus">
+      <p class="bonus-label">A Closer Look at the Ten</p>
+      <p>In both of those verses, and in Deuteronomy 10:4 as well, the Hebrew phrase our translators rendered ten commandments is aseret hadevarim, which means the ten words. The word is davar (H1697), the ordinary Hebrew word for a word, a speech, a matter, or a thing. The King James translators chose commandments because that is plainly what these ten words are, and they were not wrong. But the Hebrew makes its own point. These ten are not first of all rules. They are first of all speech. They are what God said when He opened His mouth on the mountain and the people heard His voice and were afraid.</p>
+      <p>That is worth carrying into how we treat them. The tables were not a policy handed down through a department. They were the words of a Person, written by His own finger. Exodus 31:18 calls them the two tables of testimony, written with the finger of God. When we honor the ten, we are honoring speech that came out of the mouth of the living God.</p>
+    </div>
+
+    <p class="sub-head">Commandments in the Mouth of Jesus</p>
+
+    <p class="body-text">When the New Testament speaks of commandments, the Greek word is entole, and it carries the same freight as mitzvah. It is a charge from one who has the right to charge. That matters enormously, because Jesus uses this word about Himself and about His Father with no hint that the category has been dissolved.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">John 14:15</span>
+      <span class="scripture-text">If ye love me, keep my commandments.</span>
+      <span class="scripture-ref">John 14:21</span>
+      <span class="scripture-text">He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father, and I will love him, and will manifest myself to him.</span>
+      <span class="scripture-ref">1 John 5:3</span>
+      <span class="scripture-text">For this is the love of God, that we keep his commandments: and his commandments are not grievous.</span>
+    </div>
+
+    <p class="body-text">And at the very end of the book, when John describes the people who stand faithful through the worst pressure the world has ever seen, this is the mark he gives them.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Revelation 14:12</span>
+      <span class="scripture-text">Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus.</span>
+      <span class="scripture-ref">Revelation 12:17</span>
+      <span class="scripture-text">And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ.</span>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>A commandment is a charge from the throne, and its authority is the authority of the One who gave it. This is why obedience to a commandment is never framed in Scripture as earning anything. You do not earn wages by obeying your king. You obey because he is your king. The believer keeps the commandments not to become a son but because he already is one, and a son who loves his Father keeps what his Father says.</p>
+    </div>
+
+    <!-- ── PART THREE ── -->
+    <div class="section-head" id="p3">
+      <p class="section-eyebrow">Part Three</p>
+      <h2 class="section-title">The Statute: What Is Engraved and What Is Allotted</h2>
+    </div>
+
+    <p class="body-text">This is the richest of the four words, and the one most often flattened in English. The Hebrew is choq in the masculine and chuqqah in the feminine, and both come from the verb chaqaq, which means to cut in, to carve, to engrave, to inscribe. The picture is a chisel biting into stone. A choq is not spoken and then left to float in the air. It is cut into something hard so that it stays.</p>
+
+    <div class="word-card">
+      <span class="word-card-label">Statute</span>
+      <div class="word-head">
+        <span class="word-hebrew">&#1495;&#1465;&#1511;</span>
+        <span class="word-translit">Choq</span>
+        <span class="word-strongs">Strong&rsquo;s H2706</span>
+      </div>
+      <div class="word-head">
+        <span class="word-hebrew">&#1495;&#1467;&#1511;&#1468;&#1464;&#1492;</span>
+        <span class="word-translit">Chuqqah</span>
+        <span class="word-strongs">Strong&rsquo;s H2708</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>chaqaq (H2710), to cut in, to carve, to engrave, to inscribe, and from there to decree.</dd>
+        <dt>First picture</dt>
+        <dd>A decree cut into stone. A fixed boundary that does not move because it has been carved rather than spoken.</dd>
+        <dt>Second picture</dt>
+        <dd>An assigned portion or allotment. What has been carved out and set aside as someone&rsquo;s share.</dd>
+        <dt>How the King James renders it</dt>
+        <dd>Statute, ordinance, decree, custom, manner, rite, portion, bound, task, appointed.</dd>
+      </dl>
+    </div>
+
+    <p class="sub-head">The Decree That Holds the Sea</p>
+
+    <p class="body-text">If you want to feel the force of this word, look at where God uses it outside the law entirely. The same word that describes His statutes for His people describes the fixed decrees that govern creation itself.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Jeremiah 5:22</span>
+      <span class="scripture-text">Fear ye not me? saith the LORD: will ye not tremble at my presence, which have placed the sand for the bound of the sea by a perpetual decree, that it cannot pass it: and though the waves thereof toss themselves, yet can they not prevail; though they roar, yet can they not pass over it?</span>
+    </div>
+
+    <p class="body-text">The word rendered decree there is choq. God carved a line in the sand and the ocean has never crossed it. Every storm since the flood has thrown itself at that line and every storm has fallen back. That is what a statute is. It is a boundary set by God that stands whether anyone approves of it or not.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Jeremiah 31:35&ndash;36</span>
+      <span class="scripture-text">Thus saith the LORD, which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; The LORD of hosts is his name: If those ordinances depart from before me, saith the LORD, then the seed of Israel also shall cease from being a nation before me for ever.</span>
+      <span class="scripture-ref">Job 38:33</span>
+      <span class="scripture-text">Knowest thou the ordinances of heaven? canst thou set the dominion thereof in the earth?</span>
+    </div>
+
+    <p class="body-text">The ordinances of the moon and the stars are chuqqot. The ordinances of heaven in Job are the same word. God fixed the courses of the lights and they have kept those courses without deviation since the fourth day. When Scripture calls the Sabbath and the feasts statutes, it is placing them in that same category of fixed, carved, immovable appointment.</p>
+
+    <p class="sub-head">The Portion Assigned</p>
+
+    <p class="body-text">Now the second sense, and this one is a comfort rather than a warning. Because chaqaq means to carve out, a choq can be a portion carved out and assigned to someone. It is the word for a ration, an allowance, a share.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Genesis 47:22</span>
+      <span class="scripture-text">Only the land of the priests bought he not; for the priests had a portion assigned them of Pharaoh, and did eat their portion which Pharaoh gave them: wherefore they sold not their lands.</span>
+      <span class="scripture-ref">Proverbs 30:8</span>
+      <span class="scripture-text">Remove far from me vanity and lies: give me neither poverty nor riches; feed me with food convenient for me:</span>
+      <span class="scripture-ref">Job 23:12</span>
+      <span class="scripture-text">Neither have I gone back from the commandment of his lips; I have esteemed the words of his mouth more than my necessary food.</span>
+    </div>
+
+    <div class="bonus">
+      <p class="bonus-label">The Statute as Daily Bread</p>
+      <p>In Proverbs 30:8 the phrase food convenient for me is the bread of my choq, my appointed ration. In Job 23:12 the words necessary food are also choq, Job&rsquo;s assigned portion. Agur asks God for exactly the portion carved out for him, no more and no less. Job says he treasured the words of God&rsquo;s mouth above the meal that was set before him.</p>
+      <p>Put the two senses of the word together and something beautiful comes out of it. A statute is a boundary God carved, and a statute is a portion God assigned. His fixed decrees are not walls built to hem His people in. They are the daily bread He measured out for them. The Sabbath is a statute in exactly this double sense. It is a line you do not cross, and it is a whole day of rest handed to you as your share.</p>
+    </div>
+
+    <p class="sub-head">The Appointed Times Are Statutes</p>
+
+    <p class="body-text">This is where the word matters most for us. Over and over, the Sabbath and the feasts of the LORD are called statutes for ever.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Exodus 12:14</span>
+      <span class="scripture-text">And this day shall be unto you for a memorial; and ye shall keep it a feast to the LORD throughout your generations; ye shall keep it a feast by an ordinance for ever.</span>
+      <span class="scripture-ref">Exodus 12:24</span>
+      <span class="scripture-text">And ye shall observe this thing for an ordinance to thee and to thy sons for ever.</span>
+      <span class="scripture-ref">Leviticus 23:31</span>
+      <span class="scripture-text">Ye shall do no manner of work: it shall be a statute for ever throughout your generations in all your dwellings.</span>
+      <span class="scripture-ref">Leviticus 23:41</span>
+      <span class="scripture-text">And ye shall keep it a feast unto the LORD seven days in the year. It shall be a statute for ever in your generations: ye shall celebrate it in the seventh month.</span>
+    </div>
+
+    <p class="body-text">In Exodus 12:14 the word behind ordinance is chuqqah. In Exodus 12:24 it is choq. In Leviticus 23 it is chuqqah again, rendered statute this time. Same family of words, three different English renderings, one meaning. God carved these days into the calendar the way He carved the courses of the moon into the sky.</p>
+
+    <p class="sub-head">The Statutes of the Nations</p>
+
+    <p class="body-text">One more use of this word, and it cuts the other direction. Choq is not a holy word by itself. It simply means an engraved, established practice. So the Scripture uses it for the entrenched customs of the pagan nations too, and always as a warning.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Leviticus 18:30</span>
+      <span class="scripture-text">Therefore shall ye keep mine ordinance, that ye commit not any one of these abominable customs, which were committed before you, and that ye defile not yourselves therein: I am the LORD your God.</span>
+      <span class="scripture-ref">Leviticus 20:23</span>
+      <span class="scripture-text">And ye shall not walk in the manners of the nation, which I cast out before you: for they committed all these things, and therefore I abhorred them.</span>
+      <span class="scripture-ref">2 Kings 17:8</span>
+      <span class="scripture-text">And walked in the statutes of the heathen, whom the LORD cast out from before the children of Israel, and of the kings of Israel, which they had made.</span>
+      <span class="scripture-ref">Jeremiah 10:2&ndash;3</span>
+      <span class="scripture-text">Thus saith the LORD, Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them. For the customs of the people are vain: for one cutteth a tree out of the forest, the work of the hands of the workman, with the axe.</span>
+    </div>
+
+    <p class="body-text">Abominable customs, manners of the nation, statutes of the heathen, customs of the people. Every one of those is chuqqah or choq. The nations carve their own decrees into their own calendars and pass them down from generation to generation until they are as fixed in a culture as the tide is in the ocean. The question Scripture keeps putting to God&rsquo;s people is not whether they will live by engraved custom. Everyone does. The question is whose engraving they will live by.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Someone will eventually raise this objection, so it is better to face it here than to be caught by it later. The phrase statute for ever is also applied to things that Scripture plainly says have found their end in Christ. The priests&rsquo; portion of the offerings, the Aaronic priesthood itself, the prohibition on wine for priests entering the tabernacle, and the ashes of the red heifer are all called a statute for ever in Leviticus and Numbers. Yet Hebrews 7:12 says that the priesthood being changed, there is made of necessity a change also of the law.</p>
+      <p>Two things need to be said honestly. First, the Hebrew word olam, rendered for ever, means age lasting or perpetual. It binds for as long as the arrangement it governs stands, and it is used elsewhere in Scripture for things with an evident end, such as a servant serving his master for ever in Exodus 21:6. Second, and more importantly, the word statute by itself never tells you the shelf life of a command. It tells you the kind of command it is. What settles whether a given instruction still stands is not its label but what the rest of Scripture says about it, and specifically whether it was bound to a priesthood and an altar that the New Testament declares fulfilled.</p>
+      <p>Do not build a case on the phrase statute for ever alone in either direction. Those who use it to prove the Sabbath continues and those who use it to prove the sacrifices continue are making the same mistake with the same phrase. The argument for the Sabbath and the feasts rests on their being rooted in creation and in the character of God, on their never being tied to the Levitical altar, and on their never being retired anywhere in the New Testament. That is a stronger foundation than a phrase that also covers the priest&rsquo;s share of the meat offering.</p>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>A statute is something God carved. It carries two pictures at once, a fixed boundary that will not move and a portion measured out for the good of the one who receives it. The word does not tell you why God set the boundary, and often He does not say. That is part of the point. A statute is kept on the strength of who carved it.</p>
+    </div>
+
+    <!-- ── PART FOUR ── -->
+    <div class="section-head" id="p4">
+      <p class="section-eyebrow">Part Four</p>
+      <h2 class="section-title">The Judgment: The Ruling from the Bench</h2>
+    </div>
+
+    <p class="body-text">The word behind judgment is mishpat, and it comes from the verb shaphat, which means to judge, to govern, to decide a case, to vindicate. The book of Judges is the book of the shophetim, the men God raised up to render decisions and deliver His people. A mishpat is what comes out of that process. It is a verdict, a ruling, a decision handed down.</p>
+
+    <div class="word-card">
+      <span class="word-card-label">Judgment</span>
+      <div class="word-head">
+        <span class="word-hebrew">&#1502;&#1460;&#1513;&#1473;&#1456;&#1508;&#1468;&#1464;&#1496;</span>
+        <span class="word-translit">Mishpat</span>
+        <span class="word-strongs">Strong&rsquo;s H4941</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>shaphat (H8199), to judge, to govern, to decide a controversy, to vindicate.</dd>
+        <dt>Picture</dt>
+        <dd>A verdict rendered in a real case, and the settled precedent that verdict establishes.</dd>
+        <dt>Wider sense</dt>
+        <dd>Justice itself, the right way of dealing. Also rendered manner, due, right, custom, cause.</dd>
+      </dl>
+    </div>
+
+    <p class="body-text">Where a statute says do this, a judgment usually says when this happens, here is the ruling. That is exactly the form the judgments take when God gives them. Read the opening of the section that Scripture itself calls the judgments.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Exodus 21:1&ndash;2</span>
+      <span class="scripture-text">Now these are the judgments which thou shalt set before them. If thou buy an Hebrew servant, six years he shall serve: and in the seventh he shall go out free for nothing.</span>
+      <span class="scripture-ref">Exodus 22:1</span>
+      <span class="scripture-text">If a man shall steal an ox, or a sheep, and kill it, or sell it; he shall restore five oxen for an ox, and four sheep for a sheep.</span>
+    </div>
+
+    <p class="body-text">If a man does this, then this follows. That is the shape of a mishpat. The whole block from Exodus 21 through 23 works that way, case after case, and it is what the Bible calls the book of the covenant. Servants, injuries, animals that gore, fires that spread, borrowed property, damages, restitution. These are the rulings that tell a nation how to settle disputes between people.</p>
+
+    <p class="sub-head">Judgment as the Character of God</p>
+
+    <p class="body-text">But mishpat is not only a courtroom word. It is also the word for justice itself, and it is used of God&rsquo;s own way of governing.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Deuteronomy 32:4</span>
+      <span class="scripture-text">He is the Rock, his work is perfect: for all his ways are judgment: a God of truth and without iniquity, just and right is he.</span>
+      <span class="scripture-ref">Micah 6:8</span>
+      <span class="scripture-text">He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?</span>
+      <span class="scripture-ref">Isaiah 1:17</span>
+      <span class="scripture-text">Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow.</span>
+    </div>
+
+    <p class="body-text">All his ways are judgment. Every ruling God hands down flows out of what He is. That is why the judgments were never arbitrary, and why a man who studies them is learning the mind of the Judge and not merely memorizing a code. Micah says to do justly, and the word is the verb form of mishpat. Isaiah says to seek judgment, and it is the same root again.</p>
+
+    <p class="sub-head">Judges Under the Judgment</p>
+
+    <p class="body-text">Because God&rsquo;s judgments express God&rsquo;s justice, the men appointed to apply them were held to a standard as strict as the rulings themselves.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Deuteronomy 16:18&ndash;20</span>
+      <span class="scripture-text">Judges and officers shalt thou make thee in all thy gates, which the LORD thy God giveth thee, throughout thy tribes: and they shall judge the people with just judgment. Thou shalt not wrest judgment; thou shalt not respect persons, neither take a gift: for a gift doth blind the eyes of the wise, and pervert the words of the righteous. That which is altogether just shalt thou follow, that thou mayest live, and inherit the land which the LORD thy God giveth thee.</span>
+    </div>
+
+    <p class="body-text">A judge who takes a bribe has not merely broken a rule. He has misrepresented the character of the God whose bench he sits on. That is why the penalty language around corrupt judgment in the prophets is so severe.</p>
+
+    <p class="sub-head">Judgment in the Mouth of Jesus</p>
+
+    <p class="body-text">The Greek word that carries mishpat into the New Testament is krisis, and Jesus uses it in one of the sharpest rebukes He ever delivered.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Matthew 23:23</span>
+      <span class="scripture-text">Woe unto you, scribes and Pharisees, hypocrites! for ye pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought ye to have done, and not to leave the other undone.</span>
+    </div>
+
+    <p class="body-text">Judgment is named first among the weighty matters. And notice what Jesus does not say. He does not say the small things were abolished. He says these ought ye to have done, and not to leave the other undone. Tithing the garden herbs was right. Neglecting justice while doing it was the sin. That verse is a standing rebuke to anyone who thinks precision in the small commands can substitute for justice toward a neighbor, and equally to anyone who thinks concern for justice excuses him from the small commands.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>A judgment is a ruling that flows from the character of the Judge. It usually takes the form of a case, and it usually governs how one man is to deal with another. Where the commandments most often point us toward God, the judgments most often point us toward our neighbor. Both come from the same throne.</p>
+    </div>
+
+    <!-- ── PART FIVE ── -->
+    <div class="section-head" id="p5">
+      <p class="section-eyebrow">Part Five</p>
+      <h2 class="section-title">The Ordinance: An English Word, Not a Hebrew One</h2>
+    </div>
+
+    <p class="body-text">Here is where careful readers get tripped up, and where a little knowledge saves a lot of confusion. There is no single Hebrew word behind the English word ordinance. It is a word the King James translators reached for when they needed variety, and they used it to carry at least four different Hebrew words into English. Sometimes they used it for a word they had already rendered statute two verses earlier.</p>
+
+    <p class="body-text">The clearest demonstration in the whole Bible sits in two consecutive verses of Leviticus 18.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Leviticus 18:4&ndash;5</span>
+      <span class="scripture-text">Ye shall do my judgments, and keep mine ordinances, to walk therein: I am the LORD your God. Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am the LORD.</span>
+    </div>
+
+    <p class="body-text">Read that slowly. In verse four the Hebrew word is chuqqah and the translators wrote ordinances. In verse five the Hebrew word is chuqqah again, the identical word in the identical form, and the translators wrote statutes. One Hebrew word, two English words, back to back in the same breath. Anyone building a doctrine on a distinction between statutes and ordinances is building on the translators and not on the text.</p>
+
+    <div class="term-table-wrap">
+      <table class="term-table">
+        <caption>What Stands Behind the English Word &ldquo;Ordinance&rdquo; in the Old Testament</caption>
+        <thead>
+          <tr>
+            <th style="width:24%">Hebrew Word</th>
+            <th style="width:30%">Its Sense</th>
+            <th>Where the King James Renders It &ldquo;Ordinance&rdquo;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="term">Chuqqah<br><span class="word-strongs">H2708</span></td>
+            <td>An engraved decree, a fixed statute</td>
+            <td>Exodus 12:14; Leviticus 18:4; Numbers 9:14; Malachi 3:7</td>
+          </tr>
+          <tr>
+            <td class="term">Choq<br><span class="word-strongs">H2706</span></td>
+            <td>An engraved decree, an appointed portion</td>
+            <td>Exodus 12:24; Jeremiah 31:35&ndash;36; Job 38:33</td>
+          </tr>
+          <tr>
+            <td class="term">Mishpat<br><span class="word-strongs">H4941</span></td>
+            <td>A judicial ruling, justice</td>
+            <td>Exodus 15:25; Joshua 24:25; Isaiah 58:2</td>
+          </tr>
+          <tr>
+            <td class="term">Mishmereth<br><span class="word-strongs">H4931</span></td>
+            <td>A charge committed to one&rsquo;s keeping</td>
+            <td>Leviticus 18:30; Malachi 3:14</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="body-text">Look at two of those pairs in the text itself, because they show the translators making the choice right in front of us.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Exodus 15:25</span>
+      <span class="scripture-text">And he cried unto the LORD; and the LORD shewed him a tree, which when he had cast into the waters, the waters were made sweet: there he made for them a statute and an ordinance, and there he proved them,</span>
+      <span class="scripture-ref">Joshua 24:25</span>
+      <span class="scripture-text">So Joshua made a covenant with the people that day, and set them a statute and an ordinance in Shechem.</span>
+    </div>
+
+    <p class="body-text">In both places the pair is choq and mishpat. Statute and ordinance in the English is really statute and judgment in the Hebrew. It is the same pairing you meet a hundred times in Deuteronomy, dressed in different English clothes.</p>
+
+    <p class="sub-head">The Fourth Word: The Charge</p>
+
+    <p class="body-text">One of the four Hebrew words behind ordinance has not appeared yet in this study, and it deserves its own place. It is mishmereth, from the verb shamar, to keep, to guard, to watch over.</p>
+
+    <div class="word-card">
+      <span class="word-card-label">Charge</span>
+      <div class="word-head">
+        <span class="word-hebrew">&#1502;&#1460;&#1513;&#1473;&#1456;&#1502;&#1462;&#1512;&#1462;&#1514;</span>
+        <span class="word-translit">Mishmereth</span>
+        <span class="word-strongs">Strong&rsquo;s H4931</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>shamar (H8104), to keep, to guard, to watch, to preserve. The same verb used of Adam keeping the garden.</dd>
+        <dt>Picture</dt>
+        <dd>A watch or a post committed to someone&rsquo;s care. What has been entrusted to you to guard.</dd>
+        <dt>How the King James renders it</dt>
+        <dd>Charge, ward, watch, office, ordinance, safeguard.</dd>
+      </dl>
+    </div>
+
+    <p class="body-text">This is a warmer word than the others. A mishmereth is not simply an order to obey. It is a trust placed in your hands, the way a night watchman is given a wall to guard. It is the word for the Levites keeping the charge of the tabernacle, and it is the first word in the list of what Abraham kept.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Malachi 3:14</span>
+      <span class="scripture-text">Ye have said, It is vain to serve God: and what profit is it that we have kept his ordinance, and that we have walked mournfully before the LORD of hosts?</span>
+      <span class="scripture-ref">Malachi 3:7</span>
+      <span class="scripture-text">Even from the days of your fathers ye are gone away from mine ordinances, and have not kept them. Return unto me, and I will return unto you, saith the LORD of hosts. But ye said, Wherein shall we return?</span>
+    </div>
+
+    <p class="body-text">Those two verses sit seven verses apart in the same chapter, and the English word ordinance covers two different Hebrew words in them. In verse seven it is chuqqah, God&rsquo;s carved decrees. In verse fourteen it is mishmereth, the trust the people claimed to have guarded while their hearts were far from Him. Same English word, two different Hebrew words, one chapter apart.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>The variation runs the other direction too, and the Psalms are the best place to show it. The Hebrew word piqqudim, usually rendered precepts, is translated three different ways in three different psalms by the same translators. In Psalm 119:4 it is precepts. In Psalm 19:8 it is statutes. In Psalm 111:7 and Psalm 103:18 it is commandments. One Hebrew word, three English words.</p>
+      <p>None of this is a charge against the King James translators. They were producing readable English, they varied their vocabulary the way good writers do, and they were carrying words with overlapping ranges of meaning. But it does mean this. A doctrine that depends on a fine distinction between two English words in the King James Bible should be checked in the Hebrew before it is preached. Bible Hub&rsquo;s interlinear will show you the underlying word in a few seconds, and it costs nothing. Prove the word by the word.</p>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>Ordinance is not a fifth category of law. It is an English word doing duty for four different Hebrew words. When you hit it in the Old Testament, do not assume you have met a new kind of commandment. Look underneath and you will find a statute, a judgment, or a charge that you already know.</p>
+    </div>
+
+    <!-- ── PART SIX ── -->
+    <div class="section-head" id="p6">
+      <p class="section-eyebrow">Part Six</p>
+      <h2 class="section-title">The Companion Words: Testimonies, Precepts, and Charge</h2>
+    </div>
+
+    <p class="body-text">Three more words round out the vocabulary, and they show up constantly alongside the four we have covered. Knowing them completes the picture.</p>
+
+    <p class="sub-head">Testimonies</p>
+
+    <div class="word-card">
+      <span class="word-card-label">Testimony</span>
+      <div class="word-head">
+        <span class="word-hebrew">&#1506;&#1461;&#1491;&#1493;&#1468;&#1514;</span>
+        <span class="word-translit">Eduth</span>
+        <span class="word-strongs">Strong&rsquo;s H5715 &middot; plural edoth</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>ud (H5749), to bear witness, to testify, to repeat, to affirm.</dd>
+        <dt>Picture</dt>
+        <dd>A witness that stands up in court and says what is true. God&rsquo;s testimonies bear witness to who He is and to the covenant He made.</dd>
+      </dl>
+    </div>
+
+    <p class="body-text">This word explains a phrase that runs all through Exodus. The tablets are called the tables of testimony, the ark that holds them is the ark of the testimony, and the tent that holds the ark is the tabernacle of the testimony. The ten words on those tablets were not filed away as a legal deposit. They were placed in the holiest room in Israel as a standing witness.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Exodus 31:18</span>
+      <span class="scripture-text">And he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of God.</span>
+      <span class="scripture-ref">Psalm 119:111</span>
+      <span class="scripture-text">Thy testimonies have I taken as an heritage for ever: for they are the rejoicing of my heart.</span>
+    </div>
+
+    <p class="sub-head">Precepts</p>
+
+    <div class="word-card">
+      <span class="word-card-label">Precept</span>
+      <div class="word-head">
+        <span class="word-hebrew">&#1508;&#1468;&#1460;&#1511;&#1468;&#1493;&#1468;&#1491;&#1460;&#1497;&#1501;</span>
+        <span class="word-translit">Piqqudim</span>
+        <span class="word-strongs">Strong&rsquo;s H6490</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>paqad (H6485), to visit, to attend to, to appoint, to muster, to put in charge of.</dd>
+        <dt>Picture</dt>
+        <dd>Matters God has appointed and placed under our oversight. What we are responsible to attend to.</dd>
+        <dt>Where it appears</dt>
+        <dd>Almost entirely in the Psalms, and twenty one times in Psalm 119 alone.</dd>
+      </dl>
+    </div>
+
+    <p class="body-text">The verb paqad is the word for a commander mustering his troops and taking account of who is present. A precept is something God has assigned to your watch and will call you to account for. That is why the psalmist says he will not forget them and asks God to make him understand them. They are his responsibility.</p>
+
+    <p class="sub-head">All the Words Together</p>
+
+    <p class="body-text">Two passages stack nearly the whole vocabulary in one place. The first is the psalm David wrote about the heavens and the law, where he takes six terms in three verses and gives each one a quality and an effect.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Psalm 19:7&ndash;9</span>
+      <span class="scripture-text">The law of the LORD is perfect, converting the soul: the testimony of the LORD is sure, making wise the simple. The statutes of the LORD are right, rejoicing the heart: the commandment of the LORD is pure, enlightening the eyes. The fear of the LORD is clean, enduring for ever: the judgments of the LORD are true and righteous altogether.</span>
+    </div>
+
+    <p class="body-text">The second is Nehemiah, looking back on Sinai and naming what God gave there.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Nehemiah 9:13&ndash;14</span>
+      <span class="scripture-text">Thou camest down also upon mount Sinai, and spakest with them from heaven, and gavest them right judgments, and true laws, good statutes and commandments: And madest known unto them thy holy sabbath, and commandedst them precepts, statutes, and laws, by the hand of Moses thy servant:</span>
+    </div>
+
+    <div class="bonus">
+      <p class="bonus-label">The Eight Words of Psalm 119</p>
+      <p>Psalm 119 is built on a rotating set of eight terms for the law of God, and nearly every one of its 176 verses contains at least one of them. They are torah, law or instruction; eduth, testimonies; piqqudim, precepts; chuqqim, statutes; mitzvot, commandments; mishpatim, judgments; davar, word; and imrah, word or saying. Some readers add a ninth, derek, the way.</p>
+      <p>Here is a way to read that psalm you may not have tried. Take one term and follow it through all 176 verses, ignoring the others. Read only the statute verses, then only the testimony verses, then only the judgment verses. Each pass gives you a different portrait of the same law, and by the eighth pass you will have a feel for these words that no word list can give you.</p>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>Testimonies bear witness to who God is. Precepts are what He has assigned to our oversight. A charge is what He has entrusted to our guard. None of these are separate bodies of law. They are the one law of God described from different angles, the way one mountain looks different from each side but is still one mountain.</p>
+    </div>
+
+    <!-- ── PART SEVEN ── -->
+    <div class="section-head" id="p7">
+      <p class="section-eyebrow">Part Seven</p>
+      <h2 class="section-title">Four Angles on One Law, Not Four Bins</h2>
+    </div>
+
+    <p class="body-text">Now we come to the part of this study that has practical consequences, and it needs to be said plainly. There is a popular teaching that uses these very words to sort the law into three categories with three different fates. It goes like this. The commandments are the moral law and they remain. The judgments are the civil law and they ended when Israel ceased to be a nation. The statutes and ordinances are the ceremonial law and they were nailed to the cross. Tidy, memorable, and easy to teach.</p>
+
+    <p class="body-text">The problem is that the Bible does not use the words that way, and it does not take long to prove it.</p>
+
+    <p class="sub-head">Where the Scheme Breaks Down</p>
+
+    <p class="body-text">Consider the Sabbath. It is the fourth of the ten words, so by the scheme it is moral and it remains. But Leviticus 23 calls it a statute for ever, and Exodus 31 calls it a sign, which puts it in the testimony category as well. One command sitting in three of the bins at once.</p>
+
+    <p class="body-text">Consider murder. Thou shalt not kill is a commandment. But the cities of refuge, the distinction between murder and manslaughter, and the requirement of two witnesses are all judgments in Exodus and Numbers and Deuteronomy. So the moral command and the civil rulings that apply it are welded together. Remove the judgments as civil law and you have kept the prohibition while discarding the instruction on how to tell a murderer from a man whose axe head flew off the handle.</p>
+
+    <p class="body-text">Consider the feasts. They are commanded, so they are commandments. They are called statutes for ever, so they are statutes. Numbers 9:14 calls the Passover both a chuqqah and a mishpat in a single verse. One observance wearing three labels.</p>
+
+    <p class="body-text">And then there is the verse that puts all four terms in one sentence and shows they were never meant to be sorted into separate piles.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Deuteronomy 11:1</span>
+      <span class="scripture-text">Therefore thou shalt love the LORD thy God, and keep his charge, and his statutes, and his judgments, and his commandments, alway.</span>
+      <span class="scripture-ref">Leviticus 26:15</span>
+      <span class="scripture-text">And if ye shall despise my statutes, or if your soul abhor my judgments, so that ye will not do all my commandments, but that ye break my covenant:</span>
+    </div>
+
+    <p class="body-text">In Leviticus 26 the three terms are lined up as three ways of describing one act of covenant breaking. Despising the statutes, abhorring the judgments, and refusing the commandments are not three separate offenses against three separate codes. They are one turning away from one God, described three times over so that no one can slip out through a gap between the words.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Be fair to the threefold division when you teach against it. It did not come from nowhere and it is not a lie. It is a summary that a great many godly men have used for centuries, and it is grasping at something real. There truly is a difference between the command not to bear false witness and the command about the ashes of the red heifer. The instinct behind the division is sound. The mistake is in the labels, not in the instinct.</p>
+      <p>So do not tell a brother his whole framework is worthless. Tell him the Hebrew words will not carry the division he has laid on them, and then give him something better to stand on. The better ground is this. What determines whether a given instruction still binds is not which of the four words happens to describe it, but three plainer questions. Does it flow out of the unchanging character of God? Was it bound to the Levitical priesthood and the altar that the New Testament declares fulfilled in Christ? And what does the New Testament itself do with it, reaffirm it, transfer it, or retire it? Those three questions do real work. The four Hebrew words do not sort the law, but the Scripture does.</p>
+    </div>
+
+    <p class="sub-head">What the Words Actually Do</p>
+
+    <p class="body-text">If the four words do not sort the law by shelf life, what are they for? They tell you the mode of the instruction. They describe how a given command comes to you and what kind of thing it is. One law, seen from four sides.</p>
+
+    <div class="term-table-wrap">
+      <table class="term-table">
+        <caption>Four Angles on the One Law of God</caption>
+        <thead>
+          <tr>
+            <th style="width:22%">Word</th>
+            <th style="width:30%">What It Emphasizes</th>
+            <th>What It Asks of You</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="term">Commandment<br><span class="word-strongs">Mitzvah</span></td>
+            <td>The authority of the One who spoke</td>
+            <td>Submit, because of who commanded</td>
+          </tr>
+          <tr>
+            <td class="term">Statute<br><span class="word-strongs">Choq &middot; Chuqqah</span></td>
+            <td>A boundary carved and a portion assigned</td>
+            <td>Stay inside the line and receive the portion</td>
+          </tr>
+          <tr>
+            <td class="term">Judgment<br><span class="word-strongs">Mishpat</span></td>
+            <td>The justice of God applied to a case</td>
+            <td>Deal rightly with your neighbor</td>
+          </tr>
+          <tr>
+            <td class="term">Testimony<br><span class="word-strongs">Eduth</span></td>
+            <td>Witness to who God is and to the covenant</td>
+            <td>Remember, and bear the witness yourself</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>The four words are four angles on one law, not four bins with four expiration dates. Every command God ever gave could be described by more than one of them, and many are. Do not use a Hebrew word to decide whether something still binds. Use the whole counsel of Scripture for that, and use the Hebrew word to understand what kind of thing you are looking at.</p>
+    </div>
+
+    <!-- ── PART EIGHT ── -->
+    <div class="section-head" id="p8">
+      <p class="section-eyebrow">Part Eight</p>
+      <h2 class="section-title">What the New Testament Does With These Words</h2>
+    </div>
+
+    <p class="body-text">The apostles wrote in Greek, but they had been raised on the Hebrew Scriptures and on the Greek translation of them, so the old categories come across into the new language. Three Greek words carry most of the freight, and one of them is the source of a great deal of confusion.</p>
+
+    <p class="sub-head">Entole: The Commandment Carried Over</p>
+
+    <p class="body-text">Entole is the Greek word that stands where mitzvah stood. It appears about sixty eight times in the New Testament and it never loses the sense of a charge from one who has the right to give it. Jesus uses it of His own words and of His Father&rsquo;s. John uses it of the commandments the believer keeps. The book of Revelation uses it to identify the faithful in the last days. Nowhere is it treated as a category that has been dissolved.</p>
+
+    <p class="sub-head">Dikaioma: The Righteous Requirement</p>
+
+    <div class="word-card">
+      <span class="word-card-label">Ordinance in the New Testament</span>
+      <div class="word-head">
+        <span class="word-greek">&#948;&#953;&#954;&#945;&#943;&#969;&#956;&#945;</span>
+        <span class="word-translit">Dikaioma</span>
+        <span class="word-strongs">Strong&rsquo;s G1345</span>
+      </div>
+      <dl>
+        <dt>Root</dt>
+        <dd>From dikaioo, to declare righteous, which comes from dikaios, righteous or just.</dd>
+        <dt>Sense</dt>
+        <dd>A righteous requirement, a regulation, a just decree. What righteousness requires in a given case.</dd>
+        <dt>How the King James renders it</dt>
+        <dd>Ordinance, righteousness, judgment, justification.</dd>
+      </dl>
+    </div>
+
+    <p class="body-text">This word does two very different jobs in the New Testament, and reading them together is what keeps people from misusing either one. First, it is used positively of the righteous requirement of the law that the Spirit fulfills in the believer.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Luke 1:6</span>
+      <span class="scripture-text">And they were both righteous before God, walking in all the commandments and ordinances of the Lord blameless.</span>
+      <span class="scripture-ref">Romans 8:4</span>
+      <span class="scripture-text">That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.</span>
+      <span class="scripture-ref">Romans 2:26</span>
+      <span class="scripture-text">Therefore if the uncircumcision keep the righteousness of the law, shall not his uncircumcision be counted for circumcision?</span>
+    </div>
+
+    <p class="body-text">In Romans 8:4 the righteousness of the law is dikaioma, the righteous requirement, and Paul says it is fulfilled in us as we walk after the Spirit. That is the pattern of the new covenant. God does not lower the requirement. He puts His Spirit in us so that the requirement is met from the inside.</p>
+
+    <p class="body-text">Second, and this is the part that matters for the question of what passed away, the same word is used for the priestly and sacrificial regulations of the first covenant.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Hebrews 9:1</span>
+      <span class="scripture-text">Then verily the first covenant had also ordinances of divine service, and a worldly sanctuary.</span>
+      <span class="scripture-ref">Hebrews 9:9&ndash;10</span>
+      <span class="scripture-text">Which was a figure for the time then present, in which were offered both gifts and sacrifices, that could not make him that did the service perfect, as pertaining to the conscience; Which stood only in meats and drinks, and divers washings, and carnal ordinances, imposed on them until the time of reformation.</span>
+    </div>
+
+    <p class="body-text">Look at how precisely the writer of Hebrews limits what he is talking about. Ordinances of divine service, connected to a worldly sanctuary. Gifts and sacrifices offered at an altar. Meats and drinks and divers washings, which is the language of the priestly purity system. Carnal ordinances, meaning regulations of the flesh, imposed until the time of reformation. Every item on that list belongs to the tabernacle service and the priesthood that ran it. That is the body of ordinances that met its end in Christ, because our great High Priest entered once for all with His own blood and the shadow gave way to the substance.</p>
+
+    <p class="sub-head">Dogma: The Handwriting Blotted Out</p>
+
+    <p class="body-text">A different Greek word, dogma, appears in two verses that are quoted constantly in this debate. A dogma is a decree, a public edict, a formal decision. It is the word used for the decree of Caesar Augustus in Luke 2:1.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Colossians 2:14</span>
+      <span class="scripture-text">Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross;</span>
+      <span class="scripture-ref">Ephesians 2:15</span>
+      <span class="scripture-text">Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace;</span>
+    </div>
+
+    <p class="body-text">In Colossians the word rendered handwriting is cheirographon, which is the ordinary word for a handwritten certificate of debt, an IOU. What was nailed to the cross was the record of debt standing against us, the written charge sheet that testified to our guilt. The law is not our enemy. Our debt was. Paul says the certificate was blotted out and taken out of the way, not that the standard it recorded was erased.</p>
+
+    <div class="teacher-note">
+      <span class="teacher-note-label">Teacher&rsquo;s Note</span>
+      <p>Ephesians 2:15 is dense Greek and honest men read it differently, so handle it with care rather than force. The phrase is the law of the commandments in decrees, and the sentence structure allows more than one reading. Some read it as saying the law itself was abolished. The reading we hold is that Paul names the enmity as the thing abolished, and that the wall he has just described in verse fourteen is the middle wall of partition, the barrier that kept Gentiles at a distance from the covenant people. What came down was the separation, so that the two might be made one new man.</p>
+      <p>Two things support that reading in the immediate context. Paul says explicitly that the enmity is what was abolished. And the whole point of the paragraph, stated twice, is that Jew and Gentile are now made one, which is a statement about access and not about the standard of righteousness. Compare it also with what Paul says in the same letter three chapters later, where he quotes the fifth commandment to Gentile children as binding, and calls it the first commandment with promise. A man does not quote a commandment as still in force in chapter six if he believed he abolished the whole law in chapter two.</p>
+      <p>Present this as our reading with its reasons given, and acknowledge that the verse is argued the other way by serious people. A teaching that pretends a hard verse is easy loses the room the first time someone reads a commentary.</p>
+    </div>
+
+    <p class="sub-head">Two More Uses Worth Knowing</p>
+
+    <p class="body-text">Two other Greek words are rendered ordinance in the King James New Testament, and neither one has anything to do with the law of God. Knowing them prevents an easy mistake.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">1 Corinthians 11:2</span>
+      <span class="scripture-text">Now I praise you, brethren, that ye remember me in all things, and keep the ordinances, as I delivered them to you.</span>
+      <span class="scripture-ref">1 Peter 2:13</span>
+      <span class="scripture-text">Submit yourselves to every ordinance of man for the Lord&rsquo;s sake: whether it be to the king, as supreme;</span>
+    </div>
+
+    <p class="body-text">In First Corinthians the word is paradosis, which means the things handed down or delivered, and Paul is speaking of the apostolic teaching he passed on to that church. In First Peter the word is ktisis, which means a creation or an institution, and Peter is speaking of human government. Every ordinance of man is every human institution. Neither verse is about statutes or judgments in the Hebrew sense at all.</p>
+
+    <p class="sub-head">The Promise That Uses the Old Words</p>
+
+    <p class="body-text">Finish where the prophets finish. When God describes the new covenant He is going to make, He does not announce a new set of terms. He announces a new heart that will keep the terms He already gave, and He names them by their Hebrew names.</p>
+
+    <div class="scripture">
+      <span class="scripture-ref">Ezekiel 36:26&ndash;27</span>
+      <span class="scripture-text">A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</span>
+      <span class="scripture-ref">Jeremiah 31:33</span>
+      <span class="scripture-text">But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.</span>
+    </div>
+
+    <p class="body-text">Walk in my statutes. Keep my judgments. Chuqqim and mishpatim, the same two words that filled Deuteronomy, spoken as a promise about the age we are living in now. And Jeremiah says the law God will write on the heart is His torah, the same instruction, moved from stone to flesh. The tablets were engraved with a finger. The heart is engraved by the Spirit. It is the same Author and the same writing on a better surface.</p>
+
+    <div class="keypoint">
+      <span class="keypoint-label">Hold This Clearly</span>
+      <p>The New Testament does not abolish these categories. It carries them forward, fulfills the part that was tied to the altar and the Aaronic priesthood, and promises the Spirit who writes the rest on the heart. What was blotted out at the cross was the record of our debt. What was set aside was the sacrificial service that pointed to Christ and found Him. What remains is what always flowed from the character of God, and the Spirit was given precisely so that we would walk in it.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+
+      <p class="body-text">So take these words home with you and let them work the next time you open the book. When you read commandment, hear the throne, and ask who is speaking. When you read statute, see the chisel and the carved line, and remember that the same word describes both the boundary God set for the sea and the portion of bread He measured out for a man. When you read judgment, picture the bench and the case and the neighbor on the other side of it, and remember that all His ways are judgment. And when you read ordinance, slow down and look underneath, because that English word is carrying more than one thing.</p>
+
+      <p class="body-text">None of this earns anything, and none of it needs to. We were saved when we had nothing to offer and no standing to bargain with, by grace, through faith, in the blood of Jesus Christ alone. That is settled and it was settled without our help. But a man who has been bought at that price ought to want to know what his Master actually said. These four words are how the Master said it.</p>
+
+      <div class="conclusion">
+        <span class="conclusion-label">In Summary</span>
+        <p>Torah is the whole instruction, and under it stand words with distinct pictures. A commandment is the charge of a King, weighty because of who spoke it. A statute is a decree carved in stone, a boundary that does not move and a portion measured out for our good. A judgment is a ruling handed down from a righteous bench, showing how one man is to deal with another. A testimony is a witness to who God is. And ordinance is not a Hebrew word at all but an English one, standing in for four different Hebrew words that we already know by other names.</p>
+        <p>These four are not four bins with four expiration dates. They are <em>four angles on one law</em>, and most commands wear more than one of the labels. What has passed away passed away because it was bound to an altar and a priesthood that found their fulfillment in Christ, not because of which Hebrew word happened to describe it. What remains, remains because it flows from a God who does not change.</p>
+        <p>And the promise of the new covenant is spoken in these very words. <em>I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</em> The chisel that once cut into stone now writes on the heart, and the hand holding it has not changed.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &#10022; &#10022;</div>
+    <p class="footer-text">Work the Word &middot; Pronomian Doctrine Library<br>Statutes &middot; Judgments &middot; Ordinances &middot; Commandments</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Discipleship Class - Level 1 - Lesson 3: Repentance</title>
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-soft:#9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, 'Liberation Serif', serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ---- PAGE SHELL ---- */
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ---- HEADER ---- */
+  .doc-header {
+    text-align: center;
+    padding: 2.6rem 3rem 2.1rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-soft) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    border-bottom: 3px solid var(--gold-light);
+  }
+  .doc-header::before {
+    content: ''; position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px solid rgba(201,168,76,0.45); pointer-events: none;
+  }
+  .header-ornament { font-size: 1.1rem; color: var(--gold-light); letter-spacing: 0.55em; display: block; margin-bottom: 0.9rem; }
+  .doc-eyebrow { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .doc-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 2.3rem; font-weight: 700; color: #FBF4E2; letter-spacing: 0.05em; line-height: 1.2; text-transform: uppercase; }
+  .doc-subtitle { font-size: 1.05rem; color: var(--gold-pale); font-style: italic; letter-spacing: 0.02em; margin-top: 0.7rem; }
+  .header-rule { text-align: center; margin-top: 1.4rem; line-height: 1; }
+  .header-rule span { display: inline-block; width: 118px; border-top: 1px solid var(--gold-light); vertical-align: middle; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; vertical-align: middle; padding: 0 0.8rem; }
+
+  /* ---- BODY ---- */
+  .doc-body { padding: 2.2rem 3rem 3rem; }
+
+  .preamble { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.9rem; }
+  .preamble p { margin-bottom: 0.9rem; }
+  .preamble p:last-child { margin-bottom: 0; }
+
+  /* ---- LESSON SECTIONS ---- */
+  .section { margin-top: 1.9rem; }
+  .section-header { border-bottom: 2px solid var(--rule-solid); padding-bottom: 0.5rem; margin-bottom: 0.9rem; }
+  .section-header .section-title { display: inline; }
+  .section-num {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.7rem; font-weight: 700;
+    background: var(--crimson); color: var(--gold-pale);
+    padding: 0.22rem 0.42rem; letter-spacing: 0.04em; line-height: 1; margin-right: 0.6rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .section-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 1.14rem; font-weight: 700; color: var(--crimson); line-height: 1.3; }
+  .section-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; }
+  .section-body p { margin-bottom: 0.9rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* ---- SCRIPTURE BOX ---- */
+  .verse {
+    margin: 0.9rem 0 1rem; padding: 0.75rem 1.1rem;
+    background: var(--cream); border-left: 4px solid var(--gold-light);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .verse-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; color: var(--crimson); }
+  .verse-dot { color: var(--gold); padding: 0 0.35rem; }
+  .verse-text { font-style: italic; color: var(--ink-mid); font-size: 1rem; line-height: 1.72; }
+
+  /* ---- TRANSITION LINE ---- */
+  .transition {
+    margin-top: 2rem; padding-top: 1.1rem; border-top: 1px solid var(--rule-solid);
+    text-align: center; font-style: italic; color: var(--ink-soft); font-size: 1rem;
+  }
+
+  /* ---- WORKSHEET ---- */
+  .worksheet-head { margin-bottom: 1.5rem; }
+  .name-date { margin-bottom: 1.4rem; font-size: 0; }
+  .name-date > div { display: inline-block; width: 48%; vertical-align: bottom; font-size: 1rem; }
+  .name-date > div:first-child { margin-right: 4%; }
+  .nd-label { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .nd-line { border-bottom: 1px solid var(--rule-solid); height: 1.5rem; }
+  .worksheet-title {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.92rem; font-weight: 700; color: var(--crimson);
+    letter-spacing: 0.06em; border-bottom: 2px solid var(--rule-solid); padding-bottom: 0.5rem;
+  }
+  .worksheet-title em { font-family: 'EB Garamond', Georgia, 'Liberation Serif', serif; font-weight: 400; font-size: 0.94rem; color: var(--ink-soft); letter-spacing: 0; }
+
+  .q-block { margin: 1.3rem 0; }
+  .q-head { margin-bottom: 0.45rem; }
+  .q-num {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.68rem; font-weight: 700;
+    background: var(--crimson); color: var(--gold-pale); padding: 0.2rem 0.4rem; line-height: 1; margin-right: 0.55rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .q-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .q-verse {
+    background: var(--cream); border-left: 4px solid var(--gold-light);
+    padding: 0.6rem 1rem; font-style: italic; color: var(--ink-mid); font-size: 0.97rem; line-height: 1.7;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .q-prompt { font-size: 1.02rem; line-height: 1.7; color: var(--ink); margin-top: 0.6rem; }
+  .lines { margin-top: 0.55rem; }
+  .lines .line { height: 0.42in; border-bottom: 1px solid var(--rule-solid); }
+
+  /* ---- CARRY WITH YOU ---- */
+  .carry {
+    margin-top: 2rem; padding: 1.2rem 1.6rem 1.4rem; background: var(--cream);
+    border: 1px solid var(--rule-solid); text-align: center;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .carry-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.8rem; }
+  .carry p { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); }
+  .carry em { color: var(--crimson); font-style: italic; }
+
+  /* ---- ANSWER KEY ---- */
+  .answer-key-banner {
+    background: var(--gold); color: #FBF4E2; text-align: center;
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; padding: 0.7rem 1rem; margin-bottom: 1.6rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .answer { padding-bottom: 0.7rem; margin-bottom: 0.7rem; border-bottom: 1px dashed var(--rule-solid); }
+  .answer:last-of-type { border-bottom: 1px dashed var(--rule-solid); }
+  .a-prompt { font-weight: 700; color: var(--crimson); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.45rem; }
+  .a-text {
+    font-style: italic; font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid);
+    background: var(--cream); border-left: 4px solid var(--gold-light); padding: 0.55rem 1rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* ---- TEACHER NOTE ---- */
+  .teacher-note {
+    margin-top: 1.6rem; padding: 1.1rem 1.4rem 1.3rem; background: var(--cream);
+    border: 1px solid var(--rule-solid); border-top: 3px solid var(--gold-light);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .tn-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .teacher-note p { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); text-align: justify; margin-bottom: 0.75rem; }
+  .teacher-note p:last-child { margin-bottom: 0; }
+  .tn-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--crimson); }
+
+  /* ---- FOOTER ---- */
+  .doc-footer {
+    text-align: center; padding: 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-soft) 100%);
+    color: var(--gold-pale); border-top: 3px solid var(--gold-light);
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1rem; letter-spacing: 0.5em; }
+  .footer-text { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.64rem; letter-spacing: 0.18em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.6rem; line-height: 1.9; }
+
+  /* ==================== PRINT ==================== */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.72in 0.62in 0.7in;
+
+    @top-left {
+      width: 15%;
+      content: "";
+      background-color: #7A1F1F;
+      border-bottom: 1pt solid #C9A84C;
+    }
+    @top-center {
+      width: 70%;
+      content: "DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 3  \00B7  REPENTANCE";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6.5pt;
+      letter-spacing: 0.14em;
+      border-bottom: 1pt solid #C9A84C;
+      padding: 3pt 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    @top-right {
+      width: 15%;
+      content: "";
+      background-color: #7A1F1F;
+      border-bottom: 1pt solid #C9A84C;
+    }
+    @bottom-left {
+      width: 33.34%;
+      content: "REPENTANCE";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6pt;
+      letter-spacing: 0.14em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 0 3pt 6pt;
+      text-align: left;
+      vertical-align: middle;
+    }
+    @bottom-center {
+      width: 33.33%;
+      content: "\2726 \2726 \2726";
+      background-color: #7A1F1F;
+      color: #C9A84C;
+      font-size: 5.5pt;
+      letter-spacing: 0.4em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    @bottom-right {
+      width: 33.33%;
+      content: "PAGE " counter(page) " OF " counter(pages);
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6pt;
+      letter-spacing: 0.14em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 6pt 3pt 0;
+      text-align: right;
+      vertical-align: middle;
+    }
+  }
+
+  /* First page carries the full masthead, so no running band on top */
+  @page :first {
+    @top-left   { content: none; background: none; border: none; }
+    @top-center { content: none; background: none; border: none; }
+    @top-right  { content: none; background: none; border: none; }
+  }
+
+  /* The answer key is labelled instead of numbered with the student pages */
+  @page answerkey {
+    @top-center {
+      width: 70%;
+      content: "DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 3  \00B7  ANSWER KEY";
+    }
+    @bottom-right {
+      content: "TEACHER'S ANSWER KEY";
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; background: var(--parchment); }
+    .page::before, .page::after { display: none; }
+
+    .doc-header { padding: 1.15rem 1.5rem 1rem; border-bottom-width: 2px; }
+    .doc-header::before { top: 7px; left: 7px; right: 7px; bottom: 7px; }
+    .doc-body { padding: 1rem 0 0.2rem; }
+    .doc-footer { display: none; }
+
+    .preamble, .section-body, .teacher-note p { font-size: 9.8pt; line-height: 1.46; }
+    .preamble { margin-bottom: 0.8rem; }
+    .preamble p, .section-body p { margin-bottom: 0.55rem; }
+    .verse-text, .q-verse, .a-text { font-size: 9.1pt; line-height: 1.45; }
+    .verse { margin: 0.45rem 0 0.5rem; padding: 0.42rem 0.85rem; }
+    .q-verse { padding: 0.45rem 0.9rem; }
+    .q-prompt { font-size: 9.5pt; line-height: 1.45; margin-top: 0.35rem; }
+    .section { margin-top: 0.65rem; }
+    .section-header { padding-bottom: 0.35rem; margin-bottom: 0.55rem; }
+    .section-title { font-size: 1.02rem; }
+    .transition { margin-top: 1rem; padding-top: 0.7rem; font-size: 9.6pt; }
+    .q-block { margin: 0.5rem 0; }
+    .lines { margin-top: 0.32rem; }
+    .lines .line { height: 0.36in; }
+    .worksheet-head { margin-bottom: 0.8rem; }
+    .name-date { margin-bottom: 0.9rem; }
+    .carry { margin-top: 0.9rem; padding: 0.8rem 1.2rem 0.9rem; }
+    .carry p { font-size: 9.6pt; line-height: 1.55; }
+    .answer { padding-bottom: 0.42rem; margin-bottom: 0.42rem; }
+    .a-prompt { font-size: 9.2pt; margin-bottom: 0.32rem; }
+    .a-text { padding: 0.42rem 0.9rem; }
+    .answer-key-banner { margin-bottom: 1rem; padding: 0.55rem 1rem; }
+    .teacher-note { margin-top: 1.1rem; padding: 0.9rem 1.2rem 1rem; }
+    .teacher-note p { font-size: 9.4pt; line-height: 1.55; margin-bottom: 0.55rem; }
+
+    .verse        { break-inside: avoid; page-break-inside: avoid; }
+    .q-block      { break-inside: avoid; page-break-inside: avoid; }
+    .lines        { break-inside: avoid; page-break-inside: avoid; }
+    .answer       { break-inside: avoid; page-break-inside: avoid; }
+    .carry        { break-inside: avoid; page-break-inside: avoid; }
+    .teacher-note { break-inside: avoid; page-break-inside: avoid; }
+    .name-date    { break-inside: avoid; page-break-inside: avoid; }
+    .section      { break-inside: auto; page-break-inside: auto; }
+
+    .section-header   { break-after: avoid; page-break-after: avoid; }
+    .worksheet-title  { break-after: avoid; page-break-after: avoid; }
+    .q-head           { break-after: avoid; page-break-after: avoid; }
+    .a-prompt         { break-after: avoid; page-break-after: avoid; }
+    .answer-key-banner{ break-after: avoid; page-break-after: avoid; }
+
+    .print-new-page { break-before: page; page-break-before: always; }
+    .answer-key     { page: answerkey; break-before: page; page-break-before: always; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 1.6rem 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.5rem; }
+    .name-date { flex-direction: column; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ==================== MASTHEAD ==================== -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &#10022; &#10022;</span>
+    <p class="doc-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 3</p>
+    <h1 class="doc-title">Repentance</h1>
+    <p class="doc-subtitle">Turning From Our Own Way, and Returning to the Ways of God</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- ==================== THE LESSON ==================== -->
+    <div class="preamble">
+      <p>Repentance is the first word John the Baptist preached, the first word Jesus preached, and the first word Peter preached at Pentecost. It is where the walk with God begins, and it is not a word we can afford to leave fuzzy. Some men make repentance nothing more than feeling bad for a while. Others make it a price they pay to buy God's forgiveness. Still others empty the word out until it means only that a man changed his opinion about Jesus, with no change at all in how he lives. Scripture is plainer than any of these.</p>
+      <p>Repentance is not perfection; it is a change of direction. It begins in the mind, it moves the heart, and it ends up in the feet. And it is never something we do to earn God's love, because the love came first. Repentance is how a man who has been running from God turns around and comes home.</p>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">I</span>
+        <h2 class="section-title">Repentance Is a Turning, Not Only a Feeling</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Acts 3:19</span><span class="verse-dot">&#8226;</span><span class="verse-text">Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord.</span>
+        </div>
+        <p>Peter puts two words together, repent and be converted, and the second one means turned about. That is the whole picture. The prodigal son shows it in order. First he came to himself, which is the mind waking up. Then he said, I will arise and go to my father, which is the heart deciding. Then Luke says he arose and came to his father, which is the feet moving. A man who tells you he has repented but is still walking the same road has only changed his opinion. Repentance is a change of mind that turns a man around and sends him the other way.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">II</span>
+        <h2 class="section-title">Turning From What, and Back to What</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">1 John 3:4</span><span class="verse-dot">&#8226;</span><span class="verse-text">Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.</span>
+        </div>
+        <p>A man cannot repent of something he cannot name. Scripture names it for us. Sin is the transgression of the law, so repentance is never vague. It is turning from the breaking of God's commandments and returning to the keeping of them. Isaiah says the same thing in the same order: let the wicked forsake his way, and the unrighteous man his thoughts, and let him return unto the LORD. Notice the word return. You do not return to a place you have never been shown. God gave us His commandments so we would know the road, and His mercy is what meets us the moment we set foot back on it.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">III</span>
+        <h2 class="section-title">Godly Sorrow and Worldly Sorrow</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">2 Corinthians 7:10</span><span class="verse-dot">&#8226;</span><span class="verse-text">For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.</span>
+        </div>
+        <p>Read that carefully. Sorrow is not repentance; sorrow works repentance. Tears by themselves prove nothing. Two men in the gospels were both very sorry. Judas was sorry enough to throw the silver down on the temple floor, and it ended in death. Peter went out and wept bitterly, and he came back and fed the sheep. Esau sought the blessing carefully with tears and found no place of repentance (Hebrews 12:17). The difference is what the sorrow is aimed at. Worldly sorrow is grieved over the consequences and wants the trouble to stop. Godly sorrow is grieved over the offense against God Himself, and it turns.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">IV</span>
+        <h2 class="section-title">The Father Runs to Meet the One Coming Home</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Luke 15:20</span><span class="verse-dot">&#8226;</span><span class="verse-text">And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.</span>
+        </div>
+        <p>The son had a speech ready. He was going to ask to be made a hired servant, because that was all he thought he was worth. The father never let him finish it. The robe, the ring, the shoes, and the fatted calf all say the same thing: he came back a son, not a slave. And the father saw him a great way off, which means he had been watching that road. Jesus says there is joy in heaven over one sinner that repenteth (Luke 15:7), and Peter says the Lord is longsuffering, not willing that any should perish, but that all should come to repentance (2 Peter 3:9). Repentance is not you talking a reluctant God into mercy. It is you finally coming home to a Father who has been waiting.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">V</span>
+        <h2 class="section-title">Repentance Does Not Buy Forgiveness, but It Never Comes Empty-Handed</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Acts 26:20</span><span class="verse-dot">&#8226;</span><span class="verse-text">But shewed first unto them of Damascus, and at Jerusalem, and throughout all the coasts of Judaea, and then to the Gentiles, that they should repent and turn to God, and do works meet for repentance.</span>
+        </div>
+        <p>Men fall off both sides of this road, so walk it carefully. On one side is the idea that repentance is a payment we hand across the counter to purchase forgiveness. It is not. By grace are ye saved through faith, and that not of yourselves, not of works, lest any man should boast (Ephesians 2:8&ndash;9). On the other side is the idea that since works cannot save us, our conduct after we come to Christ is beside the point. Paul will not allow that either. He preached that men should repent, turn to God, and do works meet for repentance, and John the Baptist called for fruits meet for repentance (Matthew 3:8). Fruit does not make a tree alive. Fruit shows that the tree is alive. Grace saves, repentance turns, obedience follows, and that order never reverses.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">VI</span>
+        <h2 class="section-title">Not One Day Only, but a Direction Kept</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Matthew 7:22&ndash;23</span><span class="verse-dot">&#8226;</span><span class="verse-text">Many will say to me in that day, Lord, Lord, have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works? And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.</span>
+        </div>
+        <p>These are not people who denied Christ. They preached, they cast out devils, they did wonderful works, and they used His name doing it. The word behind iniquity here means lawlessness. What they lacked was the doing of the will of the Father. Repentance that stops at the altar and never reaches the daily walk is lip service, and Jesus says plainly where that ends.</p>
+        <p>So repentance is not only a day on the calendar; it is a direction kept. Turning away from God's commandments to chase our own will is backsliding, and it calls for repentance right away rather than eventually, because the state of a man's soul at the end of his life is fixed, and where the tree falls, there it shall lie (Ecclesiastes 11:3). That is not said to torment a believer who is walking with God. It is said so that none of us treat repentance as something we can put off. And for the believer who stumbles, the door is never barred: if we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness (1 John 1:9). Use that door as often as you need it, but never treat it as a revolving door.</p>
+      </div>
+    </section>
+
+    <p class="transition">Now take up the questions. Read the verse over each one, then answer it in your own words.</p>
+
+    <!-- ==================== STUDY QUESTIONS ==================== -->
+    <div class="print-new-page worksheet-head">
+      <div class="name-date">
+        <div><p class="nd-label">Name</p><div class="nd-line"></div></div>
+        <div><p class="nd-label">Date</p><div class="nd-line"></div></div>
+      </div>
+      <p class="worksheet-title">Study Questions <span style="color:var(--gold)">&middot;</span> <em>Read each verse, then answer in your own words</em></p>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">1</span><span class="q-ref">Acts 3:19</span></div>
+      <p class="q-verse">Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord.</p>
+      <p class="q-prompt">Peter tells them to do two things. What are they? What does God promise will happen to their sins?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">2</span><span class="q-ref">1 John 3:4</span></div>
+      <p class="q-verse">Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.</p>
+      <p class="q-prompt">What does the Bible say sin is? If that is what sin is, then what is a man turning back to when he repents?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">3</span><span class="q-ref">Luke 13:3</span></div>
+      <p class="q-verse">I tell you, Nay: but, except ye repent, ye shall all likewise perish.</p>
+      <p class="q-prompt">Jesus gives only two possible outcomes here. What are they?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">4</span><span class="q-ref">Isaiah 55:7</span></div>
+      <p class="q-verse">Let the wicked forsake his way, and the unrighteous man his thoughts: and let him return unto the LORD, and he will have mercy upon him; and to our God, for he will abundantly pardon.</p>
+      <p class="q-prompt">Name the two things a man is told to forsake here. What is he told to do next, and what does God promise him?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">5</span><span class="q-ref">2 Corinthians 7:10</span></div>
+      <p class="q-verse">For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.</p>
+      <p class="q-prompt">Two kinds of sorrow are named. What does each one produce? Is being sorry the same thing as repenting?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">6</span><span class="q-ref">Luke 15:17&ndash;18</span></div>
+      <p class="q-verse">And when he came to himself, he said, How many hired servants of my father's have bread enough and to spare, and I perish with hunger! I will arise and go to my father, and will say unto him, Father, I have sinned against heaven, and before thee.</p>
+      <p class="q-prompt">Trace the steps in order. What happened in his mind, then in his will, and then with his feet?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">7</span><span class="q-ref">Luke 15:20</span></div>
+      <p class="q-verse">And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.</p>
+      <p class="q-prompt">How far along was the son when the father saw him? What does the father's reaction tell you about how God receives a person who turns back?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">8</span><span class="q-ref">2 Peter 3:9</span></div>
+      <p class="q-verse">The Lord is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance.</p>
+      <p class="q-prompt">What does this verse say God wants for all people? What does His patience have to do with it?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">9</span><span class="q-ref">Acts 26:20</span></div>
+      <p class="q-verse">But shewed first unto them of Damascus, and at Jerusalem, and throughout all the coasts of Judaea, and then to the Gentiles, that they should repent and turn to God, and do works meet for repentance.</p>
+      <p class="q-prompt">Paul names three things in order. What are they? Why does the third one come last and not first?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">10</span><span class="q-ref">Ephesians 2:8&ndash;9</span></div>
+      <p class="q-verse">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.</p>
+      <p class="q-prompt">If repentance turns us back toward obedience, what does this verse keep us from thinking about how we were saved?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">11</span><span class="q-ref">Matthew 7:21&ndash;23</span></div>
+      <p class="q-verse">Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven. Many will say to me in that day, Lord, Lord, have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works? And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.</p>
+      <p class="q-prompt">What impressive things had these people done in His name? What was missing? What does the word iniquity mean here?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">12</span><span class="q-ref">1 John 1:9</span></div>
+      <p class="q-verse">If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.</p>
+      <p class="q-prompt">What has God promised the believer who confesses his sin? Why does He cleanse us, and not merely pardon us?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="carry">
+      <p class="carry-title">&#10022; To Carry With You &#10022;</p>
+      <p>The father saw him when he was yet a great way off. You do not have to clean yourself up before you turn around; you have to turn around. And when you have turned, God does not hand you a servant's rags. He puts the robe on you and then teaches you to walk in His ways. <em>Let the wicked forsake his way, and the unrighteous man his thoughts: and let him return unto the LORD, and he will have mercy upon him; and to our God, for he will abundantly pardon.</em> Isaiah 55:7</p>
+    </div>
+
+    <!-- ==================== ANSWER KEY ==================== -->
+    <div class="answer-key">
+      <p class="answer-key-banner">Teacher's Answer Key &middot; Not for Student Distribution</p>
+
+      <div class="answer">
+        <p class="a-prompt">1. What two things does Peter say, and what is promised?</p>
+        <p class="a-text">Repent, and be converted, which means turned around. God promises that their sins will be blotted out. The turning and the forgiveness belong together in the same sentence.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">2. What is sin, and what is a man returning to?</p>
+        <p class="a-text">Sin is the transgression of the law. So a man who repents is turning away from breaking God's commandments and returning to keeping them. Repentance is never vague, because sin is not vague.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">3. What are the two outcomes Jesus gives?</p>
+        <p class="a-text">Repent, or perish. He leaves no third option and no middle ground.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">4. What must be forsaken, and what is promised?</p>
+        <p class="a-text">The wicked man forsakes his way, and the unrighteous man forsakes his thoughts. Then he returns to the LORD, and God promises mercy and abundant pardon. Both the outward walk and the inward thinking are named.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">5. What does each kind of sorrow produce?</p>
+        <p class="a-text">Godly sorrow works repentance unto salvation. Worldly sorrow works death. Being sorry is not the same as repenting; godly sorrow is what leads a man to turn. Judas was sorry and it ended in death, while Peter wept and came back.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">6. What were the steps, in order?</p>
+        <p class="a-text">He came to himself, which is the mind. He said I will arise and go, which is the will. Then he arose and went, which is the feet. Repentance starts in the head, settles in the heart, and shows up in the walk.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">7. How far along was he, and what does that show?</p>
+        <p class="a-text">He was still a great way off. The father was watching the road, ran to him, and restored him as a son rather than a servant. God is not reluctant toward the one who turns back, and no one has to arrive cleaned up before mercy meets him.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">8. What does God want for all people?</p>
+        <p class="a-text">That all should come to repentance, and that none should perish. His patience is not indifference toward sin. It is room given for men to turn.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">9. What three things does Paul name?</p>
+        <p class="a-text">Repent, turn to God, and do works meet for repentance. The works come last because they are the evidence of the turning, never the purchase price of it. Fruit does not make the tree alive; it proves the tree is alive.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">10. What does this verse keep us from thinking?</p>
+        <p class="a-text">That we contributed anything to our own salvation. It is by grace, through faith, the gift of God, not of works, so no man can boast. Repentance turns us toward obedience, but it never purchases the standing that grace gave us freely.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">11. What had they done, and what was missing?</p>
+        <p class="a-text">They prophesied, cast out devils, and did many wonderful works in His name. What was missing was doing the will of the Father. The word rendered iniquity means lawlessness. Christ's charge against them is not that they lacked activity but that they lived without regard for God's law.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">12. What has God promised the one who confesses?</p>
+        <p class="a-text">He is faithful and just to forgive our sins and to cleanse us from all unrighteousness. He forgives so we are not condemned, and He cleanses so we can walk in His ways. Pardon alone would leave us where we were.</p>
+      </div>
+
+      <div class="teacher-note">
+        <p class="tn-title">&#10022; Teacher's Note &middot; If a Student Asks Whether Repentance Is a Work</p>
+        <p><span class="tn-ref">Ephesians 2:8&ndash;9 with Acts 26:20</span> This is the question that usually comes up, and it deserves a straight answer. Repentance is not a work we perform to earn forgiveness. Scripture puts salvation entirely on grace through faith, not of works, so that no man can boast. What is more, Scripture treats the turning itself as something God gives. Paul writes of God granting repentance to the acknowledging of the truth (2 Timothy 2:25), and the brethren at Jerusalem concluded that God had granted repentance unto life to the Gentiles (Acts 11:18). If even the turning is a gift, there is nothing left for a man to boast about. The works Paul names in Acts 26:20 come after the turning, as its evidence.</p>
+        <p><span class="tn-ref">Luke 13:3</span> A student may press further: if Jesus says except ye repent ye shall all likewise perish, does that not make repentance a condition we must satisfy? Answer it this way. Repentance and faith are not two separate transactions; they are two sides of one turning. Turning from sin and turning to Christ are the same motion, described from two directions. No man can take hold of Christ with one hand while holding on to his sin with the other. So the demand to repent is not a bill presented for payment. It is a call to let go of what we were clutching and take hold of Him.</p>
+        <p><span class="tn-ref">A caution in the other direction</span> Some teach that repentance means only changing one's mind about who Jesus is, with no reference to sin or conduct at all. Scripture will not stretch that far. Isaiah says forsake his way and his thoughts. John the Baptist says bring forth fruits meet for repentance. Paul says do works meet for repentance. Keep both guardrails up: repentance never buys the grace of God, and repentance never leaves a man's life exactly where it found him.</p>
+      </div>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <footer class="doc-footer">
+    <p class="footer-ornament">&#10022; &#10022; &#10022;</p>
+    <p class="footer-text">Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>Work the Word &middot; Discipleship Class &middot; Level 1 &middot; Lesson 3</p>
+  </footer>
+
+</div>
+</body>
+</html>

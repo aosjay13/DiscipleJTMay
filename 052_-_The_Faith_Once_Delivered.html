@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>The Faith Once Delivered &middot; A Documentary Script and Teaching Guide</title>
+<meta name="description" content="A documentary script and teaching guide on the early church, the apostles, the Apostolic Fathers, the historians, and the councils, written from a Pronomian perspective and graded by the strength of the historical evidence.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow:
+      0 2px 0 #B8973A,
+      0 4px 24px var(--shadow),
+      0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.5rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    position: relative;
+    color: var(--gold-pale);
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-ornament {
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+  .doc-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    margin-top: 1rem;
+    opacity: 0.92;
+  }
+  .header-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.6rem auto 0;
+    max-width: 300px;
+  }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── INTRO ── */
+  .intro {
+    margin: 2.8rem 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intro-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .intro p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.82;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.6rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .toc-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .toc-act {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin: 1rem 0 0.5rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--rule);
+  }
+  .toc-act:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.4rem; }
+  .toc-list a {
+    font-size: 0.94rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    display: flex;
+    gap: 0.7rem;
+    align-items: baseline;
+    transition: color 0.2s;
+  }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.76rem;
+    color: var(--gold-light);
+    min-width: 2.6rem;
+    flex-shrink: 0;
+  }
+
+  /* ── ACT DIVIDER ── */
+  .act-divider {
+    margin: 3.5rem 0 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    text-align: center;
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .act-divider::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .act-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+  }
+  .act-name {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    line-height: 1.3;
+  }
+  .act-blurb {
+    font-style: italic;
+    font-size: 1rem;
+    color: #EDE0C4;
+    margin-top: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.3rem;
+  }
+  .section-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .section-body {
+    font-size: 1.06rem;
+    line-height: 1.85;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.95rem; }
+  .section-body strong { color: var(--ink); font-weight: 600; }
+  .section-body em.term { font-style: italic; color: var(--crimson); font-weight: 500; }
+  .subhead {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    font-weight: 600;
+    margin: 1.8rem 0 0.7rem;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* ── SCRIPTURE (gold: the word of God) ── */
+  .scripture {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--gold-light);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .scripture-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .scripture-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.02rem;
+    line-height: 1.78;
+  }
+
+  /* ── HISTORICAL SOURCE QUOTE (crimson: the words of men) ── */
+  .histquote {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px solid #D4B97A55;
+    border-top: 2px solid var(--crimson-lt);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .histquote-ref {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--crimson-lt);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .histquote-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1.01rem;
+    line-height: 1.78;
+  }
+  .histquote-src {
+    display: block;
+    margin-top: 0.7rem;
+    padding-top: 0.55rem;
+    border-top: 1px dotted #C9A84C88;
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+    font-style: normal;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── PRODUCTION CUE ── */
+  .cue {
+    margin: 1.4rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--parchment);
+    border: 1px solid #D4B97A44;
+    border-left: 3px solid var(--ink-soft);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .cue-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+  }
+  .cue p { font-size: 1.01rem; line-height: 1.8; color: var(--ink-mid); }
+  .cue p + p { margin-top: 0.7rem; }
+  .cue.narration { border-left-color: var(--crimson); }
+  .cue.narration .cue-label { color: var(--crimson); }
+
+  /* ── KEYPOINT ── */
+  .keypoint {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.6rem;
+    background: linear-gradient(to right, #F5EDD8, var(--cream));
+    border-left: 4px solid var(--crimson);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.55rem;
+  }
+  .keypoint p {
+    font-size: 1.04rem;
+    line-height: 1.8;
+    color: var(--ink-mid);
+  }
+  .keypoint p + p { margin-top: 0.7rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── BONUS PANEL ── */
+  .bonus {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE (dashed gold, for claims to flag) ── */
+  .tnote {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .tnote-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .tnote p { font-size: 0.98rem; line-height: 1.74; color: var(--ink-soft); font-style: italic; }
+  .tnote p + p { margin-top: 0.7rem; }
+
+  /* ── LISTS ── */
+  .plainlist { list-style: none; margin: 1rem 0; }
+  .plainlist li {
+    padding: 0.35rem 0 0.35rem 1.3rem;
+    position: relative;
+    font-size: 1.01rem;
+    line-height: 1.72;
+    color: var(--ink-mid);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .plainlist li::before {
+    content: '\2726';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 0.6rem;
+    top: 0.72rem;
+  }
+  .plainlist strong { color: var(--ink); font-weight: 600; }
+
+  /* ── TABLE ── */
+  .table-wrap { margin: 1.6rem 0; overflow-x: auto; }
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .compare-table thead tr {
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .compare-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #FBF5E6;
+    padding: 0.65rem 0.9rem;
+    text-align: left;
+    font-weight: 500;
+  }
+  .compare-table td {
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-mid);
+    vertical-align: top;
+    line-height: 1.55;
+    text-align: left;
+  }
+  .compare-table tbody tr { page-break-inside: avoid; break-inside: avoid; }
+  .compare-table tbody tr:nth-child(even) td {
+    background: rgba(242,235,217,0.45);
+  }
+  .compare-table .col-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .compare-table .col-verdict {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .v-yes { color: #2F5D33; }
+  .v-part { color: var(--gold); }
+  .v-no  { color: var(--crimson); }
+
+  /* ── CONCLUSION (crimson) ── */
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .conclusion::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201,168,76,0.35);
+    pointer-events: none;
+  }
+  .conclusion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .conclusion-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+  .conclusion-body {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #EDE0C4;
+  }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-body em { color: var(--gold-light); font-style: italic; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.2rem;
+    border-top: 3px solid var(--gold-light);
+    margin-top: 3rem;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+  }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF5E6;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
+
+  /* ── PRINT (8.5in x 11in portrait, numbered pages) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.1in 0.1in 0.45in 0.1in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.12em;
+      color: #8B6914;
+    }
+    @bottom-right {
+      content: "The Faith Once Delivered";
+      font-family: 'Cinzel', serif;
+      font-size: 7pt;
+      letter-spacing: 0.1em;
+      color: #6B6047;
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+
+    /* Even justification and no stranded lines. Without hyphenation a justified
+       column this wide opens ugly rivers of white space between words. */
+    p, li, td, .section-body, .scripture-text, .histquote-text, .conclusion-body {
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      orphans: 3;
+      widows: 3;
+    }
+
+    /* Readable margin comes from padding on the wrappers, so the crimson header
+       and footer bands still bleed close to the sheet edge while the text column
+       stays a comfortable width. */
+    .doc-header { padding: 0.42in 1in 0.3in; }
+    .doc-body   { padding: 0 1in 0.3in; }
+    .doc-footer { padding: 0.28in 1in; margin-top: 0.35in; }
+    .act-divider { padding: 0.3in 0.7in; }
+
+    /* The floated first letter overlaps its own word in print. Use a plain
+       raised initial instead, which needs no float geometry. */
+    .dropcap::first-letter {
+      float: none;
+      font-size: 1.5em;
+      line-height: 1;
+      padding: 0;
+      color: var(--crimson);
+      font-weight: 700;
+    }
+
+    /* Type scale */
+    .intro p { font-size: 11pt; line-height: 1.62; }
+    .section-body { font-size: 11pt; line-height: 1.62; }
+    .scripture-text, .histquote-text { font-size: 10.5pt; line-height: 1.56; }
+    .cue p, .keypoint p, .bonus p { font-size: 10.5pt; line-height: 1.58; }
+    .tnote p { font-size: 10pt; line-height: 1.54; }
+    .plainlist li { font-size: 10.5pt; line-height: 1.56; }
+    .histquote-src { font-size: 8.5pt; line-height: 1.45; margin-top: 0.5rem; padding-top: 0.4rem; }
+    .conclusion-body { font-size: 10.5pt; line-height: 1.62; }
+    .compare-table { font-size: 8.5pt; }
+    .compare-table th { font-size: 7pt; }
+    .compare-table td { padding: 0.35rem 0.55rem; }
+
+    /* One vertical rhythm for every panel. The mixed screen margins read as
+       uneven spacing once the page is printed. */
+    .scripture, .histquote, .cue, .keypoint, .bonus, .tnote {
+      margin: 0.85rem 0; padding: 0.8rem 1rem;
+    }
+    .section { margin-top: 1.7rem; padding-top: 1.35rem; }
+    .section-header { margin-bottom: 0.9rem; }
+    .subhead { margin: 1.1rem 0 0.5rem; }
+    .intro { margin-top: 1.6rem; padding-bottom: 1.2rem; }
+    .toc { margin: 1.4rem 0; padding: 1rem 1.3rem; }
+    .toc-list li { margin-bottom: 0.28rem; }
+    .plainlist { margin: 0.7rem 0; }
+    .table-wrap { margin: 1rem 0; }
+    .conclusion { padding: 1.4rem 1.6rem; }
+
+    /* Small meaningful units never split across a page */
+    /* Short units that must never split: a verse, a cue, a bonus panel,
+       a list item, a table row, an act opener. */
+    .scripture, .cue, .bonus, .act-divider,
+    .plainlist li, .compare-table tbody tr {
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    /* Tall blocks are allowed to flow. Holding these together was stranding
+       up to nine inches of blank paper ahead of them. */
+    .toc, .tnote, .keypoint, .histquote, .conclusion {
+      page-break-inside: auto; break-inside: auto;
+    }
+    /* A long teacher's note may break rather than strand a third of a page */
+    .tnote { page-break-inside: auto; break-inside: auto; }
+
+    /* Headings stay glued to what follows them */
+    .section-header, .section-title, .conclusion-title, .subhead,
+    .cue-label, .keypoint-label, .bonus-label, .tnote-label,
+    .scripture-ref, .histquote-ref {
+      page-break-after: avoid; break-after: avoid;
+    }
+    .doc-footer { page-break-before: avoid; }
+
+    /* Keep the crimson and the panel fills when printing */
+    .doc-header, .doc-footer, .act-divider, .conclusion,
+    .scripture, .histquote, .cue, .keypoint, .bonus, .tnote,
+    .compare-table thead tr, .compare-table tbody tr:nth-child(even) td, .toc {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Each act opens a fresh printed page */
+    .act-divider { page-break-before: always; break-before: page; }
+    .print-new-page { page-break-before: always; break-before: page; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.5rem 1.4rem 1.8rem; }
+    .toc { padding: 1.2rem 1.3rem; }
+    .conclusion, .act-divider { padding: 1.5rem 1.3rem; }
+    .section-header { flex-direction: column; gap: 0.3rem; }
+    .compare-table { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="doc-eyebrow">A Documentary Script and Teaching Guide</p>
+    <h1 class="doc-title">The Faith Once Delivered</h1>
+    <p class="doc-subtitle">The Apostles, the Fathers, the Historians, and the Councils, and Where the Church Departed from the Commandments of Christ</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">Jude wrote to believers who were watching something slip. He had meant to write about the common salvation, and instead he found himself writing an alarm. There was a faith that had been handed over once, delivered whole, and men were already at work loosening it. That letter is the reason this study exists. If the faith was delivered once, then every later change to it is either a faithful unfolding of what was already given or a departure from it, and the honest way to tell the difference is to go and look at the record.</p>
+      <p>This is a documentary script and a teaching guide in one document. It can be read straight through as a study, or it can be filmed. The narration cues, the on-screen text, and the visual notes are marked as such so a reader can skip them and a producer can use them. What it is not is a collection of slogans. A great deal of what circulates about early church history is repeated confidently and cannot be supported from any surviving document. Some of it is true. Some of it is half true. Some of it is simply not so. A teacher who repeats an unsupported claim loses the right to be heard on the claims that are solid, and the solid ones here are strong enough that we have no need of the others.</p>
+      <p>So every claim in this script carries its source, and every claim is graded. Where a popular teaching cannot be supported, it is marked and corrected in the open, including teachings that would have helped the argument if they were true. The Scripture is quoted from the King James Bible, in full, without cutting the middle out of a passage. The historical sources are quoted the same way, with the book, chapter, and section given, so that anyone can go and read the context for himself. That is the Berean standard, and it is the only standard worth teaching under.</p>
+      <div class="scripture">
+        <span class="scripture-ref">Jude 3</span>
+        <span class="scripture-text">Beloved, when I gave all diligence to write unto you of the common salvation, it was needful for me to write unto you, and exhort you that ye should earnestly contend for the faith which was once delivered unto the saints.</span>
+      </div>
+      <div class="scripture">
+        <span class="scripture-ref">Acts 17:11</span>
+        <span class="scripture-text">These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.</span>
+      </div>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+
+      <p class="toc-act">Opening</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span>How to Use This Script, and the Standard of Evidence</a></li>
+      </ul>
+
+      <p class="toc-act">Act One &middot; The Twelve, Their Lives, Their Deaths, and Their Letters</p>
+      <ul class="toc-list">
+        <li><a href="#s2"><span class="toc-num">II.</span>The Assembly at Jerusalem Was Zealous of the Law</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span>The Twelve, One by One</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span>Paul, and James the Lord's Brother</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span>The Writings That Stand</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span>The Writings That Do Not Stand</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span>Pella, the Nazarenes, and the Ebionites</a></li>
+      </ul>
+
+      <p class="toc-act">Act Two &middot; The Apostolic Fathers, Their Claims and Their Legitimacy</p>
+      <ul class="toc-list">
+        <li><a href="#s8"><span class="toc-num">VIII.</span>Clement of Rome</a></li>
+        <li><a href="#s9"><span class="toc-num">IX.</span>Polycarp of Smyrna</a></li>
+        <li><a href="#s10"><span class="toc-num">X.</span>Papias of Hierapolis</a></li>
+        <li><a href="#s11"><span class="toc-num">XI.</span>The Didache</a></li>
+        <li><a href="#s12"><span class="toc-num">XII.</span>The Epistle of Barnabas</a></li>
+        <li><a href="#s13"><span class="toc-num">XIII.</span>Ignatius of Antioch</a></li>
+        <li><a href="#s14"><span class="toc-num">XIV.</span>Justin Martyr</a></li>
+      </ul>
+
+      <p class="toc-act">Act Three &middot; Historians, Philosophy, and the Canon</p>
+      <ul class="toc-list">
+        <li><a href="#s15"><span class="toc-num">XV.</span>Philo of Alexandria and the Two Uses of Allegory</a></li>
+        <li><a href="#s16"><span class="toc-num">XVI.</span>Clement of Alexandria and Origen</a></li>
+        <li><a href="#s17"><span class="toc-num">XVII.</span>Marcion, and the Reaction Against Him</a></li>
+        <li><a href="#s18"><span class="toc-num">XVIII.</span>How the Canon Was Actually Recognized</a></li>
+        <li><a href="#s19"><span class="toc-num">XIX.</span>Eusebius of Caesarea</a></li>
+      </ul>
+
+      <p class="toc-act">Act Four &middot; The Councils and the Long Severing</p>
+      <ul class="toc-list">
+        <li><a href="#s20"><span class="toc-num">XX.</span>Was There a Council in the First Years After Paul?</a></li>
+        <li><a href="#s21"><span class="toc-num">XXI.</span>The Quartodeciman Controversy</a></li>
+        <li><a href="#s22"><span class="toc-num">XXII.</span>Bar Kokhba, Hadrian, and the Gentile Bishop</a></li>
+        <li><a href="#s23"><span class="toc-num">XXIII.</span>Elvira, and the Fast Set Against the Sabbath</a></li>
+        <li><a href="#s24"><span class="toc-num">XXIV.</span>Constantine and the Venerable Day of the Sun</a></li>
+        <li><a href="#s25"><span class="toc-num">XXV.</span>Nicaea, and the Severing of the Passover</a></li>
+        <li><a href="#s26"><span class="toc-num">XXVI.</span>Antioch and Laodicea: The Sabbath Forbidden</a></li>
+        <li><a href="#s27"><span class="toc-num">XXVII.</span>Chrysostom, and the People Who Would Not Let Go</a></li>
+        <li><a href="#s28"><span class="toc-num">XXVIII.</span>The Question of Gnostics on the Councils</a></li>
+      </ul>
+
+      <p class="toc-act">Closing</p>
+      <ul class="toc-list">
+        <li><a href="#s29"><span class="toc-num">XXIX.</span>The Whole Course in One Timeline</a></li>
+        <li><a href="#s30"><span class="toc-num">XXX.</span>What May Be Taught as Fact</a></li>
+        <li><a href="#s31"><span class="toc-num">XXXI.</span>Where the Church Fell Away from What Jesus Commanded</a></li>
+        <li><a href="#s32"><span class="toc-num">XXXII.</span>Sources for Further Study</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECTION I -->
+    <section class="section" id="s1">
+      <div class="section-header">
+        <span class="section-num">Section I</span>
+        <h2 class="section-title">How to Use This Script, and the Standard of Evidence</h2>
+      </div>
+      <div class="section-body">
+        <p>This document does two jobs at once. Read as a teaching, it is a continuous study of the first four centuries. Read as a script, it is shootable: the narration is marked, the on-screen text is marked, and the visual notes are marked. Anyone using it as a lesson can simply read past the cues without losing the thread.</p>
+
+        <div class="cue">
+          <p class="cue-label">How the cues are marked</p>
+          <p><strong>Narrator</strong> is spoken word, written to be read aloud at an unhurried pace. <strong>On Screen</strong> is text or a citation to be placed on the picture. <strong>Visual</strong> is a note on what the camera should be showing. Everything outside a cue box is the teaching itself.</p>
+        </div>
+
+        <p>The harder question is what may be asserted at all. The early centuries are not a level field of evidence. Some events are attested by several independent witnesses within living memory. Some rest on a single writer, quoting someone else, a century after the fact. Some rest on nothing older than the Middle Ages. Treating all of these as equally certain is the single most common failure in popular teaching on this subject, and it is the reason so much of that teaching collapses the moment it is challenged. So every claim in this script is placed in one of four tiers, and the tier is stated wherever it matters.</p>
+
+        <ul class="plainlist">
+          <li><strong>Tier One, Scripture.</strong> The inspired record. This is not one source among many; it is the standard by which the others are weighed. Where Scripture speaks, the matter is settled.</li>
+          <li><strong>Tier Two, early and documented.</strong> A surviving document written close to the events, or a later writer quoting a document that no longer survives. Eusebius quoting Papias, or Josephus on the death of James, belongs here. Strong, though not inspired, and open to the ordinary questions of bias and transmission.</li>
+          <li><strong>Tier Three, later tradition.</strong> A claim that first appears generations after the fact, often in a work written to edify rather than to record. Most of the apostolic martyrdom stories live here. These may preserve real memory, and they may not, and honesty requires saying which one we cannot tell.</li>
+          <li><strong>Tier Four, unsupported.</strong> A claim with no surviving documentary basis at all, including claims that are popular, confidently repeated, and useful to an argument. These are named and set aside, no matter which side they would help.</li>
+        </ul>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The rule this study works by</p>
+          <p>A teaching does not become true because it is useful. Three claims commonly made in this area are examined here and found to be unsupported, and two of them would have strengthened the case being made in this very script if they had held up. They are set aside anyway. The evidence that does hold is more than sufficient, and an argument built only on what can be proved cannot be knocked down.</p>
+        </div>
+
+        <p>One more thing must be settled before the record is opened. The question this study is finally asking is not a question of curiosity. It is the question the Lord Himself pressed on the religious men of His own day, and the standard He used is the standard used here.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Mark 7:6&ndash;9</span>
+          <span class="scripture-text">He answered and said unto them, Well hath Esaias prophesied of you hypocrites, as it is written, This people honoureth me with their lips, but their heart is far from me. Howbeit in vain do they worship me, teaching for doctrines the commandments of men. For laying aside the commandment of God, ye hold the tradition of men, as the washing of pots and cups: and many other such like things ye do. And he said unto them, Full well ye reject the commandment of God, that ye may keep your own tradition.</span>
+        </div>
+
+        <p>The Lord did not condemn tradition because it was old. He condemned it because it had been set in the place of a commandment. That is the exact test to be applied for the next four centuries, and it cuts in every direction. It asks of every father, every bishop, and every council the same plain question: is this an unfolding of what God commanded, or is this a commandment of men laid over the top of it?</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 8:20</span>
+          <span class="scripture-text">To the law and to the testimony: if they speak not according to this word, it is because there is no light in them.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ACT ONE ═══════════ -->
+    <div class="act-divider">
+      <p class="act-label">Act One</p>
+      <p class="act-name">The Twelve, Their Lives, Their Deaths, and Their Letters</p>
+      <p class="act-blurb">What the record actually preserves about the men Christ sent, how they lived, how they died, what they wrote, and what was written in their names long after they were gone.</p>
+    </div>
+
+    <!-- SECTION II -->
+    <section class="section" id="s2">
+      <div class="section-header">
+        <span class="section-num">Section II</span>
+        <h2 class="section-title">The Assembly at Jerusalem Was Zealous of the Law</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>Before we ask when the church left the commandments of God, we have to establish something first. We have to establish that it was there to begin with. And on that question the New Testament is not subtle. It is not hinting. It says it out loud, and it says it in the mouth of James, in Jerusalem, roughly thirty years after the resurrection.</p>
+        </div>
+
+        <p>Everything in this study depends on the starting point. If the first believers had already left the law behind in the days of the apostles, then nothing that follows is a fall; it is only a development. So the starting point has to be settled from Scripture, not from inference, and it is settled by a scene in Acts that could not be plainer if it had been written for the purpose.</p>
+
+        <p>Paul has come to Jerusalem. He has been accused of teaching Jews in the diaspora to abandon Moses. James and the elders meet him, and their answer to the accusation is not a shrug. It is a public demonstration, at Paul's own expense, in the temple, that the accusation is false.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 21:20&ndash;26</span>
+          <span class="scripture-text">And when they heard it, they glorified the Lord, and said unto him, Thou seest, brother, how many thousands of Jews there are which believe; and they are all zealous of the law: And they are informed of thee, that thou teachest all the Jews which are among the Gentiles to forsake Moses, saying that they ought not to circumcise their children, neither to walk after the customs. What is it therefore? the multitude must needs come together: for they will hear that thou art come. Do therefore this that we say to thee: We have four men which have a vow on them; Them take, and purify thyself with them, and be at charges with them, that they may shave their heads: and all may know that those things, whereof they were informed concerning thee, are nothing; but that thou thyself also walkest orderly, and keepest the law. As touching the Gentiles which believe, we have written and concluded that they observe no such thing, save only that they keep themselves from things offered to idols, and from blood, and from strangled, and from fornication. Then Paul took the men, and the next day purifying himself with them entered into the temple, to signify the accomplishment of the days of purification, until that an offering should be offered for every one of them.</span>
+        </div>
+
+        <p>Read what that passage concedes and what it refuses. It concedes that Gentile believers were not placed under the full body of Israel's covenant obligations at the door. It refuses, flatly, the idea that the believing community had left the law. Thousands of believers are described as zealous of the law, and this is reported by James with joy, not with concern. And Paul, the apostle most often enlisted to prove that the law is finished, is the one told to prove publicly that he keeps it, and he does it.</p>
+
+        <p>The decision those elders refer back to is the one recorded in Acts 15, and that decision is regularly quoted for its four requirements and stopped one verse too early. The verse that follows explains the reasoning.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 15:19&ndash;21</span>
+          <span class="scripture-text">Wherefore my sentence is, that we trouble not them, which from among the Gentiles are turned to God: But that we write unto them, that they abstain from pollutions of idols, and from fornication, and from things strangled, and from blood. For Moses of old time hath in every city them that preach him, being read in the synagogues every sabbath day.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The door, not the ceiling</p>
+          <p>James gives a reason for the short list, and the reason is that Moses is preached every Sabbath in every city. That is not the language of a body closing the book on the law. It is the language of a body setting an entry requirement for new Gentile converts and expecting them to go on hearing the rest week by week in the ordinary place where it was read. The four things are a door. They were never described as a ceiling.</p>
+        </div>
+
+        <p>The rest of Acts fills in the same picture in passing, which is the most convincing kind of evidence, because a writer inventing a case makes his points on purpose, while a writer reporting a world lets it show without meaning to.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 2:46</span>
+          <span class="scripture-text">And they, continuing daily with one accord in the temple, and breaking bread from house to house, did eat their meat with gladness and singleness of heart,</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 3:1</span>
+          <span class="scripture-text">Now Peter and John went up together into the temple at the hour of prayer, being the ninth hour.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 10:14</span>
+          <span class="scripture-text">But Peter said, Not so, Lord; for I have never eaten any thing that is common or unclean.</span>
+        </div>
+
+        <p>Consider what Acts 10:14 requires. Peter has walked with the Lord through His ministry, seen Him crucified and risen, received the Spirit at Pentecost, and preached the gospel to thousands. Years have passed. And when a vision presses him, his instinctive answer is that he has never in his life eaten anything common or unclean. Whatever a person concludes about that vision and its meaning, the plain fact stands on the surface of the text: the chief apostle had not changed his practice in the matter, and did not think he was expected to.</p>
+
+        <p>Paul says the same of himself, under oath, before a Roman governor. A man on trial does not invent a defence that his accusers can trivially disprove.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 24:14</span>
+          <span class="scripture-text">But this I confess unto thee, that after the way which they call heresy, so worship I the God of my fathers, believing all things which are written in the law and in the prophets:</span>
+        </div>
+
+        <p>And the Lord Himself, teaching on the tribulation to come, assumed that the people He was teaching would still be reckoning their days by the Sabbath long after His departure. He could have said many things about that day. What He said was that they should pray their flight not fall upon it.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 24:20</span>
+          <span class="scripture-text">But pray ye that your flight be not in the winter, neither on the sabbath day:</span>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">On Screen</p>
+          <p>Acts 21:20 &nbsp;&middot;&nbsp; "and they are all zealous of the law"</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher</p>
+          <p>This section should be taught carefully rather than triumphantly, because the same chapters that establish the point also establish its limit. Acts 15 and Acts 21:25 plainly distinguish what was required of Gentile converts at entry from what Jewish believers were continuing to do. A teacher who flattens that distinction will be answered from his own proof text. The honest and much stronger claim is this: the apostolic assembly did not abandon the law, and it did not teach anyone to abandon it, and the New Testament nowhere records a decision that it should be abandoned. Those three statements can be defended all day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION III -->
+    <section class="section" id="s3">
+      <div class="section-header">
+        <span class="section-num">Section III</span>
+        <h2 class="section-title">The Twelve, One by One</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>Twelve men. We know how two of them died from Scripture itself. We know how two more died from sources written within living memory. For the rest, we have stories, and the stories are worth telling, so long as we are honest about what they are.</p>
+        </div>
+
+        <p>There is a familiar line in preaching that all twelve apostles were martyred, and that no man dies for a lie, and that their deaths therefore prove the resurrection. The argument has real force where the evidence is real. But it does not hold across all twelve, and it is not necessary that it should. The scholar Sean McDowell, who is himself arguing for the strength of the apostolic witness, went through every account and graded them, and his conclusions are more useful to an honest teacher than the slogan is. In <em class="term">The Fate of the Apostles</em> he rates Peter, Paul, and James the son of Zebedee at the highest probability, James the brother of Jesus very close behind, Thomas as more probable than not, Andrew as somewhat plausible, most of the remaining apostles at roughly even odds, and the martyrdom of John as improbable.</p>
+
+        <p class="subhead">Where Scripture settles the question</p>
+
+        <p><strong>James the son of Zebedee</strong> is the one apostolic death recorded in the New Testament itself. It is stated in a single line, without drama, as an item of news.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 12:2</span>
+          <span class="scripture-text">And he killed James the brother of John with the sword.</span>
+        </div>
+
+        <p><strong>Peter.</strong> The Lord Himself indicated the manner of Peter's end, and John, writing his gospel decades later, adds the explanation so the reader will not miss it.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 21:18&ndash;19</span>
+          <span class="scripture-text">Verily, verily, I say unto thee, When thou wast young, thou girdedst thyself, and walkedst whither thou wouldest: but when thou shalt be old, thou shalt stretch forth thy hands, and another shall gird thee, and carry thee whither thou wouldest not. This spake he, signifying by what death he should glorify God. And when he had spoken this, he saith unto him, Follow me.</span>
+        </div>
+
+        <p class="subhead">Where the earliest outside witnesses speak</p>
+
+        <p>The oldest surviving Christian writing outside the New Testament, the letter of the Roman assembly to Corinth, refers to the deaths of Peter and Paul as recent and known. It is written within about thirty years of the events, to people who would have remembered.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">1 Clement 5</span>
+          <span class="histquote-text">Let us set before our eyes the good Apostles. There was Peter, who by reason of unrighteous jealousy endured not one nor two but many labours, and thus having borne his testimony went to his appointed place of glory. By reason of jealousy and strife Paul by his example pointed out the prize of patient endurance. After that he had been seven times in bonds, had been driven into exile, had been stoned, had preached in the East and in the West, he won the noble renown which was the reward of his faith.
+            <span class="histquote-src">Clement of Rome, First Epistle to the Corinthians, chapter 5, c. AD 95. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>The upside-down crucifixion of Peter is a later detail. It does not appear in Clement. Its first surviving appearance is in the second-century Acts of Peter, and Origen is the earliest respectable writer to pass it along, quoted by Eusebius in Ecclesiastical History 3.1. That does not make it false. It makes it a tradition rather than a documented fact, and it should be taught that way.</p>
+
+        <p><strong>James the brother of the Lord</strong> is unusually well attested, because a non-Christian historian records his death. Josephus, writing in the nineties, describes how the high priest Ananus took advantage of a gap between Roman governors to have James stoned. Hegesippus, a Jewish believer writing perhaps a century later, gives a fuller and more devotional account that Eusebius preserves, and that account is the source of the portrait of James as a lifelong Nazirite.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Hegesippus, preserved in Eusebius</span>
+          <span class="histquote-text">He was holy from his mother's womb; and he drank no wine nor strong drink, nor did he eat flesh. No razor came upon his head; he did not anoint himself with oil, and he did not use the bath. He alone was permitted to enter into the holy place; for he wore not woollen but linen garments. And he was in the habit of entering alone into the temple, and was frequently found upon his knees begging forgiveness for the people, so that his knees became hard like those of a camel.
+            <span class="histquote-src">Hegesippus, quoted in Eusebius, Ecclesiastical History 2.23.5&ndash;6. Translation of A. C. McGiffert. Tier Two for the fact of the martyrdom, Tier Three for these details.</span>
+          </span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher</p>
+          <p>The claim that James alone was permitted into the holy place is almost certainly not historical; that access belonged to the high priest, and only on the Day of Atonement. This looks like second-century admiration written back into the record. The point worth teaching from Hegesippus is not the temple detail but the general one, which no ancient writer disputes: the man who led the Jerusalem assembly was remembered, by friend and by outsider alike, as scrupulously observant. Nobody in the second century thought that was strange in the brother of Jesus, and nobody thought it needed explaining away.</p>
+        </div>
+
+        <p class="subhead">Where we have tradition and should say so</p>
+
+        <p><strong>John</strong> is the exception to the martyr pattern, and the tradition on him is early and consistent. Irenaeus, who knew Polycarp, who knew John, reports that he lived into the reign of Trajan at Ephesus. Polycrates of Ephesus, writing about the year 190, says he fell asleep there. Scripture itself records his exile.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 1:9</span>
+          <span class="scripture-text">I John, who also am your brother, and companion in tribulation, and in the kingdom and patience of Jesus Christ, was in the isle that is called Patmos, for the word of God, and for the testimony of Jesus Christ.</span>
+        </div>
+
+        <p><strong>Thomas</strong> and the Indian mission is a genuinely interesting case. The account rests on the Acts of Thomas, a third-century work that is theologically unreliable, and yet the Saint Thomas Christians of Kerala have held the tradition continuously for many centuries. The right verdict is that the mission is plausible and the martyrdom account is late.</p>
+
+        <p><strong>Andrew</strong> and the diagonal cross come from the Acts of Andrew, a late and legendary work. The cross shape itself is a medieval elaboration.</p>
+
+        <p><strong>Philip, Bartholomew, Matthew, James the son of Alphaeus, Simon the Zealot, Thaddaeus, and Matthias.</strong> For these seven, there is no early attestation of how they died at all. The stories, and there are many, first appear centuries later, they contradict one another, and they cannot be traced to any first or second century source. A teacher may tell them as tradition. He must not present them as history.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What this costs, and what it gains</p>
+          <p>Giving up the claim that all twelve were martyred costs almost nothing and gains a great deal. What remains is still extraordinary: several of the closest companions of Jesus went to violent deaths rather than retract, and this is attested by Scripture, by a Christian letter written within a generation, and by a hostile Jewish historian. That is a stronger foundation than a list of legends, precisely because it cannot be taken away.</p>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">Visual</p>
+          <p>A slow pan across twelve names carved or written in a row. As the narration reaches each tier, the names light differently: two in full light for Scripture, two more in half light for early attestation, the remaining seven left in shadow. The image should carry the argument without a word of commentary.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IV -->
+    <section class="section" id="s4">
+      <div class="section-header">
+        <span class="section-num">Section IV</span>
+        <h2 class="section-title">Paul, and James the Lord's Brother</h2>
+      </div>
+      <div class="section-body">
+
+        <p>These two men deserve their own section, because between them they carry most of the weight in the modern argument over the law, and both of them are routinely misused.</p>
+
+        <p class="subhead">Paul</p>
+
+        <p>Paul is presented in a great deal of preaching as the apostle who freed the church from the law. The historical Paul, as Acts records him, took a Nazirite vow, paid for four other men to complete theirs, entered the temple to signify the accomplishment of the days of purification, circumcised Timothy, kept the feasts, and told a Roman governor under oath that he believed all things written in the law and in the prophets. That is not a portrait of a man who considered the law abolished. Whatever Paul meant when he wrote about justification apart from the works of the law, and that is a proper subject for its own study, he did not mean that the commandments of God had ceased, because he was keeping them at the time.</p>
+
+        <p>His death is attested by 1 Clement, by Dionysius of Corinth writing about 170 and quoted by Eusebius, and by Tertullian, who adds the beheading under Nero. This is as solid as ancient history gets.</p>
+
+        <p class="subhead">James</p>
+
+        <p>James is the mirror image. He is the man whose observance nobody in the ancient world disputed, and whose letter has been treated, since the Reformation, as a problem to be managed. Read as a Jewish believer wrote it, the letter is not a problem at all. It says exactly what the rest of the apostolic witness says: that a faith which produces nothing is not the living thing it claims to be.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 1:22</span>
+          <span class="scripture-text">But be ye doers of the word, and not hearers only, deceiving your own selves.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">James 2:19&ndash;20</span>
+          <span class="scripture-text">Thou believest that there is one God; thou doest well: the devils also believe, and tremble. But wilt thou know, O vain man, that faith without works is dead?</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Where these two men actually stand</p>
+          <p>Salvation is the free gift of God, received by grace through faith, and never earned by keeping a commandment. Paul says so and James does not contradict him. What James adds, and what Paul assumed, is that a faith which changes nothing about how a man walks was never the faith that saves. The apostles were not divided on this. The division was invented later, by readers who needed Paul to say something he did not say.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 2:8&ndash;9</span>
+          <span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 John 3:4</span>
+          <span class="scripture-text">Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION V -->
+    <section class="section" id="s5">
+      <div class="section-header">
+        <span class="section-num">Section V</span>
+        <h2 class="section-title">The Writings That Stand</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>The apostles left letters. Not many, considering how long some of them lived. And the church did not receive those letters because a council handed them a list. The church received them because it already knew whose voice it was hearing, and had known for generations.</p>
+        </div>
+
+        <p>Twenty-seven books make up the New Testament. Most of them were never seriously questioned anywhere. A handful were questioned in some regions and not in others, and that fact is preserved for us by the very historians who wanted the matter settled. Eusebius, writing in the early fourth century, sorted the books into three groups, and his honesty in doing so is one of the more valuable things he did.</p>
+
+        <ul class="plainlist">
+          <li><strong>The acknowledged books.</strong> The four gospels, Acts, the letters of Paul, 1 Peter, and 1 John. Universally received, everywhere, from the earliest period we can see.</li>
+          <li><strong>The disputed books.</strong> James, Jude, 2 Peter, 2 John, and 3 John. Received by many, questioned by some. Eusebius records the dispute rather than hiding it.</li>
+          <li><strong>The spurious books.</strong> Works circulating under apostolic names that the church did not receive.</li>
+        </ul>
+
+        <p>Two books sat in a category of their own. Hebrews was doubted in the West over its authorship, since it names no author, while the East received it readily. Revelation ran the opposite course: received early in the West, questioned later in parts of the East, and left out of the list of Cyril of Jerusalem. Both were finally received everywhere.</p>
+
+        <p>The earliest witness we have to how the gospels came to be written is Papias of Hierapolis, whose work is lost but whose words Eusebius preserved. What Papias says about Matthew is of particular interest to anyone studying the Jewish character of the first generation.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Papias, preserved in Eusebius</span>
+          <span class="histquote-text">Matthew put together the oracles in the Hebrew language, and each one interpreted them as best he could.
+            <span class="histquote-src">Papias of Hierapolis, quoted in Eusebius, Ecclesiastical History 3.39.16. Translation of A. C. McGiffert. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="histquote">
+          <span class="histquote-ref">Papias, on the Gospel of Mark</span>
+          <span class="histquote-text">Mark having become the interpreter of Peter, wrote down accurately whatsoever he remembered. It was not, however, in exact order that he related the sayings or deeds of Christ. For he neither heard the Lord nor accompanied Him. But afterwards, as I said, he accompanied Peter, who accommodated his instructions to the necessities of his hearers, but with no intention of giving a regular narrative of the Lord's sayings. Wherefore Mark made no mistake in thus writing some things as he remembered them.
+            <span class="histquote-src">Papias of Hierapolis, quoted in Eusebius, Ecclesiastical History 3.39.15. Translation of A. C. McGiffert. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>Notice what Papias is doing. He is not defending an idea of inspiration that requires perfect chronological order. He is saying that Mark wrote down accurately what Peter preached, and that Peter preached as the need arose rather than in sequence. This is a witness from around the turn of the second century, describing the composition of a gospel in terms of eyewitness memory, and it survives only because Eusebius copied it out two hundred years later before the original was lost. It is a good reminder that the historians who preserved these fragments did the church a genuine service, whatever their other faults.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Timothy 3:16&ndash;17</span>
+          <span class="scripture-text">All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VI -->
+    <section class="section" id="s6">
+      <div class="section-header">
+        <span class="section-num">Section VI</span>
+        <h2 class="section-title">The Writings That Do Not Stand</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>Alongside the letters of the apostles there grew up a second literature. Gospels, acts, apocalypses, all of them signed with famous names, none of them written by the men whose names they carry. The modern claim is that the church suppressed these books to hide the truth. The documents themselves tell a different story, and it is not a hidden one. You only have to read them.</p>
+        </div>
+
+        <p>These works are usually called the apocrypha or the pseudepigrapha, and they are worth studying, though not for the reason they are usually promoted. They matter because of what they show about the alternative Christianity that was competing for the church in the second century, and because that alternative is the exact opposite of a Torah-affirming faith.</p>
+
+        <p class="subhead">What the church actually did with them</p>
+
+        <p>The church did not quietly bury these books. It named them, examined them, and rejected them in writing, and we still have the writing. The clearest single example comes from Serapion, bishop of Antioch about the year 200. He had permitted a congregation to read the Gospel of Peter without having read it himself, then read it, found it docetic, and reversed himself in a letter that Eusebius preserved.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Serapion of Antioch, preserved in Eusebius</span>
+          <span class="histquote-text">For we, brethren, receive both Peter and the other apostles as Christ; but the writings which falsely bear their names we reject, as men of experience, knowing that such were not handed down to us.
+            <span class="histquote-src">Serapion of Antioch, quoted in Eusebius, Ecclesiastical History 6.12.3. Translation of A. C. McGiffert. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>That is a bishop, in the second century, stating the working principle out loud: the apostles are received, and books forged in their names are not, and the reason is that these books were not handed down. It is an argument from transmission, made in public, two full centuries before any council took up the question of a canon.</p>
+
+        <p class="subhead">The principal works, and why they fail</p>
+
+        <ul class="plainlist">
+          <li><strong>The Gospel of Thomas.</strong> A collection of sayings, not a narrative, surviving complete in Coptic among the Nag Hammadi codices found in 1945, with earlier Greek fragments among the Oxyrhynchus papyri. It contains some sayings that parallel the canonical gospels and many that do not, framed by a theology of secret knowledge and escape from the body.</li>
+          <li><strong>The Gospel of Peter.</strong> Known from a fragment found at Akhmim in Egypt. Docetic in tendency, meaning it treats the suffering of Christ as apparent rather than real. Rejected by name by Serapion, as above.</li>
+          <li><strong>The Gospel of Judas.</strong> Preserved in Codex Tchacos, a Coptic manuscript of the third or fourth century. Sethian Gnostic in outlook. It presents the Creator of the world as an inferior and ignorant being, and Judas as the disciple who understood.</li>
+          <li><strong>The Acts of Peter, of Paul and Thecla, of John, of Andrew, and of Thomas.</strong> Second and third century adventure narratives, the source of most of the popular apostolic martyrdom legends, including the upside-down cross and the diagonal cross.</li>
+          <li><strong>The Apocalypse of Peter, the Gospel of Mary, the Secret Book of James, the Infancy Gospel of Thomas.</strong> Second century and later. The Infancy Gospel in particular presents the boy Jesus striking other children dead, which is sufficient comment on its character.</li>
+          <li><strong>The Epistle to the Laodiceans and 3 Corinthians.</strong> Forgeries in Paul's name. The Muratorian Fragment names the Laodiceans letter directly and says it was forged for the sect of Marcion.</li>
+        </ul>
+
+        <p class="subhead">The theological reason this matters</p>
+
+        <p>Set aside the question of dating for a moment and read what these books believe. The Gnostic writings among them share a common frame: the material world is a mistake or a prison; the God who made it is a lesser being, sometimes called the Demiurge, distinct from and inferior to the true God; the God of Israel is identified with that lesser being; the law He gave is therefore the law of an inferior god; and salvation is escape from matter through secret knowledge rather than redemption of a creation God called good.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Why the Gnostic gospels are the opposite of a Torah faith</p>
+          <p>Every foundation of a law-affirming faith is denied at the root by these books. That the creation is good, that the God who made it is the only God, that the God of Israel is the Father of Jesus Christ, that the commandments are holy and just and good, that the body will be raised rather than escaped. A believer who holds that the commandments of God still stand has no stranger ally in the ancient world than the Gnostics, who despised the law precisely because they despised the God who gave it. It is worth saying plainly to anyone who imagines the suppressed gospels as a lost purer Christianity: they teach the exact opposite of everything this ministry teaches, and the earliest church rejected them for reasons it wrote down.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 1:31</span>
+          <span class="scripture-text">And God saw every thing that he had made, and, behold, it was very good. And the evening and the morning were the sixth day.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 7:12</span>
+          <span class="scripture-text">Wherefore the law is holy, and the commandment holy, and just, and good.</span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher</p>
+          <p>Be careful with the popular line that the Gospel of Thomas was excluded because it threatened the power of the bishops. The historical objection to these books, stated in the sources we have, was that they were not handed down from the apostles and that they taught a Christ who did not truly come in the flesh. A teacher can make the case against them from what the ancient writers actually said, which is far stronger than speculating about motives we cannot document.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION VII -->
+    <section class="section" id="s7">
+      <div class="section-header">
+        <span class="section-num">Section VII</span>
+        <h2 class="section-title">Pella, the Nazarenes, and the Ebionites</h2>
+      </div>
+      <div class="section-body">
+
+        <p>Before Act One closes, one more thread has to be picked up, because it runs through the whole rest of the story. The Jewish believers did not vanish in AD 70. They continued, in some places for centuries, and the later church wrote about them with increasing discomfort. Their existence is the standing proof that Torah-keeping faith in Jesus was not a modern invention.</p>
+
+        <p>Eusebius records that the Jerusalem assembly left the city before the war, by warning.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Eusebius on the flight from Jerusalem</span>
+          <span class="histquote-text">The whole body, however, of the church at Jerusalem, having been commanded by a divine revelation, given to men of approved piety there before the war, removed from the city, and dwelt at a certain town beyond the Jordan, called Pella.
+            <span class="histquote-src">Eusebius, Ecclesiastical History 3.5.3. Translation of C. F. Cruse. Tier Two, with the caution that no earlier source records it.</span>
+          </span>
+        </div>
+
+        <p>After the war, two groups of Jewish believers appear repeatedly in the sources, and it is important not to confuse them, because they are routinely lumped together to discredit both.</p>
+
+        <ul class="plainlist">
+          <li><strong>The Nazarenes.</strong> Jewish believers who held an orthodox view of Christ, accepted the virgin birth, and continued to keep the law. Jerome, who had direct contact with them and read their Hebrew gospel, describes them in his letter to Augustine and in his commentary on Isaiah. He is uneasy about them, but he does not accuse them of denying the faith.</li>
+          <li><strong>The Ebionites.</strong> Jewish believers who kept the law but also denied the virgin birth, held a low view of Christ, and rejected Paul altogether. Irenaeus describes them in Against Heresies 1.26.2, and Epiphanius devotes a section of the Panarion to them.</li>
+        </ul>
+
+        <div class="keypoint">
+          <p class="keypoint-label">A distinction that must be kept</p>
+          <p>These two groups are not the same, and the difference is the whole point. The Ebionites were condemned for denying who Jesus is, not merely for keeping the commandments. The Nazarenes held the apostolic faith about Christ and kept the commandments, and the later church did not know quite what to do with them. Anyone who says that law-keeping believers were always heretics has to explain the Nazarenes, and anyone who claims the Ebionites as forefathers has to answer for their Christology. The position held here is neither: full confession of Christ as God in the flesh, and full honour to the commandments He gave.</p>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">On Screen</p>
+          <p>Two columns, side by side. Nazarenes: orthodox on Christ, observant of the law. Ebionites: observant of the law, deficient on Christ. The two must not be collapsed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ACT TWO ═══════════ -->
+    <div class="act-divider">
+      <p class="act-label">Act Two</p>
+      <p class="act-name">The Apostolic Fathers, Their Claims and Their Legitimacy</p>
+      <p class="act-blurb">The generation after the apostles, examined one writer at a time. Who they really were, whether their writings are authentic, and at what precise point the language about the commandments of God begins to change.</p>
+    </div>
+
+    <!-- SECTION VIII -->
+    <section class="section" id="s8">
+      <div class="section-header">
+        <span class="section-num">Section VIII</span>
+        <h2 class="section-title">Clement of Rome</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Date.</strong> Around AD 95 or 96, with a minority of scholars arguing for the sixties. <strong>Authorship.</strong> The letter is anonymous. It is sent from the assembly at Rome to the assembly at Corinth, and it never names Clement anywhere in the text. The attribution comes from outside, from Dionysius of Corinth around 170 and from Irenaeus, both preserved by Eusebius. <strong>Verdict.</strong> Authentic as a first-century letter from Rome to Corinth, whoever held the pen.</p>
+
+        <p>What is remarkable about 1 Clement, for our purposes, is how Jewish it still sounds. The writer settles a dispute about church order by appealing to the order of the Levitical priesthood, and he speaks of the temple offerings in the present tense.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">1 Clement 40&ndash;41</span>
+          <span class="histquote-text">Now the offerings and ministrations He commanded to be performed with care, and not to be done rashly or in disorder, but at fixed times and seasons. And where and by whom He would have them performed, He Himself fixed by His supreme will. Not in every place, brethren, are the continual daily sacrifices offered, or the freewill offerings, or the sin offerings and the trespass offerings, but in Jerusalem alone. And even there the offering is not made in every place, but before the sanctuary in the court of the altar.
+            <span class="histquote-src">Clement of Rome, First Epistle to the Corinthians, chapters 40 and 41. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What Clement shows and does not show</p>
+          <p>Clement is not arguing for the temple system. He is arguing for orderly ministry, and he reaches for the law of God as his model without a hint of apology, twenty-five years after the temple fell. There is no trace here of the idea that the law of Israel is a dead thing or the property of another people. That idea has not yet been invented in this letter. That is the value of Clement: he shows us the baseline, and the baseline is still Hebrew.</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher</p>
+          <p>Second Clement is not by the same author and is not a letter. It is the oldest surviving Christian sermon, generally dated between 125 and 150, and it was attached to the genuine letter in the manuscript tradition. Nothing in this study depends on it, and it should not be quoted as though Clement wrote it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION IX -->
+    <section class="section" id="s9">
+      <div class="section-header">
+        <span class="section-num">Section IX</span>
+        <h2 class="section-title">Polycarp of Smyrna</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Date.</strong> Roughly 69 to 155. <strong>Writings.</strong> One authentic letter, to the Philippians. The Martyrdom of Polycarp is a separate document written by his own congregation, valuable but showing signs of later editing. <strong>Significance.</strong> Polycarp is the living bridge. Irenaeus, who heard him teach as a boy, says that Polycarp had been instructed by apostles and had spoken with those who had seen the Lord.</p>
+
+        <p>Polycarp matters most to this study for something he did rather than something he wrote. Around the year 155 he travelled to Rome to meet Anicetus, and the two men disagreed over when to keep the Passover. Neither would give way. What happened next is preserved because Irenaeus wrote it down a generation later, and it is one of the finest moments in the whole period.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Irenaeus on Polycarp and Anicetus</span>
+          <span class="histquote-text">And when the blessed Polycarp was at Rome in the time of Anicetus, and they disagreed a little about certain other things, they immediately made peace with one another, not caring to quarrel over this matter. For neither could Anicetus persuade Polycarp not to observe what he had always observed with John the disciple of our Lord, and the other apostles with whom he had associated; neither could Polycarp persuade Anicetus to observe it, as he said that he ought to follow the customs of the presbyters that had preceded him. But though matters were in this shape, they communed together, and Anicetus conceded the administration of the eucharist in the church to Polycarp, manifestly as a mark of respect. And they parted from each other in peace.
+            <span class="histquote-src">Irenaeus, letter to Victor of Rome, quoted in Eusebius, Ecclesiastical History 5.24.16&ndash;17. Translation of A. C. McGiffert. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The point of the Polycarp story</p>
+          <p>Around AD 155, an old man from Asia who had been taught by the apostle John was still keeping the Passover on the day he had learned from John, and would not be moved from it. And the bishop of Rome, who kept it differently, did not treat him as a heretic. He handed him the cup. Forty years later a different bishop of Rome would try to excommunicate an entire region over the same question. Between those two moments lies a change in the church, and it is not a change in the Scripture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION X -->
+    <section class="section" id="s10">
+      <div class="section-header">
+        <span class="section-num">Section X</span>
+        <h2 class="section-title">Papias of Hierapolis</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Date.</strong> Roughly 60 to 130. <strong>Writings.</strong> Five books, all lost. Only fragments survive, chiefly in Eusebius and Irenaeus. <strong>Significance.</strong> He is our earliest witness to the origins of Matthew and Mark, and he collected his information from people who had heard the apostles directly.</p>
+
+        <p>Papias is also a case study in how a historian's bias shows. He believed in a literal thousand-year reign of Christ on the earth. Eusebius, writing two centuries later in a very different theological climate, did not, and could not resist saying so while quoting him.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Eusebius on Papias</span>
+          <span class="histquote-text">He says that there would be a certain millennium after the resurrection, and that there would be a corporeal reign of Christ on this very earth; which things he appears to have imagined, as if they were authorized by the apostolic narrations, not understanding correctly those matters which they propounded mystically in their representations. For he was very limited in his comprehension, as is evident from his discourses.
+            <span class="histquote-src">Eusebius, Ecclesiastical History 3.39.11&ndash;13. Translation of C. F. Cruse. Tier Two for the quotation, Eusebius's own opinion for the judgment.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Read the insult carefully</p>
+          <p>Eusebius calls Papias small-minded for taking the promises about the reign of Christ on the earth in their plain sense, and for reading the apostolic accounts literally rather than mystically. He then admits that Papias held this because he had it from men who had heard the apostles. That is the whole method of the later allegorizing school laid bare in a single passage: what the earliest witnesses took plainly, the later theologians took as figure, and then called the earliest witnesses simple for not seeing the figure. Hold that thought. The same move will be made about the Sabbath, about circumcision, and about the food laws, and it will be made by men who never met an apostle.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XI -->
+    <section class="section" id="s11">
+      <div class="section-header">
+        <span class="section-num">Section XI</span>
+        <h2 class="section-title">The Didache</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Date.</strong> Disputed, with serious proposals ranging from the middle of the first century to the middle of the second. <strong>Discovery.</strong> Lost for centuries and found again in 1873, in a Greek manuscript at Constantinople. <strong>Character.</strong> Thoroughly Jewish. This is a manual of practice for a community that still thinks in Hebrew categories.</p>
+
+        <p>The opening section, called the Two Ways, teaching a way of life and a way of death, has close parallels in Jewish instruction, including material from the Qumran community rule. Whatever its date, the Didache is a window into a form of the faith that had not yet been translated into Greek philosophy.</p>
+
+        <p>Two passages matter for this study, and both are more complicated than they are usually made out to be.</p>
+
+        <p class="subhead">The fast days</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Didache 8:1</span>
+          <span class="histquote-text">But let not your fasts be with the hypocrites, for they fast on the second and fifth day of the week; but do ye fast on the fourth day and the Preparation.
+            <span class="histquote-src">The Teaching of the Twelve Apostles, chapter 8. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>This is an early instance of a practice being set deliberately against a Jewish practice. The community is told to fast on different days from the ones they call the hypocrites, which is to say Monday and Thursday. It is not a doctrinal statement about the law. It is a small act of separation, and it is worth noticing precisely because it is small. This is how the separation begins: not with a decree, but with a decision to be visibly different in an ordinary weekly habit.</p>
+
+        <p class="subhead">The yoke</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Didache 6:2</span>
+          <span class="histquote-text">For if thou art able to bear the whole yoke of the Lord, thou wilt be perfect; but if thou art not able, do that which thou art able.
+            <span class="histquote-src">The Teaching of the Twelve Apostles, chapter 6. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Read what this actually says</p>
+          <p>The Didache does not say the yoke of the Lord has been lifted, and it does not say it is a burden to be escaped. It calls bearing the whole yoke perfection, and it makes allowance for those who cannot yet carry all of it, telling them to do what they can. That is a discipleship posture, not an abolition. It matches the pattern in Acts 15 exactly: a manageable beginning, with the expectation of growth, not a permanent lowering of the standard.</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher, on Didache 14:1</p>
+          <p>Didache 14:1 is regularly quoted as the earliest evidence for Sunday worship. The Greek phrase behind it, kata kyriaken kyriou, is unusual and awkward, literally something like "according to the Lord's of the Lord," with the word for day supplied by the translator. Some render it "on the Lord's day of the Lord," others "on the Lord's own day," and a few argue it should be read differently again. This is a genuine translational dispute among scholars, not a Hebrew Roots invention, and it should be presented as one. The honest position is that this verse is too textually uncertain to bear a heavy argument in either direction. There are much clearer texts on both sides of this question, and they should be used instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XII -->
+    <section class="section" id="s12">
+      <div class="section-header">
+        <span class="section-num">Section XII</span>
+        <h2 class="section-title">The Epistle of Barnabas</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>If you are looking for the moment when the argument changes, this is it. Not a council. Not an emperor. A letter, written around the year 130 by an author we cannot name, arguing that Israel never had the covenant at all, that the food laws were never about food, and that the Sabbath God hallowed cannot presently be kept by anyone. Everything that comes later is already here in seed.</p>
+        </div>
+
+        <p><strong>Date.</strong> Around AD 130, based on internal references. <strong>Authorship.</strong> Not Barnabas the companion of Paul. The attribution is ancient but cannot be sustained; the author writes as a Gentile with no first-hand knowledge of temple practice, and the dating places it long after Barnabas. <strong>Status.</strong> Never received as Scripture by the church at large, though it was highly regarded in Alexandria and appears at the end of Codex Sinaiticus.</p>
+
+        <p>This letter deserves close attention because it is the first surviving Christian document to argue systematically that the commandments of God were never meant to be kept as written. It does not say the law was fulfilled and transformed. It says Israel misunderstood it from the very beginning.</p>
+
+        <p class="subhead">On the covenant</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Barnabas 4:6&ndash;7</span>
+          <span class="histquote-text">Moreover I ask you this one thing besides, as being one of yourselves and loving you all in particular more than my own soul, to give heed to yourselves now, and not to liken yourselves to certain persons who pile up sin upon sin, saying that our covenant remains to them also. Ours it is; but they lost it in this way for ever, when Moses had just received it.
+            <span class="histquote-src">Epistle of Barnabas, chapter 4. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="histquote">
+          <span class="histquote-ref">Barnabas 14:1</span>
+          <span class="histquote-text">Yea verily, but as regards the covenant which He sware to the fathers to give it to the people let us see whether He hath actually given it. He hath given it, but they themselves were not found worthy to receive it by reason of their sins.
+            <span class="histquote-src">Epistle of Barnabas, chapter 14. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <p class="subhead">On the food laws</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Barnabas 10:9</span>
+          <span class="histquote-text">Concerning meats then Moses received three decrees to this effect and uttered them in a spiritual sense; but they accepted them according to the lust of the flesh, as though they referred to eating.
+            <span class="histquote-src">Epistle of Barnabas, chapter 10. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>Read that sentence again. The claim is not that the food laws have been set aside in Christ. The claim is that they never had anything to do with eating, and that Israel was carnal for thinking they did. On this reading, the command not to eat swine was always and only a command not to associate with greedy men, and every generation from Moses to Christ that kept it literally had simply missed the point.</p>
+
+        <p class="subhead">On circumcision</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Barnabas 9:3&ndash;4</span>
+          <span class="histquote-text">But moreover the circumcision, in which they have confidence, is abolished; for He hath said that a circumcision not of the flesh should be practised. But they transgressed, for an evil angel taught them cleverness.
+            <span class="histquote-src">Epistle of Barnabas, chapter 9. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <p class="subhead">On the Sabbath</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Barnabas 15:6&ndash;9</span>
+          <span class="histquote-text">Yea and furthermore He saith; Thou shalt hallow it with pure hands and with a pure heart. If therefore a man is able now to hallow the day which God hallowed, though he be pure in heart, we have gone utterly astray. But if after all then and not till then shall we truly rest and hallow it, when we shall ourselves be able to do so after being justified and receiving the promise, when iniquity is no more and all things have been made new by the Lord, we shall be able to hallow it then, because we ourselves shall have been hallowed first. Finally He saith to them; Your new moons and your Sabbaths I cannot away with. Ye see what is His meaning; it is not your present Sabbaths that are acceptable unto Me, but the Sabbath which I have made, in the which, when I have set all things at rest, I will make the beginning of the eighth day which is the beginning of another world. Wherefore also we keep the eighth day for rejoicing, in the which also Jesus rose from the dead, and having been manifested ascended into the heavens.
+            <span class="histquote-src">Epistle of Barnabas, chapter 15. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The argument that will be repeated for eighteen centuries</p>
+          <p>Here in one chapter is the whole later case against the Sabbath, fully formed around AD 130. First, the Sabbath is spiritualized into a future age, so that no present keeping of it is possible. Second, the prophets' rebuke of empty Sabbath-keeping is turned into a rejection of Sabbath-keeping itself. Third, an eighth day is introduced as the day the church keeps instead, on the ground of the resurrection. Nothing is offered here from any word of Christ or any apostolic commandment. It is an argument from allegory, and it arrives roughly a hundred years after the cross, from a writer nobody can name.</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher</p>
+          <p>Handle Barnabas with care in two directions. First, this letter was never Scripture and was never received as Scripture, so quoting it does not prove what the church believed; it proves what one influential writer argued. Second, do not overstate its reach. Barnabas is an Alexandrian favourite, and the wider church of the second century did not adopt his position wholesale. What is fair to say, and what the evidence supports, is that Barnabas is the earliest surviving document in which the full anti-Torah reading appears, and that later writers who wanted that conclusion had a text to reach for.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 3:1&ndash;2</span>
+          <span class="scripture-text">What advantage then hath the Jew? or what profit is there of circumcision? Much every way: chiefly, because that unto them were committed the oracles of God.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 11:1&ndash;2</span>
+          <span class="scripture-text">I say then, Hath God cast away his people? God forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin. God hath not cast away his people which he foreknew. Wot ye not what the scripture saith of Elias? how he maketh intercession to God against Israel, saying,</span>
+        </div>
+
+        <p>Paul asks the exact question Barnabas answers, and gives the opposite answer. Where Barnabas says the covenant was never theirs, Paul says God has not cast away His people. Where Barnabas says the oracles were misunderstood from the start, Paul says the oracles were committed to them, and calls that a great advantage. This is not a subtle difference of emphasis. It is a straight contradiction, and the apostle is on one side of it.</p>
+      </div>
+    </section>
+
+    <!-- SECTION XIII -->
+    <section class="section" id="s13">
+      <div class="section-header">
+        <span class="section-num">Section XIII</span>
+        <h2 class="section-title">Ignatius of Antioch</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Date.</strong> Traditionally around AD 107, on his journey under guard to martyrdom at Rome. A serious body of modern scholarship, including Robert Joly, Reinhard Hübner, Richard Pervo, and Timothy Barnes, argues for a later date of roughly 135 to 150. <strong>Authenticity.</strong> This is one of the genuine textual problems of the period, and it must be handled honestly.</p>
+
+        <p class="subhead">The three recensions</p>
+
+        <p>The letters of Ignatius survive in three different forms. There is a short recension of three letters in Syriac. There is a middle recension of seven letters. And there is a long recension of thirteen letters, which is expanded and interpolated. Since the work of Ussher and Lightfoot in the seventeenth and nineteenth centuries, the scholarly consensus has been that the middle recension of seven letters is the authentic one and the long recension is a later forgery built on top of it.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher, and a caution</p>
+          <p>Anyone quoting Ignatius must know which recension he is quoting. The long recension contains stronger anti-Jewish material than the genuine letters, and it is not second-century evidence. Quotations circulating on the internet are frequently drawn from it without any indication. Always check the edition. Everything quoted below is from the middle recension, which is the text the mainstream of scholarship accepts.</p>
+        </div>
+
+        <p class="subhead">What he says about the Sabbath</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Ignatius, To the Magnesians 9:1</span>
+          <span class="histquote-text">If then those who had walked in ancient practices attained unto newness of hope, no longer observing sabbaths but fashioning their lives after the Lord's day, on which our life also arose through Him and through His death which some men deny, and by this mystery we attained unto belief, and for this cause we endure patiently, that we may be found disciples of Jesus Christ our only teacher.
+            <span class="histquote-src">Ignatius of Antioch, Epistle to the Magnesians, chapter 9. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="histquote">
+          <span class="histquote-ref">Ignatius, To the Magnesians 10:3</span>
+          <span class="histquote-text">It is monstrous to talk of Jesus Christ and to practise Judaism. For Christianity did not believe in Judaism, but Judaism in Christianity.
+            <span class="histquote-src">Ignatius of Antioch, Epistle to the Magnesians, chapter 10. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">On the translation of Magnesians 9:1</p>
+          <p>The Greek here does not contain the word "day." It reads, roughly, "no longer sabbatizing, but living according to the Lord's." Every English translation supplies a noun, and almost all supply "day." Some scholars have argued the missing word could be "life" or "teaching," which would change the sense considerably. This is worth stating plainly rather than hiding, because a teacher who builds on the standard translation and is then shown the Greek looks careless. The more secure observation does not depend on the missing word at all: Ignatius is contrasting sabbath observance with something else and treating the old practice as left behind. That much is clear in any rendering.</p>
+        </div>
+
+        <p class="subhead">What he says about bishops</p>
+
+        <p>The other great theme of Ignatius is the authority of a single bishop over each city, with the presbyters and deacons beneath him. This is the earliest full statement of monarchical episcopacy that survives, and he presses it hard.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Ignatius, To the Smyrnaeans 8</span>
+          <span class="histquote-text">Let no man do aught of things pertaining to the Church apart from the bishop. Let that be held a valid eucharist which is under the bishop or one to whom he shall have committed it. Wheresoever the bishop shall appear, there let the people be; even as where Jesus may be, there is the universal Church.
+            <span class="histquote-src">Ignatius of Antioch, Epistle to the Smyrnaeans, chapter 8. Translation of J. B. Lightfoot. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Two shifts in one man</p>
+          <p>Ignatius is where two changes appear together, and they are not unrelated. The commandments given at Sinai are pushed into the past, and the authority of a single man in each city is pushed into the foreground. When the written standard is loosened, something has to hold the church together, and what fills the gap is office. This is the pattern to watch for the rest of the story: as the plain word of God is set aside, the authority of men grows to fill the space it leaves.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Colossians 2:8</span>
+          <span class="scripture-text">Beware lest any man spoil you through philosophy and vain deceit, after the tradition of men, after the rudiments of the world, and not after Christ.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XIV -->
+    <section class="section" id="s14">
+      <div class="section-header">
+        <span class="section-num">Section XIV</span>
+        <h2 class="section-title">Justin Martyr</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Date.</strong> Roughly 100 to 165. <strong>Writings.</strong> The First and Second Apology, and the Dialogue with Trypho, a Jew. <strong>Significance.</strong> Justin is the pivot of the second century. He is a philosopher who became a believer and never stopped being a philosopher, and he is the first Christian writer to give us a description of the Sunday assembly and a sustained argument with a Jew about the law.</p>
+
+        <p class="subhead">The Sunday assembly</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Justin Martyr, First Apology 67</span>
+          <span class="histquote-text">And on the day called Sunday, all who live in cities or in the country gather together to one place, and the memoirs of the apostles or the writings of the prophets are read, as long as time permits. But Sunday is the day on which we all hold our common assembly, because it is the first day on which God, having wrought a change in the darkness and matter, made the world; and Jesus Christ our Saviour on the same day rose from the dead.
+            <span class="histquote-src">Justin Martyr, First Apology, chapter 67, written about AD 155. Translation of Roberts and Donaldson. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Note the reason he gives, and the reason he does not give</p>
+          <p>Justin explains why the assembly meets on Sunday, and his two reasons are creation and resurrection. He does not say that Christ commanded it. He does not say the apostles decreed it. He does not appeal to any Scripture requiring it, and he does not claim that the Sabbath was transferred. He is describing a custom and offering theological reasons for it. That is a very different thing from a commandment, and the difference should be taught rather than blurred.</p>
+        </div>
+
+        <p class="subhead">The conversation with Trypho</p>
+
+        <p>The Dialogue with Trypho is the more important document, because in it Justin is asked directly what he thinks of Jewish believers who continue to keep the law. His answer is one of the most revealing passages in the whole second century.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Justin Martyr, Dialogue with Trypho 47</span>
+          <span class="histquote-text">But if, Trypho, some of your race, who say they believe in this Christ, compel those Gentiles who believe in this Christ to live in all respects according to the law given by Moses, or choose not to associate so intimately with them, I in like manner do not approve of them. But I believe that even those, who have been persuaded by them to observe the legal dispensation along with their confession of God in Christ, shall probably be saved. And I hold, further, that such as have confessed and known this man to be Christ, yet who have gone back from some cause to the legal dispensation, and have denied that this man is Christ, and have repented not before death, shall by no means be saved.
+            <span class="histquote-src">Justin Martyr, Dialogue with Trypho, chapter 47. Translation of Roberts and Donaldson. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>Justin goes on in the same chapter to acknowledge that there were believers in his own day who would not so much as eat or speak with a Jewish believer who kept the law, and he says he does not agree with them.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What this passage proves, in both directions</p>
+          <p>Around the year 160, a leading Christian teacher is asked whether a believer in Jesus who keeps the law of Moses can be saved. He answers yes, probably, so long as he does not force it on Gentiles. And in giving that answer he reveals that other Christians of his day were already refusing table fellowship with such believers entirely. Both halves matter. Law-keeping believers in Christ still existed in numbers sufficient to raise the question, and the pressure against them had already begun. This is the shift in progress, caught in a single paragraph, and it is happening a hundred and sixty years before any emperor called a council.</p>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">On Screen</p>
+          <p>Justin Martyr, Dialogue with Trypho 47, c. AD 160. "I believe that even those... shall probably be saved."</p>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>There is a quiet reversal buried in Justin's sentence that is easy to miss. In Acts 15, the question before the assembly was whether Gentile believers must be circumcised and keep the law, and the apostles answered no. In Justin, roughly a hundred and ten years later, the question is whether Jewish believers may keep the law, and the answer has become a hesitant probably. The burden of proof has changed hands entirely. Nobody voted on that. It happened.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ACT THREE ═══════════ -->
+    <div class="act-divider">
+      <p class="act-label">Act Three</p>
+      <p class="act-name">Historians, Philosophy, and the Canon</p>
+      <p class="act-blurb">Where the method came from. How a Jewish philosopher's way of reading Scripture was borrowed, stripped of its safeguard, and used to dissolve the very commandments he had spent his life defending.</p>
+    </div>
+
+    <!-- SECTION XV -->
+    <section class="section" id="s15">
+      <div class="section-header">
+        <span class="section-num">Section XV</span>
+        <h2 class="section-title">Philo of Alexandria and the Two Uses of Allegory</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>To understand how the church came to read the commandments of God as pictures rather than instructions, you have to go back before the church. You have to go to Alexandria, to a Jewish philosopher who died around the time Paul was converted, and who invented the tool. And then you have to notice something almost nobody notices: he warned, in writing, against exactly the use his method would later be put to.</p>
+        </div>
+
+        <p><strong>Philo of Alexandria.</strong> Roughly 20 BC to AD 50. A devout Jew of the Greek-speaking diaspora who spent his life demonstrating that the law of Moses and the best of Greek philosophy agreed. His instrument for doing this was allegory: reading the text for a deeper meaning beneath the surface. He was enormously influential, and almost entirely on Christians rather than on Jews, because the Christian school at Alexandria took up his method and ran with it.</p>
+
+        <p>Here is the passage that ought to be far better known than it is. Philo is addressing Jews of his own city who had reasoned that if the Sabbath and circumcision and the feasts are symbols of deeper truths, then a man who has grasped the deeper truths need not keep the outward observance any longer.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Philo, On the Migration of Abraham 89&ndash;93</span>
+          <span class="histquote-text">There are some men who, looking upon the written laws as symbols of things appreciable by the intellect, have been over-precise about the latter, while treating the former with careless indifference. Such men I, for my part, should blame for handling the matter in too easy and offhand a manner: they ought to have given careful heed to both aims, to a more full and exact investigation of what is not seen, and in what is seen to be stewards without reproach. As it is, as though they were living alone by themselves in a wilderness, or as though they had become disembodied souls, and knew neither city nor village nor household nor any company of human beings at all, overlooking all that the mass of men regard, they explore reality in its naked absoluteness. It is quite true that the Seventh Day is meant to teach the power of the Unoriginate and the non-action of created beings. But let us not for this reason abrogate the laws laid down for its observance. Nor again is it because the Feast is a symbol of gladness of soul and of thankfulness towards God that we should renounce the general gatherings of the year's seasons. Nor again because circumcision figures the excision of pleasures and of all passions, and the putting away of the impious conceit, should we abrogate the enactment regarding circumcision. It is true that receiving circumcision does indeed portray the excision of pleasure and all passions, and the destruction of that impious opinion. Why, we shall be ignoring the sanctity of the Temple and a thousand other things, if we are going to pay heed to nothing except what is shewn us by the inner meaning of things. Nay, we should look on all these outward observances as resembling the body, and their inner meanings as resembling the soul. It follows that, exactly as we have to take thought for the body, because it is the abode of the soul, so we must pay heed to the letter of the laws.
+            <span class="histquote-src">Philo of Alexandria, De Migratione Abrahami 89&ndash;93. Translation of Colson and Whitaker, Loeb Classical Library. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The safeguard, and its removal</p>
+          <p>Philo says the outward observance is the body and the inner meaning is the soul, and that a man must care for both, because a soul without a body does not live in the world. Grasping that the Sabbath teaches the rest of God does not release anyone from keeping the Sabbath. Understanding what circumcision figures does not abolish circumcision. This is the built-in safeguard of Jewish allegory: the symbol is real precisely because the commandment is real.</p>
+          <p>What happened over the following two centuries is simple to state. The Alexandrian church inherited the method and discarded the safeguard. It kept the allegory and let go of the body. And it did this while quoting the man who had explicitly forbidden it.</p>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">Visual</p>
+          <p>Philo's words on screen in full, held long enough to be read. Then a slow dissolve to Barnabas 10:9, which says the food laws never referred to eating at all. No commentary is needed. The two texts do the work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XVI -->
+    <section class="section" id="s16">
+      <div class="section-header">
+        <span class="section-num">Section XVI</span>
+        <h2 class="section-title">Clement of Alexandria and Origen</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Clement of Alexandria,</strong> roughly 150 to 215, headed the catechetical school in that city. <strong>Origen,</strong> roughly 184 to 253, was his pupil and the most prolific and influential biblical scholar of the ancient church. Eusebius records the succession in Ecclesiastical History 6.6. Between them they set the method of scriptural interpretation that dominated Christian thought for a thousand years.</p>
+
+        <p>Origen taught that Scripture has multiple senses, commonly described as a bodily or literal sense, a soulish or moral sense, and a spiritual sense, and that the spiritual sense is the highest. In principle this need not destroy anything. In practice, applied to the commandments, it consistently produced the conclusion that the literal command was for the immature and the spiritual meaning was the real point.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The same tool, and the opposite result</p>
+          <p>This is the heart of Act Three, and it is worth stating carefully because it is easy to caricature. Allegory is not wicked. Scripture itself uses figures, types, and shadows, and Paul draws allegories. The problem is not the presence of a deeper meaning. The problem is the removal of the floor beneath it. Philo held both and said so. The Alexandrians took the upper storey and knocked out the ground floor, and once the ground floor is gone, there is no commandment left that cannot be explained into a symbol. A Sabbath becomes rest of heart and therefore need not be kept. A clean animal becomes a clean man and therefore the table has no rule. Circumcision becomes a circumcised heart and the sign is discarded. The method, unbounded, will dissolve anything you point it at.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 5:17&ndash;19</span>
+          <span class="scripture-text">Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled. Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven.</span>
+        </div>
+
+        <p>A jot and a tittle are the smallest marks made by a scribe's pen. The Lord did not say that the smallest meanings would endure while the letters passed away. He said the letters themselves would not pass. That is a statement about the text as written, and it is the plainest possible answer to a method that treats the written commandment as a husk.</p>
+      </div>
+    </section>
+
+    <!-- SECTION XVII -->
+    <section class="section" id="s17">
+      <div class="section-header">
+        <span class="section-num">Section XVII</span>
+        <h2 class="section-title">Marcion, and the Reaction Against Him</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Marcion of Sinope</strong> arrived in Rome about AD 139 or 140. He taught that the God of the Old Testament and the Father of Jesus Christ are two different beings; that the God of Israel is a lesser, harsh, and inferior deity; and that Christ came to reveal a previously unknown good God. He rejected the entire Old Testament, and he produced the first known Christian canon: a shortened version of Luke and ten letters of Paul, with everything Jewish edited out. The Roman assembly excommunicated him in July of 144.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Irenaeus on Marcion</span>
+          <span class="histquote-text">Marcion of Pontus succeeded him, and developed his doctrine. He advanced the most daring blasphemy against Him who is proclaimed as God by the law and the prophets, declaring Him to be the author of evils, to take delight in war, to be infirm of purpose, and even to be contrary to Himself.
+            <span class="histquote-src">Irenaeus, Against Heresies 1.27.2. Translation of Roberts and Donaldson. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The church condemned him, and this matters</p>
+          <p>It is sometimes taught that the church simply became Marcionite in practice, keeping his contempt for the law while rejecting his name. That goes too far, and a careful teacher should not say it. The church fought Marcion hard. Tertullian wrote five books against him. Irenaeus called his teaching blasphemy. The church retained the Old Testament in its Bible, retained the Creator as the Father of Christ, and retained the goodness of the law in its confession. The fair judgment is narrower and still serious: the church defeated Marcion's doctrine of two Gods while gradually absorbing, from other sources, a practice that emptied the commandments of the one God of their force. It kept the book and let go of the obedience.</p>
+        </div>
+
+        <p>The reaction against Marcion had one lasting and positive effect. By producing a canon of his own, he forced the church to say clearly which writings it received, and the answer it gave was broader than his, not narrower. The fourfold gospel, the full body of Paul's letters, and the Hebrew Scriptures were all reaffirmed against him.</p>
+      </div>
+    </section>
+
+    <!-- SECTION XVIII -->
+    <section class="section" id="s18">
+      <div class="section-header">
+        <span class="section-num">Section XVIII</span>
+        <h2 class="section-title">How the Canon Was Actually Recognized</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>Here is one of the most widely repeated claims about church history, and it is false. The Council of Nicaea did not decide the Bible. It did not vote on which books belong. It did not burn the rejected gospels. No record of the council mentions the canon at all, and we have the records.</p>
+        </div>
+
+        <p>The canon was not created by a committee. It was recognized over time, by use, and the sources let us watch it happen.</p>
+
+        <ul class="plainlist">
+          <li><strong>Around AD 180, Irenaeus</strong> writes as though the fourfold gospel is a settled and obvious fact, arguing in Against Heresies 3.11.8 that there can be neither more nor fewer than four.</li>
+          <li><strong>Around AD 170 to 200, the Muratorian Fragment</strong> gives a list close to our New Testament. It accepts the Apocalypse of Peter with a note that some will not have it read, and it permits the Shepherd of Hermas for private reading but not in public worship, because it was written recently and not by an apostle. A minority of scholars, following Sundberg and Hahneman, argue this document is fourth century rather than second; the majority still hold the earlier date.</li>
+          <li><strong>Around AD 240, Origen's lists</strong> are preserved by Eusebius in Ecclesiastical History 6.25.</li>
+          <li><strong>Around AD 325, Eusebius</strong> sets out his three categories of acknowledged, disputed, and spurious books in Ecclesiastical History 3.25, showing that the edges were still being discussed at exactly the time of Nicaea, and that the council did not settle them.</li>
+          <li><strong>In AD 367, Athanasius</strong> lists precisely the twenty-seven books of our New Testament in his thirty-ninth Festal Letter. This is the first surviving list that matches ours exactly.</li>
+          <li><strong>In AD 393 and 397, the synod of Hippo and the council of Carthage</strong> ratify that list for the churches of North Africa, reaffirmed at Carthage again in 419. These are regional councils confirming a settled practice, not a committee inventing one.</li>
+        </ul>
+
+        <div class="histquote">
+          <span class="histquote-ref">Athanasius, Thirty-Ninth Festal Letter, AD 367</span>
+          <span class="histquote-text">These are the fountains of salvation, that he who thirsts may be satisfied with the living words they contain. In these alone the teaching of godliness is proclaimed. Let no man add to these, neither let him take ought from these.
+            <span class="histquote-src">Athanasius of Alexandria, Festal Letter 39. Translation from the Nicene and Post-Nicene Fathers, second series, volume 4. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher: correct this one publicly</p>
+          <p>The claim that Nicaea produced the Bible has been traced in part to the Synodicon Vetus, a Greek text of the late ninth century, and it was spread to millions of readers by a modern novel. It appears in Christian and anti-Christian teaching alike. Correcting it costs a teacher nothing and gains a great deal of credibility, because the true story is more useful anyway: the books were received by the churches long before any council ruled on them, and the councils were confirming what the congregations had already been reading for two hundred years.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Deuteronomy 12:32</span>
+          <span class="scripture-text">What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XIX -->
+    <section class="section" id="s19">
+      <div class="section-header">
+        <span class="section-num">Section XIX</span>
+        <h2 class="section-title">Eusebius of Caesarea</h2>
+      </div>
+      <div class="section-body">
+
+        <p><strong>Date.</strong> Roughly 260 to 340. <strong>Position.</strong> Bishop of Caesarea, custodian of the great library there, and a figure at the court of Constantine. <strong>Reputation.</strong> The father of church history, and the single most important source for everything in this script.</p>
+
+        <p>Nearly every early fragment quoted in this study, Papias, Hegesippus, Serapion, Polycrates, Irenaeus on Polycarp, survives only because Eusebius copied it out. That habit of quoting his sources at length, rather than merely summarizing them, is his greatest virtue as a historian, and the church owes him an enormous debt for it. If he had paraphrased, we would have almost nothing.</p>
+
+        <p class="subhead">His weaknesses, stated plainly</p>
+
+        <ul class="plainlist">
+          <li><strong>He was a courtier.</strong> His Life of Constantine is a work of praise, not of analysis. The emperor who fills his pages is not the emperor a modern historian reconstructs.</li>
+          <li><strong>He was hostile to the millenarians.</strong> His treatment of Papias, quoted earlier, shows him dismissing an earlier and better-placed witness for holding a view he disliked.</li>
+          <li><strong>He was selective.</strong> He was writing to show a church triumphant and unified, and material that complicated that picture receives less attention.</li>
+          <li><strong>He erred.</strong> In Ecclesiastical History 2.17 he reads Philo's account of the Therapeutae, a Jewish ascetic community, as a description of the earliest Christian monks. It is not.</li>
+        </ul>
+
+        <div class="keypoint">
+          <p class="keypoint-label">How to use him</p>
+          <p>Trust Eusebius when he quotes. Weigh him when he comments. The distinction is easy to apply in practice, because he generally tells you which he is doing. When he writes "Papias says these words," you are looking at second-century evidence. When he writes that Papias was of limited comprehension, you are looking at a fourth-century opinion. Both are in the same paragraph, and a careful reader can separate them without any special training.</p>
+        </div>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>There is an irony worth pointing out to a class. The chief documentary evidence that the early church kept the Passover on the fourteenth day, resisted Rome over it, and traced that practice to the apostle John, comes to us entirely through Eusebius, who himself sided with the other view and served the emperor who abolished the practice. He preserved the testimony against his own position because he was quoting his sources faithfully. That is worth honouring, and it is also a reminder that God preserves a witness even through men who do not agree with it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ACT FOUR ═══════════ -->
+    <div class="act-divider">
+      <p class="act-label">Act Four</p>
+      <p class="act-name">The Councils and the Long Severing</p>
+      <p class="act-blurb">What the councils actually decided, and when. The claims that hold, the claims that do not, and the single event that did more to separate the church from the commandments of God than any council ever did.</p>
+    </div>
+
+    <!-- SECTION XX -->
+    <section class="section" id="s20">
+      <div class="section-header">
+        <span class="section-num">Section XX</span>
+        <h2 class="section-title">Was There a Council in the First Years After Paul?</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>It is often taught that within a few years of Paul's death, a council of the church overturned the Sabbath and abolished the Passover. It is a clean story with a clear villain and a fixed date. And there is no evidence for it whatsoever. Not a document, not a canon, not a letter, not a hostile witness. Nothing.</p>
+        </div>
+
+        <p>This has to be said clearly, because a great deal of teaching in law-affirming circles rests on it, and it will not survive the first informed challenge.</p>
+
+        <p>Paul died somewhere around AD 64 to 68. For the whole of the following century there is no record of any council of the church addressing the Sabbath or the Passover, because there is no record of any council of the church at all. The earliest gatherings we can document that resemble regional synods are the meetings held over the Passover question around AD 190, more than a hundred and twenty years after Paul. And when they met, the thing they were arguing about was not whether to keep the Passover but on which day to keep it, which is itself evidence that the whole church was still keeping it.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher: this correction is necessary</p>
+          <p>Teach this one honestly even though it costs an argument. There was no early council that abolished the Sabbath or the Passover. The separation took roughly three centuries, it was contested at every stage, and it was driven far more by imperial politics and by the catastrophe of the Jewish wars than by any assembly of bishops. That is a harder story to tell in one sentence, and it has the advantage of being true and fully documented. A hearer who checks it will find that everything else in this script checks out too. A hearer who checks the phantom council will stop trusting anything he has been told.</p>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What actually happened instead</p>
+          <p>The commandments were not repealed at a meeting. They were let go of, slowly, in four overlapping ways: by allegory, which turned commandments into symbols; by separation, which made keeping them look like siding with an enemy; by politics, which made keeping them dangerous and then illegal; and by canon law, which finally forbade them outright in the fourth century, long after the practice had already been eroded. The rest of this act follows each of those in order.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">2 Thessalonians 2:7</span>
+          <span class="scripture-text">For the mystery of iniquity doth already work: only he who now letteth will let, until he be taken out of the way.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXI -->
+    <section class="section" id="s21">
+      <div class="section-header">
+        <span class="section-num">Section XXI</span>
+        <h2 class="section-title">The Quartodeciman Controversy</h2>
+      </div>
+      <div class="section-body">
+
+        <p>The word means simply fourteenthers, from the Latin for fourteen. The Quartodecimans were the churches, chiefly in Asia Minor, that kept the Passover on the fourteenth day of the first month, the day Scripture appoints, whatever day of the week it fell on. The churches of Rome and Alexandria had come to keep the resurrection on the following Sunday instead. For most of the second century the two practices coexisted, as the meeting of Polycarp and Anicetus around 155 shows.</p>
+
+        <p>Around AD 190 that changed. Victor, bishop of Rome, moved to impose the Sunday reckoning on the whole church and threatened to cut off the churches of Asia. Polycrates of Ephesus wrote back. His letter survives in Eusebius, and it is one of the most important documents in this entire study, because it is a bishop of the late second century explaining that his practice came from the apostles by direct succession.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Polycrates of Ephesus, c. AD 190</span>
+          <span class="histquote-text">We observe the exact day; neither adding, nor taking away. For in Asia also great lights have fallen asleep, which shall rise again on the day of the Lord's coming, when he shall come with glory from heaven, and shall seek out all the saints. Among these are Philip, one of the twelve apostles, who fell asleep in Hierapolis; and his two aged virgin daughters, and another daughter, who lived in the Holy Spirit and now rests at Ephesus; and, moreover, John, who was both a witness and a teacher, who reclined upon the bosom of the Lord, and, being a priest, wore the sacerdotal plate. He fell asleep at Ephesus.
+            <span class="histquote-src">Polycrates of Ephesus, letter to Victor of Rome, quoted in Eusebius, Ecclesiastical History 5.24.2&ndash;3. Translation of A. C. McGiffert. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="histquote">
+          <span class="histquote-ref">Polycrates of Ephesus, continued</span>
+          <span class="histquote-text">All these observed the fourteenth day of the passover according to the Gospel, deviating in no respect, but following the rule of faith. And I also, Polycrates, the least of you all, do according to the tradition of my relatives, some of whom I have closely followed. For seven of my relatives were bishops; and I am the eighth. And my relatives always observed the day when the people put away the leaven.
+            <span class="histquote-src">Polycrates of Ephesus, quoted in Eusebius, Ecclesiastical History 5.24.6. Translation of A. C. McGiffert. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>Victor moved to excommunicate the Asian churches. He was stopped, and the man who stopped him was Irenaeus, who kept the Roman practice himself and thought the threat was an outrage. Eusebius records that Irenaeus and others rebuked him sharply, and Victor's attempt failed.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What the Quartodeciman evidence establishes</p>
+          <p>Around AD 190, entire provinces of the church were still keeping the Passover on the day Scripture appoints. Their bishops traced the practice by name to Philip and to John. They said they were following the Gospel and adding nothing and taking nothing away. And when Rome tried to force them off it, the wider church would not allow the excommunication to stand. This is not a fringe. This is the church of Asia Minor, in the century after the apostles, keeping the appointed time and saying they had it from the apostle John. That is a fully documented fact, and it does not depend on a single contested claim.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Leviticus 23:5</span>
+          <span class="scripture-text">In the fourteenth day of the first month at even is the LORD'S passover.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Acts 5:29</span>
+          <span class="scripture-text">Then Peter and the other apostles answered and said, We ought to obey God rather than men.</span>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">Visual</p>
+          <p>A map of Asia Minor with Ephesus, Smyrna, Hierapolis, Sardis, and Laodicea marked. These are the same cities addressed in Revelation 2 and 3. The point should be allowed to land without narration: the congregations to whom the Lord dictated letters through John were still keeping the Passover on the appointed day a century later, and they said they learned it from him.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXII -->
+    <section class="section" id="s22">
+      <div class="section-header">
+        <span class="section-num">Section XXII</span>
+        <h2 class="section-title">Bar Kokhba, Hadrian, and the Gentile Bishop</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>If you want the hinge, this is the hinge. Not a council. Not a creed. A war. Between the years 132 and 135, Rome crushed the last Jewish revolt, expelled the Jews from Jerusalem, rebuilt the city as a pagan colony, and made the practice of the covenant a crime. And on the far side of that war, for the first time in its history, the church in Jerusalem had a Gentile bishop and a Gentile congregation.</p>
+        </div>
+
+        <p>The second Jewish revolt against Rome, led by Simon bar Kosiba, called Bar Kokhba, ended in catastrophe. The emperor Hadrian rebuilt Jerusalem as Aelia Capitolina, barred Jews from the city, and enforced a ban on circumcision. The Historia Augusta, a late Roman source, presents the ban as the cause of the revolt.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Historia Augusta, Life of Hadrian 14.2</span>
+          <span class="histquote-text">At this time also the Jews began war, because they were forbidden to practise circumcision.
+            <span class="histquote-src">Historia Augusta, Life of Hadrian 14.2. Translation of D. Magie, Loeb Classical Library. Tier Three, see the caution below.</span>
+          </span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher: handle this source carefully</p>
+          <p>The Historia Augusta is a late fourth-century compilation with a well-earned reputation for unreliability, and it is the only source that presents the circumcision ban as the cause of the revolt. Cassius Dio, writing much closer to the events, gives a different cause: the founding of the pagan colony on the site of Jerusalem. Scholars such as Benjamin Isaac and E. Mary Smallwood have debated the point at length. The safe statement, which nobody disputes, is that after the revolt Hadrian barred Jews from Jerusalem and that Roman law restricted circumcision. Whether the ban came before the war or after it is genuinely uncertain, and a teacher should say so.</p>
+        </div>
+
+        <p>What is not uncertain is the effect on the church. Eusebius records the change in the Jerusalem congregation itself, and he records it as a simple matter of fact, without seeming to notice its weight.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Eusebius on the church at Jerusalem after the revolt</span>
+          <span class="histquote-text">But since the bishops of the circumcision ceased at this time, it is proper to give here a list of their names from the beginning... The church there was composed of believing Hebrews, from the days of the apostles down to the siege at that time... But when the city was besieged by the Romans and the whole nation was driven out of it, the church there was composed of Gentiles, and Marcus was the first of the Gentiles to take charge of it.
+            <span class="histquote-src">Eusebius, Ecclesiastical History 4.5&ndash;4.6. Translation of A. C. McGiffert. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Here is the practical answer to the question</p>
+          <p>The question was where the church fell apart from what Jesus commanded. This is the largest single piece of the answer, and it is not a doctrinal decision at all. It is a demographic and political rupture. For roughly a hundred years the mother congregation of the faith had been Jewish, led by men of the circumcision, meeting in the city where the Lord was crucified, keeping the Sabbath and the feasts as a matter of course. After 135 that congregation is gone. Its members are barred from the city. Its leadership is Gentile. The living memory of how the apostles actually walked is severed at the root, and the practices that had been simply normal become foreign customs belonging to a defeated and despised people.</p>
+          <p>After that, keeping the Sabbath and the feasts was no longer merely a matter of obedience. It looked like loyalty to the empire's enemies, and eventually it became illegal. That is the pressure under which the second, third, and fourth centuries did their thinking, and no honest account of the period can leave it out.</p>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">On Screen</p>
+          <p>AD 135. Jerusalem becomes Aelia Capitolina. Jews barred from the city. Eusebius, Ecclesiastical History 4.6: "the church there was composed of Gentiles."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXIII -->
+    <section class="section" id="s23">
+      <div class="section-header">
+        <span class="section-num">Section XXIII</span>
+        <h2 class="section-title">Elvira, and the Fast Set Against the Sabbath</h2>
+      </div>
+      <div class="section-body">
+
+        <p>The council of Elvira, held in southern Spain around AD 305 or 306, is the earliest council whose canons survive in any number. It is not a famous council, and that is exactly why it is useful. Its canons are not grand theological pronouncements; they are housekeeping rules for congregations, and housekeeping rules reveal what people were actually doing.</p>
+
+        <p>Several of its canons concern relations with Jews, and they only make sense if those relations were close and ordinary.</p>
+
+        <ul class="plainlist">
+          <li><strong>Canon 26</strong> directs that the error be corrected of not fasting on the Sabbath, requiring a fast every Saturday. A fast on the seventh day is a deliberate counterweight to honouring it as a day of rest and gladness. You do not need a rule against resting unless people are resting.</li>
+          <li><strong>Canon 49</strong> forbids landowners to have their crops blessed by Jews, on the ground that the Christian blessing should not be made void.</li>
+          <li><strong>Canon 50</strong> forbids any cleric or layman to take a meal with Jews.</li>
+          <li><strong>Canon 78</strong> prescribes penance for a married believer who commits adultery with a Jewish woman.</li>
+        </ul>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Read the canons backwards</p>
+          <p>This is the most useful skill in reading church law, and it applies to every council in this act. A canon is written to stop something. It is therefore direct evidence that the thing was happening, and happening often enough to require legislation. Nobody forbids what nobody does. Canon 50 tells us that in Spain, at the beginning of the fourth century, Christians and Jews were regularly eating together. Canon 26 tells us that Christians were treating the seventh day as a day of rest rather than a day of fasting. The council is not describing a church that had long since separated. It is describing a church that had not separated, and legislating to force the separation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXIV -->
+    <section class="section" id="s24">
+      <div class="section-header">
+        <span class="section-num">Section XXIV</span>
+        <h2 class="section-title">Constantine and the Venerable Day of the Sun</h2>
+      </div>
+      <div class="section-body">
+
+        <p>On the seventh of March in the year 321, the emperor Constantine issued the first civil law in Roman history requiring rest on the first day of the week. It is preserved in the Code of Justinian, and its wording repays close reading.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Constantine's Sunday law, 7 March AD 321</span>
+          <span class="histquote-text">On the venerable Day of the Sun let the magistrates and people residing in cities rest, and let all workshops be closed. In the country, however, persons engaged in agriculture may freely and lawfully continue their pursuits; because it often happens that another day is not so suitable for grain-sowing or for vine-planting; lest by neglecting the proper moment for such operations the bounty of heaven should be lost.
+            <span class="histquote-src">Codex Justinianus 3.12.2, cited in some editions as 3.12.3. Translation from Philip Schaff, History of the Christian Church, volume 3. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>Three things in that text deserve attention, and each of them is a matter of what the document says rather than a matter of interpretation.</p>
+
+        <ul class="plainlist">
+          <li><strong>The day is named for the sun.</strong> The Latin reads <em class="term">venerabili die solis</em>, the venerable day of the Sun. It is not called the Lord's day. It is not called the day of the resurrection. Constantine was at this date still holding the office of pontifex maximus of the Roman state religion and had used the imagery of the unconquered sun on his coinage.</li>
+          <li><strong>Christ is not mentioned.</strong> There is no reference to the resurrection, no Scripture, and no theological justification of any kind in the text of the law.</li>
+          <li><strong>Farmers are exempted.</strong> Agricultural work may continue, for reasons of harvest. Compare this with the Sabbath commandment, which exempts nobody: not the son, not the daughter, not the servant, not the stranger within the gates, and not the ox.</li>
+        </ul>
+
+        <div class="scripture">
+          <span class="scripture-ref">Exodus 20:8&ndash;11</span>
+          <span class="scripture-text">Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher: what this law does and does not prove</p>
+          <p>Do not claim that Constantine changed the Sabbath. He did not, and the claim is easy to refute. Christians were already assembling on the first day well before him, as Justin Martyr shows around AD 155, and Constantine's law is a civil rest ordinance, not a church canon or a theological decree. What the law does prove is important enough on its own: the first legal establishment of first-day rest in the empire came from the state, not from Scripture; it was framed in the language of the sun rather than the language of Christ; and it exempted the very labour that the fourth commandment does not exempt. State power, not a word from the Lord, is what put the first day into law.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXV -->
+    <section class="section" id="s25">
+      <div class="section-header">
+        <span class="section-num">Section XXV</span>
+        <h2 class="section-title">Nicaea, and the Severing of the Passover</h2>
+      </div>
+      <div class="section-body">
+
+        <p>The council of Nicaea met in the summer of AD 325, called by Constantine, with somewhere between two hundred and fifty and three hundred and eighteen bishops attending. Its principal business was the teaching of Arius concerning the person of Christ, which produced the Nicene Creed. It also dealt with the Melitian schism, with the readmission of those who had lapsed under persecution, and with a number of disciplinary matters. And it took up the date of the Pascha.</p>
+
+        <p class="subhead">What Nicaea did not do</p>
+
+        <ul class="plainlist">
+          <li>It did not decide the canon of Scripture. No record of the council mentions the subject.</li>
+          <li>It did not invent the divinity of Christ or decide it by a close vote. The council was convened because the church already confessed Christ as God and Arius was teaching otherwise.</li>
+          <li>It did not abolish the Sabbath. The seventh day is not the subject of its canons. That would come later, at Laodicea.</li>
+          <li>It did not have Gnostics among its members, and this is examined in its own section below.</li>
+        </ul>
+
+        <p class="subhead">What Nicaea did do</p>
+
+        <p>It resolved that the Pascha should be kept everywhere on the same day, and that this day should be calculated independently of the Jewish reckoning. Constantine's own letter announcing the decision survives in full, preserved by Eusebius, and it does not hide its reasoning.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Constantine, letter to the churches after Nicaea</span>
+          <span class="histquote-text">And first of all, it appeared an unworthy thing that in the celebration of this most holy feast we should follow the practice of the Jews, who have impiously defiled their hands with enormous sin, and are, therefore, deservedly afflicted with blindness of soul... For we have it in our power, if we abandon their custom, to prolong the due observance of this ordinance to future ages, by a truer order, which we have preserved from the very day of the passion until the present time. Let us then have nothing in common with the detestable Jewish crowd; for we have received from our Saviour a different way.
+            <span class="histquote-src">Constantine, quoted in Eusebius, Life of Constantine 3.18. Translation from the Nicene and Post-Nicene Fathers, second series, volume 1. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="histquote">
+          <span class="histquote-ref">Constantine, same letter, continued</span>
+          <span class="histquote-text">But supposing these reasons were not of sufficient weight, still it would be incumbent on your Sagacities to strive and pray continually that the purity of your souls may not seem in anything to be sullied by fellowship with the customs of these most wicked men.
+            <span class="histquote-src">Constantine, quoted in Eusebius, Life of Constantine 3.18. Translation from the Nicene and Post-Nicene Fathers, second series, volume 1. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Weigh the argument that was actually made</p>
+          <p>This is a decision about when to keep the feast of the Lord's death and resurrection, and the reason given for the change is not a text of Scripture, not a word of Christ, and not an apostolic tradition. The reason given is that it is unworthy to hold anything in common with the Jews. A calendar question, which Scripture had already answered in Leviticus 23, was resolved on grounds of contempt for a people. Whatever else may be said about the council of Nicaea, and much of what it did was necessary and right, the argument in this letter is not an argument from the word of God, and it should never have carried the day in the church of God.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 11:18</span>
+          <span class="scripture-text">Boast not against the branches. But if thou boast, thou bearest not the root, but the root thee.</span>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">Narrator</p>
+          <p>Two hundred years earlier, Polycarp and Anicetus had disagreed about this very question and parted in peace, and the bishop of Rome had handed the old man the cup as a mark of honour. Now an emperor writes that the purity of your souls may be sullied by fellowship with the customs of these most wicked men. Between the cup and that letter lies everything this documentary is about.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXVI -->
+    <section class="section" id="s26">
+      <div class="section-header">
+        <span class="section-num">Section XXVI</span>
+        <h2 class="section-title">Antioch and Laodicea: The Sabbath Forbidden</h2>
+      </div>
+      <div class="section-body">
+
+        <p>Two councils in the middle of the fourth century completed in law what had been building for two centuries in practice.</p>
+
+        <p class="subhead">Antioch, AD 341</p>
+
+        <p>The first canon of the council of Antioch enforced the Nicene decision on the Pascha, providing that anyone who continued to keep it with the Jews should be excommunicated and, if a member of the clergy, deposed. The Quartodeciman practice, which Polycrates had traced to the apostle John, was now a canonical offence.</p>
+
+        <p class="subhead">Laodicea, about AD 363 to 364</p>
+
+        <p>The synod of Laodicea, in Phrygia, produced a body of canons of which several concern Jewish practice. Canon 29 is the single most important text in this entire study, and it should be quoted in full and read slowly.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">Synod of Laodicea, Canon 29</span>
+          <span class="histquote-text">Christians must not judaize by resting on the Sabbath, but must work on that day, rather honouring the Lord's Day; and, if they can, resting then as Christians. But if any shall be found to be judaizers, let them be anathema from Christ.
+            <span class="histquote-src">Synod of Laodicea, canon 29. Translation of Henry Percival, Nicene and Post-Nicene Fathers, second series, volume 14. Tier Two.</span>
+          </span>
+        </div>
+
+        <p>Three more canons from the same synod fill out the picture.</p>
+
+        <ul class="plainlist">
+          <li><strong>Canon 16</strong> directs that the Gospels be read on the Sabbath along with the other Scriptures, which shows that the seventh day was still a day of assembly even as resting on it was being forbidden.</li>
+          <li><strong>Canon 37</strong> forbids receiving festal gifts from Jews or heretics, or joining in their feasts.</li>
+          <li><strong>Canon 38</strong> forbids receiving unleavened bread from Jews or taking part in their impieties.</li>
+        </ul>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Apply the rule: read the canon backwards</p>
+          <p>Canon 29 is not a description of what the church was doing. It is a prohibition of what the church was doing. In roughly AD 364, in Asia Minor, enough Christians were resting on the seventh day that a synod had to command them to work on it, on pain of being anathema from Christ. Canon 38 tells us they were still receiving unleavened bread at the season of the Passover. Canon 37 tells us they were keeping the feasts alongside their Jewish neighbours.</p>
+          <p>And notice the word the canon uses for what they were doing. It calls it judaizing, and it attaches a curse to it. Resting on the day God blessed and sanctified in Genesis 2, which He commanded at Sinai, which the prophets honoured, which the Lord Jesus kept as His custom, and which the apostles kept after Him, is here made an offence punishable by separation from Christ. It took three hundred and thirty years to get from Genesis to that sentence, and no word from God authorized a single step of it.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Genesis 2:2&ndash;3</span>
+          <span class="scripture-text">And on the seventh day God ended his work which he had made; and he rested on the seventh day from all his work which he had made. And God blessed the seventh day, and sanctified it: because that in it he had rested from all his work which God created and made.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Luke 4:16</span>
+          <span class="scripture-text">And he came to Nazareth, where he had been brought up: and, as his custom was, he went into the synagogue on the sabbath day, and stood up for to read.</span>
+        </div>
+
+        <div class="cue">
+          <p class="cue-label">On Screen</p>
+          <p>Laodicea, canon 29, c. AD 364. "Christians must not judaize by resting on the Sabbath, but must work on that day."</p>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher</p>
+          <p>Laodicea was a regional synod, not an ecumenical council, and its canons were later incorporated into the wider body of church law rather than binding the whole church from the moment they were written. That qualification is worth making, because someone will make it. It does not weaken the point. The canon still stands as documentary proof that Sabbath rest persisted among Christians into the second half of the fourth century, and that it was suppressed by ecclesiastical authority rather than surrendered by conviction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXVII -->
+    <section class="section" id="s27">
+      <div class="section-header">
+        <span class="section-num">Section XXVII</span>
+        <h2 class="section-title">Chrysostom, and the People Who Would Not Let Go</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>Antioch, in the autumn of the year 386. More than three hundred and fifty years after the resurrection. Sixty years after Nicaea. Twenty years after Laodicea cursed anyone who rested on the seventh day. And a preacher stands up in the great church of that city, and what he is preaching against is his own congregation going to the feasts.</p>
+        </div>
+
+        <p>John Chrysostom, whose name means golden-mouthed, was the most celebrated preacher of the ancient church. In 386 and 387, while still a presbyter at Antioch, he delivered a series of eight homilies commonly titled Against the Judaizers. They are difficult to read. The language is violent, and it was used to terrible effect in later centuries against Jewish communities, which is a matter that ought to be acknowledged plainly and not passed over.</p>
+
+        <p>But for the historian these homilies are gold, because a preacher does not spend eight sermons attacking something nobody is doing. Chrysostom tells us exactly what his own people were doing.</p>
+
+        <div class="histquote">
+          <span class="histquote-ref">John Chrysostom, Against the Judaizers 1.1.5, Antioch, AD 386</span>
+          <span class="histquote-text">The festivals of the pitiful and miserable Jews are soon to march upon us one after the other and in quick succession: the feast of Trumpets, the feast of Tabernacles, the fasts. There are many in our ranks who say they think as we do. Yet some of these are going to watch the festivals and others will join the Jews in keeping their feasts and observing their fasts. I wish to drive this perverse custom from the Church right now.
+            <span class="histquote-src">John Chrysostom, Adversus Judaeos, Homily 1.1.5. Translation of Paul W. Harkins, Fathers of the Church series. Tier Two.</span>
+          </span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">What this single paragraph destroys, and what it establishes</p>
+          <p>It destroys the tidy story that the church abandoned the appointed times in the first or second century. It cannot be true. In AD 386, in one of the greatest cities of the Christian world, members of the congregation were keeping Trumpets, keeping Tabernacles, and keeping the fasts, and their own bishop's presbyter says there are many of them.</p>
+          <p>And it establishes something more important than that. These were not a separate sect. Chrysostom says they are in our ranks and that they say they think as we do. They were ordinary members of the church, confessing the same faith, who had never stopped keeping the feasts of the LORD and did not see why they should. It took three and a half centuries of allegory, canon law, imperial pressure, and finally sermons like these to pry the appointed times out of their hands. They did not let go. They had them taken.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Leviticus 23:1&ndash;2</span>
+          <span class="scripture-text">And the LORD spake unto Moses, saying, Speak unto the children of Israel, and say unto them, Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts.</span>
+        </div>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher</p>
+          <p>Use Chrysostom for what he proves, and be honest about what he is. The evidential value of these homilies is enormous and cannot be disputed by anyone. Their tone is another matter. A teacher quoting them should say clearly that the contempt in them is not of Christ, that it was later used to justify real cruelty against real people, and that the God who gave these feasts gave them to Israel and has not cast away His people. Making that distinction out loud protects the teaching from being heard as something it is not.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Romans 11:1</span>
+          <span class="scripture-text">I say then, Hath God cast away his people? God forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXVIII -->
+    <section class="section" id="s28">
+      <div class="section-header">
+        <span class="section-num">Section XXVIII</span>
+        <h2 class="section-title">The Question of Gnostics on the Councils</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>There is a claim that circulates widely: that the councils which reshaped the church were filled with Gnostics, and that no true Christians sat among them. It is a serious accusation. It deserves a serious answer, and the answer is that it cannot be supported from any source.</p>
+        </div>
+
+        <p>This section exists because the claim is common, because it would strengthen the argument of this documentary if it were true, and because it is not true. Setting it aside is not a concession. It is the price of being trustworthy on everything else.</p>
+
+        <p class="subhead">What the sources record about who attended</p>
+
+        <p>The men who came to Nicaea were bishops of the churches, and many of them were survivors of the persecution under Diocletian, which had ended barely a dozen years before. Eusebius describes them in the Life of Constantine, and later writers record that some arrived bearing the marks of torture and mutilation. Lists of the signatories survive in several recensions. Whatever else may be said of that assembly, it was not composed of secret initiates of an alternative religion. It was composed of men who had recently been imprisoned and maimed for refusing to deny Christ.</p>
+
+        <p class="subhead">The distinction that is being missed</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Arianism is not Gnosticism</p>
+          <p>The confusion at the root of this claim appears to be between two entirely different things.</p>
+          <p><strong>Arianism</strong> was a dispute about the person of Christ within the Christian faith. Arius taught that the Son was created by the Father and therefore not eternal. He affirmed one God, affirmed that God made the world and called it good, affirmed the Hebrew Scriptures, and affirmed the resurrection of the body. He was wrong about the Son, seriously and dangerously wrong, and Nicaea was called to answer him.</p>
+          <p><strong>Gnosticism</strong> denied that the God of Israel is the true God, taught that the material creation is the work of an inferior being, rejected the Hebrew Scriptures or read them upside down, and made salvation an escape from the body through secret knowledge.</p>
+          <p>These are not the same error and they are not even the same kind of error. To call the Arians Gnostics is to accuse them of the one thing they did not do. And Gnosticism was not on the agenda at Nicaea in any form; it had been fought and answered by Irenaeus, Tertullian, and Hippolytus a century earlier.</p>
+        </div>
+
+        <p class="subhead">The verdict</p>
+
+        <p>There is no documented council of the church at which Gnostics held membership. There is no source, friendly or hostile, that reports such a thing. The claim appears to be a garbled retelling in which the Arian controversy has been relabelled, and it should be set down.</p>
+
+        <div class="tnote">
+          <p class="tnote-label">A note for the teacher: why this correction is worth making out loud</p>
+          <p>A teacher gains more by publicly abandoning a claim he cannot prove than he ever gains by repeating it. The case laid out in this script does not need the Gnostic claim and is not weakened by dropping it. Laodicea canon 29 is real. Constantine's letter is real. Chrysostom's congregation keeping Tabernacles in 386 is real. Every one of those can be handed to a critic with the source, and he will find it exactly as quoted. That is worth far more than a dramatic accusation that dissolves the moment anyone looks for the footnote.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Exodus 20:16</span>
+          <span class="scripture-text">Thou shalt not bear false witness against thy neighbour.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Proverbs 18:17</span>
+          <span class="scripture-text">He that is first in his own cause seemeth just; but his neighbour cometh and searcheth him.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXIX -->
+    <section class="section" id="s29">
+      <div class="section-header">
+        <span class="section-num">Section XXIX</span>
+        <h2 class="section-title">The Whole Course in One Timeline</h2>
+      </div>
+      <div class="section-body">
+
+        <p>Set end to end, the record does not show a fall. It shows a long erosion, contested the whole way.</p>
+
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th style="width:11%">Date</th>
+                <th style="width:52%">Event</th>
+                <th style="width:37%">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-name">c. 49&ndash;50</td><td>The Jerusalem council frees Gentile converts from the full body of covenant obligation at entry, grounding the decision in the weekly synagogue reading of Moses.</td><td>Acts 15:19&ndash;21</td></tr>
+              <tr><td class="col-name">c. 57</td><td>Thousands of Jewish believers are described as zealous of the law; Paul demonstrates publicly that he keeps it.</td><td>Acts 21:20&ndash;26</td></tr>
+              <tr><td class="col-name">c. 62</td><td>James the Just is put to death in Jerusalem.</td><td>Josephus, Antiquities 20.200; Hegesippus in Eusebius, EH 2.23</td></tr>
+              <tr><td class="col-name">c. 64&ndash;68</td><td>Peter and Paul die at Rome.</td><td>1 Clement 5; Dionysius of Corinth in Eusebius, EH 2.25</td></tr>
+              <tr><td class="col-name">66&ndash;70</td><td>The Jewish war; the temple is destroyed; the Jerusalem assembly withdraws to Pella.</td><td>Eusebius, EH 3.5.3</td></tr>
+              <tr><td class="col-name">c. 95&ndash;96</td><td>Clement of Rome still appeals to the Levitical order as a pattern, without apology.</td><td>1 Clement 40&ndash;41</td></tr>
+              <tr><td class="col-name">c. 107&ndash;150</td><td>Ignatius contrasts sabbath-keeping with the new practice and calls it monstrous to profess Christ and practise Judaism; he also presses the authority of the single bishop.</td><td>Ignatius, Magnesians 9&ndash;10; Smyrnaeans 8</td></tr>
+              <tr><td class="col-name">c. 130</td><td>The Epistle of Barnabas argues that Israel never held the covenant, that the food laws never referred to eating, and that the Sabbath cannot presently be kept.</td><td>Barnabas 4, 9, 10, 15</td></tr>
+              <tr><td class="col-name">132&ndash;135</td><td><strong>The Bar Kokhba revolt and its aftermath.</strong> Jews barred from Jerusalem; the city refounded as Aelia Capitolina; the Jerusalem church becomes Gentile under Marcus.</td><td>Eusebius, EH 4.6; Cassius Dio 69.12; Historia Augusta 14.2</td></tr>
+              <tr><td class="col-name">c. 144</td><td>Marcion is excommunicated at Rome for teaching two Gods and rejecting the Hebrew Scriptures.</td><td>Irenaeus, Against Heresies 1.27.2; Tertullian, Against Marcion</td></tr>
+              <tr><td class="col-name">c. 155</td><td>Polycarp and Anicetus disagree over the Passover date and part in peace and communion.</td><td>Irenaeus in Eusebius, EH 5.24.16&ndash;17</td></tr>
+              <tr><td class="col-name">c. 155&ndash;160</td><td>Justin describes the Sunday assembly, giving creation and resurrection as the reasons; and allows that Torah-keeping believers will probably be saved.</td><td>Justin, First Apology 67; Dialogue with Trypho 47</td></tr>
+              <tr><td class="col-name">c. 190&ndash;195</td><td>Victor of Rome tries to force the Sunday reckoning on Asia. Polycrates refuses, tracing the fourteenth-day practice to Philip and John. Irenaeus rebukes Victor and the excommunication fails.</td><td>Eusebius, EH 5.23&ndash;25</td></tr>
+              <tr><td class="col-name">c. 305&ndash;306</td><td>Elvira legislates a Sabbath fast and forbids Christians to eat with Jews, evidence that both practices were common.</td><td>Council of Elvira, canons 26, 49, 50, 78</td></tr>
+              <tr><td class="col-name">7 March 321</td><td>Constantine's civil law commands rest on the venerable day of the Sun, exempting farmers, without reference to Christ or Scripture.</td><td>Codex Justinianus 3.12.2</td></tr>
+              <tr><td class="col-name">325</td><td>Nicaea separates the Pascha from the Jewish reckoning. The reason given is that nothing should be held in common with the Jews.</td><td>Eusebius, Life of Constantine 3.18</td></tr>
+              <tr><td class="col-name">341</td><td>Antioch makes keeping the Pascha with the Jews an offence punishable by excommunication and deposition.</td><td>Council of Antioch, canon 1</td></tr>
+              <tr><td class="col-name">c. 363&ndash;364</td><td><strong>Laodicea forbids Christians to rest on the Sabbath</strong> and pronounces them anathema from Christ if they do; also forbids keeping the feasts and receiving unleavened bread from Jews.</td><td>Synod of Laodicea, canons 16, 29, 37, 38</td></tr>
+              <tr><td class="col-name">367</td><td>Athanasius lists the twenty-seven books of the New Testament, the first surviving list matching ours exactly.</td><td>Athanasius, Festal Letter 39</td></tr>
+              <tr><td class="col-name">386&ndash;387</td><td>Chrysostom preaches eight homilies at Antioch against members of his own congregation who are keeping Trumpets, Tabernacles, and the fasts.</td><td>Chrysostom, Adversus Judaeos 1&ndash;8</td></tr>
+              <tr><td class="col-name">393&ndash;397</td><td>Hippo and Carthage ratify the canon of Scripture for the churches of North Africa.</td><td>Synod of Hippo; Council of Carthage</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Read the shape of it</p>
+          <p>Three hundred and forty years separate Acts 21 from Chrysostom's homilies. In every one of those centuries there are believers keeping the commandments of God, and in every one of those centuries there is pressure against them, and the pressure grows. There is no single moment of apostasy to point at. There is a long slope, and at the bottom of it a canon with a curse attached.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXX -->
+    <section class="section" id="s30">
+      <div class="section-header">
+        <span class="section-num">Section XXX</span>
+        <h2 class="section-title">What May Be Taught as Fact</h2>
+      </div>
+      <div class="section-body">
+
+        <p>This table is the practical heart of the study. It exists so that a teacher knows exactly which ground is solid, which requires qualification, and which must be given up.</p>
+
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th style="width:44%">The claim</th>
+                <th style="width:14%">Verdict</th>
+                <th style="width:42%">Basis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>The earliest Jerusalem believers kept the law and were zealous for it</td><td class="col-verdict v-yes">Verified</td><td>Acts 21:20&ndash;26; Hegesippus in Eusebius, EH 2.23</td></tr>
+              <tr><td>Jesus kept the Sabbath and the feasts, as did the apostles after Him</td><td class="col-verdict v-yes">Verified</td><td>Luke 4:16; Acts 2:46; Acts 3:1; Acts 18:21</td></tr>
+              <tr><td>Churches in Asia kept the Passover on the fourteenth day into the late second century, tracing it to John</td><td class="col-verdict v-yes">Verified</td><td>Polycrates in Eusebius, EH 5.24.2&ndash;6</td></tr>
+              <tr><td>A church synod forbade Christians to rest on the Sabbath, under anathema</td><td class="col-verdict v-yes">Verified</td><td>Synod of Laodicea, canon 29</td></tr>
+              <tr><td>Constantine's law of 321 honoured "the venerable day of the Sun" and exempted farmers</td><td class="col-verdict v-yes">Verified</td><td>Codex Justinianus 3.12.2</td></tr>
+              <tr><td>Nicaea separated the Pascha from the Jewish reckoning, on the stated ground of having nothing in common with the Jews</td><td class="col-verdict v-yes">Verified</td><td>Eusebius, Life of Constantine 3.18</td></tr>
+              <tr><td>Christians were still keeping Sabbath and the feasts at the end of the fourth century</td><td class="col-verdict v-yes">Verified</td><td>Chrysostom, Adversus Judaeos 1.1.5</td></tr>
+              <tr><td>The Epistle of Barnabas taught that Israel never rightly held the covenant</td><td class="col-verdict v-yes">Verified</td><td>Barnabas 4:6&ndash;7; 14:1</td></tr>
+              <tr><td>The Gnostic gospels are hostile to the God of Israel and to His law</td><td class="col-verdict v-yes">Verified</td><td>Nag Hammadi texts; Codex Tchacos; Irenaeus, Against Heresies 1</td></tr>
+              <tr><td>The Bar Kokhba war and Hadrian's measures were the practical hinge of the separation</td><td class="col-verdict v-yes">Verified</td><td>Eusebius, EH 4.6; mainstream scholarship</td></tr>
+              <tr><td>Peter, Paul, and both men named James died as martyrs</td><td class="col-verdict v-yes">Verified</td><td>Acts 12:2; 1 Clement 5; Josephus, Antiquities 20.200</td></tr>
+              <tr><td>The circumcision ban caused the Bar Kokhba revolt</td><td class="col-verdict v-part">Contested</td><td>Historia Augusta 14.2 alone; Cassius Dio gives a different cause</td></tr>
+              <tr><td>Ignatius wrote his letters about AD 107</td><td class="col-verdict v-part">Contested</td><td>Traditional date; a substantial body of scholarship argues 135&ndash;150</td></tr>
+              <tr><td>The Didache is first-century</td><td class="col-verdict v-part">Contested</td><td>Proposals range from mid-first to mid-second century</td></tr>
+              <tr><td>Didache 14:1 proves early Sunday worship</td><td class="col-verdict v-part">Contested</td><td>The Greek is genuinely disputed; too uncertain to build on</td></tr>
+              <tr><td>All twelve apostles were martyred</td><td class="col-verdict v-no">Unsupported</td><td>No early attestation for seven of them; John died of old age</td></tr>
+              <tr><td>A council shortly after Paul's death overturned the Sabbath and Passover</td><td class="col-verdict v-no">Unsupported</td><td>No such council exists in any record; earliest synods c. 190</td></tr>
+              <tr><td>The Council of Nicaea decided the canon of Scripture</td><td class="col-verdict v-no">Unsupported</td><td>No record mentions it; canon settled later, Athanasius 367, Carthage 397</td></tr>
+              <tr><td>Gnostics sat on a church council with no Christians present</td><td class="col-verdict v-no">Unsupported</td><td>No source records it; the claim confuses Arianism with Gnosticism</td></tr>
+              <tr><td>Constantine changed the Sabbath to Sunday</td><td class="col-verdict v-no">Unsupported</td><td>First-day assembly predates him by generations; his law was civil, not ecclesiastical</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Count the columns</p>
+          <p>Eleven claims stand fully verified with primary sources anyone can check. Four require honest qualification. Five must be given up. And every one of the eleven that stands is enough on its own to raise the question this study is asking. Nothing of value is lost by releasing the five.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXXI -->
+    <section class="section" id="s31">
+      <div class="section-header">
+        <span class="section-num">Section XXXI</span>
+        <h2 class="section-title">Where the Church Fell Away from What Jesus Commanded</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="cue narration">
+          <p class="cue-label">Narrator</p>
+          <p>So where did it happen? The honest answer is that it did not happen at a place. It happened the way most falls happen. Not in one decision, but in a thousand small ones, each of which seemed reasonable at the time to the men who made it.</p>
+        </div>
+
+        <p>Four forces did the work, and they overlap. Naming them is more useful than naming a date, because these four are still operating.</p>
+
+        <p class="subhead">The first: allegory without a floor</p>
+
+        <p>Philo built a method for finding the soul of a commandment and warned in writing that the body of it must be kept as well. Barnabas took the method and dropped the warning. Alexandria made it a system. Once a commandment can be turned into a symbol at will, no commandment is safe, because every one of them has a meaning, and the meaning can always be offered as a substitute for the doing. This is the mechanism, and it is the oldest of the four.</p>
+
+        <p class="subhead">The second: separation from the people through whom it came</p>
+
+        <p>The Didache moves the fast days so as not to look like the hypocrites. Ignatius calls it monstrous to profess Christ and practise Judaism. Justin records believers who will not eat with a Torah-keeping brother. Elvira forbids sharing a meal. Nicaea says we must have nothing in common with them. Laodicea calls resting on the seventh day judaizing and attaches a curse. Every step is a step further from a people, and because the commandments came through that people, every step away from them is a step away from the commandments. This is not a doctrinal argument at any point. It is an argument from identity, and identity is a poor foundation for obedience.</p>
+
+        <p class="subhead">The third: catastrophe and the power of the state</p>
+
+        <p>The temple fell in 70. The nation was crushed in 135, its people barred from their own city, its covenant sign made a crime. From that point, keeping the Sabbath and the feasts carried a political cost that had nothing to do with theology. Then in the fourth century the state changed sides, and the same power that had made the commandments dangerous now made a rival practice law. When Constantine's letter went out after Nicaea, it went out with an emperor's authority behind it.</p>
+
+        <p class="subhead">The fourth: authority filling the gap</p>
+
+        <p>Ignatius pressed the single bishop hard, and the pressure only grew. Where the written word of God is loosened, something must hold the people together, and what filled the space was office and canon. By 364 a synod could pronounce a man anathema from Christ for resting on the day God blessed in Genesis. That sentence is only possible in a church that has come to believe its own rulings can overrule a commandment.</p>
+
+        <div class="keypoint">
+          <p class="keypoint-label">The test the Lord gave</p>
+          <p>Every one of these four is the thing the Lord Jesus named in Mark 7. Not one of them was a rejection of God in words. Every one of them was a tradition of men laid over a commandment of God, offered for good reasons, by sincere people, with the effect of setting the commandment aside. That is precisely what He said would happen, and He said it to the most religious men of His generation, not to pagans.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 15:3</span>
+          <span class="scripture-text">But he answered and said unto them, Why do ye also transgress the commandment of God by your tradition?</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Matthew 15:8&ndash;9</span>
+          <span class="scripture-text">This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me. But in vain they do worship me, teaching for doctrines the commandments of men.</span>
+        </div>
+
+        <p class="subhead">What was never lost</p>
+
+        <p>It would be a false ending to leave the impression that obedience died out and had to be recovered. The record does not say that. At every stage of this story there were believers keeping the commandments of God and holding the faith of Jesus. Polycarp kept the Passover as he had learned it from John. The churches of Asia kept it a generation after that, and would not be moved. Christians in Spain were resting on the seventh day in 306. Christians in Antioch were keeping Tabernacles in 386. The Nazarenes held both the confession of Christ and the law of God together for centuries.</p>
+
+        <p>The councils did not abolish these people. They legislated against them, which is a very different thing, and legislation against a practice is a monument to its survival.</p>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 12:17</span>
+          <span class="scripture-text">And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of God, and have the testimony of Jesus Christ.</span>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 14:12</span>
+          <span class="scripture-text">Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus.</span>
+        </div>
+
+        <div class="keypoint">
+          <p class="keypoint-label">Where this leaves us, stated carefully</p>
+          <p>None of this history saves anyone. Salvation is the free gift of God, received by grace through faith in Jesus Christ, and no man has ever earned it by keeping a commandment or lost it by failing to read a council canon correctly. Believers who keep the first day in sincerity are not enemies, and this study is not written to condemn them.</p>
+          <p>What the history does is answer a question of authority. When someone says the commandments were changed, this record allows us to ask a simple question in return: changed by whom, and when, and on what authority? And the answer that comes back from the documents is not the Lord Jesus, and not the apostles, and not any word of Scripture. It is allegory, it is separation, it is an emperor, and it is a canon of a regional synod in the middle of the fourth century. That is the whole of the authority behind the change, and every part of it is the work of men.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">John 14:15</span>
+          <span class="scripture-text">If ye love me, keep my commandments.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION XXXII -->
+    <section class="section" id="s32">
+      <div class="section-header">
+        <span class="section-num">Section XXXII</span>
+        <h2 class="section-title">Sources for Further Study</h2>
+      </div>
+      <div class="section-body">
+
+        <p>Every source quoted in this script is available to read in full, most of them free of charge. Do not take this teaching on trust. Go and read them.</p>
+
+        <p class="subhead">Primary sources, freely available online</p>
+
+        <ul class="plainlist">
+          <li><strong>Eusebius, Ecclesiastical History</strong> and <strong>Life of Constantine.</strong> Nicene and Post-Nicene Fathers, second series, volume 1. Available at New Advent and the Christian Classics Ethereal Library. The single most important source in this study.</li>
+          <li><strong>The Apostolic Fathers.</strong> 1 Clement, the Didache, the Epistle of Barnabas, Ignatius, Polycarp, the Shepherd of Hermas, and the Epistle to Diognetus. The Lightfoot and Lake translations are available at Early Christian Writings.</li>
+          <li><strong>Justin Martyr, First Apology and Dialogue with Trypho.</strong> Ante-Nicene Fathers, volume 1. New Advent and Early Christian Writings.</li>
+          <li><strong>Irenaeus, Against Heresies.</strong> Ante-Nicene Fathers, volume 1. New Advent.</li>
+          <li><strong>Tertullian, Against Marcion.</strong> Ante-Nicene Fathers, volume 3; the Ernest Evans edition is at Tertullian.org.</li>
+          <li><strong>The canons of the councils.</strong> Elvira, Antioch, Laodicea, and Nicaea. The Henry Percival translation is in Nicene and Post-Nicene Fathers, second series, volume 14, at the Christian Classics Ethereal Library and New Advent.</li>
+          <li><strong>Philo of Alexandria, On the Migration of Abraham.</strong> The Yonge translation is at Early Jewish Writings; the Colson and Whitaker text is in the Loeb Classical Library.</li>
+          <li><strong>Josephus, Antiquities of the Jews,</strong> book 20, for the death of James.</li>
+          <li><strong>John Chrysostom, Adversus Judaeos.</strong> The Paul W. Harkins translation is in the Fathers of the Church series, volume 68.</li>
+          <li><strong>Codex Justinianus 3.12.2,</strong> for Constantine's Sunday law. The Latin is at the Latin Library; an English rendering is in Schaff's History of the Christian Church, volume 3.</li>
+          <li><strong>The Nag Hammadi library</strong> and the apocryphal Acts, if a reader wishes to see for himself what the Gnostic writings actually teach. Available at Early Christian Writings and the Gnostic Society Library.</li>
+        </ul>
+
+        <p class="subhead">Secondary works consulted</p>
+
+        <ul class="plainlist">
+          <li>Sean McDowell, <em class="term">The Fate of the Apostles</em>, Routledge, 2015. The most thorough modern assessment of the martyrdom traditions, graded by probability.</li>
+          <li>Bruce Metzger, <em class="term">The Canon of the New Testament: Its Origin, Development, and Significance.</em> The standard scholarly treatment.</li>
+          <li>J. B. Lightfoot, <em class="term">The Apostolic Fathers.</em> Still the foundational critical work on the Ignatian recensions.</li>
+          <li>Philip Schaff, <em class="term">History of the Christian Church.</em> Dated in places, and a convenient source for many of the imperial documents in translation.</li>
+          <li>Henry Percival, <em class="term">The Seven Ecumenical Councils,</em> with the canons of the local synods and their ancient commentaries.</li>
+        </ul>
+
+        <div class="bonus">
+          <p class="bonus-label">Bonus</p>
+          <p>A word on how to read these men. Nearly every writer quoted in this study was, on some point, in error, and several of them were in error on matters this ministry considers serious. That is not a reason to refuse their testimony. It is a reason to weigh it. A hostile witness who preserves a fact against his own interest, as Eusebius did when he copied out Polycrates, is worth more than a friendly witness who tells us only what we wanted to hear. Read them all, weigh them all, and bring every one of them back to the same standard.</p>
+        </div>
+
+        <div class="scripture">
+          <span class="scripture-ref">1 Thessalonians 5:21</span>
+          <span class="scripture-text">Prove all things; hold fast that which is good.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <h3 class="conclusion-title">Contend for the Faith Once Delivered</h3>
+      <div class="conclusion-body">
+        <p>We set out to find where the church departed from what Jesus commanded, and we agreed at the start to take facts over opinions, even where the facts were inconvenient. They were inconvenient three times, and each time we said so out loud. There was no council in the years after Paul that overturned the Sabbath and the Passover. Nicaea did not give us the Bible. No Gnostic ever sat on a church council. Those claims are gone, and the case is stronger without them.</p>
+        <p>What remains is a matter of public record. The first believers kept the commandments of God and were glad to be known for it. The churches of Asia kept the Passover on the day Scripture appoints, and said they had it from John, and would not be moved when Rome demanded it. Christians in Spain were resting on the seventh day at the dawn of the fourth century. An emperor commanded rest on the venerable day of the Sun and exempted the farmers. A council severed the feast from its appointed time because it was thought unworthy to hold anything in common with the Jews. A synod pronounced a curse on any believer who rested on the day God blessed at creation. And after all of it, in a great city, in the year 386, ordinary members of the congregation were still going up to keep the feast of Tabernacles, and their own preacher said there were many of them.</p>
+        <p>Not one of those changes came from the mouth of Christ. Not one came from an apostle. Not one is written in the Scripture. They came from allegory, from an emperor, from a quarrel with a people, and from the pen of men in council. And the plainest evidence that the commandments were never truly surrendered is the law written to forbid them, three centuries and more after the resurrection, to people who had never let them go.</p>
+        <p>So the question that closes this study is not a historical question at all. The history has done its work once it has shown us who made the change and by what authority. What remains is the question every believer has to answer for himself, and the Lord asked it long before any of this began.</p>
+        <p><em>If ye love me, keep my commandments.</em></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <span class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <p class="footer-text">Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>Work the Word &middot; Pronomian Teaching Series</p>
+  </footer>
+
+</div>
+</body>
+</html>

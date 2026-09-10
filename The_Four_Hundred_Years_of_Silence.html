@@ -40,34 +40,77 @@
 
   /* ── PAGE SHELL ── */
   .page {
-    max-width: 820px; margin: 0 auto; background: var(--parchment); border: 1px solid #D4B97A;
-    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset; position: relative;
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
   }
+
+  /* decorative gold corner brackets */
   .page::before, .page::after {
-    content: ''; position: absolute; width: 40px; height: 40px;
-    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 3;
   }
   .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
   .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
 
-  /* ── HEADER (crimson) ── */
+  /* ── HEADER (crimson bookend) ── */
   .doc-header {
-    text-align: center; padding: 3rem 3rem 2rem; border-bottom: 3px solid var(--gold-light);
-    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); position: relative;
+    text-align: center;
+    padding: 3.4rem 3rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .part-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 0.5rem; }
-  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 0.8rem; }
+  .doc-header::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .part-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 1.1rem; }
   .doc-title {
-    font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; color: #FBF5E6;
-    letter-spacing: 0.04em; line-height: 1.25; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.30);
   }
-  .doc-subtitle { font-family: 'Cinzel', serif; font-size: clamp(0.75rem, 1.8vw, 0.95rem); color: var(--gold-light); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.6rem; }
-  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
-  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .doc-subtitle {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    line-height: 1.6;
+    margin-top: 0.9rem;
+    opacity: 0.94;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
   .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
 
   /* ── BODY ── */
-  .doc-body { padding: 0 3rem 3rem; }
+  .doc-body {
+    padding: 0 3rem 3rem;
+  }
 
   /* ── PREAMBLE ── */
   .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
@@ -163,15 +206,35 @@
   .conclusion-body em { color: var(--gold-light); font-style: italic; }
 
   /* ── FOOTER (crimson) ── */
-  .doc-footer { text-align: center; padding: 2rem; border-top: 3px solid var(--gold-light); margin-top: 3rem; background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
-  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
-  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: #FBF5E6; text-transform: uppercase; margin-top: 0.5rem; }
+  .doc-footer {
+    text-align: center;
+    padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; font-size: 1.2rem; color: var(--gold-light); letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF6E9;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
 
   /* ── PRINT ── */
   @media print {
     @page {
       size: 8.5in 11in;
-      margin: 0.1in;
+      margin: 0.75in;
       @bottom-center {
         content: "Page " counter(page) " of " counter(pages);
         font-family: 'Cinzel', serif;
@@ -180,11 +243,11 @@
       }
     }
     body { background: white; padding: 0; font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .page { box-shadow: none; border: none; max-width: 100%; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
     .page::before, .page::after { display: none; }
-    .doc-header { padding: 0.55in 0.6in 0.4in; }
-    .doc-body { padding: 0 0.6in 0.4in; }
-    .doc-footer { padding: 0.35in 0.6in; margin-top: 0.4in; }
+    .doc-header { padding: 1.7rem 1.4rem 1.4rem; }
+    .doc-body { padding: 0; }
+    .doc-footer { padding: 1.3rem 1.4rem; margin-top: 2rem; }
     .doc-header, .doc-footer, .conclusion, .compare-table thead tr {
       -webkit-print-color-adjust: exact; print-color-adjust: exact;
     }
@@ -212,8 +275,12 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
+    body { padding: 1rem 0.6rem 2.5rem; }
     .doc-body { padding: 0 1.4rem 2rem; }
-    .doc-header { padding: 2rem 1.4rem 1.4rem; }
+    .doc-header { padding: 2.2rem 1.3rem 1.8rem; }
+    .doc-footer { padding: 2rem 1.2rem 1.8rem; }
+    .doc-header::after, .doc-footer::after { inset: 8px; }
+    .page::before, .page::after { width: 24px; height: 24px; }
     .toc-list { columns: 1; }
     .compare-table { font-size: 0.82rem; }
     .article-header { flex-direction: column; gap: 0.3rem; }

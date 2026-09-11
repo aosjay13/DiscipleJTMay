@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Keeping the Feasts of the Lord &middot; In the Order of Melchizedek</title>
+<meta name="description" content="How to keep the Sabbath and the feasts of the Lord today in the order of Melchizedek, with the days still honored and the sacrifices finished in Christ.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 940px; margin: 0 auto; background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none; z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center; padding: 3.4rem 3rem 2.6rem;
+    border-bottom: 3px solid var(--gold-light);
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative; overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .doc-header::after {
+    content: ''; position: absolute; inset: 12px;
+    border: 1px solid rgba(201,168,76,0.4); pointer-events: none;
+  }
+  .part-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 0.5rem;
+  }
+  .header-ornament {
+    font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em;
+    display: block; margin-bottom: 1.1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700;
+    color: #FBF6E9; letter-spacing: 0.04em; line-height: 1.25; text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.30);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', Georgia, serif; font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem); color: var(--gold-pale);
+    line-height: 1.6; margin-top: 0.9rem; opacity: 0.94;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+  .preamble p + p { margin-top: 1rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif; font-size: 3.2rem; font-weight: 700; float: left;
+    line-height: 0.82; padding: 0.1rem 0.55rem 0 0; color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.4rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.95rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.72rem; color: var(--gold-light); min-width: 2.6rem; flex-shrink: 0; }
+
+  /* ── ARTICLE ── */
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; flex-wrap: wrap; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1.15rem, 2.8vw, 1.45rem); font-weight: 600; color: var(--crimson); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+  .article-body em.term { color: var(--crimson); font-weight: 500; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: var(--ink);
+    letter-spacing: 0.06em; margin: 2.2rem 0 0.9rem; padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sub-head small { display: block; font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.2rem; }
+
+  /* ── FEAST FACTS ── */
+  .feast-facts {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 1.4rem 0 1.8rem;
+    border: 1px solid #D4B97A66; border-top: 3px solid var(--crimson); background: var(--cream);
+  }
+  .fact { padding: 0.7rem 1rem; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+  .fact:nth-child(2n) { border-right: none; }
+  .fact.wide { grid-column: 1 / -1; border-right: none; }
+  .fact:last-child { border-bottom: none; }
+  .fact-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); display: block; margin-bottom: 0.2rem; }
+  .fact-text { font-size: 0.97rem; line-height: 1.5; color: var(--ink-mid); }
+
+  /* ── KEEP ITEMS (ways to observe) ── */
+  .keep { margin: 1.1rem 0; padding: 0.95rem 1.2rem 1rem; background: var(--parchment); border: 1px solid #D4B97A44; border-left: 3px solid var(--gold-light); }
+  .keep-title { font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; display: flex; gap: 0.6rem; align-items: baseline; line-height: 1.35; }
+  .keep-num { font-family: 'Cinzel', serif; font-size: 0.72rem; color: #FBF5E6; background: var(--crimson); min-width: 1.45rem; height: 1.45rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; top: -0.05rem; }
+  .keep p { font-size: 1rem; line-height: 1.76; color: var(--ink-mid); text-align: justify; }
+  .keep p + p { margin-top: 0.6rem; }
+  .keep .scripture-entry { margin: 0.7rem 0 0.2rem; padding: 0.7rem 0.95rem; background: var(--cream); border-top: 1px solid #D4B97A55; }
+
+  /* ── SECTION PANEL ── */
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 0.8rem; }
+
+  /* ── KEY POINT PANEL ── */
+  .keypoint { margin: 1.6rem 0; padding: 1.3rem 1.6rem; background: linear-gradient(to right, #F5EDD8, var(--cream)); border-left: 4px solid var(--crimson); }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.6rem; }
+  .keypoint p { font-size: 1.04rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.8rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── TEACHER'S NOTE / HISTORY NOTE (dashed gold) ── */
+  .hist-note { margin: 1.6rem 0; padding: 1rem 1.2rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; font-size: 0.95rem; line-height: 1.72; color: var(--ink-soft); font-style: italic; }
+  .hist-note-label { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.55rem; display: block; }
+  .hist-note strong { font-style: normal; color: var(--ink-mid); }
+  .hist-note p + p { margin-top: 0.7rem; }
+  .hist-quote { display: block; margin: 0.7rem 0 0.7rem 1rem; padding-left: 0.9rem; border-left: 2px solid var(--gold-light); color: var(--ink-mid); }
+  .hist-ref { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--gold); display: block; margin-bottom: 0.25rem; }
+
+  /* ── BONUS PANEL (dashed gold) ── */
+  .bonus { margin: 1.8rem 0; padding: 1.3rem 1.5rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; }
+  .bonus-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus strong { color: var(--ink); }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture-block { margin: 1.6rem 0; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+  .psalm-title { font-style: normal; font-variant: small-caps; letter-spacing: 0.04em; }
+
+  /* ── COMPARISON TABLE ── */
+  .table-wrap { margin: 1.6rem 0; overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+  .compare-table thead tr { background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .compare-table th { font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: #FBF5E6; padding: 0.65rem 0.75rem; text-align: left; font-weight: 500; vertical-align: bottom; }
+  .compare-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); vertical-align: top; line-height: 1.5; }
+  .compare-table tbody tr:nth-child(even) td { background: rgba(242,235,217,0.55); }
+  .compare-table .col-name { font-family: 'Cinzel', serif; font-size: 0.82rem; color: var(--crimson); font-weight: 600; }
+  .compare-table .ref { display: block; font-size: 0.8rem; color: var(--gold); font-style: normal; margin-top: 0.15rem; }
+
+  /* ── CONCLUSION (crimson) ── */
+  .conclusion { margin-top: 2.6rem; padding: 2rem; background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%); color: var(--gold-pale); position: relative; }
+  .conclusion::after { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(201,168,76,0.35); pointer-events: none; }
+  .conclusion-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .conclusion-title { font-family: 'Cinzel', serif; font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 700; color: #FBF6E9; margin-bottom: 1.1rem; line-height: 1.3; }
+  .conclusion-body { font-size: 1.05rem; line-height: 1.85; color: #EDE0C4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-verse { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(201,168,76,0.35); font-style: italic; color: #F2E6CC; }
+  .conclusion-verse .cv-ref { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.74rem; letter-spacing: 0.08em; color: var(--gold-light); display: block; margin-bottom: 0.25rem; }
+  .conclusion-verse + .conclusion-verse { border-top: none; margin-top: 0.6rem; padding-top: 0; }
+
+  /* ── COMPANION TEACHING ── */
+  .companion { margin: 2.8rem 0 0; padding-top: 2.2rem; border-top: 1px solid var(--rule); }
+  .companion-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; }
+  .companion-link { display: block; padding: 1.2rem 1.4rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--crimson); text-decoration: none; transition: background 0.2s, border-left-color 0.2s; }
+  .companion-link:hover { background: var(--gold-pale); border-left-color: var(--crimson-lt); }
+  .companion-title { display: block; font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: var(--crimson); line-height: 1.35; }
+  .companion-note { display: block; margin-top: 0.45rem; font-size: 0.98rem; line-height: 1.72; color: var(--ink-mid); }
+  .companion-read { display: block; margin-top: 0.75rem; font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center; padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light); margin-top: 0;
+    position: relative; overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: #FBF6E9; text-transform: uppercase; margin-top: 0.6rem; line-height: 1.9; }
+
+  /* ── PRINT (8.5 x 11 portrait, numbered pages, clean breaks) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; hyphens: auto; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .site-nav { display: none; }
+
+    .doc-header, .doc-footer, .section, .keypoint, .scripture-block, .hist-note, .bonus,
+    .toc, .feast-facts, .keep, .keep-num, .conclusion, .companion-link,
+    .compare-table thead tr, .compare-table tbody tr:nth-child(even) td {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+
+    /* the text column sits inside the 0.75in page margin */
+    .doc-header { padding: 1.7rem 1.4rem 1.4rem; }
+    .doc-body   { padding: 0; }
+    .doc-footer { padding: 1.3rem 1.4rem; margin-top: 2rem; }
+    .preamble { margin-top: 1.6rem; padding-bottom: 1.4rem; }
+    .toc { margin: 1.4rem 0 0; }
+    .article { margin-top: 0; padding-top: 1.6rem; border-top: none; }
+
+    /* each appointed time begins on a fresh sheet */
+    .print-new-page { page-break-before: always; break-before: page; }
+
+    /* nothing meaningful gets split down the middle */
+    .sub-head, .scripture-entry, .keep, .section, .companion,
+    .feast-facts, .toc, .toc-list li, .article-header, .conclusion,
+    .compare-table tr, .keypoint p, .hist-note p, .hist-quote, .bonus p, .keep p {
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    /* taller panels may continue onto the next sheet, but never mid-paragraph */
+    .keypoint, .hist-note, .bonus, .keep.flow { page-break-inside: auto; break-inside: auto; }
+    .hist-note-label { page-break-after: avoid; break-after: avoid; }
+
+    /* slightly tighter rhythm on paper so sections end cleanly */
+    .article-body { line-height: 1.7; margin-bottom: 1.1rem; }
+    .keep { margin: 0.8rem 0; padding: 0.8rem 1.1rem 0.85rem; }
+    .keep p { line-height: 1.64; }
+    .scripture-block { margin: 1.2rem 0; padding: 1.1rem 1.3rem; }
+    .scripture-entry { line-height: 1.66; margin-bottom: 0.8rem; }
+    .keypoint, .bonus, .hist-note { margin: 1.2rem 0; }
+    .keypoint p, .bonus p { line-height: 1.68; }
+    .sub-head { margin: 1.6rem 0 0.7rem; }
+    .feast-facts { margin: 1rem 0 1.3rem; }
+    .scripture-block { page-break-inside: auto; break-inside: auto; }
+    .scripture-block .scripture-label { page-break-after: avoid; break-after: avoid; }
+    .compare-table thead { display: table-header-group; }
+
+    /* a heading is never the last line on a page */
+    .article-header, .article-title, .sub-head, .section-title, .keypoint-label,
+    .scripture-label, .toc-title, .preamble-label, .bonus-label, .keep-title {
+      page-break-after: avoid; break-after: avoid;
+    }
+    .article-body, .keep p { orphans: 3; widows: 3; }
+    .doc-footer { page-break-before: avoid; break-before: avoid; }
+
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.4rem 2.5rem; }
+    .doc-body { padding: 0 1.3rem 2rem; }
+    .doc-header { padding: 2.2rem 1.4rem 1.6rem; }
+    .toc { padding: 1.2rem 1.2rem; }
+    .toc-list { columns: 1; }
+    .feast-facts { grid-template-columns: 1fr; }
+    .fact { border-right: none; }
+    .keep p, .article-body { text-align: left; }
+    .compare-table { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="part-label">The Appointed Times &middot; A Teaching</span>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">Keeping the Feasts of the Lord</h1>
+    <p class="doc-subtitle">In the Order of Melchizedek, Now That the Sacrifices Are Finished</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Where We Are Going</p>
+      <p class="dropcap">Most people who come to love the feasts of the Lord hit the same wall sooner or later. They read Leviticus 23 and see the days God set apart, and they want to keep them. Then they read the next line and find bulls, rams, lambs, and goats laid on an altar, a priest from the family of Aaron standing over it all, and a temple in Jerusalem that has not stood for nearly two thousand years. The honest question follows right behind: if the altar is gone and the sacrifices are finished in Christ, what exactly are we supposed to do on these days?</p>
+      <p>Some answer that question by throwing the days away with the sacrifices. That is not what the Scripture teaches. God called these days His own feasts and set them as statutes for ever in all our dwellings. Others answer it by trying to rebuild pieces of the Levitical system in their living rooms. That is not what the Scripture teaches either, because the priesthood has changed and the one offering of Christ has done what the blood of animals never could.</p>
+      <p>This teaching walks the middle road the Bible actually lays out. We live under a better priesthood, the order of Melchizedek, with Jesus Christ as our High Priest for ever. That order came to Abraham with bread and wine, not with a knife and an altar. Under it, every believer is made a priest, and the offerings we bring are the spiritual sacrifices the New Testament names: our bodies, our praise, our prayers, our giving, and our doing good. So we take each appointed time in turn, the weekly Sabbath first, then Passover and Unleavened Bread, Pentecost, Trumpets, Atonement, and Tabernacles with the Eighth Day, and we ask the practical question for every one of them. How do we keep this day, physically and faithfully, now that the Lamb has already been slain?</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#art0"><span class="toc-num">Intro</span>The Days Remain, the Altar Is Finished</a></li>
+        <li><a href="#art1"><span class="toc-num">I.</span>The Sabbath</a></li>
+        <li><a href="#art2"><span class="toc-num">II.</span>Passover and Unleavened Bread</a></li>
+        <li><a href="#art3"><span class="toc-num">III.</span>Pentecost</a></li>
+        <li><a href="#art4"><span class="toc-num">IV.</span>The Feast of Trumpets</a></li>
+        <li><a href="#art5"><span class="toc-num">V.</span>The Day of Atonement</a></li>
+        <li><a href="#art6"><span class="toc-num">VI.</span>Tabernacles and the Eighth Day</a></li>
+        <li><a href="#art7"><span class="toc-num">VII.</span>The Whole Counsel</a></li>
+      </ul>
+    </nav>
+
+    <!-- INTRO ARTICLE -->
+    <article class="article print-new-page" id="art0">
+      <div class="article-header">
+        <span class="article-num">The Foundation</span>
+        <h2 class="article-title">The Days Remain, the Altar Is Finished</h2>
+      </div>
+
+      <p class="article-body">Before we can talk about how to keep any single feast, we have to settle two things at once, and hold them together without letting go of either one. The first is that the appointed times still belong to God and still belong to His people. The second is that the sacrificial system attached to those days has been fulfilled and closed in Christ. Lose the first truth and you end up with a church that has no Sabbath and no feasts. Lose the second and you end up with believers trying to live under a priesthood God has already changed.</p>
+
+      <p class="sub-head"><small>The First Truth</small>These Are the Lord&rsquo;s Feasts</p>
+
+      <p class="article-body">God never called these days the feasts of the Jews. When He introduced them to Moses, He called them His own. They are His appointed times, fixed meetings He set on the calendar and invited His people to keep with Him.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Whose Feasts They Are</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:1&ndash;2</span>
+          <span class="scripture-text">And the LORD spake unto Moses, saying, Speak unto the children of Israel, and say unto them, Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:31</span>
+          <span class="scripture-text">Ye shall do no manner of work: it shall be a statute for ever throughout your generations in all your dwellings.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Notice the two phrases that keep coming back through the chapter, a statute for ever and in all your dwellings (Leviticus 23:14, 23:21, 23:31, 23:41). God did not tie the days themselves to the temple. The Sabbath was kept in every home in Israel, far from the altar, and so was the rest of every holy day. The priests had their work at the sanctuary, but the people kept the days where they lived. That is why the days could outlive the temple. They were never built on top of it.</p>
+
+      <p class="sub-head"><small>The Second Truth</small>The Sacrifices Are Finished in Christ</p>
+
+      <p class="article-body">Now look at the other side. The offerings that were laid on the altar during these days were real commands, and they meant something. But they were shadows, and Scripture says plainly that the shadow has given way to the substance. The priests of Aaron stood day after day offering the same sacrifices, and those sacrifices could never take away sins. Christ offered one sacrifice and sat down.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">One Offering for Ever</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 10:11&ndash;14</span>
+          <span class="scripture-text">And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins: But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God; From henceforth expecting till his enemies be made his footstool. For by one offering he hath perfected for ever them that are sanctified.</span>
+        </div>
+      </div>
+
+      <p class="article-body">There is also a very plain reason, written in the Law itself, why no one may offer the Passover lamb or any feast sacrifice today. God limited those offerings to one place, the place He would choose to put His name. They could not be offered in just any town or any home.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Only at the Place God Chose</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 16:5&ndash;6</span>
+          <span class="scripture-text">Thou mayest not sacrifice the passover within any of thy gates, which the LORD thy God giveth thee: But at the place which the LORD thy God shall choose to place his name in, there thou shalt sacrifice the passover at even, at the going down of the sun, at the season that thou camest forth out of Egypt.</span>
+        </div>
+      </div>
+
+      <p class="article-body">When the Romans burned the temple in AD 70 (Josephus, <em>The Wars of the Jews</em>, Book 6, Chapter 4), the altar was gone, and the Jewish people themselves stopped slaying the Passover lamb, because the Law gave them nowhere else to do it. But for the believer, the lamb had already been fulfilled forty years earlier. Christ our passover is sacrificed for us (1 Corinthians 5:7). We do not stop sacrificing because we lost the temple. We stop because the true Lamb has come, and nothing is left to add to what He did.</p>
+
+      <p class="sub-head"><small>The Better Order</small>Bread and Wine, Not a Knife and an Altar</p>
+
+      <p class="article-body">So what priesthood do we keep the feasts under? The book of Hebrews answers that Jesus is a priest for ever after the order of Melchizedek. And the first time Melchizedek appears in the Bible, look at what he brings out to meet Abraham.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The First Meeting</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 14:18&ndash;20</span>
+          <span class="scripture-text">And Melchizedek king of Salem brought forth bread and wine: and he was the priest of the most high God. And he blessed him, and said, Blessed be Abram of the most high God, possessor of heaven and earth: And blessed be the most high God, which hath delivered thine enemies into thy hand. And he gave him tithes of all.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 110:4</span>
+          <span class="scripture-text">The LORD hath sworn, and will not repent, Thou art a priest for ever after the order of Melchizedek.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Bread and wine, a blessing, praise to the most high God, and a tithe given in response. No animal was slain. That is the pattern of the order we now live under. It is older than Aaron, higher than Aaron, and it does not depend on a building in Jerusalem, because its High Priest lives for ever in the heavens.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">A Priest After the Power of an Endless Life</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 7:15&ndash;17</span>
+          <span class="scripture-text">And it is yet far more evident: for that after the similitude of Melchisedec there ariseth another priest, Who is made, not after the law of a carnal commandment, but after the power of an endless life. For he testifieth, Thou art a priest for ever after the order of Melchisedec.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Under this order, the whole people of God are made priests, and the Scripture tells us exactly what kind of sacrifices those priests bring. None of them bleed. Every one of them costs us something. These are the offerings we carry into every feast day now.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Offerings of the Royal Priesthood</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 12:1</span>
+          <span class="scripture-text">I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 13:15&ndash;16</span>
+          <span class="scripture-text">By him therefore let us offer the sacrifice of praise to God continually, that is, the fruit of our lips giving thanks to his name. But to do good and to communicate forget not: for with such sacrifices God is well pleased.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Peter 2:5</span>
+          <span class="scripture-text">Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 141:2</span>
+          <span class="scripture-text">Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">What Every Feast Still Carries, and What It Lays Down</p>
+        <p><strong>What remains:</strong> the day itself, set apart by God; the holy convocation, where His people gather; the rest from ordinary and servile work; the joy or the humbling that God attached to the day; and the meaning, looking back at what God has done and forward to what He will yet do.</p>
+        <p><strong>What is laid down:</strong> the altar, the blood of animals, the Levitical priesthood that handled them, and the requirement to bring those offerings to the temple. In their place we bring the living sacrifice of ourselves, the fruit of our lips, prayer rising like incense, giving, and doing good, all offered through Jesus Christ our High Priest.</p>
+      </div>
+
+      <p class="article-body">This is the key that opens every section to follow. For each feast, we will look at what God commanded, see which parts belonged to the altar, and then find the living, physical ways the people of God can keep the day now. Some of these practices are commanded outright. Some are wise ways of honoring what was commanded. And a few are old customs that are fine to keep as long as they are never treated as law. We will be clear about which is which.</p>
+
+      <div class="bonus">
+        <p class="bonus-label">A Word on Liberty</p>
+        <p>Paul told the Colossians not to let anyone judge them in meat, in drink, or in respect of an holyday, of the new moon, or of the sabbath days (Colossians 2:16&ndash;17). Some read that as permission to drop the days. Read in context, it is the opposite. The Colossian believers were keeping the days, and Paul told them not to let outsiders shame them over how they did it.</p>
+        <p>That is the right spirit for everything in this teaching. <strong>Liberty belongs to how a day is kept, not to whether it is kept.</strong> One family builds a booth in the yard and another camps with the church. One assembly counts to Pentecost one way and another counts a different way. One home keeps a full meal on Sabbath evening and another keeps a simple one. None of that should ever divide brethren. The day belongs to the Lord, and the heart that keeps it is what He is looking at.</p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Answering the Common Objections</span>
+        <p><strong>Hebrews 7:12.</strong> The verse says that when the priesthood changed, there was made of necessity a change also of the law. Some take that to mean the whole Law was set aside. But keep reading. The very next verses explain which law is in view, the law of a carnal commandment that tied the priesthood to the tribe of Levi (Hebrews 7:13&ndash;16). The change concerns who serves as priest and what is offered. It does not erase the Sabbath or the appointed times, which God set before Aaron was ever born (Genesis 1:14, Genesis 2:2&ndash;3).</p>
+        <p><strong>Galatians 4:10.</strong> Paul warned against observing days, and months, and times, and years. But the verses right before it tell us what those days were. They belonged to the weak and beggarly elements the Galatians had served when they knew not God and did service unto them which by nature are no gods (Galatians 4:8&ndash;9). Former pagans were drifting back toward their old calendar, not toward Leviticus 23.</p>
+        <p><strong>Calendars.</strong> Believers today follow different methods for fixing the dates, including the published Jewish calendar, the sighting of the new moon, and the ripening of the barley. Teach your people why your assembly follows the calendar it does, keep it with a good conscience, and never break fellowship over it (Romans 14:19). None of these appointed times should ever be used to set a date for the return of Christ.</p>
+      </div>
+    </article>
+
+    <!-- ARTICLE I: SABBATH -->
+    <article class="article print-new-page" id="art1">
+      <div class="article-header">
+        <span class="article-num">The First Appointed Time</span>
+        <h2 class="article-title">The Sabbath</h2>
+      </div>
+
+      <div class="feast-facts">
+        <div class="fact"><span class="fact-label">When</span><span class="fact-text">Every seventh day, from sundown Friday to sundown Saturday</span></div>
+        <div class="fact"><span class="fact-label">Kind of Day</span><span class="fact-text">A holy convocation and a day of rest from all work</span></div>
+        <div class="fact"><span class="fact-label">At the Old Altar</span><span class="fact-text">Two extra lambs with flour and drink offerings (Numbers 28:9&ndash;10)</span></div>
+        <div class="fact"><span class="fact-label">Our Offering Now</span><span class="fact-text">Rest, gathering, praise, the Word, and doing good</span></div>
+        <div class="fact wide"><span class="fact-label">What It Preaches</span><span class="fact-text">God the Creator, God the Deliverer, and the rest that remaineth to the people of God (Hebrews 4:9)</span></div>
+      </div>
+
+      <p class="article-body">When God listed His appointed times in Leviticus 23, He did not start with Passover. He started with the Sabbath. It is the first feast, the one that comes around every single week, and it is older than every other command in the chapter. God rested on the seventh day at creation, blessed it, and sanctified it before there was a Jew, a Levite, or a tabernacle anywhere on the earth.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Sabbath Set Among the Feasts</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:3</span>
+          <span class="scripture-text">Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of the LORD in all your dwellings.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 2:1&ndash;3</span>
+          <span class="scripture-text">Thus the heavens and the earth were finished, and all the host of them. And on the seventh day God ended his work which he had made; and he rested on the seventh day from all his work which he had made. And God blessed the seventh day, and sanctified it: because that in it he had rested from all his work which God created and made.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Here is something worth seeing. The Law did attach sacrifices to the Sabbath, two lambs added to the daily offering (Numbers 28:9&ndash;10). But those were offered by the priests at the sanctuary. The ordinary Israelite in his own town never brought a lamb to keep the Sabbath. He kept it by resting, by gathering, and by honoring God in his dwelling. So when the altar work ended in Christ, nothing at all was taken away from the way a family actually kept the Sabbath. The weekly rest comes to us almost exactly as it came to the household of faith in every generation.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Kept by the Lord Himself</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 2:27&ndash;28</span>
+          <span class="scripture-text">And he said unto them, The sabbath was made for man, and not man for the sabbath: Therefore the Son of man is Lord also of the sabbath.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 4:16</span>
+          <span class="scripture-text">And he came to Nazareth, where he had been brought up: and, as his custom was, he went into the synagogue on the sabbath day, and stood up for to read.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 4:9&ndash;10</span>
+          <span class="scripture-text">There remaineth therefore a rest to the people of God. For he that is entered into his rest, he also hath ceased from his own works, as God did from his.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Jesus did not come to abolish the Sabbath. He came as its Lord, kept it as His custom, and stripped away the heavy traditions men had piled on top of it so that it could be what God meant it to be, a gift made for man. The spirit of the day is captured best in the prophet Isaiah, who tells us that the Sabbath is not a burden to endure but a delight to call by name.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Call the Sabbath a Delight</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 58:13&ndash;14</span>
+          <span class="scripture-text">If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of the LORD, honourable; and shalt honour him, not doing thine own ways, nor finding thine own pleasure, nor speaking thine own words: Then shalt thou delight thyself in the LORD; and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of the LORD hath spoken it.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>Keeping It Today</small>Ways to Honor the Sabbath</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">1</span>Prepare on the Sixth Day</p>
+        <p>The Sabbath is kept well only when it is prepared for well. When God gave Israel the manna, He taught them to gather and cook ahead on the sixth day so the seventh could be free. Friday is the believer&rsquo;s day of preparation (Luke 23:54). Finish the shopping, cook the Sabbath meals ahead of time, clean the house, fill the gas tank, pay the bills, lay out clothes for the assembly, and wrap up the work email. A Sabbath that begins with a rush to the grocery store has already lost some of its rest.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 16:22&ndash;23</span>
+          <span class="scripture-text">And it came to pass, that on the sixth day they gathered twice as much bread, two omers for one man: and all the rulers of the congregation came and told Moses. And he said unto them, This is that which the LORD hath said, To morrow is the rest of the holy sabbath unto the LORD: bake that which ye will bake to day, and seethe that ye will seethe; and that which remaineth over lay up for you to be kept until the morning.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>Welcome the Day at Sundown</p>
+        <p>In God&rsquo;s reckoning a day begins in the evening, as it did at creation (Genesis 1:5). The holy days are kept from even unto even (Leviticus 23:32), and Nehemiah commanded the doors of Jerusalem shut when the gates began to be dark before the Sabbath (Nehemiah 13:19). So gather the household at sundown on Friday. Put the phones away, sit down together, give thanks, and mark the moment when ordinary time stops and holy time begins.</p>
+        <p>Many families set a simple table of bread and the fruit of the vine and give thanks over it. That custom fits the order we live under beautifully, because Melchizedek met Abraham with bread and wine (Genesis 14:18). Keep it for what it is, a meal of thanksgiving. It is not a sacrifice, and it is not a command. It is a way of saying at the start of every Sabbath that our Priest has already made the offering and we have come to the table as His guests.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">3</span>Bless Your Household</p>
+        <p>Under the order of Melchizedek, every believer is a priest, and a father or mother is a priest over their own home in a real sense. God said of Abraham that he would command his children and his household after him (Genesis 18:19), and Jesus took the little children up in His arms and blessed them (Mark 10:16). Sabbath evening is a natural time to lay hands on your children, speak the blessing of the Lord over them in the words of Scripture, and pray for your spouse by name.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Numbers 6:24&ndash;26</span>
+          <span class="scripture-text">The LORD bless thee, and keep thee: The LORD make his face shine upon thee, and be gracious unto thee: The LORD lift up his countenance upon thee, and give thee peace.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">4</span>Gather in Holy Convocation</p>
+        <p>The Sabbath is an holy convocation, a called-out gathering. Paul&rsquo;s manner was to be in the synagogue on the Sabbath reasoning from the Scriptures (Acts 17:2), and almost a whole city came together on the Sabbath to hear the word of God (Acts 13:44). The day is not only for private rest at home. Meet with the saints, sing, pray, hear the Word taught, and fellowship over a meal. If you are isolated, gather with another family, or join your assembly online and then call a brother or sister afterward.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 10:24&ndash;25</span>
+          <span class="scripture-text">And let us consider one another to provoke unto love and to good works: Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">5</span>Cease From Work and Commerce</p>
+        <p>The commandment is to do no work. That means your paid job, your business, and the ordinary chores of the week. It also means buying and selling. When the people of Jerusalem brought their goods into the city on the Sabbath, Nehemiah called it evil and profaning the Sabbath day (Nehemiah 13:15&ndash;18). Do not shop, do not eat out in a way that puts others to work for you, and do not use the day to catch up on the yard. Let the day be different enough that your children notice.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">6</span>Do Good on the Sabbath</p>
+        <p>Rest is not the same as doing nothing for anyone. Jesus healed on the Sabbath and said plainly that it is lawful to do well on that day. Visit the sick, the widow, and the shut-in. Take a meal to someone who is struggling. Pray with a neighbor. Deeds of mercy are not a break from the Sabbath. They are exactly the spiritual sacrifices God is well pleased with (Hebrews 13:16).</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 12:11&ndash;12</span>
+          <span class="scripture-text">And he said unto them, What man shall there be among you, that shall have one sheep, and if it fall into a pit on the sabbath day, will he not lay hold on it, and lift it out? How much then is a man better than a sheep? Wherefore it is lawful to do well on the sabbath days.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">7</span>Feed on the Word and Offer Praise</p>
+        <p>Give the unhurried hours of the Sabbath to the Scriptures. Read longer passages than you can during the week. Talk through the teaching from the assembly at the dinner table. Sing. One psalm in the Bible even carries a title naming it for this very day, and it is a good place to begin every Sabbath.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalms 92:1&ndash;4</span>
+          <span class="scripture-text"><span class="psalm-title">A Psalm or Song for the sabbath day.</span> It is a good thing to give thanks unto the LORD, and to sing praises unto thy name, O most High: To shew forth thy lovingkindness in the morning, and thy faithfulness every night, Upon an instrument of ten strings, and upon the psaltery; upon the harp with a solemn sound. For thou, LORD, hast made me glad through thy work: I will triumph in the works of thy hands.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">8</span>Enjoy God&rsquo;s Creation</p>
+        <p>The Sabbath is the memorial of creation (Exodus 20:11). Take a slow walk in the woods, sit by a creek, look at the stars, or watch the sun go down over the hills. Teach the children to see the hand of the Creator in what He made. This is not wasted time. It is worship in the very thing the day was made to remember (Psalm 19:1).</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">9</span>Close the Day With Prayer</p>
+        <p>When the sun sets on Saturday, do not just let the Sabbath slip away into the week. Gather again briefly, thank God for His rest, and ask Him to carry the peace of the day into the six days of labor ahead. Some Jewish families keep a short parting service at this hour. There is no commandment for it, but a simple family prayer at the close of the day is a good and fitting habit.</p>
+      </div>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Commandment Written by the Finger of God</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 20:8&ndash;11</span>
+          <span class="scripture-text">Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Sabbath in the Order of Melchizedek</p>
+        <p>Under Aaron, the priests laid two lambs on the altar every Sabbath. Under Melchizedek, the whole royal priesthood lays down something harder to give: <strong>a full day of our time, surrendered to God, offered as a living sacrifice and filled with praise, the Word, and mercy.</strong> The lambs have ceased. The day, the rest, and the gathering have not.</p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Necessary Work and Mercy</span>
+        <p>Some in your class work in hospitals, emergency services, or jobs they cannot yet change. Do not heap guilt on them, and do not excuse the matter either. Jesus allowed that an ox in a pit must be pulled out on the Sabbath (Luke 14:5). Genuine emergencies and works of mercy are lawful. But an ox that falls into the same pit every single week is a sign that something needs to change. Encourage people to pray for and pursue work that lets them keep the day, and to keep as much of it as they can in the meantime.</p>
+        <p>Guard the other side too. The Pharisees turned the Sabbath into a maze of rules that made it a weight instead of a delight. The Sabbath was made for man, and not man for the sabbath (Mark 2:27). Keep the day carefully, but keep it joyfully.</p>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">For Families With Children</p>
+        <p>Children learn to love the Sabbath or dread it depending on how it feels in the home. Save the best meal of the week for Friday night. Keep a basket of Sabbath-only books, Bible story games, and quiet toys that come out only on that day. Take a family walk every Saturday afternoon. Let the older children help cook on Friday so they own the preparation. <strong>A child who grows up thinking the Sabbath is the best day of the week will have a hard time letting it go when he is grown.</strong></p>
+      </div>
+    </article>
+
+    <!-- ARTICLE II: PASSOVER AND UNLEAVENED BREAD -->
+    <article class="article print-new-page" id="art2">
+      <div class="article-header">
+        <span class="article-num">The Spring Feasts</span>
+        <h2 class="article-title">Passover and Unleavened Bread</h2>
+      </div>
+
+      <div class="feast-facts">
+        <div class="fact"><span class="fact-label">When</span><span class="fact-text">Passover at even on the 14th day of the first month; Unleavened Bread the 15th through the 21st</span></div>
+        <div class="fact"><span class="fact-label">Holy Convocations</span><span class="fact-text">The first and seventh days of Unleavened Bread, with no servile work</span></div>
+        <div class="fact"><span class="fact-label">At the Old Altar</span><span class="fact-text">The lamb slain at the place God chose, and offerings by fire all seven days</span></div>
+        <div class="fact"><span class="fact-label">Our Offering Now</span><span class="fact-text">A memorial table, a house cleansed of leaven, and a life of sincerity and truth</span></div>
+        <div class="fact wide"><span class="fact-label">What It Preaches</span><span class="fact-text">Christ our Passover sacrificed for us, His sinless body, and His resurrection as the firstfruits</span></div>
+      </div>
+
+      <p class="article-body">Passover opens the feasts of the year, and Unleavened Bread follows the very next day. Scripture treats them as one season, so we will keep them together here. They carry the deepest memory in the whole calendar, the night God struck Egypt and passed over every house marked by the blood of a lamb, and the morning Israel walked out of bondage eating bread that had no time to rise.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Commandment</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:4&ndash;8</span>
+          <span class="scripture-text">These are the feasts of the LORD, even holy convocations, which ye shall proclaim in their seasons. In the fourteenth day of the first month at even is the LORD&rsquo;S passover. And on the fifteenth day of the same month is the feast of unleavened bread unto the LORD: seven days ye must eat unleavened bread. In the first day ye shall have an holy convocation: ye shall do no servile work therein. But ye shall offer an offering made by fire unto the LORD seven days: in the seventh day is an holy convocation: ye shall do no servile work therein.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:14</span>
+          <span class="scripture-text">And this day shall be unto you for a memorial; and ye shall keep it a feast to the LORD throughout your generations; ye shall keep it a feast by an ordinance for ever.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The Passover lamb is the clearest case of a sacrifice fulfilled in Christ. John the Baptist pointed at Jesus and said, Behold the Lamb of God (John 1:29). Paul said it outright to a mostly Gentile church, and in the same breath he told them to keep the feast. He did not say that because Christ is our Passover we may skip the day. He said that because Christ is our Passover, let us keep the feast, and keep it with a clean heart.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Therefore Let Us Keep the Feast</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 5:7&ndash;8</span>
+          <span class="scripture-text">Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us: is sacrificed; or, is slain Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.</span>
+        </div>
+      </div>
+
+      <p class="article-body">And on the night He was betrayed, at the Passover table, Jesus took the bread and the cup of that very meal and gave them new meaning. He did not tell His disciples to stop remembering. He told them to remember Him.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">At the Passover Table</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 22:14&ndash;20</span>
+          <span class="scripture-text">And when the hour was come, he sat down, and the twelve apostles with him. And he said unto them, With desire I have desired to eat this passover with you before I suffer: For I say unto you, I will not any more eat thereof, until it be fulfilled in the kingdom of God. And he took the cup, and gave thanks, and said, Take this, and divide it among yourselves: For I say unto you, I will not drink of the fruit of the vine, until the kingdom of God shall come. And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me. Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>Before the Feast</small>Preparing the House and the Heart</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">1</span>Search Out the Leaven</p>
+        <p>God commanded that no leaven be found in His people&rsquo;s houses for seven days. So in the days before Passover, clean the house. Go through the pantry, the freezer, the car, the lunch boxes, and the desk drawer at work. Remove bread, crackers, cereal, and anything made to rise with yeast. Give away or throw out what you find. The whole family can take part, and the children will remember it.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:18&ndash;20</span>
+          <span class="scripture-text">In the first month, on the fourteenth day of the month at even, ye shall eat unleavened bread, until the one and twentieth day of the month at even. Seven days shall there be no leaven found in your houses: for whosoever eateth that which is leavened, even that soul shall be cut off from the congregation of Israel, whether he be a stranger, or born in the land. Ye shall eat nothing leavened; in all your habitations shall ye eat unleavened bread.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>Search Your Own Heart While You Clean</p>
+        <p>The physical cleaning is a sermon you preach to yourself with your own hands. As you sweep crumbs out of the corners, ask the Lord to show you the leaven hiding in the corners of your life. Paul tells us to examine ourselves before we come to the Lord&rsquo;s table (1 Corinthians 11:28). Pray this prayer of David as you work.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalms 139:23&ndash;24</span>
+          <span class="scripture-text">Search me, O God, and know my heart: try me, and know my thoughts: And see if there be any wicked way in me, and lead me in the way everlasting.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>The Night of the Fourteenth</small>Keeping the Passover Memorial</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">3</span>Keep the Memorial Meal, Without a Lamb Slain</p>
+        <p>Gather at even as the fourteenth day of the first month begins, with family, the assembly, or both. No lamb is slain as a Passover offering. The Law allowed that only at the place God chose, and the Lamb it pictured has already been sacrificed once for all. Some families choose not to serve lamb at all that night so no one mistakes the meal for an offering, while others serve it as ordinary food. Either way, the table points past itself to the Lamb that was slain (Revelation 5:12).</p>
+        <p>Set the table with what God named: unleavened bread and bitter herbs (Exodus 12:8), along with the fruit of the vine that Jesus shared at His last Passover (Luke 22:18). Let the bitterness remind you of the bondage of sin, and let the bread remind you of the sinless body of Christ.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">4</span>Tell the Story to the Children</p>
+        <p>God built Passover to be taught around a table. He expected the children to ask what the service meant, and He told parents exactly how to answer. Read Exodus 12 aloud. Then read the account of the Lord&rsquo;s last Passover and His death (Luke 22 and 23). Let the children ask questions. Tell them what the Lord has done for your own family, too. This is the night to pass the faith down.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:26&ndash;27</span>
+          <span class="scripture-text">And it shall come to pass, when your children shall say unto you, What mean ye by this service? That ye shall say, It is the sacrifice of the LORD&rsquo;S passover, who passed over the houses of the children of Israel in Egypt, when he smote the Egyptians, and delivered our houses. And the people bowed the head and worshipped.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 13:8</span>
+          <span class="scripture-text">And thou shalt shew thy son in that day, saying, This is done because of that which the LORD did unto me when I came forth out of Egypt.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">5</span>Break the Bread and Share the Cup</p>
+        <p>This is the heart of the evening for the believer. Break the unleavened bread and share the cup as Jesus did, remembering His body broken and His blood of the new testament shed for many. This is the memorial our High Priest Himself gave, and He attached a promise to it: every time we do it, we proclaim His death until He comes back.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 11:23&ndash;26</span>
+          <span class="scripture-text">For I have received of the Lord that which also I delivered unto you, That the Lord Jesus the same night in which he was betrayed took bread: And when he had given thanks, he brake it, and said, Take, eat: this is my body, which is broken for you: this do in remembrance of me. After the same manner also he took the cup, when he had supped, saying, This cup is the new testament in my blood: this do ye, as oft as ye drink it, in remembrance of me. For as often as ye eat this bread, and drink this cup, ye do shew the Lord&rsquo;s death till he come.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">6</span>Wash One Another&rsquo;s Feet</p>
+        <p>At that same Passover supper, Jesus rose from the table, wrapped a towel around Himself, and washed His disciples&rsquo; feet. Then He told them to do the same for one another. Many assemblies keep a foot washing service on Passover night. It is humbling, it is holy, and it is hard to hold a grudge against someone whose feet you have just washed.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 13:12&ndash;15</span>
+          <span class="scripture-text">So after he had washed their feet, and had taken his garments, and was set down again, he said unto them, Know ye what I have done to you? Ye call me Master and Lord: and ye say well; for so I am. If I then, your Lord and Master, have washed your feet; ye also ought to wash one another&rsquo;s feet. For I have given you an example, that ye should do as I have done to you.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">7</span>A Night to Be Much Observed</p>
+        <p>After the meal, do not rush to bed. Jesus and His disciples sang an hymn and went out to the mount of Olives (Matthew 26:30), and He asked them to watch and pray with Him (Matthew 26:40&ndash;41). Spend part of the night in prayer, reading the Gospel accounts of Gethsemane and the cross, or singing hymns about the blood. Israel was told to remember the night they came out of Egypt in the same way.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:42</span>
+          <span class="scripture-text">It is a night to be much observed unto the LORD for bringing them out from the land of Egypt: this is that night of the LORD to be observed of all the children of Israel in their generations.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>The Seven Days</small>Keeping the Feast of Unleavened Bread</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">8</span>Rest and Gather on the First and Seventh Days</p>
+        <p>The first day of Unleavened Bread and the last day are both holy convocations with no servile work. Treat them as you would a Sabbath. Take the days off work, gather with the assembly, and rejoice. On the seventh day, many teach on the crossing of the Red Sea (Exodus 14), when God finished the deliverance He began on Passover night.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">9</span>Eat Unleavened Bread Every Day</p>
+        <p>God did not only forbid leaven for the week. He told His people to eat unleavened bread for seven days (Exodus 12:15). Put matzah or homemade flatbread on the table at every meal. Each time you break it, remember that you have been made a new lump, and that Christ is the bread of life (John 6:35) with no sin in Him at all.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">10</span>Put Away One Particular Sin</p>
+        <p>Scripture names the leaven. There is the leaven of the Pharisees, which is hypocrisy (Luke 12:1). There is the leaven of false doctrine (Matthew 16:6, 16:12). There is the leaven of malice and wickedness, and the pride that puffs a man up (1 Corinthians 5:2, 5:8). Before the week begins, ask God to show you one kind of leaven that has worked its way into your life, and use the seven days to deal with it before Him. Confess it, forsake it, and replace it with sincerity and truth.</p>
+      </div>
+
+      <p class="sub-head"><small>During the Week</small>The Day of Firstfruits</p>
+
+      <p class="article-body">Tucked inside the week of Unleavened Bread is another appointed day. On the morrow after the sabbath, the priest waved the first sheaf of the barley harvest before the Lord. That wave sheaf, and the lamb offered with it, belonged to the altar and are finished. But what they pictured is the most joyful truth in the gospel.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Wave Sheaf and Its Fulfillment</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:10&ndash;11</span>
+          <span class="scripture-text">Speak unto the children of Israel, and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest: And he shall wave the sheaf before the LORD, to be accepted for you: on the morrow after the sabbath the priest shall wave it.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 15:20&ndash;23</span>
+          <span class="scripture-text">But now is Christ risen from the dead, and become the firstfruits of them that slept. For since by man came death, by man came also the resurrection of the dead. For as in Adam all die, even so in Christ shall all be made alive. But every man in his own order: Christ the firstfruits; afterward they that are Christ&rsquo;s at his coming.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">11</span>Celebrate the Resurrection on God&rsquo;s Day, Not Rome&rsquo;s</p>
+        <p>This is where the believer celebrates the risen Christ, in the season God appointed, instead of on a festival borrowed from the calendar of the nations. Gather with the saints for praise. Read the resurrection accounts aloud (Matthew 28, Luke 24, John 20). Sing about the empty tomb. Share a meal and tell each other what the living Christ has done in your lives this year. Keep the joy of the resurrection tied to the Passover that gives it meaning.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">12</span>Honor the Lord With Your Firstfruits</p>
+        <p>Israel could not eat of the new harvest until the first sheaf was given to God (Leviticus 23:14). The altar is gone, but the principle of giving God the first and best is timeless. Many believers bring a special firstfruits gift to the Lord&rsquo;s work on this day, above the tithe, as thanksgiving for the resurrection life and the harvest to come.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Proverbs 3:9&ndash;10</span>
+          <span class="scripture-text">Honour the LORD with thy substance, and with the firstfruits of all thine increase: So shall thy barns be filled with plenty, and thy presses shall burst out with new wine.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">13</span>Begin the Count Toward Pentecost</p>
+        <p>The wave sheaf day starts a fifty-day count that leads to the next feast (Leviticus 23:15). Start the count at your table that evening. The next section shows a simple way to keep it.</p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">From Church History</span>
+        <p>The earliest believers did not let go of the Passover season. Paul still marked his travels by the days of unleavened bread (Acts 20:6) and planned his work around Pentecost (1 Corinthians 16:8). Well over a century later, when the bishop of Rome pressed the churches of Asia to give up the fourteenth day and follow Rome&rsquo;s Sunday festival, Polycrates of Ephesus wrote back and refused. Eusebius preserved his words.</p>
+        <span class="hist-quote">
+          <span class="hist-ref">Eusebius, Ecclesiastical History, Book 5, Chapter 24, Section 2</span>
+          We observe the exact day; neither adding, nor taking away.
+        </span>
+        <p>In the same letter, Polycrates named Philip, John, Polycarp, and others as men who kept the fourteenth day according to the Gospel, and he said his own family had always kept the day when the people put away the leaven (Eusebius, Ecclesiastical History, Book 5, Chapter 24, Sections 3&ndash;6). Their dispute was about the day itself, and they held to the day God set.</p>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Passover in the Order of Melchizedek</p>
+        <p>Under Aaron, the lamb was killed at the altar in the place God chose. Under Melchizedek, <strong>the Lamb has already been slain, and we come to His table with bread and the cup, a cleansed house, and a heart examined and made sincere.</strong> We still keep the night. We still keep the seven days. We simply keep them as those who have already been redeemed.</p>
+      </div>
+    </article>
+
+    <!-- ARTICLE III: PENTECOST -->
+    <article class="article print-new-page" id="art3">
+      <div class="article-header">
+        <span class="article-num">The Feast of Weeks</span>
+        <h2 class="article-title">Pentecost</h2>
+      </div>
+
+      <div class="feast-facts">
+        <div class="fact"><span class="fact-label">When</span><span class="fact-text">The fiftieth day, counted from the day of the wave sheaf</span></div>
+        <div class="fact"><span class="fact-label">Kind of Day</span><span class="fact-text">A holy convocation with no servile work</span></div>
+        <div class="fact"><span class="fact-label">At the Old Altar</span><span class="fact-text">Two wave loaves with burnt, sin, and peace offerings (Leviticus 23:17&ndash;20)</span></div>
+        <div class="fact"><span class="fact-label">Our Offering Now</span><span class="fact-text">Prayer for the Spirit, a freewill offering, and the corners left for the poor</span></div>
+        <div class="fact wide"><span class="fact-label">What It Preaches</span><span class="fact-text">The Law given at Sinai, the Spirit poured out in Jerusalem, and the harvest of souls</span></div>
+      </div>
+
+      <p class="article-body">Pentecost is the only feast whose date God did not give as a number on the calendar. Instead, He gave a count. From the day the first sheaf was waved, Israel counted seven full weeks, and the next day was the feast. The Greek name Pentecost simply means fiftieth. The Hebrew name, the feast of weeks, comes from the counting itself. It was the celebration of the wheat harvest, and it was a day of joy.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Count and the Feast</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:15&ndash;21</span>
+          <span class="scripture-text">And ye shall count unto you from the morrow after the sabbath, from the day that ye brought the sheaf of the wave offering; seven sabbaths shall be complete: Even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto the LORD. Ye shall bring out of your habitations two wave loaves of two tenth deals: they shall be of fine flour; they shall be baken with leaven; they are the firstfruits unto the LORD. And ye shall offer with the bread seven lambs without blemish of the first year, and one young bullock, and two rams: they shall be for a burnt offering unto the LORD, with their meat offering, and their drink offerings, even an offering made by fire, of sweet savour unto the LORD. Then ye shall sacrifice one kid of the goats for a sin offering, and two lambs of the first year for a sacrifice of peace offerings. And the priest shall wave them with the bread of the firstfruits for a wave offering before the LORD, with the two lambs: they shall be holy to the LORD for the priest. And ye shall proclaim on the selfsame day, that it may be an holy convocation unto you: ye shall do no servile work a statute for ever in all your dwellings throughout your generations.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Read carefully and you will see both halves of our principle in one passage. The count, the day, the holy convocation, and the rest from servile work are all there, and they are called a statute for ever in all your dwellings. The burnt offerings, the kid of the goats for a sin offering, and the lambs for peace offerings are there too, and those were brought to the priest. The offerings are fulfilled. The count and the day are not.</p>
+
+      <p class="article-body">And then, immediately after the offerings, God added one more line to the Pentecost commandment. It has nothing to do with the altar. It has everything to do with the heart, and it carries straight over into how we keep the feast now.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Harvest Law Attached to Pentecost</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:22</span>
+          <span class="scripture-text">And when ye reap the harvest of your land, thou shalt not make clean riddance of the corners of thy field when thou reapest, neither shalt thou gather any gleaning of thy harvest: thou shalt leave them unto the poor, and to the stranger: I am the LORD your God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 16:9&ndash;12</span>
+          <span class="scripture-text">Seven weeks shalt thou number unto thee: begin to number the seven weeks from such time as thou beginnest to put the sickle to the corn. And thou shalt keep the feast of weeks unto the LORD thy God with a tribute of a freewill offering of thine hand, which thou shalt give unto the LORD thy God, according as the LORD thy God hath blessed thee: And thou shalt rejoice before the LORD thy God, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite that is within thy gates, and the stranger, and the fatherless, and the widow, that are among you, in the place which the LORD thy God hath chosen to place his name there. And thou shalt remember that thou wast a bondman in Egypt: and thou shalt observe and do these statutes.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Pentecost is also the day God chose to pour out His Spirit. The disciples were gathered in one place because it was a feast day, and God met them there. Many have noticed that Israel came to Mount Sinai in the third month after leaving Egypt (Exodus 19:1), the same season as the feast of weeks. At Sinai God wrote His Law on stone. At Pentecost He began writing it on hearts, just as the prophets promised.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Promise and the Outpouring</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 31:33</span>
+          <span class="scripture-text">But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 36:26&ndash;27</span>
+          <span class="scripture-text">A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 2:1&ndash;4</span>
+          <span class="scripture-text">And when the day of Pentecost was fully come, they were all with one accord in one place. And suddenly there came a sound from heaven as of a rushing mighty wind, and it filled all the house where they were sitting. And there appeared unto them cloven tongues like as of fire, and it sat upon each of them. And they were all filled with the Holy Ghost, and began to speak with other tongues, as the Spirit gave them utterance.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>Keeping It Today</small>Ways to Honor Pentecost</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">1</span>Count the Fifty Days Together</p>
+        <p>God commanded the count, so keep it. Each evening, starting with the day of the wave sheaf, say the number of the day aloud as a family and pray briefly for the harvest of souls. A calendar on the refrigerator where the children mark off each day works well.</p>
+        <p>Here is a simple reading plan that fits the count exactly. Read one chapter of the Gospel of John each day for twenty-one days, then one chapter of Acts each day for twenty-eight days. That is forty-nine chapters for the forty-nine days. On the fiftieth day, the feast itself, read Acts 2 again and watch the story you have been walking through come to its fulfillment.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>Tarry and Pray for the Spirit</p>
+        <p>Before that first Christian Pentecost, the disciples did not plan an event. They waited in prayer and supplication with one accord (Acts 1:14), because Jesus had told them to. Hold a prayer meeting as the day begins at evening, or during the day itself. Pray for a fresh filling of the Holy Ghost for yourself, your family, and your assembly. Pray for those who have not yet received the baptism in the Holy Ghost. The promise is still for everyone the Lord calls (Acts 2:39).</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 24:49</span>
+          <span class="scripture-text">And, behold, I send the promise of my Father upon you: but tarry ye in the city of Jerusalem, until ye be endued with power from on high.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 11:13</span>
+          <span class="scripture-text">If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">3</span>Rest and Hold a Holy Convocation</p>
+        <p>Pentecost is a Sabbath-like day with no servile work. Take it off from your job if it does not fall on the weekly Sabbath, gather with the saints, and give the whole day to the Lord. Many assemblies hold their longest service of the year on Pentecost, with extended worship, preaching, and time at the altar for prayer.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">4</span>Remember Sinai and Renew Your Obedience</p>
+        <p>Read Exodus 19 and 20 and Acts 2 side by side. See the fire on the mountain and the fire on the disciples. Hear the voice of God giving His commandments, and then hear the rushing mighty wind of the Spirit who empowers us to keep them. Use the day to recommit your life to walking in God&rsquo;s commandments, not in your own strength but by the Spirit He has put within you.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">5</span>Bring a Freewill Offering</p>
+        <p>Deuteronomy tells us to bring a tribute of a freewill offering according as the Lord hath blessed. Under the altar system that meant grain and animals. Under the royal priesthood, a gift to the work of God is itself a sacrifice acceptable and wellpleasing to God (Philippians 4:18). Look back over the blessings of the spring, and give in proportion to what God has done.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">6</span>Leave the Corners of Your Field</p>
+        <p>God tied the care of the poor directly to Pentecost. Most of us do not have a wheat field, but we all have a harvest of some kind. Leave a corner of it for someone else. Stock the church food pantry, pay a widow&rsquo;s bill, buy groceries for a struggling family, or invite the stranger and the lonely to the feast meal. Deuteronomy names them outright: the stranger, the fatherless, and the widow belong at the table.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">7</span>Hold a Baptism Service</p>
+        <p>On that first Christian Pentecost, the harvest came in. About three thousand souls repented, were baptized, and were added to the church in a single day. There is no more fitting day in the year to baptize new believers in water. It turns the feast of the harvest into a living picture of the harvest.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 2:38&ndash;41</span>
+          <span class="scripture-text">Then Peter said unto them, Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost. For the promise is unto you, and to your children, and to all that are afar off, even as many as the Lord our God shall call. And with many other words did he testify and exhort, saying, Save yourselves from this untoward generation. Then they that gladly received his word were baptized: and the same day there were added unto them about three thousand souls.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">8</span>Bake Two Loaves for the Fellowship Meal</p>
+        <p>The Pentecost offering was two loaves baked with leaven (Leviticus 23:17), a striking thing when leaven was otherwise kept off the altar (Leviticus 2:11). Many teachers see in those two loaves a picture of Jew and Gentile made one body in Christ (Ephesians 2:14&ndash;16), still imperfect but accepted through Him. That is a picture the text allows, not a doctrine it demands. Still, baking two loaves for the feast meal and explaining the picture to your children is a lovely way to keep the day.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">9</span>Read the Book of Ruth</p>
+        <p>The story of Ruth takes place from the beginning of barley harvest (Ruth 1:22) to the end of barley harvest and of wheat harvest (Ruth 2:23), the very season from Firstfruits to Pentecost. It tells of a Gentile woman who clung to the God of Israel and was brought into the family line of Christ through a kinsman redeemer. Reading Ruth at Pentecost is an old Jewish custom, not a command, but the fit is beautiful.</p>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Pentecost in the Order of Melchizedek</p>
+        <p>Under Aaron, loaves and animals were waved and burned before the Lord. Under Melchizedek, <strong>our High Priest ascended into heaven and sent down the Holy Ghost, and we bring the offering of hearts that wait on Him, hands that give freely, and fields whose corners are left for the poor.</strong> The count still leads to the day, and the day still ends in a harvest.</p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; How to Count</span>
+        <p>Believers disagree about where the count begins. One view reads the morrow after the sabbath as the day after the weekly Sabbath that falls during Unleavened Bread, so Pentecost always lands on the first day of the week. The other view, followed by rabbinic Judaism, reads the sabbath as the first high day of Unleavened Bread, so the count begins on the sixteenth day of the first month and Pentecost can fall on any day of the week. Both sides take the text seriously.</p>
+        <p>Teach your people which count your assembly follows and why, and then keep the peace. The command is to count and to keep the feast. It is not to break fellowship with a brother who counts from a different day (Romans 14:19).</p>
+      </div>
+    </article>
+
+    <!-- ARTICLE IV: TRUMPETS -->
+    <article class="article print-new-page" id="art4">
+      <div class="article-header">
+        <span class="article-num">The Fall Feasts Begin</span>
+        <h2 class="article-title">The Feast of Trumpets</h2>
+      </div>
+
+      <div class="feast-facts">
+        <div class="fact"><span class="fact-label">When</span><span class="fact-text">The first day of the seventh month, at the new moon</span></div>
+        <div class="fact"><span class="fact-label">Kind of Day</span><span class="fact-text">A sabbath, a memorial of blowing of trumpets, an holy convocation</span></div>
+        <div class="fact"><span class="fact-label">At the Old Altar</span><span class="fact-text">Burnt offerings, a sin offering, and the new moon offerings (Numbers 29:1&ndash;6)</span></div>
+        <div class="fact"><span class="fact-label">Our Offering Now</span><span class="fact-text">The trumpet, the shout of praise, watchfulness, and a searched heart</span></div>
+        <div class="fact wide"><span class="fact-label">What It Preaches</span><span class="fact-text">The return of the King at the last trump, and the gathering of His people</span></div>
+      </div>
+
+      <p class="article-body">After the long summer of harvest, the calendar gathers again in the seventh month, and the first thing God does is sound an alarm. The Feast of Trumpets is short in the text, only a few verses, but it opens the most solemn and the most joyful month of the whole year. The spring feasts looked back to what Christ has already done. The fall feasts lean forward to what He is coming to do.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Commandment</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:23&ndash;25</span>
+          <span class="scripture-text">And the LORD spake unto Moses, saying, Speak unto the children of Israel, saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation. Ye shall do no servile work therein: but ye shall offer an offering made by fire unto the LORD.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Numbers 29:1</span>
+          <span class="scripture-text">And in the seventh month, on the first day of the month, ye shall have an holy convocation; ye shall do no servile work: it is a day of blowing the trumpets unto you.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The Hebrew word behind the blowing of trumpets is <em class="term">teruah</em>. It means a loud blast, an alarm, or a shout, the kind of cry an army gives when its king appears. The trumpets of Israel were used to call the assembly together, to move the camp, to sound the alarm for war, and to mark the days of gladness and the new moons. And God said that the sound itself would be a memorial before Him.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">What the Trumpets Were For</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Numbers 10:9&ndash;10</span>
+          <span class="scripture-text">And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before the LORD your God, and ye shall be saved from your enemies. Also in the day of your gladness, and in your solemn days, and in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings, and over the sacrifices of your peace offerings; that they may be to you for a memorial before your God: I am the LORD your God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalms 81:1&ndash;4</span>
+          <span class="scripture-text"><span class="psalm-title">To the chief Musician upon Gittith, A Psalm of Asaph.</span> Sing aloud unto God our strength: make a joyful noise unto the God of Jacob. Take a psalm, and bring hither the timbrel, the pleasant harp with the psaltery. Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day. For this was a statute for Israel, and a law of the God of Jacob.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The sin offering and the burnt offerings of this day were brought to the altar and are finished in Christ. But the trumpet itself was never a sacrifice. It was a sound, a memorial, a call. And the New Testament takes that very sound and hangs the return of our Lord upon it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Trump of God</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Thessalonians 4:16&ndash;18</span>
+          <span class="scripture-text">For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first: Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord. Wherefore comfort one another with these words.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 15:51&ndash;52</span>
+          <span class="scripture-text">Behold, I shew you a mystery; We shall not all sleep, but we shall all be changed, In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 24:30&ndash;31</span>
+          <span class="scripture-text">And then shall appear the sign of the Son of man in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of man coming in the clouds of heaven with power and great glory. And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>Keeping It Today</small>Ways to Honor the Feast of Trumpets</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">1</span>Watch for the New Moon</p>
+        <p>Trumpets is the one feast that falls on the first day of a month, at the new moon. God set the lights in the heavens for signs, and for seasons (Genesis 1:14), and the word seasons there is the same word used for the appointed times. On the evening the month begins, take the family outside at dusk and look for the thin crescent low in the western sky. Teach the children that God&rsquo;s calendar is written in the heavens, not in a store&rsquo;s holiday aisle.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>Sound the Trumpet</p>
+        <p>This is the one command of the day you can obey exactly as Israel did. Blow a shofar or a trumpet in your assembly and in your home. Under Aaron, the sons of Aaron, the priests, blew the silver trumpets (Numbers 10:8). Under Melchizedek, the whole people of God are a royal priesthood (1 Peter 2:9), so fathers, mothers, and children alike can lift the sound before the Lord. Let the children take a turn. Explain as they blow that one day the trumpet of God will sound from heaven, and the dead in Christ will rise.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalms 98:4&ndash;6</span>
+          <span class="scripture-text">Make a joyful noise unto the LORD, all the earth: make a loud noise, and rejoice, and sing praise. Sing unto the LORD with the harp; with the harp, and the voice of a psalm. With trumpets and sound of cornet make a joyful noise before the LORD, the King.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">3</span>Lift Up the Shout</p>
+        <p>A teruah is not only a trumpet blast. It is a shout. Balaam saw it in the camp of Israel and said that the shout of a king was among them (Numbers 23:21). Let the assembly shout for joy and sing praise to the King who is coming. Pentecostal worship is right at home on this day. The spiritual sacrifice here is the fruit of our lips, loud and unashamed.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalms 47:5&ndash;7</span>
+          <span class="scripture-text">God is gone up with a shout, the LORD with the sound of a trumpet. Sing praises to God, sing praises: sing praises unto our King, sing praises. For God is the King of all the earth: sing ye praises with understanding.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">4</span>Rest and Hold a Holy Convocation</p>
+        <p>God called the day a sabbath and a holy convocation with no servile work. Keep it like the weekly Sabbath. Take the day off, prepare the meals ahead of time, and gather with the saints for worship, the trumpet, and the Word.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">5</span>Rehearse the Return of Christ</p>
+        <p>Make this the day your assembly teaches on the coming of the Lord. Read the great passages aloud: the trump of God (1 Thessalonians 4:13&ndash;18), the last trump (1 Corinthians 15:50&ndash;58), the gathering of the elect (Matthew 24:29&ndash;31), and the seventh trumpet when the kingdoms of this world become the kingdoms of our Lord (Revelation 11:15). Teach people to endure, to stay faithful through tribulation, and to lift up their heads, for their redemption draws near (Luke 21:28). Do not set dates. The Lord told us plainly that the day and hour are not ours to know (Matthew 24:36).</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">6</span>Trim Your Lamp and Search Your Heart</p>
+        <p>An alarm is meant to wake people up. Use Trumpets as the start of a season of honest self-examination that carries you to the Day of Atonement on the tenth day of the month. Read the parable of the ten virgins (Matthew 25:1&ndash;13) and ask whether there is oil in your lamp, for ye know neither the day nor the hour (Matthew 25:13). Examine yourselves, whether ye be in the faith (2 Corinthians 13:5). Make a list of the things you need to set right with God and with people before the Day of Atonement arrives.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Lamentations 3:40&ndash;41</span>
+          <span class="scripture-text">Let us search and try our ways, and turn again to the LORD. Let us lift up our heart with our hands unto God in the heavens.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">7</span>Sound the Alarm to the Lost</p>
+        <p>A watchman who sees the sword coming and does not blow the trumpet carries the blood of the people on his own hands (Ezekiel 33:6). Trumpets is a natural time to preach in the streets, hold a tent meeting, or simply tell a neighbor that the King is coming back. The trumpet was always meant to be heard.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 58:1</span>
+          <span class="scripture-text">Cry aloud, spare not, lift up thy voice like a trumpet, and shew my people their transgression, and the house of Jacob their sins.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">8</span>Keep It as a Memorial</p>
+        <p>God called this day a memorial. Spend time around the table remembering out loud what God has done for your family through the past year: prayers answered, sickness healed, provision in hard times, souls saved. Write them down. A people who remember God&rsquo;s past faithfulness will be ready to trust Him for the trumpet still to come.</p>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Trumpets in the Order of Melchizedek</p>
+        <p>Under Aaron, the priests blew the silver trumpets over the burnt offerings. Under Melchizedek, <strong>the sacrifice is finished, but the trumpet is placed in the hands of the whole royal priesthood, and we lift it with a shout because our High Priest is also the King who is coming.</strong></p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Popular Claims to Handle Carefully</span>
+        <p><strong>The day and hour saying.</strong> You will hear that this was a Jewish idiom for Trumpets, since the new moon had to be sighted first. No first-century source we have calls the feast by that name, and in Matthew 24:36 Jesus is telling us not to know the date, not giving us a code to find it. Share it as a picture, never as proof.</p>
+        <p><strong>The last trump and the New Year.</strong> Later synagogue custom calls the final long blast of this day the great blast, and some say Paul had it in mind, but that custom is recorded well after his day. And though the day is widely called Rosh Hashanah, Scripture begins the months in the spring (Exodus 12:2).</p>
+      </div>
+    </article>
+
+    <!-- ARTICLE V: ATONEMENT -->
+    <article class="article print-new-page" id="art5">
+      <div class="article-header">
+        <span class="article-num">The Most Solemn Day</span>
+        <h2 class="article-title">The Day of Atonement</h2>
+      </div>
+
+      <div class="feast-facts">
+        <div class="fact"><span class="fact-label">When</span><span class="fact-text">The tenth day of the seventh month, from even unto even</span></div>
+        <div class="fact"><span class="fact-label">Kind of Day</span><span class="fact-text">A sabbath of rest, an holy convocation, with no manner of work</span></div>
+        <div class="fact"><span class="fact-label">At the Old Altar</span><span class="fact-text">The high priest, the blood of the bullock and the goat, and the scapegoat (Leviticus 16)</span></div>
+        <div class="fact"><span class="fact-label">Our Offering Now</span><span class="fact-text">Fasting, confession, reconciliation, intercession, and mercy</span></div>
+        <div class="fact wide"><span class="fact-label">What It Preaches</span><span class="fact-text">Christ our High Priest entering once with His own blood, and the coming day of judgment and cleansing</span></div>
+      </div>
+
+      <p class="article-body">Nine days after the trumpet sounds, the calendar comes to its most sober moment. The Day of Atonement was the one day of the year when the high priest passed through the veil into the most holy place, carrying blood, to make atonement for himself, for the priests, and for the whole congregation. Every other Israelite had one assignment that day. Rest completely, and afflict your soul.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Commandment</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:26&ndash;32</span>
+          <span class="scripture-text">And the LORD spake unto Moses, saying, Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls, and offer an offering made by fire unto the LORD. And ye shall do no work in that same day: for it is a day of atonement, to make an atonement for you before the LORD your God. For whatsoever soul it be that shall not be afflicted in that same day, he shall be cut off from among his people. And whatsoever soul it be that doeth any work in that same day, the same soul will I destroy from among his people. Ye shall do no manner of work: it shall be a statute for ever throughout your generations in all your dwellings. It shall be unto you a sabbath of rest, and ye shall afflict your souls: in the ninth day of the month at even, from even unto even, shall ye celebrate your sabbath.</span>
+        </div>
+      </div>
+
+      <p class="article-body">This day, more than any other, shows us the line between what was fulfilled and what remains. Everything the high priest did behind the veil, the bullock, the two goats, the blood sprinkled on the mercy seat, belonged to the order of Aaron. And the book of Hebrews tells us that Jesus has done all of it once, in the true tabernacle in heaven, with better blood.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Our High Priest Entered Once</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 9:11&ndash;12</span>
+          <span class="scripture-text">But Christ being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands, that is to say, not of this building; Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 9:24&ndash;26</span>
+          <span class="scripture-text">For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us: Nor yet that he should offer himself often, as the high priest entereth into the holy place every year with blood of others; For then must he often have suffered since the foundation of the world: but now once in the end of the world hath he appeared to put away sin by the sacrifice of himself.</span>
+        </div>
+      </div>
+
+      <p class="article-body">But look at what God required of the people. It was never the people&rsquo;s job to handle the blood. Their part was to rest from all work and to afflict their souls. Neither of those has anything to do with an altar, and neither was fulfilled by the priest&rsquo;s work. The priest made atonement. The people humbled themselves before the God who made it. That is still our part.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">A Statute for Ever</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 16:29&ndash;31</span>
+          <span class="scripture-text">And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all, whether it be one of your own country, or a stranger that sojourneth among you: For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before the LORD. It shall be a sabbath of rest unto you, and ye shall afflict your souls, by a statute for ever.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 35:13</span>
+          <span class="scripture-text">But as for me, when they were sick, my clothing was sackcloth: I humbled my soul with fasting; and my prayer returned into mine own bosom.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The phrase afflict your souls is explained by the rest of Scripture as fasting. David said he humbled his soul with fasting, and the prophets called the people to a fast when they called them to repentance. The early church still knew this day by that name. When Luke described the dangerous sailing season in Paul&rsquo;s voyage to Rome, he marked the time of year by the Day of Atonement and simply called it the fast.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Fast Was Now Already Past</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 27:9&ndash;10</span>
+          <span class="scripture-text">Now when much time was spent, and when sailing was now dangerous, because the fast was now already past, Paul admonished them, And said unto them, Sirs, I perceive that this voyage will be with hurt and much damage, not only of the lading and ship, but also of our lives.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>Keeping It Today</small>Ways to Honor the Day of Atonement</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">1</span>Fast From Even Unto Even</p>
+        <p>Begin the fast at sundown as the tenth day begins, and break it at sundown the next evening. Many believers abstain from all food, and many from water as well, for the whole day. Others take water and fast from food. Choose with a clear conscience and keep the day seriously.</p>
+        <p>Use wisdom here. The purpose of the fast is to humble the soul, not to harm the body. Those who are sick, diabetic, pregnant or nursing, elderly and frail, or on medication that requires food, along with young children, should not put their health at risk. Talk to your doctor if you have a medical condition. Those who cannot fast from food can still afflict their souls by giving up a meal, sweets, coffee, television, or the phone, and by giving the day to prayer. God desires mercy, and not sacrifice (Matthew 12:7).</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>Rest From All Work</p>
+        <p>This is the strictest rest day in the calendar. The weekly Sabbath and the other holy days forbid servile work, but on this day God said ye shall do no manner of work. Take the day off, set aside chores and errands, and let nothing crowd out the business of meeting with God. The rest and the fast work together, freeing the whole day for the Lord.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">3</span>Call a Solemn Assembly</p>
+        <p>Gather the saints for a day of prayer. Read Leviticus 16 aloud, then read Hebrews 9 and 10, so the congregation sees the shadow and the substance side by side. Leave long spaces for prayer at the altar. This is not a day for entertainment or a light service. It is the day the prophet Joel described, when the trumpet calls the whole congregation, young and old, to sanctify a fast.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Joel 2:15&ndash;17</span>
+          <span class="scripture-text">Blow the trumpet in Zion, sanctify a fast, call a solemn assembly: Gather the people, sanctify the congregation, assemble the elders, gather the children, and those that suck the breasts: let the bridegroom go forth of his chamber, and the bride out of her closet. Let the priests, the ministers of the LORD, weep between the porch and the altar, and let them say, Spare thy people, O LORD, and give not thine heritage to reproach, that the heathen should rule over them: wherefore should they say among the people, Where is their God?</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">4</span>Confess and Turn</p>
+        <p>Bring to God the list you began making at the Feast of Trumpets. Name your sins honestly. Do not hide behind general words. Then receive His forgiveness by faith, because the blood of Christ has already been carried into the holiest. The fast does not earn forgiveness. It is the posture of a heart that knows how much it has been forgiven.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Joel 2:12&ndash;13</span>
+          <span class="scripture-text">Therefore also now, saith the LORD, turn ye even to me with all your heart, and with fasting, and with weeping, and with mourning: And rend your heart, and not your garments, and turn unto the LORD your God: for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 John 1:9</span>
+          <span class="scripture-text">If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">5</span>Be Reconciled With Your Brother</p>
+        <p>Jesus taught that if you come to offer your gift and remember that your brother has something against you, the offering has to wait. Make the phone call. Write the letter. Go to the person you have wronged, or the one who wronged you, and seek peace before the day arrives or on the day itself. Few things are more fitting on the Day of Atonement than being at one with the people God has placed in your life.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 5:23&ndash;24</span>
+          <span class="scripture-text">Therefore if thou bring thy gift to the altar, and there rememberest that thy brother hath ought against thee; Leave there thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">6</span>Intercede for the Church, the Nation, and Israel</p>
+        <p>The high priest made atonement for the whole congregation, not just himself. Under Melchizedek, we are a royal priesthood, and the work of intercession belongs to us. Pray as Daniel prayed, confessing the sins of his people with fasting (Daniel 9:3&ndash;5). Pray for the leaders of the nation (1 Timothy 2:1&ndash;2). Pray for your assembly and for the lost in your community. And pray as Paul prayed for Israel, that they might be saved (Romans 10:1).</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">7</span>Keep the Fast God Chose</p>
+        <p>Isaiah warned that a fast without mercy is not the fast God is looking for. Take the money you would have spent on the day&rsquo;s meals and give it to feed the hungry. Visit someone in need. Release a burden you have been holding over someone else. This turns the affliction of your soul into the spiritual sacrifice of doing good.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 58:6&ndash;7</span>
+          <span class="scripture-text">Is not this the fast that I have chosen? to loose the bands of wickedness, to undo the heavy burdens, and to let the oppressed go free, and that ye break every yoke? Is it not to deal thy bread to the hungry, and that thou bring the poor that are cast out to thy house? when thou seest the naked, that thou cover him; and that thou hide not thyself from thine own flesh?</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">8</span>Proclaim Liberty</p>
+        <p>The trumpet of the jubilee was sounded on the Day of Atonement, and it proclaimed freedom to captives and forgiveness of debts. There is no land jubilee for us to keep today, but the heart of it remains. Forgive a debt someone owes you. Let go of a grudge. Release someone from the prison of your resentment, because Christ has released you (Luke 4:18).</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 25:9&ndash;10</span>
+          <span class="scripture-text">Then shalt thou cause the trumpet of the jubile to sound on the tenth day of the seventh month, in the day of atonement shall ye make the trumpet sound throughout all your land. And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">9</span>Break the Fast With Thanksgiving and Boldness</p>
+        <p>When the sun sets and the day ends, gather to break the fast together with a simple meal. Before you eat, read aloud what the blood of Christ has done that the blood of goats never could (Hebrews 10:4). The veil is torn. The way into the holiest is open. The people who stood outside the tabernacle waiting for the high priest to come back out alive now walk straight in with boldness.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 10:19&ndash;22</span>
+          <span class="scripture-text">Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh; And having an high priest over the house of God; Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Atonement in the Order of Melchizedek</p>
+        <p>Under Aaron, the people waited outside while one man went behind the veil once a year with the blood of animals. Under Melchizedek, <strong>our High Priest has entered once for all with His own blood, and we keep the day by humbling ourselves, confessing, reconciling, and interceding, then drawing near with full assurance through the veil He opened.</strong> The atoning blood is finished. The humbled heart is still required.</p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; The Scapegoat</span>
+        <p>Believers have understood the second goat of Leviticus 16 in two main ways. Many see it as Christ Himself, bearing the sins of the people away where they are remembered no more, in the spirit of Isaiah 53:6 and Psalm 103:12. Others see the goat sent to the wilderness as a picture of the adversary finally carrying the guilt of the deception he sowed, and being banished at the end of the age (Revelation 20:1&ndash;3). The text allows serious discussion of both. What the text does not allow is any idea that someone other than Christ pays for our sins. Make that point firmly, whichever view you teach.</p>
+      </div>
+    </article>
+
+    <!-- ARTICLE VI: TABERNACLES AND THE EIGHTH DAY -->
+    <article class="article print-new-page" id="art6">
+      <div class="article-header">
+        <span class="article-num">The Season of Our Joy</span>
+        <h2 class="article-title">Tabernacles and the Eighth Day</h2>
+      </div>
+
+      <div class="feast-facts">
+        <div class="fact"><span class="fact-label">When</span><span class="fact-text">The 15th through the 21st of the seventh month, with the Eighth Day on the 22nd</span></div>
+        <div class="fact"><span class="fact-label">Holy Convocations</span><span class="fact-text">The first day of the feast and the Eighth Day, with no servile work</span></div>
+        <div class="fact"><span class="fact-label">At the Old Altar</span><span class="fact-text">Seventy bullocks over seven days, and more on the Eighth Day (Numbers 29:12&ndash;38)</span></div>
+        <div class="fact"><span class="fact-label">Our Offering Now</span><span class="fact-text">Booths, rejoicing, the Law read aloud, and a table open to the stranger</span></div>
+        <div class="fact wide"><span class="fact-label">What It Preaches</span><span class="fact-text">God dwelling with His people in the wilderness, in the flesh of Christ, in the coming kingdom, and in the new creation</span></div>
+      </div>
+
+      <p class="article-body">Five days after the most solemn day of the year comes the most joyful one. The Feast of Tabernacles is the feast where God presses joy on His people more than any other. He tells them to rejoice before Him seven days, and then He says, thou shalt surely rejoice. It was the feast of ingathering at the end of the harvest, and it was the week Israel moved out of their houses and lived in booths made of branches, remembering the years God kept them alive in the wilderness.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Feast and the Eighth Day</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:33&ndash;36</span>
+          <span class="scripture-text">And the LORD spake unto Moses, saying, Speak unto the children of Israel, saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto the LORD. On the first day shall be an holy convocation: ye shall do no servile work therein. Seven days ye shall offer an offering made by fire unto the LORD: on the eighth day shall be an holy convocation unto you; and ye shall offer an offering made by fire unto the LORD: it is a solemn assembly; and ye shall do no servile work therein.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:39&ndash;43</span>
+          <span class="scripture-text">Also in the fifteenth day of the seventh month, when ye have gathered in the fruit of the land, ye shall keep a feast unto the LORD seven days: on the first day shall be a sabbath, and on the eighth day shall be a sabbath. And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before the LORD your God seven days. And ye shall keep it a feast unto the LORD seven days in the year. It shall be a statute for ever in your generations: ye shall celebrate it in the seventh month. Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths: That your generations may know that I made the children of Israel to dwell in booths, when I brought them out of the land of Egypt: I am the LORD your God.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The altar work of this feast was enormous. Thirteen bullocks on the first day, twelve on the second, and so on down to seven on the seventh, seventy bullocks in all, with rams, lambs, and goats besides (Numbers 29:12&ndash;34). All of that belonged to the order of Aaron and is finished in the one offering of Christ. But look again at what the people themselves were commanded to do: take branches, dwell in booths, and rejoice before the Lord seven days. Not one of those things needs a priest or an altar. Every one of them can be kept in your own backyard.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Thou Shalt Surely Rejoice</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 16:13&ndash;15</span>
+          <span class="scripture-text">Thou shalt observe the feast of tabernacles seven days, after that thou hast gathered in thy corn and thy wine: And thou shalt rejoice in thy feast, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite, the stranger, and the fatherless, and the widow, that are within thy gates. Seven days shalt thou keep a solemn feast unto the LORD thy God in the place which the LORD shall choose: because the LORD thy God shall bless thee in all thine increase, and in all the works of thine hands, therefore thou shalt surely rejoice.</span>
+        </div>
+      </div>
+
+      <p class="article-body">This feast also runs straight to Christ and straight through to eternity. John tells us the Word was made flesh and dwelt among us, and the word he used means that the Word pitched His tent with us. Jesus Himself went up to this feast and stood up on its last great day to cry out an invitation. And the prophets tell us it will still be kept when the King reigns.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">From the Incarnation to the Kingdom</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 1:14</span>
+          <span class="scripture-text">And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 7:37&ndash;39</span>
+          <span class="scripture-text">In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water. (But this spake he of the Spirit, which they that believe on him should receive: for the Holy Ghost was not yet given; because that Jesus was not yet glorified.)</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Zechariah 14:16</span>
+          <span class="scripture-text">And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>The Seven Days</small>Ways to Keep the Feast of Tabernacles</p>
+
+      <div class="keep flow">
+        <p class="keep-title"><span class="keep-num">1</span>Build a Booth</p>
+        <p>This is the signature command of the feast, and it is one of the most delightful things a family can do all year. Build a simple booth in the backyard, on the porch or deck, or on the church grounds. Use a frame of boards, poles, or even a pop-up canopy, and cover it with branches, cornstalks, and greenery. Hang fruit, gourds, and fall harvest from the roof. Let the children decorate it.</p>
+        <p>Then live in it as much as you reasonably can. Eat your meals there. Read your Bible there. Pray there as a family in the evening. If the weather and your health allow, sleep out in it a night or two. Fall nights in the hills can turn cold, so use common sense with blankets and heat. If you live in an apartment, a balcony booth or a shared booth at the church keeps the command just as faithfully. The point is to leave the comfort of your permanent house and remember that this world is not our home.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Nehemiah 8:14&ndash;17</span>
+          <span class="scripture-text">And they found written in the law which the LORD had commanded by Moses, that the children of Israel should dwell in booths in the feast of the seventh month: And that they should publish and proclaim in all their cities, and in Jerusalem, saying, Go forth unto the mount, and fetch olive branches, and pine branches, and myrtle branches, and palm branches, and branches of thick trees, to make booths, as it is written. So the people went forth, and brought them, and made themselves booths, every one upon the roof of his house, and in their courts, and in the courts of the house of God, and in the street of the water gate, and in the street of the gate of Ephraim. And all the congregation of them that were come again out of the captivity made booths, and sat under the booths: for since the days of Jeshua the son of Nun unto that day had not the children of Israel done so. And there was very great gladness.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>Gather the Branches and Rejoice</p>
+        <p>God told Israel to take the boughs of goodly trees, branches of palm trees, the boughs of thick trees, and willows of the brook, and rejoice before Him. We may not have palms on the hillside, but we have oak, maple, pine, and willow. Gather them with the children, use them for the booth, and wave them in the assembly as you praise the King. Joy is not optional this week. It is commanded.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalms 118:24&ndash;26</span>
+          <span class="scripture-text">This is the day which the LORD hath made; we will rejoice and be glad in it. Save now, I beseech thee, O LORD: O LORD, I beseech thee, send now prosperity. Blessed be he that cometh in the name of the LORD: we have blessed you out of the house of the LORD.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">3</span>Feast, Sing, and Celebrate</p>
+        <p>Plan the best meals of the year for this week. Make music. Sing the songs of degrees (Psalms 120 through 134), which many believe pilgrims sang on the road up to the feasts. Let there be dancing before the Lord, as Scripture allows (Psalm 149:3). Have a campfire with the church. Tell the stories of God&rsquo;s faithfulness through the harvest year. A believer who keeps Tabernacles grimly has missed the whole command.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">4</span>Bring the Stranger, the Fatherless, and the Widow to the Table</p>
+        <p>God named who belongs at the feast: your household, the Levite, the stranger, the fatherless, and the widow. Look around your church and your street. Who will be alone this week? Invite the widow to eat in your booth. Take the foster children to the church campfire. Pay for a struggling family to come to the feast gathering. Our rejoicing is not complete until it includes the people who have the least reason to rejoice.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">5</span>Read the Law Aloud</p>
+        <p>God commanded that the Law be read before all the people at the Feast of Tabernacles, men, women, children, and strangers. When Nehemiah and Ezra kept the feast, they read from the book of the law of God every day of the feast (Nehemiah 8:18). Read through Deuteronomy as a family during the eight days. It is thirty-four chapters, about four or five a day. Or have the assembly read it aloud together in the evening gatherings.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 31:10&ndash;13</span>
+          <span class="scripture-text">And Moses commanded them, saying, At the end of every seven years, in the solemnity of the year of release, in the feast of tabernacles, When all Israel is come to appear before the LORD thy God in the place which he shall choose, thou shalt read this law before all Israel in their hearing. Gather the people together, men, and women, and children, and thy stranger that is within thy gates, that they may hear, and that they may learn, and fear the LORD your God, and observe to do all the words of this law: And that their children, which have not known any thing, may hear, and learn to fear the LORD your God, as long as ye live in the land whither ye go over Jordan to possess it.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">6</span>Camp Out With the Assembly</p>
+        <p>Israel kept this feast together, the whole nation in booths at once. Many assemblies today gather at a campground, a retreat center, or the church property for the week. A tent meeting or a camp meeting fits the heart of this feast perfectly, a people living in temporary shelters and meeting with God under canvas. It is the spirit of Abraham, who lived in tents as a stranger and kept his eyes on a better city.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 11:9&ndash;10</span>
+          <span class="scripture-text">By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise: For he looked for a city which hath foundations, whose builder and maker is God.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">7</span>Plan and Save Ahead</p>
+        <p>An eight-day feast takes planning. Ask for the time off work months ahead. Many families set aside money through the year so they can rejoice at the feast without strain, taking their pattern from the way God told Israel to turn their harvest into money and spend it on whatsoever thy soul desireth, rejoicing before the Lord with their household (Deuteronomy 14:24&ndash;26). Keep that savings separate from the tithe you bring to the Lord&rsquo;s work, so neither one robs the other.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">8</span>Come to the Living Water and the Light</p>
+        <p>Jesus chose this feast to cry out, If any man thirst, let him come unto me, and drink, and to declare that He is the light of the world (John 8:12). Pray for the rain of the Spirit on your assembly and your nation. Hold a water baptism service, the living water pictured in the believers themselves. Invite the lost to come and drink. The same Christ who stood in the temple courts that week is still calling.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">9</span>Lift Your Eyes to the Kingdom</p>
+        <p>Tabernacles is the feast of the age to come. Teach on the reign of Christ, when the nations will go up year by year to worship the King and keep this very feast (Zechariah 14:16). Remind your people that what they are doing in their little booths is a rehearsal for a kingdom that will fill the earth. Every branch on the roof is a small prophecy of the day when the knowledge of the Lord covers the earth as the waters cover the sea (Isaiah 11:9).</p>
+      </div>
+
+      <p class="sub-head"><small>The Twenty-Second Day</small>Keeping the Eighth Day</p>
+
+      <p class="article-body">When the seven days are done, God did not simply end the feast. He added one more day, a separate holy convocation, called a solemn assembly. The word describes a gathering held back, a closing assembly where the people stay a little longer with the Lord before going home. Its altar offerings were far smaller than the week before, one bullock, one ram, seven lambs, and a goat, and those too are finished in Christ. The day itself remains.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">A Solemn Assembly</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Numbers 29:35&ndash;38</span>
+          <span class="scripture-text">On the eighth day ye shall have a solemn assembly: ye shall do no servile work therein: But ye shall offer a burnt offering, a sacrifice made by fire, of a sweet savour unto the LORD: one bullock, one ram, seven lambs of the first year without blemish: Their meat offering and their drink offerings for the bullock, for the ram, and for the lambs, shall be according to their number, after the manner: And one goat for a sin offering; beside the continual burnt offering, and his meat offering, and his drink offering.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Nehemiah 8:18</span>
+          <span class="scripture-text">Also day by day, from the first day unto the last day, he read in the book of the law of God. And they kept the feast seven days; and on the eighth day was a solemn assembly, according unto the manner.</span>
+        </div>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">10</span>Hold the Closing Assembly</p>
+        <p>Keep the Eighth Day as a holy convocation with no servile work. Gather for one last service of the season. Let it be quieter than the joyful week before, a time to linger in the presence of the Lord, to give testimony of what God did during the feast, and to pray over the families before they go back to ordinary life.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">11</span>Take Down the Booth With Thanksgiving</p>
+        <p>When the Eighth Day is over, take down the booth together. It is a strangely moving thing to do. Talk with your children about how our bodies are tents too, and one day they will be taken down, and we will receive a house not made with hands, eternal in the heavens (2 Corinthians 5:1). Then put the calendar up for next year and start counting toward the Sabbath, because the cycle begins again.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">12</span>Rehearse the New Heaven and the New Earth</p>
+        <p>If the seven days picture the reign of Christ on this earth, many have seen the Eighth Day as a picture of what comes after it, the new heaven and the new earth, when the tabernacle of God is with men for ever. The Bible often attaches new beginnings to the eighth day, from circumcision (Genesis 17:12) to the resurrection on the first day of a new week. That is a picture the text allows rather than a doctrine it demands, but it gives the last day of the year&rsquo;s feasts a glorious focus. End the season reading the last two chapters of the Bible.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Revelation 21:1&ndash;4</span>
+          <span class="scripture-text">And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea. And I John saw the holy city, new Jerusalem, coming down from God out of heaven, prepared as a bride adorned for her husband. And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God. And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Tabernacles in the Order of Melchizedek</p>
+        <p>Under Aaron, seventy bullocks were laid on the altar over seven days. Under Melchizedek, <strong>the whole royal priesthood leaves its houses, dwells in booths, reads the Law, opens its table to the stranger, and rejoices before a High Priest who once tabernacled among us and will soon dwell with us for ever.</strong> The bullocks are finished. The booths and the joy are waiting in your backyard.</p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; That Great Day of the Feast</span>
+        <p>John calls the day Jesus cried out the last day, that great day of the feast (John 7:37). Some believe that was the seventh day, when later Jewish writings describe water being drawn from the pool of Siloam and poured out at the altar (Mishnah, Sukkah 4:9) and great lamps being lit in the temple courts (Mishnah, Sukkah 5:2&ndash;4). Others believe it was the Eighth Day, the final holy convocation. The Mishnah was written down around AD 200, well after the temple fell, so its details are a helpful witness but not Scripture. Either way, Jesus used the feast to present Himself as the water and the light it celebrated.</p>
+        <p>You may also hear that Jesus was born during the Feast of Tabernacles. Some build that from the priestly course of Zacharias (Luke 1:5, 1:8) and the timing of John&rsquo;s birth. It is a reasonable possibility, but the calculation rests on several assumptions, so present it as a possibility and not as settled fact.</p>
+      </div>
+    </article>
+
+    <!-- ARTICLE VII: THE WHOLE COUNSEL -->
+    <article class="article print-new-page" id="art7">
+      <div class="article-header">
+        <span class="article-num">Bringing It Together</span>
+        <h2 class="article-title">The Whole Counsel</h2>
+      </div>
+
+      <p class="article-body">Lay all of the appointed times side by side and the pattern of this whole teaching comes into focus. In every single feast, God gave two kinds of commands. Some were given to the priests at the altar, and those have been fulfilled and closed in the one offering of Jesus Christ. Others were given to the people in all their dwellings, and those remain. The chart below gathers them together.</p>
+
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th style="width:17%">Appointed Time</th>
+              <th style="width:27%">At the Altar Under Aaron</th>
+              <th style="width:30%">Our Offering Under Melchizedek</th>
+              <th style="width:26%">What the Day Preaches</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-name">Sabbath</td>
+              <td>Two lambs with flour and drink offerings<span class="ref">Numbers 28:9&ndash;10</span></td>
+              <td>Rest, holy convocation, praise, the Word, and doing good<span class="ref">Hebrews 13:15&ndash;16</span></td>
+              <td>The rest that remains for the people of God<span class="ref">Hebrews 4:9</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Passover</td>
+              <td>The lamb slain at the place God chose<span class="ref">Deuteronomy 16:5&ndash;6</span></td>
+              <td>The memorial table, bread and cup, foot washing, the story told<span class="ref">1 Corinthians 11:26</span></td>
+              <td>Christ our Passover sacrificed for us<span class="ref">1 Corinthians 5:7</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Unleavened Bread</td>
+              <td>Offerings made by fire seven days<span class="ref">Leviticus 23:8</span></td>
+              <td>Leaven put out of the house and the heart<span class="ref">1 Corinthians 5:8</span></td>
+              <td>A life of sincerity and truth</td>
+            </tr>
+            <tr>
+              <td class="col-name">Firstfruits</td>
+              <td>The wave sheaf and an he lamb<span class="ref">Leviticus 23:11&ndash;12</span></td>
+              <td>Resurrection praise and a firstfruits gift<span class="ref">Proverbs 3:9</span></td>
+              <td>Christ risen, the firstfruits of them that slept<span class="ref">1 Corinthians 15:20</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Pentecost</td>
+              <td>Two wave loaves with burnt, sin, and peace offerings<span class="ref">Leviticus 23:17&ndash;20</span></td>
+              <td>The count, prayer for the Spirit, a freewill offering, the corners left<span class="ref">Deuteronomy 16:10; Leviticus 23:22</span></td>
+              <td>The Law on the heart and the harvest of souls<span class="ref">Acts 2:1&ndash;4</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Trumpets</td>
+              <td>Burnt offerings and a sin offering<span class="ref">Numbers 29:2&ndash;5</span></td>
+              <td>The trumpet, the shout, watching, and a searched heart<span class="ref">Psalm 98:6</span></td>
+              <td>The last trump and the return of the King<span class="ref">1 Corinthians 15:52</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Atonement</td>
+              <td>The high priest, the blood of bullock and goat, the scapegoat<span class="ref">Leviticus 16:11&ndash;22</span></td>
+              <td>Fasting, confession, reconciliation, intercession, mercy<span class="ref">Joel 2:12&ndash;13; Isaiah 58:6&ndash;7</span></td>
+              <td>Christ entered once with His own blood<span class="ref">Hebrews 9:12</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Tabernacles</td>
+              <td>Seventy bullocks over seven days, with rams and lambs<span class="ref">Numbers 29:12&ndash;34</span></td>
+              <td>Booths, rejoicing, the Law read, the stranger welcomed<span class="ref">Deuteronomy 16:14</span></td>
+              <td>God dwelling with His people in the kingdom<span class="ref">Zechariah 14:16</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Eighth Day</td>
+              <td>One bullock, one ram, seven lambs<span class="ref">Numbers 29:36</span></td>
+              <td>The solemn assembly, lingering with the Lord<span class="ref">Numbers 29:35</span></td>
+              <td>The new heaven and the new earth<span class="ref">Revelation 21:1&ndash;3</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="article-body">Read down the middle column and you will notice something. None of those offerings require a temple, a Levite, or an animal. Every one of them can be kept in a home, in a church, in a tent, or in a backyard in the hills of West Virginia. And every one of them is something the New Testament itself calls a sacrifice pleasing to God. That is what it means to keep the feasts in the order of Melchizedek. We are not doing less than Israel did. We are bringing the very offerings the altar was always pointing toward: a life laid down, a heart made clean, praise on the lips, mercy in the hands, and eyes lifted up for the coming of the King.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Hold These Together</p>
+        <p><strong>We do not keep the feasts to be saved.</strong> Salvation is by grace through faith in Jesus Christ, and not of works (Ephesians 2:8&ndash;9). No Sabbath, no Passover table, and no fast on the Day of Atonement adds a single drop to the blood He shed.</p>
+        <p><strong>We keep the feasts because we are saved.</strong> A heart that loves God keeps His commandments (John 14:15), and these are His appointed times. We keep them the way the saints keep all of His commandments, by the Spirit, in the faith of Jesus, with joy (Revelation 14:12).</p>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">Starting Where You Are</p>
+        <p>If all of this is new to you, do not try to do every practice in this teaching the first year. Begin with the Sabbath, because it comes every week and it will shape everything else. When the spring comes, keep Passover and clean out the leaven. As the fall feasts arrive, pick two or three of the practices for each day and keep them well. Add more as your family grows into the rhythm of God&rsquo;s calendar.</p>
+        <p><strong>Faithfulness in a few things grows into faithfulness in many</strong> (Matthew 25:21). The goal is not to perform a perfect feast. The goal is to walk with God through His year, season by season, until the fall feasts are fulfilled and the King comes home.</p>
+      </div>
+
+      <div class="conclusion">
+        <p class="conclusion-label">Where It All Rests</p>
+        <p class="conclusion-title">The Altar Is Finished, the Feast Goes On</p>
+        <div class="conclusion-body">
+          <p>The order of Aaron served its purpose well. Its lambs, its goats, its bullocks, and its veil all pointed forward to a better Priest and a better offering. That Priest has come. He met Abraham with bread and wine long before Aaron was born, and He has now offered Himself once for all and sat down at the right hand of God, a priest for ever after the order of Melchizedek.</p>
+          <p>So we do not tear the appointed times out of the calendar, and we do not try to rebuild the altar in our living rooms. We keep the days God called His own, in all our dwellings, as a royal priesthood. We rest on His Sabbath. We come to His Passover table. We count to Pentecost and pray for the fire. We blow the trumpet and watch for the King. We humble our souls on the Day of Atonement and walk boldly through the torn veil. We dwell in booths and rejoice before Him. And on the Eighth Day we lift our eyes to the morning when the tabernacle of God is with men for ever.</p>
+          <p>Keep the feast, beloved. The Lamb has already been slain.</p>
+        </div>
+        <div class="conclusion-verse">
+          <span class="cv-ref">Hebrews 13:15</span>
+          By him therefore let us offer the sacrifice of praise to God continually, that is, the fruit of our lips giving thanks to his name.
+        </div>
+        <div class="conclusion-verse">
+          <span class="cv-ref">1 Corinthians 5:8</span>
+          Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.
+        </div>
+      </div>
+    </article>
+
+    <!-- COMPANION TEACHING -->
+    <aside class="companion">
+      <p class="companion-label">Companion Teaching</p>
+      <a class="companion-link" href="./039_-_Living_Under_the_Melchizedek_Priesthood.html">
+        <span class="companion-title">Living Under the Melchizedek Priesthood</span>
+        <span class="companion-note">The order itself, taken on its own. A Priest who does not die, the veil torn and the way opened, every believer made a priest, and the daily spiritual sacrifices that belong to the better order.</span>
+        <span class="companion-read">Read the Teaching &#8594;</span>
+      </a>
+    </aside>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Even These Are My Feasts &middot; Leviticus 23:2<br>Brother Justin May &middot; Work the Word Church, Madison</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

@@ -44,7 +44,7 @@
 
   /* ── PAGE SHELL ── */
   .page {
-    max-width: 820px;
+    max-width: 940px;
     margin: 0 auto;
     background: var(--parchment);
     border: 1px solid #D4B97A;
@@ -63,7 +63,7 @@
     border-color: var(--gold-light);
     border-style: solid;
     pointer-events: none;
-    z-index: 2;
+    z-index: 3;
   }
   .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
   .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
@@ -71,15 +71,19 @@
   /* ── HEADER (crimson bookend) ── */
   .doc-header {
     text-align: center;
-    padding: 3rem 3rem 2.4rem;
-    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    padding: 3.4rem 3rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
     border-bottom: 3px solid var(--gold-light);
     position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   .doc-header::after {
     content: '';
     position: absolute;
-    inset: 10px;
+    inset: 12px;
     border: 1px solid rgba(201,168,76,0.4);
     pointer-events: none;
   }
@@ -462,16 +466,20 @@
   /* ── FOOTER (crimson bookend) ── */
   .doc-footer {
     text-align: center;
-    padding: 2rem;
+    padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
     border-top: 3px solid var(--gold-light);
-    margin-top: 3rem;
-    background: linear-gradient(135deg, var(--crimson), var(--crimson-lt));
+    margin-top: 0;
     position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   .doc-footer::after {
     content: '';
     position: absolute;
-    inset: 10px;
+    inset: 12px;
     border: 1px solid rgba(201,168,76,0.4);
     pointer-events: none;
   }
@@ -1291,7 +1299,7 @@
   <!-- FOOTER -->
   <footer class="doc-footer">
     <div class="footer-ornament">&#10022; &#10022; &#10022;</div>
-    <p class="footer-text">Work the Word &middot; Pronomian Doctrine Library<br>Statutes &middot; Judgments &middot; Ordinances &middot; Commandments</p>
+    <p class="footer-text">Work the Word &middot; Pronomian Teaching Series<br>Statutes &middot; Judgments &middot; Ordinances &middot; Commandments</p>
   </footer>
 
 </div>

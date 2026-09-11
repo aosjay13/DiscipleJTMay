@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Planting and Sowing &middot; The Law of the Harvest from Eden to the Ingathering</title>
+<meta name="description" content="A full Bible study on planting and sowing: the law of the harvest from the third day of creation to the ingathering at the end of the year.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+
+  /* decorative gold corner brackets */
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.4rem 3rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-header::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .part-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 1.1rem; }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.30);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    line-height: 1.6;
+    margin-top: 0.9rem;
+    opacity: 0.94;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body {
+    padding: 0 3rem 3rem;
+  }
+
+  /* ── PREAMBLE ── */
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+  .preamble p + p { margin-top: 1rem; }
+
+  /* ── TOC ── */
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.35rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.9rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--gold); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 1.6rem; flex-shrink: 0; }
+
+  /* ── ARTICLE ── */
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; flex-wrap: wrap; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+
+  /* ── SECTION PANEL ── */
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 0.8rem; }
+
+  /* ── KEY POINT PANEL ── */
+  .keypoint { margin: 1.6rem 0; padding: 1.3rem 1.6rem; background: linear-gradient(to right, #F5EDD8, var(--cream)); border-left: 4px solid var(--crimson); }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.6rem; }
+  .keypoint p { font-size: 1.04rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.8rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── HISTORICAL / TEACHER NOTE ── */
+  .hist-note { margin: 1.4rem 0; padding: 0.9rem 1.1rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; font-size: 0.92rem; line-height: 1.7; color: var(--ink-soft); font-style: italic; }
+  .hist-note strong { font-style: normal; color: var(--ink-mid); }
+  .hist-note p + p { margin-top: 0.7rem; }
+  .hist-quote { display: block; margin: 0.7rem 0 0.7rem 1rem; padding-left: 0.9rem; border-left: 2px solid var(--gold-light); }
+  .hist-ref { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--gold); display: block; margin-bottom: 0.25rem; }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture-block { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+
+  /* ── COMPARISON TABLE ── */
+  .table-wrap { margin: 1.6rem 0; overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  .compare-table thead tr { background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .compare-table th { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #FBF5E6; padding: 0.65rem 0.9rem; text-align: left; font-weight: 500; }
+  .compare-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); vertical-align: top; line-height: 1.55; }
+  .compare-table tbody tr:nth-child(even) td { background: rgba(242,235,217,0.45); }
+  .compare-table .col-name { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--crimson); font-weight: 600; }
+
+  /* ── FOOTER (crimson) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; font-size: 1.2rem; color: var(--gold-light); letter-spacing: 0.4em; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF6E9;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
+
+  /* ── PRINT (8.5 x 11 portrait, numbered pages, clean breaks) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff; padding: 0; font-size: 11pt;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .site-nav { display: none; }
+
+    /* keep the crimson bookends and the panel tints on paper */
+    .doc-header, .doc-footer, .section, .keypoint, .scripture-block,
+    .hist-note, .toc, .compare-table thead tr, .compare-table tbody tr:nth-child(even) td {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+
+    /* the text column sits inside the 0.75in page margin */
+    .doc-header { padding: 1.7rem 1.4rem 1.4rem; }
+    .doc-body   { padding: 0; }
+    .doc-footer { padding: 1.3rem 1.4rem; margin-top: 2rem; }
+
+    /* nothing meaningful gets split down the middle */
+    .scripture-block, .scripture-entry, .section, .keypoint, .hist-note,
+    .table-wrap, .article-header, .toc, .toc-list li, .preamble {
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .compare-table tr { page-break-inside: avoid; break-inside: avoid; }
+    .compare-table thead { display: table-header-group; }
+
+    /* a heading is never the last line on a page */
+    .article-header, .article-title, .section-title,
+    .keypoint-label, .scripture-label, .toc-title, .preamble-label {
+      page-break-after: avoid; break-after: avoid;
+    }
+    .article-body { orphans: 3; widows: 3; }
+    .article { page-break-inside: auto; break-inside: auto; }
+
+    /* start the closing charge on a fresh page, keep the footer with it */
+    .print-new-page { page-break-before: always; break-before: page; }
+    .doc-footer { page-break-before: avoid; break-before: avoid; }
+
+    a { color: inherit; text-decoration: none; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.6rem 2.5rem; }
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.2rem 1.3rem 1.8rem; }
+    .doc-footer { padding: 2rem 1.2rem 1.8rem; }
+    .doc-header::after, .doc-footer::after { inset: 8px; }
+    .page::before, .page::after { width: 24px; height: 24px; }
+    .toc-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="part-label">Monthly Bible Study &middot; September 2026</span>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">Planting and Sowing</h1>
+    <p class="doc-subtitle">The Law of the Harvest from Eden to the Ingathering</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Where We Are Going</p>
+      <p>God could have taught us about His kingdom using any picture He wanted. He chose a field. From the third day of creation to the last harvest in the book of Revelation, the Scripture keeps returning to a man with seed in his hand, ground under his feet, and a crop he will not see for months. That picture is not decoration. It is the way God has ordered both the earth and the soul, and once you see it you cannot unsee it.</p>
+      <p>This study follows the thread of planting and sowing straight through the Bible. We begin where God first put seed in the ground and set the seasons in place. We walk through the commandments He gave Israel about how a field is to be worked, because those laws still teach us how a life is to be lived. We come to the plain warning that a man reaps exactly what he plants, and then to the good news that the seed which saves us is not our own work at all but the word of God, sown by the hand of Christ.</p>
+      <p>Along the way we will handle the hard parts honestly. Sowing is done in a season when nothing is visible. It is slow, it is often done in tears, and the man who sows is frequently not the man who reaps. But the harvest is certain, because the One who set seedtime and harvest in place has never once broken His word.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#art1"><span class="toc-num">I.</span>Seedtime and Harvest</a></li>
+        <li><a href="#art2"><span class="toc-num">II.</span>The Law of the Field</a></li>
+        <li><a href="#art3"><span class="toc-num">III.</span>Whatsoever a Man Soweth</a></li>
+        <li><a href="#art4"><span class="toc-num">IV.</span>The Seed Is the Word of God</a></li>
+        <li><a href="#art5"><span class="toc-num">V.</span>The Sower of the Good Seed</a></li>
+        <li><a href="#art6"><span class="toc-num">VI.</span>Two Fields, Two Harvests</a></li>
+        <li><a href="#art7"><span class="toc-num">VII.</span>Sowing with an Open Hand</a></li>
+        <li><a href="#art8"><span class="toc-num">VIII.</span>Sowing in Tears</a></li>
+        <li><a href="#art9"><span class="toc-num">IX.</span>One Soweth and Another Reapeth</a></li>
+        <li><a href="#art10"><span class="toc-num">X.</span>Except a Corn of Wheat Fall</a></li>
+        <li><a href="#art11"><span class="toc-num">XI.</span>The Ingathering at the End</a></li>
+        <li><a href="#art12"><span class="toc-num">XII.</span>What to Plant This Month</a></li>
+      </ul>
+    </nav>
+
+
+    <!-- ARTICLE I -->
+    <article class="article" id="art1">
+      <div class="article-header">
+        <span class="article-num">God's Own Order</span>
+        <h2 class="article-title">Seedtime and Harvest</h2>
+      </div>
+      <p class="article-body">Before there was a farmer, there was a seed. On the third day of creation, before the sun and moon were set in the sky and long before there was any man to work the ground, God spoke seed into existence and built a law into it. Every seed would carry its own kind inside itself, and what came up would be what went down. This is the foundation of everything else in this study, so we start there and let God define His own picture.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Seed After His Kind</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 1:11&ndash;12</span>
+          <span class="scripture-text">And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so. And the earth brought forth grass, and herb yielding seed after his kind, and the tree yielding fruit, whose seed was in itself, after his kind: and God saw that it was good.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Notice the phrase that repeats: whose seed is in itself. God did not make a world where you plant one thing and hope for another. He made a world where the outcome is already inside the seed before it ever touches the dirt. A man does not decide at harvest what he will gather. He decided that months earlier, when he chose what to carry out to the field.</p>
+
+      <p class="article-body">After the flood, God bound Himself by covenant to keep that order running for as long as this earth stands. The promise He made to Noah is not only about rainbows and rain. It is about the reliability of the ground. As long as there is an earth, there will be a planting season and a reaping season, and neither one will fail.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Covenant of the Seasons</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Genesis 8:22</span>
+          <span class="scripture-text">While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Hold This Thought</p>
+        <p>Seedtime and harvest is not a farming tip; it is a covenant God swore to keep. <strong>Every promise in this study about sowing and reaping rests on the fact that God Himself guaranteed the ground would answer the seed.</strong> When we come to the warnings later, remember that they are not threats. They are simply the way God built the world, and He does not turn it off for anybody.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE II -->
+    <article class="article" id="art2">
+      <div class="article-header">
+        <span class="article-num">What God Commanded About the Ground</span>
+        <h2 class="article-title">The Law of the Field</h2>
+      </div>
+      <p class="article-body">When God gave His law to Israel, He did not leave the field out of it. A large portion of the commandments touch directly on how a man plants, what he plants, when he rests the ground, and what he does with the edges of his harvest. These are not dusty agricultural footnotes. They are the character of God written into the dirt, and every one of them teaches something about how a redeemed life is to be lived.</p>
+
+      <p class="article-body">Start with what He forbade. A field was not to be sown with mixed seed, and a vineyard was not to be planted with two kinds at once. The reason given is striking: the whole crop is defiled, not just the intruder.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Do Not Mingle the Seed</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 19:19</span>
+          <span class="scripture-text">Ye shall keep my statutes. Thou shalt not let thy cattle gender with a diverse kind: thou shalt not sow thy field with mingled seed: neither shall a garment mingled of linen and woollen come upon thee.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 22:9</span>
+          <span class="scripture-text">Thou shalt not sow thy vineyard with divers seeds: lest the fruit of thy seed which thou hast sown, and the fruit of thy vineyard, be defiled.</span>
+        </div>
+      </div>
+
+      <p class="article-body">A man could not plant God's crop and the world's crop in the same row and expect God to bless the harvest. That principle carries all the way forward. A believer who wants to sow the word of God and also sow a little of the world's seed on the side has not planted two crops. He has ruined one field. This is the same warning the prophets bring when they tell Judah to break up the fallow ground and sow not among thorns (Jeremiah 4:3).</p>
+
+      <p class="article-body">Then look at what He commanded. The harvest was never to be scraped clean. The corners of the field and whatever the reapers dropped belonged to the poor, the stranger, the fatherless, and the widow. God built charity into the harvest itself, so that a man could not gather his own increase without leaving something behind for someone who had no field.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Leave the Corners</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 19:9&ndash;10</span>
+          <span class="scripture-text">And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest. And thou shalt not glean thy vineyard, neither shalt thou gather every grape of thy vineyard; thou shalt leave them for the poor and stranger: I am the LORD your God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 24:19</span>
+          <span class="scripture-text">When thou cuttest down thine harvest in thy field, and hast forgot a sheaf in the field, thou shalt not go again to fetch it: it shall be for the stranger, for the fatherless, and for the widow: that the LORD thy God may bless thee in all the work of thine hands.</span>
+        </div>
+      </div>
+
+      <p class="article-body">God also put a Sabbath on the land. Six years the field was worked, and the seventh year it was neither sown nor pruned. The same God who gave a seventh day of rest to the man gave a seventh year of rest to the ground, and He promised to feed the nation through it. That commandment required faith, because the man who obeyed it had to trust God for a year he did not plant.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">A Sabbath for the Land</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 25:3&ndash;4</span>
+          <span class="scripture-text">Six years thou shalt sow thy field, and six years thou shalt prune thy vineyard, and gather in the fruit thereof; But in the seventh year shall be a sabbath of rest unto the land, a sabbath for the LORD: thou shalt neither sow thy field, nor prune thy vineyard.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Finally, God tied the rain itself to obedience. The land of Israel does not run on rivers the way Egypt did. It runs on rain that comes in two seasons, an early rain that softens the baked ground so it can be plowed and sown, and a latter rain that fills out the grain before harvest. God told the nation plainly that the timing of those rains would answer to whether they walked in His commandments.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Early Rain and the Latter Rain</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 11:13&ndash;15</span>
+          <span class="scripture-text">And it shall come to pass, if ye shall hearken diligently unto my commandments which I command you this day, to love the LORD your God, and to serve him with all your heart and with all your soul, That I will give you the rain of your land in his due season, the first rain and the latter rain, that thou mayest gather in thy corn, and thy wine, and thine oil. And I will send grass in thy fields for thy cattle, that thou mayest eat and be full.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Joel 2:23</span>
+          <span class="scripture-text">Be glad then, ye children of Zion, and rejoice in the LORD your God: for he hath given you the former rain moderately, and he will cause to come down for you the rain, the former rain, and the latter rain in the first month.</span>
+        </div>
+      </div>
+
+      <div class="hist-note">
+        <p><strong>A note on the season.</strong> The oldest known Hebrew inscription we possess is a small limestone tablet found at Gezer, dated to about the tenth century before Christ. It is nothing but a farmer's year, listed month by month, and it begins exactly where the biblical year of the field begins, with the gathering in of the crop and then the sowing that follows the first rains.</p>
+        <span class="hist-quote">
+          <span class="hist-ref">The Gezer Calendar, Lines 1&ndash;2</span>
+          His two months: Ingathering. His two months: Sowing. His two months: Late Sowing.
+        </span>
+        <p>That order matters for a study written in September. In the land God gave Israel, this is the close of one agricultural year and the very edge of the next. The ground is hard from the dry season, the ingathering is being finished, and the plowman is waiting on the early rain so he can put seed back in the dirt. It is the season of both gathering and planting at once, which is exactly the position every believer stands in.</p>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Point of the Commandments</p>
+        <p>God's field laws teach purity, generosity, rest, and dependence. <strong>Do not mix your seed, do not strip your corners, do not work a ground God told you to rest, and do not imagine the rain is yours to command.</strong> A man who farms that way is being taught how to live, not merely how to eat.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE III -->
+    <article class="article" id="art3">
+      <div class="article-header">
+        <span class="article-num">The Moral Harvest</span>
+        <h2 class="article-title">Whatsoever a Man Soweth</h2>
+      </div>
+      <p class="article-body">What God built into the ground, He also built into the conscience. The clearest statement of it in all of Scripture is short, blunt, and comes with a warning attached at the front, because men have always tried to talk themselves out of it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Law of the Harvest Stated</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Galatians 6:7&ndash;9</span>
+          <span class="scripture-text">Be not deceived; God is not mocked: for whatsoever a man soweth, that shall he also reap. For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting. And let us not be weary in well doing: for in due season we shall reap, if we faint not.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Be not deceived. That is not a throwaway line. Paul puts it there because self deception is the normal condition of a man who is sowing one thing and expecting to reap another. He knows what he is planting. He simply does not believe the field will answer him. God is not mocked means God will not be laughed at by a man who thinks the ground has stopped working.</p>
+
+      <p class="article-body">The rest of Scripture says the same thing from many directions. Job's friend said it (Job 4:8), Solomon said it (Proverbs 22:8), and Hosea said it with a picture that has never been improved on: a man who plants wind will not harvest a breeze, he will harvest a storm. The harvest always comes back bigger than the seed, and that cuts both ways.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Same Truth from the Prophets and the Wise</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Job 4:8</span>
+          <span class="scripture-text">Even as I have seen, they that plow iniquity, and sow wickedness, reap the same.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Proverbs 22:8</span>
+          <span class="scripture-text">He that soweth iniquity shall reap vanity: and the rod of his anger shall fail.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hosea 8:7</span>
+          <span class="scripture-text">For they have sown the wind, and they shall reap the whirlwind: it hath no stalk: the bud shall yield no meal: if so be it yield, the strangers shall swallow it up.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hosea 10:12&ndash;13</span>
+          <span class="scripture-text">Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek the LORD, till he come and rain righteousness upon you. Ye have plowed wickedness, ye have reaped iniquity; ye have eaten the fruit of lies: because thou didst trust in thy way, in the multitude of thy mighty men.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Lay the sowing passages side by side and the pattern is unmistakable. Scripture is not vague about this. It names the seed and it names the crop.</p>
+
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>What Is Sown</th>
+              <th>What Is Reaped</th>
+              <th>Where It Is Written</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="col-name">Wickedness</td><td>The same thing, back on the sower</td><td>Job 4:8</td></tr>
+            <tr><td class="col-name">Iniquity</td><td>Vanity, and a failing rod of anger</td><td>Proverbs 22:8</td></tr>
+            <tr><td class="col-name">Discord among brethren</td><td>Numbered among what God hates</td><td>Proverbs 6:16, 6:19</td></tr>
+            <tr><td class="col-name">The wind</td><td>The whirlwind</td><td>Hosea 8:7</td></tr>
+            <tr><td class="col-name">To the flesh</td><td>Corruption</td><td>Galatians 6:8</td></tr>
+            <tr><td class="col-name">To the Spirit</td><td>Life everlasting</td><td>Galatians 6:8</td></tr>
+            <tr><td class="col-name">Righteousness</td><td>Mercy, and a sure reward</td><td>Hosea 10:12, Proverbs 11:18</td></tr>
+            <tr><td class="col-name">Bountifully</td><td>Bountifully</td><td>2 Corinthians 9:6</td></tr>
+            <tr><td class="col-name">Sparingly</td><td>Sparingly</td><td>2 Corinthians 9:6</td></tr>
+            <tr><td class="col-name">In tears</td><td>In joy, with the sheaves</td><td>Psalm 126:5&ndash;6</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Say This Plainly</p>
+        <p>Nobody stumbles into a harvest. <strong>The crop a man gathers is the seed he already chose, multiplied and given time.</strong> The delay between sowing and reaping is not evidence that the law has been suspended. It is only the growing season, and it is the mercy of God, because it is the window in which a man can still repent and change what he is planting.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IV -->
+    <article class="article" id="art4">
+      <div class="article-header">
+        <span class="article-num">The Seed Identified</span>
+        <h2 class="article-title">The Seed Is the Word of God</h2>
+      </div>
+      <p class="article-body">Everything to this point could be mistaken for good moral advice, the kind of thing a man can nod at without ever being saved. So the Lord takes the picture and makes it specific. When He told the parable of the sower He turned around and told His own disciples exactly what the seed represents, and He left no room for guessing.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Seed Named by the Lord</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 8:11</span>
+          <span class="scripture-text">Now the parable is this: The seed is the word of God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Peter 1:23</span>
+          <span class="scripture-text">Being born again, not of corruptible seed, but of incorruptible, by the word of God, which liveth and abideth for ever.</span>
+        </div>
+      </div>
+
+      <p class="article-body">This is where the whole study turns. If the seed that produces eternal life were something we manufactured, then salvation would be a wage and not a gift. But the seed is the word of God, and the word of God is not ours. It comes down like rain, it does the work, and it returns to Him having accomplished what He sent it to do. A new birth is not a man growing his own crop. It is God's incorruptible seed planted in a man by God's own hand.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Word That Does Not Return Empty</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 55:10&ndash;11</span>
+          <span class="scripture-text">For as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud, that it may give seed to the sower, and bread to the eater: So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Look carefully at what Isaiah says the rain does. It waters the earth so that it gives seed to the sower and bread to the eater. Even the seed in the sower's hand came from a previous harvest that God watered. No man in this picture ever produced anything on his own. He received seed, he scattered seed, and God gave the increase.</p>
+
+      <p class="article-body">The Lord also told a short parable that most readers pass over, about a man who sows and then goes to bed. He does not understand how the growth happens. He cannot make it happen. He sleeps and rises for weeks on end while the ground quietly does what only God can make it do.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Seed Growing Secretly</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Mark 4:26&ndash;29</span>
+          <span class="scripture-text">And he said, So is the kingdom of God, as if a man should cast seed into the ground; And should sleep, and rise night and day, and the seed should spring and grow up, he knoweth not how. For the earth bringeth forth fruit of herself; first the blade, then the ear, after that the full corn in the ear. But when the fruit is brought forth, immediately he putteth in the sickle, because the harvest is come.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Grace and the Seed</p>
+        <p>We are not saved by farming well. We are saved by the seed, and the seed is the word of God, given freely by grace through faith in Jesus Christ (Ephesians 2:8&ndash;9). <strong>The sower's job is to carry the seed and scatter it; the growth belongs entirely to God.</strong> That should take the pressure off a man's shoulders and put reverence in his heart at the same time.</p>
+      </div>
+
+      <div class="hist-note">
+        <p><strong>Related study.</strong> The ground that seed falls on, and why the same word takes root in one heart and is choked in another, is worked through in detail in the study on the four soils. This lesson deliberately walks the other side of the picture, the seed and the sower rather than the soil.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE V -->
+    <article class="article" id="art5">
+      <div class="article-header">
+        <span class="article-num">Wheat, Tares, and an Enemy</span>
+        <h2 class="article-title">The Sower of the Good Seed</h2>
+      </div>
+      <p class="article-body">There is a second sower in Scripture, and he works at night. The parable of the wheat and the tares tells us that the field of this world has been planted twice, once by the Son of man and once by His enemy, and that both crops are permitted to grow in the same dirt until the harvest.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Parable</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 13:24&ndash;30</span>
+          <span class="scripture-text">Another parable put he forth unto them, saying, The kingdom of heaven is likened unto a man which sowed good seed in his field: But while men slept, his enemy came and sowed tares among the wheat, and went his way. But when the blade was sprung up, and brought forth fruit, then appeared the tares also. So the servants of the householder came and said unto him, Sir, didst not thou sow good seed in thy field? from whence then hath it tares? He said unto them, An enemy hath done this. The servants said unto him, Wilt thou then that we go and gather them up? But he said, Nay; lest while ye gather up the tares, ye root up also the wheat with them. Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Once again the Lord interprets His own parable for His disciples, so there is nothing left to opinion. Every piece is assigned.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Interpretation</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 13:37&ndash;39</span>
+          <span class="scripture-text">He answered and said unto them, He that soweth the good seed is the Son of man; The field is the world; the good seed are the children of the kingdom; but the tares are the children of the wicked one; The enemy that sowed them is the devil; the harvest is the end of the world; and the reapers are the angels.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Three things in this parable are worth pressing on. First, the enemy sowed while men slept. He did not overpower the householder; he waited for inattention. Second, the tares did not show themselves at planting time or even at first growth. They only appeared when the blade brought forth fruit, which means false believers and false teachers are identified by what they eventually produce, not by how they looked when they came up. Third, the servants wanted to go pull them out immediately, and the householder said no.</p>
+
+      <p class="article-body">That refusal is often misread as indifference. It is not. It is protection of the wheat. Servants who go tearing through a field ripping out everything they suspect will take real believers up by the roots along with the counterfeits. God does not need our help sorting the field, and He has appointed the reapers already. Our commission is to sow, to water, to warn, and to teach sound doctrine (2 Timothy 4:2), not to execute a harvest that belongs to the angels.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Two Sowers, One Field</p>
+        <p>The world is a contested field, and it always has been. <strong>The Son of man sows children of the kingdom; the devil sows counterfeits that look like the real crop until fruit time.</strong> Discernment is commanded, but the uprooting is not ours. Let both grow until the harvest, and give yourself to putting good seed in the ground.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VI -->
+    <article class="article" id="art6">
+      <div class="article-header">
+        <span class="article-num">Flesh and Spirit</span>
+        <h2 class="article-title">Two Fields, Two Harvests</h2>
+      </div>
+      <p class="article-body">Paul does not leave sowing as a general principle. He tells the believer that he has two fields available to him every single day, and that he is planting in one of them whether he thinks about it or not. There is no third option and there is no fallow day.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Where the Seed Goes</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Galatians 6:8</span>
+          <span class="scripture-text">For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 8:13</span>
+          <span class="scripture-text">For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Sowing to the flesh is rarely dramatic. It is an hour given to something a man knows is feeding the wrong appetite. It is a habit fed a little at a time, an eye left where it should not linger, a tongue allowed to run. Nobody plants a field in one afternoon. He plants it a handful at a time, day after day, and the crop is the sum of the handfuls.</p>
+
+      <p class="article-body">Sowing to the Spirit works the same way and looks just as unimpressive on any given morning. It is time in the word when nothing seems to be happening. It is obedience to a commandment when obeying costs something and nobody notices. It is prayer that feels dry, and the keeping of God's Sabbath and His appointed times when it would be easier to go along with the crowd. None of that saves a man; the seed of the word of God did that. But it is the crop that a saved man is planting, and it grows into life.</p>
+
+      <div class="section">
+        <p class="section-title">What Sowing to the Spirit Actually Grows</p>
+        <div class="section-body">
+          <p>The harvest of a Spirit sown life is named for us so we can recognize it, and so we can tell the difference between real fruit and mere religious activity.</p>
+          <p><em>But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law</em> (Galatians 5:22&ndash;23).</p>
+        </div>
+      </div>
+
+      <p class="article-body">Understand clearly what we are and are not saying. Sin is the transgression of God's law (1 John 3:4), and a man who goes on deliberately planting that seed after he has known the truth is in serious danger (2 Peter 2:21). But the answer to a bad crop is not to try harder at farming. It is repentance, which is nothing more or less than turning around and planting something else, and it is meant to be the ongoing pattern of a believer's life rather than a single moment years ago.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Daily Question</p>
+        <p>You are sowing today. That is not in question. <strong>The only question is which field you are walking out into, and you will be walking out into one of them within the hour.</strong> Grace gave you the seed and the new heart; what you do with today's handful is the fruit that proves the seed took root.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VII -->
+    <article class="article" id="art7">
+      <div class="article-header">
+        <span class="article-num">The Measure You Scatter</span>
+        <h2 class="article-title">Sowing with an Open Hand</h2>
+      </div>
+      <p class="article-body">A farmer who is afraid of running out of seed will hold some back, and he will be poorer for it at harvest. Paul takes that plain fact off the farm and applies it to giving, to mercy, and to every kind of generosity, and he does it without a hint of the manipulation that this passage has since been used for.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Sowing Bountifully</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Corinthians 9:6&ndash;10</span>
+          <span class="scripture-text">But this I say, He which soweth sparingly shall reap also sparingly; and he which soweth bountifully shall reap also bountifully. Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver. And God is able to make all grace abound toward you; that ye, always having all sufficiency in all things, may abound to every good work: (As it is written, He hath dispersed abroad; he hath given to the poor: his righteousness remaineth for ever. Now he that ministereth seed to the sower both minister bread for your food, and multiply your seed sown, and increase the fruits of your righteousness;)</span>
+        </div>
+      </div>
+
+      <p class="article-body">Notice who supplies the seed in that passage. God ministers seed to the sower. He is the one who multiplies what is sown and increases the fruits of righteousness. The giver is not the source of anything. He is a man handling seed that was handed to him, and he can either scatter it or clutch it. Solomon put the same paradox in a single line that sounds backwards until you have watched it happen.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Scatterer Increases</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Proverbs 11:24&ndash;25</span>
+          <span class="scripture-text">There is that scattereth, and yet increaseth; and there is that withholdeth more than is meet, but it tendeth to poverty. The liberal soul shall be made fat: and he that watereth shall be watered also himself.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Proverbs 11:18</span>
+          <span class="scripture-text">The wicked worketh a deceitful work: but to him that soweth righteousness shall be a sure reward.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ecclesiastes 11:1</span>
+          <span class="scripture-text">Cast thy bread upon the waters: for thou shalt find it after many days.</span>
+        </div>
+      </div>
+
+      <p class="article-body">This is the same heart behind the commandment to leave the corners of the field standing (Leviticus 19:9). God has never asked His people to gather every last grain for themselves. He asked them to work the field faithfully and then deliberately leave part of the increase where somebody else could reach it. That is not lost income. In God's accounting it is seed, and it is the kind that comes back.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Careful Here</p>
+        <p>This passage is not a promise that giving money to God buys money back from God. Read it again and see what is multiplied: <strong>your seed sown and the fruits of your righteousness.</strong> God supplies the sower so that the sower can keep sowing, so that the poor are fed and the work goes on. A man who gives in order to get has not sown at all; he has invested, and he has misread the verse.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE VIII -->
+    <article class="article" id="art8">
+      <div class="article-header">
+        <span class="article-num">When Planting Costs Something</span>
+        <h2 class="article-title">Sowing in Tears</h2>
+      </div>
+      <p class="article-body">Sowing is not a happy season. It is the hardest, loneliest work in the farming year. A man carries out grain that his family could have eaten and buries it in dirt where he cannot see it, and then he waits months with nothing to show for it. In a lean year that walk to the field is done with tears, because he is burying food he needs today for a harvest he only hopes to see.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Promise to the Weeping Sower</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 126:5&ndash;6</span>
+          <span class="scripture-text">They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The word doubtless carries the weight of that promise. There is no maybe in it. The man goes out weeping and he comes back rejoicing, and the sheaves in his arms are the same seed he cried over months earlier. Every believer who has taught a class that seemed to go nowhere, prayed for a family member for years, or kept obeying God in a season when obedience produced nothing visible, is standing in this verse.</p>
+
+      <p class="article-body">Solomon warns about the opposite response. A man who waits for conditions to be perfect before he plants will never plant. There is always a wind blowing that could scatter the seed and a cloud overhead that might ruin the harvest, and if those are your conditions, the field stays empty.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Do Not Wait for Perfect Weather</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ecclesiastes 11:4&ndash;6</span>
+          <span class="scripture-text">He that observeth the wind shall not sow; and he that regardeth the clouds shall not reap. As thou knowest not what is the way of the spirit, nor how the bones do grow in the womb of her that is with child: even so thou knowest not the works of God who maketh all. In the morning sow thy seed, and in the evening withhold not thine hand: for thou knowest not whether shall prosper, either this or that, or whether they both shall be alike good.</span>
+        </div>
+      </div>
+
+      <p class="article-body">And between the sowing and the reaping there is one more thing required, which is the hardest of all. James points to the farmer as the picture of it. The husbandman does not stand in the field demanding that the wheat hurry up. He waits, and he waits through two separate rainy seasons, because he knows the crop cannot be rushed and the God who sends the rain has not forgotten him.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Patience of the Husbandman</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">James 5:7</span>
+          <span class="scripture-text">Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Galatians 6:9</span>
+          <span class="scripture-text">And let us not be weary in well doing: for in due season we shall reap, if we faint not.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">In Due Season</p>
+        <p>The reaping is promised, but the timing is not handed to us. <strong>Due season is God's calendar, not ours, and the only thing that forfeits the harvest is fainting before it comes.</strong> A man who quits in the growing season loses a crop that was already in the ground.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE IX -->
+    <article class="article" id="art9">
+      <div class="article-header">
+        <span class="article-num">The Labour of the Field</span>
+        <h2 class="article-title">One Soweth and Another Reapeth</h2>
+      </div>
+      <p class="article-body">Here is a truth that keeps a worker humble and keeps him from despair at the same time. The man who plants is very often not the man who gathers. Jesus said it outright to His disciples at the well in Samaria, standing in front of a field of people walking toward Him.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Fields Are White Already</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 4:35&ndash;38</span>
+          <span class="scripture-text">Say not ye, There are yet four months, and then cometh harvest? behold, I say unto you, Lift up your eyes, and look on the fields; for they are white already to harvest. And he that reapeth receiveth wages, and gathereth fruit unto life eternal: that both he that soweth and he that reapeth may rejoice together. And herein is that saying true, One soweth, and another reapeth. I sent you to reap that whereon ye bestowed no labour: other men laboured, and ye are entered into their labours.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Both men get paid, and both men rejoice together. That settles a great deal of unnecessary competition in the church. The person who leads someone to Christ is standing at the end of a long row of people who prayed, taught, corrected, and lived faithfully in front of that soul for years. Paul makes it explicit and then removes every ground for boasting from both ends of the row.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">God Gave the Increase</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 3:6&ndash;9</span>
+          <span class="scripture-text">I have planted, Apollos watered; but God gave the increase. So then neither is he that planteth any thing, neither he that watereth; but God that giveth the increase. Now he that planteth and he that watereth are one: and every man shall receive his own reward according to his own labour. For we are labourers together with God: ye are God's husbandry, ye are God's building.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Neither is he that planteth any thing. That is a hard sentence for a preacher's pride and a wonderful sentence for a preacher's peace. You are not the increase. You were never the increase. You are a field hand working alongside God on ground that belongs to Him, and the only thing you will answer for is your own labour.</p>
+
+      <p class="article-body">And there are not enough hands. The Lord's own assessment of the field has not changed, and He tells us what to do about it, which is not to recruit but to pray.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Pray the Lord of the Harvest</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 9:37&ndash;38</span>
+          <span class="scripture-text">Then saith he unto his disciples, The harvest truly is plenteous, but the labourers are few; Pray ye therefore the Lord of the harvest, that he will send forth labourers into his harvest.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">For the Worker</p>
+        <p>You may sow a seed that somebody else gathers, and you may gather a crop somebody else cried over. <strong>Both are honored, both are paid, and both rejoice together, because the field and the increase belong to God alone.</strong></p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE X -->
+    <article class="article" id="art10">
+      <div class="article-header">
+        <span class="article-num">The Seed That Had to Die</span>
+        <h2 class="article-title">Except a Corn of Wheat Fall</h2>
+      </div>
+      <p class="article-body">Everything in this study has been building toward one Seed. Days before the cross, with Greeks asking to see Him and the hour of His death in front of Him, the Lord Jesus explained His own death using the only picture that would hold it. He did not compare Himself to a king or a general. He compared Himself to a grain of wheat going into the dirt.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Corn of Wheat</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 12:24</span>
+          <span class="scripture-text">Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit.</span>
+        </div>
+      </div>
+
+      <p class="article-body">A seed held in the hand stays exactly one seed forever. It is safe, it is whole, and it is alone. The only way it multiplies is to be buried and to come apart in the dark. Christ was saying that His death was not the defeat of the harvest but the planting of it, and that the much fruit He came for could not exist unless He went into the ground.</p>
+
+      <p class="article-body">Paul takes the same picture and applies it to us. When a believer's body is laid in a grave, Scripture does not call it a burial. It calls it a sowing, and it insists that what comes up will not look like what went down, exactly as it is with any seed.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Bare Grain, and the Body God Gives It</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 15:36&ndash;38</span>
+          <span class="scripture-text">Thou fool, that which thou sowest is not quickened, except it die: And that which thou sowest, thou sowest not that body that shall be, but bare grain, it may chance of wheat, or of some other grain: But God giveth it a body as it hath pleased him, and to every seed his own body.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 15:42&ndash;44</span>
+          <span class="scripture-text">So also is the resurrection of the dead. It is sown in corruption; it is raised in incorruption: It is sown in dishonour; it is raised in glory: it is sown in weakness; it is raised in power: It is sown a natural body; it is raised a spiritual body. There is a natural body, and there is a spiritual body.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Sown in corruption, raised in incorruption. Sown in weakness, raised in power. Nobody looking at a wheat kernel would predict the stalk, and nobody standing at a graveside is looking at what God intends to bring up out of that ground. And the reason we can say that with confidence is that one Man has already come up out of it, and Scripture gives Him a farming title when it announces it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Christ the Firstfruits</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 15:20</span>
+          <span class="scripture-text">But now is Christ risen from the dead, and become the firstfruits of them that slept.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 15:23</span>
+          <span class="scripture-text">But every man in his own order: Christ the firstfruits; afterward they that are Christ's at his coming.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Firstfruits is not a poetic flourish. It is a commanded offering. When Israel came into the land, the very first sheaf cut from the barley harvest was brought to the priest and waved before the LORD, and it was the pledge that the whole field behind it was coming in.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Wave Sheaf</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:10&ndash;11</span>
+          <span class="scripture-text">Speak unto the children of Israel, and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest: And he shall wave the sheaf before the LORD, to be accepted for you: on the morrow after the sabbath the priest shall wave it.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Center of the Study</p>
+        <p>Christ is the Sower, He is the Seed, and He is the Firstfruits of the harvest. <strong>He went into the ground alone so that He would not remain alone, and His resurrection is the waved sheaf that guarantees the rest of the field is coming up behind Him.</strong> That is why the believer's grave is called a sowing and not an ending.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE XI -->
+    <article class="article" id="art11">
+      <div class="article-header">
+        <span class="article-num">The End of the Year</span>
+        <h2 class="article-title">The Ingathering at the End</h2>
+      </div>
+      <p class="article-body">God set His appointed times on the agricultural calendar on purpose. The feasts of the LORD are not arbitrary dates. They land on the barley harvest, the wheat harvest, and the final gathering of everything that is left in the field at the close of the year, so that a nation of farmers would be rehearsing God's redemptive timeline every time they worked their own ground.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Feast of Ingathering</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 23:16</span>
+          <span class="scripture-text">And the feast of harvest, the firstfruits of thy labours, which thou hast sown in the field: and the feast of ingathering, which is in the end of the year, when thou hast gathered in thy labours out of the field.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 34:22</span>
+          <span class="scripture-text">And thou shalt observe the feast of weeks, of the firstfruits of wheat harvest, and the feast of ingathering at the year's end.</span>
+        </div>
+      </div>
+
+      <p class="article-body">That is the season we are standing in as this study is taught. The gathering in at the end of the year is not only a memory of crops. It is a pattern, and Scripture says the pattern has an ending point. There is a final harvest of the earth, and the sickle in that scene is not held by a farmer.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Last Harvest</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Joel 3:13</span>
+          <span class="scripture-text">Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Revelation 14:14&ndash;16</span>
+          <span class="scripture-text">And I looked, and behold a white cloud, and upon the cloud one sat like unto the Son of man, having on his head a golden crown, and in his hand a sharp sickle. And another angel came out of the temple, crying with a loud voice to him that sat on the cloud, Thrust in thy sickle, and reap: for the time is come for thee to reap; for the harvest of the earth is ripe. And he that sat on the cloud thrust in his sickle on the earth; and the earth was reaped.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The One who sowed the good seed comes back for it Himself. The whole picture closes where it opened, with the Son of man and a field, except that now the growing season is finished and the crop is standing ripe. Everything sown in this age, by Christ and by His enemy, by every believer and every unbeliever, comes up at that harvest, and the tares are bundled first (Matthew 13:30).</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Why This Should Sober Us and Steady Us</p>
+        <p>There is a fixed end to the sowing season. <strong>No man plants forever, and the reaping is not negotiable, but the crop that will be standing there is already in your hands right now in seed form.</strong> That is sobering if you are planting to the flesh, and it is the steadiest comfort in the world if you have been quietly putting good seed in hard ground for years with nothing to show for it.</p>
+      </div>
+    </article>
+
+
+    <!-- ARTICLE XII -->
+    <article class="article print-new-page" id="art12">
+      <div class="article-header">
+        <span class="article-num">The Charge</span>
+        <h2 class="article-title">What to Plant This Month</h2>
+      </div>
+      <p class="article-body">A study on sowing that ends without anybody going out to the field has missed its own point. So let us bring it down to ground level. The prophets did not say to admire the harvest. They said to break up the hard ground and get seed in it, and they attached a deadline to it: it is time to seek the LORD.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Command to the Hearer</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hosea 10:12</span>
+          <span class="scripture-text">Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek the LORD, till he come and rain righteousness upon you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Galatians 6:10</span>
+          <span class="scripture-text">As we have therefore opportunity, let us do good unto all men, especially unto them who are of the household of faith.</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-title">Four Things to Do Before This Month Is Out</p>
+        <div class="section-body">
+          <p><strong>Name the crop you are already growing.</strong> Look honestly at the last year of your life and work backwards from what came up. Whatever you are harvesting now, in your home, your temper, your marriage, and your walk with God, was planted by somebody, and most of the time it was planted by you (Galatians 6:7).</p>
+          <p><strong>Pull one thing out and plant something in its place.</strong> Repentance is not regret; it is a change of crop. Pick the one habit that is most clearly feeding the flesh, take it out of the ground this month, and deliberately plant the opposite in the same hour of the day it used to occupy (Romans 8:13).</p>
+          <p><strong>Put the word into one specific person.</strong> The seed is the word of God (Luke 8:11), and it does not grow in a bag. Choose one soul, sow the actual Scripture into that life, and then let God run the growing season without you standing over it demanding a sprout (Mark 4:27).</p>
+          <p><strong>Leave a corner standing.</strong> Find one place this month to give where nothing comes back to you, in the pattern of the field corners God told Israel to leave for those who had no field of their own (Leviticus 19:9&ndash;10).</p>
+        </div>
+      </div>
+
+      <p class="article-body">And then wait well. That is the part that separates the farmers from the tourists. You will not see anything for a while. The ground will look exactly as empty on the twentieth day as it did on the first, and the temptation will be to dig the seed back up to check on it. Do not. He that observeth the wind shall not sow (Ecclesiastes 11:4), and the man who cannot wait through a silent season will never carry sheaves.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Final Word</p>
+        <p>God gave the seed, God sends the rain, and God gives the increase. Our part is small, and it is the only part we are held to: carry the seed out and put it in the ground. <strong>He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him.</strong> Doubtless. That word is God's, and He has never once failed to keep it.</p>
+      </div>
+
+      <div class="hist-note">
+        <p><strong>For the teacher.</strong> The place this study most often gets misapplied is the sowing and reaping passages, where people quietly turn grace into a wage. Press the class on the difference between the seed that saves and the crop that follows. The seed of eternal life was given, not earned, and it is the incorruptible word of God (1 Peter 1:23). The fruit that grows out of a saved life is not the payment for the seed; it is the evidence the seed took root. A class that leaves believing it must out-farm its own sin has heard the opposite of what Paul wrote.</p>
+        <p>A second place worth pressing is the tares. Somebody will want to go pull them. Ask the class who the reapers are, and who told the servants to leave the field alone until harvest (Matthew 13:29&ndash;30, 13:39).</p>
+      </div>
+    </article>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">They that sow in tears shall reap in joy &middot; Psalm 126:5</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

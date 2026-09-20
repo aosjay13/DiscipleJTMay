@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Discipleship Class - Level 1 - Lesson 4: Commitment</title>
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-soft:#9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, 'Liberation Serif', serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ---- PAGE SHELL ---- */
+  .page {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+    z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ---- HEADER ---- */
+  .doc-header {
+    text-align: center;
+    padding: 3.4rem 3rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-soft) 100%);
+    color: var(--gold-pale);
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-header::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .header-ornament { font-size: 1.1rem; color: var(--gold-light); letter-spacing: 0.55em; display: block; margin-bottom: 0.9rem; }
+  .doc-eyebrow { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .doc-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 2.3rem; font-weight: 700; color: #FBF4E2; letter-spacing: 0.05em; line-height: 1.2; text-transform: uppercase; }
+  .doc-subtitle { font-size: 1.05rem; color: var(--gold-pale); font-style: italic; letter-spacing: 0.02em; margin-top: 0.7rem; }
+  .header-rule { text-align: center; margin-top: 1.4rem; line-height: 1; }
+  .header-rule span { display: inline-block; width: 118px; border-top: 1px solid var(--gold-light); vertical-align: middle; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; vertical-align: middle; padding: 0 0.8rem; }
+
+  /* ---- BODY ---- */
+  .doc-body { padding: 2.2rem 3rem 3rem; }
+
+  .preamble { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.9rem; }
+  .preamble p { margin-bottom: 0.9rem; }
+  .preamble p:last-child { margin-bottom: 0; }
+
+  /* ---- LESSON SECTIONS ---- */
+  .section { margin-top: 1.9rem; }
+  .section-header { border-bottom: 2px solid var(--rule-solid); padding-bottom: 0.5rem; margin-bottom: 0.9rem; }
+  .section-header .section-title { display: inline; }
+  .section-num {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.7rem; font-weight: 700;
+    background: var(--crimson); color: var(--gold-pale);
+    padding: 0.22rem 0.42rem; letter-spacing: 0.04em; line-height: 1; margin-right: 0.6rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .section-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 1.14rem; font-weight: 700; color: var(--crimson); line-height: 1.3; }
+  .section-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; }
+  .section-body p { margin-bottom: 0.9rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* ---- SCRIPTURE BOX ---- */
+  .verse {
+    margin: 0.9rem 0 1rem; padding: 0.75rem 1.1rem;
+    background: var(--cream); border-left: 4px solid var(--gold-light);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .verse-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; color: var(--crimson); }
+  .verse-dot { color: var(--gold); padding: 0 0.35rem; }
+  .verse-text { font-style: italic; color: var(--ink-mid); font-size: 1rem; line-height: 1.72; }
+
+  /* ---- HISTORICAL QUOTE (formatted like a scripture box) ---- */
+  .verse.history { border-left-color: var(--crimson-soft); }
+
+  /* ---- TRANSITION LINE ---- */
+  .transition {
+    margin-top: 2rem; padding-top: 1.1rem; border-top: 1px solid var(--rule-solid);
+    text-align: center; font-style: italic; color: var(--ink-soft); font-size: 1rem;
+  }
+
+  /* ---- WORKSHEET ---- */
+  .worksheet-head { margin-bottom: 1.5rem; }
+  .name-date { margin-bottom: 1.4rem; font-size: 0; }
+  .name-date > div { display: inline-block; width: 48%; vertical-align: bottom; font-size: 1rem; }
+  .name-date > div:first-child { margin-right: 4%; }
+  .nd-label { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .nd-line { border-bottom: 1px solid var(--rule-solid); height: 1.5rem; }
+  .worksheet-title {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.92rem; font-weight: 700; color: var(--crimson);
+    letter-spacing: 0.06em; border-bottom: 2px solid var(--rule-solid); padding-bottom: 0.5rem;
+  }
+  .worksheet-title em { font-family: 'EB Garamond', Georgia, 'Liberation Serif', serif; font-weight: 400; font-size: 0.94rem; color: var(--ink-soft); letter-spacing: 0; }
+
+  .q-block { margin: 1.3rem 0; }
+  .q-head { margin-bottom: 0.45rem; }
+  .q-num {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.68rem; font-weight: 700;
+    background: var(--crimson); color: var(--gold-pale); padding: 0.2rem 0.4rem; line-height: 1; margin-right: 0.55rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .q-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .q-verse {
+    background: var(--cream); border-left: 4px solid var(--gold-light);
+    padding: 0.6rem 1rem; font-style: italic; color: var(--ink-mid); font-size: 0.97rem; line-height: 1.7;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .q-verse + .q-verse { margin-top: 0.35rem; }
+  .q-verse .verse-ref { font-style: normal; margin-right: 0.35rem; }
+  .q-prompt { font-size: 1.02rem; line-height: 1.7; color: var(--ink); margin-top: 0.6rem; }
+  .lines { margin-top: 0.55rem; }
+  .lines .line { height: 0.42in; border-bottom: 1px solid var(--rule-solid); }
+
+  /* ---- CARRY WITH YOU ---- */
+  .carry {
+    margin-top: 2rem; padding: 1.2rem 1.6rem 1.4rem; background: var(--cream);
+    border: 1px solid var(--rule-solid); text-align: center;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .carry-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.8rem; }
+  .carry p { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); }
+  .carry em { color: var(--crimson); font-style: italic; }
+
+  /* ---- ANSWER KEY ---- */
+  .answer-key-banner {
+    background: var(--gold); color: #FBF4E2; text-align: center;
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; padding: 0.7rem 1rem; margin-bottom: 1.6rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .answer { padding-bottom: 0.7rem; margin-bottom: 0.7rem; border-bottom: 1px dashed var(--rule-solid); }
+  .answer:last-of-type { border-bottom: 1px dashed var(--rule-solid); }
+  .a-prompt { font-weight: 700; color: var(--crimson); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.45rem; }
+  .a-text {
+    font-style: italic; font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid);
+    background: var(--cream); border-left: 4px solid var(--gold-light); padding: 0.55rem 1rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* ---- TEACHER NOTE ---- */
+  .teacher-note {
+    margin-top: 1.6rem; padding: 1.1rem 1.4rem 1.3rem; background: var(--cream);
+    border: 1px solid var(--rule-solid); border-top: 3px solid var(--gold-light);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .tn-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .teacher-note p { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); text-align: justify; margin-bottom: 0.75rem; }
+  .teacher-note p:last-child { margin-bottom: 0; }
+  .tn-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--crimson); }
+
+  /* ---- FOOTER ---- */
+  .doc-footer {
+    text-align: center;
+    padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-soft) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; color: var(--gold-light); font-size: 1rem; letter-spacing: 0.5em; }
+  .footer-text { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.64rem; letter-spacing: 0.18em; color: #FBF6E9; text-transform: uppercase; margin-top: 0.6rem; line-height: 1.9; }
+
+  /* ==================== PRINT ==================== */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.72in 0.62in 0.7in;
+
+    @top-left {
+      width: 15%;
+      content: "";
+      background-color: #7A1F1F;
+      border-bottom: 1pt solid #C9A84C;
+    }
+    @top-center {
+      width: 70%;
+      content: "DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 4  \00B7  COMMITMENT";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6.5pt;
+      letter-spacing: 0.14em;
+      border-bottom: 1pt solid #C9A84C;
+      padding: 3pt 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    @top-right {
+      width: 15%;
+      content: "";
+      background-color: #7A1F1F;
+      border-bottom: 1pt solid #C9A84C;
+    }
+    @bottom-left {
+      width: 33.34%;
+      content: "COMMITMENT";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6pt;
+      letter-spacing: 0.14em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 0 3pt 6pt;
+      text-align: left;
+      vertical-align: middle;
+    }
+    @bottom-center {
+      width: 33.33%;
+      content: "\2726 \2726 \2726";
+      background-color: #7A1F1F;
+      color: #C9A84C;
+      font-size: 5.5pt;
+      letter-spacing: 0.4em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    @bottom-right {
+      width: 33.33%;
+      content: "PAGE " counter(page) " OF " counter(pages);
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6pt;
+      letter-spacing: 0.14em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 6pt 3pt 0;
+      text-align: right;
+      vertical-align: middle;
+    }
+  }
+
+  /* First page carries the full masthead, so no running band on top */
+  @page :first {
+    @top-left   { content: none; background: none; border: none; }
+    @top-center { content: none; background: none; border: none; }
+    @top-right  { content: none; background: none; border: none; }
+  }
+
+  /* The answer key is labelled instead of numbered with the student pages */
+  @page answerkey {
+    @top-center {
+      width: 70%;
+      content: "DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 4  \00B7  ANSWER KEY";
+    }
+    @bottom-right {
+      content: "TEACHER'S ANSWER KEY";
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; background: var(--parchment); }
+    .page::before, .page::after { display: none; }
+
+    .doc-header { padding: 1.15rem 1.5rem 1rem; border-bottom-width: 2px; }
+    .doc-header::before { top: 7px; left: 7px; right: 7px; bottom: 7px; }
+    .doc-body { padding: 1rem 0 0.2rem; }
+    .doc-footer { display: none; }
+
+    .preamble, .section-body, .teacher-note p { font-size: 9.8pt; line-height: 1.46; }
+    .preamble { margin-bottom: 0.8rem; }
+    .preamble p, .section-body p { margin-bottom: 0.55rem; }
+    .verse-text, .q-verse, .a-text { font-size: 9.1pt; line-height: 1.45; }
+    .verse { margin: 0.45rem 0 0.5rem; padding: 0.42rem 0.85rem; }
+    .q-verse { padding: 0.45rem 0.9rem; }
+    .q-prompt { font-size: 9.5pt; line-height: 1.45; margin-top: 0.35rem; }
+    .section { margin-top: 0.65rem; }
+    .section-header { padding-bottom: 0.35rem; margin-bottom: 0.55rem; }
+    .section-title { font-size: 1.02rem; }
+    .transition { margin-top: 1rem; padding-top: 0.7rem; font-size: 9.6pt; }
+    .q-block { margin: 0.5rem 0; }
+    .lines { margin-top: 0.32rem; }
+    .lines .line { height: 0.36in; }
+    .worksheet-head { margin-bottom: 0.8rem; }
+    .name-date { margin-bottom: 0.9rem; }
+    .carry { margin-top: 0.9rem; padding: 0.8rem 1.2rem 0.9rem; }
+    .q-verse + .q-verse { margin-top: 0.2rem; }
+    .carry p { font-size: 9.6pt; line-height: 1.55; }
+    .answer { padding-bottom: 0.42rem; margin-bottom: 0.42rem; }
+    .a-prompt { font-size: 9.2pt; margin-bottom: 0.32rem; }
+    .a-text { padding: 0.42rem 0.9rem; }
+    .answer-key-banner { margin-bottom: 1rem; padding: 0.55rem 1rem; }
+    .teacher-note { margin-top: 1.1rem; padding: 0.9rem 1.2rem 1rem; }
+    .teacher-note p { font-size: 9.4pt; line-height: 1.55; margin-bottom: 0.55rem; }
+
+    .verse        { break-inside: avoid; page-break-inside: avoid; }
+    .q-block      { break-inside: avoid; page-break-inside: avoid; }
+    .lines        { break-inside: avoid; page-break-inside: avoid; }
+    .answer       { break-inside: avoid; page-break-inside: avoid; }
+    .carry        { break-inside: avoid; page-break-inside: avoid; }
+    .teacher-note { break-inside: auto; page-break-inside: auto; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .teacher-note p { break-inside: avoid; page-break-inside: avoid; orphans: 3; widows: 3; }
+    .tn-title { break-after: avoid; page-break-after: avoid; }
+    .name-date    { break-inside: avoid; page-break-inside: avoid; }
+    .section      { break-inside: auto; page-break-inside: auto; }
+
+    .section-header   { break-after: avoid; page-break-after: avoid; }
+    .worksheet-title  { break-after: avoid; page-break-after: avoid; }
+    .q-head           { break-after: avoid; page-break-after: avoid; }
+    .a-prompt         { break-after: avoid; page-break-after: avoid; }
+    .answer-key-banner{ break-after: avoid; page-break-after: avoid; }
+
+    .print-new-page { break-before: page; page-break-before: always; }
+    .answer-key     { page: answerkey; break-before: page; page-break-before: always; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 1.6rem 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.5rem; }
+    .name-date { flex-direction: column; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ==================== MASTHEAD ==================== -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &#10022; &#10022;</span>
+    <p class="doc-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 4</p>
+    <h1 class="doc-title">Commitment</h1>
+    <p class="doc-subtitle">Counting the Cost, and Giving Christ the First Place</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- ==================== THE LESSON ==================== -->
+    <div class="preamble">
+      <p>This lesson takes us to one of the hardest sayings Jesus ever spoke. A great crowd was following Him, and He turned around and told them that anyone who comes to Him and does not hate his own family, and even his own life, cannot be His disciple. Many people read that verse, wince, and move on quickly. We are going to slow down and let it say what it says.</p>
+      <p>Commitment is not what saves us. We are saved by grace through faith, and not of works (Ephesians 2:8&ndash;9). But the faith that saves is a faith that follows. Jesus never called anyone to believe in Him from a safe distance while keeping their life in their own hands. He calls disciples, and a disciple is someone who has given Christ the first place in everything, counted the cost, and kept on walking.</p>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">I</span>
+        <h2 class="section-title">The Crowd Behind Him, and the Word He Turned to Speak</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Luke 14:25&ndash;26</span><span class="verse-dot">&#8226;</span><span class="verse-text">And there went great multitudes with him: and he turned, and said unto them, If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple.</span>
+        </div>
+        <p>Luke tells us that great multitudes went with Jesus. The verb Luke uses is in a continuing tense, so the picture is of crowds going along with Him day after day. Some came for the miracles, some came for the bread, and some came simply because everyone else was going. Nobody had to be committed to be part of that crowd. Then Jesus turned around. He stopped, faced the people walking behind Him, and told them what it would actually take to be His disciple.</p>
+        <p>That turn is worth noticing. Jesus was never impressed by the size of a crowd. He was not looking for fans who would walk with Him while the road was easy. He was looking for disciples, and a disciple is a learner who has handed himself over to his teacher's way of life. Being near Jesus and following Jesus are not the same thing. A person can sit in a church building for years and never once let Him turn around and speak to them about the terms.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">II</span>
+        <h2 class="section-title">What Jesus Means by Hate</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Matthew 10:37</span><span class="verse-dot">&#8226;</span><span class="verse-text">He that loveth father or mother more than me is not worthy of me: and he that loveth son or daughter more than me is not worthy of me.</span>
+        </div>
+        <p>Hate is a strong word, and Jesus chose it on purpose. The Greek word in Luke is the ordinary word for hate, and it is not softened in the original. But Scripture shows us how He meant it, because Matthew records the same teaching in plain terms. The measure is more than me. Jesus sets Himself beside the closest loves a person will ever have on earth and says that, next to Him, even those loves must look like hatred by comparison.</p>
+        <p>The Bible uses the word this way in other places. Jacob loved Rachel more than Leah, and in the very next verse Scripture says Leah was hated (Genesis 29:30&ndash;31). Jacob did not despise Leah; he loved her less. God speaks of Jacob and Esau in the same comparative way (Malachi 1:2&ndash;3).</p>
+        <p>There is another reason we know Jesus was not telling anyone to despise their parents. He never contradicts His Father's commandments. Honour thy father and thy mother is the fifth of the Ten Commandments (Exodus 20:12), and Jesus rebuked the Pharisees for using religious tradition to get out of caring for their parents (Mark 7:9&ndash;13). Paul says a man who will not provide for his own house has denied the faith (1 Timothy 5:8). So the disciple does not love his family less than the world does. He loves them better, because he loves them in obedience to God. What Jesus asks is that no one, not a father, not a wife, not a child, ever sits on the throne that belongs to Him. When a loved one's wishes and Christ's commandments pull in two directions, the disciple has already settled which way he is going.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">III</span>
+        <h2 class="section-title">The Closest Rival of All: Your Own Life</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Luke 9:23&ndash;24</span><span class="verse-dot">&#8226;</span><span class="verse-text">And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me. For whosoever will save his life shall lose it: but whosoever will lose his life for my sake, the same shall save it.</span>
+        </div>
+        <p>At the end of His list, Jesus adds one more name: yea, and his own life also. That is the one we tend to skip. Ask most people who they love most on this earth and they will name a spouse, a child, or a parent. But there is someone most of us love more than any of them, and it is ourselves. We protect our comfort, our pride, our plans, and our way of doing things, and we will often let our closest relationships suffer before we let go of any of it.</p>
+        <p>That is why Jesus says in the very next verse that a disciple must bear his cross (Luke 14:27). A cross is not a bad day or an irritating neighbor. A cross is the place where a man's own will is put to death. Paul put it this way: I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me (Galatians 2:20). A great deal of the heartache in homes and churches grows from this one root. Paul warned that in the last days men would be lovers of their own selves (2 Timothy 3:2), and many marriages break down because one or both people love their own way more than they love each other. The cure is the same in every case: Christ first, others next, and self last (Philippians 2:3&ndash;4).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">IV</span>
+        <h2 class="section-title">No Looking Back From the Plough</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Luke 9:57&ndash;62</span><span class="verse-dot">&#8226;</span><span class="verse-text">And it came to pass, that, as they went in the way, a certain man said unto him, Lord, I will follow thee whithersoever thou goest. And Jesus said unto him, Foxes have holes, and birds of the air have nests; but the Son of man hath not where to lay his head. And he said unto another, Follow me. But he said, Lord, suffer me first to go and bury my father. Jesus said unto him, Let the dead bury their dead: but go thou and preach the kingdom of God. And another also said, Lord, I will follow thee; but let me first go bid them farewell, which are at home at my house. And Jesus said unto him, No man, having put his hand to the plough, and looking back, is fit for the kingdom of God.</span>
+        </div>
+        <p>Luke gives us three men who all wanted to follow Jesus, and each one had something standing in the way. The first volunteered with big words: whithersoever thou goest. Jesus answered by telling him the truth about the road. The Son of man had nowhere to lay His head. That man wanted Jesus, but he had not reckoned with giving up his comfort.</p>
+        <p>The second was called by Jesus directly, and he answered, suffer me first. Many students of that culture believe the phrase could mean waiting at home until an aging father died, which might be years away. Either way, Jesus was not despising grief or funerals. He was refusing to take second place behind a delay. Those who are spiritually dead can tend to the business of the dead; the one who has been called has the kingdom to preach.</p>
+        <p>The third wanted to go home first and say goodbye. That sounds harmless, and when Elisha asked Elijah for the same thing, it was allowed (1 Kings 19:19&ndash;21). But look at what Elisha did when he went home. He killed his oxen, boiled their flesh with the wood of the plough gear, fed the people, and walked away with nothing left to go back to. Jesus could see that this third man's heart was still at home. A man ploughing a field has to keep his eyes on a mark ahead of him, or the furrow goes crooked. Look back over your shoulder, and the line wanders. That is why Jesus also said, Remember Lot's wife (Luke 17:32). She left Sodom with her feet, but her heart never left, and she looked back.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">V</span>
+        <h2 class="section-title">Why Some Believe for a While and Then Fall Away</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Luke 8:13&ndash;15</span><span class="verse-dot">&#8226;</span><span class="verse-text">They on the rock are they, which, when they hear, receive the word with joy; and these have no root, which for a while believe, and in time of temptation fall away. And that which fell among thorns are they, which, when they have heard, go forth, and are choked with cares and riches and pleasures of this life, and bring no fruit to perfection. But that on the good ground are they, which in an honest and good heart, having heard the word, keep it, and bring forth fruit with patience.</span>
+        </div>
+        <p>In the parable of the sower, two kinds of ground receive the word and still fail. The rocky ground receives it with joy, and Luke says these for a while believe. Their faith was real enough to start, but it had no root, so when temptation and trouble came, they fell away. The thorny ground hears the word too, but the cares, riches, and pleasures of this life grow up alongside it and choke it until nothing ever ripens.</p>
+        <p>Neither failure happened because God's word was weak. They happened because the word was never allowed to go deep and was never given the whole field. The good ground is different in two ways. It is an honest and good heart, and having heard the word, it keeps it. And its fruit comes with patience, which means steady endurance over time.</p>
+        <p>This is why commitment matters so much. The Bible does not teach that a person who once believed can never turn away. Peter says it would have been better for some never to have known the way of righteousness than, after knowing it, to turn from the holy commandment delivered unto them (2 Peter 2:21). The believer is safe in Christ while he abides in Christ, and he is called to stay rooted there: As ye have therefore received Christ Jesus the Lord, so walk ye in him (Colossians 2:6). A commitment that was only a feeling at an altar has no root. A commitment that keeps the word day after day is good ground, and he that shall endure unto the end, the same shall be saved (Matthew 24:13).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">VI</span>
+        <h2 class="section-title">Bought With a Price, and Brought Into Covenant</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Ezekiel 16:8</span><span class="verse-dot">&#8226;</span><span class="verse-text">Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my skirt over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a covenant with thee, saith the Lord GOD, and thou becamest mine.</span>
+        </div>
+        <p>God describes His relationship with His people in the language of marriage. In Ezekiel, He tells Israel that He found her abandoned and helpless, spread His garment over her, swore an oath, entered into covenant with her, and she became His. That is commitment in its fullest sense. It is not a casual arrangement. It is a covenant, and a covenant has terms.</p>
+        <div class="verse">
+          <span class="verse-ref">1 Corinthians 6:19&ndash;20</span><span class="verse-dot">&#8226;</span><span class="verse-text">What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own? For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God's.</span>
+        </div>
+        <p>Notice who moved first. God passed by, God covered, God swore, and God made the covenant. The bride did not earn her place; love brought her into it. Paul says the same about us. We did not buy our way to God; Christ bought us with His own blood. But the result of being bought is that we are not our own anymore. Our bodies and our spirits belong to God, and Paul tells us to glorify Him in both.</p>
+        <p>God said He was a husband to Israel, and she broke His covenant anyway (Jeremiah 31:32). The new covenant does not throw the terms away. God says, I will put my law in their inward parts, and write it in their hearts (Jeremiah 31:33). A faithful bride is not one who can recite her vows. She is one who keeps them. Jesus said it plainly: If ye love me, keep my commandments (John 14:15). John adds that His commandments are not grievous (1 John 5:3). Obedience is not the price of the wedding. It is how the bride lives in her husband's house.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">VII</span>
+        <h2 class="section-title">Spiritual Adultery</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">James 4:4</span><span class="verse-dot">&#8226;</span><span class="verse-text">Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God.</span>
+        </div>
+        <p>If commitment to God is like a marriage, then unfaithfulness to Him is like adultery, and that is exactly the word James uses. Friendship with the world, loving what the world loves and wanting its approval, is enmity with God. Paul describes the root of it in Romans: men changed the truth of God into a lie, and worshipped and served the creature more than the Creator (Romans 1:25).</p>
+        <p>This is not a new idea in the New Testament. The first commandment says, Thou shalt have no other gods before me (Exodus 20:3), and the Law tells us that the LORD's very name is Jealous (Exodus 34:14). A husband who is jealous for his wife is not being petty; he is being faithful to a covenant. God is jealous for us in that same way.</p>
+        <p>Spiritual adultery rarely looks like bowing to a statue today. It looks like a job, a hobby, a relationship, money, or a screen taking the place that God alone should hold. Paul says plainly that covetousness is idolatry (Colossians 3:5). It can also look like worshipping the true God in ways He never asked for, borrowing the customs of the nations and calling them His (Deuteronomy 12:30&ndash;32). Anything we love more, serve more, or trust more than Him has become a rival. A committed heart keeps asking a simple question: what have I put on the throne this week?</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">VIII</span>
+        <h2 class="section-title">Counting the Cost</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">John 2:23&ndash;25</span><span class="verse-dot">&#8226;</span><span class="verse-text">Now when he was in Jerusalem at the passover, in the feast day, many believed in his name, when they saw the miracles which he did. But Jesus did not commit himself unto them, because he knew all men, And needed not that any should testify of man: for he knew what was in man.</span>
+        </div>
+        <p>John tells us that at the Passover in Jerusalem, many believed in His name when they saw His miracles. Then he says Jesus did not commit himself unto them. In the Greek, believed and commit are the same word. They put their trust in Him, but He did not put His trust in them, because He knew what was in man. Their faith was fastened to the signs, not to Him. Later in John's Gospel, when His teaching grew hard, many of his disciples went back, and walked no more with him (John 6:66). Jesus asked the twelve if they would leave too, and Peter answered, Lord, to whom shall we go? thou hast the words of eternal life (John 6:68).</p>
+        <div class="verse">
+          <span class="verse-ref">Luke 14:28&ndash;30</span><span class="verse-dot">&#8226;</span><span class="verse-text">For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it? Lest haply, after he hath laid the foundation, and is not able to finish it, all that behold it begin to mock him, Saying, This man began to build, and was not able to finish.</span>
+        </div>
+        <p>That is why Jesus told the parable of the tower. No sensible builder pours a foundation without first sitting down to figure out whether he can finish. Jesus does not want anyone following Him on a misunderstanding, so He tells us the cost up front: whosoever he be of you that forsaketh not all that he hath, he cannot be my disciple (Luke 14:33). Right after that, He speaks of salt that has lost its savour (Luke 14:34&ndash;35), a disciple who started well and went flat.</p>
+        <p>The early church understood this. Polycarp was the aged pastor of Smyrna, a man who had been taught by apostles (Irenaeus, Against Heresies, Book 3, chapter 3, section 4). When he was arrested, around A.D. 155, the proconsul told him to curse Christ and go free. The church at Smyrna wrote down his answer:</p>
+        <div class="verse history">
+          <span class="verse-ref">Martyrdom of Polycarp 9:3</span><span class="verse-dot">&#8226;</span><span class="verse-text">Eighty and six years have I served Him, and He never did me any injury: how then can I blaspheme my King and my Saviour?</span>
+        </div>
+        <p>He had counted the cost long before that day. That is what commitment looks like when it is finally tested. It is not a feeling that shows up once. It is a lifetime of choosing Christ first, so that when the hard day comes, the answer is already settled.</p>
+        <p>And here is the good news underneath all of it. We do not count the cost alone, and we do not pay it to earn our salvation. We love him, because he first loved us (1 John 4:19), and the grace of God that brings salvation is the same grace that teaches us to deny ungodliness and live soberly, righteously, and godly in this present world (Titus 2:11&ndash;12). Grace brings us to Christ, and grace teaches us to follow Him.</p>
+      </div>
+    </section>
+
+    <p class="transition">Now take up the questions. Read the verse over each one, then answer it in your own words.</p>
+
+    <!-- ==================== STUDY QUESTIONS ==================== -->
+    <div class="print-new-page worksheet-head">
+      <div class="name-date">
+        <div><p class="nd-label">Name</p><div class="nd-line"></div></div>
+        <div><p class="nd-label">Date</p><div class="nd-line"></div></div>
+      </div>
+      <p class="worksheet-title">Study Questions <span style="color:var(--gold)">&middot;</span> <em>Read each verse, then answer in your own words</em></p>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">1</span><span class="q-ref">Luke 14:25&ndash;26</span></div>
+      <p class="q-verse">And there went great multitudes with him: and he turned, and said unto them, If any man come to me, and hate not his father, and mother, and wife, and children, and brethren, and sisters, yea, and his own life also, he cannot be my disciple.</p>
+      <p class="q-prompt">Who was following Jesus when He said this? List everyone He names that a disciple must hate, including the last one.</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">2</span><span class="q-ref">Matthew 10:37</span></div>
+      <p class="q-verse">He that loveth father or mother more than me is not worthy of me: and he that loveth son or daughter more than me is not worthy of me.</p>
+      <p class="q-prompt">Matthew records the same teaching in different words. What phrase does Matthew use, and what does it tell you about what Jesus meant by hate?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">3</span><span class="q-ref">Exodus 20:12</span></div>
+      <p class="q-verse">Honour thy father and thy mother: that thy days may be long upon the land which the LORD thy God giveth thee.</p>
+      <p class="q-prompt">What does the fifth commandment require? Could Jesus have meant that His disciples should dishonor their parents? Why or why not?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">4</span><span class="q-ref">Luke 9:23&ndash;24</span></div>
+      <p class="q-verse">And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me. For whosoever will save his life shall lose it: but whosoever will lose his life for my sake, the same shall save it.</p>
+      <p class="q-prompt">Name the three things Jesus says a person must do to come after Him. What happens to the one who tries to save his own life?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">5</span><span class="q-ref">Luke 9:57&ndash;62</span></div>
+      <p class="q-verse">And it came to pass, that, as they went in the way, a certain man said unto him, Lord, I will follow thee whithersoever thou goest. And Jesus said unto him, Foxes have holes, and birds of the air have nests; but the Son of man hath not where to lay his head. And he said unto another, Follow me. But he said, Lord, suffer me first to go and bury my father. Jesus said unto him, Let the dead bury their dead: but go thou and preach the kingdom of God. And another also said, Lord, I will follow thee; but let me first go bid them farewell, which are at home at my house. And Jesus said unto him, No man, having put his hand to the plough, and looking back, is fit for the kingdom of God.</p>
+      <p class="q-prompt">Three men spoke with Jesus about following Him. What was holding back each one? What does the picture of the plough teach?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">6</span><span class="q-ref">Luke 8:13&ndash;15</span></div>
+      <p class="q-verse">They on the rock are they, which, when they hear, receive the word with joy; and these have no root, which for a while believe, and in time of temptation fall away. And that which fell among thorns are they, which, when they have heard, go forth, and are choked with cares and riches and pleasures of this life, and bring no fruit to perfection. But that on the good ground are they, which in an honest and good heart, having heard the word, keep it, and bring forth fruit with patience.</p>
+      <p class="q-prompt">Two kinds of ground received the word and still failed. What was missing in the rocky ground, and what choked the thorny ground? What does the good ground do differently?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">7</span><span class="q-ref">Ezekiel 16:8</span></div>
+      <p class="q-verse">Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my skirt over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a covenant with thee, saith the Lord GOD, and thou becamest mine.</p>
+      <p class="q-prompt">God describes His covenant with His people like a marriage. List what God did in this verse. Whose did His people become?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">8</span><span class="q-ref">1 Corinthians 6:19&ndash;20</span></div>
+      <p class="q-verse">What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own? For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God's.</p>
+      <p class="q-prompt">Whose are you, and how did you come to belong to Him? What does Paul tell you to do with your body and your spirit?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">9</span><span class="q-ref">John 14:15</span></div>
+      <p class="q-verse">If ye love me, keep my commandments.</p>
+      <p class="q-prompt">According to Jesus, how will our love for Him be shown? How does this fit the picture of a bride brought into covenant?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">10</span><span class="q-ref">James 4:4 &middot; Romans 1:25</span></div>
+      <p class="q-verse"><span class="verse-ref">James 4:4</span>Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God.</p>
+      <p class="q-verse"><span class="verse-ref">Romans 1:25</span>Who changed the truth of God into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen.</p>
+      <p class="q-prompt">What does James call friendship with the world? Using Romans 1:25, describe what spiritual adultery is, and name some things that can become rivals to God today.</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">11</span><span class="q-ref">John 2:23&ndash;25</span></div>
+      <p class="q-verse">Now when he was in Jerusalem at the passover, in the feast day, many believed in his name, when they saw the miracles which he did. But Jesus did not commit himself unto them, because he knew all men, And needed not that any should testify of man: for he knew what was in man.</p>
+      <p class="q-prompt">Many believed in His name. What was their faith resting on? What did Jesus not do, and why?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">12</span><span class="q-ref">Luke 14:28&ndash;30</span></div>
+      <p class="q-verse">For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it? Lest haply, after he hath laid the foundation, and is not able to finish it, all that behold it begin to mock him, Saying, This man began to build, and was not able to finish.</p>
+      <p class="q-prompt">What does the builder do before he starts? Have you counted the cost of following Jesus? Do you want to follow Him?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="carry">
+      <p class="carry-title">&#10022; To Carry With You &#10022;</p>
+      <p>He gave everything for you before He ever asked anything of you. Give Him the first place, count the cost honestly, and keep your hand on the plough. <em>And he said to them all, If any man will come after me, let him deny himself, and take up his cross daily, and follow me.</em> Luke 9:23</p>
+    </div>
+
+    <!-- ==================== ANSWER KEY ==================== -->
+    <div class="answer-key">
+      <p class="answer-key-banner">Teacher's Answer Key &middot; Not for Student Distribution</p>
+
+      <div class="answer">
+        <p class="a-prompt">1. Who was following, and whom does He name?</p>
+        <p class="a-text">Great multitudes were going along with Him. He names father, mother, wife, children, brethren, and sisters, and last of all, the man's own life. The closest relationships on earth come first in the list, and then the self, which is the closest of all.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">2. What phrase does Matthew use, and what does it show?</p>
+        <p class="a-text">Matthew says loveth &hellip; more than me. That shows hate in Luke is a word of comparison. Jesus is not telling us to despise our families; He is saying our love for Him must be so much greater that every other love looks like hatred beside it. Scripture uses the word the same way when Jacob loved Rachel more than Leah, and Leah is then called hated (Genesis 29:30&ndash;31).</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">3. What does the commandment require, and could Jesus mean dishonor?</p>
+        <p class="a-text">It requires us to honour our father and mother. Jesus could not have meant dishonor, because He never sets aside His Father's commandments, and He rebuked the Pharisees for using tradition to get out of caring for their parents (Mark 7:9&ndash;13). The disciple honors his parents as part of obeying God, but he never lets them, or anyone else, take God's place.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">4. What three things, and what happens to the one who saves his life?</p>
+        <p class="a-text">Deny himself, take up his cross daily, and follow Him. The one who tries to save his life will lose it, and the one who loses his life for Christ's sake will save it. The word daily shows this is a continuing walk, not a single moment.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">5. What held back each man, and what does the plough teach?</p>
+        <p class="a-text">The first had not reckoned with losing his comfort, since the Son of man had nowhere to lay His head. The second wanted to put something else first and follow later. The third still had his heart at home. The plough teaches that a man who keeps looking back cannot cut a straight furrow. A disciple keeps his eyes fixed forward on Christ.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">6. What was missing, what choked, and what does the good ground do?</p>
+        <p class="a-text">The rocky ground had no root, so these believed for a while and then fell away when temptation came. The thorny ground was choked by the cares, riches, and pleasures of this life. The good ground is an honest and good heart that hears the word, keeps it, and brings forth fruit with patience. The difference is not how gladly the word was received at first, but whether it was kept.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">7. What did God do, and whose did His people become?</p>
+        <p class="a-text">He passed by and looked upon her, spread His skirt over her, covered her nakedness, sware unto her, and entered into a covenant with her. She became His. God moved first in love, and the covenant made her His own possession.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">8. Whose are you, how, and what should you do?</p>
+        <p class="a-text">We are God's, not our own. We were bought with a price, the blood of Christ. Paul says to glorify God in our body and in our spirit, because both belong to Him. In context he is warning against fornication (1 Corinthians 6:18), so belonging to God shows up in what we do with our bodies.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">9. How is our love for Him shown?</p>
+        <p class="a-text">By keeping His commandments. A bride shows her faithfulness by keeping her vows, not only by saying them. Keeping His commandments does not earn a place in the covenant; it is how someone who has already been brought in lives. John adds that His commandments are not grievous (1 John 5:3).</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">10. What is friendship with the world, and what is spiritual adultery?</p>
+        <p class="a-text">James calls it enmity with God, and he calls those who practice it adulterers and adulteresses. Spiritual adultery is worshipping and serving the creature more than the Creator, which breaks the first commandment (Exodus 20:3). Today it can be money, a job, entertainment, a relationship, pride, or religious customs God never asked for. Paul says covetousness itself is idolatry (Colossians 3:5).</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">11. What was their faith resting on, and what did Jesus not do?</p>
+        <p class="a-text">Their faith rested on seeing the miracles. Jesus did not commit Himself to them, because He knew what was in man. In the Greek, believed and commit are the same word: they trusted Him, but He did not entrust Himself to them. Faith that rests only on signs is shallow. Jesus is looking for people who will follow Him for who He is.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">12. What does the builder do, and have you counted the cost?</p>
+        <p class="a-text">He sits down first and counts the cost, to see whether he has enough to finish. The second and third questions are personal, and each student should answer them honestly before God. Make yourself available afterward to anyone who is unsure. Remind the class that the cost is real (Luke 14:33), but so is the grace that carries a believer who keeps walking (Titus 2:11&ndash;12).</p>
+      </div>
+
+      <div class="teacher-note">
+        <p class="tn-title">&#10022; Teacher's Note &middot; If a Student Asks Whether Commitment Is Required to Be Saved</p>
+        <p><span class="tn-ref">Ephesians 2:8&ndash;10</span> Answer this one carefully, because men fall off both sides of the road. Salvation is by grace through faith, not of works, so that no man can boast. Commitment is not a payment we make to God in exchange for salvation. But Paul goes straight on to say that we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them. The grace that saves a man is the same grace that sets him walking. Luke 14 is not a price list for heaven. It describes what saving faith looks like once it is alive.</p>
+        <p><span class="tn-ref">Acts 11:26</span> Some teach that there are two classes of believers: ordinary Christians who are saved, and a smaller group of committed disciples who go further. Scripture does not make that split. The disciples were called Christians first in Antioch. In the New Testament, disciple is simply the normal name for a believer. When Jesus says a man cannot be His disciple without counting the cost, He is describing every follower, not an advanced class.</p>
+        <p><span class="tn-ref">Luke 8:13 with 2 Peter 2:21</span> A student may ask whether someone who falls away was ever truly saved. Answer from the text. Luke says the rocky ground believed for a while. Peter speaks of people who had known the way of righteousness and then turned from the holy commandment. The safe place is abiding in Christ. The warning is real, and so is the open door for any backslider who turns back right away (1 John 1:9). Use this to strengthen the careless, not to frighten sincere believers who are walking with God.</p>
+      </div>
+
+      <div class="teacher-note">
+        <p class="tn-title">&#10022; Teacher's Note &middot; Weighing Some Claims in the Source Material</p>
+        <p><span class="tn-ref">The Greek tense in Luke 14:25</span> The source lesson notes that the verb here is in the imperfect tense. That is accurate; the crowds were going along with Him in an ongoing way. It then suggests the tense means the crowds had begun following Him repeatedly and continuously. That is a possible reading, but it says more than the tense itself requires. Teach it simply: the crowds kept on going with Him.</p>
+        <p><span class="tn-ref">Did the crowd leave after Luke 14?</span> The source says these words appear to have caused many people to stop following Jesus. Luke does not record how this crowd responded. The Gospel that does record a large turning away is John 6:66, at a different time and after a different teaching. The point still holds, since hard sayings did thin the crowds, but send students to John 6 for the record of it.</p>
+        <p><span class="tn-ref">Does hate literally mean hate?</span> The source says the word literally means hate, and then calls it a word of comparison. Both are true. The Greek word is the ordinary word for hate, and Jesus used it for its force. Scripture itself shows the comparative sense, as Matthew 10:37, Genesis 29:30&ndash;31, and Malachi 1:2&ndash;3 make clear. And because Jesus upheld the fifth commandment (Mark 7:9&ndash;13), the word can never be stretched into permission to dishonor parents.</p>
+        <p><span class="tn-ref">On marriage and divorce</span> The source says marriages end because people love themselves more than their spouse. Selfishness is behind a great deal of marriage breakdown, and that is worth saying. Be careful in the classroom, though. Some in the room may have been abandoned or betrayed through no fault of their own, and Scripture recognizes the innocent party (Matthew 19:9; 1 Corinthians 7:15). Aim the point at our own hearts, not at anyone's history.</p>
+        <p><span class="tn-ref">Polycarp</span> The quotation comes from the Martyrdom of Polycarp, a letter the church at Smyrna wrote to other churches not long after his death, usually dated around A.D. 155 to 160. It is one of the best attested accounts we have from the second century. The wording used here is the translation in the Ante-Nicene Fathers, volume 1. Historians differ on whether the eighty-six years count his whole life or the years since his conversion, so don't build anything on the number. Irenaeus, who saw Polycarp in his own early youth, says he was instructed by apostles and appointed bishop of Smyrna by apostles in Asia (Irenaeus, Against Heresies, Book 3, chapter 3, section 4).</p>
+      </div>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <footer class="doc-footer">
+    <p class="footer-ornament">&#10022; &#10022; &#10022;</p>
+    <p class="footer-text">Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>Work the Word &middot; Discipleship Class &middot; Level 1 &middot; Lesson 4</p>
+  </footer>
+
+</div>
+</body>
+</html>

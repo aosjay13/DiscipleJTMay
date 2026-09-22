@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>The Sukkah Outside Jerusalem &middot; A Scriptural Answer to the Debate</title>
+<meta name="description" content="Does Scripture forbid building a sukkah outside Jerusalem? A full answer from the Law, the Prophets, the Writings, the New Testament, and the historical record.">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 940px; margin: 0 auto; background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none; z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center; padding: 3.4rem 3rem 2.6rem;
+    border-bottom: 3px solid var(--gold-light);
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative; overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .doc-header::after {
+    content: ''; position: absolute; inset: 12px;
+    border: 1px solid rgba(201,168,76,0.4); pointer-events: none;
+  }
+  .part-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold-light); display: block; margin-bottom: 0.5rem;
+  }
+  .header-ornament {
+    font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em;
+    display: block; margin-bottom: 1.1rem;
+  }
+  .doc-title {
+    font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700;
+    color: #FBF6E9; letter-spacing: 0.04em; line-height: 1.25; text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.30);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', Georgia, serif; font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem); color: var(--gold-pale);
+    line-height: 1.6; margin-top: 0.9rem; opacity: 0.94;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3rem 3rem; }
+
+  /* ── PREAMBLE ── */
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label {
+    font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .preamble p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+  .preamble p + p { margin-top: 1rem; }
+  .dropcap::first-letter {
+    font-family: 'Cinzel', serif; font-size: 3.2rem; font-weight: 700; float: left;
+    line-height: 0.82; padding: 0.1rem 0.55rem 0 0; color: var(--crimson);
+  }
+
+  /* ── TOC ── */
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.4rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.95rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.72rem; color: var(--gold-light); min-width: 2.6rem; flex-shrink: 0; }
+
+  /* ── ARTICLE ── */
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.1rem; flex-wrap: wrap; }
+  .article-num { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 0.15rem; }
+  .article-title { font-family: 'Cinzel', serif; font-size: clamp(1.15rem, 2.8vw, 1.45rem); font-weight: 600; color: var(--crimson); line-height: 1.3; }
+  .article-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.4rem; }
+  .article-body em.term { color: var(--crimson); font-weight: 500; }
+
+  .sub-head {
+    font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: var(--ink);
+    letter-spacing: 0.06em; margin: 2.2rem 0 0.9rem; padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sub-head small { display: block; font-size: 0.64rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.2rem; }
+
+  /* ── FEAST FACTS ── */
+  .feast-facts {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 1.4rem 0 1.8rem;
+    border: 1px solid #D4B97A66; border-top: 3px solid var(--crimson); background: var(--cream);
+  }
+  .fact { padding: 0.7rem 1rem; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+  .fact:nth-child(2n) { border-right: none; }
+  .fact.wide { grid-column: 1 / -1; border-right: none; }
+  .fact:last-child { border-bottom: none; }
+  .fact-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); display: block; margin-bottom: 0.2rem; }
+  .fact-text { font-size: 0.97rem; line-height: 1.5; color: var(--ink-mid); }
+
+  /* ── KEEP ITEMS (ways to observe) ── */
+  .keep { margin: 1.1rem 0; padding: 0.95rem 1.2rem 1rem; background: var(--parchment); border: 1px solid #D4B97A44; border-left: 3px solid var(--gold-light); }
+  .keep-title { font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; display: flex; gap: 0.6rem; align-items: baseline; line-height: 1.35; }
+  .keep-num { font-family: 'Cinzel', serif; font-size: 0.72rem; color: #FBF5E6; background: var(--crimson); min-width: 1.45rem; height: 1.45rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; top: -0.05rem; }
+  .keep p { font-size: 1rem; line-height: 1.76; color: var(--ink-mid); text-align: justify; }
+  .keep p + p { margin-top: 0.6rem; }
+  .keep .scripture-entry { margin: 0.7rem 0 0.2rem; padding: 0.7rem 0.95rem; background: var(--cream); border-top: 1px solid #D4B97A55; }
+
+  /* ── SECTION PANEL ── */
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--gold-light); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .section-body p + p { margin-top: 0.8rem; }
+
+  /* ── KEY POINT PANEL ── */
+  .keypoint { margin: 1.6rem 0; padding: 1.3rem 1.6rem; background: linear-gradient(to right, #F5EDD8, var(--cream)); border-left: 4px solid var(--crimson); }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.6rem; }
+  .keypoint p { font-size: 1.04rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.8rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── TEACHER'S NOTE / HISTORY NOTE (dashed gold) ── */
+  .hist-note { margin: 1.6rem 0; padding: 1rem 1.2rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; font-size: 0.95rem; line-height: 1.72; color: var(--ink-soft); font-style: italic; }
+  .hist-note-label { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.55rem; display: block; }
+  .hist-note strong { font-style: normal; color: var(--ink-mid); }
+  .hist-note p + p { margin-top: 0.7rem; }
+  .hist-quote { display: block; margin: 0.7rem 0 0.7rem 1rem; padding-left: 0.9rem; border-left: 2px solid var(--gold-light); color: var(--ink-mid); }
+  .hist-ref { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--gold); display: block; margin-bottom: 0.25rem; }
+
+  /* ── BONUS PANEL (dashed gold) ── */
+  .bonus { margin: 1.8rem 0; padding: 1.3rem 1.5rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; }
+  .bonus-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+  .bonus-label::before { content: '\2726'; color: var(--gold-light); }
+  .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus p + p { margin-top: 0.8rem; }
+  .bonus strong { color: var(--ink); }
+
+  /* ── SCRIPTURE BLOCK ── */
+  .scripture-block { margin: 1.6rem 0; padding: 1.4rem 1.6rem; background: var(--cream); border: 1px solid #D4B97A55; border-top: 2px solid var(--gold-light); }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 0.975rem; line-height: 1.78; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref { font-family: 'Cinzel', serif; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.3rem; letter-spacing: 0.06em; }
+  .scripture-text { color: var(--ink-mid); font-style: italic; }
+  .psalm-title { font-style: normal; font-variant: small-caps; letter-spacing: 0.04em; }
+
+  /* ── COMPARISON TABLE ── */
+  .table-wrap { margin: 1.6rem 0; overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+  .compare-table thead tr { background: linear-gradient(135deg, var(--crimson), var(--crimson-lt)); }
+  .compare-table th { font-family: 'Cinzel', serif; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: #FBF5E6; padding: 0.65rem 0.75rem; text-align: left; font-weight: 500; vertical-align: bottom; }
+  .compare-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--rule); color: var(--ink-mid); vertical-align: top; line-height: 1.5; }
+  .compare-table tbody tr:nth-child(even) td { background: rgba(242,235,217,0.55); }
+  .compare-table .col-name { font-family: 'Cinzel', serif; font-size: 0.82rem; color: var(--crimson); font-weight: 600; }
+  .compare-table .ref { display: block; font-size: 0.8rem; color: var(--gold); font-style: normal; margin-top: 0.15rem; }
+
+  /* ── CONCLUSION (crimson) ── */
+  .conclusion { margin-top: 2.6rem; padding: 2rem; background: linear-gradient(135deg, #2a1414 0%, var(--crimson) 100%); color: var(--gold-pale); position: relative; }
+  .conclusion::after { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(201,168,76,0.35); pointer-events: none; }
+  .conclusion-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .conclusion-title { font-family: 'Cinzel', serif; font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 700; color: #FBF6E9; margin-bottom: 1.1rem; line-height: 1.3; }
+  .conclusion-body { font-size: 1.05rem; line-height: 1.85; color: #EDE0C4; }
+  .conclusion-body p + p { margin-top: 0.9rem; }
+  .conclusion-verse { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(201,168,76,0.35); font-style: italic; color: #F2E6CC; }
+  .conclusion-verse .cv-ref { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.74rem; letter-spacing: 0.08em; color: var(--gold-light); display: block; margin-bottom: 0.25rem; }
+  .conclusion-verse + .conclusion-verse { border-top: none; margin-top: 0.6rem; padding-top: 0; }
+
+  /* ── COMPANION TEACHING ── */
+  .companion { margin: 2.8rem 0 0; padding-top: 2.2rem; border-top: 1px solid var(--rule); }
+  .companion-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; }
+  .companion-link { display: block; padding: 1.2rem 1.4rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--crimson); text-decoration: none; transition: background 0.2s, border-left-color 0.2s; }
+  .companion-link:hover { background: var(--gold-pale); border-left-color: var(--crimson-lt); }
+  .companion-title { display: block; font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: var(--crimson); line-height: 1.35; }
+  .companion-note { display: block; margin-top: 0.45rem; font-size: 0.98rem; line-height: 1.72; color: var(--ink-mid); }
+  .companion-read { display: block; margin-top: 0.75rem; font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center; padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light); margin-top: 0;
+    position: relative; overflow: hidden;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: #FBF6E9; text-transform: uppercase; margin-top: 0.6rem; line-height: 1.9; }
+
+  /* ── PRINT (8.5 x 11 portrait, numbered pages, clean breaks) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; hyphens: auto; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .site-nav { display: none; }
+
+    .doc-header, .doc-footer, .section, .keypoint, .scripture-block, .hist-note, .bonus,
+    .toc, .feast-facts, .keep, .keep-num, .conclusion, .companion-link,
+    .compare-table thead tr, .compare-table tbody tr:nth-child(even) td {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+
+    /* the text column sits inside the 0.75in page margin */
+    .doc-header { padding: 1.7rem 1.4rem 1.4rem; }
+    .doc-body   { padding: 0; }
+    .doc-footer { padding: 1.3rem 1.4rem; margin-top: 2rem; }
+    .preamble { margin-top: 1.6rem; padding-bottom: 1.4rem; }
+    .toc { margin: 1.4rem 0 0; }
+    .article { margin-top: 0; padding-top: 1.6rem; border-top: none; }
+
+    /* each appointed time begins on a fresh sheet */
+    .print-new-page { page-break-before: always; break-before: page; }
+
+    /* nothing meaningful gets split down the middle */
+    .sub-head, .scripture-entry, .keep, .section, .companion,
+    .feast-facts, .toc, .toc-list li, .article-header, .conclusion,
+    .compare-table tr, .keypoint p, .hist-note p, .hist-quote, .bonus p, .keep p {
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    /* taller panels may continue onto the next sheet, but never mid-paragraph */
+    .keypoint, .hist-note, .bonus, .keep.flow { page-break-inside: auto; break-inside: auto; }
+    .hist-note-label { page-break-after: avoid; break-after: avoid; }
+
+    /* slightly tighter rhythm on paper so sections end cleanly */
+    .article-body { line-height: 1.7; margin-bottom: 1.1rem; }
+    .keep { margin: 0.8rem 0; padding: 0.8rem 1.1rem 0.85rem; }
+    .keep p { line-height: 1.64; }
+    .scripture-block { margin: 1.2rem 0; padding: 1.1rem 1.3rem; }
+    .scripture-entry { line-height: 1.66; margin-bottom: 0.8rem; }
+    .keypoint, .bonus, .hist-note { margin: 1.2rem 0; }
+    .keypoint p, .bonus p { line-height: 1.68; }
+    .sub-head { margin: 1.6rem 0 0.7rem; }
+    .feast-facts { margin: 1rem 0 1.3rem; }
+    .scripture-block { page-break-inside: auto; break-inside: auto; }
+    .scripture-block .scripture-label { page-break-after: avoid; break-after: avoid; }
+    .compare-table thead { display: table-header-group; }
+
+    /* a heading is never the last line on a page */
+    .article-header, .article-title, .sub-head, .section-title, .keypoint-label,
+    .scripture-label, .toc-title, .preamble-label, .bonus-label, .keep-title {
+      page-break-after: avoid; break-after: avoid;
+    }
+    .article-body, .keep p { orphans: 3; widows: 3; }
+    .doc-footer { page-break-before: avoid; break-before: avoid; }
+
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.4rem 2.5rem; }
+    .doc-body { padding: 0 1.3rem 2rem; }
+    .doc-header { padding: 2.2rem 1.4rem 1.6rem; }
+    .toc { padding: 1.2rem 1.2rem; }
+    .toc-list { columns: 1; }
+    .feast-facts { grid-template-columns: 1fr; }
+    .fact { border-right: none; }
+    .keep p, .article-body { text-align: left; }
+    .compare-table { font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <span class="part-label">The Appointed Times &middot; A Teaching</span>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">The Sukkah Outside Jerusalem</h1>
+    <p class="doc-subtitle">Does the Word of God Forbid a Booth Beyond the Place He Chose? A Scriptural Answer to the Debate</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- PREAMBLE -->
+    <section class="preamble">
+      <p class="preamble-label">Where We Are Going</p>
+      <p class="dropcap">Every fall, as the Feast of Tabernacles comes around, the same argument starts up again. Some teachers say that a believer who builds a booth in his backyard in West Virginia, or anywhere else outside of Jerusalem, is not keeping the feast at all. In their view the booth belongs only to the place the Lord chose, and since there is no temple standing in Jerusalem today, no one should be building one. Some go further and say that a backyard booth is actually a sin, a man-made feast in a place God never authorized.</p>
+      <p>That is a serious charge, and it deserves a serious answer. If it is true, then thousands of families who love the Lord and want to obey Him are breaking His law every year. If it is false, then the ones making the charge are binding a burden on God&rsquo;s people that God Himself never bound. Either way, the only thing that can settle it is the Word of God.</p>
+      <p>So this teaching asks one plain question and follows the answer all the way through the Bible. Is there a single verse, in the Old Testament or the New, that forbids building a sukkah outside of Jerusalem? We will read the command itself in full. We will set it beside the command to go up to the place God chose and see how different the two really are. We will look at how God speaks when He does want something done in only one place. We will trace the booth back before Jerusalem was ever an Israelite city, walk with the exiles who came home from Babylon, hear from the historians who wrote while the temple still stood, and then answer every major objection one at a time. We will also test the answer that got this conversation started, and be honest about what it got right and where it went too far.</p>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#art0"><span class="toc-num">Intro</span>The Question on the Table</a></li>
+        <li><a href="#art1"><span class="toc-num">I.</span>The Command Itself</a></li>
+        <li><a href="#art2"><span class="toc-num">II.</span>Two Commands, Two Passages</a></li>
+        <li><a href="#art3"><span class="toc-num">III.</span>When God Means One Place, He Says So</a></li>
+        <li><a href="#art4"><span class="toc-num">IV.</span>The Booth Is Older Than Jerusalem</a></li>
+        <li><a href="#art5"><span class="toc-num">V.</span>The Exiles Come Home</a></li>
+        <li><a href="#art6"><span class="toc-num">VI.</span>The Witness of History</a></li>
+        <li><a href="#art7"><span class="toc-num">VII.</span>The Place He Chose, Today</a></li>
+        <li><a href="#art8"><span class="toc-num">VIII.</span>Answering the Objections</a></li>
+        <li><a href="#art9"><span class="toc-num">IX.</span>Testing the Answer That Started It</a></li>
+        <li><a href="#art10"><span class="toc-num">X.</span>Build the Booth</a></li>
+      </ul>
+    </nav>
+
+    <!-- INTRO -->
+    <article class="article" id="art0">
+      <div class="article-header">
+        <span class="article-num">The Foundation</span>
+        <h2 class="article-title">The Question on the Table</h2>
+      </div>
+
+      <p class="article-body">Before we open the Scriptures, let&rsquo;s state the other side fairly, in its strongest form. We don&rsquo;t win anything by knocking down an argument nobody is actually making.</p>
+
+      <p class="article-body">The argument usually runs like this. Deuteronomy 16 says the Feast of Tabernacles is to be kept seven days <em>in the place which the LORD shall choose</em> (Deuteronomy 16:15). The booth is part of the Feast of Tabernacles. Therefore the booth must be built in the place the Lord chose, which became Jerusalem. And since the temple has been gone since AD 70, there is no longer any lawful place to keep the feast, so no one should be building booths at all. Some who make this argument will add that building a booth somewhere else is like Jeroboam setting up his own feast at Bethel, or like offering a sacrifice outside the chosen place.</p>
+
+      <p class="article-body">It sounds tidy. But notice what it depends on. It depends on the idea that everything connected to the feast was bound to the chosen place, and it depends on reading one phrase from Deuteronomy as if it governed a command that was given somewhere else, in different words, for a different reason. As we will see, the Scripture does not support either of those ideas.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Answer Up Front</p>
+        <p><strong>There is no verse in the Old Testament or the New Testament that forbids building a booth outside of Jerusalem.</strong> Not one. The command to dwell in booths was given with no place attached to it. The command to go up to the place God chose was a separate command, given to a different group of people, tied to offerings and to appearing before the Lord at His altar.</p>
+        <p>The burden of proof rests on the one who adds a prohibition. God said, <em>Ye shall not add unto the word which I command you, neither shall ye diminish ought from it</em> (Deuteronomy 4:2). If a man tells God&rsquo;s people they may not do what God commanded them to do, he must show where God said so. That verse does not exist.</p>
+      </div>
+    </article>
+
+    <!-- I. THE COMMAND ITSELF -->
+    <article class="article" id="art1">
+      <div class="article-header">
+        <span class="article-num">Part I</span>
+        <h2 class="article-title">The Command Itself</h2>
+      </div>
+
+      <p class="article-body">Every conversation about the booth has to start with the passage where God actually commands the booth. That passage is Leviticus 23. It is the only place in the whole Law where the command to dwell in booths is given, so we read it in full and let it speak for itself.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Booth Commanded</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:39&ndash;43</span>
+          <span class="scripture-text">Also in the fifteenth day of the seventh month, when ye have gathered in the fruit of the land, ye shall keep a feast unto the LORD seven days: on the first day shall be a sabbath, and on the eighth day shall be a sabbath. And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before the LORD your God seven days. And ye shall keep it a feast unto the LORD seven days in the year. It shall be a statute for ever in your generations: ye shall celebrate it in the seventh month. Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths: That your generations may know that I made the children of Israel to dwell in booths, when I brought them out of the land of Egypt: I am the LORD your God.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>What the Command Says</small>When, Who, How Long, and Why</p>
+
+      <p class="article-body">Read that passage slowly and write down everything it tells you. It tells you <em>when</em>: the fifteenth day of the seventh month. It tells you <em>how long</em>: seven days, with an eighth day that is a sabbath. It tells you <em>what to take</em>: the boughs of goodly trees, palm branches, thick trees, and willows. It tells you <em>who</em>: all that are Israelites born. It tells you <em>how long the command lasts</em>: a statute for ever in your generations. And it tells you <em>why</em>: so that your generations may know that God made Israel dwell in booths when He brought them out of Egypt.</p>
+
+      <p class="article-body">Now look for the one thing the opposing argument needs. Look for a place. There isn&rsquo;t one. God tells His people when, who, what, how long, and why, and He never tells them where. He does not say &ldquo;in the place which I shall choose.&rdquo; He does not say &ldquo;at the tabernacle of the congregation.&rdquo; He does not say &ldquo;in Jerusalem.&rdquo; A command that gives this much detail and leaves out a location has not forgotten the location. It simply doesn&rsquo;t restrict one.</p>
+
+      <p class="sub-head"><small>Where the Command Was Given</small>Spoken in the Wilderness</p>
+
+      <p class="article-body">Remember where Israel was standing when God said these words. Leviticus was given at Mount Sinai, in the wilderness, while Israel was living in tents (Leviticus 27:34). There was no Jerusalem in Israel&rsquo;s hands. There would not be for more than four hundred years, until David took the stronghold of Zion (2 Samuel 5:6&ndash;7). The people who first heard this command could not possibly have understood &ldquo;dwell in booths&rdquo; to mean &ldquo;dwell in booths in Jerusalem,&rdquo; because Jerusalem was a Jebusite city and the chosen place had not yet been named.</p>
+
+      <p class="sub-head"><small>Why the Command Was Given</small>A Memorial Carried by Every Generation</p>
+
+      <p class="article-body">God also told us the purpose, and the purpose points away from any single city. The booth is a memorial of the wilderness, the years when God&rsquo;s people had no permanent house and no fixed city, when they moved when the cloud moved and camped where the cloud rested. The booth teaches the children that we were once homeless pilgrims and God kept us alive. That lesson belongs in the home, in front of the children, wherever the children are. God said it is so that <em>your generations may know</em>. The command is aimed at the family and the next generation, not at a location.</p>
+
+      <p class="article-body">Look at how the rest of Leviticus 23 speaks as well. Again and again God says His appointed times are to be kept <em>in all your dwellings</em> (Leviticus 23:3, 23:14, 23:21, 23:31). The weekly Sabbath was never kept only in Jerusalem. The day of rest on the holy days was never kept only in Jerusalem. The people rested where they lived. The booth fits that same pattern. It is the one appointed time where God tells His people to build a new dwelling for the week and live in it.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">In All Your Dwellings</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 23:3</span>
+          <span class="scripture-text">Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of the LORD in all your dwellings.</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- II. TWO COMMANDS -->
+    <article class="article" id="art2">
+      <div class="article-header">
+        <span class="article-num">Part II</span>
+        <h2 class="article-title">Two Commands, Two Passages</h2>
+      </div>
+
+      <p class="article-body">The whole debate grows out of Deuteronomy 16, so we have to read it just as carefully as we read Leviticus 23. Here is the section on the Feast of Tabernacles and the verses that follow it, with nothing cut out of the middle.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Feast at the Chosen Place</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 16:13&ndash;17</span>
+          <span class="scripture-text">Thou shalt observe the feast of tabernacles seven days, after that thou hast gathered in thy corn and thy wine: And thou shalt rejoice in thy feast, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite, the stranger, and the fatherless, and the widow, that are within thy gates. Seven days shalt thou keep a solemn feast unto the LORD thy God in the place which the LORD shall choose: because the LORD thy God shall bless thee in all thine increase, and in all the works of thine hands, therefore thou shalt surely rejoice. Three times in a year shall all thy males appear before the LORD thy God in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before the LORD empty: Every man shall give as he is able, according to the blessing of the LORD thy God which he hath given thee.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>The First Thing to Notice</small>The Booth Is Not Even Mentioned</p>
+
+      <p class="article-body">Read that passage again and look for the booth. It isn&rsquo;t there. Deuteronomy 16 never says &ldquo;dwell in booths in the place which the LORD shall choose.&rdquo; It never mentions building a booth at all. What it commands at the chosen place is a <em>solemn feast</em>, a pilgrim festival of rejoicing before the Lord, and it ties that festival to the males appearing before the Lord with a gift in their hand. The phrase &ldquo;in the place which the LORD shall choose&rdquo; is attached to the feast and the appearing, and to nothing else in the passage.</p>
+
+      <p class="article-body">So the opposing argument has to borrow the place from Deuteronomy 16 and carry it over into Leviticus 23, where God gave the booth command and deliberately left the place out. That is adding to the word. It takes a restriction God placed on one thing and lays it on something else God never restricted.</p>
+
+      <p class="sub-head"><small>The Second Thing to Notice</small>Different People, Different Duties</p>
+
+      <p class="article-body">The two passages are not even addressed to the same group. Deuteronomy says <em>all thy males</em> shall appear before the Lord (Deuteronomy 16:16; Exodus 23:17; Exodus 34:23). Leviticus says <em>all that are Israelites born</em> shall dwell in booths (Leviticus 23:42). The booth command is wider. It takes in the women, the children, the elderly, and the sick, many of whom were never required to make the journey at all.</p>
+
+      <p class="article-body">Think about what that means. If the booth could only be built in the chosen place, then every Israelite who stayed home was cut off from obeying a command that God laid on every Israelite. The widow too old to walk to Jerusalem, the mother with a newborn, the sick man in his bed in Dan or Beersheba, all of them were commanded to dwell in booths. God does not command a whole nation to do something and then only let half of them do it. The simple answer is the right one. The booth went where the Israelite was.</p>
+
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th style="width:22%"></th>
+              <th style="width:39%">The Booth<br>Leviticus 23:39&ndash;43</th>
+              <th style="width:39%">The Pilgrimage<br>Deuteronomy 16:13&ndash;17</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-name">Who</td>
+              <td>All that are Israelites born<span class="ref">Leviticus 23:42</span></td>
+              <td>All thy males<span class="ref">Deuteronomy 16:16</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">What</td>
+              <td>Take branches, rejoice, and dwell in booths seven days<span class="ref">Leviticus 23:40, 23:42</span></td>
+              <td>Keep a solemn feast, appear before the LORD, bring a gift<span class="ref">Deuteronomy 16:15&ndash;17</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Where</td>
+              <td>No place named at all</td>
+              <td>In the place which the LORD shall choose<span class="ref">Deuteronomy 16:15&ndash;16</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Tied To</td>
+              <td>The household and the next generation<span class="ref">Leviticus 23:43</span></td>
+              <td>The altar, the offerings, and the presence of the LORD<span class="ref">Deuteronomy 16:16&ndash;17</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Reason Given</td>
+              <td>Remember the booths of the wilderness<span class="ref">Leviticus 23:43</span></td>
+              <td>Rejoice in the blessing of the harvest<span class="ref">Deuteronomy 16:15</span></td>
+            </tr>
+            <tr>
+              <td class="col-name">Kept Today?</td>
+              <td>Yes, in every dwelling, as a statute for ever<span class="ref">Leviticus 23:41</span></td>
+              <td>Not as written, with no temple or altar standing<span class="ref">Hebrews 8:1&ndash;2</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="sub-head"><small>How the Two Fit Together</small>Both Were Kept, Neither Canceled the Other</p>
+
+      <p class="article-body">None of this means the two commands were in competition. When a man of Israel went up to Jerusalem for the feast, he dwelt in a booth there, because the booth goes where the Israelite goes. That is exactly what we see in Nehemiah 8:16, where booths went up on rooftops, in courtyards, and in the streets of the city. Nobody is arguing that booths were never built in Jerusalem. Of course they were. The question is whether booths were <em>forbidden</em> everywhere else, and neither passage says that.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Hannah Stayed Home</span>
+        <p>Scripture gives us a small picture of an Israelite who did not make the yearly journey. When Elkanah and his whole house went up to Shiloh to offer the yearly sacrifice, <em>Hannah went not up; for she said unto her husband, I will not go up until the child be weaned</em> (1 Samuel 1:21&ndash;22). Nobody rebuked her. Her husband answered, <em>Do what seemeth thee good</em> (1 Samuel 1:23). The text does not tell us which feast this was, so we should not press it as proof about the booth in particular. But it does show that a faithful Israelite woman could remain at home during a yearly pilgrimage without being counted a lawbreaker, which is exactly what we would expect if the duty to appear fell on the males and the rest of the household kept the appointed times where they lived.</p>
+      </div>
+    </article>
+
+    <!-- III. WHEN GOD MEANS ONE PLACE -->
+    <article class="article" id="art3">
+      <div class="article-header">
+        <span class="article-num">Part III</span>
+        <h2 class="article-title">When God Means One Place, He Says So</h2>
+      </div>
+
+      <p class="article-body">Here is one of the strongest answers in this whole debate, and it comes straight out of Deuteronomy itself. When God wanted something done only at the chosen place, He did not leave His people to guess. He said so in plain words, and He usually said it twice. He told them what they could <em>not</em> do in their own towns, and then He told them what they <em>must</em> do at the place He would choose.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">What Belonged at the Chosen Place</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 12:11</span>
+          <span class="scripture-text">Then there shall be a place which the LORD your God shall choose to cause his name to dwell there; thither shall ye bring all that I command you; your burnt offerings, and your sacrifices, your tithes, and the heave offering of your hand, and all your choice vows which ye vow unto the LORD:</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 12:13&ndash;14</span>
+          <span class="scripture-text">Take heed to thyself that thou offer not thy burnt offerings in every place that thou seest: But in the place which the LORD shall choose in one of thy tribes, there thou shalt offer thy burnt offerings, and there thou shalt do all that I command thee.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 12:17&ndash;18</span>
+          <span class="scripture-text">Thou mayest not eat within thy gates the tithe of thy corn, or of thy wine, or of thy oil, or the firstlings of thy herds or of thy flock, nor any of thy vows which thou vowest, nor thy freewill offerings, or heave offering of thine hand: But thou must eat them before the LORD thy God in the place which the LORD thy God shall choose, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite that is within thy gates: and thou shalt rejoice before the LORD thy God in all that thou puttest thine hands unto.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Look at how specific God is. <em>Thou mayest not eat within thy gates</em>, and then He names every item: the tithe of corn, wine, and oil, the firstlings, the vows, the freewill offerings, the heave offering. Burnt offerings are not to be offered <em>in every place that thou seest</em>. Everything restricted to the chosen place is an offering, a sacrifice, a tithe, or a holy thing eaten before the altar.</p>
+
+      <p class="article-body">God did the very same thing with Passover. He did not merely say &ldquo;keep the Passover at the chosen place.&rdquo; He said, in so many words, you may not do it at home.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">A Prohibition in Plain Words</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 16:5&ndash;6</span>
+          <span class="scripture-text">Thou mayest not sacrifice the passover within any of thy gates, which the LORD thy God giveth thee: But at the place which the LORD thy God shall choose to place his name in, there thou shalt sacrifice the passover at even, at the going down of the sun, at the season that thou camest forth out of Egypt.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>The Silence That Speaks</small>No &ldquo;Thou Mayest Not&rdquo; for the Booth</p>
+
+      <p class="article-body">Now put the booth beside those passages. Where is the verse that says, &ldquo;Thou mayest not build a booth within any of thy gates&rdquo;? Where is the verse that says, &ldquo;Take heed that thou dwell not in booths in every place that thou seest&rdquo;? It isn&rsquo;t anywhere in the Bible. The same God, speaking through the same Moses, in the same book, in the same chapter where He forbade a home Passover sacrifice, never forbade a home booth. When God draws a line that sharply in one place and draws no line at all in the other, we do not have permission to draw it for Him.</p>
+
+      <p class="article-body">Some will point to the end of Deuteronomy 12:14, <em>there thou shalt do all that I command thee</em>, and say that &ldquo;all&rdquo; must include the booth. But Moses already told us what &ldquo;all that I command you&rdquo; means, three verses earlier. It is <em>your burnt offerings, and your sacrifices, your tithes, and the heave offering of your hand, and all your choice vows</em> (Deuteronomy 12:11). In context, &ldquo;all&rdquo; means all the offerings. It cannot mean every commandment in the Law, or else the Sabbath, the dietary laws, and the command to love your neighbor could only be kept in Jerusalem. In the very same chapter God told Israel they could slaughter and eat ordinary meat <em>in all thy gates</em> (Deuteronomy 12:15, 12:21). Not everything was bound to the altar. Only the holy things were.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Do Not Add, Do Not Take Away</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 12:32</span>
+          <span class="scripture-text">What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Proverbs 30:5&ndash;6</span>
+          <span class="scripture-text">Every word of God is pure: he is a shield unto them that put their trust in him. Add thou not unto his words, lest he reprove thee, and thou be found a liar.</span>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Rule of the Text</p>
+        <p><strong>A command with no place attached is kept wherever God&rsquo;s people are.</strong> God knew how to restrict a command to one location, and He did it clearly every time He meant it. To take a command He left open and close it with a restriction He never spoke is to teach <em>for doctrines the commandments of men</em> (Mark 7:7).</p>
+      </div>
+    </article>
+
+    <!-- IV. OLDER THAN JERUSALEM -->
+    <article class="article" id="art4">
+      <div class="article-header">
+        <span class="article-num">Part IV</span>
+        <h2 class="article-title">The Booth Is Older Than Jerusalem</h2>
+      </div>
+
+      <p class="article-body">The booth does not look back to Jerusalem. It looks back to the wilderness. That alone should make us slow to say it can only be kept in Jerusalem.</p>
+
+      <p class="sub-head"><small>The First Stop Out of Egypt</small>A Place Called Booths</p>
+
+      <p class="article-body">The very first place Israel camped after leaving Egypt was named Succoth, which means <em>booths</em> (Exodus 12:37; Exodus 13:20; Numbers 33:5). The people who walked out of Egypt on the night of the Passover spent their first night of freedom in a place called Booths. From there they wandered forty years, camping wherever the cloud stopped. When God later tells them the booth is so <em>that your generations may know that I made the children of Israel to dwell in booths, when I brought them out of the land of Egypt</em> (Leviticus 23:43), He is pointing them back to those camps, scattered across the desert, hundreds of miles from Mount Zion.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The First Night of Freedom</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:37</span>
+          <span class="scripture-text">And the children of Israel journeyed from Rameses to Succoth, about six hundred thousand on foot that were men, beside children.</span>
+        </div>
+      </div>
+
+      <p class="sub-head"><small>Before the Temple, Before the City</small>From Joshua to David</p>
+
+      <p class="article-body">When Israel entered the land, the tabernacle was set up at Shiloh (Joshua 18:1), and it stayed there for generations (1 Samuel 1:3). Jerusalem was still in the hands of the Jebusites all through the days of Joshua and the Judges (Joshua 15:63; Judges 1:21). David took it only after he became king over all Israel (2 Samuel 5:6&ndash;7), and Solomon did not dedicate the temple until about four hundred and eighty years after the Exodus (1 Kings 6:1). For centuries, the Feast of Tabernacles was kept by a nation that did not have Jerusalem as its center at all.</p>
+
+      <p class="article-body">Nehemiah gives us a striking line about this. When the returned exiles built their booths, Scripture says the children of Israel had not done so <em>since the days of Jeshua the son of Nun unto that day</em> (Nehemiah 8:17). Jeshua is Joshua. Whatever else that verse means, it measures the right keeping of the booth by the days of Joshua, a time when Israel&rsquo;s gathering place was Gilgal and then Shiloh, not Jerusalem. The standard they looked back to was set before Jerusalem was ever Israel&rsquo;s city.</p>
+
+      <p class="sub-head"><small>The Prophets Point Back to It</small>&ldquo;As in the Days of the Solemn Feast&rdquo;</p>
+
+      <p class="article-body">Even the prophets reached for the wilderness picture when they spoke of the booth. Through Hosea, God spoke to the northern kingdom, which was boasting in its riches (Hosea 12:8), and reminded them that the same God who brought them out of Egypt could make them live in tents once more, <em>as in the days of the solemn feast</em>.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Back to the Tents</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hosea 12:9</span>
+          <span class="scripture-text">And I that am the LORD thy God from the land of Egypt will yet make thee to dwell in tabernacles, as in the days of the solemn feast.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The feast was so firmly tied in Israel&rsquo;s mind to living in tents far from home that God could use it as a word picture for being sent back into the wilderness. The heart of the booth has always been the journey, not the city.</p>
+
+      <div class="bonus">
+        <p class="bonus-label">Bonus &middot; The Fathers Dwelt in Tabernacles</p>
+        <p>The New Testament carries the same picture forward. Abraham, Isaac, and Jacob lived their whole lives in tents in the land of promise, and the writer of Hebrews says they did it by faith, because they were looking for a city God Himself would build.</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 11:9&ndash;10</span>
+          <span class="scripture-text">By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise: For he looked for a city which hath foundations, whose builder and maker is God.</span>
+        </div>
+        <p><strong>That is exactly the lesson of the booth.</strong> We live in temporary shelters because we are strangers and pilgrims on the earth (Hebrews 11:13), and our own bodies are tabernacles that will one day be put off (2 Corinthians 5:1; 2 Peter 1:13&ndash;14). A lesson like that belongs in every backyard where a child can sit under the branches and ask, &ldquo;Why are we out here?&rdquo;</p>
+      </div>
+    </article>
+
+    <!-- V. THE EXILES COME HOME -->
+    <article class="article" id="art5">
+      <div class="article-header">
+        <span class="article-num">Part V</span>
+        <h2 class="article-title">The Exiles Come Home</h2>
+      </div>
+
+      <p class="article-body">Two of the clearest Bible records of the Feast of Tabernacles come from the years after the Babylonian captivity. Both of them speak directly to this debate, and both of them need to be read carefully and honestly.</p>
+
+      <p class="sub-head"><small>Ezra 3</small>The Feast Kept Before the Temple Was Built</p>
+
+      <p class="article-body">The first group of exiles came home under Zerubbabel and Jeshua the priest. The temple was still a heap of ruins. What did they do when the seventh month came? They built an altar on its old place and kept the Feast of Tabernacles, <em>as it is written</em>.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">No Temple Yet, and Still the Feast</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezra 3:4&ndash;6</span>
+          <span class="scripture-text">They kept also the feast of tabernacles, as it is written, and offered the daily burnt offerings by number, according to the custom, as the duty of every day required; And afterward offered the continual burnt offering, both of the new moons, and of all the set feasts of the LORD that were consecrated, and of every one that willingly offered a freewill offering unto the LORD. From the first day of the seventh month began they to offer burnt offerings unto the LORD. But the foundation of the temple of the LORD was not yet laid.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Read the last line again: <em>the foundation of the temple of the LORD was not yet laid</em>. The Holy Spirit made sure we knew that the feast was kept, and kept <em>as it is written</em>, with no temple standing. Anyone who says &ldquo;no temple, no feast&rdquo; has to deal with Ezra 3. The feast has never depended on a building.</p>
+
+      <p class="sub-head"><small>Nehemiah 8</small>Booths on Every Rooftop</p>
+
+      <p class="article-body">About ninety years later, under Ezra the scribe and Nehemiah the governor, the people gathered to hear the Law read. As they listened, they discovered the command to dwell in booths, and they obeyed it at once.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">They Found It Written</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Nehemiah 8:14&ndash;17</span>
+          <span class="scripture-text">And they found written in the law which the LORD had commanded by Moses, that the children of Israel should dwell in booths in the feast of the seventh month: And that they should publish and proclaim in all their cities, and in Jerusalem, saying, Go forth unto the mount, and fetch olive branches, and pine branches, and myrtle branches, and palm branches, and branches of thick trees, to make booths, as it is written. So the people went forth, and brought them, and made themselves booths, every one upon the roof of his house, and in their courts, and in the courts of the house of God, and in the street of the water gate, and in the street of the gate of Ephraim. And all the congregation of them that were come again out of the captivity made booths, and sat under the booths: for since the days of Jeshua the son of Nun unto that day had not the children of Israel done so. And there was very great gladness.</span>
+        </div>
+      </div>
+
+      <p class="article-body">This passage proves several things. The proclamation to go and gather branches went out <em>in all their cities, and in Jerusalem</em>. The booths were built <em>every one upon the roof of his house, and in their courts</em>, which tells us the booth was a household duty, built at a man&rsquo;s own dwelling. And the whole congregation did it with <em>very great gladness</em>. There is not one word in the passage that forbids a booth anywhere.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Don&rsquo;t Overstate Nehemiah</span>
+        <p>Many teachers, and the answer that started this conversation, say that Nehemiah 8 shows booths being built in all the towns outside Jerusalem. We need to be careful here, because the text does not quite say that, and an opponent who knows his Bible will catch it.</p>
+        <p>The people had been living in their own cities (Nehemiah 7:73), but they <em>gathered themselves together as one man</em> into Jerusalem to hear the Law (Nehemiah 8:1). The proclamation to fetch branches went out to all their cities and to Jerusalem, but the list of places where booths were actually built, the rooftops, the courts, the courts of the house of God, the street of the water gate, and the street of the gate of Ephraim, are all places in Jerusalem. So Nehemiah 8 does not prove booths were built in the other towns that year.</p>
+        <p><strong>What it does prove is still strong.</strong> It shows the booth being built at each man&rsquo;s own house, it shows the proclamation going to every city, and it shows no restriction of any kind. Use Nehemiah for what it actually says. The Scripture never needs to be stretched to win this argument.</p>
+      </div>
+    </article>
+
+    <!-- VI. THE WITNESS OF HISTORY -->
+    <article class="article" id="art6">
+      <div class="article-header">
+        <span class="article-num">Part VI</span>
+        <h2 class="article-title">The Witness of History</h2>
+      </div>
+
+      <p class="article-body">Scripture settles the question on its own. But it helps to know how the Jewish people themselves understood the command in the centuries when the temple still stood, because if the booth really belonged only to Jerusalem, those who lived closest to the temple would have known it best. The records below are not Scripture, and we grade them honestly for what they are. But every one of them points the same direction.</p>
+
+      <p class="sub-head"><small>A First-Century Priest</small>Josephus: &ldquo;In Every One of Our Houses&rdquo;</p>
+
+      <p class="article-body">Flavius Josephus was a Jewish priest (Josephus, <em>The Life of Flavius Josephus</em>, Section 1) who grew up while the temple was still standing and wrote his history of the Jewish people about twenty years after it fell. When he explains the Law of Moses on the Feast of Tabernacles, he separates the two commands just as we did from Leviticus and Deuteronomy. The booth is pitched at home. The festival with its offerings is kept at the city of the temple.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">From the Antiquities of the Jews</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Josephus, <em>Antiquities of the Jews</em>, Book 3, Chapter 10, Section 4 (Whiston translation)</span>
+          <span class="scripture-text">Upon the fifteenth day of the same month, when the season of the year is changing for winter, the law enjoins us to pitch tabernacles in every one of our houses, so that we preserve ourselves from the cold of that time of the year; as also that when we should arrive at our own country, and come to that city which we should have then for our metropolis, because of the temple therein to be built, and keep a festival for eight days, and offer burnt-offerings, and sacrifice thank-offerings, that we should then carry in our hands a branch of myrtle, and willow, and a bough of the palm-tree, with the addition of the pome citron: That the burnt-offering on the first of those days was to be a sacrifice of thirteen bulls, and fourteen lambs, and fifteen rams, with the addition of a kid of the goats, as an expiation for sins; and on the following days the same number of lambs, and of rams, with the kids of the goats; but abating one of the bulls every day till they amounted to seven only. On the eighth day all work was laid aside, and then, as we said before, they sacrificed to God a bullock, a ram, and seven lambs, with a kid of the goats, for an expiation of sins. And this is the accustomed solemnity of the Hebrews, when they pitch their tabernacles.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Look at how Josephus divides it. The law enjoins us <em>to pitch tabernacles in every one of our houses</em>. Then, <em>as also</em>, when they come to the city of the temple, they keep the festival and offer the burnt offerings. The house and the temple city are two different places in his explanation, and the booth is placed at the house. That is the reading of a first-century priest who had stood in the temple courts himself.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Weighing Josephus</span>
+        <p>Josephus is a historian, not a prophet, and he sometimes adds his own explanations. His comment that the booth protects from the cold of the season is his own idea, since the Law gives the wilderness memorial as the reason (Leviticus 23:43). He also mixes the burnt offering numbers a little differently than Numbers 29 gives them. So we do not lean on him for doctrine. We use him as a witness to <em>practice</em>, and on that point he is very valuable: a priest of the first century understood the Law to put a booth at every house.</p>
+      </div>
+
+      <p class="sub-head"><small>The Days of the Maccabees</small>The Feast Kept in the Mountains and Caves</p>
+
+      <p class="article-body">About two hundred years before Christ, the Greek king Antiochus Epiphanes defiled the temple and set up pagan worship in it. For about three years, faithful Jews could not keep the feast at the temple at all. They were hiding in the hills, fighting for their lives. When they finally cleansed the temple, the book of 2 Maccabees records that they kept an eight-day celebration and remembered how they had kept the Feast of Tabernacles while they were still in hiding.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">From the Book of 2 Maccabees</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Maccabees 10:5&ndash;8 (KJV Apocrypha)</span>
+          <span class="scripture-text">Now upon the same day that the strangers profaned the temple, on the very same day it was cleansed again, even the five and twentieth day of the same month, which is Casleu. And they kept the eight days with gladness, as in the feast of the tabernacles, remembering that not long afore they had held the feast of the tabernacles, when as they wandered in the mountains and dens like beasts. Therefore they bare branches, and fair boughs, and palms also, and sang psalms unto him that had given them good success in cleansing his place. They ordained also by a common statute and decree, That every year those days should be kept of the whole nation of the Jews.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Here is a record of the Feast of Tabernacles being kept when the temple was unavailable and the people were nowhere near its courts, <em>when as they wandered in the mountains and dens</em>. These were the most zealous keepers of the Law in their generation, men who were willing to die rather than break it. It never occurred to them that the feast could not be kept away from the temple. They kept it in the caves.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Weighing 2 Maccabees</span>
+        <p>We do not receive 2 Maccabees as Scripture. It was printed in the 1611 King James Bible among the Apocrypha, set apart from the Old and New Testaments, and it was never part of the Hebrew Scriptures. We read it the way we read any old history book, carefully and with discernment. As a record of what faithful Jews actually did in the second century before Christ, it is a helpful witness. As a source of doctrine, it carries no weight at all, and our case does not rest on it.</p>
+      </div>
+
+      <p class="sub-head"><small>Later Jewish Tradition</small>What the Rabbis Recorded</p>
+
+      <p class="article-body">Around AD 200, the rabbis gathered their traditions into a collection called the Mishnah. One whole section of it, called Sukkah, is devoted to the booth, and its rules are written for households in every town, not just for pilgrims in Jerusalem. It teaches that for the seven days of the feast a man should treat his booth as his regular home and his house as the temporary one (Mishnah, Sukkah 2:9, in summary).</p>
+
+      <p class="article-body">The Mishnah also records a telling detail. While the temple stood, the branches of the feast were waved all seven days in the temple, but only on the first day <em>in the provinces</em>, meaning the towns outside Jerusalem. After the temple was destroyed, Rabban Yohanan ben Zakkai ruled that the branches should be taken all seven days everywhere, in memory of the temple (Mishnah, Sukkah 3:12, in summary). In other words, even the rabbis carefully tracked which customs belonged to the temple and which belonged to the towns. The booth itself was never on the temple-only list. It was kept in the provinces the whole time.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; How Much Weight Each Witness Carries</span>
+        <p><strong>First and final, the Scripture.</strong> Leviticus 23 commands the booth with no place attached, and nothing in the rest of the Bible adds one. This is the only tier that binds the conscience.</p>
+        <p><strong>Second, the early witnesses.</strong> Josephus in the first century and 2 Maccabees from before Christ both show the booth kept apart from the temple. They are close to the events and agree with each other, but they are still the words of men.</p>
+        <p><strong>Third, the later rabbinic tradition.</strong> The Mishnah was written down more than a century after the temple fell, and it contains many man-made rules we do not keep. We cite it only because it shows that even the tradition most concerned with temple practice never treated the booth as a Jerusalem-only command.</p>
+      </div>
+    </article>
+
+    <!-- VII. THE PLACE HE CHOSE, TODAY -->
+    <article class="article" id="art7">
+      <div class="article-header">
+        <span class="article-num">Part VII</span>
+        <h2 class="article-title">The Place He Chose, Today</h2>
+      </div>
+
+      <p class="article-body">Everything so far shows that the booth was never bound to Jerusalem, even when the temple stood. But the debate today has one more layer, because the temple does not stand. So we need to ask honestly what happens to each part of the feast now.</p>
+
+      <p class="sub-head"><small>What Cannot Be Kept As Written</small>The Altar and the Appearing</p>
+
+      <p class="article-body">Jesus told His disciples that not one stone of the temple would be left upon another (Matthew 24:1&ndash;2), and in AD 70 the Romans burned it to the ground (Josephus, <em>The Wars of the Jews</em>, Book 6, Chapter 4). With the temple gone, there is no altar at the place God chose, no Levitical priesthood serving at it, and no lawful way to bring the offerings of the feast. The command for the males to appear before the Lord at the chosen place with an offering in their hand cannot be kept as it was written. We should say that plainly and not pretend otherwise.</p>
+
+      <p class="article-body">But for the believer, that is not a loss without an answer. The sacrifices were shadows, and the substance has come. Our High Priest has not gone up to an earthly Jerusalem. He has gone into the true tabernacle in heaven itself.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Our High Priest and His Sanctuary</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 8:1&ndash;2</span>
+          <span class="scripture-text">Now of the things which we have spoken this is the sum: We have such an high priest, who is set on the right hand of the throne of the Majesty in the heavens; A minister of the sanctuary, and of the true tabernacle, which the Lord pitched, and not man.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 9:24</span>
+          <span class="scripture-text">For Christ is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of God for us.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Jesus told the woman at the well that this was coming. The day would arrive when the worship of the Father would no longer be bound to a mountain in Samaria or to the city of Jerusalem.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Neither in This Mountain, Nor Yet at Jerusalem</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">John 4:21&ndash;24</span>
+          <span class="scripture-text">Jesus saith unto her, Woman, believe me, the hour cometh, when ye shall neither in this mountain, nor yet at Jerusalem, worship the Father. Ye worship ye know not what: we know what we worship: for salvation is of the Jews. But the hour cometh, and now is, when the true worshippers shall worship the Father in spirit and in truth: for the Father seeketh such to worship him. God is a Spirit: and they that worship him must worship him in spirit and in truth.</span>
+        </div>
+      </div>
+
+      <p class="article-body">We need to be careful with this passage. Jesus did not say the feasts were over, and He did not say God&rsquo;s commandments no longer matter. He Himself kept the feasts and went up to Jerusalem for Tabernacles (John 7:10, 7:37). What He said is that the <em>place</em> of worship would no longer be tied to one earthly mountain. The altar-centered worship that belonged at the chosen place now centers on Him, in the heavenly sanctuary. That is exactly why the parts of the feast bound to the altar are in abeyance, and why the parts never bound to the altar go right on being kept.</p>
+
+      <p class="sub-head"><small>What Still Stands</small>The Booth Never Depended on the Temple</p>
+
+      <p class="article-body">Now ask the simple question. Which part of the Feast of Tabernacles was affected when the temple fell? Only the parts that were tied to the temple: the offerings and the appearing before the altar. The booth was never tied to the temple. It was commanded before there was a temple, it was kept by the exiles before the temple was rebuilt, it was kept in the caves while the temple was defiled, and it was pitched <em>in every one of our houses</em> while the temple stood. The destruction of the temple did not touch it.</p>
+
+      <p class="article-body">This is why we do not invent a new &ldquo;chosen place&rdquo; for ourselves. Believers are free to gather together for the feast, and it is a good and joyful thing to do so (Hebrews 10:25). A church camp, a family farm, or a fellowship meeting can be a wonderful place to keep the days together. But no gathering site today carries the authority of the place where God set His name at the altar, and no teacher has the right to tell God&rsquo;s people that their obedience only counts if they come to his location. The booth goes where the believer goes, just as it always has.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Dividing Line</p>
+        <p><strong>The temple parts of the feast wait for the temple.</strong> The offerings found their fulfillment in Christ, and the appearing at the chosen place cannot be kept as written while no altar stands there.</p>
+        <p><strong>The household parts of the feast go on in every household.</strong> The holy days, the rest, the rejoicing, the branches, the reading of the Word, and the booth were never bound to the altar, and they remain a statute for ever in our generations (Leviticus 23:41).</p>
+      </div>
+    </article>
+
+    <!-- VIII. OBJECTIONS -->
+    <article class="article" id="art8">
+      <div class="article-header">
+        <span class="article-num">Part VIII</span>
+        <h2 class="article-title">Answering the Objections</h2>
+      </div>
+
+      <p class="article-body">A doctrine is only as strong as its answers to the best arguments against it. Here are the objections most often raised against building a booth outside Jerusalem, each stated fairly and answered from the Word.</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">1</span>&ldquo;Deuteronomy 16:15 says the feast is kept in the place the LORD chooses.&rdquo;</p>
+        <p>It does, and we believe every word of it. But read what the phrase is attached to. It is attached to the <em>solemn feast</em> and to the males who <em>appear before the LORD</em> with a gift (Deuteronomy 16:15&ndash;17). The booth is not mentioned anywhere in that passage. The booth command is given in Leviticus 23:42 with no place attached. To carry the place over from one passage and lay it on a command in another is to add to the word, and that is the one thing Moses told us not to do (Deuteronomy 4:2).</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>&ldquo;Deuteronomy 12:14 says &lsquo;there thou shalt do all that I command thee.&rsquo;&rdquo;</p>
+        <p>Moses defined &ldquo;all that I command you&rdquo; three verses earlier: burnt offerings, sacrifices, tithes, heave offerings, and vows (Deuteronomy 12:11). The chapter is about offerings and holy things eaten before the altar. In the same chapter God let His people slaughter and eat ordinary meat in all their gates (Deuteronomy 12:15, 12:21). If &ldquo;all&rdquo; meant every commandment, then no Israelite could keep the Sabbath, the food laws, or the Ten Commandments anywhere but Jerusalem. No one believes that, and the text does not say it.</p>
+      </div>
+
+      <div class="keep flow">
+        <p class="keep-title"><span class="keep-num">3</span>&ldquo;Deuteronomy 31 ties the Feast of Tabernacles to the chosen place.&rdquo;</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 31:10&ndash;13</span>
+          <span class="scripture-text">And Moses commanded them, saying, At the end of every seven years, in the solemnity of the year of release, in the feast of tabernacles, When all Israel is come to appear before the LORD thy God in the place which he shall choose, thou shalt read this law before all Israel in their hearing. Gather the people together, men, and women, and children, and thy stranger that is within thy gates, that they may hear, and that they may learn, and fear the LORD your God, and observe to do all the words of this law: And that their children, which have not known any thing, may hear, and learn to fear the LORD your God, as long as ye live in the land whither ye go over Jordan to possess it.</span>
+        </div>
+        <p>This passage commands a public reading of the whole Law once every seven years, at the great assembly where Israel came <em>to appear before the LORD</em>. Once again, the place is tied to the appearing and to the assembly, not to the booth, which is never mentioned. If anything, this passage is a reason for us to read the Word of God aloud during the feast wherever we keep it, just as Ezra did every day of the feast (Nehemiah 8:18).</p>
+      </div>
+
+      <div class="keep flow">
+        <p class="keep-title"><span class="keep-num">4</span>&ldquo;A booth somewhere else is the sin of Jeroboam.&rdquo;</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Kings 12:32&ndash;33</span>
+          <span class="scripture-text">And Jeroboam ordained a feast in the eighth month, on the fifteenth day of the month, like unto the feast that is in Judah, and he offered upon the altar. So did he in Beth-el, sacrificing unto the calves that he had made: and he placed in Beth-el the priests of the high places which he had made. So he offered upon the altar which he had made in Beth-el the fifteenth day of the eighth month, even in the month which he had devised of his own heart; and ordained a feast unto the children of Israel: and he offered upon the altar, and burnt incense.</span>
+        </div>
+        <p>Read what Jeroboam actually did. He moved the feast to a month <em>which he had devised of his own heart</em>. He built his own altar. He sacrificed to golden calves. He made priests of men who were not of the tribe of Levi (1 Kings 12:31). His sin was a rival altar, a rival priesthood, rival gods, and a rival calendar. The Bible never once says his sin was that someone lived in a booth outside Jerusalem.</p>
+        <p>A believing family that sits in a booth on the fifteenth day of the seventh month, with no altar, no sacrifice, no idol, and no invented priesthood, is doing the opposite of what Jeroboam did. They are keeping the day God set, in the way God said, instead of a day devised in their own heart.</p>
+      </div>
+
+      <div class="keep flow">
+        <p class="keep-title"><span class="keep-num">5</span>&ldquo;Zechariah 14 says the nations must go up to Jerusalem to keep the feast.&rdquo;</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Zechariah 14:16&ndash;19</span>
+          <span class="scripture-text">And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles. And it shall be, that whoso will not come up of all the families of the earth unto Jerusalem to worship the King, the LORD of hosts, even upon them shall be no rain. And if the family of Egypt go not up, and come not, that have no rain; there shall be the plague, wherewith the LORD will smite the heathen that come not up to keep the feast of tabernacles. This shall be the punishment of Egypt, and the punishment of all nations that come not up to keep the feast of tabernacles.</span>
+        </div>
+        <p>This is a wonderful passage, and we should love it. It proves the Feast of Tabernacles is not abolished, because it will be kept by the whole earth in the kingdom. But look at when it happens. It comes after the Lord&rsquo;s feet stand upon the mount of Olives (Zechariah 14:4) and after <em>the LORD shall be king over all the earth</em> (Zechariah 14:9). The nations go up <em>to worship the King</em>, because the King Himself is there. That is the pilgrimage restored in its fullness, with Christ reigning in Jerusalem.</p>
+        <p>Notice also what the passage does not say. It commands the nations to go up to Jerusalem in that age. It does not forbid a booth anywhere, and it says nothing about what God&rsquo;s people should do in this present age, before the King returns. In fact, the objection proves too much. If it meant that the feast can only be kept in Jerusalem, then God gave His people a statute for ever that almost none of them could lawfully keep for nearly two thousand years. God does not command His people to do what He has made impossible for them to do.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">6</span>&ldquo;There is no temple, so there can be no feast.&rdquo;</p>
+        <p>The exiles under Zerubbabel kept the Feast of Tabernacles <em>as it is written</em> when <em>the foundation of the temple of the LORD was not yet laid</em> (Ezra 3:4&ndash;6). The faithful in the days of the Maccabees kept it in the mountains and caves while the temple was defiled (2 Maccabees 10:6). And the command itself was given in the wilderness, before there was a temple or a Jerusalem (Leviticus 27:34). The weekly Sabbath is kept in every believing home with no temple standing, because God said <em>in all your dwellings</em> (Leviticus 23:3). The booth stands on that same ground.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">7</span>&ldquo;The booth is only for the land of Israel.&rdquo;</p>
+        <p>The phrase <em>when ye have gathered in the fruit of the land</em> (Leviticus 23:39) tells us the timing of the feast, at the close of the harvest. It does not set a border. The booth itself is a memorial of the years Israel spent <em>outside</em> the land, in the wilderness (Leviticus 23:43). And God made it <em>a statute for ever in your generations</em> (Leviticus 23:41), knowing full well He would one day scatter His people among the nations (Deuteronomy 30:1&ndash;3). He never said His statutes would pause whenever His people were far from home.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">8</span>&ldquo;The command says &lsquo;Israelites born,&rsquo; so it is not for Gentile believers.&rdquo;</p>
+        <p>That is a separate question from the one this teaching answers, and even if someone held that view, it would not create any rule about <em>where</em> a booth may be built. But the Law itself answers it. God said <em>one law and one manner shall be for you, and for the stranger that sojourneth with you</em> (Numbers 15:16), and He named the stranger among those who rejoice at this very feast (Deuteronomy 16:14). The Gentile who comes to Christ is no longer a stranger and foreigner, but a fellowcitizen with the saints and of the household of God (Ephesians 2:19). The door to the booth is open.</p>
+      </div>
+    </article>
+
+    <!-- IX. TESTING THE ANSWER -->
+    <article class="article" id="art9">
+      <div class="article-header">
+        <span class="article-num">Part IX</span>
+        <h2 class="article-title">Testing the Answer That Started It</h2>
+      </div>
+
+      <p class="article-body">This teaching began with a question put to an internet AI tool: is there any Scripture that tells us not to build a sukkah outside Jerusalem? We should hold every answer up to the Word, including answers that agree with us. The Bereans searched the Scriptures daily to see whether the things they heard were so (Acts 17:11), and that includes things we like to hear. Here is an honest review.</p>
+
+      <p class="sub-head"><small>Where It Was Right</small>The Main Conclusion Holds</p>
+
+      <p class="article-body">Its main answer was correct. There is no verse in the Old or New Testament that forbids building a booth outside Jerusalem. It was also right that the command to dwell in booths in Leviticus 23 carries no geographic restriction, and right that the requirement to go to the chosen place belongs to the pilgrimage and its offerings rather than to the booth. Its summary, that the booth is a blanket duty while the journey belonged to the temple and its sacrifices, matches what we have seen from the Scripture.</p>
+
+      <p class="sub-head"><small>Where It Needs Correcting</small>Five Things to Fix Before You Use It</p>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">1</span>It did not quote the King James Bible.</p>
+        <p>Its quotation of Leviticus 23:42&ndash;43 came from a modern translation, rendering the phrase as &ldquo;native Israelites&rdquo; where the King James reads <em>all that are Israelites born</em>, and it ended with an ellipsis. In a debate, quote the full passage from the King James (Leviticus 23:39&ndash;43), as we did in Part I, so no one can accuse you of trimming the text.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">2</span>It cut the middle out of Deuteronomy 16.</p>
+        <p>It quoted Deuteronomy 16:13&ndash;15 with the rejoicing verse left out, and it described the command for the males to appear without quoting it, even though that command is actually in the next verse (Deuteronomy 16:16). The full passage, verses 13 through 17, is what makes the case, because only then can you see that the place is tied to the feast and the appearing and the booth is never mentioned.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">3</span>It overstated Nehemiah 8.</p>
+        <p>It said the text <em>explicitly</em> shows booths built throughout all the towns outside Jerusalem. As we saw in Part V, the proclamation went to all the cities, but the booths listed in Nehemiah 8:16 are all in Jerusalem, where the people had gathered (Nehemiah 8:1). Use Nehemiah to show the booth as a household duty on every man&rsquo;s own roof, which it plainly does, not as a list of towns, which it does not give.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">4</span>It made a historical claim with no source.</p>
+        <p>It said Jews who could not make the pilgrimage still built booths wherever they lived. That is true, but it gave no evidence. The witnesses in Part VI supply what was missing: Josephus, <em>Antiquities of the Jews</em>, Book 3, Chapter 10, Section 4; 2 Maccabees 10:6; and the Mishnah, Sukkah 3:12.</p>
+      </div>
+
+      <div class="keep">
+        <p class="keep-title"><span class="keep-num">5</span>Its only cited source was a ministry website.</p>
+        <p>That website may be a fine ministry, but a website is not the Word of God and it is not a primary source. When you stand up to settle a debate, cite the chapter and verse, and when you use history, cite the historian by book and chapter. Then anyone can open the same pages and check you.</p>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher&rsquo;s Note &middot; Why We Correct Our Own Side</span>
+        <p>It would be easy to take an answer that agrees with us and use it as it is. But an argument with a crack in it will be found out, and when one point is shown to be overstated, people start to doubt the points that were true. The strongest way to end a debate is to say only what the text says, quote it in full, and let it stand on its own. The Word of God does not need our help. It only needs to be read.</p>
+      </div>
+    </article>
+
+    <!-- X. CONCLUSION -->
+    <article class="article" id="art10">
+      <div class="article-header">
+        <span class="article-num">Part X</span>
+        <h2 class="article-title">Build the Booth</h2>
+      </div>
+
+      <p class="article-body">Put all of the evidence side by side and the answer is not close. The only command to dwell in booths names no place. The only commands tied to the chosen place concern the offerings and the appearing before the altar, and God spelled out those restrictions in plain words every time He meant them. The booth remembers the wilderness, it was kept before Jerusalem belonged to Israel, it was kept before the second temple was built, it was kept in caves while the temple was defiled, and a priest of the first century said the Law put it at every house. Not one verse, from Genesis to Revelation, forbids it anywhere.</p>
+
+      <div class="conclusion">
+        <p class="conclusion-label">Where It All Rests</p>
+        <p class="conclusion-title">The Booth Goes Where God&rsquo;s People Go</p>
+        <div class="conclusion-body">
+          <p>God did not give the booth to a building. He gave it to a people, and He gave it to their children, so that every generation would know that He brought His people out of bondage and sheltered them on the journey home. That is why the booth could be pitched on a rooftop in Jerusalem, in a cave in the hills of Judea, or in a backyard in the hills of West Virginia. The same God who covered Israel in the wilderness covers His people wherever they are.</p>
+          <p>So let no man bind what God has left free, and let no man forbid what God has commanded. When the seventh month comes, gather the branches, build the booth, bring the children, invite the widow and the stranger, open the Word, and rejoice before the Lord seven days. We keep the feast not to earn our salvation, which is by grace through faith alone (Ephesians 2:8&ndash;9), but because we love the One who gave it (John 14:15). And we keep it looking forward to the day when the King reigns in Jerusalem and the tabernacle of God is with men.</p>
+          <p>Build the booth, beloved. There is no verse against it, and there is a statute for it that has never been repealed.</p>
+        </div>
+        <div class="conclusion-verse">
+          <span class="cv-ref">Leviticus 23:41</span>
+          And ye shall keep it a feast unto the LORD seven days in the year. It shall be a statute for ever in your generations: ye shall celebrate it in the seventh month.
+        </div>
+        <div class="conclusion-verse">
+          <span class="cv-ref">Revelation 21:3</span>
+          And I heard a great voice out of heaven saying, Behold, the tabernacle of God is with men, and he will dwell with them, and they shall be his people, and God himself shall be with them, and be their God.
+        </div>
+      </div>
+    </article>
+
+    <!-- COMPANION TEACHING -->
+    <aside class="companion">
+      <p class="companion-label">Companion Teachings</p>
+      <a class="companion-link" href="./The_Feast_of_Tabernacles.html">
+        <span class="companion-title">The Feast of Tabernacles: God Dwelling With His People</span>
+        <span class="companion-note">The whole feast taken on its own, from the wilderness booths to the Eighth Day, with its fulfillment in Christ and how we keep it now.</span>
+        <span class="companion-read">Read the Teaching &#8594;</span>
+      </a>
+      <a class="companion-link" href="./053_-_Keeping_the_Feasts_in_the_Order_of_Melchizedek.html" style="margin-top:0.8rem">
+        <span class="companion-title">Keeping the Feasts in the Order of Melchizedek</span>
+        <span class="companion-note">How to keep the Sabbath and every appointed time now that the altar is finished, day by day, under a better priesthood.</span>
+        <span class="companion-read">Read the Teaching &#8594;</span>
+      </a>
+    </aside>
+
+  </div><!-- end doc-body -->
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Ye Shall Dwell in Booths Seven Days &middot; Leviticus 23:42<br>Brother Justin May &middot; Work the Word Church, Madison</p>
+  </footer>
+
+</div><!-- end page -->
+</body>
+</html>

@@ -315,6 +315,43 @@
   .bonus p { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
   .bonus p + p { margin-top: 0.8rem; }
   .bonus .point-list > li { padding-top: 0.45rem; padding-bottom: 0.45rem; }
+  .bonus a { color: var(--gold); }
+
+  /* ── KEY POINT PANEL ── */
+  .keypoint { margin: 1.6rem 0; padding: 1.3rem 1.6rem; background: linear-gradient(to right, #F5EDD8, var(--cream)); border-left: 4px solid var(--crimson); }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.6rem; }
+  .keypoint p { font-size: 1.04rem; line-height: 1.8; color: var(--ink-mid); }
+  .keypoint p + p { margin-top: 0.8rem; }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── TEACHER'S NOTE (dashed gold) ── */
+  .hist-note { margin: 1.6rem 0; padding: 1rem 1.2rem; background: var(--gold-pale); border: 1px dashed #C9A84C88; font-size: 0.95rem; line-height: 1.72; color: var(--ink-soft); font-style: italic; }
+  .hist-note-label { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.55rem; display: block; }
+  .hist-note strong { font-style: normal; color: var(--ink-mid); }
+  .hist-note p + p { margin-top: 0.7rem; }
+  .hist-quote { display: block; margin: 0.7rem 0 0.7rem 1rem; padding-left: 0.9rem; border-left: 2px solid var(--gold-light); color: var(--ink-mid); }
+  .hist-ref { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--gold); display: block; margin-bottom: 0.25rem; }
+  .hist-note a { color: var(--gold); }
+
+  /* ── VERSE NUMBERS INSIDE A LONGER PASSAGE ── */
+  .vn { font-family: 'Cinzel', serif; font-style: normal; font-size: 0.7rem; font-weight: 600; color: var(--gold); margin-right: 0.2rem; }
+
+  /* ── SUMMARY LIST ── */
+  .summary-list { list-style: none; counter-reset: sum; margin: 1rem 0 0.4rem; padding: 0; }
+  .summary-list > li { counter-increment: sum; position: relative; padding: 0.55rem 0 0.55rem 2.3rem; line-height: 1.78; color: var(--ink-mid); border-bottom: 1px solid var(--rule); }
+  .summary-list > li:last-child { border-bottom: none; }
+  .summary-list > li::before { content: counter(sum); position: absolute; left: 0; top: 0.62rem; width: 1.6rem; text-align: center; font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 700; color: var(--crimson); }
+  .summary-list .lead { font-weight: 700; color: var(--ink); }
+
+  /* ── COMPANION TEACHINGS ── */
+  .companion { margin: 2.8rem 0 0; padding-top: 2.2rem; border-top: 1px solid var(--rule); }
+  .companion-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; }
+  .companion-link { display: block; padding: 1.2rem 1.4rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--crimson); text-decoration: none; transition: background 0.2s, border-left-color 0.2s; }
+  .companion-link + .companion-link { margin-top: 0.8rem; }
+  .companion-link:hover { background: var(--gold-pale); border-left-color: var(--crimson-lt); }
+  .companion-title { display: block; font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: var(--crimson); line-height: 1.35; }
+  .companion-note { display: block; margin-top: 0.45rem; font-size: 0.98rem; line-height: 1.72; color: var(--ink-mid); }
+  .companion-read { display: block; margin-top: 0.75rem; font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 
   em.greek, em.hebrew { font-weight: 600; font-style: italic; color: var(--ink); }
 
@@ -359,7 +396,8 @@
     .page::before, .page::after { display: none; }
     .chapter { break-before: page; page-break-before: always; }
     .chapter:first-of-type { break-before: auto; page-break-before: auto; }
-    .verse, .bonus, .term { break-inside: avoid; }
+    .verse, .bonus, .term, .keypoint, .hist-note, .summary-list > li, .companion-link { break-inside: avoid; }
+    .subhead, .subhead-mini { break-after: avoid; page-break-after: avoid; }
   }
 
   /* ── RESPONSIVE ── */
@@ -407,6 +445,7 @@
     <section class="preamble">
       <p class="preamble-label">Foundation</p>
       <p>As we open the Scriptures for this study, we look directly to Revelation 14:12: "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus." This establishes the perfect harmony of our walk, resting entirely in the salvation provided by the Son while faithfully walking in obedience to the Father.</p>
+      <p>Before we walk through the appointed times one by one, we first settle what Scripture itself says happened at the cross. Colossians 2:14 is the verse most often used to say the feasts were nailed there, so we read it in its own sentence. Then we let the book of Hebrews name, in its own words, what actually changed. With that foundation laid, we study each feast, look at how Jesus and the apostles treated these days after the cross, and answer the objections most often raised against keeping them.</p>
     </section>
 
     <!-- TABLE OF CONTENTS -->
@@ -414,11 +453,16 @@
       <p class="toc-title">Contents</p>
       <ul class="toc-list">
         <li><a href="#intro"><span class="toc-num">Intro</span>The Moedim and the Commandments of God</a></li>
-        <li><a href="#ch1"><span class="toc-num">Ch. I</span>Passover &amp; Unleavened Bread</a></li>
-        <li><a href="#ch2"><span class="toc-num">Ch. II</span>First Fruits and Pentecost</a></li>
-        <li><a href="#ch3"><span class="toc-num">Ch. III</span>Feast of Trumpets</a></li>
-        <li><a href="#ch4"><span class="toc-num">Ch. IV</span>Day of Atonement</a></li>
-        <li><a href="#ch5"><span class="toc-num">Ch. V</span>Feast of Tabernacles and the Eighth Day</a></li>
+        <li><a href="#ch1"><span class="toc-num">Ch. I</span>The Handwriting of Ordinances</a></li>
+        <li><a href="#ch2"><span class="toc-num">Ch. II</span>What Changed at the Cross</a></li>
+        <li><a href="#ch3"><span class="toc-num">Ch. III</span>Passover &amp; Unleavened Bread</a></li>
+        <li><a href="#ch4"><span class="toc-num">Ch. IV</span>First Fruits and Pentecost</a></li>
+        <li><a href="#ch5"><span class="toc-num">Ch. V</span>Feast of Trumpets</a></li>
+        <li><a href="#ch6"><span class="toc-num">Ch. VI</span>Day of Atonement</a></li>
+        <li><a href="#ch7"><span class="toc-num">Ch. VII</span>Feast of Tabernacles and the Eighth Day</a></li>
+        <li><a href="#ch8"><span class="toc-num">Ch. VIII</span>The Feasts After the Cross</a></li>
+        <li><a href="#ch9"><span class="toc-num">Ch. IX</span>Answering the Objections</a></li>
+        <li><a href="#summary"><span class="toc-num">Summary</span>The Teaching in Brief</a></li>
       </ul>
     </nav>
 
@@ -435,33 +479,30 @@
 
       <div class="term"><span class="term-name">Moedim:</span> the Hebrew word for "appointed times" or "divine appointments." In the KJV it is frequently translated as "feasts" or "seasons." We see this introduced in Leviticus 23:2, "Speak unto the children of Israel, and say unto them, Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts."</div>
 
+      <div class="term"><span class="term-name">Miqra:</span> the Hebrew word translated "convocation." It means a calling together, an assembly, and even a public reading. When God calls His days "holy convocations," He is calling His people to gather before Him on those days.</div>
+
       <div class="term"><span class="term-name">Torah:</span> while often simply translated as "law," this word fundamentally means "instruction" or "teaching" from a loving Father to His children.</div>
 
       <div class="term"><span class="term-name">Mitzvot:</span> this word translates to "commandments," referring to the specific precepts given by God.</div>
 
-      <h3 class="subhead">The Commandments of God: The Moral Law</h3>
-      <p class="chapter-body">The foundation of God's instruction is His moral law, the Ten Commandments. These were not handwritten by a man. As Exodus 31:18 reveals, they were written by the finger of God on "tables of stone." They reflect His unchanging character, detailing exactly how to love Him and how to love our fellow man.</p>
-      <p class="chapter-body">Because they are an expression of the Creator's nature, the moral laws are eternal. Faith in Jesus does not abolish these commandments. Instead, His grace and the indwelling of the Holy Spirit empower us to keep them.</p>
-
-      <h3 class="subhead">The Moedim and the Handwriting of Ordinances</h3>
-      <p class="chapter-body">When we look at the Moedim, which includes the weekly Sabbath as well as the annual holy days like Passover, Pentecost, and Tabernacles, we must carefully distinguish between the days themselves and the temporary ceremonial works that were attached to them in the earthly sanctuary.</p>
+      <h3 class="subhead">"Even These Are My Feasts"</h3>
+      <p class="chapter-body">Leviticus 23 lays out the whole calendar of God's appointed times, and the first thing God does is claim them as His own.</p>
 
       <div class="verse">
-        <span class="verse-ref">Colossians 2:14</span>
-        <span class="verse-text">Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross.</span>
+        <span class="verse-ref">Leviticus 23:1&ndash;4</span>
+        <span class="verse-text"><span class="vn">1</span>And the LORD spake unto Moses, saying, <span class="vn">2</span>Speak unto the children of Israel, and say unto them, Concerning the feasts of the LORD, which ye shall proclaim to be holy convocations, even these are my feasts. <span class="vn">3</span>Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of the LORD in all your dwellings. <span class="vn">4</span>These are the feasts of the LORD, even holy convocations, which ye shall proclaim in their seasons.</span>
       </div>
 
-      <p class="chapter-body">The Greek word used here for ordinances is <em class="greek">dogmata</em>, which refers to decrees or the ceremonial laws handwritten by Moses in a book. This included the rigid system of animal sacrifices, specific meat offerings, and drink offerings that were required to be performed on the Moedim to temporarily cover sin.</p>
+      <p class="chapter-body">God calls them "my feasts." They are not Israel's feasts, and they are not Moses' feasts. They are the feasts of the LORD. Notice, too, which appointed time heads the list: the weekly Sabbath, called "an holy convocation" in the same chapter as Passover, Pentecost, and Tabernacles. Whatever we conclude about the annual feasts, Scripture has already tied them to the Sabbath.</p>
 
-      <div class="verse">
-        <span class="verse-ref">Colossians 2:16&ndash;17</span>
-        <span class="verse-text">Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: Which are a shadow of things to come; but the body is of Christ.</span>
-      </div>
+      <p class="chapter-body">God also said how long these days would stand. Of the Day of Atonement He said, "it shall be a statute for ever throughout your generations in all your dwellings" (Leviticus 23:31). Of Tabernacles He said, "It shall be a statute for ever in your generations" (Leviticus 23:41).</p>
 
-      <p class="chapter-body">Here Paul uses the Greek word <em class="greek">skia</em> for "shadow" and <em class="greek">soma</em> for "body." The Moedim are a prophetic shadow outlining God's entire plan of redemption. The ceremonial sacrifices performed on those days were the "handwriting of ordinances" that pointed forward to the ultimate sacrifice. When Jesus died on the cross, He became our Passover lamb. The sacrificial rituals were nailed to the cross because the substance, the body of Christ, had arrived. The days themselves were not abolished.</p>
+      <h3 class="subhead">The Commandments of God</h3>
+      <p class="chapter-body">At the heart of God's instruction stand the Ten Commandments. God spoke them aloud from the mount, and as Exodus 31:18 reveals, He wrote them with His own finger on "tables of stone." They reflect His unchanging character, detailing exactly how to love Him and how to love our fellow man. Faith in Jesus does not abolish these commandments. Instead, His grace and the indwelling of the Holy Spirit empower us to keep them.</p>
 
-      <h3 class="subhead">Walking in Spirit and Truth</h3>
-      <p class="chapter-body">Today, as believers keeping the faith of Jesus, we observe the Sabbath and the Moedim not to earn our salvation, nor by shedding the blood of animals. We observe them to honor our Creator, to remember His acts of deliverance, and to rehearse the prophetic events of Christ's return. The Sabbath remains a holy convocation, a weekly appointed time, where we rest in the finished work of our Savior while joyfully obeying the moral law written by the finger of God.</p>
+      <p class="chapter-body">But Scripture never teaches that the finger of God is the dividing line between what stands and what was nailed to the cross. God Himself did not draw the line there. When He called Moses up the mountain, He promised him "tables of stone, and a law, and commandments which I have written" (Exodus 24:12). When Jesus quoted a command that Moses wrote, He called it "the commandment of God" and "the word of God" (Mark 7:9&ndash;13). Both of the greatest commandments He named are found in the books Moses wrote, not on the tables of stone (Deuteronomy 6:5; Leviticus 19:18). Scripture even calls the same book "the law of Moses" and "the law of the Lord" in back-to-back verses (Luke 2:22&ndash;24). Moses was the writer; the LORD was the Author.</p>
+
+      <p class="chapter-body">This matters for our study, because the Moedim were given through Moses. When Revelation 14:12 speaks of the saints who "keep the commandments of God," we will not shrink that phrase down to fewer commandments than Jesus meant by it. Chapter IX takes up this question in full.</p>
     </article>
 
 
@@ -469,6 +510,216 @@
     <article class="chapter" id="ch1">
       <div class="chapter-header">
         <span class="chapter-num">Chapter I</span>
+        <h2 class="chapter-title">The Handwriting of Ordinances</h2>
+      </div>
+
+      <p class="chapter-body">No verse is quoted more often to say the feasts ended at the cross than Colossians 2:14. So before we study a single feast, we need to read that verse carefully, and the first rule is simple: always read a verse in its own sentence. Verse 14 is the middle of a thought that begins in verse 13 and carries through verse 17.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Colossians 2:13&ndash;17</span>
+        <span class="verse-text"><span class="vn">13</span>And you, being dead in your sins and the uncircumcision of your flesh, hath he quickened together with him, having forgiven you all trespasses; <span class="vn">14</span>Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross; <span class="vn">15</span>And having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it. <span class="vn">16</span>Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: <span class="vn">17</span>Which are a shadow of things to come; but the body is of Christ.</span>
+      </div>
+
+      <h3 class="subhead">The Subject Is Forgiveness</h3>
+      <p class="chapter-body">Verse 13 ends with "having forgiven you all trespasses." Verse 14 then explains how those trespasses were forgiven: by blotting out the handwriting and nailing it to the cross. The subject of the passage is our sin and its record. The subject is not the feast calendar.</p>
+
+      <h3 class="subhead">"Blotting Out" Is the Language of Erasing Sin</h3>
+      <p class="chapter-body">The Greek word for "blotting out" is <em class="greek">exaleiph&#333;</em>. It is the same word Peter used when he preached that sins would be wiped away.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Acts 3:19</span>
+        <span class="verse-text">Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord;</span>
+      </div>
+
+      <p class="chapter-body">What gets blotted out in the New Testament is sin and its record, not God's commandments.</p>
+
+      <h3 class="subhead">"Handwriting" Is a Record of Debt</h3>
+      <div class="term"><span class="term-name">Cheirographon:</span> the Greek word translated "handwriting." It appears only here in the entire New Testament. It means a handwritten document, and in common use it described a signed note of debt: an IOU, or a certificate of what was owed.</div>
+
+      <p class="chapter-body">What was nailed to the cross was the record of what we owed, the charges written against us because we broke God's law. It was not the law itself.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">An Illustration</span>
+        When a debt is paid, the bank stamps the note "paid in full." The law against theft does not disappear. The note of what you owed disappears.
+      </div>
+
+      <h3 class="subhead">"Against Us" and "Contrary to Us"</h3>
+      <p class="chapter-body">Paul describes the thing nailed to the cross as something that was against us. Scripture never describes God's commandments that way. It says the very opposite.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Deuteronomy 10:12&ndash;13</span>
+        <span class="verse-text"><span class="vn">12</span>And now, Israel, what doth the LORD thy God require of thee, but to fear the LORD thy God, to walk in all his ways, and to love him, and to serve the LORD thy God with all thy heart and with all thy soul, <span class="vn">13</span>To keep the commandments of the LORD, and his statutes, which I command thee this day for thy good?</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Romans 7:12</span>
+        <span class="verse-text">Wherefore the law is holy, and the commandment holy, and just, and good.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Psalm 19:7</span>
+        <span class="verse-text">The law of the LORD is perfect, converting the soul: the testimony of the LORD is sure, making wise the simple.</span>
+      </div>
+
+      <p class="chapter-body">The commandments were given "for thy good." The thing that was "against us" was the record of our guilt.</p>
+
+      <h3 class="subhead">"Ordinances" Are Decrees, and Paul Defines Them</h3>
+      <div class="term"><span class="term-name">Dogma:</span> the Greek word translated "ordinances." It means a decree. In the New Testament the noun appears only five times, and its verb form once more.</div>
+
+      <ul class="point-list">
+        <li><span class="lead">Luke 2:1:</span> "there went out a decree from Caesar Augustus, that all the world should be taxed."</li>
+        <li><span class="lead">Acts 16:4:</span> the decrees of the apostles and elders at Jerusalem.</li>
+        <li><span class="lead">Acts 17:7:</span> "these all do contrary to the decrees of Caesar."</li>
+        <li><span class="lead">Ephesians 2:15:</span> "the law of commandments contained in ordinances" (answered in Chapter IX).</li>
+        <li><span class="lead">Colossians 2:14:</span> "the handwriting of ordinances."</li>
+        <li><span class="lead">Colossians 2:20:</span> the verb form, "subject to ordinances."</li>
+      </ul>
+
+      <p class="chapter-body">Outside of Colossians 2:14 and Ephesians 2:15, the two passages in question, the word is never used for the law God gave through Moses. And Paul tells us exactly what kind of "ordinances" were troubling the Colossians, just six verses later.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Colossians 2:20&ndash;23</span>
+        <span class="verse-text"><span class="vn">20</span>Wherefore if ye be dead with Christ from the rudiments of the world, why, as though living in the world, are ye subject to ordinances, <span class="vn">21</span>(Touch not; taste not; handle not; <span class="vn">22</span>Which all are to perish with the using;) after the commandments and doctrines of men? <span class="vn">23</span>Which things have indeed a shew of wisdom in will worship, and humility, and neglecting of the body; not in any honour to the satisfying of the flesh.</span>
+      </div>
+
+      <p class="chapter-body">"Touch not; taste not; handle not" is not a quotation from Moses. Paul himself calls these "the commandments and doctrines of men." He gave the same warning at the start of the chapter.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Colossians 2:8</span>
+        <span class="verse-text">Beware lest any man spoil you through philosophy and vain deceit, after the tradition of men, after the rudiments of the world, and not after Christ.</span>
+      </div>
+
+      <p class="chapter-body">The problem in Colossae was man-made asceticism and philosophy, not the feasts of the LORD.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">What Was Nailed to the Cross</p>
+        <p>Not the law of God, and not His appointed times. <strong>What was nailed to the cross was the record of our debt</strong>, the written charges that stood against us because we broke God's law. That record was blotted out when our trespasses were forgiven. The commandments that showed us our sin still stand, and they were always given for our good.</p>
+      </div>
+
+      <h3 class="subhead">"Let No Man Therefore Judge You"</h3>
+      <p class="chapter-body">Paul's next words, beginning with "therefore," are the ones most often used against the feasts. Read carefully, they work in the opposite direction.</p>
+
+      <p class="subhead-mini">The Sabbath Is in the Same List</p>
+      <p class="chapter-body">Verse 16 names "an holyday," "the new moon," and "the sabbath days" in one breath, and it treats all three the same way.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Dilemma</p>
+        <p>If Colossians 2:16 means these days are done away, then <strong>"the sabbath days" are done away too</strong>, and the fourth commandment, written by the finger of God, has been removed along with them. Anyone who holds that the Ten Commandments still stand cannot read the verse that way.</p>
+        <p>If Colossians 2:16 does not remove the Sabbath, then by the same grammar it does not remove the holyday or the new moon either. The verse cannot be used to keep one and discard the others. It treats them identically.</p>
+      </div>
+
+      <p class="subhead-mini">"Let No Man Judge You" Is Not "You Are Released From"</p>
+      <p class="chapter-body">Paul does not say "you no longer need to keep these." He says do not let anyone sit in judgment over you in respect of them. In a congregation surrounded by pagan philosophy (Colossians 2:8) and ascetic rule-makers (Colossians 2:20&ndash;23), those keeping God's days were the ones likely to be judged. Paul is defending the believers who kept these days, not forbidding them.</p>
+
+      <p class="subhead-mini">"Which Are a Shadow of Things to Come"</p>
+      <p class="chapter-body">Here Paul uses the Greek word <em class="greek">skia</em> for "shadow" and <em class="greek">soma</em> for "body." The Moedim are a prophetic shadow outlining God's entire plan of redemption, and Christ is the substance that casts it. But notice the tense. Paul wrote this after the cross, and he does not say these days were a shadow. He says they are a shadow, present tense, of things to come, future.</p>
+
+      <p class="chapter-body">Some of those things are still to come: the trumpet and the resurrection of the dead (1 Corinthians 15:52; 1 Thessalonians 4:16), and God dwelling with His people (Revelation 21:3). A shadow of things still to come is still casting its shadow. That is why, in the chapters ahead, we will find the spring feasts looking back to what Christ has done and the fall feasts looking forward to what He will yet do.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher's Note &middot; "The Body Is of Christ"</span>
+        <p>In the KJV, the word "is" in "but the body is of Christ" is printed in italics, which means the translators supplied it. The Greek reads more literally "but the body of Christ." Some read the verse this way: let no man judge you in these things, but let the body of Christ, the church (Colossians 1:18, 24), do so.</p>
+        <p>This reading is possible but contested. It is worth mentioning, but do not make the argument rest on it. The dilemma of verse 16 and the present tense of verse 17 carry the argument without it.</p>
+      </div>
+    </article>
+
+
+    <!-- CHAPTER 2 -->
+    <article class="chapter" id="ch2">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter II</span>
+        <h2 class="chapter-title">What Changed at the Cross</h2>
+      </div>
+
+      <p class="chapter-body">If the feasts were not nailed to the cross, every believer rightly asks the next question: then what did change? We do not have to guess. The book of Hebrews is the one place in Scripture that explains in detail what changed at the cross, and it names the change plainly.</p>
+
+      <h3 class="subhead">Using Scripture's Own Words</h3>
+      <p class="chapter-body">Scripture never says "the handwriting of ordinances" means "whatever Moses wrote." Scripture never says "only what the finger of God wrote remains." That dividing line is an inference, not a statement of the text. So when we describe what changed, we will use only the words Scripture itself uses:</p>
+
+      <ul class="point-list">
+        <li><span class="lead">"The priesthood"</span> (Hebrews 7:12)</li>
+        <li><span class="lead">"The law of a carnal commandment"</span> (Hebrews 7:16)</li>
+        <li><span class="lead">"Gifts and sacrifices"</span> (Hebrews 9:9)</li>
+        <li><span class="lead">"Carnal ordinances"</span> (Hebrews 9:10)</li>
+        <li><span class="lead">"Offering for sin"</span> (Hebrews 10:18)</li>
+      </ul>
+
+      <p class="chapter-body">Every one of those terms points at the Levitical priesthood and the altar. None of them points at the Sabbath, the feasts, or the holy convocations.</p>
+
+      <h3 class="subhead">The Priesthood Changed, and the Law of the Priesthood With It</h3>
+
+      <div class="verse">
+        <span class="verse-ref">Hebrews 7:11&ndash;14</span>
+        <span class="verse-text"><span class="vn">11</span>If therefore perfection were by the Levitical priesthood, (for under it the people received the law,) what further need was there that another priest should rise after the order of Melchisedec, and not be called after the order of Aaron? <span class="vn">12</span>For the priesthood being changed, there is made of necessity a change also of the law. <span class="vn">13</span>For he of whom these things are spoken pertaineth to another tribe, of which no man gave attendance at the altar. <span class="vn">14</span>For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood.</span>
+      </div>
+
+      <p class="chapter-body">The "change also of the law" in verse 12 is explained immediately in verses 13 and 14: it concerns which tribe serves at the altar. Jesus is from Judah, and Moses gave Judah no priesthood. The law governing the priesthood had to change for Jesus to be our High Priest.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Hebrews 7:15&ndash;19</span>
+        <span class="verse-text"><span class="vn">15</span>And it is yet far more evident: for that after the similitude of Melchisedec there ariseth another priest, <span class="vn">16</span>Who is made, not after the law of a carnal commandment, but after the power of an endless life. <span class="vn">17</span>For he testifieth, Thou art a priest for ever after the order of Melchisedec. <span class="vn">18</span>For there is verily a disannulling of the commandment going before for the weakness and unprofitableness thereof. <span class="vn">19</span>For the law made nothing perfect, but the bringing in of a better hope did; by the which we draw nigh unto God.</span>
+      </div>
+
+      <p class="chapter-body">"The commandment going before" in verse 18 is "the law of a carnal commandment" in verse 16: the command that made men priests by physical descent from Aaron. That is what was disannulled. Our High Priest is made "after the power of an endless life."</p>
+
+      <h3 class="subhead">The Carnal Ordinances of the First Tabernacle</h3>
+
+      <div class="verse">
+        <span class="verse-ref">Hebrews 9:8&ndash;10</span>
+        <span class="verse-text"><span class="vn">8</span>The Holy Ghost this signifying, that the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing: <span class="vn">9</span>Which was a figure for the time then present, in which were offered both gifts and sacrifices, that could not make him that did the service perfect, as pertaining to the conscience; <span class="vn">10</span>Which stood only in meats and drinks, and divers washings, and carnal ordinances, imposed on them until the time of reformation.</span>
+      </div>
+
+      <p class="chapter-body">The "carnal ordinances" are defined by their setting: the first tabernacle, where "gifts and sacrifices" were offered. The "meats and drinks" here are the meat offerings and drink offerings of the altar service, not the daily diet. They were "imposed on them until the time of reformation," and in Christ that time has come.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Word Note &middot; Two Different Words</span>
+        The word for "ordinances" in Hebrews 9:1 and 9:10 is <strong>dikai&#333;ma</strong>, a different Greek word from the <strong>dogma</strong> of Colossians 2:14. The two passages should not be merged as if they used the same term.
+      </div>
+
+      <h3 class="subhead">No More Offering for Sin</h3>
+      <p class="chapter-body">The sacrifices for sin ended because the one sacrifice was complete.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Hebrews 10:11&ndash;12</span>
+        <span class="verse-text"><span class="vn">11</span>And every priest standeth daily ministering and offering oftentimes the same sacrifices, which can never take away sins: <span class="vn">12</span>But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Hebrews 10:18</span>
+        <span class="verse-text">Now where remission of these is, there is no more offering for sin.</span>
+      </div>
+
+      <h3 class="subhead">The Law Written on the Heart</h3>
+      <p class="chapter-body">In the same letter that describes the change of the priesthood, God promises to write His laws on the heart.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Hebrews 8:10</span>
+        <span class="verse-text">For this is the covenant that I will make with the house of Israel after those days, saith the Lord; I will put my laws into their mind, and write them in their hearts: and I will be to them a God, and they shall be to me a people:</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Jeremiah 31:33</span>
+        <span class="verse-text">But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.</span>
+      </div>
+
+      <p class="chapter-body">When Jeremiah spoke, "my law" meant the law his hearers already had: the law given through Moses. The New Covenant does not shrink that law down to two tables of stone. It moves it from stone and parchment onto the heart.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">What Hebrews Names, and What It Never Names</p>
+        <p><strong>Named as changed:</strong> the Levitical priesthood, the carnal commandment of priestly descent, the gifts and sacrifices, the carnal ordinances of the first tabernacle, and the offering for sin.</p>
+        <p><strong>Never named as changed:</strong> the Sabbath, the feasts of the LORD, the holy convocations, or anything written by Moses outside the priesthood and the altar.</p>
+      </div>
+
+      <h3 class="subhead">The Days and Their Offerings</h3>
+      <p class="chapter-body">We need to be honest about one thing. The feasts in the law came with offerings at the altar (Numbers 28&ndash;29), and the three pilgrim feasts were kept at the place God chose (Deuteronomy 16:16). Those offerings belong to the priesthood and the altar, and they are exactly what Hebrews says was fulfilled.</p>
+
+      <p class="chapter-body">What remains is everything that never depended on the altar: the holy convocation, the rest from work, the remembrance, and the rejoicing before the LORD. Paul's "let us keep the feast" (1 Corinthians 5:8) was written to a congregation in Corinth, far from any altar. Our liberty is in how a day is kept now that the altar service is fulfilled, not in whether it is kept.</p>
+
+      <h3 class="subhead">Walking in Spirit and Truth</h3>
+      <p class="chapter-body">Today, as believers keeping the faith of Jesus, we observe the Sabbath and the Moedim not to earn our salvation, nor by shedding the blood of animals. We observe them to honor our Creator, to remember His acts of deliverance, and to rehearse the prophetic events of Christ's return. The Sabbath remains a holy convocation, a weekly appointed time, where we rest in the finished work of our Savior while joyfully keeping the commandments of God. With that foundation laid, we turn to the feasts themselves.</p>
+    </article>
+
+
+    <!-- CHAPTER 3 -->
+    <article class="chapter" id="ch3">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter III</span>
         <h2 class="chapter-title">Passover &amp; Unleavened Bread</h2>
       </div>
 
@@ -483,9 +734,9 @@
 
       <p class="chapter-body">Historically, Passover remembers the mighty deliverance of Israel from the bondage of Egypt. The blood of a spotless lamb was placed on the doorposts of the Israelites so that the judgment of death would pass over their homes.</p>
 
-      <p class="chapter-body">Prophetically, the events of Egypt and the ceremonial sacrifices of the earthly tabernacle were a <em class="greek">skia</em> (the Greek word for shadow) of the ultimate deliverance. Jesus is the <em class="greek">soma</em> (the Greek word for body or substance) of this shadow. John the Baptist recognized this immediately, calling Him the Lamb of God. As the Apostle Paul confirms in 1 Corinthians 5:7, "For even Christ our passover is sacrificed for us."</p>
+      <p class="chapter-body">Prophetically, the events of Egypt and the sacrifices of the earthly tabernacle were a <em class="greek">skia</em> (the Greek word for shadow) of the ultimate deliverance. Jesus is the <em class="greek">soma</em> (the Greek word for body or substance) of this shadow. John the Baptist recognized this immediately, calling Him the Lamb of God. As the Apostle Paul confirms in 1 Corinthians 5:7, "For even Christ our passover is sacrificed for us."</p>
 
-      <p class="chapter-body">The handwriting of ordinances concerning the physical slaughter of animals was nailed to the cross. Jesus shed His blood once and for all to deliver us from the bondage of sin. Because He is our sacrifice, we no longer shed the blood of lambs, but we absolutely continue to remember and honor the day of His deliverance.</p>
+      <p class="chapter-body">The Passover lamb was slain at the altar, and that altar service belonged to the priesthood that Hebrews says has changed. Jesus shed His blood once and for all to deliver us from the bondage of sin, and "where remission of these is, there is no more offering for sin" (Hebrews 10:18). Because He is our sacrifice, we no longer shed the blood of lambs, but we absolutely continue to remember and honor the day of His deliverance.</p>
 
       <p class="chapter-body">Immediately following Passover is the Feast of Unleavened Bread.</p>
 
@@ -503,7 +754,7 @@
         <span class="verse-text">Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.</span>
       </div>
 
-      <p class="chapter-body">As believers, we physically remove the leaven from our homes during these seven days as an outward, physical expression of an inward, spiritual reality. Through Christ our past sins are washed away, and by the Holy Spirit we are actively walking in obedience to God's moral law, purging the remaining sin from our daily lives. We do not remove leaven to earn our salvation. We do it because we have been saved and freed by the perfect Passover Lamb, and we desire to walk in holiness.</p>
+      <p class="chapter-body">As believers, we physically remove the leaven from our homes during these seven days as an outward, physical expression of an inward, spiritual reality. Through Christ our past sins are washed away, and by the Holy Spirit we are actively walking in obedience to the commandments of God, purging the remaining sin from our daily lives. We do not remove leaven to earn our salvation. We do it because we have been saved and freed by the perfect Passover Lamb, and we desire to walk in holiness.</p>
 
       <div class="bonus">
         <p class="bonus-label">Bonus &middot; Rabbinic Traditions</p>
@@ -517,10 +768,10 @@
     </article>
 
 
-    <!-- CHAPTER 2 -->
-    <article class="chapter" id="ch2">
+    <!-- CHAPTER 4 -->
+    <article class="chapter" id="ch4">
       <div class="chapter-header">
-        <span class="chapter-num">Chapter II</span>
+        <span class="chapter-num">Chapter IV</span>
         <h2 class="chapter-title">First Fruits and Pentecost</h2>
       </div>
 
@@ -551,7 +802,7 @@
       <ul class="point-list">
         <li><span class="lead">Christ our First Fruits:</span> the "morrow after the sabbath" is Sunday. Jesus resurrected on the exact day the high priest was waving the first ripened barley before God. The Apostle Paul explicitly confirms this in 1 Corinthians 15:20: "But now is Christ risen from the dead, and become the firstfruits of them that slept." Jesus is the firstborn from the dead, guaranteeing a much larger harvest of believers to follow.</li>
         <li><span class="lead">The Fire of Pentecost:</span> fifty days later, as the people gathered in Jerusalem to offer the new grain of the wheat harvest, God poured out His Spirit. Acts 2:1&ndash;4 records, "And when the day of Pentecost was fully come, they were all with one accord in one place... And they were all filled with the Holy Ghost."</li>
-        <li><span class="lead">The Harmony of Sinai and Zion:</span> historically, the children of Israel arrived at Mount Sinai exactly fifty days after leaving Egypt. At Sinai the law (God's instruction) was given, written by the finger of God on tablets of stone. On the exact same day in Acts 2, the Holy Spirit was given to write that very same instruction upon the fleshy tables of the heart. Pentecost is not a replacement of God's law, but the empowerment to walk in it.</li>
+        <li><span class="lead">The Harmony of Sinai and Zion:</span> historically, the children of Israel arrived at Mount Sinai exactly fifty days after leaving Egypt. At Sinai God gave His law (His instruction): the Ten Commandments written by His own finger on tablets of stone, and His statutes and judgments given through Moses. On the exact same day in Acts 2, the Holy Spirit was given to write that very same instruction upon the fleshy tables of the heart, just as God promised: "I will put my laws into their mind, and write them in their hearts" (Hebrews 8:10). Pentecost is not a replacement of God's law, but the empowerment to walk in it.</li>
       </ul>
 
       <div class="bonus">
@@ -576,14 +827,14 @@
     </article>
 
 
-    <!-- CHAPTER 3 -->
-    <article class="chapter" id="ch3">
+    <!-- CHAPTER 5 -->
+    <article class="chapter" id="ch5">
       <div class="chapter-header">
-        <span class="chapter-num">Chapter III</span>
+        <span class="chapter-num">Chapter V</span>
         <h2 class="chapter-title">Feast of Trumpets</h2>
       </div>
 
-      <p class="chapter-body">As we continue our study, we cross a profound prophetic threshold. The spring appointed times (Passover, Unleavened Bread, First Fruits, and Pentecost) have all been perfectly fulfilled in the first coming of the Messiah. Now we arrive at the fall appointed times, which prophetically outline the exact events of Jesus' glorious return. This prophetic shift begins with the Feast of Trumpets.</p>
+      <p class="chapter-body">As we continue our study, we cross a profound prophetic threshold. The spring appointed times (Passover, Unleavened Bread, First Fruits, and Pentecost) found their great fulfillment in the first coming of the Messiah, though Jesus Himself said the Passover still waits to be "fulfilled in the kingdom of God" (Luke 22:16). Now we arrive at the fall appointed times, which prophetically outline the exact events of Jesus' glorious return. This prophetic shift begins with the Feast of Trumpets.</p>
 
       <h3 class="subhead">The Scriptural Command: A Day of Shouting</h3>
       <p class="chapter-body">In the biblical calendar a massive shift occurs in the seventh month.</p>
@@ -631,16 +882,16 @@
     </article>
 
 
-    <!-- CHAPTER 4 -->
-    <article class="chapter" id="ch4">
+    <!-- CHAPTER 6 -->
+    <article class="chapter" id="ch6">
       <div class="chapter-header">
-        <span class="chapter-num">Chapter IV</span>
+        <span class="chapter-num">Chapter VI</span>
         <h2 class="chapter-title">Day of Atonement</h2>
       </div>
 
       <p class="chapter-body">Following the awakening blast of the Feast of Trumpets, the fall appointed times progress into the most solemn and holy day of the biblical calendar: the Day of Atonement. If the Feast of Trumpets is the alarm of the King's return, the Day of Atonement prophetically points to the final Day of Judgment, the cleansing of the sanctuary, and the ultimate eradication of sin.</p>
 
-      <p class="chapter-body">As we maintain our Pronomian perspective, we see that the heavy ceremonial works of this day, the blood of bulls and goats, were completely fulfilled by our Great High Priest. Yet the divine appointment of the day remains for the saints as a solemn rehearsal of God's final justice and mercy.</p>
+      <p class="chapter-body">As we maintain our Pronomian perspective, we see that the gifts and sacrifices of this day, the blood of bulls and goats offered by the Levitical high priest, were completely fulfilled by our Great High Priest. Yet the divine appointment of the day remains for the saints as a solemn rehearsal of God's final justice and mercy.</p>
 
       <h3 class="subhead">The Scriptural Command: A Day of Affliction</h3>
       <div class="verse">
@@ -650,7 +901,7 @@
 
       <p class="chapter-body">The command to "afflict your souls" is universally understood biblically as fasting, abstaining from food and water to demonstrate complete reliance on God and deep repentance. It is a day of absolute rest, a Sabbath of Sabbaths.</p>
 
-      <p class="chapter-body">The ceremonial "handwriting of ordinances" for this day is detailed in Leviticus 16. It was the only day of the year the High Priest was permitted to enter the Holy of Holies. He cast lots over two goats. One was the "Lord's goat," whose blood was shed and sprinkled on the Mercy Seat to temporarily cover the sins of the nation. The other was the "scapegoat." The High Priest would lay his hands on the scapegoat, confess the sins of Israel over it, and send it away alive into the wilderness, visually removing the sin from the camp.</p>
+      <p class="chapter-body">The priestly service for this day is detailed in Leviticus 16. These are the "gifts and sacrifices" and "carnal ordinances" of the first tabernacle that Hebrews says were "imposed on them until the time of reformation" (Hebrews 9:9&ndash;10). It was the only day of the year the High Priest was permitted to enter the Holy of Holies. He cast lots over two goats. One was the "Lord's goat," whose blood was shed and sprinkled on the Mercy Seat to temporarily cover the sins of the nation. The other was the "scapegoat." The High Priest would lay his hands on the scapegoat, confess the sins of Israel over it, and send it away alive into the wilderness, visually removing the sin from the camp.</p>
 
       <h3 class="subhead">The Prophetic Fulfillment: The True Mercy Seat</h3>
       <p class="chapter-body">The Book of Hebrews masterfully explains how the earthly rituals of the Day of Atonement were a shadow of Jesus' heavenly ministry. The blood of animals could only temporarily push sin forward; it could never erase it.</p>
@@ -675,16 +926,16 @@
         <p>The early Christian apologists frequently used the typology of the Day of Atonement to explain the Gospel to their Jewish contemporaries.</p>
         <ul class="point-list">
           <li><span class="lead">The Two Goats as the Two Comings:</span> in the <em>Epistle of Barnabas</em> (written between 70 and 132 AD) and later in the writings of Justin Martyr (in his <em>Dialogue with Trypho</em>), the early church fathers taught that the two goats of Leviticus 16 represented the two advents of Christ. The first goat, slaughtered as a sin offering, represented His first coming in humility, suffering, and death. The second goat, sent away bearing the sins of the people, represented His second coming. They noted that both goats had to be identical in appearance, prophetically pointing to the fact that the same Jesus who was pierced and rejected will be the exact same Jesus who returns in glory, recognized by those who pierced Him (Zechariah 12:10).</li>
-          <li><span class="lead">The True Fast:</span> while acknowledging the physical fast, early theologians like Origen emphasized that the true "affliction of the soul" was abstaining from sin. They taught that keeping the physical fast was meaningless if the believer did not also fast from malice, greed, and worldly desires, marrying the physical appointed time with the spiritual transformation required by the moral law.</li>
+          <li><span class="lead">The True Fast:</span> while acknowledging the physical fast, early theologians like Origen emphasized that the true "affliction of the soul" was abstaining from sin. They taught that keeping the physical fast was meaningless if the believer did not also fast from malice, greed, and worldly desires, marrying the physical appointed time with the spiritual transformation required by the commandments of God.</li>
         </ul>
       </div>
     </article>
 
 
-    <!-- CHAPTER 5 -->
-    <article class="chapter" id="ch5">
+    <!-- CHAPTER 7 -->
+    <article class="chapter" id="ch7">
       <div class="chapter-header">
-        <span class="chapter-num">Chapter V</span>
+        <span class="chapter-num">Chapter VII</span>
         <h2 class="chapter-title">Feast of Tabernacles and the Eighth Day</h2>
       </div>
 
@@ -734,6 +985,404 @@
         </ul>
       </div>
     </article>
+
+
+    <!-- CHAPTER 8 -->
+    <article class="chapter" id="ch8">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter VIII</span>
+        <h2 class="chapter-title">The Feasts After the Cross</h2>
+      </div>
+
+      <p class="chapter-body">We have walked through each appointed time and seen how it points to Christ. Now we ask a practical question: how did Jesus and the apostles treat these days after the cross? If the feasts had been nailed to the cross, we would expect the apostles to set them aside. The record shows the opposite.</p>
+
+      <h3 class="subhead">Jesus Expects to Keep the Passover Again</h3>
+
+      <div class="verse">
+        <span class="verse-ref">Luke 22:15&ndash;16</span>
+        <span class="verse-text"><span class="vn">15</span>And he said unto them, With desire I have desired to eat this passover with you before I suffer: <span class="vn">16</span>For I say unto you, I will not any more eat thereof, until it be fulfilled in the kingdom of God.</span>
+      </div>
+
+      <p class="chapter-body">Jesus does not say He will never eat the Passover again. He says "until." He looks ahead to eating it again when it is fulfilled in the kingdom of God (see also Matthew 26:29).</p>
+
+      <h3 class="subhead">Paul Told a Gentile Congregation to Keep the Feast</h3>
+
+      <div class="verse">
+        <span class="verse-ref">1 Corinthians 5:7&ndash;8</span>
+        <span class="verse-text"><span class="vn">7</span>Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Christ our passover is sacrificed for us: <span class="vn">8</span>Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.</span>
+      </div>
+
+      <p class="chapter-body">Christ our Passover is sacrificed. Paul's conclusion is not "therefore the feast is over." It is "therefore let us keep the feast," with a heart free of malice. This was written to Corinth, far from any altar.</p>
+
+      <h3 class="subhead">Paul and Luke Marked Time by the Feasts</h3>
+
+      <div class="verse">
+        <span class="verse-ref">Acts 20:6</span>
+        <span class="verse-text">And we sailed away from Philippi after the days of unleavened bread, and came unto them to Troas in five days; where we abode seven days.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Acts 20:16</span>
+        <span class="verse-text">For Paul had determined to sail by Ephesus, because he would not spend the time in Asia: for he hasted, if it were possible for him, to be at Jerusalem the day of Pentecost.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Acts 27:9</span>
+        <span class="verse-text">Now when much time was spent, and when sailing was now dangerous, because the fast was now already past, Paul admonished them,</span>
+      </div>
+
+      <p class="chapter-body">"The fast" in Acts 27:9 is the Day of Atonement, the one fast day commanded in the law (Leviticus 23:27). Luke marks the season of the year by it without needing to explain it.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Acts 18:21</span>
+        <span class="verse-text">But bade them farewell, saying, I must by all means keep this feast that cometh in Jerusalem: but I will return again unto you, if God will. And he sailed from Ephesus.</span>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher's Note &middot; Acts 18:21</span>
+        The words "I must by all means keep this feast that cometh in Jerusalem" are in the KJV and the Received Text, but they are missing from many older Greek manuscripts and from most modern translations. Expect someone to point this out. Use Acts 20:16 and 1 Corinthians 5:8 as the primary evidence, and treat Acts 18:21 as supporting only.
+      </div>
+
+      <h3 class="subhead">Paul Believed All That Was Written in the Law</h3>
+
+      <div class="verse">
+        <span class="verse-ref">Acts 24:14</span>
+        <span class="verse-text">But this I confess unto thee, that after the way which they call heresy, so worship I the God of my fathers, believing all things which are written in the law and in the prophets:</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Acts 25:8</span>
+        <span class="verse-text">While he answered for himself, Neither against the law of the Jews, neither against the temple, nor yet against Caesar, have I offended any thing at all.</span>
+      </div>
+
+      <p class="chapter-body">If Paul had taught that the writings of Moses were nailed to the cross, he could not have said either of these in his defense before Felix and Festus.</p>
+
+      <h3 class="subhead">The Feasts and Sabbaths Continue Into the Age to Come</h3>
+
+      <div class="verse">
+        <span class="verse-ref">Zechariah 14:16&ndash;19</span>
+        <span class="verse-text"><span class="vn">16</span>And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles. <span class="vn">17</span>And it shall be, that whoso will not come up of all the families of the earth unto Jerusalem to worship the King, the LORD of hosts, even upon them shall be no rain. <span class="vn">18</span>And if the family of Egypt go not up, and come not, that have no rain; there shall be the plague, wherewith the LORD will smite the heathen that come not up to keep the feast of tabernacles. <span class="vn">19</span>This shall be the punishment of Egypt, and the punishment of all nations that come not up to keep the feast of tabernacles.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Isaiah 66:22&ndash;23</span>
+        <span class="verse-text"><span class="vn">22</span>For as the new heavens and the new earth, which I will make, shall remain before me, saith the LORD, so shall your seed and your name remain. <span class="vn">23</span>And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith the LORD.</span>
+      </div>
+
+      <p class="chapter-body">A feast that was nailed to the cross would not be kept by all nations under the reign of the King.</p>
+    </article>
+
+
+    <!-- CHAPTER 9 -->
+    <article class="chapter" id="ch9">
+      <div class="chapter-header">
+        <span class="chapter-num">Chapter IX</span>
+        <h2 class="chapter-title">Answering the Objections</h2>
+      </div>
+
+      <p class="chapter-body">Believers who keep God's appointed times will be asked about it, and Peter tells us to "be ready always to give an answer to every man that asketh you a reason of the hope that is in you with meekness and fear" (1 Peter 3:15). This chapter takes up the objections most often raised, beginning with the one that shapes most of the others.</p>
+
+      <h3 class="subhead">The Finger of God Objection</h3>
+      <p class="chapter-body">Stated fairly, the position is this:</p>
+
+      <ol class="summary-list">
+        <li>Only the Ten Commandments were written by the finger of God (Exodus 31:18).</li>
+        <li>Everything else was written by the hand of Moses.</li>
+        <li>Colossians 2:14 says the "handwriting of ordinances" was nailed to the cross.</li>
+        <li>Therefore everything Moses wrote is done away, including the feasts and the holy convocations.</li>
+      </ol>
+
+      <div class="verse">
+        <span class="verse-ref">Exodus 31:18</span>
+        <span class="verse-text">And he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of God.</span>
+      </div>
+
+      <p class="chapter-body">The Ten Commandments truly were written by the finger of God. Nobody disputes that. The question is whether Scripture ever teaches that this is the dividing line between what stands and what was nailed to the cross. Chapter I showed that the "handwriting" of Colossians 2:14 is the record of our debt, not the writing of Moses. Now we look at how Jesus and the apostles treated what Moses wrote.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">The Standard Cuts Both Ways</p>
+        <p>Those who hold this view often ask that we not use labels Scripture does not use. That is a fair request, and we should honor it completely. But the same rule has to apply in both directions. <strong>Scripture never says "the handwriting of ordinances" means "whatever Moses wrote," and it never says "only what the finger of God wrote remains."</strong> That dividing line is an inference, not a statement of the text. If we are held to Scripture's own vocabulary, so is the finger-only position.</p>
+      </div>
+
+      <h3 class="subhead">Jesus Refuses to Separate Moses From God</h3>
+      <p class="chapter-body">The finger-only position depends on separating "what God wrote" from "what Moses wrote." Jesus Himself refuses that separation.</p>
+
+      <p class="subhead-mini">He Calls the Words of Moses "the Commandment of God"</p>
+
+      <div class="verse">
+        <span class="verse-ref">Mark 7:8&ndash;13</span>
+        <span class="verse-text"><span class="vn">8</span>For laying aside the commandment of God, ye hold the tradition of men, as the washing of pots and cups: and many other such like things ye do. <span class="vn">9</span>And he said unto them, Full well ye reject the commandment of God, that ye may keep your own tradition. <span class="vn">10</span>For Moses said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death: <span class="vn">11</span>But ye say, If a man shall say to his father or mother, It is Corban, that is to say, a gift, by whatsoever thou mightest be profited by me; he shall be free. <span class="vn">12</span>And ye suffer him no more to do ought for his father or his mother; <span class="vn">13</span>Making the word of God of none effect through your tradition, which ye have delivered: and many such like things do ye.</span>
+      </div>
+
+      <p class="chapter-body">Look closely at verse 10. Jesus quotes two commands. "Honour thy father and thy mother" is from the Ten (Exodus 20:12). "Whoso curseth father or mother, let him die the death" is not from the Ten. It is from the writing of Moses.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Exodus 21:17</span>
+        <span class="verse-text">And he that curseth his father, or his mother, shall surely be put to death.</span>
+      </div>
+
+      <p class="chapter-body">Jesus introduces both with "Moses said," and He calls both "the commandment of God" (verse 9) and "the word of God" (verse 13). To Jesus, what Moses wrote is what God commanded.</p>
+
+      <p class="subhead-mini">He Ties Belief in Himself to Belief in Moses' Writings</p>
+
+      <div class="verse">
+        <span class="verse-ref">John 5:45&ndash;47</span>
+        <span class="verse-text"><span class="vn">45</span>Do not think that I will accuse you to the Father: there is one that accuseth you, even Moses, in whom ye trust. <span class="vn">46</span>For had ye believed Moses, ye would have believed me: for he wrote of me. <span class="vn">47</span>But if ye believe not his writings, how shall ye believe my words?</span>
+      </div>
+
+      <p class="subhead-mini">The Two Greatest Commandments Are in Moses' Writing</p>
+
+      <div class="verse">
+        <span class="verse-ref">Matthew 22:36&ndash;40</span>
+        <span class="verse-text"><span class="vn">36</span>Master, which is the great commandment in the law? <span class="vn">37</span>Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind. <span class="vn">38</span>This is the first and great commandment. <span class="vn">39</span>And the second is like unto it, Thou shalt love thy neighbour as thyself. <span class="vn">40</span>On these two commandments hang all the law and the prophets.</span>
+      </div>
+
+      <p class="chapter-body">Neither of these is in the Ten Commandments. Both come from the books Moses wrote.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Deuteronomy 6:5</span>
+        <span class="verse-text">And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 19:18</span>
+        <span class="verse-text">Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD.</span>
+      </div>
+
+      <p class="chapter-body">If everything outside the finger of God was nailed to the cross, then the first and great commandment was nailed to the cross. No one believes that.</p>
+
+      <p class="subhead-mini">Paul Sums Up the Ten With a Command From Moses' Writing</p>
+
+      <div class="verse">
+        <span class="verse-ref">Romans 13:8&ndash;10</span>
+        <span class="verse-text"><span class="vn">8</span>Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law. <span class="vn">9</span>For this, Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet; and if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself. <span class="vn">10</span>Love worketh no ill to his neighbour: therefore love is the fulfilling of the law.</span>
+      </div>
+
+      <p class="chapter-body">Paul uses Leviticus 19:18 as the summary of the Ten. He did not treat the writing of Moses as a lesser, expired category.</p>
+
+      <p class="subhead-mini">"The Law of Moses" Is "the Law of the LORD"</p>
+
+      <div class="verse">
+        <span class="verse-ref">Nehemiah 8:1</span>
+        <span class="verse-text">And all the people gathered themselves together as one man into the street that was before the water gate; and they spake unto Ezra the scribe to bring the book of the law of Moses, which the LORD had commanded to Israel.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Nehemiah 8:8</span>
+        <span class="verse-text">So they read in the book in the law of God distinctly, and gave the sense, and caused them to understand the reading.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">2 Chronicles 34:14</span>
+        <span class="verse-text">And when they brought out the money that was brought into the house of the LORD, Hilkiah the priest found a book of the law of the LORD given by Moses.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Luke 2:22&ndash;24</span>
+        <span class="verse-text"><span class="vn">22</span>And when the days of her purification according to the law of Moses were accomplished, they brought him to Jerusalem, to present him to the Lord; <span class="vn">23</span>(As it is written in the law of the Lord, Every male that openeth the womb shall be called holy to the Lord;) <span class="vn">24</span>And to offer a sacrifice according to that which is said in the law of the Lord, A pair of turtledoves, or two young pigeons.</span>
+      </div>
+
+      <p class="chapter-body">Luke calls it "the law of Moses" in verse 22 and "the law of the Lord" in verses 23 and 24. Same law, two names. Moses was the writer; the LORD was the Author.</p>
+
+      <p class="subhead-mini">God Said He Wrote More Than the Tables</p>
+
+      <div class="verse">
+        <span class="verse-ref">Exodus 24:12</span>
+        <span class="verse-text">And the LORD said unto Moses, Come up to me into the mount, and be there: and I will give thee tables of stone, and a law, and commandments which I have written; that thou mayest teach them.</span>
+      </div>
+
+      <p class="chapter-body">God speaks of the tables of stone and "a law, and commandments which I have written." God does not draw the line where the finger-only position draws it.</p>
+
+      <h3 class="subhead">If Only the Tables Remain</h3>
+
+      <p class="subhead-mini">Jesus Protected the "Least" Commandments</p>
+
+      <div class="verse">
+        <span class="verse-ref">Matthew 5:17&ndash;19</span>
+        <span class="verse-text"><span class="vn">17</span>Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. <span class="vn">18</span>For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled. <span class="vn">19</span>Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, he shall be called great in the kingdom of heaven.</span>
+      </div>
+
+      <p class="chapter-body">No one would call the Ten Commandments "the least commandments." Jesus is protecting the smallest commands of the law, which means He is speaking about far more than the two tables.</p>
+
+      <p class="subhead-mini">Consider What Would Disappear</p>
+      <p class="chapter-body">If only the words written by the finger of God remain, then none of the following would have any standing, because none of them are in the Ten:</p>
+
+      <ul class="point-list">
+        <li>Love the LORD with all thine heart (Deuteronomy 6:5)</li>
+        <li>Love thy neighbour as thyself (Leviticus 19:18)</li>
+        <li>The prohibitions against incest (Leviticus 18:6&ndash;18)</li>
+        <li>The prohibition against giving children to Molech (Leviticus 18:21)</li>
+        <li>The prohibition against bestiality (Leviticus 18:23)</li>
+        <li>The prohibitions against witchcraft and consulting the dead (Deuteronomy 18:10&ndash;12)</li>
+      </ul>
+
+      <div class="keypoint">
+        <p class="keypoint-label">A Test Case</p>
+        <p>The New Testament never names bestiality directly. The only explicit prohibitions in all of Scripture are in the writings of Moses (Exodus 22:19; Leviticus 18:23; Leviticus 20:15&ndash;16; Deuteronomy 27:21). <strong>Under the finger-only position, that prohibition was nailed to the cross.</strong></p>
+      </div>
+
+      <p class="chapter-body">And Paul enforced the writing of Moses in the church at Corinth.</p>
+
+      <div class="verse">
+        <span class="verse-ref">1 Corinthians 5:1</span>
+        <span class="verse-text">It is reported commonly that there is fornication among you, and such fornication as is not so much as named among the Gentiles, that one should have his father's wife.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Leviticus 18:8</span>
+        <span class="verse-text">The nakedness of thy father's wife shalt thou not uncover: it is thy father's nakedness.</span>
+      </div>
+
+      <p class="chapter-body">That standard is not in the Ten. It is in the writing of Moses, and Paul treats it as binding on a Gentile congregation after the cross.</p>
+
+      <p class="subhead-mini">The Sabbath Assembly Is in Moses' Writing, Not on the Tables</p>
+      <p class="chapter-body">The fourth commandment on the tables commands the Sabbath rest.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Exodus 20:8&ndash;11</span>
+        <span class="verse-text"><span class="vn">8</span>Remember the sabbath day, to keep it holy. <span class="vn">9</span>Six days shalt thou labour, and do all thy work: <span class="vn">10</span>But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: <span class="vn">11</span>For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span>
+      </div>
+
+      <p class="chapter-body">The command that the Sabbath is "an holy convocation," a commanded assembly, is in Leviticus 23:3, which we read in the Introduction. Under the finger-only position, the Sabbath rest remains but the Sabbath assembly was nailed to the cross. Yet Jesus kept that assembly as His custom, and the apostles expected the Gentiles to be in it.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Luke 4:16</span>
+        <span class="verse-text">And he came to Nazareth, where he had been brought up: and, as his custom was, he went into the synagogue on the sabbath day, and stood up for to read.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Acts 15:21</span>
+        <span class="verse-text">For Moses of old time hath in every city them that preach him, being read in the synagogues every sabbath day.</span>
+      </div>
+      <div class="verse">
+        <span class="verse-ref">Hebrews 10:24&ndash;25</span>
+        <span class="verse-text"><span class="vn">24</span>And let us consider one another to provoke unto love and to good works: <span class="vn">25</span>Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.</span>
+      </div>
+
+      <p class="subhead-mini">God Forbade Taking Away From His Words</p>
+
+      <div class="verse">
+        <span class="verse-ref">Deuteronomy 4:2</span>
+        <span class="verse-text">Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of the LORD your God which I command you.</span>
+      </div>
+
+      <p class="subhead-mini">Paul Called Moses' Writings Profitable After the Cross</p>
+
+      <div class="verse">
+        <span class="verse-ref">2 Timothy 3:15&ndash;17</span>
+        <span class="verse-text"><span class="vn">15</span>And that from a child thou hast known the holy scriptures, which are able to make thee wise unto salvation through faith which is in Christ Jesus. <span class="vn">16</span>All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: <span class="vn">17</span>That the man of God may be perfect, throughly furnished unto all good works.</span>
+      </div>
+
+      <p class="chapter-body">The "holy scriptures" Timothy knew from a child were the Law, the Prophets, and the Writings. Paul, decades after the cross, calls all of it profitable "for instruction in righteousness."</p>
+
+      <h3 class="subhead">Ephesians 2:15: "The Law of Commandments Contained in Ordinances"</h3>
+      <p class="chapter-body">This passage uses the same word <em class="greek">dogma</em> as Colossians 2:14, so it often comes up.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Ephesians 2:14&ndash;16</span>
+        <span class="verse-text"><span class="vn">14</span>For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us; <span class="vn">15</span>Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace; <span class="vn">16</span>And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby:</span>
+      </div>
+
+      <ul class="point-list">
+        <li><span class="lead">What is abolished is "the enmity."</span> The whole passage is about hostility between Jew and Gentile, and the result is "one new man" at peace, not a man without God's law.</li>
+        <li><span class="lead">The law God gave never built a wall to keep the stranger out.</span> It did the opposite.</li>
+      </ul>
+
+      <div class="verse">
+        <span class="verse-ref">Numbers 15:15&ndash;16</span>
+        <span class="verse-text"><span class="vn">15</span>One ordinance shall be both for you of the congregation, and also for the stranger that sojourneth with you, an ordinance for ever in your generations: as ye are, so shall the stranger be before the LORD. <span class="vn">16</span>One law and one manner shall be for you, and for the stranger that sojourneth with you.</span>
+      </div>
+
+      <p class="chapter-body">A "middle wall of partition" did exist in the temple of Paul's day, and it nearly cost Paul his life. He was accused of bringing a Gentile past it, and the Gentile named was from Ephesus, the very city this letter was written to.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Acts 21:28&ndash;29</span>
+        <span class="verse-text"><span class="vn">28</span>Crying out, Men of Israel, help: This is the man, that teacheth all men every where against the people, and the law, and this place: and further brought Greeks also into the temple, and hath polluted this holy place. <span class="vn">29</span>(For they had seen before with him in the city Trophimus an Ephesian, whom they supposed that Paul had brought into the temple.)</span>
+      </div>
+
+      <p class="chapter-body">Paul wrote Ephesians as a prisoner (Ephesians 3:1; 4:1), in the imprisonment that began with this accusation. Josephus, a first-century Jewish historian, describes that barrier.</p>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Josephus &middot; Wars of the Jews, Book 5, Chapter 5, Section 2 (Whiston)</span>
+        <span class="hist-quote">"When you go through these [first] cloisters, unto the second [court of the] temple, there was a partition made of stone all round, whose height was three cubits: its construction was very elegant; upon it stood pillars, at equal distances from one another, declaring the law of purity, some in Greek, and some in Roman letters, that 'no foreigner should go within that sanctuary;' for that second [court of the] temple was called 'the Sanctuary;'"</span>
+      </div>
+
+      <div class="hist-note">
+        <span class="hist-note-label">Teacher's Note &middot; The Middle Wall</span>
+        Paul does not explicitly say "the middle wall" is the temple barrier, so treat that identification as a strong historical reading, not a stated fact of the text. The argument does not depend on it. The passage itself says what was abolished was "the enmity," and the law of God itself commanded "one law" for the Israelite and the stranger (Numbers 15:16). A barrier that excluded the stranger on pain of death was built by men, not commanded by Moses.
+      </div>
+
+      <h3 class="subhead">Deuteronomy 31:26: "A Witness Against Thee"</h3>
+      <p class="chapter-body">The book of the law was placed beside the ark as a witness against Israel. Some teach that this book is the "handwriting" nailed to the cross.</p>
+
+      <div class="verse">
+        <span class="verse-ref">Deuteronomy 31:24&ndash;26</span>
+        <span class="verse-text"><span class="vn">24</span>And it came to pass, when Moses had made an end of writing the words of this law in a book, until they were finished, <span class="vn">25</span>That Moses commanded the Levites, which bare the ark of the covenant of the LORD, saying, <span class="vn">26</span>Take this book of the law, and put it in the side of the ark of the covenant of the LORD your God, that it may be there for a witness against thee.</span>
+      </div>
+
+      <ul class="point-list">
+        <li><span class="lead">That book contained the Ten Commandments themselves</span> (Deuteronomy 5:6&ndash;21), along with the Shema and the first and great commandment (Deuteronomy 6:4&ndash;5). If the whole book was nailed to the cross, then the words of the finger of God recorded in it went with it, and so did the first and great commandment. The finger-only position cannot use this verse without harming itself.</li>
+        <li><span class="lead">What the book was, in verse 26, was a witness against Israel:</span> the testimony of their guilt when they broke the covenant. That is exactly what Colossians 2:14 says was taken away, the record that was "against us." The witness against us was removed. The words God commanded were not.</li>
+      </ul>
+
+      <h3 class="subhead">Galatians 4:10: "Ye Observe Days, and Months, and Times, and Years"</h3>
+
+      <div class="verse">
+        <span class="verse-ref">Galatians 4:8&ndash;11</span>
+        <span class="verse-text"><span class="vn">8</span>Howbeit then, when ye knew not God, ye did service unto them which by nature are no gods. <span class="vn">9</span>But now, after that ye have known God, or rather are known of God, how turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage? <span class="vn">10</span>Ye observe days, and months, and times, and years. <span class="vn">11</span>I am afraid of you, lest I have bestowed upon you labour in vain.</span>
+      </div>
+
+      <p class="chapter-body">These were Gentiles who formerly served "them which by nature are no gods" (verse 8). Paul says they are turning again to what they came out of. Gentiles cannot turn "again" to the feasts of the LORD, because they never kept them before they knew God. They were returning to the pagan calendar they had left behind. For more on that calendar, see <em>A Warning Against Pagan Holidays</em>.</p>
+
+      <h3 class="subhead">Romans 14:5: "One Man Esteemeth One Day Above Another"</h3>
+      <p class="chapter-body">The dispute in Romans 14 is between those who eat meat and those who eat only herbs (Romans 14:2), over meat that may have been offered to idols, and over private fast days. The Sabbath and the feasts of the LORD are never named in the chapter. See <em>Which Laws Remain</em> for the full treatment.</p>
+    </article>
+
+
+    <!-- SUMMARY -->
+    <article class="chapter" id="summary">
+      <div class="chapter-header">
+        <span class="chapter-num">Summary</span>
+        <h2 class="chapter-title">The Teaching in Brief</h2>
+      </div>
+
+      <ol class="summary-list">
+        <li><span class="lead">The Moedim are the LORD's feasts.</span> God calls them "my feasts," and the weekly Sabbath heads the list as a holy convocation (Leviticus 23:1&ndash;4).</li>
+        <li><span class="lead">Colossians 2:14 is about forgiveness.</span> The "handwriting" (<em>cheirographon</em>) is the record of our debt, blotted out when our trespasses were forgiven (Colossians 2:13; Acts 3:19).</li>
+        <li><span class="lead">What was nailed was "against us."</span> God's commandments were given "for thy good" (Deuteronomy 10:13). The record of our guilt was against us.</li>
+        <li><span class="lead">Paul defines the "ordinances" in the same chapter</span> as "the commandments and doctrines of men": touch not, taste not, handle not (Colossians 2:20&ndash;22).</li>
+        <li><span class="lead">Colossians 2:16 lists the Sabbath with the feasts.</span> If the verse removes the feasts, it removes the fourth commandment too. The finger-only position cannot stand on it.</li>
+        <li><span class="lead">They "are" a shadow of things "to come."</span> Present tense, written after the cross (Colossians 2:17).</li>
+        <li><span class="lead">Hebrews names what changed:</span> the priesthood, the carnal commandment of descent, the gifts and sacrifices, and the offering for sin (Hebrews 7:12&ndash;18; 9:9&ndash;10; 10:18). It never names the Sabbath, the feasts, or the convocations.</li>
+        <li><span class="lead">Our liberty is in how, not whether.</span> The altar offerings of each feast are fulfilled in Christ. The convocation, the rest, the remembrance, and the rejoicing remain.</li>
+        <li><span class="lead">Jesus calls Moses' words "the commandment of God" and "the word of God"</span> (Mark 7:9&ndash;13), including a command not on the tables (Exodus 21:17).</li>
+        <li><span class="lead">The two greatest commandments are in Moses' writing</span> (Deuteronomy 6:5; Leviticus 19:18; Matthew 22:36&ndash;40), and Paul enforced Moses' writing in a Gentile church (1 Corinthians 5:1; Leviticus 18:8).</li>
+        <li><span class="lead">Paul kept and taught the feasts after the cross</span> (1 Corinthians 5:8; Acts 20:16; Acts 27:9) and testified that he believed all that was written in the law (Acts 24:14).</li>
+        <li><span class="lead">The feasts continue into the kingdom</span> (Zechariah 14:16&ndash;19; Isaiah 66:23; Luke 22:16).</li>
+      </ol>
+
+      <div class="keypoint">
+        <p class="keypoint-label">In One Sentence</p>
+        <p>The priesthood changed and the sacrifices were fulfilled, because Hebrews says so in its own words; everything else God commanded through Moses still stands, because Jesus called it the commandment of God and no apostle ever said otherwise.</p>
+      </div>
+
+      <div class="bonus">
+        <p class="bonus-label">For Further Study &middot; Word Studies and Sources</p>
+        <ul class="point-list">
+          <li><span class="lead"><em>Cheirographon</em>,</span> "handwriting" (Strong's G5498): <a href="https://www.blueletterbible.org/lexicon/g5498/kjv/tr/0-1/">Blue Letter Bible lexicon</a></li>
+          <li><span class="lead"><em>Dogma</em>,</span> "ordinances, decree" (Strong's G1378): <a href="https://www.blueletterbible.org/lexicon/g1378/kjv/tr/0-1/">Blue Letter Bible lexicon</a></li>
+          <li><span class="lead"><em>Exaleiph&#333;</em>,</span> "blot out" (Strong's G1813): <a href="https://www.blueletterbible.org/lexicon/g1813/kjv/tr/0-1/">Blue Letter Bible lexicon</a></li>
+          <li><span class="lead"><em>Dikai&#333;ma</em>,</span> "ordinance" in Hebrews 9 (Strong's G1345): <a href="https://www.blueletterbible.org/lexicon/g1345/kjv/tr/0-1/">Blue Letter Bible lexicon</a></li>
+          <li><span class="lead">Josephus,</span> <em>Wars of the Jews</em>, Book 5, Chapter 5, Section 2 (Whiston): <a href="https://lexundria.com/j_bj/5.193-194/wst">Lexundria, Wars 5.193&ndash;194</a></li>
+          <li><span class="lead">The temple barrier:</span> <a href="https://www.internationalstandardbible.com/P/partition-the-middle-wall-of.html">International Standard Bible Encyclopedia, "Partition, the Middle Wall of"</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- COMPANION TEACHINGS -->
+    <aside class="companion">
+      <p class="companion-label">Companion Teachings</p>
+      <a class="companion-link" href="./002%20-%20Which%20Laws%20Remain.html">
+        <span class="companion-title">Which Laws Remain</span>
+        <span class="companion-note">The same foundation applied to the whole law: the certificate of debt nailed to the cross, the change of priesthood, and a full answer on Romans 14.</span>
+        <span class="companion-read">Read the Teaching &#8594;</span>
+      </a>
+      <a class="companion-link" href="./053_-_Keeping_the_Feasts_in_the_Order_of_Melchizedek.html">
+        <span class="companion-title">Keeping the Feasts in the Order of Melchizedek</span>
+        <span class="companion-note">How to keep the Sabbath and every appointed time now that the altar is finished, day by day, under a better priesthood.</span>
+        <span class="companion-read">Read the Teaching &#8594;</span>
+      </a>
+    </aside>
 
   </div><!-- end doc-body -->
 

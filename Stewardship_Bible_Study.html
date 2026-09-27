@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="A monthly Bible study on stewardship: the steward in Scripture from the garden of Eden to the day of account, with every Scripture quoted in full from the King James Bible.">
+<title>Stewardship · Monthly Bible Study · October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.2rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.9rem;
+  }
+  .header-ornament { font-size: 1.3rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 0.9rem; }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 0.7rem;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3.2rem 3rem; }
+
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .preamble p { font-size: 1.07rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+  .preamble p + p { margin-top: 0.9rem; }
+
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.4rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.95rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); min-width: 2.1rem; flex-shrink: 0; }
+
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { margin-bottom: 1.1rem; }
+  .article-num {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .article-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .article-body { font-size: 1.07rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.2rem; }
+  .article-body em, .preamble em, .teacher-note em { font-style: italic; }
+  .ref-inline { white-space: nowrap; }
+
+  /* ── SCRIPTURE ── */
+  .scripture-block {
+    margin: 1.4rem 0 1.5rem;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    box-shadow: 0 1px 0 #E8D49A inset;
+  }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+  .scripture-entry { margin-bottom: 1rem; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .scripture-text { display: block; font-style: italic; font-size: 1.03rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── HISTORICAL QUOTE ── */
+  .histquote {
+    margin: 1.4rem 0 1.5rem;
+    padding: 1.3rem 1.5rem;
+    background: var(--parchment);
+    border: 1px solid #D4B97A77;
+    border-left: 4px solid var(--crimson-lt);
+  }
+  .histquote-ref { display: block; font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--crimson); font-weight: 600; margin-bottom: 0.35rem; }
+  .histquote-text { display: block; font-style: italic; font-size: 1.03rem; line-height: 1.78; color: var(--ink-mid); }
+  .histquote-src { display: block; margin-top: 0.7rem; font-size: 0.88rem; line-height: 1.55; color: var(--ink-soft); }
+
+  /* ── KEY POINT ── */
+  .keypoint {
+    margin: 1.6rem 0 0.4rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--cream);
+    border-left: 4px solid var(--crimson-lt);
+    border-top: 1px solid #D4B97A55;
+    border-right: 1px solid #D4B97A55;
+    border-bottom: 1px solid #D4B97A55;
+  }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.55rem; }
+  .keypoint p { font-size: 1.03rem; line-height: 1.75; color: var(--ink-mid); }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── BONUS PANEL ── */
+  .bonus-panel {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C;
+    border-top: 3px solid var(--crimson-lt);
+  }
+  .bonus-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson-lt); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+  .bonus-star { color: var(--gold); font-size: 0.85rem; }
+  .bonus-body { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); text-align: justify; }
+
+  /* ── TABLE ── */
+  .table-wrap { margin: 1.4rem 0 1.5rem; overflow-x: auto; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.97rem; line-height: 1.5; background: var(--parchment); }
+  .data-table th {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cream); background: var(--crimson); text-align: left; padding: 0.6rem 0.7rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .data-table td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #D4B97A66; color: var(--ink-mid); vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: var(--cream); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .data-table td:last-child { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.04em; color: var(--gold); white-space: nowrap; }
+
+  /* ── CHARGE LIST ── */
+  .charge-list { list-style: none; counter-reset: c; margin: 1.2rem 0 1.4rem; }
+  .charge-list li {
+    counter-increment: c;
+    position: relative;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    margin-bottom: 0.6rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold-light);
+    font-size: 1.04rem; line-height: 1.72; color: var(--ink-mid);
+  }
+  .charge-list li::before {
+    content: counter(c);
+    position: absolute; left: 0.9rem; top: 0.8rem;
+    font-family: 'Cinzel', serif; font-weight: 700; font-size: 1rem; color: var(--crimson);
+  }
+  .charge-list strong { color: var(--ink); }
+
+  /* ── CLOSING PANEL ── */
+  .closing-panel {
+    margin: 1.8rem 0 0.5rem;
+    padding: 1.6rem 1.8rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: #EDE0C4;
+    position: relative;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .closing-panel::after { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .closing-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.6rem; }
+  .closing-panel p { font-size: 1.06rem; line-height: 1.8; }
+  .closing-panel strong { color: #FBF6E9; }
+
+  /* ── TEACHER NOTE ── */
+  .teacher-note {
+    margin: 2.8rem 0 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C;
+  }
+  .tnote-label { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .teacher-note p { font-size: 1rem; line-height: 1.75; color: var(--ink-soft); text-align: justify; }
+  .teacher-note p + p { margin-top: 0.75rem; }
+  .teacher-note strong { color: var(--ink-mid); }
+
+  /* ── SCRIPTURE APPENDIX ── */
+  .appendix { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .index-list { columns: 2; column-gap: 2rem; column-rule: 1px solid #C9A84C55; }
+  .index-entry { break-inside: avoid; page-break-inside: avoid; margin-bottom: 0.95rem; }
+  .index-entry .scripture-ref { font-size: 0.72rem; margin-bottom: 0.2rem; }
+  .index-entry .scripture-text { font-size: 0.95rem; line-height: 1.6; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 10px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em; color: #FBF6E9; text-transform: uppercase; margin-top: 0.6rem; line-height: 1.8; }
+  .footer-sub { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.4rem; }
+
+  /* ── PRINT (US Letter 8.5 x 11, numbered pages) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.1in 0.1in 0.35in 0.1in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.12em;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    html, body { background: #FFFFFF; }
+    body { padding: 0; font-size: 11pt; }
+    .page { max-width: 100%; margin: 0; border: none; box-shadow: none; background: #FFFFFF; }
+    .page::before, .page::after { display: none; }
+
+    .doc-header, .doc-footer, .scripture-block, .keypoint, .bonus-panel, .histquote,
+    .teacher-note, .toc, .charge-list li, .closing-panel, .data-table th, .data-table td {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Readable margin comes from padding on the content wrapper. The padding is
+       cloned onto every page fragment, so text on page 2 onward sits well inside
+       a 0.2in printer margin while the crimson bands bleed close to the edge. */
+    .doc-header { padding: 0.45in 0.8in 0.35in; }
+    .doc-body {
+      padding: 0.3in 0.55in 0.25in;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .doc-footer { padding: 0.3in 0.8in; }
+
+    p, li, td, .scripture-text, .histquote-text, .bonus-body {
+      hyphens: auto; -webkit-hyphens: auto;
+      orphans: 3; widows: 3;
+    }
+    .preamble { margin-top: 0; }
+    .article { margin-top: 1.6rem; padding-top: 1.4rem; }
+    .article-body { font-size: 11.5pt; line-height: 1.62; margin-bottom: 0.9rem; }
+    .preamble p { font-size: 11.5pt; line-height: 1.62; }
+    .scripture-text, .histquote-text { font-size: 11pt; line-height: 1.58; }
+    .scripture-block, .histquote { margin: 0.9rem 0 1rem; padding: 0.85rem 1.1rem; }
+    .keypoint { margin: 1rem 0 0.3rem; padding: 0.85rem 1.1rem; }
+    .keypoint p, .bonus-body, .teacher-note p { font-size: 10.8pt; line-height: 1.58; }
+    .charge-list li { font-size: 11pt; line-height: 1.55; padding: 0.55rem 0.9rem 0.55rem 2.6rem; }
+    .closing-panel p { font-size: 11pt; line-height: 1.6; }
+    .toc { margin: 1.1rem 0 0.2rem; padding: 0.8rem 1.3rem; }
+    .toc-title { margin-bottom: 0.5rem; }
+    .toc-list li { margin-bottom: 0.1rem; }
+    .toc-list a { font-size: 10pt; line-height: 1.45; }
+    .doc-header { padding: 0.4in 0.8in 0.3in; }
+    .header-ornament { margin-bottom: 0.5rem; }
+    .doc-subtitle { font-size: 0.8rem; }
+    .preamble { padding-bottom: 0; border-bottom: none; }
+    .preamble p { line-height: 1.55; }
+    .preamble p + p { margin-top: 0.6rem; }
+
+    /* Small meaningful units never split across a page */
+    .scripture-entry, .keypoint, .bonus-panel, .histquote, .data-table tr,
+    .charge-list li, .closing-panel, .toc, .toc-list li, .index-entry {
+      break-inside: avoid; page-break-inside: avoid;
+    }
+    /* Tall scripture blocks may flow between entries rather than leave a gap */
+    .scripture-block { break-inside: auto; }
+    .scripture-label { break-after: avoid; page-break-after: avoid; }
+    .data-table thead { display: table-header-group; }
+
+    /* Headings stay glued to what follows them */
+    .article-header, .tnote-label, .preamble-label { break-after: avoid; page-break-after: avoid; }
+    .article-num { break-after: avoid; page-break-after: avoid; }
+
+    /* The full Scripture listing begins on a fresh sheet */
+    .appendix { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; border-top: none; }
+    .index-entry .scripture-text { font-size: 10pt; line-height: 1.5; }
+    .index-entry { margin-bottom: 0.6rem; }
+
+    .doc-footer { break-inside: avoid; page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-header { padding: 2.2rem 1.3rem 1.8rem; }
+    .doc-footer { padding: 2rem 1.2rem 1.8rem; }
+    .doc-body { padding: 0 1.3rem 2rem; }
+    .doc-header::after, .doc-footer::after { inset: 8px; }
+    .page::before, .page::after { width: 24px; height: 24px; }
+    .toc-list, .index-list { columns: 1; }
+    .toc { padding: 1.2rem 1.2rem; }
+    .scripture-block, .histquote, .keypoint, .bonus-panel, .teacher-note { padding: 1.1rem 1.1rem; }
+    .data-table td:last-child { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <p class="header-eyebrow">Monthly Bible Study · October 2026</p>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">Stewardship</h1>
+    <p class="doc-subtitle">Faithful Over a Few Things, from the Garden to the Day of Account</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <section class="preamble">
+      <p class="preamble-label">Where We Are Going</p>
+      <p>Every one of us is managing something that does not belong to us. The paycheck, the house, the truck in the driveway, the hours in the day, the body we wake up in, the children at the table, and the gospel we were handed when we believed all came from somewhere, and all of it is going back. Scripture has one word for a person in that position. He is a steward.</p><p>Last month we followed the seed from the third day of creation to the final harvest. This month we step back and look at the whole farm, and at the man God put in charge of it. We start with what a steward actually is, using the words Scripture itself uses. We go back to the garden, where the first man was given ground to work and to guard. Then we walk through the lives of real stewards in the Bible, some faithful and some removed from office, and through the parables Jesus told about servants left in charge while their master was away.</p><p>From there we bring it down to the ordinary week: the body, the calendar, the job, the commandments that govern how a steward deals with money and with his neighbor, the danger of debt, the cure of contentment, and the open hand God loves to see. We finish where every steward finishes, standing before the Owner to give account. The goal is not to make anyone nervous. The goal is to hear, at the end of it all, the words every servant of God longs to hear <span class="ref-inline">(Matthew 25:21)</span>.</p>
+    </section>
+
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+      <li><a href="#art1"><span class="toc-num">I.</span>What a Steward Is</a></li>
+      <li><a href="#art2"><span class="toc-num">II.</span>The Owner of All Things</a></li>
+      <li><a href="#art3"><span class="toc-num">III.</span>The First Steward in the Garden</a></li>
+      <li><a href="#art4"><span class="toc-num">IV.</span>Joseph in Another Man&#x27;s House</a></li>
+      <li><a href="#art5"><span class="toc-num">V.</span>Shebna, Eliakim, and the Key of the House</a></li>
+      <li><a href="#art6"><span class="toc-num">VI.</span>The Faithful and Wise Steward</a></li>
+      <li><a href="#art7"><span class="toc-num">VII.</span>The Unjust Steward</a></li>
+      <li><a href="#art8"><span class="toc-num">VIII.</span>The Talents</a></li>
+      <li><a href="#art9"><span class="toc-num">IX.</span>The Body and the Hours</a></li>
+      <li><a href="#art10"><span class="toc-num">X.</span>The Commandments a Steward Keeps</a></li>
+      <li><a href="#art11"><span class="toc-num">XI.</span>Knowing the State of Thy Flocks</a></li>
+      <li><a href="#art12"><span class="toc-num">XII.</span>The Rich Fool and the Contented Heart</a></li>
+      <li><a href="#art13"><span class="toc-num">XIII.</span>The Open Hand</a></li>
+      <li><a href="#art14"><span class="toc-num">XIV.</span>Stewards of the Mysteries of God</a></li>
+      <li><a href="#art15"><span class="toc-num">XV.</span>The Day of Account</a></li>
+      <li><a href="#art16"><span class="toc-num">XVI.</span>What to Steward This Month</a></li>
+      <li><a href="#teacher"><span class="toc-num">&#10022;</span>For the Teacher</a></li>
+      <li><a href="#scriptures"><span class="toc-num">&#10022;</span>Every Scripture in This Study</a></li>
+      </ul>
+    </nav>
+
+<article class="article" id="art1">
+  <div class="article-header"><span class="article-num">I &middot; Defining the Word</span><h2 class="article-title">What a Steward Is</h2></div>
+<p class="article-body">Before we talk about being good stewards, we should let Scripture tell us what a steward is. Our English word comes from an old term for the keeper of a hall, the man who ran the household for its lord. The words the Bible itself uses paint the same picture, and they are more vivid than the English.</p>
+<p class="article-body">In the Old Testament the steward is usually described rather than given a title. Joseph's steward in Egypt is literally “the one who is over his house” (in Hebrew, <em>asher al-beito</em>). He did not own the house. He ran it, right down to the grain sacks and the silver cup.</p>
+<div class="scripture-block"><p class="scripture-label">The One Over the House</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 43:16</span><span class="scripture-text">And when Joseph saw Benjamin with them, he said to the ruler of his house, Bring these men home, and slay, and make ready; for these men shall dine with me at noon.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 44:1</span><span class="scripture-text">And he commanded the steward of his house, saying, Fill the men's sacks with food, as much as they can carry, and put every man's money in his sack's mouth.</span></div>
+</div>
+<p class="article-body">In the New Testament the word is <em>oikonomos</em>, built from <em>oikos</em>, a house, and a root that means to manage or to hand out. The steward is the house manager, the one who gives each person in the household what they need when they need it. That is exactly how Jesus described him, and it is how the apostles described themselves and every elder in the church.</p>
+<div class="scripture-block"><p class="scripture-label">The Steward in the New Testament</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 12:42</span><span class="scripture-text">And the Lord said, Who then is that faithful and wise steward, whom his lord shall make ruler over his household, to give them their portion of meat in due season?</span></div>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 4:1–2</span><span class="scripture-text">Let a man so account of us, as of the ministers of Christ, and stewards of the mysteries of God. Moreover it is required in stewards, that a man be found faithful.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Titus 1:7</span><span class="scripture-text">For a bishop must be blameless, as the steward of God; not selfwilled, not soon angry, not given to wine, no striker, not given to filthy lucre;</span></div>
+</div>
+<div class="bonus-panel"><p class="bonus-label"><span class="bonus-star">&#10022;</span> The Same Word in Other Clothes</p><div class="bonus-body"><p>The Greek word for a steward and the Greek word for his job show up in the King James Bible under several different English words, and seeing them together helps. <em>Oikonomos</em> is translated steward <span class="ref-inline">(Luke 16:1)</span>, governor <span class="ref-inline">(Galatians 4:2)</span>, and chamberlain, the title of Erastus, the treasurer of Corinth <span class="ref-inline">(Romans 16:23)</span>. The job itself, <em>oikonomia</em>, is translated stewardship three times in a single parable <span class="ref-inline">(Luke 16:2–4)</span> and dispensation in Paul's letters <span class="ref-inline">(1 Corinthians 9:17; Ephesians 3:2; Colossians 1:25)</span>. When Paul says a dispensation of the gospel was committed to him, he is saying he was handed a stewardship. We will come back to that near the end.</p></div></div>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>A steward is not an owner with a few obligations. He is a manager with no ownership at all. <strong>Everything in his hands belongs to someone else, and his whole job is to handle it the way the owner would.</strong> That one fact shapes everything else in this study.</p></div>
+</article>
+
+<article class="article" id="art2">
+  <div class="article-header"><span class="article-num">II &middot; Whose It Is</span><h2 class="article-title">The Owner of All Things</h2></div>
+<p class="article-body">Stewardship begins with ownership, and Scripture settles the question of ownership on its first page. God made it, so God owns it. He never sold it, never signed it over, and never retired. The psalmist says it as plainly as it can be said, and the prophets repeat it.</p>
+<div class="scripture-block"><p class="scripture-label">The Earth Is the LORD&#x27;S</p>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 24:1</span><span class="scripture-text">The earth is the LORD'S, and the fulness thereof; the world, and they that dwell therein.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 50:10–12</span><span class="scripture-text">For every beast of the forest is mine, and the cattle upon a thousand hills. I know all the fowls of the mountains: and the wild beasts of the field are mine. If I were hungry, I would not tell thee: for the world is mine, and the fulness thereof.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Haggai 2:8</span><span class="scripture-text">The silver is mine, and the gold is mine, saith the LORD of hosts.</span></div>
+</div>
+<p class="article-body">Look at the list. The world, the people in it, the cattle, the fowls, the wild beasts, the silver, and the gold. Nothing is left over that a man could point to and call his own in the final sense. Even the ability to earn belongs to God. Moses warned Israel that a day would come, after they had settled into the land and built good houses and watched their herds multiply, when they would be tempted to look around and give themselves the credit.</p>
+<div class="scripture-block"><p class="scripture-label">Where the Power Comes From</p>
+<div class="scripture-entry"><span class="scripture-ref">Deuteronomy 8:17–18</span><span class="scripture-text">And thou say in thine heart, My power and the might of mine hand hath gotten me this wealth. But thou shalt remember the LORD thy God: for it is he that giveth thee power to get wealth, that he may establish his covenant which he sware unto thy fathers, as it is this day.</span></div>
+</div>
+<p class="article-body">David understood it. At the end of his life he gathered an enormous offering for the house of God that his son would build, and the people gave willingly and with joy. Then David stood up and prayed, and in the middle of the greatest giving service in Israel's history, he told the LORD that none of it was really theirs to give.</p>
+<div class="scripture-block"><p class="scripture-label">Of Thine Own Have We Given Thee</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Chronicles 29:11–14</span><span class="scripture-text">Thine, O LORD, is the greatness, and the power, and the glory, and the victory, and the majesty: for all that is in the heaven and in the earth is thine; thine is the kingdom, O LORD, and thou art exalted as head above all. Both riches and honour come of thee, and thou reignest over all; and in thine hand is power and might; and in thine hand it is to make great, and to give strength unto all. Now therefore, our God, we thank thee, and praise thy glorious name. But who am I, and what is my people, that we should be able to offer so willingly after this sort? for all things come of thee, and of thine own have we given thee.</span></div>
+</div>
+<p class="article-body">That is the heart of a steward. David did not think less of the offering. He simply knew where it came from. Every gift we bring to God is His own property coming home. The same truth was built into the land itself. An Israelite could sell the use of a field for a season, but never the field forever, because the land had an Owner and His people were only living on it.</p>
+<div class="scripture-block"><p class="scripture-label">Strangers and Sojourners with Me</p>
+<div class="scripture-entry"><span class="scripture-ref">Leviticus 25:23</span><span class="scripture-text">The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Settle It First</p><p>Before we ever ask how much to give, how to spend, or what to keep, one question has to be settled. <strong>Who owns it?</strong> If the answer is God, then every other decision is a steward's decision, made on behalf of Someone else. A man who gets this one wrong will get the rest wrong too.</p></div>
+</article>
+
+<article class="article" id="art3">
+  <div class="article-header"><span class="article-num">III &middot; In the Garden</span><h2 class="article-title">The First Steward in the Garden</h2></div>
+<p class="article-body">The first job description ever given to a man was a stewardship. Before there was a fall, before there was sin, and before there was any sweat on anyone's brow, God made man in His own image and put him in charge.</p>
+<div class="scripture-block"><p class="scripture-label">Dominion Given</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 1:26</span><span class="scripture-text">And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 1:28</span><span class="scripture-text">And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.</span></div>
+</div>
+<p class="article-body">Dominion is a big word, and men have abused it for a long time. But look at how God defines the job the moment He puts the man in the garden. It is not a throne. It is a shovel and a watch post.</p>
+<div class="scripture-block"><p class="scripture-label">To Dress It and to Keep It</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 2:15</span><span class="scripture-text">And the LORD God took the man, and put him into the garden of Eden to dress it and to keep it.</span></div>
+</div>
+<p class="article-body">The word translated <em>dress</em> is the Hebrew <em>avad</em>, to work or to serve, the same word used for serving the LORD. The word translated <em>keep</em> is <em>shamar</em>, to guard, to watch over, to preserve. It is the word God uses when He says Abraham kept His charge, His commandments, His statutes, and His laws <span class="ref-inline">(Genesis 26:5)</span>, and it is the word used of the cherubim who kept the way of the tree of life <span class="ref-inline">(Genesis 3:24)</span>. Adam was a working servant and a watchman over ground that belonged to God. He was never its landlord.</p>
+<p class="article-body">Scripture never takes that job back. David marveled that God would crown such a small creature with so much responsibility, and a later psalm draws the line clearly. The heavens are the LORD's. The earth He has given to the children of men, not as owners, but as the ones He has put in charge of it.</p>
+<div class="scripture-block"><p class="scripture-label">Crowned with Responsibility</p>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 8:4–6</span><span class="scripture-text">What is man, that thou art mindful of him? and the son of man, that thou visitest him? For thou hast made him a little lower than the angels, and hast crowned him with glory and honour. Thou madest him to have dominion over the works of thy hands; thou hast put all things under his feet:</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 115:16</span><span class="scripture-text">The heaven, even the heavens, are the LORD'S: but the earth hath he given to the children of men.</span></div>
+</div>
+<p class="article-body">When Adam sinned, the ground was cursed and the work got harder <span class="ref-inline">(Genesis 3:17–19)</span>, but the work was never cancelled. Man still dresses the ground and still answers for how he keeps it. Everyone who reads the Bible as it is written stands in that same line, working ground he did not make for an Owner who will one day come and look at it.</p>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>Stewardship is not a punishment that arrived with the curse. <strong>It is the original calling of mankind, given in a perfect garden before anything went wrong.</strong> Work and care are part of what it means to bear the image of God.</p></div>
+</article>
+
+<article class="article" id="art4">
+  <div class="article-header"><span class="article-num">IV &middot; A Steward&#x27;s Life</span><h2 class="article-title">Joseph in Another Man&#x27;s House</h2></div>
+<p class="article-body">The Bible could have handed us a list of rules about stewardship and stopped there. Instead it gave us people. The first servant in Scripture who ran another man's house belonged to Abraham, and Abraham named him outright: the steward of my house is this Eliezer of Damascus <span class="ref-inline">(Genesis 15:2)</span>. Later we meet Abraham's eldest servant, the one who ruled over all that he had, sent on the most delicate errand of Abraham's life, to find a wife for Isaac <span class="ref-inline">(Genesis 24:2)</span>. Many believe these are the same man, though the text never says so directly. Either way, the pattern is set. A steward is trusted with everything and owns none of it.</p>
+<p class="article-body">No one in Scripture shows the life of a faithful steward better than Joseph. Sold by his brothers and bought by an Egyptian officer, he had every reason to do the bare minimum. He did the opposite.</p>
+<div class="scripture-block"><p class="scripture-label">Overseer in Potiphar&#x27;s House</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 39:2–6</span><span class="scripture-text">And the LORD was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian. And his master saw that the LORD was with him, and that the LORD made all that he did to prosper in his hand. And Joseph found grace in his sight, and he served him: and he made him overseer over his house, and all that he had he put into his hand. And it came to pass from the time that he had made him overseer in his house, and over all that he had, that the LORD blessed the Egyptian's house for Joseph's sake; and the blessing of the LORD was upon all that he had in the house, and in the field. And he left all that he had in Joseph's hand; and he knew not ought he had, save the bread which he did eat. And Joseph was a goodly person, and well favoured.</span></div>
+</div>
+<p class="article-body">Potiphar left everything in Joseph's hand and did not even know what he owned, except the bread on his own table. That is total trust. Joseph proved worthy of it when Potiphar's wife came after him. His answer to her is a steward's answer. He listed everything his master had put into his hand, then named the one thing his master had kept back, and he refused to take it, because it was not his and because it would be sin against God <span class="ref-inline">(Genesis 39:8–9)</span>.</p>
+<p class="article-body">Faithfulness got him thrown into prison anyway. And in the prison, with no reward in sight, he did it all over again.</p>
+<div class="scripture-block"><p class="scripture-label">Keeper of the Prison</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 39:21–23</span><span class="scripture-text">But the LORD was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison. And the keeper of the prison committed to Joseph's hand all the prisoners that were in the prison; and whatsoever they did there, he was the doer of it. The keeper of the prison looked not to any thing that was under his hand; because the LORD was with him, and that which he did, the LORD made it to prosper.</span></div>
+</div>
+<p class="article-body">Then came Pharaoh's dreams. Seven years of plenty and seven years of famine were on the way, and Joseph, standing before the most powerful man on earth, did more than interpret the dream. He handed Pharaoh a steward's plan.</p>
+<div class="scripture-block"><p class="scripture-label">Storing Up in the Years of Plenty</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 41:34–36</span><span class="scripture-text">Let Pharaoh do this, and let him appoint officers over the land, and take up the fifth part of the land of Egypt in the seven plenteous years. And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities. And that food shall be for store to the land against the seven years of famine, which shall be in the land of Egypt; that the land perish not through the famine.</span></div>
+</div>
+<p class="article-body">Set aside a fifth in the good years so there will be bread in the lean ones. That is stewardship in its simplest form, and it saved Egypt, the surrounding nations, and the family of Israel. The psalmist looked back on Joseph's story and saw the hand of God in every step of it <span class="ref-inline">(Psalm 105:17–21)</span>. The faithfulness in Potiphar's house prepared him for Pharaoh's. Jesus later stated that principle as a rule of the kingdom <span class="ref-inline">(Luke 16:10)</span>.</p>
+<div class="keypoint"><p class="keypoint-label">What Joseph Teaches</p><p>Joseph was faithful in a house that was not his, in a prison he did not deserve, and in a kingdom that was not his own. <strong>He never waited for better circumstances before he started being faithful.</strong> The steward who is careful with the little he has today is the one God can trust with more tomorrow.</p></div>
+</article>
+
+<article class="article" id="art5">
+  <div class="article-header"><span class="article-num">V &middot; A Steward Removed</span><h2 class="article-title">Shebna, Eliakim, and the Key of the House</h2></div>
+<p class="article-body">Not every steward in Scripture is a good example. In the days of King Hezekiah, the man over the royal household was named Shebna. He held one of the highest offices in Judah, and he used it to build himself a monument. God sent Isaiah to find him while he was busy carving out his own grand tomb.</p>
+<div class="scripture-block"><p class="scripture-label">The Word Against Shebna</p>
+<div class="scripture-entry"><span class="scripture-ref">Isaiah 22:15–19</span><span class="scripture-text">Thus saith the Lord GOD of hosts, Go, get thee unto this treasurer, even unto Shebna, which is over the house, and say, What hast thou here? and whom hast thou here, that thou hast hewed thee out a sepulchre here, as he that heweth him out a sepulchre on high, and that graveth an habitation for himself in a rock? Behold, the LORD will carry thee away with a mighty captivity, and will surely cover thee. He will surely violently turn and toss thee like a ball into a large country: there shalt thou die, and there the chariots of thy glory shall be the shame of thy lord's house. And I will drive thee from thy station, and from thy state shall he pull thee down.</span></div>
+</div>
+<p class="article-body">Shebna's sin was not that he held a high office. It was that he treated the office as though it belonged to him. He was cutting out a place to be remembered, riding in glorious chariots, and acting as if the king's house were his own house. So God removed him and put another man in his place.</p>
+<div class="scripture-block"><p class="scripture-label">The Key Given to Eliakim</p>
+<div class="scripture-entry"><span class="scripture-ref">Isaiah 22:20–23</span><span class="scripture-text">And it shall come to pass in that day, that I will call my servant Eliakim the son of Hilkiah: And I will clothe him with thy robe, and strengthen him with thy girdle, and I will commit thy government into his hand: and he shall be a father to the inhabitants of Jerusalem, and to the house of Judah. And the key of the house of David will I lay upon his shoulder; so he shall open, and none shall shut; and he shall shut, and none shall open. And I will fasten him as a nail in a sure place; and he shall be for a glorious throne to his father's house.</span></div>
+</div>
+<p class="article-body">Look at what Eliakim received: the robe, the girdle, the government, and the key of the house of David. He would be a father to the people, not a lord over them. Centuries later the risen Christ took that very language for Himself.</p>
+<div class="scripture-block"><p class="scripture-label">The One Who Holds the Key</p>
+<div class="scripture-entry"><span class="scripture-ref">Revelation 3:7</span><span class="scripture-text">And to the angel of the church in Philadelphia write; These things saith he that is holy, he that is true, he that hath the key of David, he that openeth, and no man shutteth; and shutteth, and no man openeth;</span></div>
+</div>
+<p class="article-body">Christ is the faithful One over the house of God, everything Shebna should have been and more. Moses was faithful in all God's house as a servant, and Christ as a Son over His own house <span class="ref-inline">(Hebrews 3:5–6)</span>. Every steward in the church serves under Him.</p>
+<p class="article-body">Scripture holds more of these stewards than most people notice. Laid side by side, they read like a roll call of faithfulness and failure.</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>Steward</th><th>What He Was Trusted With</th><th>Where It Is Written</th></tr></thead><tbody><tr><td>Eliezer of Damascus</td><td>The house of Abraham</td><td>Genesis 15:2</td></tr><tr><td>Abraham's eldest servant</td><td>All that Abraham had, and the search for Isaac's bride</td><td>Genesis 24:2</td></tr><tr><td>Joseph</td><td>Potiphar's house, the prison, and the grain of Egypt</td><td>Genesis 39:4; Genesis 41:40</td></tr><tr><td>The ruler of Joseph's house</td><td>Joseph's household, silver, and grain</td><td>Genesis 44:1</td></tr><tr><td>Obadiah</td><td>Ahab's house, while he hid the LORD's prophets</td><td>1 Kings 18:3–4</td></tr><tr><td>Shebna</td><td>The king's house, until he was removed</td><td>Isaiah 22:15</td></tr><tr><td>Eliakim</td><td>The key of the house of David</td><td>Isaiah 22:22</td></tr><tr><td>Chuza, with his wife Joanna</td><td>Herod's household, while Joanna ministered to Jesus of her substance</td><td>Luke 8:3</td></tr><tr><td>Erastus</td><td>The treasury of the city of Corinth</td><td>Romans 16:23</td></tr><tr><td>Every believer</td><td>The manifold grace of God</td><td>1 Peter 4:10</td></tr></tbody></table></div>
+<div class="keypoint"><p class="keypoint-label">The Difference</p><p>Shebna and Eliakim held the very same office. <strong>One treated the house as his own and was tossed out of it. The other treated it as the king's and was fastened as a nail in a sure place.</strong> The office never makes the steward. Faithfulness does.</p></div>
+</article>
+
+<article class="article" id="art6">
+  <div class="article-header"><span class="article-num">VI &middot; The Parables of the Absent Master</span><h2 class="article-title">The Faithful and Wise Steward</h2></div>
+<p class="article-body">Jesus told several parables with the same basic setup. A master goes away, a servant is left in charge, and the master comes back at an hour nobody expected. After one of them, Peter asked whether the parable was meant for the disciples or for everyone, and Jesus answered with a question of His own.</p>
+<div class="scripture-block"><p class="scripture-label">Who Then Is That Faithful and Wise Steward?</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 12:42–44</span><span class="scripture-text">And the Lord said, Who then is that faithful and wise steward, whom his lord shall make ruler over his household, to give them their portion of meat in due season? Blessed is that servant, whom his lord when he cometh shall find so doing. Of a truth I say unto you, that he will make him ruler over all that he hath.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Luke 12:45–48</span><span class="scripture-text">But and if that servant say in his heart, My lord delayeth his coming; and shall begin to beat the menservants and maidens, and to eat and drink, and to be drunken; The lord of that servant will come in a day when he looketh not for him, and at an hour when he is not aware, and will cut him in sunder, and will appoint him his portion with the unbelievers. And that servant, which knew his lord's will, and prepared not himself, neither did according to his will, shall be beaten with many stripes. But he that knew not, and did commit things worthy of stripes, shall be beaten with few stripes. For unto whomsoever much is given, of him shall be much required: and to whom men have committed much, of him they will ask the more.</span></div>
+</div>
+<p class="article-body">The good steward is described with two words, faithful and wise, and one action: he gives the household their portion of meat in due season. He is feeding people who belong to his lord. The unfaithful servant makes a different calculation. He says in his heart that his lord is delaying his coming, and the moment he believes that, he begins to abuse the people in his care and to indulge himself. Matthew records the same warning in the Olivet Discourse <span class="ref-inline">(Matthew 24:45–51)</span>.</p>
+<p class="article-body">Then comes one of the most quoted and least understood sentences in the Gospels: unto whomsoever much is given, of him shall be much required. That is not a slogan aimed at rich people. It is a principle for every servant. The servant who knew his lord's will and did not prepare himself is beaten with many stripes, and the one who did not know is beaten with few. Knowledge is a stewardship too. Every Bible study you sit through, this one included, raises what is required of you.</p>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>The unfaithful servant's trouble started with a single thought: <strong>my lord delayeth his coming.</strong> Every careless steward in Scripture begins by forgetting that the Owner is coming back. The faithful one lives every ordinary day as though the door could open at any moment.</p></div>
+</article>
+
+<article class="article" id="art7">
+  <div class="article-header"><span class="article-num">VII &middot; A Hard Parable Made Plain</span><h2 class="article-title">The Unjust Steward</h2></div>
+<p class="article-body">The next time Jesus teaches about a steward in Luke's Gospel, He tells a story that has puzzled readers for centuries. A steward is caught wasting his master's goods and told he is about to lose his position. He responds by cutting deals with his master's debtors so they will take care of him later. And then the lord commends him.</p>
+<div class="scripture-block"><p class="scripture-label">The Parable</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 16:1–8</span><span class="scripture-text">And he said also unto his disciples, There was a certain rich man, which had a steward; and the same was accused unto him that he had wasted his goods. And he called him, and said unto him, How is it that I hear this of thee? give an account of thy stewardship; for thou mayest be no longer steward. Then the steward said within himself, What shall I do? for my lord taketh away from me the stewardship: I cannot dig; to beg I am ashamed. I am resolved what to do, that, when I am put out of the stewardship, they may receive me into their houses. So he called every one of his lord's debtors unto him, and said unto the first, How much owest thou unto my lord? And he said, An hundred measures of oil. And he said unto him, Take thy bill, and sit down quickly, and write fifty. Then said he to another, And how much owest thou? And he said, An hundred measures of wheat. And he said unto him, Take thy bill, and write fourscore. And the lord commended the unjust steward, because he had done wisely: for the children of this world are in their generation wiser than the children of light.</span></div>
+</div>
+<p class="article-body">Read carefully who commends whom. It is the lord in the story who commends the steward, and Jesus calls the steward <em>unjust</em> in the very same sentence. The master is not praising the dishonesty. He is admitting the man was shrewd. The steward saw his future coming, and he used what was in his hands today to prepare for it. The Lord's point is painfully sharp: the children of this world are often more thoughtful about their earthly future than the children of light are about their eternal one.</p>
+<div class="scripture-block"><p class="scripture-label">The Lesson Drawn</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 16:9–13</span><span class="scripture-text">And I say unto you, Make to yourselves friends of the mammon of unrighteousness; that, when ye fail, they may receive you into everlasting habitations. He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much. If therefore ye have not been faithful in the unrighteous mammon, who will commit to your trust the true riches? And if ye have not been faithful in that which is another man's, who shall give you that which is your own? No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.</span></div>
+</div>
+<p class="article-body">The application comes in three steps. First, use the money of this world, the mammon of unrighteousness, in ways that will still matter when this world fails, which means spending it on people and on the work of God. Second, faithfulness is tested in small things and in things that belong to someone else. A man who cannot be trusted with unrighteous mammon should not expect to be trusted with the true riches. Third, a steward can serve only one master. Money makes a useful servant and a terrible lord.</p>
+<div class="bonus-panel"><p class="bonus-label"><span class="bonus-star">&#10022;</span> What the Lord Did Not Commend</p><div class="bonus-body"><p>No one should walk away from this parable thinking Jesus approved of cooking the books. The same chapter goes on to say that it is easier for heaven and earth to pass than for one tittle of the law to fail <span class="ref-inline">(Luke 16:17)</span>, and that law says plainly, Thou shalt not steal <span class="ref-inline">(Exodus 20:15)</span>. The steward is called unjust for a reason. What Jesus holds up is his foresight, not his ethics. We are to be every bit as wise about eternity as he was about next month, and far more honest.</p></div></div>
+<div class="keypoint"><p class="keypoint-label">The Question</p><p>The unjust steward knew the day of reckoning was coming, and he spent today getting ready for it. <strong>Are we as serious about the day we give account to God as he was about the day he would lose his job?</strong></p></div>
+</article>
+
+<article class="article" id="art8">
+  <div class="article-header"><span class="article-num">VIII &middot; Trusted According to Ability</span><h2 class="article-title">The Talents</h2></div>
+<p class="article-body">The parable of the talents is the fullest picture of stewardship Jesus ever painted, and He told it on the Mount of Olives only days before the cross. A talent in those days was not a skill. It was a weight of silver or gold, a very large sum of money. The master hands out his goods, and then he leaves.</p>
+<div class="scripture-block"><p class="scripture-label">The Goods Delivered</p>
+<div class="scripture-entry"><span class="scripture-ref">Matthew 25:14–18</span><span class="scripture-text">For the kingdom of heaven is as a man travelling into a far country, who called his own servants, and delivered unto them his goods. And unto one he gave five talents, to another two, and to another one; to every man according to his several ability; and straightway took his journey. Then he that had received the five talents went and traded with the same, and made them other five talents. And likewise he that had received two, he also gained other two. But he that had received one went and digged in the earth, and hid his lord's money.</span></div>
+</div>
+<p class="article-body">Notice two things before the master ever leaves. He gave to every man according to his several ability, so nobody received more than he could handle and nobody received nothing. And the goods were his goods. The servants were not given spending money. They were given their master's capital to manage.</p>
+<div class="scripture-block"><p class="scripture-label">The Reckoning with the Faithful</p>
+<div class="scripture-entry"><span class="scripture-ref">Matthew 25:19–23</span><span class="scripture-text">After a long time the lord of those servants cometh, and reckoneth with them. And so he that had received five talents came and brought other five talents, saying, Lord, thou deliveredst unto me five talents: behold, I have gained beside them five talents more. His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord. He also that had received two talents came and said, Lord, thou deliveredst unto me two talents: behold, I have gained two other talents beside them. His lord said unto him, Well done, good and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.</span></div>
+</div>
+<p class="article-body">The man with five talents and the man with two hear exactly the same words: Well done, thou good and faithful servant. God does not grade on the size of the trust. He grades on faithfulness with the trust. The man with two talents was not a lesser servant. He was a servant with less, and he was faithful with it.</p>
+<div class="scripture-block"><p class="scripture-label">The Reckoning with the Slothful</p>
+<div class="scripture-entry"><span class="scripture-ref">Matthew 25:24–30</span><span class="scripture-text">Then he which had received the one talent came and said, Lord, I knew thee that thou art an hard man, reaping where thou hast not sown, and gathering where thou hast not strawed: And I was afraid, and went and hid thy talent in the earth: lo, there thou hast that is thine. His lord answered and said unto him, Thou wicked and slothful servant, thou knewest that I reap where I sowed not, and gather where I have not strawed: Thou oughtest therefore to have put my money to the exchangers, and then at my coming I should have received mine own with usury. Take therefore the talent from him, and give it unto him which hath ten talents. For unto every one that hath shall be given, and he shall have abundance: but from him that hath not shall be taken away even that which he hath. And cast ye the unprofitable servant into outer darkness: there shall be weeping and gnashing of teeth.</span></div>
+</div>
+<p class="article-body">The third servant did not steal, did not waste, and did not lose a single coin. He buried it. His problem was fear, and behind the fear was a wrong view of his master: I knew thee that thou art an hard man. He thought his lord was harsh, so he played it safe, and playing it safe with his lord's goods turned out to be wickedness. Doing nothing with what God gives is not neutral. Luke records a similar parable about pounds, told on a different occasion, and it carries the same verdict <span class="ref-inline">(Luke 19:11–27)</span>.</p>
+<p class="article-body">The talents in the parable are money, but the principle reaches every gift God gives. Peter and Paul both apply it directly to the abilities and graces God has handed out in the church.</p>
+<div class="scripture-block"><p class="scripture-label">Good Stewards of the Manifold Grace</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Peter 4:10–11</span><span class="scripture-text">As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God. If any man speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth: that God in all things may be glorified through Jesus Christ, to whom be praise and dominion for ever and ever. Amen.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Romans 12:6–8</span><span class="scripture-text">Having then gifts differing according to the grace that is given to us, whether prophecy, let us prophesy according to the proportion of faith; Or ministry, let us wait on our ministering: or he that teacheth, on teaching; Or he that exhorteth, on exhortation: he that giveth, let him do it with simplicity; he that ruleth, with diligence; he that sheweth mercy, with cheerfulness.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>God hands out different amounts, but He never hands out nothing, and He never forgets what He handed out. <strong>The only failing grade in this parable belongs to the man who buried what he was given.</strong> Whatever is in your hand, put it to work.</p></div>
+</article>
+
+<article class="article" id="art9">
+  <div class="article-header"><span class="article-num">IX &middot; The Nearest Trusts</span><h2 class="article-title">The Body and the Hours</h2></div>
+<p class="article-body">The first things God puts into a steward's hands are not money. They are his own body and his own days. Those are the trusts we carry everywhere, and they are the easiest ones to forget are borrowed.</p>
+<div class="scripture-block"><p class="scripture-label">Ye Are Not Your Own</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 6:19–20</span><span class="scripture-text">What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own? For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God's.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Romans 12:1</span><span class="scripture-text">I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.</span></div>
+</div>
+<p class="article-body">Paul wrote those words to believers who thought what they did with their bodies was their own business. It is not. You were bought with a price. The body a believer lives in is a temple, and a temple is property set apart for God. How we feed it, rest it, use it, and keep it pure is a stewardship question before it is ever a health question.</p>
+<p class="article-body">Time works the same way. Nobody gets more of it than he is given, and nobody gets any of it back.</p>
+<div class="scripture-block"><p class="scripture-label">Number Our Days</p>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 90:12</span><span class="scripture-text">So teach us to number our days, that we may apply our hearts unto wisdom.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 5:15–16</span><span class="scripture-text">See then that ye walk circumspectly, not as fools, but as wise, Redeeming the time, because the days are evil.</span></div>
+</div>
+<p class="article-body">God did not leave the stewardship of time to guesswork. He built the week Himself. Six days are given for labour, and the seventh is His. The Sabbath commandment is a weekly reminder that time is not ours to spend however we please. One day in seven is handed back to the Owner of all the days, and He blesses it.</p>
+<div class="scripture-block"><p class="scripture-label">The Week Belongs to God</p>
+<div class="scripture-entry"><span class="scripture-ref">Exodus 20:8–11</span><span class="scripture-text">Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span></div>
+</div>
+<p class="article-body">The six days matter too. The same commandment that sets apart the seventh day says, Six days shalt thou labour. Scripture has no patience with idleness, and it gives the believer a higher reason to work than a paycheck.</p>
+<div class="scripture-block"><p class="scripture-label">Work as unto the Lord</p>
+<div class="scripture-entry"><span class="scripture-ref">Colossians 3:23–24</span><span class="scripture-text">And whatsoever ye do, do it heartily, as to the Lord, and not unto men; Knowing that of the Lord ye shall receive the reward of the inheritance: for ye serve the Lord Christ.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">2 Thessalonians 3:10–12</span><span class="scripture-text">For even when we were with you, this we commanded you, that if any would not work, neither should he eat. For we hear that there are some which walk among you disorderly, working not at all, but are busybodies. Now them that are such we command and exhort by our Lord Jesus Christ, that with quietness they work, and eat their own bread.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 4:28</span><span class="scripture-text">Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.</span></div>
+</div>
+<p class="article-body">Look at the reason Paul gives the former thief for getting a job: <em>that he may have to give to him that needeth.</em> A steward does not work only to meet his own needs. He works so that he will have something to hand to others.</p>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>Your body was bought with a price, and your days are numbered. <strong>The week itself was shaped by God, six days to labour faithfully and one day handed back to Him.</strong> A steward who is careless with his body and his hours will not be careful with much else.</p></div>
+</article>
+
+<article class="article" id="art10">
+  <div class="article-header"><span class="article-num">X &middot; What God Commanded</span><h2 class="article-title">The Commandments a Steward Keeps</h2></div>
+<p class="article-body">Stewardship is more than an attitude. God gave specific commandments about how His people handle what comes into their hands, and a believer who takes Scripture as it stands does not treat those as suggestions. Some of God's instructions belonged to the priesthood and the altar, and those found their end in Christ. Others govern how a man handles God's portion, how he pays his workers, how he weighs his goods, and how he treats his neighbor's property. Those commandments still remain.</p>
+<p class="article-body">It all begins with God's portion coming first.</p>
+<div class="scripture-block"><p class="scripture-label">The Firstfruits</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 3:9–10</span><span class="scripture-text">Honour the LORD with thy substance, and with the firstfruits of all thine increase: So shall thy barns be filled with plenty, and thy presses shall burst out with new wine.</span></div>
+</div>
+<p class="article-body">The tithe is the oldest expression of that principle, and it is older than Moses. Abraham gave a tenth of all to Melchizedek, priest of the most high God, centuries before Sinai. Under the priesthood of Aaron the tithe was carried to the Levites for their service <span class="ref-inline">(Numbers 18:21)</span>, and that priestly arrangement came to its end in Christ. But the tithe did not start with Levi, so it did not end with Levi. It belongs to the order of Melchizedek, and Jesus is a priest for ever after that order. The Lord Himself told the Pharisees that the tithe ought to be done right alongside judgment, mercy, and faith <span class="ref-inline">(Matthew 23:23)</span>. The full teaching on the tithe covers this ground in depth, so here we simply lay the foundation stone.</p>
+<div class="scripture-block"><p class="scripture-label">Before the Law, and For Ever</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 14:18–20</span><span class="scripture-text">And Melchizedek king of Salem brought forth bread and wine: and he was the priest of the most high God. And he blessed him, and said, Blessed be Abram of the most high God, possessor of heaven and earth: And blessed be the most high God, which hath delivered thine enemies into thy hand. And he gave him tithes of all.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Hebrews 7:17</span><span class="scripture-text">For he testifieth, Thou art a priest for ever after the order of Melchisedec.</span></div>
+</div>
+<p class="article-body">Then come the commandments about how a steward treats other people. God cares about the paycheck of the man who works for you, the scale you weigh with, and the lost animal wandering past your fence.</p>
+<div class="scripture-block"><p class="scripture-label">Pay the Worker</p>
+<div class="scripture-entry"><span class="scripture-ref">Leviticus 19:13</span><span class="scripture-text">Thou shalt not defraud thy neighbour, neither rob him: the wages of him that is hired shall not abide with thee all night until the morning.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Deuteronomy 24:14–15</span><span class="scripture-text">Thou shalt not oppress an hired servant that is poor and needy, whether he be of thy brethren, or of thy strangers that are in thy land within thy gates: At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it: lest he cry against thee unto the LORD, and it be sin unto thee.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">James 5:4</span><span class="scripture-text">Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth.</span></div>
+</div>
+<div class="scripture-block"><p class="scripture-label">Honest Weights</p>
+<div class="scripture-entry"><span class="scripture-ref">Leviticus 19:35–36</span><span class="scripture-text">Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure. Just balances, just weights, a just ephah, and a just hin, shall ye have: I am the LORD your God, which brought you out of the land of Egypt.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 11:1</span><span class="scripture-text">A false balance is abomination to the LORD: but a just weight is his delight.</span></div>
+</div>
+<div class="scripture-block"><p class="scripture-label">Your Neighbor&#x27;s Goods</p>
+<div class="scripture-entry"><span class="scripture-ref">Deuteronomy 22:1–3</span><span class="scripture-text">Thou shalt not see thy brother's ox or his sheep go astray, and hide thyself from them: thou shalt in any case bring them again unto thy brother. And if thy brother be not nigh unto thee, or if thou know him not, then thou shalt bring it unto thine own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again. In like manner shalt thou do with his ass; and so shalt thou do with his raiment; and with all lost thing of thy brother's, which he hath lost, and thou hast found, shalt thou do likewise: thou mayest not hide thyself.</span></div>
+</div>
+<div class="scripture-block"><p class="scripture-label">Lending to the Poor</p>
+<div class="scripture-entry"><span class="scripture-ref">Exodus 22:25</span><span class="scripture-text">If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.</span></div>
+</div>
+<p class="article-body">Set side by side, these commandments show what faithful stewardship looks like on an ordinary Tuesday.</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>The Commandment</th><th>What It Asks of a Steward Today</th><th>Where It Is Written</th></tr></thead><tbody><tr><td>Honour the LORD with the firstfruits</td><td>God's portion comes off the top, before anything else is spent</td><td>Proverbs 3:9</td></tr><tr><td>Pay the hired man before the sun goes down</td><td>Pay what you owe on time, and never make a worker wait for his wages</td><td>Deuteronomy 24:15</td></tr><tr><td>Just balances and just weights</td><td>Honest prices, honest measurements, and honest invoices</td><td>Leviticus 19:36</td></tr><tr><td>Restore what thy brother hath lost</td><td>Treat your neighbor's property as carefully as your own</td><td>Deuteronomy 22:3</td></tr><tr><td>No usury from the poor</td><td>Never profit from a brother's desperation</td><td>Exodus 22:25</td></tr><tr><td>Leave the corners of the field</td><td>Plan generosity into your income before it arrives</td><td>Leviticus 19:9–10</td></tr></tbody></table></div>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>God's commandments about money are not really about money. <strong>They are about treating God as the Owner and treating your neighbor as someone God cares about.</strong> A steward who keeps them will never get rich by making someone else poor.</p></div>
+</article>
+
+<article class="article" id="art11">
+  <div class="article-header"><span class="article-num">XI &middot; Planning and Debt</span><h2 class="article-title">Knowing the State of Thy Flocks</h2></div>
+<p class="article-body">Scripture is surprisingly practical about running a household. In places the book of Proverbs reads like a farmer's financial plan, and its first rule is simple: know what you have.</p>
+<div class="scripture-block"><p class="scripture-label">Know the State</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 27:23–24</span><span class="scripture-text">Be thou diligent to know the state of thy flocks, and look well to thy herds. For riches are not for ever: and doth the crown endure to every generation?</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Luke 14:28–30</span><span class="scripture-text">For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it? Lest haply, after he hath laid the foundation, and is not able to finish it, all that behold it begin to mock him, Saying, This man began to build, and was not able to finish.</span></div>
+</div>
+<p class="article-body">Jesus used the picture of a builder who sits down and counts the cost to teach about following Him, but the picture only works because everyone listening already knew it was plain wisdom. A steward who does not know what is coming in and going out is not being spiritual. He is being careless with his Master's goods.</p>
+<div class="scripture-block"><p class="scripture-label">Diligence and the Ant</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 21:5</span><span class="scripture-text">The thoughts of the diligent tend only to plenteousness; but of every one that is hasty only to want.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 6:6–8</span><span class="scripture-text">Go to the ant, thou sluggard; consider her ways, and be wise: Which having no guide, overseer, or ruler, Provideth her meat in the summer, and gathereth her food in the harvest.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 21:20</span><span class="scripture-text">There is treasure to be desired and oil in the dwelling of the wise; but a foolish man spendeth it up.</span></div>
+</div>
+<p class="article-body">The ant has no overseer, and still she gathers in summer what she will need in winter. The wise man keeps treasure and oil in his dwelling, while the foolish man spends everything that comes in. Saving is not a lack of faith. Joseph stored grain for seven years, and it was the salvation of nations. A good man even plans past his own lifetime <span class="ref-inline">(Proverbs 13:22)</span>.</p>
+<p class="article-body">Then Scripture turns to debt, and the tone gets serious.</p>
+<div class="scripture-block"><p class="scripture-label">The Borrower Is Servant</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 22:7</span><span class="scripture-text">The rich ruleth over the poor, and the borrower is servant to the lender.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Romans 13:8</span><span class="scripture-text">Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 37:21</span><span class="scripture-text">The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 22:26–27</span><span class="scripture-text">Be not thou one of them that strike hands, or of them that are sureties for debts. If thou hast nothing to pay, why should he take away thy bed from under thee?</span></div>
+</div>
+<p class="article-body">Debt is described as servitude. A man in debt has a second master, and his lender holds a claim on his future labour. Scripture does not say every loan is sin, since the law itself gives rules for lending <span class="ref-inline">(Exodus 22:25)</span> and the righteous man is described as one who lends <span class="ref-inline">(Psalm 37:26)</span>. But it never once presents debt as a blessing, and it calls the man wicked who borrows and does not pay back. The steward's aim is to owe no man any thing, but to love one another. And becoming surety, putting yourself on the hook for someone else's debt, is warned against again and again.</p>
+<div class="keypoint"><p class="keypoint-label">A Plain Word</p><p>Know your flocks, count the cost before you build, store up a little in the good years, and get free of debt as fast as honest work allows. <strong>A steward buried in debt has handed part of his Master's house to another master.</strong></p></div>
+</article>
+
+<article class="article" id="art12">
+  <div class="article-header"><span class="article-num">XII &middot; The Danger and the Cure</span><h2 class="article-title">The Rich Fool and the Contented Heart</h2></div>
+<p class="article-body">If poor planning is the ditch on one side of the road, covetousness is the ditch on the other. A man can be careful with every penny and still be a terrible steward, because he has forgotten whose pennies they are. Jesus told a story about exactly that man.</p>
+<div class="scripture-block"><p class="scripture-label">The Rich Fool</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 12:15–21</span><span class="scripture-text">And he said unto them, Take heed, and beware of covetousness: for a man's life consisteth not in the abundance of the things which he possesseth. And he spake a parable unto them, saying, The ground of a certain rich man brought forth plentifully: And he thought within himself, saying, What shall I do, because I have no room where to bestow my fruits? And he said, This will I do: I will pull down my barns, and build greater; and there will I bestow all my fruits and my goods. And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry. But God said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided? So is he that layeth up treasure for himself, and is not rich toward God.</span></div>
+</div>
+<p class="article-body">Listen to how the rich man talks: my fruits, my barns, my goods, my soul. He never mentions God, and he never mentions anyone else. The parable is not against a good harvest or even against building barns. Joseph built storehouses too. The difference is that Joseph stored up for others, against a famine God had warned about, while this man stored up for his own soul's ease. God called him a fool on the very night his soul was required of him. He had lived as an owner, and he died as a steward who had never once thought about giving an account.</p>
+<p class="article-body">Jesus said the same thing in the Sermon on the Mount. Lay up treasure in heaven, for where your treasure is, there will your heart be also <span class="ref-inline">(Matthew 6:19–21)</span>, and no man can serve two masters <span class="ref-inline">(Matthew 6:24)</span>. Paul gave Timothy the cure.</p>
+<div class="scripture-block"><p class="scripture-label">Godliness with Contentment</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Timothy 6:6–10</span><span class="scripture-text">But godliness with contentment is great gain. For we brought nothing into this world, and it is certain we can carry nothing out. And having food and raiment let us be therewith content. But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition. For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Hebrews 13:5</span><span class="scripture-text">Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.</span></div>
+</div>
+<p class="article-body">Notice that Paul does not say money is the root of all evil. He says the love of money is. Money in a steward's hand is a tool. Money in a steward's heart is a master. The cure is not poverty. The cure is contentment, and Paul tells us plainly that he had to learn it.</p>
+<div class="scripture-block"><p class="scripture-label">I Have Learned</p>
+<div class="scripture-entry"><span class="scripture-ref">Philippians 4:11–13</span><span class="scripture-text">Not that I speak in respect of want: for I have learned, in whatsoever state I am, therewith to be content. I know both how to be abased, and I know how to abound: every where and in all things I am instructed both to be full and to be hungry, both to abound and to suffer need. I can do all things through Christ which strengtheneth me.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>The rich fool was not condemned for having much. <strong>He was condemned for laying up treasure for himself while he was not rich toward God.</strong> Contentment is the guard at the door of a steward's heart, and it is learned, not inherited.</p></div>
+</article>
+
+<article class="article" id="art13">
+  <div class="article-header"><span class="article-num">XIII &middot; Generosity Above the Floor</span><h2 class="article-title">The Open Hand</h2></div>
+<p class="article-body">The tithe is a floor, not a ceiling. Above it, Scripture describes a whole way of life marked by an open hand. God commanded it in the law, and He commanded it with feeling.</p>
+<div class="scripture-block"><p class="scripture-label">Open Thine Hand Wide</p>
+<div class="scripture-entry"><span class="scripture-ref">Deuteronomy 15:7–8</span><span class="scripture-text">If there be among you a poor man of one of thy brethren within any of thy gates in thy land which the LORD thy God giveth thee, thou shalt not harden thine heart, nor shut thine hand from thy poor brother: But thou shalt open thine hand wide unto him, and shalt surely lend him sufficient for his need, in that which he wanteth.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Deuteronomy 15:10–11</span><span class="scripture-text">Thou shalt surely give him, and thine heart shall not be grieved when thou givest unto him: because that for this thing the LORD thy God shall bless thee in all thy works, and in all that thou puttest thine hand unto. For the poor shall never cease out of the land: therefore I command thee, saying, Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy, in thy land.</span></div>
+</div>
+<p class="article-body">Thine heart shall not be grieved when thou givest. God cares about the heart behind the hand. And the greatest example of that heart in the New Testament came from someone with almost nothing.</p>
+<div class="scripture-block"><p class="scripture-label">The Widow&#x27;s Two Mites</p>
+<div class="scripture-entry"><span class="scripture-ref">Mark 12:41–44</span><span class="scripture-text">And Jesus sat over against the treasury, and beheld how the people cast money into the treasury: and many that were rich cast in much. And there came a certain poor widow, and she threw in two mites, which make a farthing. And he called unto him his disciples, and saith unto them, Verily I say unto you, That this poor widow hath cast more in, than all they which have cast into the treasury: For all they did cast in of their abundance; but she of her want did cast in all that she had, even all her living.</span></div>
+</div>
+<p class="article-body">Jesus sat down and watched the giving. He still does. He did not measure the widow's gift by what she put in but by what she had left when she was done. Paul found that same spirit in the churches of Macedonia, who were poor and under heavy trial and yet begged for the privilege of giving.</p>
+<div class="scripture-block"><p class="scripture-label">First Gave Their Own Selves</p>
+<div class="scripture-entry"><span class="scripture-ref">2 Corinthians 8:1–5</span><span class="scripture-text">Moreover, brethren, we do you to wit of the grace of God bestowed on the churches of Macedonia; How that in a great trial of affliction the abundance of their joy and their deep poverty abounded unto the riches of their liberality. For to their power, I bear record, yea, and beyond their power they were willing of themselves; Praying us with much intreaty that we would receive the gift, and take upon us the fellowship of the ministering to the saints. And this they did, not as we hoped, but first gave their own selves to the Lord, and unto us by the will of God.</span></div>
+</div>
+<p class="article-body">They first gave their own selves to the Lord. That is the order. A steward who has handed himself over to God has little trouble handing over what God put in his hands. Luke describes the same spirit in the first church at Jerusalem, and then records what happened when two people tried to look generous without being honest.</p>
+<div class="scripture-block"><p class="scripture-label">One Heart and One Soul</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 4:32</span><span class="scripture-text">And the multitude of them that believed were of one heart and of one soul: neither said any of them that ought of the things which he possessed was his own; but they had all things common.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 5:3–4</span><span class="scripture-text">But Peter said, Ananias, why hath Satan filled thine heart to lie to the Holy Ghost, and to keep back part of the price of the land? Whiles it remained, was it not thine own? and after it was sold, was it not in thine own power? why hast thou conceived this thing in thine heart? thou hast not lied unto men, but unto God.</span></div>
+</div>
+<p class="article-body">Peter's words matter here: Whiles it remained, was it not thine own? and after it was sold, was it not in thine own power? Ananias was under no command to sell his land or to give all of it away. Giving above God's portion is free. His sin was lying to the Holy Ghost about what he gave. Honesty belongs to stewardship too, even in our generosity.</p>
+<p class="article-body">The believers who came after the apostles carried this open hand forward. A short manual of Christian instruction from that early period, known as the Didache, told believers plainly how to hold their possessions.</p>
+<div class="histquote"><p class="scripture-label">From the Historical Record</p><span class="histquote-ref">Didache 4:7–8</span><span class="histquote-text">Thou shalt not hesitate to give, neither shalt thou murmur when giving; for thou shalt know who is the good paymaster of thy reward. Thou shalt not turn away from him that is in want, but shalt make thy brother partaker in all things, and shalt not say that anything is thine own. For if ye are fellow-partakers in that which is imperishable, how much rather in the things which are perishable?</span><span class="histquote-src">The Didache, or Teaching of the Twelve Apostles, chapter 4, standard verse numbering. Translated by J. B. Lightfoot. Written in the late first or early second century; the exact date is debated.</span></div>
+<p class="article-body">In the first half of the second century, an Athenian believer named Aristides wrote a defense of the faith addressed to the Roman emperor. Describing how Christians lived, he recorded one habit that ought to stop us in our tracks.</p>
+<div class="histquote"><p class="scripture-label">From the Historical Record</p><span class="histquote-ref">Apology of Aristides 15</span><span class="histquote-text">And if there is among them any that is poor and needy, and if they have no spare food, they fast two or three days in order to supply to the needy their lack of food.</span><span class="histquote-src">The Apology of Aristides, chapter 15, from the Syriac text. Translated by D. M. Kay in the Ante-Nicene Fathers, volume 10. Written in the early to middle second century.</span></div>
+<p class="article-body">They did not have extra, so they made extra by going without. That is not a rule laid on anyone, but it is a window into how the early believers understood what was in their hands. It was never simply theirs.</p>
+<div class="scripture-block"><p class="scripture-label">More Blessed to Give</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 20:35</span><span class="scripture-text">I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 19:17</span><span class="scripture-text">He that hath pity upon the poor lendeth unto the LORD; and that which he hath given will he pay him again.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>The tithe is God's portion returned. <strong>Everything above it is the overflow of a heart that knows the rest is His too.</strong> Give freely, give honestly, and give the way the widow gave, measured by what it cost and not by how it counted.</p></div>
+</article>
+
+<article class="article" id="art14">
+  <div class="article-header"><span class="article-num">XIV &middot; The Greatest Trust</span><h2 class="article-title">Stewards of the Mysteries of God</h2></div>
+<p class="article-body">Of everything God has placed in the hands of His people, the most valuable is the truth of the gospel itself. Paul called the ministers of Christ stewards of the mysteries of God <span class="ref-inline">(1 Corinthians 4:1)</span>, and he described his own calling in a steward's terms.</p>
+<div class="scripture-block"><p class="scripture-label">A Dispensation Committed</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 9:16–17</span><span class="scripture-text">For though I preach the gospel, I have nothing to glory of: for necessity is laid upon me; yea, woe is unto me, if I preach not the gospel! For if I do this thing willingly, I have a reward: but if against my will, a dispensation of the gospel is committed unto me.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 3:2</span><span class="scripture-text">If ye have heard of the dispensation of the grace of God which is given me to you-ward:</span></div>
+</div>
+<p class="article-body">Remember from the start of this study that <em>dispensation</em> is the steward's word, <em>oikonomia</em>. Paul did not treat the gospel as his message to shape or improve. He was a house manager who had been handed his Master's goods and told to give them out to the household, whole and unaltered.</p>
+<div class="scripture-block"><p class="scripture-label">Keep That Which Is Committed</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Timothy 6:20</span><span class="scripture-text">O Timothy, keep that which is committed to thy trust, avoiding profane and vain babblings, and oppositions of science falsely so called:</span></div>
+<div class="scripture-entry"><span class="scripture-ref">2 Timothy 1:13–14</span><span class="scripture-text">Hold fast the form of sound words, which thou hast heard of me, in faith and love which is in Christ Jesus. That good thing which was committed unto thee keep by the Holy Ghost which dwelleth in us.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">2 Timothy 2:2</span><span class="scripture-text">And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also.</span></div>
+</div>
+<p class="article-body">Every generation of believers receives the faith from the generation before it, and every generation hands it to the next. That handoff can be done faithfully or carelessly. Jude urged the church to earnestly contend for the faith which was once delivered unto the saints <span class="ref-inline">(Jude 1:3)</span>. A disciple who holds to the words of Jesus exactly as He spoke them is not being stubborn. He is being a steward. He was never given the authority to edit the Master's goods. He was given the responsibility to pass them on.</p>
+<div class="keypoint"><p class="keypoint-label">Hold This Thought</p><p>Money will fail and bodies will wear out, but the word of the Lord endureth for ever <span class="ref-inline">(1 Peter 1:25)</span>. <strong>The gospel is the one stewardship that outlasts everything else we manage,</strong> and we are responsible to keep it pure and to pass it on.</p></div>
+</article>
+
+<article class="article" id="art15">
+  <div class="article-header"><span class="article-num">XV &middot; When the Master Returns</span><h2 class="article-title">The Day of Account</h2></div>
+<p class="article-body">Every parable of stewardship ends the same way. The master comes back and calls for an account. The unjust steward heard it in plain words: give an account of thy stewardship <span class="ref-inline">(Luke 16:2)</span>. Scripture says every one of us will hear the same call.</p>
+<div class="scripture-block"><p class="scripture-label">Every One of Us</p>
+<div class="scripture-entry"><span class="scripture-ref">Romans 14:10–12</span><span class="scripture-text">But why dost thou judge thy brother? or why dost thou set at nought thy brother? for we shall all stand before the judgment seat of Christ. For it is written, As I live, saith the Lord, every knee shall bow to me, and every tongue shall confess to God. So then every one of us shall give account of himself to God.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">2 Corinthians 5:10</span><span class="scripture-text">For we must all appear before the judgment seat of Christ; that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.</span></div>
+</div>
+<p class="article-body">That can sound frightening until we understand what is being judged. A believer is not saved by his stewardship. Salvation is a gift received by grace through faith, and nothing we manage well or badly adds to or takes from the finished work of Christ. But the same passage that settles salvation by grace goes right on to say that we were created for good works.</p>
+<div class="scripture-block"><p class="scripture-label">Saved by Grace, Created for Good Works</p>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 2:8–10</span><span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span></div>
+</div>
+<p class="article-body">Paul describes what happens to a believer's work on that day. The foundation is Christ, and it cannot be shaken. What we build on top of it will be tried by fire.</p>
+<div class="scripture-block"><p class="scripture-label">Every Man&#x27;s Work Made Manifest</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 3:11–15</span><span class="scripture-text">For other foundation can no man lay than that is laid, which is Jesus Christ. Now if any man build upon this foundation gold, silver, precious stones, wood, hay, stubble; Every man's work shall be made manifest: for the day shall declare it, because it shall be revealed by fire; and the fire shall try every man's work of what sort it is. If any man's work abide which he hath built thereupon, he shall receive a reward. If any man's work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.</span></div>
+</div>
+<p class="article-body">Some work survives the fire and receives a reward. Some burns up, and the builder suffers loss, yet he himself is saved. For the believer, the judgment of his stewardship is not a trial for his soul. It is a review of his service. And the Master is not coming to that review empty-handed.</p>
+<div class="scripture-block"><p class="scripture-label">My Reward Is with Me</p>
+<div class="scripture-entry"><span class="scripture-ref">Revelation 22:12</span><span class="scripture-text">And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">The Words We Want to Hear</p><p>The day of account is certain, but for a faithful servant it is not a day of dread. <strong>It is the day the Master says, Well done, thou good and faithful servant, and calls His steward into His joy</strong> <span class="ref-inline">(Matthew 25:21)</span>. Every faithful choice we make this month is aimed at that moment.</p></div>
+</article>
+
+<article class="article" id="art16">
+  <div class="article-header"><span class="article-num">XVI &middot; The Charge</span><h2 class="article-title">What to Steward This Month</h2></div>
+<p class="article-body">A study on stewardship that stays on paper has missed its own point. So here are seven things to put into practice before October is out. None of them will save anyone. All of them are what saved people do.</p>
+<ol class="charge-list"><li><strong>Settle the question of ownership.</strong> Sit down with a list of what you have, the house, the vehicles, the accounts, the tools, the skills, and the calendar, and hand it back to God in prayer the way David did <span class="ref-inline">(1 Chronicles 29:14)</span>.</li><li><strong>Know the state of your flocks.</strong> Write down what comes in and what goes out this month. You cannot be faithful with what you refuse to look at <span class="ref-inline">(Proverbs 27:23)</span>.</li><li><strong>Put God&#x27;s portion first.</strong> Before the bills, before the groceries, before anything else, set aside the firstfruits <span class="ref-inline">(Proverbs 3:9)</span>.</li><li><strong>Pick one debt and go after it.</strong> Make a plan to owe no man any thing, and take the first step this month, even if it is a small one <span class="ref-inline">(Romans 13:8)</span>.</li><li><strong>Dig up one buried talent.</strong> Name one gift or ability you have been sitting on, and put it to work in the church or for someone in need <span class="ref-inline">(Matthew 25:25)</span>.</li><li><strong>Redeem the hours.</strong> Keep the Sabbath as the weekly reminder of whose time it is, and give the other six days honest labour <span class="ref-inline">(Exodus 20:9–10)</span>.</li><li><strong>Open your hand once where nothing comes back.</strong> Find one person in need and give without anyone knowing, in the spirit of the widow and the Macedonians <span class="ref-inline">(Deuteronomy 15:8)</span>.</li></ol>
+<div class="closing-panel"><p class="closing-label">The Final Word</p><p>We brought nothing into this world, and it is certain we can carry nothing out <span class="ref-inline">(1 Timothy 6:7)</span>. Everything in between is borrowed. <strong>Moreover it is required in stewards, that a man be found faithful.</strong> Not rich, not gifted, not famous. Faithful. By the grace of God, that is within reach of every one of us.</p></div>
+</article>
+
+<section class="teacher-note" id="teacher"><p class="tnote-label">For the Teacher</p><p><strong>The unjust steward.</strong> This is the parable most likely to be misread in class. Keep pressing the difference between the lord in the story, who admires the steward's shrewdness, and the Lord Jesus, who calls the man unjust in the same breath <span class="ref-inline">(Luke 16:8)</span>. The lesson is foresight, never dishonesty.</p><p><strong>Giving is not an investment scheme.</strong> Expect someone to raise the popular teaching that giving is a way to get money back from God. The promises in Malachi and in Luke <span class="ref-inline">(Malachi 3:10; Luke 6:38)</span> are real, but the verse in Luke is spoken in the middle of a teaching about judging and forgiving others <span class="ref-inline">(Luke 6:37)</span>, and the measure there is the measure we use with people. Neither verse turns giving into a transaction. Bring the class back to the steward's question, whose is it, rather than the investor's question, what do I get back.</p><p><strong>Debt.</strong> Some teachers say all borrowing is sin because Paul wrote, Owe no man any thing <span class="ref-inline">(Romans 13:8)</span>. Be honest about what the text says. In context, Paul has just told believers to render to all their dues <span class="ref-inline">(Romans 13:7)</span>, and the law itself regulates lending rather than forbidding it <span class="ref-inline">(Exodus 22:25)</span>. Scripture warns about debt strongly and never calls it a blessing, but we should not bind consciences beyond what is written. Let the class weigh the passages for themselves.</p><p><strong>The word dispensation.</strong> In Paul's letters, dispensation simply means stewardship, the office of a house manager. It does not refer to an age of history. Modern systems that divide history into dispensations use the word differently, so do not import that meaning into these verses.</p><p><strong>The historical witnesses.</strong> The Didache and Aristides are not Scripture. We quote them as witnesses to how early believers lived, not as authorities. The line just before our Didache quotation speaks of giving as a ransom for sins, and that is not the teaching of the Bible, which says we were redeemed with the precious blood of Christ <span class="ref-inline">(1 Peter 1:18–19)</span>. The date of the Didache is debated, somewhere from the late first to the early second century. The full Syriac text of Aristides was only rediscovered in 1889, and scholars place the work in the early to middle second century.</p><p><strong>Eliezer and the eldest servant.</strong> It is common to say the servant who went to find Rebekah was Eliezer. That is possible, and the text allows it, but the chapter never names him <span class="ref-inline">(Genesis 24:2)</span>. Present it as a possibility, not a fact.</p></section>
+
+<section class="appendix" id="scriptures">
+  <div class="article-header"><span class="article-num">For Reference</span><h2 class="article-title">Every Scripture in This Study</h2></div>
+  <p class="article-body">Every passage cited in this study, whether it was quoted in full above or mentioned in passing, is printed here in the order of the books of the Bible. All quotations are from the King James Version, so the whole study can be read and checked from this one document without a second list.</p>
+  <div class="index-list">
+<div class="index-entry"><span class="scripture-ref">Genesis 1:26</span><span class="scripture-text">And God said, Let us make man in our image, after our likeness: and let them have dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that creepeth upon the earth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 1:28</span><span class="scripture-text">And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing that moveth upon the earth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 2:15</span><span class="scripture-text">And the LORD God took the man, and put him into the garden of Eden to dress it and to keep it.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 3:17–19</span><span class="scripture-text">And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life; Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field; In the sweat of thy face shalt thou eat bread, till thou return unto the ground; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 3:24</span><span class="scripture-text">So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 14:18–20</span><span class="scripture-text">And Melchizedek king of Salem brought forth bread and wine: and he was the priest of the most high God. And he blessed him, and said, Blessed be Abram of the most high God, possessor of heaven and earth: And blessed be the most high God, which hath delivered thine enemies into thy hand. And he gave him tithes of all.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 15:2</span><span class="scripture-text">And Abram said, LORD God, what wilt thou give me, seeing I go childless, and the steward of my house is this Eliezer of Damascus?</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 24:2</span><span class="scripture-text">And Abraham said unto his eldest servant of his house, that ruled over all that he had, Put, I pray thee, thy hand under my thigh:</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 26:5</span><span class="scripture-text">Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 39:2–6</span><span class="scripture-text">And the LORD was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian. And his master saw that the LORD was with him, and that the LORD made all that he did to prosper in his hand. And Joseph found grace in his sight, and he served him: and he made him overseer over his house, and all that he had he put into his hand. And it came to pass from the time that he had made him overseer in his house, and over all that he had, that the LORD blessed the Egyptian's house for Joseph's sake; and the blessing of the LORD was upon all that he had in the house, and in the field. And he left all that he had in Joseph's hand; and he knew not ought he had, save the bread which he did eat. And Joseph was a goodly person, and well favoured.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 39:8–9</span><span class="scripture-text">But he refused, and said unto his master's wife, Behold, my master wotteth not what is with me in the house, and he hath committed all that he hath to my hand; There is none greater in this house than I; neither hath he kept back any thing from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 39:21–23</span><span class="scripture-text">But the LORD was with Joseph, and shewed him mercy, and gave him favour in the sight of the keeper of the prison. And the keeper of the prison committed to Joseph's hand all the prisoners that were in the prison; and whatsoever they did there, he was the doer of it. The keeper of the prison looked not to any thing that was under his hand; because the LORD was with him, and that which he did, the LORD made it to prosper.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 41:34–36</span><span class="scripture-text">Let Pharaoh do this, and let him appoint officers over the land, and take up the fifth part of the land of Egypt in the seven plenteous years. And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities. And that food shall be for store to the land against the seven years of famine, which shall be in the land of Egypt; that the land perish not through the famine.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 41:40</span><span class="scripture-text">Thou shalt be over my house, and according unto thy word shall all my people be ruled: only in the throne will I be greater than thou.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 43:16</span><span class="scripture-text">And when Joseph saw Benjamin with them, he said to the ruler of his house, Bring these men home, and slay, and make ready; for these men shall dine with me at noon.</span></div>
+<div class="index-entry"><span class="scripture-ref">Genesis 44:1</span><span class="scripture-text">And he commanded the steward of his house, saying, Fill the men's sacks with food, as much as they can carry, and put every man's money in his sack's mouth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Exodus 20:8–11</span><span class="scripture-text">Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates: For in six days the LORD made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore the LORD blessed the sabbath day, and hallowed it.</span></div>
+<div class="index-entry"><span class="scripture-ref">Exodus 20:15</span><span class="scripture-text">Thou shalt not steal.</span></div>
+<div class="index-entry"><span class="scripture-ref">Exodus 22:25</span><span class="scripture-text">If thou lend money to any of my people that is poor by thee, thou shalt not be to him as an usurer, neither shalt thou lay upon him usury.</span></div>
+<div class="index-entry"><span class="scripture-ref">Leviticus 19:9–10</span><span class="scripture-text">And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest. And thou shalt not glean thy vineyard, neither shalt thou gather every grape of thy vineyard; thou shalt leave them for the poor and stranger: I am the LORD your God.</span></div>
+<div class="index-entry"><span class="scripture-ref">Leviticus 19:13</span><span class="scripture-text">Thou shalt not defraud thy neighbour, neither rob him: the wages of him that is hired shall not abide with thee all night until the morning.</span></div>
+<div class="index-entry"><span class="scripture-ref">Leviticus 19:35–36</span><span class="scripture-text">Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure. Just balances, just weights, a just ephah, and a just hin, shall ye have: I am the LORD your God, which brought you out of the land of Egypt.</span></div>
+<div class="index-entry"><span class="scripture-ref">Leviticus 25:23</span><span class="scripture-text">The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me.</span></div>
+<div class="index-entry"><span class="scripture-ref">Numbers 18:21</span><span class="scripture-text">And, behold, I have given the children of Levi all the tenth in Israel for an inheritance, for their service which they serve, even the service of the tabernacle of the congregation.</span></div>
+<div class="index-entry"><span class="scripture-ref">Deuteronomy 8:17–18</span><span class="scripture-text">And thou say in thine heart, My power and the might of mine hand hath gotten me this wealth. But thou shalt remember the LORD thy God: for it is he that giveth thee power to get wealth, that he may establish his covenant which he sware unto thy fathers, as it is this day.</span></div>
+<div class="index-entry"><span class="scripture-ref">Deuteronomy 15:7–8</span><span class="scripture-text">If there be among you a poor man of one of thy brethren within any of thy gates in thy land which the LORD thy God giveth thee, thou shalt not harden thine heart, nor shut thine hand from thy poor brother: But thou shalt open thine hand wide unto him, and shalt surely lend him sufficient for his need, in that which he wanteth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Deuteronomy 15:10–11</span><span class="scripture-text">Thou shalt surely give him, and thine heart shall not be grieved when thou givest unto him: because that for this thing the LORD thy God shall bless thee in all thy works, and in all that thou puttest thine hand unto. For the poor shall never cease out of the land: therefore I command thee, saying, Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy, in thy land.</span></div>
+<div class="index-entry"><span class="scripture-ref">Deuteronomy 22:1–3</span><span class="scripture-text">Thou shalt not see thy brother's ox or his sheep go astray, and hide thyself from them: thou shalt in any case bring them again unto thy brother. And if thy brother be not nigh unto thee, or if thou know him not, then thou shalt bring it unto thine own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again. In like manner shalt thou do with his ass; and so shalt thou do with his raiment; and with all lost thing of thy brother's, which he hath lost, and thou hast found, shalt thou do likewise: thou mayest not hide thyself.</span></div>
+<div class="index-entry"><span class="scripture-ref">Deuteronomy 24:14–15</span><span class="scripture-text">Thou shalt not oppress an hired servant that is poor and needy, whether he be of thy brethren, or of thy strangers that are in thy land within thy gates: At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it: lest he cry against thee unto the LORD, and it be sin unto thee.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Kings 18:3–4</span><span class="scripture-text">And Ahab called Obadiah, which was the governor of his house. (Now Obadiah feared the LORD greatly: For it was so, when Jezebel cut off the prophets of the LORD, that Obadiah took an hundred prophets, and hid them by fifty in a cave, and fed them with bread and water.)</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Chronicles 29:11–14</span><span class="scripture-text">Thine, O LORD, is the greatness, and the power, and the glory, and the victory, and the majesty: for all that is in the heaven and in the earth is thine; thine is the kingdom, O LORD, and thou art exalted as head above all. Both riches and honour come of thee, and thou reignest over all; and in thine hand is power and might; and in thine hand it is to make great, and to give strength unto all. Now therefore, our God, we thank thee, and praise thy glorious name. But who am I, and what is my people, that we should be able to offer so willingly after this sort? for all things come of thee, and of thine own have we given thee.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 8:4–6</span><span class="scripture-text">What is man, that thou art mindful of him? and the son of man, that thou visitest him? For thou hast made him a little lower than the angels, and hast crowned him with glory and honour. Thou madest him to have dominion over the works of thy hands; thou hast put all things under his feet:</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 24:1</span><span class="scripture-text">The earth is the LORD'S, and the fulness thereof; the world, and they that dwell therein.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 37:21</span><span class="scripture-text">The wicked borroweth, and payeth not again: but the righteous sheweth mercy, and giveth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 37:26</span><span class="scripture-text">He is ever merciful, and lendeth; and his seed is blessed.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 50:10–12</span><span class="scripture-text">For every beast of the forest is mine, and the cattle upon a thousand hills. I know all the fowls of the mountains: and the wild beasts of the field are mine. If I were hungry, I would not tell thee: for the world is mine, and the fulness thereof.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 90:12</span><span class="scripture-text">So teach us to number our days, that we may apply our hearts unto wisdom.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 105:17–21</span><span class="scripture-text">He sent a man before them, even Joseph, who was sold for a servant: Whose feet they hurt with fetters: he was laid in iron: Until the time that his word came: the word of the LORD tried him. The king sent and loosed him; even the ruler of the people, and let him go free. He made him lord of his house, and ruler of all his substance:</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 115:16</span><span class="scripture-text">The heaven, even the heavens, are the LORD'S: but the earth hath he given to the children of men.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 3:9–10</span><span class="scripture-text">Honour the LORD with thy substance, and with the firstfruits of all thine increase: So shall thy barns be filled with plenty, and thy presses shall burst out with new wine.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 6:6–8</span><span class="scripture-text">Go to the ant, thou sluggard; consider her ways, and be wise: Which having no guide, overseer, or ruler, Provideth her meat in the summer, and gathereth her food in the harvest.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 11:1</span><span class="scripture-text">A false balance is abomination to the LORD: but a just weight is his delight.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 13:22</span><span class="scripture-text">A good man leaveth an inheritance to his children's children: and the wealth of the sinner is laid up for the just.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 19:17</span><span class="scripture-text">He that hath pity upon the poor lendeth unto the LORD; and that which he hath given will he pay him again.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 21:5</span><span class="scripture-text">The thoughts of the diligent tend only to plenteousness; but of every one that is hasty only to want.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 21:20</span><span class="scripture-text">There is treasure to be desired and oil in the dwelling of the wise; but a foolish man spendeth it up.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 22:7</span><span class="scripture-text">The rich ruleth over the poor, and the borrower is servant to the lender.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 22:26–27</span><span class="scripture-text">Be not thou one of them that strike hands, or of them that are sureties for debts. If thou hast nothing to pay, why should he take away thy bed from under thee?</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 27:23–24</span><span class="scripture-text">Be thou diligent to know the state of thy flocks, and look well to thy herds. For riches are not for ever: and doth the crown endure to every generation?</span></div>
+<div class="index-entry"><span class="scripture-ref">Isaiah 22:15–23</span><span class="scripture-text">Thus saith the Lord GOD of hosts, Go, get thee unto this treasurer, even unto Shebna, which is over the house, and say, What hast thou here? and whom hast thou here, that thou hast hewed thee out a sepulchre here, as he that heweth him out a sepulchre on high, and that graveth an habitation for himself in a rock? Behold, the LORD will carry thee away with a mighty captivity, and will surely cover thee. He will surely violently turn and toss thee like a ball into a large country: there shalt thou die, and there the chariots of thy glory shall be the shame of thy lord's house. And I will drive thee from thy station, and from thy state shall he pull thee down. And it shall come to pass in that day, that I will call my servant Eliakim the son of Hilkiah: And I will clothe him with thy robe, and strengthen him with thy girdle, and I will commit thy government into his hand: and he shall be a father to the inhabitants of Jerusalem, and to the house of Judah. And the key of the house of David will I lay upon his shoulder; so he shall open, and none shall shut; and he shall shut, and none shall open. And I will fasten him as a nail in a sure place; and he shall be for a glorious throne to his father's house.</span></div>
+<div class="index-entry"><span class="scripture-ref">Haggai 2:8</span><span class="scripture-text">The silver is mine, and the gold is mine, saith the LORD of hosts.</span></div>
+<div class="index-entry"><span class="scripture-ref">Malachi 3:10</span><span class="scripture-text">Bring ye all the tithes into the storehouse, that there may be meat in mine house, and prove me now herewith, saith the LORD of hosts, if I will not open you the windows of heaven, and pour you out a blessing, that there shall not be room enough to receive it.</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 6:19–21</span><span class="scripture-text">Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal: But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal: For where your treasure is, there will your heart be also.</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 6:24</span><span class="scripture-text">No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 23:23</span><span class="scripture-text">Woe unto you, scribes and Pharisees, hypocrites! for ye pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought ye to have done, and not to leave the other undone.</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 24:45–51</span><span class="scripture-text">Who then is a faithful and wise servant, whom his lord hath made ruler over his household, to give them meat in due season? Blessed is that servant, whom his lord when he cometh shall find so doing. Verily I say unto you, That he shall make him ruler over all his goods. But and if that evil servant shall say in his heart, My lord delayeth his coming; And shall begin to smite his fellowservants, and to eat and drink with the drunken; The lord of that servant shall come in a day when he looketh not for him, and in an hour that he is not aware of, And shall cut him asunder, and appoint him his portion with the hypocrites: there shall be weeping and gnashing of teeth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 25:14–30</span><span class="scripture-text">For the kingdom of heaven is as a man travelling into a far country, who called his own servants, and delivered unto them his goods. And unto one he gave five talents, to another two, and to another one; to every man according to his several ability; and straightway took his journey. Then he that had received the five talents went and traded with the same, and made them other five talents. And likewise he that had received two, he also gained other two. But he that had received one went and digged in the earth, and hid his lord's money. After a long time the lord of those servants cometh, and reckoneth with them. And so he that had received five talents came and brought other five talents, saying, Lord, thou deliveredst unto me five talents: behold, I have gained beside them five talents more. His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord. He also that had received two talents came and said, Lord, thou deliveredst unto me two talents: behold, I have gained two other talents beside them. His lord said unto him, Well done, good and faithful servant; thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord. Then he which had received the one talent came and said, Lord, I knew thee that thou art an hard man, reaping where thou hast not sown, and gathering where thou hast not strawed: And I was afraid, and went and hid thy talent in the earth: lo, there thou hast that is thine. His lord answered and said unto him, Thou wicked and slothful servant, thou knewest that I reap where I sowed not, and gather where I have not strawed: Thou oughtest therefore to have put my money to the exchangers, and then at my coming I should have received mine own with usury. Take therefore the talent from him, and give it unto him which hath ten talents. For unto every one that hath shall be given, and he shall have abundance: but from him that hath not shall be taken away even that which he hath. And cast ye the unprofitable servant into outer darkness: there shall be weeping and gnashing of teeth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Mark 12:41–44</span><span class="scripture-text">And Jesus sat over against the treasury, and beheld how the people cast money into the treasury: and many that were rich cast in much. And there came a certain poor widow, and she threw in two mites, which make a farthing. And he called unto him his disciples, and saith unto them, Verily I say unto you, That this poor widow hath cast more in, than all they which have cast into the treasury: For all they did cast in of their abundance; but she of her want did cast in all that she had, even all her living.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 6:37–38</span><span class="scripture-text">Judge not, and ye shall not be judged: condemn not, and ye shall not be condemned: forgive, and ye shall be forgiven: Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over, shall men give into your bosom. For with the same measure that ye mete withal it shall be measured to you again.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 8:3</span><span class="scripture-text">And Joanna the wife of Chuza Herod's steward, and Susanna, and many others, which ministered unto him of their substance.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 12:15–21</span><span class="scripture-text">And he said unto them, Take heed, and beware of covetousness: for a man's life consisteth not in the abundance of the things which he possesseth. And he spake a parable unto them, saying, The ground of a certain rich man brought forth plentifully: And he thought within himself, saying, What shall I do, because I have no room where to bestow my fruits? And he said, This will I do: I will pull down my barns, and build greater; and there will I bestow all my fruits and my goods. And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry. But God said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided? So is he that layeth up treasure for himself, and is not rich toward God.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 12:42–48</span><span class="scripture-text">And the Lord said, Who then is that faithful and wise steward, whom his lord shall make ruler over his household, to give them their portion of meat in due season? Blessed is that servant, whom his lord when he cometh shall find so doing. Of a truth I say unto you, that he will make him ruler over all that he hath. But and if that servant say in his heart, My lord delayeth his coming; and shall begin to beat the menservants and maidens, and to eat and drink, and to be drunken; The lord of that servant will come in a day when he looketh not for him, and at an hour when he is not aware, and will cut him in sunder, and will appoint him his portion with the unbelievers. And that servant, which knew his lord's will, and prepared not himself, neither did according to his will, shall be beaten with many stripes. But he that knew not, and did commit things worthy of stripes, shall be beaten with few stripes. For unto whomsoever much is given, of him shall be much required: and to whom men have committed much, of him they will ask the more.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 14:28–30</span><span class="scripture-text">For which of you, intending to build a tower, sitteth not down first, and counteth the cost, whether he have sufficient to finish it? Lest haply, after he hath laid the foundation, and is not able to finish it, all that behold it begin to mock him, Saying, This man began to build, and was not able to finish.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 16:1–13</span><span class="scripture-text">And he said also unto his disciples, There was a certain rich man, which had a steward; and the same was accused unto him that he had wasted his goods. And he called him, and said unto him, How is it that I hear this of thee? give an account of thy stewardship; for thou mayest be no longer steward. Then the steward said within himself, What shall I do? for my lord taketh away from me the stewardship: I cannot dig; to beg I am ashamed. I am resolved what to do, that, when I am put out of the stewardship, they may receive me into their houses. So he called every one of his lord's debtors unto him, and said unto the first, How much owest thou unto my lord? And he said, An hundred measures of oil. And he said unto him, Take thy bill, and sit down quickly, and write fifty. Then said he to another, And how much owest thou? And he said, An hundred measures of wheat. And he said unto him, Take thy bill, and write fourscore. And the lord commended the unjust steward, because he had done wisely: for the children of this world are in their generation wiser than the children of light. And I say unto you, Make to yourselves friends of the mammon of unrighteousness; that, when ye fail, they may receive you into everlasting habitations. He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much. If therefore ye have not been faithful in the unrighteous mammon, who will commit to your trust the true riches? And if ye have not been faithful in that which is another man's, who shall give you that which is your own? No servant can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve God and mammon.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 16:17</span><span class="scripture-text">And it is easier for heaven and earth to pass, than one tittle of the law to fail.</span></div>
+<div class="index-entry"><span class="scripture-ref">Luke 19:11–27</span><span class="scripture-text">And as they heard these things, he added and spake a parable, because he was nigh to Jerusalem, and because they thought that the kingdom of God should immediately appear. He said therefore, A certain nobleman went into a far country to receive for himself a kingdom, and to return. And he called his ten servants, and delivered them ten pounds, and said unto them, Occupy till I come. But his citizens hated him, and sent a message after him, saying, We will not have this man to reign over us. And it came to pass, that when he was returned, having received the kingdom, then he commanded these servants to be called unto him, to whom he had given the money, that he might know how much every man had gained by trading. Then came the first, saying, Lord, thy pound hath gained ten pounds. And he said unto him, Well, thou good servant: because thou hast been faithful in a very little, have thou authority over ten cities. And the second came, saying, Lord, thy pound hath gained five pounds. And he said likewise to him, Be thou also over five cities. And another came, saying, Lord, behold, here is thy pound, which I have kept laid up in a napkin: For I feared thee, because thou art an austere man: thou takest up that thou layedst not down, and reapest that thou didst not sow. And he saith unto him, Out of thine own mouth will I judge thee, thou wicked servant. Thou knewest that I was an austere man, taking up that I laid not down, and reaping that I did not sow: Wherefore then gavest not thou my money into the bank, that at my coming I might have required mine own with usury? And he said unto them that stood by, Take from him the pound, and give it to him that hath ten pounds. (And they said unto him, Lord, he hath ten pounds.) For I say unto you, That unto every one which hath shall be given; and from him that hath not, even that he hath shall be taken away from him. But those mine enemies, which would not that I should reign over them, bring hither, and slay them before me.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 4:32</span><span class="scripture-text">And the multitude of them that believed were of one heart and of one soul: neither said any of them that ought of the things which he possessed was his own; but they had all things common.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 5:3–4</span><span class="scripture-text">But Peter said, Ananias, why hath Satan filled thine heart to lie to the Holy Ghost, and to keep back part of the price of the land? Whiles it remained, was it not thine own? and after it was sold, was it not in thine own power? why hast thou conceived this thing in thine heart? thou hast not lied unto men, but unto God.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 20:35</span><span class="scripture-text">I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, It is more blessed to give than to receive.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 12:1</span><span class="scripture-text">I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 12:6–8</span><span class="scripture-text">Having then gifts differing according to the grace that is given to us, whether prophecy, let us prophesy according to the proportion of faith; Or ministry, let us wait on our ministering: or he that teacheth, on teaching; Or he that exhorteth, on exhortation: he that giveth, let him do it with simplicity; he that ruleth, with diligence; he that sheweth mercy, with cheerfulness.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 13:7–8</span><span class="scripture-text">Render therefore to all their dues: tribute to whom tribute is due; custom to whom custom; fear to whom fear; honour to whom honour. Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 14:10–12</span><span class="scripture-text">But why dost thou judge thy brother? or why dost thou set at nought thy brother? for we shall all stand before the judgment seat of Christ. For it is written, As I live, saith the Lord, every knee shall bow to me, and every tongue shall confess to God. So then every one of us shall give account of himself to God.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 16:23</span><span class="scripture-text">Gaius mine host, and of the whole church, saluteth you. Erastus the chamberlain of the city saluteth you, and Quartus a brother.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 3:11–15</span><span class="scripture-text">For other foundation can no man lay than that is laid, which is Jesus Christ. Now if any man build upon this foundation gold, silver, precious stones, wood, hay, stubble; Every man's work shall be made manifest: for the day shall declare it, because it shall be revealed by fire; and the fire shall try every man's work of what sort it is. If any man's work abide which he hath built thereupon, he shall receive a reward. If any man's work shall be burned, he shall suffer loss: but he himself shall be saved; yet so as by fire.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 4:1–2</span><span class="scripture-text">Let a man so account of us, as of the ministers of Christ, and stewards of the mysteries of God. Moreover it is required in stewards, that a man be found faithful.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 6:19–20</span><span class="scripture-text">What? know ye not that your body is the temple of the Holy Ghost which is in you, which ye have of God, and ye are not your own? For ye are bought with a price: therefore glorify God in your body, and in your spirit, which are God's.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 9:16–17</span><span class="scripture-text">For though I preach the gospel, I have nothing to glory of: for necessity is laid upon me; yea, woe is unto me, if I preach not the gospel! For if I do this thing willingly, I have a reward: but if against my will, a dispensation of the gospel is committed unto me.</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Corinthians 5:10</span><span class="scripture-text">For we must all appear before the judgment seat of Christ; that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Corinthians 8:1–5</span><span class="scripture-text">Moreover, brethren, we do you to wit of the grace of God bestowed on the churches of Macedonia; How that in a great trial of affliction the abundance of their joy and their deep poverty abounded unto the riches of their liberality. For to their power, I bear record, yea, and beyond their power they were willing of themselves; Praying us with much intreaty that we would receive the gift, and take upon us the fellowship of the ministering to the saints. And this they did, not as we hoped, but first gave their own selves to the Lord, and unto us by the will of God.</span></div>
+<div class="index-entry"><span class="scripture-ref">Galatians 4:2</span><span class="scripture-text">But is under tutors and governors until the time appointed of the father.</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 2:8–10</span><span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 3:2</span><span class="scripture-text">If ye have heard of the dispensation of the grace of God which is given me to you-ward:</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 4:28</span><span class="scripture-text">Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 5:15–16</span><span class="scripture-text">See then that ye walk circumspectly, not as fools, but as wise, Redeeming the time, because the days are evil.</span></div>
+<div class="index-entry"><span class="scripture-ref">Philippians 4:11–13</span><span class="scripture-text">Not that I speak in respect of want: for I have learned, in whatsoever state I am, therewith to be content. I know both how to be abased, and I know how to abound: every where and in all things I am instructed both to be full and to be hungry, both to abound and to suffer need. I can do all things through Christ which strengtheneth me.</span></div>
+<div class="index-entry"><span class="scripture-ref">Colossians 1:25</span><span class="scripture-text">Whereof I am made a minister, according to the dispensation of God which is given to me for you, to fulfil the word of God;</span></div>
+<div class="index-entry"><span class="scripture-ref">Colossians 3:23–24</span><span class="scripture-text">And whatsoever ye do, do it heartily, as to the Lord, and not unto men; Knowing that of the Lord ye shall receive the reward of the inheritance: for ye serve the Lord Christ.</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Thessalonians 3:10–12</span><span class="scripture-text">For even when we were with you, this we commanded you, that if any would not work, neither should he eat. For we hear that there are some which walk among you disorderly, working not at all, but are busybodies. Now them that are such we command and exhort by our Lord Jesus Christ, that with quietness they work, and eat their own bread.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Timothy 6:6–10</span><span class="scripture-text">But godliness with contentment is great gain. For we brought nothing into this world, and it is certain we can carry nothing out. And having food and raiment let us be therewith content. But they that will be rich fall into temptation and a snare, and into many foolish and hurtful lusts, which drown men in destruction and perdition. For the love of money is the root of all evil: which while some coveted after, they have erred from the faith, and pierced themselves through with many sorrows.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Timothy 6:20</span><span class="scripture-text">O Timothy, keep that which is committed to thy trust, avoiding profane and vain babblings, and oppositions of science falsely so called:</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Timothy 1:13–14</span><span class="scripture-text">Hold fast the form of sound words, which thou hast heard of me, in faith and love which is in Christ Jesus. That good thing which was committed unto thee keep by the Holy Ghost which dwelleth in us.</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Timothy 2:2</span><span class="scripture-text">And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also.</span></div>
+<div class="index-entry"><span class="scripture-ref">Titus 1:7</span><span class="scripture-text">For a bishop must be blameless, as the steward of God; not selfwilled, not soon angry, not given to wine, no striker, not given to filthy lucre;</span></div>
+<div class="index-entry"><span class="scripture-ref">Hebrews 3:5–6</span><span class="scripture-text">And Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after; But Christ as a son over his own house; whose house are we, if we hold fast the confidence and the rejoicing of the hope firm unto the end.</span></div>
+<div class="index-entry"><span class="scripture-ref">Hebrews 7:17</span><span class="scripture-text">For he testifieth, Thou art a priest for ever after the order of Melchisedec.</span></div>
+<div class="index-entry"><span class="scripture-ref">Hebrews 13:5</span><span class="scripture-text">Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.</span></div>
+<div class="index-entry"><span class="scripture-ref">James 5:4</span><span class="scripture-text">Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Peter 1:18–19</span><span class="scripture-text">Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers; But with the precious blood of Christ, as of a lamb without blemish and without spot:</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Peter 1:25</span><span class="scripture-text">But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Peter 4:10–11</span><span class="scripture-text">As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God. If any man speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth: that God in all things may be glorified through Jesus Christ, to whom be praise and dominion for ever and ever. Amen.</span></div>
+<div class="index-entry"><span class="scripture-ref">Jude 1:3</span><span class="scripture-text">Beloved, when I gave all diligence to write unto you of the common salvation, it was needful for me to write unto you, and exhort you that ye should earnestly contend for the faith which was once delivered unto the saints.</span></div>
+<div class="index-entry"><span class="scripture-ref">Revelation 3:7</span><span class="scripture-text">And to the angel of the church in Philadelphia write; These things saith he that is holy, he that is true, he that hath the key of David, he that openeth, and no man shutteth; and shutteth, and no man openeth;</span></div>
+<div class="index-entry"><span class="scripture-ref">Revelation 22:12</span><span class="scripture-text">And, behold, I come quickly; and my reward is with me, to give every man according as his work shall be.</span></div>
+  </div>
+</section>
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">Moreover it is required in stewards, that a man be found faithful · 1 Corinthians 4:2</p>
+    <p class="footer-sub">Work the Word Church · Madison, West Virginia · Brother Justin May</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="A Wednesday evening sermon on 1 Corinthians 1:10 and Romans 15:5–6: growing from unity in the work to unity in the Word, with every Scripture quoted in full from the King James Bible.">
+<title>One Mind and One Mouth · Wednesday Evening Sermon · October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.2rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.9rem;
+  }
+  .header-ornament { font-size: 1.3rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 0.9rem; }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 0.7rem;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3.2rem 3rem; }
+
+  .service-line {
+    margin: 2rem 0 0;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .preamble p { font-size: 1.07rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+
+  /* ── BIG IDEA ── */
+  .big-idea {
+    margin: 0.4rem 0 0;
+    padding: 1.5rem 1.8rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 4px solid var(--crimson-lt);
+    text-align: center;
+  }
+  .big-idea-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.7rem; }
+  .preamble .big-idea p.big-idea-text { font-size: 1.22rem; line-height: 1.7; font-style: italic; color: var(--ink); text-align: center; text-wrap: balance; }
+
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.4rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.95rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); min-width: 2.1rem; flex-shrink: 0; }
+
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { margin-bottom: 1.1rem; }
+  .article-num {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .article-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .article-body { font-size: 1.07rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.2rem; }
+  .article-body em, .teacher-note em, .step-body em { font-style: italic; }
+  .article-body strong { color: var(--ink); }
+  .ref-inline { white-space: nowrap; }
+
+  /* ── SUB-HEADING ── */
+  .sub-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    margin: 2rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Cinzel', serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .sub-letter { color: var(--crimson); font-weight: 700; flex-shrink: 0; }
+
+  /* ── SCRIPTURE ── */
+  .scripture-block {
+    margin: 1.4rem 0 1.5rem;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    box-shadow: 0 1px 0 #E8D49A inset;
+  }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+  .scripture-entry { margin-bottom: 1rem; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .scripture-text { display: block; font-style: italic; font-size: 1.03rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── KEY POINT ── */
+  .keypoint {
+    margin: 1.6rem 0 0.4rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--cream);
+    border-left: 4px solid var(--crimson-lt);
+    border-top: 1px solid #D4B97A55;
+    border-right: 1px solid #D4B97A55;
+    border-bottom: 1px solid #D4B97A55;
+  }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.55rem; }
+  .keypoint p { font-size: 1.03rem; line-height: 1.75; color: var(--ink-mid); }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── BONUS PANEL ── */
+  .bonus-panel {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C;
+    border-top: 3px solid var(--crimson-lt);
+  }
+  .bonus-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson-lt); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+  .bonus-star { color: var(--gold); font-size: 0.85rem; }
+  .bonus-body { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); text-align: justify; }
+  .bonus-body p + p { margin-top: 0.7rem; }
+  .bonus-body strong { color: var(--ink); }
+
+  /* ── TEACHER NOTE ── */
+  .teacher-note {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C;
+  }
+  .tnote-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .teacher-note p { font-size: 1rem; line-height: 1.75; color: var(--ink-soft); text-align: justify; }
+  .teacher-note strong { color: var(--ink-mid); }
+
+  /* ── TABLE ── */
+  .table-wrap { margin: 1.4rem 0 1.5rem; overflow-x: auto; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 1rem; line-height: 1.5; background: var(--parchment); }
+  .data-table th {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cream); background: var(--crimson); text-align: left; padding: 0.6rem 0.8rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .data-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #D4B97A66; color: var(--ink-mid); vertical-align: top; }
+  .data-table td:first-child { font-style: italic; color: var(--ink); width: 50%; }
+  .data-table tr:nth-child(even) td { background: var(--cream); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* ── NUMBERED LIST (the Acts 15 pattern) ── */
+  .charge-list { list-style: none; counter-reset: c; margin: 1.2rem 0 1.4rem; }
+  .charge-list li {
+    counter-increment: c;
+    position: relative;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    margin-bottom: 0.6rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold-light);
+    font-size: 1.04rem; line-height: 1.72; color: var(--ink-mid);
+  }
+  .charge-list li::before {
+    content: counter(c);
+    position: absolute; left: 0.9rem; top: 0.8rem;
+    font-family: 'Cinzel', serif; font-weight: 700; font-size: 1rem; color: var(--crimson);
+  }
+  .charge-list strong { color: var(--ink); }
+
+  /* ── PRACTICAL STEPS ── */
+  .step {
+    margin: 1.2rem 0;
+    padding: 1.1rem 1.4rem 1.2rem;
+    background: var(--parchment);
+    border: 1px solid #D4B97A66;
+    border-left: 4px solid var(--gold);
+  }
+  .step-title { display: flex; align-items: baseline; gap: 0.7rem; font-family: 'Cinzel', serif; font-size: 0.98rem; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 0.6rem; }
+  .step-num { font-weight: 700; font-size: 1.1rem; color: var(--crimson); flex-shrink: 0; }
+  .step-body p { font-size: 1.04rem; line-height: 1.75; color: var(--ink-mid); text-align: justify; }
+  .step-body p + p { margin-top: 0.6rem; }
+  .step .scripture-block { margin: 0.8rem 0 0.2rem; }
+  .step .scripture-block + p { margin-top: 0.8rem; }
+
+  /* ── STAR LIST ── */
+  .point-list { list-style: none; margin: 1rem 0 1.4rem; }
+  .point-list li {
+    position: relative;
+    padding: 0.45rem 0 0.45rem 1.6rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 1.05rem; line-height: 1.7; color: var(--ink-mid);
+  }
+  .point-list li:last-child { border-bottom: none; }
+  .point-list li::before { content: '\2726'; position: absolute; left: 0.1rem; top: 0.55rem; color: var(--gold-light); font-size: 0.8rem; }
+  .point-list strong { color: var(--crimson); font-weight: 600; }
+
+  /* ── CLOSING PANEL ── */
+  .closing-panel {
+    margin: 1.8rem 0 1.4rem;
+    padding: 1.6rem 1.8rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: #EDE0C4;
+    position: relative;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .closing-panel::after { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .closing-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.8rem; }
+  .closing-panel p { font-size: 1.06rem; line-height: 1.8; }
+  .closing-panel p + p { margin-top: 0.8rem; }
+  .closing-panel strong { color: #FBF6E9; }
+
+  /* ── RELATED TEACHINGS ── */
+  .related-list { list-style: none; margin: 1rem 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .related-list a {
+    display: block;
+    height: 100%;
+    padding: 0.9rem 1.1rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-top: 2px solid var(--gold-light);
+    text-decoration: none;
+    color: var(--ink-mid);
+  }
+  .related-list a:hover { border-top-color: var(--crimson-lt); }
+  .related-title { display: block; font-family: 'Cinzel', serif; font-size: 0.86rem; font-weight: 600; color: var(--crimson); letter-spacing: 0.03em; line-height: 1.4; margin-bottom: 0.3rem; }
+  .related-note { display: block; font-size: 0.95rem; line-height: 1.5; font-style: italic; }
+
+  /* ── SCRIPTURE APPENDIX ── */
+  .appendix { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .index-list { columns: 2; column-gap: 2rem; column-rule: 1px solid #C9A84C55; }
+  .index-entry { break-inside: avoid; page-break-inside: avoid; margin-bottom: 0.95rem; }
+  .index-entry .scripture-ref { font-size: 0.72rem; margin-bottom: 0.2rem; }
+  .index-entry .scripture-text { font-size: 0.95rem; line-height: 1.6; }
+  .index-where { font-weight: 500; color: var(--crimson-lt); letter-spacing: 0.06em; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 10px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em; color: #FBF6E9; text-transform: uppercase; margin-top: 0.6rem; line-height: 1.8; }
+  .footer-sub { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.4rem; }
+
+  /* ── PRINT (US Letter 8.5 x 11, numbered pages) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.1in 0.1in 0.35in 0.1in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.12em;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    html, body { background: #FFFFFF; }
+    body { padding: 0; font-size: 11pt; }
+    .page { max-width: 100%; margin: 0; border: none; box-shadow: none; background: #FFFFFF; }
+    .page::before, .page::after { display: none; }
+
+    .doc-header, .doc-footer, .scripture-block, .keypoint, .bonus-panel, .teacher-note,
+    .big-idea, .toc, .charge-list li, .step, .closing-panel, .related-list a,
+    .data-table th, .data-table td {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Readable margin comes from padding on the content wrapper. The padding is
+       cloned onto every page fragment, so text on page 2 onward sits well inside
+       a 0.2in printer margin while the crimson bands bleed close to the edge. */
+    .doc-header { padding: 0.4in 0.8in 0.3in; }
+    .doc-body {
+      padding: 0.3in 0.55in 0.25in;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .doc-footer { padding: 0.3in 0.8in; }
+
+    p, li, td, .scripture-text, .bonus-body {
+      hyphens: auto; -webkit-hyphens: auto;
+      orphans: 3; widows: 3;
+    }
+    .header-ornament { margin-bottom: 0.5rem; }
+    .doc-subtitle { font-size: 0.8rem; }
+    .service-line { margin-top: 0; font-size: 0.62rem; }
+    .preamble { margin-top: 1rem; padding-bottom: 0; border-bottom: none; }
+    .big-idea { padding: 0.9rem 1.2rem; }
+    .preamble .big-idea p.big-idea-text { font-size: 12.5pt; line-height: 1.55; }
+    .article { margin-top: 1.6rem; padding-top: 1.4rem; }
+    .article-body { font-size: 11.5pt; line-height: 1.62; margin-bottom: 0.9rem; }
+    .sub-head { margin: 1.3rem 0 0.6rem; font-size: 11pt; }
+    .scripture-text { font-size: 11pt; line-height: 1.58; }
+    .scripture-block { margin: 0.9rem 0 1rem; padding: 0.85rem 1.1rem; }
+    .keypoint { margin: 1rem 0 0.3rem; padding: 0.85rem 1.1rem; }
+    .keypoint p, .bonus-body, .teacher-note p { font-size: 10.8pt; line-height: 1.58; }
+    .bonus-panel, .teacher-note { margin: 1rem 0; padding: 0.85rem 1.1rem; }
+    .charge-list li { font-size: 11pt; line-height: 1.55; padding: 0.55rem 0.9rem 0.55rem 2.6rem; }
+    .step { margin: 0.8rem 0; padding: 0.8rem 1.1rem 0.9rem; }
+    .step-body p { font-size: 11pt; line-height: 1.58; }
+    .point-list li { font-size: 11pt; line-height: 1.55; padding: 0.3rem 0 0.3rem 1.5rem; }
+    .closing-panel { margin: 1.1rem 0 1rem; padding: 1.1rem 1.4rem; }
+    .closing-panel p { font-size: 11pt; line-height: 1.6; }
+    .data-table { font-size: 10.8pt; }
+    .toc { margin: 1.1rem 0 0.2rem; padding: 0.8rem 1.3rem; }
+    .toc-title { margin-bottom: 0.5rem; }
+    .toc-list li { margin-bottom: 0.1rem; }
+    .toc-list a { font-size: 10pt; line-height: 1.45; }
+    .related-list a { padding: 0.6rem 0.9rem; }
+    .related-note { font-size: 10pt; }
+
+    /* Small meaningful units never split across a page */
+    .scripture-entry, .keypoint, .bonus-panel, .teacher-note, .big-idea, .data-table tr,
+    .charge-list li, .step, .point-list li, .closing-panel, .toc, .toc-list li,
+    .related-list li, .index-entry {
+      break-inside: avoid; page-break-inside: avoid;
+    }
+    /* Tall scripture blocks may flow between entries rather than leave a gap */
+    .scripture-block { break-inside: auto; }
+    .scripture-label { break-after: avoid; page-break-after: avoid; }
+    .data-table thead { display: table-header-group; }
+
+    /* Headings stay glued to what follows them */
+    .article-header, .article-num, .sub-head, .tnote-label, .preamble-label {
+      break-after: avoid; page-break-after: avoid;
+    }
+
+    /* The full Scripture listing begins on a fresh sheet */
+    .appendix { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; border-top: none; }
+    .index-entry .scripture-text { font-size: 10pt; line-height: 1.5; }
+    .index-entry { margin-bottom: 0.6rem; }
+
+    .doc-footer { break-inside: avoid; page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-header { padding: 2.2rem 1.3rem 1.8rem; }
+    .doc-footer { padding: 2rem 1.2rem 1.8rem; }
+    .doc-body { padding: 0 1.3rem 2rem; }
+    .doc-header::after, .doc-footer::after { inset: 8px; }
+    .page::before, .page::after { width: 24px; height: 24px; }
+    .toc-list, .index-list { columns: 1; }
+    .related-list { grid-template-columns: 1fr; }
+    .toc { padding: 1.2rem 1.2rem; }
+    .scripture-block, .keypoint, .bonus-panel, .teacher-note, .big-idea, .step { padding: 1.1rem 1.1rem; }
+    .data-table td:first-child { width: auto; }
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <p class="header-eyebrow">Wednesday Evening Sermon · October 14, 2026</p>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">One Mind and One Mouth</h1>
+    <p class="doc-subtitle">Growing from Unity in the Work to Unity in the Word</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <p class="service-line">Brother Justin May · Work the Word Church, Madison · Wednesday Evening Service</p>
+
+    <div class="scripture-block"><p class="scripture-label">The Main Text</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 1:10</span><span class="scripture-text">Now I beseech you, brethren, by the name of our Lord Jesus Christ, that ye all speak the same thing, and that there be no divisions among you; but that ye be perfectly joined together in the same mind and in the same judgment.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Romans 15:5–6</span><span class="scripture-text">Now the God of patience and consolation grant you to be likeminded one toward another according to Christ Jesus: That ye may with one mind and one mouth glorify God, even the Father of our Lord Jesus Christ.</span></div>
+</div>
+
+    <section class="preamble">
+      <p class="preamble-label">The Big Idea</p>
+      <div class="big-idea"><p class="big-idea-label">One Sentence to Carry Home</p><p class="big-idea-text">God has given us one mind to work. Now He is calling us to have one mouth to speak, and that one mouth comes from all of us bowing to the same Word.</p></div>
+    </section>
+
+    <nav class="toc">
+      <p class="toc-title">Where We Are Going Tonight</p>
+      <ul class="toc-list">
+      <li><a href="#intro"><span class="toc-num">&#10022;</span>A Church With a Mind to Work</a></li>
+      <li><a href="#art1"><span class="toc-num">I.</span>Two Kinds of Unity</a></li>
+      <li><a href="#art2"><span class="toc-num">II.</span>A Busy Church That Wasn't Saying the Same Thing</a></li>
+      <li><a href="#art3"><span class="toc-num">III.</span>The Same Thing Paul Spoke</a></li>
+      <li><a href="#art4"><span class="toc-num">IV.</span>What Pulls Our Voices Apart</a></li>
+      <li><a href="#art5"><span class="toc-num">V.</span>How a Church Learns to Speak the Same Thing</a></li>
+      <li><a href="#art6"><span class="toc-num">VI.</span>The Prayer Jesus Is Still Waiting to See Answered</a></li>
+      <li><a href="#closing"><span class="toc-num">&#10022;</span>Where the LORD Commands the Blessing</a></li>
+      <li><a href="#related"><span class="toc-num">&#10022;</span>Related Teachings</a></li>
+      <li><a href="#scriptures"><span class="toc-num">&#10022;</span>Every Scripture in This Message</a></li>
+      </ul>
+    </nav>
+
+<article class="article" id="intro">
+  <div class="article-header"><span class="article-num">Introduction</span><h2 class="article-title">A Church With a Mind to Work</h2></div>
+<div class="scripture-block"><p class="scripture-label">Can Two Walk Together?</p>
+<div class="scripture-entry"><span class="scripture-ref">Amos 3:3</span><span class="scripture-text">Can two walk together, except they be agreed?</span></div>
+</div>
+<p class="article-body">We start tonight with thanksgiving. Something good is happening in this house. People are showing up, pitching in, and carrying the load together. That is not small, and God sees it <span class="ref-inline">(Hebrews 6:10)</span>.</p>
+<p class="article-body">When Nehemiah rebuilt the wall of Jerusalem, the work went fast for one reason.</p>
+<div class="scripture-block"><p class="scripture-label">The People Had a Mind to Work</p>
+<div class="scripture-entry"><span class="scripture-ref">Nehemiah 4:6</span><span class="scripture-text">So built we the wall; and all the wall was joined together unto the half thereof: for the people had a mind to work.</span></div>
+</div>
+<p class="article-body">Notice the phrase: <em>all the wall was joined together.</em> That is what we have been seeing. Hands joined, shoulders under the same load.</p>
+<p class="article-body">But notice something else. The wall was joined <strong>unto the half thereof.</strong> Halfway built. Good progress, not finished work.</p>
+<p class="article-body">That is where we are as a church. We have learned to work together, and now God wants to finish the wall. Amos asks how two can walk together unless they are agreed <span class="ref-inline">(Amos 3:3)</span>. We are walking together in the work. The next step is being agreed in the Word.</p>
+<div class="keypoint"><p class="keypoint-label">Transition</p><p>Tonight is not a rebuke. It is a “keep going.” <strong>We have the hands. Now let's get the mouth.</strong></p></div>
+</article>
+
+<article class="article" id="art1">
+  <div class="article-header"><span class="article-num">I &middot; Ephesians 4</span><h2 class="article-title">Two Kinds of Unity</h2></div>
+<p class="article-body">Paul gives us both kinds in the same chapter.</p>
+<div class="scripture-block"><p class="scripture-label">The Unity of the Spirit and the Unity of the Faith</p>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 4:1–6</span><span class="scripture-text">I therefore, the prisoner of the Lord, beseech you that ye walk worthy of the vocation wherewith ye are called, With all lowliness and meekness, with longsuffering, forbearing one another in love; Endeavouring to keep the unity of the Spirit in the bond of peace. There is one body, and one Spirit, even as ye are called in one hope of your calling; One Lord, one faith, one baptism, One God and Father of all, who is above all, and through all, and in you all.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 4:11–16</span><span class="scripture-text">And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ: That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive; But speaking the truth in love, may grow up into him in all things, which is the head, even Christ: From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body unto the edifying of itself in love.</span></div>
+</div>
+
+<h3 class="sub-head"><span class="sub-letter">A.</span>The Unity of the Spirit: Something We Keep <span class="ref-inline">(Ephesians 4:3)</span></h3>
+<p class="article-body">God gave it to us when we were joined to Christ. We did not build it. We are told to <em>keep</em> it, to guard it like a fire you don't let go out. It is kept with lowliness, meekness, longsuffering, and forbearing one another in love <span class="ref-inline">(Ephesians 4:2)</span>. This is the unity we have been growing in: serving side by side and bearing with each other.</p>
+
+<h3 class="sub-head"><span class="sub-letter">B.</span>The Unity of the Faith: Something We Come To <span class="ref-inline">(Ephesians 4:13)</span></h3>
+<p class="article-body">Paul says <em>till we all come</em> in the unity of the faith. That is a destination. We are not all there yet, and no church is. This is unity in what we believe and say, and it is the reason God gave teachers and pastors in the first place <span class="ref-inline">(Ephesians 4:11–12)</span>. The opposite of this unity is being <em>children, tossed to and fro, and carried about with every wind of doctrine</em> <span class="ref-inline">(Ephesians 4:14)</span>.</p>
+
+<h3 class="sub-head"><span class="sub-letter">C.</span>Ephesians 4:16 Ties Them Together</h3>
+<p class="article-body"><em>Every joint supplieth.</em> That's the work, everybody doing their part. <em>Fitly joined together and compacted.</em> That's the agreement, joints that line up <span class="ref-inline">(Ephesians 4:16)</span>.</p>
+<p class="article-body">A body with strong muscles but joints that don't line up still limps. We have been building muscle. Now we line up the joints.</p>
+
+<h3 class="sub-head"><span class="sub-letter">D.</span>A Warning from Babel: Unity Alone Is Not the Goal</h3>
+<div class="scripture-block"><p class="scripture-label">The People Is One</p>
+<div class="scripture-entry"><span class="scripture-ref">Genesis 11:4–6</span><span class="scripture-text">And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth. And the LORD came down to see the city and the tower, which the children of men builded. And the LORD said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.</span></div>
+</div>
+<p class="article-body">God Himself said that a people who are one, with one language, can do whatever they set their minds to <span class="ref-inline">(Genesis 11:6)</span>. Unity is that powerful. But Babel was united around the wrong thing: <em>let us make us a name</em> <span class="ref-inline">(Genesis 11:4)</span>. So God scattered them <span class="ref-inline">(Genesis 11:8–9)</span>.</p>
+<div class="keypoint"><p class="keypoint-label">The Lesson of Babel</p><p>Working together is powerful, and that is exactly why it has to be pointed at the truth. <strong>A church can be busy and united and still be building the wrong tower.</strong></p></div>
+<div class="teacher-note"><p class="tnote-label">Teacher's Note: Babel and Pentecost</p><p>Many teachers point out that Pentecost looks like Babel turned inside out. At Babel one language was confused into many and the people were scattered <span class="ref-inline">(Genesis 11:7–9)</span>. At Pentecost the disciples were <em>all with one accord in one place</em> <span class="ref-inline">(Acts 2:1)</span>, many languages were heard <span class="ref-inline">(Acts 2:6–11)</span>, and the people were gathered into one body <span class="ref-inline">(Acts 2:41–42)</span>. Scripture never directly says Pentecost was the “reversal” of Babel, so present this as a picture the text allows, not a doctrine it states. It is a fair and helpful illustration as long as it stays an illustration.</p></div>
+</article>
+
+<article class="article" id="art2">
+  <div class="article-header"><span class="article-num">II &middot; The Church at Corinth</span><h2 class="article-title">A Busy Church That Wasn't Saying the Same Thing</h2></div>
+
+<h3 class="sub-head"><span class="sub-letter">A.</span>Corinth Had Everything Except Agreement</h3>
+<p class="article-body">Paul says they were enriched in all utterance and knowledge, and came behind in no gift <span class="ref-inline">(1 Corinthians 1:5–7)</span>. They were gifted, active, and full of people. And yet Paul's very first correction in the whole letter is about division <span class="ref-inline">(1 Corinthians 1:10–11)</span>.</p>
+<div class="scripture-block"><p class="scripture-label">Is Christ Divided?</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 1:10–13</span><span class="scripture-text">Now I beseech you, brethren, by the name of our Lord Jesus Christ, that ye all speak the same thing, and that there be no divisions among you; but that ye be perfectly joined together in the same mind and in the same judgment. For it hath been declared unto me of you, my brethren, by them which are of the house of Chloe, that there are contentions among you. Now this I say, that every one of you saith, I am of Paul; and I of Apollos; and I of Cephas; and I of Christ. Is Christ divided? was Paul crucified for you? or were ye baptized in the name of Paul?</span></div>
+</div>
+
+<h3 class="sub-head"><span class="sub-letter">B.</span>Look at What Paul Asked For</h3>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>Paul's Request</th><th>What It Means</th></tr></thead><tbody>
+<tr><td>speak the same thing</td><td>Our mouths agree</td></tr>
+<tr><td>no divisions among you</td><td>No tears in the fabric</td></tr>
+<tr><td>the same mind</td><td>Our thinking agrees</td></tr>
+<tr><td>the same judgment</td><td>Our conclusions agree</td></tr>
+</tbody></table></div>
+<p class="article-body">He did not say “be nice to each other.” He said <strong>speak the same thing.</strong> He was after agreement in what is said and believed.</p>
+<p class="article-body">Note how he appeals: <em>by the name of our Lord Jesus Christ.</em> Agreement is not about whose opinion wins. It is about all of us being under one name.</p>
+<div class="bonus-panel"><p class="bonus-label"><span class="bonus-star">&#10022;</span> Bonus: Two Greek Words Worth Knowing</p><div class="bonus-body">
+<p><strong>“Divisions”</strong> is the Greek word <em>schisma</em>. It is the same word Jesus used for the tear in an old garment: <em>the rent is made worse</em> <span class="ref-inline">(Matthew 9:16)</span>. A division is a rip in the cloth.</p>
+<p><strong>“Perfectly joined together”</strong> is the Greek word <em>katartizo</em>. It is the same word used when James and John were <em>mending their nets</em> <span class="ref-inline">(Matthew 4:21)</span>, and when Paul says to <em>restore</em> a brother overtaken in a fault <span class="ref-inline">(Galatians 6:1)</span>.</p>
+<p>So Paul's picture is simple. A division is a hole in the net. Being perfectly joined together is mending the net. And what happens to a fishing net full of holes? The catch slips right through it. A church whose members say different things will lose the very souls it works so hard to reach.</p>
+</div></div>
+
+<h3 class="sub-head"><span class="sub-letter">C.</span>Their Division Was Over Personalities</h3>
+<div class="scripture-block"><p class="scripture-label">Are Ye Not Carnal?</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 3:3–4</span><span class="scripture-text">For ye are yet carnal: for whereas there is among you envying, and strife, and divisions, are ye not carnal, and walk as men? For while one saith, I am of Paul; and another, I am of Apollos; are ye not carnal?</span></div>
+</div>
+<p class="article-body">Paul calls it carnal. Not deep, not spiritual. Fleshly. Even the “I am of Christ” crowd was part of the problem <span class="ref-inline">(1 Corinthians 1:12)</span>. They used Christ's name as a club against the others.</p>
+<p class="article-body">The modern version sounds like this: “My favorite preacher says...” “Well, the one I watch says...” When the voice we quote most is a man instead of the Word, we have started a Corinthian church in our living rooms.</p>
+
+<div class="keypoint"><p class="keypoint-label">Paul's Answer: Is Christ Divided?</p><p>There is only one Christ, one cross, and one body <span class="ref-inline">(Ephesians 4:4)</span>. <strong>If He is not divided, His people have no business being divided</strong> <span class="ref-inline">(1 Corinthians 1:13)</span>.</p></div>
+</article>
+
+<article class="article" id="art3">
+  <div class="article-header"><span class="article-num">III &middot; The Apostles' Doctrine</span><h2 class="article-title">The Same Thing Paul Spoke</h2></div>
+<p class="article-body">If we are going to “speak the same thing,” the question is: <strong>the same as what?</strong> Not the same as the loudest person in the room. Not the same as the most popular teacher. The same as what the apostles delivered <span class="ref-inline">(Jude 1:3)</span>.</p>
+<div class="scripture-block"><p class="scripture-label">Doctrine, Then Fellowship</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 2:42</span><span class="scripture-text">And they continued stedfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers.</span></div>
+</div>
+<p class="article-body">Notice the order. Doctrine first, then fellowship. The fellowship grew out of a shared doctrine.</p>
+
+<h3 class="sub-head"><span class="sub-letter">A.</span>Paul Himself Said the Same Thing Everywhere</h3>
+<div class="scripture-block"><p class="scripture-label">As I Teach Every Where</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 4:17</span><span class="scripture-text">For this cause have I sent unto you Timotheus, who is my beloved son, and faithful in the Lord, who shall bring you into remembrance of my ways which be in Christ, as I teach every where in every church.</span></div>
+</div>
+<p class="article-body"><em>As I teach every where in every church.</em> Paul did not have one message for Corinth and another for Ephesus. He modeled the very thing he asked for.</p>
+<div class="scripture-block"><p class="scripture-label">As I Delivered Them to You</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 11:1–2</span><span class="scripture-text">Be ye followers of me, even as I also am of Christ. Now I praise you, brethren, that ye remember me in all things, and keep the ordinances, as I delivered them to you.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">2 Thessalonians 2:15</span><span class="scripture-text">Therefore, brethren, stand fast, and hold the traditions which ye have been taught, whether by word, or our epistle.</span></div>
+</div>
+
+<h3 class="sub-head"><span class="sub-letter">B.</span>Paul Held Even Himself to the Same Message</h3>
+<div class="scripture-block"><p class="scripture-label">Any Other Gospel</p>
+<div class="scripture-entry"><span class="scripture-ref">Galatians 1:8–9</span><span class="scripture-text">But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed. As we said before, so say I now again, If any man preach any other gospel unto you than that ye have received, let him be accursed.</span></div>
+</div>
+<p class="article-body"><em>As we said before, so say I now again.</em> Paul repeated himself on purpose <span class="ref-inline">(Galatians 1:9)</span>. The gospel does not get a new edition. Even an apostle or an angel does not get to change it.</p>
+
+<h3 class="sub-head"><span class="sub-letter">C.</span>So What Did Paul Actually Speak?</h3>
+<p class="article-body">Keep this simple and let Paul speak for himself.</p>
+<div class="scripture-block"><p class="scripture-label">He Spoke Salvation by Grace That Produces Good Works</p>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 2:8–10</span><span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span></div>
+</div>
+<div class="scripture-block"><p class="scripture-label">He Spoke That Faith Does Not Cancel God's Law</p>
+<div class="scripture-entry"><span class="scripture-ref">Romans 3:31</span><span class="scripture-text">Do we then make void the law through faith? God forbid: yea, we establish the law.</span></div>
+</div>
+<div class="scripture-block"><p class="scripture-label">He Spoke That He Believed All of What Was Written</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 24:14</span><span class="scripture-text">But this I confess unto thee, that after the way which they call heresy, so worship I the God of my fathers, believing all things which are written in the law and in the prophets:</span></div>
+</div>
+<p class="article-body">Paul also called the law <em>holy, and just, and good</em> <span class="ref-inline">(Romans 7:12)</span>. When we say the same thing as Paul, we say grace saves, and grace bears fruit in obedience. Both halves. A believer who takes Paul at his word does not have to choose between them.</p>
+
+<h3 class="sub-head"><span class="sub-letter">D.</span>Paul Measured His Words by the Words of Jesus</h3>
+<div class="scripture-block"><p class="scripture-label">Wholesome Words</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Timothy 6:3–5</span><span class="scripture-text">If any man teach otherwise, and consent not to wholesome words, even the words of our Lord Jesus Christ, and to the doctrine which is according to godliness; He is proud, knowing nothing, but doting about questions and strifes of words, whereof cometh envy, strife, railings, evil surmisings, Perverse disputings of men of corrupt minds, and destitute of the truth, supposing that gain is godliness: from such withdraw thyself.</span></div>
+</div>
+<p class="article-body"><em>Wholesome words, even the words of our Lord Jesus Christ.</em> Paul did not set himself up against Jesus. He pointed back to Him.</p>
+<p class="article-body">Look at what comes from teaching otherwise: envy, strife, railings, evil surmisings <span class="ref-inline">(1 Timothy 6:4)</span>. Wrong doctrine and division travel together.</p>
+
+<h3 class="sub-head"><span class="sub-letter">E.</span>Be Careful How Paul Is Read</h3>
+<div class="scripture-block"><p class="scripture-label">Things Hard to Be Understood</p>
+<div class="scripture-entry"><span class="scripture-ref">2 Peter 3:15–16</span><span class="scripture-text">And account that the longsuffering of our Lord is salvation; even as our beloved brother Paul also according to the wisdom given unto him hath written unto you; As also in all his epistles, speaking in them of these things; in which are some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction.</span></div>
+</div>
+<p class="article-body">Peter warned that Paul is easy to twist <span class="ref-inline">(2 Peter 3:16)</span>. A lot of division in the church at large comes from pulling Paul away from Jesus, Moses, and the prophets.</p>
+<p class="article-body">Speaking the same thing as Paul means reading Paul in agreement with the rest of Scripture, the way Paul himself read it.</p>
+</article>
+
+<article class="article" id="art4">
+  <div class="article-header"><span class="article-num">IV &middot; Five Things That Divide</span><h2 class="article-title">What Pulls Our Voices Apart</h2></div>
+
+<h3 class="sub-head"><span class="sub-letter">A.</span>Following Personalities Instead of the Word</h3>
+<p class="article-body">We have already seen it in Corinth: <em>I am of Paul; and I of Apollos</em> <span class="ref-inline">(1 Corinthians 1:12)</span>. Love your teachers, but don't quote them above the Book.</p>
+
+<h3 class="sub-head"><span class="sub-letter">B.</span>Outside Voices That Never Get Tested</h3>
+<p class="article-body">Paul warned about <em>every wind of doctrine</em> <span class="ref-inline">(Ephesians 4:14)</span>. Today the wind blows through phones, podcasts, and video feeds.</p>
+<p class="article-body">A church can hear one message when it gathers and then soak in five different messages the rest of the week. Then we wonder why we don't say the same thing. The answer is not fear of learning. It is testing everything by the Word <span class="ref-inline">(1 Thessalonians 5:21)</span>, which we will come back to in Section V.</p>
+
+<h3 class="sub-head"><span class="sub-letter">C.</span>Arguing Over Questions That Only Make Strife</h3>
+<div class="scripture-block"><p class="scripture-label">The Servant of the Lord Must Not Strive</p>
+<div class="scripture-entry"><span class="scripture-ref">2 Timothy 2:23–26</span><span class="scripture-text">But foolish and unlearned questions avoid, knowing that they do gender strifes. And the servant of the Lord must not strive; but be gentle unto all men, apt to teach, patient, In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth; And that they may recover themselves out of the snare of the devil, who are taken captive by him at his will.</span></div>
+</div>
+<p class="article-body">Speaking the same thing does not mean fighting over everything. Some questions only produce heat. When we do correct, it is with gentleness, patience, and meekness <span class="ref-inline">(2 Timothy 2:24–25)</span>.</p>
+<div class="scripture-block"><p class="scripture-label">Things Which Make for Peace</p>
+<div class="scripture-entry"><span class="scripture-ref">Romans 14:19</span><span class="scripture-text">Let us therefore follow after the things which make for peace, and things wherewith one may edify another.</span></div>
+</div>
+<div class="teacher-note"><p class="tnote-label">Teacher's Note: Unity Is Not Sameness on Every Opinion</p><p>Paul tells us to receive the one who is weak in the faith, <em>but not to doubtful disputations</em> <span class="ref-inline">(Romans 14:1)</span>. Not every matter is a matter of the faith. Speaking the same thing means agreeing on what God has plainly said. It does not mean every member must hold identical opinions on things Scripture leaves open, such as methods, preferences, or the details of how a thing is carried out. Keep the main thing the main thing, and give room where God gives room.</p></div>
+
+<h3 class="sub-head"><span class="sub-letter">D.</span>A Careless Tongue</h3>
+<div class="scripture-block"><p class="scripture-label">Out of the Same Mouth</p>
+<div class="scripture-entry"><span class="scripture-ref">James 3:10</span><span class="scripture-text">Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 6:16–19</span><span class="scripture-text">These six things doth the LORD hate: yea, seven are an abomination unto him: A proud look, a lying tongue, and hands that shed innocent blood, An heart that deviseth wicked imaginations, feet that be swift in running to mischief, A false witness that speaketh lies, and he that soweth discord among brethren.</span></div>
+</div>
+<p class="article-body">The seventh thing on God's list is the one who sows discord among brethren <span class="ref-inline">(Proverbs 6:19)</span>. God put that on the same list as hands that shed innocent blood <span class="ref-inline">(Proverbs 6:17)</span>.</p>
+<p class="article-body">Sowing discord usually doesn't sound like an attack. It sounds like “Did you hear what they said?” or “I'm just telling you what I think.” One mouth means we stop carrying complaints around and start carrying questions to the right place <span class="ref-inline">(Matthew 18:15)</span>.</p>
+
+<h3 class="sub-head"><span class="sub-letter">E.</span>How Paul Defines a Divider</h3>
+<div class="scripture-block"><p class="scripture-label">Mark Them Which Cause Divisions</p>
+<div class="scripture-entry"><span class="scripture-ref">Romans 16:17–18</span><span class="scripture-text">Now I beseech you, brethren, mark them which cause divisions and offences contrary to the doctrine which ye have learned; and avoid them. For they that are such serve not our Lord Jesus Christ, but their own belly; and by good words and fair speeches deceive the hearts of the simple.</span></div>
+</div>
+<p class="article-body">Look closely. A divider is not simply someone who disagrees. It is someone who causes division <em>contrary to the doctrine which ye have learned.</em></p>
+<div class="keypoint"><p class="keypoint-label">The Plumb Line</p><p>The doctrine is the plumb line <span class="ref-inline">(Amos 7:7–8)</span>. Unity is measured by it, and so is division. That is why we can't get to one mouth by just trying to be agreeable. <strong>We get there by all lining up to the same line.</strong></p></div>
+</article>
+
+<article class="article" id="art5">
+  <div class="article-header"><span class="article-num">V &middot; The Acts 15 Pattern</span><h2 class="article-title">How a Church Learns to Speak the Same Thing</h2></div>
+<p class="article-body">The early church faced a serious disagreement, and they gave us a model for getting to one voice.</p>
+<ol class="charge-list">
+<li><strong>They had a real dispute.</strong> There was <em>no small dissension and disputation</em> <span class="ref-inline">(Acts 15:2)</span>. They did not pretend it away.</li>
+<li><strong>They brought it to the leaders.</strong> They went up <em>unto the apostles and elders about this question</em> <span class="ref-inline">(Acts 15:2)</span>. They didn't settle it in the parking lot.</li>
+<li><strong>They came together to consider it.</strong> <em>The apostles and elders came together for to consider of this matter</em> <span class="ref-inline">(Acts 15:6)</span>.</li>
+<li><strong>They heard the testimony of what God was doing</strong> <span class="ref-inline">(Acts 15:7–12)</span>.</li>
+<li><strong>They went to the Scriptures.</strong> <em>And to this agree the words of the prophets; as it is written</em> <span class="ref-inline">(Acts 15:15)</span>.</li>
+<li><strong>They came to one accord.</strong> <em>It seemed good unto us, being assembled with one accord</em> <span class="ref-inline">(Acts 15:25)</span>.</li>
+<li><strong>They sent out one message with many mouths</strong> <span class="ref-inline">(Acts 15:22–27)</span>.</li>
+</ol>
+<div class="scripture-block"><p class="scripture-label">The Same Things by Mouth</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 15:27</span><span class="scripture-text">We have sent therefore Judas and Silas, who shall also tell you the same things by mouth.</span></div>
+</div>
+<p class="article-body">One letter. Two more witnesses. <em>The same things by mouth.</em> That is speaking the same thing in action. And look at the fruit.</p>
+<div class="scripture-block"><p class="scripture-label">Established in the Faith</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 16:4–5</span><span class="scripture-text">And as they went through the cities, they delivered them the decrees for to keep, that were ordained of the apostles and elders which were at Jerusalem. And so were the churches established in the faith, and increased in number daily.</span></div>
+</div>
+<p class="article-body">When the churches said the same thing, they were <em>established in the faith</em> and they <em>increased in number daily.</em> Our working together will bear even more fruit when our words agree with our work.</p>
+
+<h3 class="sub-head">Practical Steps for This House</h3>
+
+<div class="step"><p class="step-title"><span class="step-num">1</span>Go to the Same Source</p><div class="step-body">
+<div class="scripture-block"><p class="scripture-label">They Searched the Scriptures Daily</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 17:11</span><span class="scripture-text">These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.</span></div>
+</div>
+<p>Don't take any teacher's word for it, including this one. Open the Book. When we all go to the same Book, we start coming out with the same answers.</p>
+</div></div>
+
+<div class="step"><p class="step-title"><span class="step-num">2</span>Learn It Together, Not Just Separately</p><div class="step-body">
+<p><em>Not forsaking the assembling of ourselves together</em> <span class="ref-inline">(Hebrews 10:25)</span>. Wednesday nights and Bible studies are where the joints get lined up.</p>
+</div></div>
+
+<div class="step"><p class="step-title"><span class="step-num">3</span>Bring Questions In. Don't Carry Complaints Around.</p><div class="step-body">
+<p>If you hear something you don't agree with, go to the source and to the Scriptures <span class="ref-inline">(Matthew 18:15)</span>. A question asked in the right place builds. A complaint spread in the wrong place tears.</p>
+</div></div>
+
+<div class="step"><p class="step-title"><span class="step-num">4</span>Honor Those God Set to Watch Over You</p><div class="step-body">
+<div class="scripture-block"><p class="scripture-label">They Watch for Your Souls</p>
+<div class="scripture-entry"><span class="scripture-ref">Hebrews 13:17</span><span class="scripture-text">Obey them that have the rule over you, and submit yourselves: for they watch for your souls, as they that must give account, that they may do it with joy, and not with grief: for that is unprofitable for you.</span></div>
+</div>
+</div></div>
+
+<div class="step"><p class="step-title"><span class="step-num">5</span>Speak the Truth in Love</p><div class="step-body">
+<p><em>Speaking the truth in love</em> <span class="ref-inline">(Ephesians 4:15)</span>. Truth without love tears the net. Love without truth leaves holes in it. We need both to mend it.</p>
+</div></div>
+
+<div class="step"><p class="step-title"><span class="step-num">6</span>Watch Your Words This Week</p><div class="step-body">
+<p>Before something leaves your mouth about doctrine or about a brother or sister, ask three questions. Is this what the Word says? Will this build up <span class="ref-inline">(Ephesians 4:29)</span>? Would I say it to their face?</p>
+</div></div>
+</article>
+
+<article class="article" id="art6">
+  <div class="article-header"><span class="article-num">VI &middot; John 17</span><h2 class="article-title">The Prayer Jesus Is Still Waiting to See Answered</h2></div>
+<div class="scripture-block"><p class="scripture-label">That They All May Be One</p>
+<div class="scripture-entry"><span class="scripture-ref">John 17:17</span><span class="scripture-text">Sanctify them through thy truth: thy word is truth.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">John 17:20–21</span><span class="scripture-text">Neither pray I for these alone, but for them also which shall believe on me through their word; That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me.</span></div>
+</div>
+<p class="article-body">Jesus prayed for <strong>us</strong>: <em>them also which shall believe on me through their word</em> <span class="ref-inline">(John 17:20)</span>. That is every believer who came to faith through the apostles' message.</p>
+<p class="article-body">Notice the foundation. Unity is built on <em>their word</em>, and <em>thy word is truth.</em> Jesus didn't pray for a unity that ignores the truth. He prayed for a unity that grows out of it.</p>
+<div class="keypoint"><p class="keypoint-label">Notice the Purpose</p><p><em>That the world may believe</em> <span class="ref-inline">(John 17:21)</span>. Our agreement is part of our witness. A divided message confuses the lost. <strong>One mouth preaches louder.</strong></p></div>
+</article>
+
+<article class="article" id="closing">
+  <div class="article-header"><span class="article-num">Closing</span><h2 class="article-title">Where the LORD Commands the Blessing</h2></div>
+<div class="scripture-block"><p class="scripture-label">How Good and How Pleasant</p>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 133:1–3</span><span class="scripture-text">Behold, how good and how pleasant it is for brethren to dwell together in unity! It is like the precious ointment upon the head, that ran down upon the beard, even Aaron's beard: that went down to the skirts of his garments; As the dew of Hermon, and as the dew that descended upon the mountains of Zion: for there the LORD commanded the blessing, even life for evermore.</span></div>
+</div>
+<p class="article-body">The oil started at the head and ran down to the hem <span class="ref-inline">(Psalm 133:2)</span>. Unity flows down from the Head, which is Christ <span class="ref-inline">(Ephesians 4:15)</span>, through the whole body.</p>
+<p class="article-body"><em>There the LORD commanded the blessing.</em> God doesn't just allow blessing where there is unity. He commands it <span class="ref-inline">(Psalm 133:3)</span>.</p>
+<p class="article-body">We have the mind to work. The wall is joined together unto the half <span class="ref-inline">(Nehemiah 4:6)</span>. Let's finish the wall.</p>
+
+<h3 class="sub-head">Summary to Restate</h3>
+<ul class="point-list">
+<li>We <strong>keep</strong> the unity of the Spirit <span class="ref-inline">(Ephesians 4:3)</span>.</li>
+<li>We <strong>come to</strong> the unity of the faith <span class="ref-inline">(Ephesians 4:13)</span>.</li>
+<li>We <strong>speak the same thing</strong> by all bowing to what the apostles delivered <span class="ref-inline">(1 Corinthians 1:10)</span>.</li>
+<li>We <strong>test everything</strong> by the Book, not by personalities <span class="ref-inline">(Acts 17:11)</span>.</li>
+<li>We <strong>guard our tongues</strong> and bring our questions to the right place <span class="ref-inline">(James 3:10)</span>.</li>
+<li>And God <strong>commands the blessing</strong> where brethren dwell together in unity <span class="ref-inline">(Psalm 133:3)</span>.</li>
+</ul>
+
+<div class="closing-panel"><p class="closing-label">The Appeal</p>
+<p><strong>For the believer:</strong> Is there a voice you have trusted above the Word? Is there a complaint you have carried around that needs to be brought to the right place, or laid down? Come and lay it at the altar tonight.</p>
+<p><strong>For the church:</strong> Come and pray together that God would make us of one mind and one mouth, so that with one voice we glorify Him <span class="ref-inline">(Romans 15:6)</span>.</p>
+<p><strong>For anyone not yet saved:</strong> The unity we've talked about tonight starts with being joined to Christ Himself. Repent and believe the gospel <span class="ref-inline">(Mark 1:15)</span>, for by grace you are saved through faith <span class="ref-inline">(Ephesians 2:8–10)</span>, and come be made one with His body.</p>
+</div>
+
+<h3 class="sub-head">Closing Prayer Focus</h3>
+<ul class="point-list">
+<li>Thank God for the unity in the work He has already given.</li>
+<li>Ask Him to bring this house into the unity of the faith <span class="ref-inline">(Ephesians 4:13)</span>.</li>
+<li>Ask Him to guard every tongue and heal every tear <span class="ref-inline">(Psalm 141:3)</span>.</li>
+<li>Pray Jesus' own prayer over the church: <em>that they all may be one</em> <span class="ref-inline">(John 17:21)</span>.</li>
+</ul>
+</article>
+
+<section class="article" id="related">
+  <div class="article-header"><span class="article-num">Keep Studying</span><h2 class="article-title">Related Teachings</h2></div>
+  <ul class="related-list">
+    <li><a href="./007.1%20-%20Gifts_of_the_Holy_Ghost_1_-_The_Fivefold_Ministry.html"><span class="related-title">Gifts of the Holy Ghost 1: The Fivefold Ministry</span><span class="related-note">The unity of the faith in Ephesians 4.</span></a></li>
+    <li><a href="./044_-_The_Pronomian_Reading_of_Scripture.html"><span class="related-title">The Pronomian Reading of Scripture</span><span class="related-note">Reading the whole counsel of God together.</span></a></li>
+    <li><a href="./019_-_Church_Discipline.html"><span class="related-title">Church Discipline</span><span class="related-note">Handling offenses the Matthew 18 way.</span></a></li>
+    <li><a href="./001%20-%20Bylaws%20of%20Faith%20and%20Practice.html"><span class="related-title">Bylaws of Faith and Practice</span><span class="related-note">What this house believes and teaches.</span></a></li>
+  </ul>
+</section>
+
+<section class="appendix" id="scriptures">
+  <div class="article-header"><span class="article-num">For Reference</span><h2 class="article-title">Every Scripture in This Message</h2></div>
+  <p class="article-body">Every passage cited in this message, whether it was quoted in full above or mentioned in passing, is printed here in the order of the books of the Bible, with the part of the message where it appears. All quotations are from the King James Version, so the whole message can be read and checked from this one document.</p>
+  <div class="index-list">
+<div class="index-entry"><span class="scripture-ref">Genesis 11:4–9 <span class="index-where">· I</span></span><span class="scripture-text">And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth. And the LORD came down to see the city and the tower, which the children of men builded. And the LORD said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do. Go to, let us go down, and there confound their language, that they may not understand one another's speech. So the LORD scattered them abroad from thence upon the face of all the earth: and they left off to build the city. Therefore is the name of it called Babel; because the LORD did there confound the language of all the earth: and from thence did the LORD scatter them abroad upon the face of all the earth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Nehemiah 4:6 <span class="index-where">· Intro · Closing</span></span><span class="scripture-text">So built we the wall; and all the wall was joined together unto the half thereof: for the people had a mind to work.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 133:1–3 <span class="index-where">· Closing</span></span><span class="scripture-text">Behold, how good and how pleasant it is for brethren to dwell together in unity! It is like the precious ointment upon the head, that ran down upon the beard, even Aaron's beard: that went down to the skirts of his garments; As the dew of Hermon, and as the dew that descended upon the mountains of Zion: for there the LORD commanded the blessing, even life for evermore.</span></div>
+<div class="index-entry"><span class="scripture-ref">Psalm 141:3 <span class="index-where">· Closing</span></span><span class="scripture-text">Set a watch, O LORD, before my mouth; keep the door of my lips.</span></div>
+<div class="index-entry"><span class="scripture-ref">Proverbs 6:16–19 <span class="index-where">· IV</span></span><span class="scripture-text">These six things doth the LORD hate: yea, seven are an abomination unto him: A proud look, a lying tongue, and hands that shed innocent blood, An heart that deviseth wicked imaginations, feet that be swift in running to mischief, A false witness that speaketh lies, and he that soweth discord among brethren.</span></div>
+<div class="index-entry"><span class="scripture-ref">Isaiah 8:20 <span class="index-where">· Footer</span></span><span class="scripture-text">To the law and to the testimony: if they speak not according to this word, it is because there is no light in them.</span></div>
+<div class="index-entry"><span class="scripture-ref">Amos 3:3 <span class="index-where">· Intro</span></span><span class="scripture-text">Can two walk together, except they be agreed?</span></div>
+<div class="index-entry"><span class="scripture-ref">Amos 7:7–8 <span class="index-where">· IV</span></span><span class="scripture-text">Thus he shewed me: and, behold, the Lord stood upon a wall made by a plumbline, with a plumbline in his hand. And the LORD said unto me, Amos, what seest thou? And I said, A plumbline. Then said the Lord, Behold, I will set a plumbline in the midst of my people Israel: I will not again pass by them any more:</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 4:21 <span class="index-where">· II</span></span><span class="scripture-text">And going on from thence, he saw other two brethren, James the son of Zebedee, and John his brother, in a ship with Zebedee their father, mending their nets; and he called them.</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 9:16 <span class="index-where">· II</span></span><span class="scripture-text">No man putteth a piece of new cloth unto an old garment, for that which is put in to fill it up taketh from the garment, and the rent is made worse.</span></div>
+<div class="index-entry"><span class="scripture-ref">Matthew 18:15 <span class="index-where">· IV · V</span></span><span class="scripture-text">Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.</span></div>
+<div class="index-entry"><span class="scripture-ref">Mark 1:15 <span class="index-where">· Closing</span></span><span class="scripture-text">And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the gospel.</span></div>
+<div class="index-entry"><span class="scripture-ref">John 17:17 <span class="index-where">· VI</span></span><span class="scripture-text">Sanctify them through thy truth: thy word is truth.</span></div>
+<div class="index-entry"><span class="scripture-ref">John 17:20–21 <span class="index-where">· VI · Closing</span></span><span class="scripture-text">Neither pray I for these alone, but for them also which shall believe on me through their word; That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 2:1 <span class="index-where">· I</span></span><span class="scripture-text">And when the day of Pentecost was fully come, they were all with one accord in one place.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 2:6–11 <span class="index-where">· I</span></span><span class="scripture-text">Now when this was noised abroad, the multitude came together, and were confounded, because that every man heard them speak in his own language. And they were all amazed and marvelled, saying one to another, Behold, are not all these which speak Galilaeans? And how hear we every man in our own tongue, wherein we were born? Parthians, and Medes, and Elamites, and the dwellers in Mesopotamia, and in Judaea, and Cappadocia, in Pontus, and Asia, Phrygia, and Pamphylia, in Egypt, and in the parts of Libya about Cyrene, and strangers of Rome, Jews and proselytes, Cretes and Arabians, we do hear them speak in our tongues the wonderful works of God.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 2:41–42 <span class="index-where">· I · III</span></span><span class="scripture-text">Then they that gladly received his word were baptized: and the same day there were added unto them about three thousand souls. And they continued stedfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 15:1–2 <span class="index-where">· V</span></span><span class="scripture-text">And certain men which came down from Judaea taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved. When therefore Paul and Barnabas had no small dissension and disputation with them, they determined that Paul and Barnabas, and certain other of them, should go up to Jerusalem unto the apostles and elders about this question.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 15:6–12 <span class="index-where">· V</span></span><span class="scripture-text">And the apostles and elders came together for to consider of this matter. And when there had been much disputing, Peter rose up, and said unto them, Men and brethren, ye know how that a good while ago God made choice among us, that the Gentiles by my mouth should hear the word of the gospel, and believe. And God, which knoweth the hearts, bare them witness, giving them the Holy Ghost, even as he did unto us; And put no difference between us and them, purifying their hearts by faith. Now therefore why tempt ye God, to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear? But we believe that through the grace of the Lord Jesus Christ we shall be saved, even as they. Then all the multitude kept silence, and gave audience to Barnabas and Paul, declaring what miracles and wonders God had wrought among the Gentiles by them.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 15:15–17 <span class="index-where">· V</span></span><span class="scripture-text">And to this agree the words of the prophets; as it is written, After this I will return, and will build again the tabernacle of David, which is fallen down; and I will build again the ruins thereof, and I will set it up: That the residue of men might seek after the Lord, and all the Gentiles, upon whom my name is called, saith the Lord, who doeth all these things.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 15:22–27 <span class="index-where">· V</span></span><span class="scripture-text">Then pleased it the apostles and elders, with the whole church, to send chosen men of their own company to Antioch with Paul and Barnabas; namely, Judas surnamed Barsabas, and Silas, chief men among the brethren: And they wrote letters by them after this manner; The apostles and elders and brethren send greeting unto the brethren which are of the Gentiles in Antioch and Syria and Cilicia: Forasmuch as we have heard, that certain which went out from us have troubled you with words, subverting your souls, saying, Ye must be circumcised, and keep the law: to whom we gave no such commandment: It seemed good unto us, being assembled with one accord, to send chosen men unto you with our beloved Barnabas and Paul, Men that have hazarded their lives for the name of our Lord Jesus Christ. We have sent therefore Judas and Silas, who shall also tell you the same things by mouth.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 16:4–5 <span class="index-where">· V</span></span><span class="scripture-text">And as they went through the cities, they delivered them the decrees for to keep, that were ordained of the apostles and elders which were at Jerusalem. And so were the churches established in the faith, and increased in number daily.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 17:11 <span class="index-where">· V · Closing</span></span><span class="scripture-text">These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.</span></div>
+<div class="index-entry"><span class="scripture-ref">Acts 24:14 <span class="index-where">· III</span></span><span class="scripture-text">But this I confess unto thee, that after the way which they call heresy, so worship I the God of my fathers, believing all things which are written in the law and in the prophets:</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 3:31 <span class="index-where">· III</span></span><span class="scripture-text">Do we then make void the law through faith? God forbid: yea, we establish the law.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 7:12 <span class="index-where">· III</span></span><span class="scripture-text">Wherefore the law is holy, and the commandment holy, and just, and good.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 14:1 <span class="index-where">· IV</span></span><span class="scripture-text">Him that is weak in the faith receive ye, but not to doubtful disputations.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 14:19 <span class="index-where">· IV</span></span><span class="scripture-text">Let us therefore follow after the things which make for peace, and things wherewith one may edify another.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 15:5–6 <span class="index-where">· Main Text · Closing</span></span><span class="scripture-text">Now the God of patience and consolation grant you to be likeminded one toward another according to Christ Jesus: That ye may with one mind and one mouth glorify God, even the Father of our Lord Jesus Christ.</span></div>
+<div class="index-entry"><span class="scripture-ref">Romans 16:17–18 <span class="index-where">· IV</span></span><span class="scripture-text">Now I beseech you, brethren, mark them which cause divisions and offences contrary to the doctrine which ye have learned; and avoid them. For they that are such serve not our Lord Jesus Christ, but their own belly; and by good words and fair speeches deceive the hearts of the simple.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 1:5–7 <span class="index-where">· II</span></span><span class="scripture-text">That in every thing ye are enriched by him, in all utterance, and in all knowledge; Even as the testimony of Christ was confirmed in you: So that ye come behind in no gift; waiting for the coming of our Lord Jesus Christ:</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 1:10–13 <span class="index-where">· Main Text · II · IV · Closing</span></span><span class="scripture-text">Now I beseech you, brethren, by the name of our Lord Jesus Christ, that ye all speak the same thing, and that there be no divisions among you; but that ye be perfectly joined together in the same mind and in the same judgment. For it hath been declared unto me of you, my brethren, by them which are of the house of Chloe, that there are contentions among you. Now this I say, that every one of you saith, I am of Paul; and I of Apollos; and I of Cephas; and I of Christ. Is Christ divided? was Paul crucified for you? or were ye baptized in the name of Paul?</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 3:3–4 <span class="index-where">· II</span></span><span class="scripture-text">For ye are yet carnal: for whereas there is among you envying, and strife, and divisions, are ye not carnal, and walk as men? For while one saith, I am of Paul; and another, I am of Apollos; are ye not carnal?</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 4:17 <span class="index-where">· III</span></span><span class="scripture-text">For this cause have I sent unto you Timotheus, who is my beloved son, and faithful in the Lord, who shall bring you into remembrance of my ways which be in Christ, as I teach every where in every church.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Corinthians 11:1–2 <span class="index-where">· III</span></span><span class="scripture-text">Be ye followers of me, even as I also am of Christ. Now I praise you, brethren, that ye remember me in all things, and keep the ordinances, as I delivered them to you.</span></div>
+<div class="index-entry"><span class="scripture-ref">Galatians 1:8–9 <span class="index-where">· III</span></span><span class="scripture-text">But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed. As we said before, so say I now again, If any man preach any other gospel unto you than that ye have received, let him be accursed.</span></div>
+<div class="index-entry"><span class="scripture-ref">Galatians 6:1 <span class="index-where">· II</span></span><span class="scripture-text">Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted.</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 2:8–10 <span class="index-where">· III · Closing</span></span><span class="scripture-text">For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 4:1–6 <span class="index-where">· I · II</span></span><span class="scripture-text">I therefore, the prisoner of the Lord, beseech you that ye walk worthy of the vocation wherewith ye are called, With all lowliness and meekness, with longsuffering, forbearing one another in love; Endeavouring to keep the unity of the Spirit in the bond of peace. There is one body, and one Spirit, even as ye are called in one hope of your calling; One Lord, one faith, one baptism, One God and Father of all, who is above all, and through all, and in you all.</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 4:11–16 <span class="index-where">· I · IV · V · Closing</span></span><span class="scripture-text">And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ: That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive; But speaking the truth in love, may grow up into him in all things, which is the head, even Christ: From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body unto the edifying of itself in love.</span></div>
+<div class="index-entry"><span class="scripture-ref">Ephesians 4:29 <span class="index-where">· V</span></span><span class="scripture-text">Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Thessalonians 5:21 <span class="index-where">· IV</span></span><span class="scripture-text">Prove all things; hold fast that which is good.</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Thessalonians 2:15 <span class="index-where">· III</span></span><span class="scripture-text">Therefore, brethren, stand fast, and hold the traditions which ye have been taught, whether by word, or our epistle.</span></div>
+<div class="index-entry"><span class="scripture-ref">1 Timothy 6:3–5 <span class="index-where">· III</span></span><span class="scripture-text">If any man teach otherwise, and consent not to wholesome words, even the words of our Lord Jesus Christ, and to the doctrine which is according to godliness; He is proud, knowing nothing, but doting about questions and strifes of words, whereof cometh envy, strife, railings, evil surmisings, Perverse disputings of men of corrupt minds, and destitute of the truth, supposing that gain is godliness: from such withdraw thyself.</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Timothy 2:23–26 <span class="index-where">· IV</span></span><span class="scripture-text">But foolish and unlearned questions avoid, knowing that they do gender strifes. And the servant of the Lord must not strive; but be gentle unto all men, apt to teach, patient, In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth; And that they may recover themselves out of the snare of the devil, who are taken captive by him at his will.</span></div>
+<div class="index-entry"><span class="scripture-ref">Hebrews 6:10 <span class="index-where">· Intro</span></span><span class="scripture-text">For God is not unrighteous to forget your work and labour of love, which ye have shewed toward his name, in that ye have ministered to the saints, and do minister.</span></div>
+<div class="index-entry"><span class="scripture-ref">Hebrews 10:25 <span class="index-where">· V</span></span><span class="scripture-text">Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching.</span></div>
+<div class="index-entry"><span class="scripture-ref">Hebrews 13:17 <span class="index-where">· V</span></span><span class="scripture-text">Obey them that have the rule over you, and submit yourselves: for they watch for your souls, as they that must give account, that they may do it with joy, and not with grief: for that is unprofitable for you.</span></div>
+<div class="index-entry"><span class="scripture-ref">James 3:10 <span class="index-where">· IV · Closing</span></span><span class="scripture-text">Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be.</span></div>
+<div class="index-entry"><span class="scripture-ref">2 Peter 3:15–16 <span class="index-where">· III</span></span><span class="scripture-text">And account that the longsuffering of our Lord is salvation; even as our beloved brother Paul also according to the wisdom given unto him hath written unto you; As also in all his epistles, speaking in them of these things; in which are some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction.</span></div>
+<div class="index-entry"><span class="scripture-ref">Jude 1:3 <span class="index-where">· III</span></span><span class="scripture-text">Beloved, when I gave all diligence to write unto you of the common salvation, it was needful for me to write unto you, and exhort you that ye should earnestly contend for the faith which was once delivered unto the saints.</span></div>
+  </div>
+</section>
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">That ye may with one mind and one mouth glorify God · Romans 15:6</p>
+    <p class="footer-sub">Sola Scriptura · To the Law and to the Testimony · Isaiah 8:20</p>
+    <p class="footer-sub">Work the Word Church · Madison, West Virginia · Brother Justin May</p>
+  </footer>
+
+</div>
+</body>
+</html>

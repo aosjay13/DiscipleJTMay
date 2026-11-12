@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Discipleship Class - Level 1 - Lesson 7: The Power of a Spirit-Filled Life</title>
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-soft:#9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, 'Liberation Serif', serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ---- PAGE SHELL ---- */
+  .page {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: ''; position: absolute; width: 40px; height: 40px;
+    border-color: var(--gold-light); border-style: solid; pointer-events: none;
+    z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ---- HEADER ---- */
+  .doc-header {
+    text-align: center;
+    padding: 3.4rem 3rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-soft) 100%);
+    color: var(--gold-pale);
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-header::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .header-ornament { font-size: 1.1rem; color: var(--gold-light); letter-spacing: 0.55em; display: block; margin-bottom: 0.9rem; }
+  .doc-eyebrow { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .doc-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 2.3rem; font-weight: 700; color: #FBF4E2; letter-spacing: 0.05em; line-height: 1.2; text-transform: uppercase; }
+  .doc-subtitle { font-size: 1.05rem; color: var(--gold-pale); font-style: italic; letter-spacing: 0.02em; margin-top: 0.7rem; }
+  .header-rule { text-align: center; margin-top: 1.4rem; line-height: 1; }
+  .header-rule span { display: inline-block; width: 118px; border-top: 1px solid var(--gold-light); vertical-align: middle; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 0.95rem; vertical-align: middle; padding: 0 0.8rem; }
+
+  /* ---- BODY ---- */
+  .doc-body { padding: 2.2rem 3rem 3rem; }
+
+  .preamble { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.9rem; }
+  .preamble p { margin-bottom: 0.9rem; }
+  .preamble p:last-child { margin-bottom: 0; }
+
+  /* ---- LESSON SECTIONS ---- */
+  .section { margin-top: 1.9rem; }
+  .section-header { border-bottom: 2px solid var(--rule-solid); padding-bottom: 0.5rem; margin-bottom: 0.9rem; }
+  .section-header .section-title { display: inline; }
+  .section-num {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.7rem; font-weight: 700;
+    background: var(--crimson); color: var(--gold-pale);
+    padding: 0.22rem 0.42rem; letter-spacing: 0.04em; line-height: 1; margin-right: 0.6rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .section-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 1.14rem; font-weight: 700; color: var(--crimson); line-height: 1.3; }
+  .section-body { font-size: 1.05rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; }
+  .section-body p { margin-bottom: 0.9rem; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* ---- SCRIPTURE BOX ---- */
+  .verse {
+    margin: 0.9rem 0 1rem; padding: 0.75rem 1.1rem;
+    background: var(--cream); border-left: 4px solid var(--gold-light);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .verse-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; color: var(--crimson); }
+  .verse-dot { color: var(--gold); padding: 0 0.35rem; }
+  .verse-text { font-style: italic; color: var(--ink-mid); font-size: 1rem; line-height: 1.72; }
+
+  /* ---- HISTORICAL QUOTE (formatted like a scripture box) ---- */
+  .verse.history { border-left-color: var(--crimson-soft); }
+
+  /* ---- TRANSITION LINE ---- */
+  .transition {
+    margin-top: 2rem; padding-top: 1.1rem; border-top: 1px solid var(--rule-solid);
+    text-align: center; font-style: italic; color: var(--ink-soft); font-size: 1rem;
+  }
+
+  /* ---- WORKSHEET ---- */
+  .worksheet-head { margin-bottom: 1.5rem; }
+  .name-date { margin-bottom: 1.4rem; font-size: 0; }
+  .name-date > div { display: inline-block; width: 48%; vertical-align: bottom; font-size: 1rem; }
+  .name-date > div:first-child { margin-right: 4%; }
+  .nd-label { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .nd-line { border-bottom: 1px solid var(--rule-solid); height: 1.5rem; }
+  .worksheet-title {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.92rem; font-weight: 700; color: var(--crimson);
+    letter-spacing: 0.06em; border-bottom: 2px solid var(--rule-solid); padding-bottom: 0.5rem;
+  }
+  .worksheet-title em { font-family: 'EB Garamond', Georgia, 'Liberation Serif', serif; font-weight: 400; font-size: 0.94rem; color: var(--ink-soft); letter-spacing: 0; }
+
+  .q-block { margin: 1.3rem 0; }
+  .q-head { margin-bottom: 0.45rem; }
+  .q-num {
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.68rem; font-weight: 700;
+    background: var(--crimson); color: var(--gold-pale); padding: 0.2rem 0.4rem; line-height: 1; margin-right: 0.55rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .q-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .q-verse {
+    background: var(--cream); border-left: 4px solid var(--gold-light);
+    padding: 0.6rem 1rem; font-style: italic; color: var(--ink-mid); font-size: 0.97rem; line-height: 1.7;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .q-verse + .q-verse { margin-top: 0.35rem; }
+  .q-verse .verse-ref { font-style: normal; margin-right: 0.35rem; }
+  .q-prompt { font-size: 1.02rem; line-height: 1.7; color: var(--ink); margin-top: 0.6rem; }
+  .lines { margin-top: 0.55rem; }
+  .lines .line { height: 0.42in; border-bottom: 1px solid var(--rule-solid); }
+
+  /* ---- CARRY WITH YOU ---- */
+  .carry {
+    margin-top: 2rem; padding: 1.2rem 1.6rem 1.4rem; background: var(--cream);
+    border: 1px solid var(--rule-solid); text-align: center;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .carry-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.8rem; }
+  .carry p { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); }
+  .carry em { color: var(--crimson); font-style: italic; }
+
+  /* ---- ANSWER KEY ---- */
+  .answer-key-banner {
+    background: var(--gold); color: #FBF4E2; text-align: center;
+    font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; padding: 0.7rem 1rem; margin-bottom: 1.6rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .answer { padding-bottom: 0.7rem; margin-bottom: 0.7rem; border-bottom: 1px dashed var(--rule-solid); }
+  .answer:last-of-type { border-bottom: 1px dashed var(--rule-solid); }
+  .a-prompt { font-weight: 700; color: var(--crimson); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.45rem; }
+  .a-text {
+    font-style: italic; font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid);
+    background: var(--cream); border-left: 4px solid var(--gold-light); padding: 0.55rem 1rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* ---- TEACHER NOTE ---- */
+  .teacher-note {
+    margin-top: 1.6rem; padding: 1.1rem 1.4rem 1.3rem; background: var(--cream);
+    border: 1px solid var(--rule-solid); border-top: 3px solid var(--gold-light);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .tn-title { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .teacher-note p { font-size: 0.97rem; line-height: 1.72; color: var(--ink-mid); text-align: justify; margin-bottom: 0.75rem; }
+  .teacher-note p:last-child { margin-bottom: 0; }
+  .tn-ref { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--crimson); }
+
+  /* ---- FOOTER ---- */
+  .doc-footer {
+    text-align: center;
+    padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-soft) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; color: var(--gold-light); font-size: 1rem; letter-spacing: 0.5em; }
+  .footer-text { font-family: 'Cinzel', 'Liberation Serif', serif; font-size: 0.64rem; letter-spacing: 0.18em; color: #FBF6E9; text-transform: uppercase; margin-top: 0.6rem; line-height: 1.9; }
+
+  /* ==================== PRINT ==================== */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.72in 0.62in 0.7in;
+
+    @top-left {
+      width: 15%;
+      content: "";
+      background-color: #7A1F1F;
+      border-bottom: 1pt solid #C9A84C;
+    }
+    @top-center {
+      width: 70%;
+      content: "DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 7  \00B7  THE POWER OF A SPIRIT-FILLED LIFE";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6.5pt;
+      letter-spacing: 0.14em;
+      border-bottom: 1pt solid #C9A84C;
+      padding: 3pt 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    @top-right {
+      width: 15%;
+      content: "";
+      background-color: #7A1F1F;
+      border-bottom: 1pt solid #C9A84C;
+    }
+    @bottom-left {
+      width: 33.34%;
+      content: "THE POWER OF THE SPIRIT";
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6pt;
+      letter-spacing: 0.14em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 0 3pt 6pt;
+      text-align: left;
+      vertical-align: middle;
+    }
+    @bottom-center {
+      width: 33.33%;
+      content: "\2726 \2726 \2726";
+      background-color: #7A1F1F;
+      color: #C9A84C;
+      font-size: 5.5pt;
+      letter-spacing: 0.4em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+    @bottom-right {
+      width: 33.33%;
+      content: "PAGE " counter(page) " OF " counter(pages);
+      background-color: #7A1F1F;
+      color: #F5EDD8;
+      font-family: 'Cinzel', 'Liberation Serif', Georgia, serif;
+      font-size: 6pt;
+      letter-spacing: 0.14em;
+      border-top: 1pt solid #C9A84C;
+      padding: 3pt 6pt 3pt 0;
+      text-align: right;
+      vertical-align: middle;
+    }
+  }
+
+  /* First page carries the full masthead, so no running band on top */
+  @page :first {
+    @top-left   { content: none; background: none; border: none; }
+    @top-center { content: none; background: none; border: none; }
+    @top-right  { content: none; background: none; border: none; }
+  }
+
+  /* The answer key is labelled instead of numbered with the student pages */
+  @page answerkey {
+    @top-center {
+      width: 70%;
+      content: "DISCIPLESHIP CLASS  \00B7  LEVEL 1  \00B7  LESSON 7  \00B7  ANSWER KEY";
+    }
+    @bottom-right {
+      content: "TEACHER'S ANSWER KEY";
+    }
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border: none; max-width: 100%; background: var(--parchment); }
+    .page::before, .page::after { display: none; }
+
+    .doc-header { padding: 1.15rem 1.5rem 1rem; border-bottom-width: 2px; }
+    .doc-header::before { top: 7px; left: 7px; right: 7px; bottom: 7px; }
+    .doc-body { padding: 1rem 0 0.2rem; }
+    .doc-footer { display: none; }
+
+    .preamble, .section-body, .teacher-note p { font-size: 9.8pt; line-height: 1.46; }
+    .preamble { margin-bottom: 0.8rem; }
+    .preamble p, .section-body p { margin-bottom: 0.55rem; }
+    .verse-text, .q-verse, .a-text { font-size: 9.1pt; line-height: 1.45; }
+    .verse { margin: 0.45rem 0 0.5rem; padding: 0.42rem 0.85rem; }
+    .q-verse { padding: 0.45rem 0.9rem; }
+    .q-prompt { font-size: 9.5pt; line-height: 1.45; margin-top: 0.35rem; }
+    .section { margin-top: 0.65rem; }
+    .section-header { padding-bottom: 0.35rem; margin-bottom: 0.55rem; }
+    .section-title { font-size: 1.02rem; }
+    .transition { margin-top: 1rem; padding-top: 0.7rem; font-size: 9.6pt; }
+    .q-block { margin: 0.5rem 0; }
+    .lines { margin-top: 0.32rem; }
+    .lines .line { height: 0.36in; }
+    .worksheet-head { margin-bottom: 0.8rem; }
+    .name-date { margin-bottom: 0.9rem; }
+    .carry { margin-top: 0.9rem; padding: 0.8rem 1.2rem 0.9rem; }
+    .q-verse + .q-verse { margin-top: 0.2rem; }
+    .carry p { font-size: 9.6pt; line-height: 1.55; }
+    .answer { padding-bottom: 0.42rem; margin-bottom: 0.42rem; }
+    .a-prompt { font-size: 9.2pt; margin-bottom: 0.32rem; }
+    .a-text { padding: 0.42rem 0.9rem; }
+    .answer-key-banner { margin-bottom: 1rem; padding: 0.55rem 1rem; }
+    .teacher-note { margin-top: 1.1rem; padding: 0.9rem 1.2rem 1rem; }
+    .teacher-note p { font-size: 9.4pt; line-height: 1.55; margin-bottom: 0.55rem; }
+
+    .verse        { break-inside: avoid; page-break-inside: avoid; }
+    .q-block      { break-inside: avoid; page-break-inside: avoid; }
+    .lines        { break-inside: avoid; page-break-inside: avoid; }
+    .answer       { break-inside: avoid; page-break-inside: avoid; }
+    .carry        { break-inside: avoid; page-break-inside: avoid; }
+    .teacher-note { break-inside: auto; page-break-inside: auto; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+    .teacher-note p { break-inside: avoid; page-break-inside: avoid; orphans: 3; widows: 3; }
+    .tn-title { break-after: avoid; page-break-after: avoid; }
+    .name-date    { break-inside: avoid; page-break-inside: avoid; }
+    .section      { break-inside: auto; page-break-inside: auto; }
+
+    .section-header   { break-after: avoid; page-break-after: avoid; }
+    .worksheet-title  { break-after: avoid; page-break-after: avoid; }
+    .q-head           { break-after: avoid; page-break-after: avoid; }
+    .a-prompt         { break-after: avoid; page-break-after: avoid; }
+    .answer-key-banner{ break-after: avoid; page-break-after: avoid; }
+
+    .print-new-page { break-before: page; page-break-before: always; }
+    .answer-key     { page: answerkey; break-before: page; page-break-before: always; }
+
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 1.6rem 1.4rem 2rem; }
+    .doc-header { padding: 2rem 1.4rem 1.5rem; }
+    .name-date { flex-direction: column; gap: 1rem; }
+  }
+</style>
+
+</head>
+<body>
+<div class="page">
+
+  <!-- ==================== MASTHEAD ==================== -->
+  <header class="doc-header">
+    <span class="header-ornament">&#10022; &#10022; &#10022;</span>
+    <p class="doc-eyebrow">Discipleship Class &middot; Level 1 &middot; Lesson 7</p>
+    <h1 class="doc-title">The Power of a Spirit-Filled Life</h1>
+    <p class="doc-subtitle">The Promise of the Father, the Fullness of the Spirit, and the Gift of Tongues</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- ==================== THE LESSON ==================== -->
+    <div class="preamble">
+      <p>In our last lesson we learned that the blood of Jesus Christ keeps cleansing the believer who walks in the light, and that a man who falls does not need to be saved all over again. Now we come to a promise that stands beside that one. Before the Lord ascended, He did not tell His disciples to try harder. He told them to wait, because the Father had something to give them that they did not yet have.</p>
+      <p>Three questions sit at the heart of this lesson. What is the baptism with the Holy Ghost? How does a believer receive it? And what good does it do, especially the gift of tongues that came with it? Multitudes have been taught that the Spirit is only a doctrine, that His gifts ended with the apostles, or that the whole subject is nothing but noise and confusion. Scripture shows something better: a promise from the Father, a power for witness, and a gift that builds up the inner man and, when it is interpreted, the whole assembly. We will take all three in their order.</p>
+    </div>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">I</span>
+        <h2 class="section-title">The Promise of the Father</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Acts 1:4&ndash;5</span><span class="verse-dot">&#8226;</span><span class="verse-text">And, being assembled together with them, commanded them that they should not depart from Jerusalem, but wait for the promise of the Father, which, saith he, ye have heard of me. For John truly baptized with water; but ye shall be baptized with the Holy Ghost not many days hence.</span>
+        </div>
+        <p>Read the verse slowly, because everything else in this lesson rests on it. The men Jesus was speaking to were not strangers or seekers. They had left their nets, followed Him for three years, been sent out to preach, and seen Him risen from the dead. John tells us that He had already breathed on them and said, Receive ye the Holy Ghost (John 20:22). They were saved men. And still the promise was ahead of them.</p>
+        <p>So the first thing to settle is this: the baptism with the Holy Ghost is a promise made to people who already belong to God. It is not the door into salvation. It is the power that comes after. A man does not receive the Spirit in order to become a child of God; he receives the fullness of the Spirit because he is one.</p>
+        <div class="verse">
+          <span class="verse-ref">Acts 1:8</span><span class="verse-dot">&#8226;</span><span class="verse-text">But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.</span>
+        </div>
+        <p>Notice the two words Jesus uses: power and witnesses. He does not promise power so that men may admire us. He promises power so that men may hear of Him. The Greek word behind power is <em>dynamis</em>, the ability of God at work. And the reach of it is not a corner of the map. Jerusalem, Judaea, Samaria, and the uttermost part of the earth. The same Spirit who filled a room in Jerusalem is the Spirit who sends a man to his own street and to the ends of the earth.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">II</span>
+        <h2 class="section-title">Two Works of One Spirit</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">1 Corinthians 12:13</span><span class="verse-dot">&#8226;</span><span class="verse-text">For by one Spirit are we all baptized into one body, whether we be Jews or Gentiles, whether we be bond or free; and have been all made to drink into one Spirit.</span>
+        </div>
+        <p>Here are the two works set side by side, and keeping them straight unlocks the whole subject. In the first, the Holy Spirit is the Baptizer and the body of Christ is where He places us. In the second, the Lord Jesus is the Baptizer and the Holy Ghost is what He immerses us in. Different Baptizer, different element, different result.</p>
+        <div class="verse">
+          <span class="verse-ref">Matthew 3:11</span><span class="verse-dot">&#8226;</span><span class="verse-text">I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you with the Holy Ghost, and with fire.</span>
+        </div>
+        <p>The first work happens to every believer the moment he believes. He is placed into the body, joined to Christ and to every other saint, and sealed with the Spirit of promise (Ephesians 1:13). There is no Christian who lacks the Spirit, for Paul says plainly, if any man have not the Spirit of Christ, he is none of his (Romans 8:9). We must never divide the church into those who have the Spirit and those who do not.</p>
+        <p>Then what is lacking? Not the presence of the Spirit, but His fullness. Not the guest, but the guest taking the whole house. At salvation a well of living water is set inside the believer. In the baptism with the Holy Ghost that well overflows, and the man is not merely sprinkled with God but plunged into Him, clothed with power for the work he has been given. This is why the same Spirit can be both a seal that every believer has and a promise that every believer is invited to receive.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">III</span>
+        <h2 class="section-title">Believers Who Had Not Yet Received</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Acts 8:14&ndash;17</span><span class="verse-dot">&#8226;</span><span class="verse-text">Now when the apostles which were at Jerusalem heard that Samaria had received the word of God, they sent unto them Peter and John: Who, when they were come down, prayed for them, that they might receive the Holy Ghost: (For as yet he was fallen upon none of them: only they were baptized in the name of the Lord Jesus.) Then laid they their hands on them, and they received the Holy Ghost.</span>
+        </div>
+        <p>Samaria is the plainest case in the book of Acts, and it settles two questions at once. Philip went down and preached Christ. The people believed, and they were baptized, both men and women. Luke says heaven itself recognized it: Samaria had received the word of God. By any honest reading these were Christians. Yet the Spirit had not yet fallen on them in this measure, and the apostles came down and prayed that they might receive the Holy Ghost.</p>
+        <p>Two things follow. First, water baptism is not the baptism with the Holy Ghost. A man can go down into the water a believer and come up still waiting for the promise. Second, the fullness of the Spirit can come later than conversion. God is not bound to a schedule, but neither is He obliged to give everything at the same hour. There is a difference between the Spirit quickening a dead soul and the Spirit coming upon a living one with power.</p>
+        <p>And notice how God did it. He did not leave the new Samaritan believers to themselves. He sent Peter and John, so that the fullness they received would tie them to the apostles' doctrine and to the whole body. The Spirit is not given to make men independent. He is given to make one body.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">IV</span>
+        <h2 class="section-title">The Question Paul Asked at Ephesus</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Acts 19:2&ndash;6</span><span class="verse-dot">&#8226;</span><span class="verse-text">He said unto them, Have ye received the Holy Ghost since ye believed? And they said unto him, We have not so much as heard whether there be any Holy Ghost. And he said unto them, Unto what then were ye baptized? And they said, Unto John's baptism. Then said Paul, John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on Christ Jesus. When they heard this, they were baptized in the name of the Lord Jesus. And when Paul had laid his hands upon them, the Holy Ghost came on them; and they spake with tongues, and prophesied.</span>
+        </div>
+        <p>Paul's question carries a word we should not rush past: <em>since</em>. He did not ask whether they had the Spirit, for every believer has Him. He asked whether they had received the Holy Ghost since they believed, as though the two could be separated by time. Their answer showed the gap. They had been baptized unto John's baptism, looking forward, and had not yet heard of the One John pointed to.</p>
+        <p>So Paul preached Christ to them, and they were baptized in the name of the Lord Jesus. Then he laid his hands on them, and the Holy Ghost came on them, and they spake with tongues, and prophesied. About twelve men. Luke records the number because it matters: this was not a crowd caught up in a moment. It was a small, ordinary group of disciples who received exactly what the apostles had received.</p>
+        <p>Lay the accounts together and a pattern appears. At Pentecost the Spirit fell on waiting believers. In Samaria, on believers who had been baptized. At Ephesus, on believers who had been taught and baptized. At the house of Cornelius, on hearers while the word was still being preached. The timing varies. The gift does not.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">V</span>
+        <h2 class="section-title">A Devout Man Who Still Needed the Gospel</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Acts 10:44&ndash;46</span><span class="verse-dot">&#8226;</span><span class="verse-text">While Peter yet spake these words, the Holy Ghost fell on all them which heard the word. And they of the circumcision which believed were astonished, as many as came with Peter, because that on the Gentiles also was poured out the gift of the Holy Ghost. For they heard them speak with tongues, and magnify God.</span>
+        </div>
+        <p>Cornelius is the case that keeps us honest. He was a devout man, one that feared God with all his house, gave much alms, and prayed to God always (Acts 10:1&ndash;2). If ever a man looked ready for heaven on the strength of his religion, it was this one. Yet an angel told him to send for Peter, who would tell him words whereby thou and all thy house shall be saved (Acts 11:14). His prayers and his alms were a memorial before God, and they were not salvation.</p>
+        <p>So Peter came and preached Jesus, and while he was still speaking the Holy Ghost fell on all them which heard the word. The Jewish believers with him were astonished, and they knew what had happened for one reason: they heard them speak with tongues, and magnify God. No one laid hands on them. No one prayed over them. God answered the word with His Spirit, and He did it before a drop of water touched them.</p>
+        <p>That order matters. If water baptism were the door to the Spirit, God would not have poured out His Spirit on unbaptized Gentiles. But He did, and Peter's only conclusion was, Can any man forbid water? (Acts 10:47). The Spirit is received by faith, not by ceremony, and God is no respecter of persons (Acts 10:34). The promise Peter preached at Pentecost was not for one nation. It is unto you, and to your children, and to all that are afar off, even as many as the Lord our God shall call (Acts 2:39).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">VI</span>
+        <h2 class="section-title">What the Baptism Is For</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Acts 4:31</span><span class="verse-dot">&#8226;</span><span class="verse-text">And when they had prayed, the place was shaken where they were assembled together; and they were all filled with the Holy Ghost, and they spake the word of God with boldness.</span>
+        </div>
+        <p>Before Pentecost the disciples hid behind locked doors for fear of the Jews. After the fire fell, the same men stood in the open and preached Christ to the crowds they had feared. The baptism did not give them a new message. It gave them power to carry the message they already had.</p>
+        <p>Fire does two things in Scripture. It burns away what is impure, and it sets a thing burning with heat and motion. John said the coming One would baptize with the Holy Ghost and with fire, and he added that the same fire which purges the floor gathers the wheat and burns the chaff (Matthew 3:11&ndash;12). This is not a tame gift. It purges fear and self and the love of ease, and it kindles a zeal that will not sit still while there is work to be done. Jeremiah knew something of it: his word was in mine heart as a burning fire shut up in my bones, and I was weary with forbearing, and I could not stay (Jeremiah 20:9).</p>
+        <p>And here is where the Spirit and the commandments of God meet. God promised, I will put my spirit within you, and cause you to walk in my statutes (Ezekiel 36:27). Paul says the same: that the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit (Romans 8:4). The fullness of the Spirit is never given as a substitute for obedience. It is given as the power for it. Pentecost itself was the feast on which God first wrote His law on stone at Sinai, and now wrote it on the hearts of His people by the Spirit (Jeremiah 31:33). The fire that fell in the upper room did not burn up the commandments. It burned them into the heart.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">VII</span>
+        <h2 class="section-title">How a Believer Receives</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">Luke 11:13</span><span class="verse-dot">&#8226;</span><span class="verse-text">If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?</span>
+        </div>
+        <p>If this promise is for believers, how does a believer receive it? The same way he received salvation: by asking and believing. Jesus did not point His hearers to a technique or a feeling. He pointed them to the Father, and to the simple act of asking.</p>
+        <p>Three things help a man come to that place. First, thirst. The Lord cried, If any man thirst, let him come unto me, and drink (John 7:37). A man who is satisfied with what he has will not ask for more. Second, faith. We receive the things of God by believing, not by straining. Paul asked the Galatians, Received ye the Spirit by the works of the law, or by the hearing of faith? (Galatians 3:2). The answer is faith. Third, yielding. Since the tongue is the member God uses in this sign, the believer must be willing to open his mouth and speak, trusting the Spirit to give the words.</p>
+        <div class="verse">
+          <span class="verse-ref">Acts 2:4</span><span class="verse-dot">&#8226;</span><span class="verse-text">And they were all filled with the Holy Ghost, and began to speak with other tongues, as the Spirit gave them utterance.</span>
+        </div>
+        <p>Look at the order in the verse. They were filled. They began to speak. The Spirit gave the utterance. Who spoke? They did. Who gave the words? The Holy Spirit. This is not God taking a man over against his will, and it is not a man working himself into a state. It is a yielded man and a faithful God. Some receive in a moment at the altar. Some receive while hearing the word preached. Some receive through prayer and the laying on of hands. God is sovereign in the manner, and faith is the hand that takes the gift.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">VIII</span>
+        <h2 class="section-title">The Benefits of Speaking in Tongues</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">1 Corinthians 14:2, 4</span><span class="verse-dot">&#8226;</span><span class="verse-text">For he that speaketh in an unknown tongue speaketh not unto men, but unto God: for no man understandeth him; howbeit in the spirit he speaketh mysteries. He that speaketh in an unknown tongue edifieth himself; but he that prophesieth edifieth the church.</span>
+        </div>
+        <p>Now we come to the gift that came with the promise. The first thing Paul says about it is that a man who speaks in an unknown tongue is not speaking to men but to God. His understanding does not follow what his spirit is saying, and yet he is speaking mysteries, real content, given by the Spirit.</p>
+        <p>This is why the gift builds a man up. <em>Edifieth</em> means to build a house, to strengthen and establish. Prayer in the Spirit strengthens the inner man in a way that prayer in his own language sometimes does not, because it reaches past the limit of what he already knows. Paul was not ashamed of this. He said, I thank my God, I speak with tongues more than ye all (1 Corinthians 14:18).</p>
+        <p>But he did not stop there, and neither should we. He said, I will pray with the spirit, and I will pray with the understanding also (1 Corinthians 14:15). He sang with both. The gift is not given to replace a man's mind but to reach past its borders, so that his spirit prays what his understanding has not yet learned. Jude puts it among the ordinary furniture of the Christian life: building up yourselves on your most holy faith, praying in the Holy Ghost (Jude 20). And when a man blesses God in a tongue, he is giving thanks well (1 Corinthians 14:16&ndash;17). The gift is a language of praise.</p>
+        <p>It is also a language of intercession. A believer does not always know what to pray as he ought, but the Spirit helps his infirmity and makes intercession with groanings which cannot be uttered (Romans 8:26). When a man prays in the Spirit, he is praying with wisdom beyond his own, for the Spirit knows the mind of God (Romans 8:27). That is a benefit no believer should despise.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">IX</span>
+        <h2 class="section-title">Tongues in the Assembly</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">1 Corinthians 14:27&ndash;28</span><span class="verse-dot">&#8226;</span><span class="verse-text">If any man speak in an unknown tongue, let it be by two, or at the most by three, and that by course; and let one interpret. But if there be no interpreter, let him keep silence in the church; and let him speak to himself, and to God.</span>
+        </div>
+        <p>In private, a tongue needs no interpreter. In the assembly, it must have one. The rule is not a suggestion; Paul grounds it in the nature of God Himself. He is not the author of confusion, but of peace, as in all churches of the saints (1 Corinthians 14:33).</p>
+        <p>The order is plain. Two, or at the most three, and that by course, one at a time, and let one interpret. If there is no interpreter, the man is to keep silence in the church and speak to himself and to God. This protects the assembly from noise that no one can understand, and it protects the gift from becoming a performance. The one who speaks is not out of control. The spirits of the prophets are subject to the prophets (1 Corinthians 14:32). A true working of the Spirit never produces chaos.</p>
+        <p>And Paul does not leave this as his own preference. He writes, If any man think himself to be a prophet, or spiritual, let him acknowledge that the things that I write unto you are the commandments of the Lord (1 Corinthians 14:37). Order in the meeting is not a tradition of men. It is obedience.</p>
+        <p>Tongues have an outward purpose too. Paul quotes Isaiah and says, tongues are for a sign, not to them that believe, but to them that believe not (1 Corinthians 14:22). At Pentecost the sign arrested a crowd of unbelievers and opened the door for Peter to preach, and three thousand souls were added that day. So we neither chase the gift as a badge nor forbid it as a danger. The Lord's own word is, forbid not to speak with tongues, and let all things be done decently and in order (1 Corinthians 14:39&ndash;40).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <span class="section-num">X</span>
+        <h2 class="section-title">Keep the Gift in Its Place</h2>
+      </div>
+      <div class="section-body">
+        <div class="verse">
+          <span class="verse-ref">1 Corinthians 13:1</span><span class="verse-dot">&#8226;</span><span class="verse-text">Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.</span>
+        </div>
+        <p>One last thing must be said, because it guards the whole lesson. Speaking in tongues is not the measure of a man's salvation, and it is not the measure of his holiness. Salvation is by grace through faith alone, and no gift adds a single thing to it. A believer may speak with the tongues of men and of angels and still be a sounding brass if love is absent. The fruit of the Spirit, love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance, is what the Spirit grows in a yielded heart, and against such there is no law (Galatians 5:22&ndash;23).</p>
+        <p>So we hold the gift in one hand and the fruit in the other. We do not despise the gifts, for they are the working of God for the good of His people. We do not idolize them, for they are tools and not trophies. We test everything by the Word, as John commands, believe not every spirit, but try the spirits whether they are of God (1 John 4:1). And we remember that the same Spirit who gives the utterance also writes the commandments on the heart and produces a life that walks in them. That is what a Spirit-filled life is: a man so full of God that what comes out of his mouth, and what comes out of his days, both belong to Him.</p>
+      </div>
+    </section>
+
+    <p class="transition">Now take up the questions. Read the verse over each one, then answer it in your own words.</p>
+
+    <!-- ==================== STUDY QUESTIONS ==================== -->
+    <div class="print-new-page worksheet-head">
+      <div class="name-date">
+        <div><p class="nd-label">Name</p><div class="nd-line"></div></div>
+        <div><p class="nd-label">Date</p><div class="nd-line"></div></div>
+      </div>
+      <p class="worksheet-title">Study Questions <span style="color:var(--gold)">&middot;</span> <em>Read each verse, then answer in your own words</em></p>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">1</span><span class="q-ref">Acts 1:4&ndash;5</span></div>
+      <p class="q-verse">And, being assembled together with them, commanded them that they should not depart from Jerusalem, but wait for the promise of the Father, which, saith he, ye have heard of me. For John truly baptized with water; but ye shall be baptized with the Holy Ghost not many days hence.</p>
+      <p class="q-prompt">What did Jesus tell the disciples to wait for? Were these men already believers (John 20:22)? What two baptisms does He name in the same breath?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">2</span><span class="q-ref">Acts 1:8</span></div>
+      <p class="q-verse">But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.</p>
+      <p class="q-prompt">What would they receive when the Holy Ghost came upon them? What would that make them, and where were they to be witnesses?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">3</span><span class="q-ref">1 Corinthians 12:13 &middot; Matthew 3:11</span></div>
+      <p class="q-verse"><span class="verse-ref">1 Corinthians 12:13</span>For by one Spirit are we all baptized into one body, whether we be Jews or Gentiles, whether we be bond or free; and have been all made to drink into one Spirit.</p>
+      <p class="q-verse"><span class="verse-ref">Matthew 3:11</span>I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you with the Holy Ghost, and with fire.</p>
+      <p class="q-prompt">In the first verse, who is the Baptizer and into what are we baptized? In the second, who is the Baptizer and with what does He baptize?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">4</span><span class="q-ref">Acts 8:14&ndash;17</span></div>
+      <p class="q-verse">Now when the apostles which were at Jerusalem heard that Samaria had received the word of God, they sent unto them Peter and John: Who, when they were come down, prayed for them, that they might receive the Holy Ghost: (For as yet he was fallen upon none of them: only they were baptized in the name of the Lord Jesus.) Then laid they their hands on them, and they received the Holy Ghost.</p>
+      <p class="q-prompt">Had the Samaritans believed and been baptized? Had the Holy Ghost fallen on them? What did Peter and John do, and what happened?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">5</span><span class="q-ref">Acts 19:2&ndash;6</span></div>
+      <p class="q-verse">He said unto them, Have ye received the Holy Ghost since ye believed? And they said unto him, We have not so much as heard whether there be any Holy Ghost... And when Paul had laid his hands upon them, the Holy Ghost came on them; and they spake with tongues, and prophesied.</p>
+      <p class="q-prompt">What question did Paul ask the disciples at Ephesus? What happened when he laid his hands on them? What does the word <em>since</em> tell you about these two experiences?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">6</span><span class="q-ref">Acts 10:44&ndash;46</span></div>
+      <p class="q-verse">While Peter yet spake these words, the Holy Ghost fell on all them which heard the word. And they of the circumcision which believed were astonished, as many as came with Peter, because that on the Gentiles also was poured out the gift of the Holy Ghost. For they heard them speak with tongues, and magnify God.</p>
+      <p class="q-prompt">How did the Jewish believers know the Gentiles had received the Holy Ghost? What did the Gentiles do? Was this before or after their water baptism (Acts 10:47&ndash;48)?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">7</span><span class="q-ref">Luke 11:13</span></div>
+      <p class="q-verse">If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?</p>
+      <p class="q-prompt">What does the heavenly Father give to those who ask Him? What does this verse tell you about how a believer is to receive the Holy Spirit?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">8</span><span class="q-ref">1 Corinthians 14:2, 4</span></div>
+      <p class="q-verse">For he that speaketh in an unknown tongue speaketh not unto men, but unto God: for no man understandeth him; howbeit in the spirit he speaketh mysteries. He that speaketh in an unknown tongue edifieth himself; but he that prophesieth edifieth the church.</p>
+      <p class="q-prompt">To whom does a believer speak when he prays in an unknown tongue? What does he speak? Who is built up by it?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">9</span><span class="q-ref">1 Corinthians 14:14&ndash;15 &middot; Jude 20</span></div>
+      <p class="q-verse"><span class="verse-ref">1 Corinthians 14:14&ndash;15</span>For if I pray in an unknown tongue, my spirit prayeth, but my understanding is unfruitful. What is it then? I will pray with the spirit, and I will pray with the understanding also: I will sing with the spirit, and I will sing with the understanding also.</p>
+      <p class="q-verse"><span class="verse-ref">Jude 20</span>But ye, beloved, building up yourselves on your most holy faith, praying in the Holy Ghost.</p>
+      <p class="q-prompt">What part of a man prays when he prays in a tongue? What does Paul refuse to leave out? What does Jude say praying in the Holy Ghost does for a believer?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="q-block">
+      <div class="q-head"><span class="q-num">10</span><span class="q-ref">1 Corinthians 14:27&ndash;28</span></div>
+      <p class="q-verse">If any man speak in an unknown tongue, let it be by two, or at the most by three, and that by course; and let one interpret. But if there be no interpreter, let him keep silence in the church; and let him speak to himself, and to God.</p>
+      <p class="q-prompt">What order does Paul give for tongues in the gathered church? What is a man to do if no interpreter is present, and why does that matter?</p>
+      <div class="lines"><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="carry">
+      <p class="carry-title">&#10022; To Carry With You &#10022;</p>
+      <p>The Father has not changed. The promise is still to them that ask. Come thirsty, come believing, come willing, and let the Spirit fill your mouth with praise. <em>If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?</em> Luke 11:13</p>
+    </div>
+
+    <!-- ==================== ANSWER KEY ==================== -->
+    <div class="answer-key">
+      <p class="answer-key-banner">Teacher's Answer Key &middot; Not for Student Distribution</p>
+
+      <div class="answer">
+        <p class="a-prompt">1. What were they to wait for, were they believers, and what two baptisms are named?</p>
+        <p class="a-text">They were to wait for the promise of the Father, the baptism with the Holy Ghost. Yes, they were already believers; Jesus had breathed on them and said, Receive ye the Holy Ghost (John 20:22). The two baptisms are John's baptism with water and the baptism with the Holy Ghost, and Jesus names them together to show they are not the same thing.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">2. What would they receive, what would it make them, and where?</p>
+        <p class="a-text">They would receive power after the Holy Ghost came upon them, and that power would make them witnesses unto Christ. The reach is Jerusalem, Judaea, Samaria, and the uttermost part of the earth. The baptism is not for our own enjoyment; it is for witness.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">3. Who baptizes in each verse, and into what?</p>
+        <p class="a-text">In 1 Corinthians 12:13 the Holy Spirit is the Baptizer and He places us into the body of Christ. In Matthew 3:11 the Lord Jesus is the Baptizer and He baptizes us with the Holy Ghost and fire. Different Baptizer, different element, different result. The first joins us to Christ; the second clothes us with power for service.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">4. Had the Samaritans believed and been baptized, and what followed?</p>
+        <p class="a-text">Yes. They believed Philip's preaching and were baptized, both men and women (Acts 8:12). But the Spirit had not yet fallen on them in this measure. Peter and John prayed for them and laid their hands on them, and they received the Holy Ghost. This shows that water baptism is not the Holy Ghost baptism, and that the fullness of the Spirit can come after conversion.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">5. What did Paul ask, what happened, and what does <em>since</em> show?</p>
+        <p class="a-text">Paul asked, Have ye received the Holy Ghost since ye believed? When he laid his hands on them, the Holy Ghost came on them and they spake with tongues and prophesied. The word <em>since</em> shows that believing and receiving this baptism can be two separate moments, even though both belong to the same Lord.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">6. How did they know, what did the Gentiles do, and when?</p>
+        <p class="a-text">The Jewish believers knew because they heard the Gentiles speak with tongues and magnify God. It happened while Peter was still preaching, before they were baptized in water (Acts 10:47&ndash;48). God gave the Spirit to believing Gentiles before the water, which proves that the Spirit is received by faith and that water baptism is not the door to Him.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">7. What does the Father give, and how do we receive?</p>
+        <p class="a-text">He gives the Holy Spirit to them that ask Him. The way to receive is to ask in faith, coming thirsty and willing to yield. We do not earn this gift by our goodness or work ourselves into it. The Father gives freely to His children who ask.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">8. To whom does he speak, what does he speak, and who is built up?</p>
+        <p class="a-text">He speaks not unto men but unto God, for no man understandeth him. In the spirit he speaks mysteries, real content given by the Spirit. He edifies himself, while the one who prophesies edifies the church. Both are true; the setting decides which is in view.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">9. What prays, what does Paul refuse to leave out, and what does Jude say?</p>
+        <p class="a-text">The man's spirit prays, while his understanding is unfruitful. Paul refuses to leave the understanding out: he will pray and sing with the spirit and with the understanding also. Jude says that praying in the Holy Ghost builds us up on our most holy faith. The gift strengthens the inner man and belongs in daily life, not only in a meeting.</p>
+      </div>
+
+      <div class="answer">
+        <p class="a-prompt">10. What order, and what if there is no interpreter?</p>
+        <p class="a-text">Two, or at the most three, each in turn, and one is to interpret. If there is no interpreter, the man is to keep silence in the church and speak to himself and to God. The reason is that God is not the author of confusion but of peace (1 Corinthians 14:33), and the meeting is for the edifying of all.</p>
+      </div>
+
+      <div class="teacher-note">
+        <p class="tn-title">&#10022; Teacher's Note &middot; If I Have the Spirit, Why Do I Need This?</p>
+        <p><span class="tn-ref">Ephesians 1:13 &middot; Romans 8:9</span> Say it plainly at the start, because some in the room will be confused about it. Every believer is sealed with the Holy Spirit the moment he believes, and no Christian is without the Spirit. If any man have not the Spirit of Christ, he is none of his. We are not telling a saved man to go and get a Spirit he does not have.</p>
+        <p><span class="tn-ref">John 20:22 &middot; Acts 1:5 &middot; Acts 2:4</span> Then show him the same men in both places. In John 20 Jesus breathed on His disciples and said, Receive ye the Holy Ghost. In Acts 2 those same men were filled with the Holy Ghost and spoke with tongues. The difference is not presence but fullness. Not indwelling, but immersion. Not the guest arriving, but the guest taking the whole house.</p>
+        <p><span class="tn-ref">Acts 8:16 &middot; John 7:38&ndash;39</span> Luke does not say the Samaritans had no Spirit; he says the Spirit was fallen upon none of them. That is the language of measure and overflow, not of absence. A cup set down in a river is still a cup full of water, and it is also surrounded by a river. The baptism is the river. Use that picture, and keep both truths whole.</p>
+      </div>
+
+      <div class="teacher-note">
+        <p class="tn-title">&#10022; Teacher's Note &middot; Must Every Believer Speak in Tongues?</p>
+        <p><span class="tn-ref">Acts 2:4 &middot; Acts 10:46 &middot; Acts 19:6</span> Where the text tells us what happened when the Spirit fell, tongues is the sign given, and our confession says the same: the biblical evidence of this immersion is speaking in tongues. Teach the pattern with confidence.</p>
+        <p><span class="tn-ref">1 Corinthians 13:1 &middot; 1 Corinthians 12:11</span> Then guard it. Tongues are not the proof of salvation and not the measure of holiness, and the Spirit divides to every man severally as He will. Never press a believer to perform, and never encourage anyone to imitate a gift. A manufactured utterance does not glorify God, and it wounds the one who fakes it. Pray, ask, yield, and trust the Father's timing.</p>
+        <p><span class="tn-ref">Acts 8:17 &middot; Acts 9:17</span> Be honest about the silence too. Acts 8 does not say what sign accompanied the Samaritans' receiving, and Acts 9 does not mention tongues when Saul was filled. The pattern is consistent wherever the text gives the details, and we do not need to make the text say more than it says. A believer who has not yet received this gift is not a second-class saint, and a believer who has is not a senior one.</p>
+      </div>
+
+      <div class="teacher-note">
+        <p class="tn-title">&#10022; Teacher's Note &middot; Weighing Some Claims in the Source Material</p>
+        <p><span class="tn-ref">"Every time the Spirit falls, a gift manifests"</span> True where the text records the details: they spoke with tongues at Pentecost (Acts 2:4), at Cornelius's house (Acts 10:46), and at Ephesus (Acts 19:6). Acts 8:17 and Acts 9:17 do not say. Do not use the silence to deny the pattern, and do not use the pattern to deny the silence.</p>
+        <p><span class="tn-ref">Cornelius, a devout man</span> The source is right that he feared God, gave alms, and prayed, and was still unsaved until he heard of Christ (Acts 11:14). Add what the passage shows: the Spirit fell on him before water baptism (Acts 10:47&ndash;48). Water baptism is a work of obedience, not the door to salvation or to the Spirit, and this account proves it.</p>
+        <p><span class="tn-ref">"Your spirit knows all things, and there is no limitation in your spirit"</span> There is a true seed here. John says we have an unction from the Holy One and know all things needful (1 John 2:20, 27). But our knowledge is still in part, and now we see through a glass, darkly (1 Corinthians 13:9, 12). The spirit of a believer is renewed and indwelt, not divine and not beyond correction. Paul commands us to cleanse ourselves from all filthiness of the flesh and spirit (2 Corinthians 7:1) and warns us not to grieve the Holy Spirit (Ephesians 4:30). Do not teach a "spirit man" who cannot be wronged or defiled.</p>
+        <p><span class="tn-ref">Personal testimonies</span> The account of people contacting him after he had prayed is a testimony, and it may be received as one. It is not doctrine, and no one should measure his own prayer life by it. Experience confirms the Word; it never judges the Word. Prove all things; hold fast that which is good (1 Thessalonians 5:21).</p>
+        <p><span class="tn-ref">Fire</span> The source speaks of fire as zeal and boldness, which is right. Add Matthew 3:12: the same fire that purges the wheat burns the chaff. The baptism is a purging as well as an empowering, and the Lord who fills a man also cleanses him.</p>
+        <p><span class="tn-ref">"The gifts cease at the second coming"</span> Agree, and give the verses. We come behind in no gift, waiting for the coming of our Lord Jesus Christ (1 Corinthians 1:7), and the gifts end when that which is perfect is come (1 Corinthians 13:10). They did not end with the apostles.</p>
+      </div>
+
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <footer class="doc-footer">
+    <p class="footer-ornament">&#10022; &#10022; &#10022;</p>
+    <p class="footer-text">Study to shew thyself approved unto God &middot; 2 Timothy 2:15<br>Work the Word &middot; Discipleship Class &middot; Level 1 &middot; Lesson 7</p>
+  </footer>
+
+</div>
+</body>
+</html>

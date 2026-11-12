@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Refresh chapter counts
+        run: node scripts/update-chapter-counts.mjs
+
       - name: Deploy to Cloudflare Workers
         run: npx wrangler deploy
         env:

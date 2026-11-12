@@ -536,8 +536,93 @@
     table.term-table th, table.term-table td { padding: 0.5rem 0.55rem; }
   }
 </style>
+<style>
+  /* ── BACK NAVIGATION (sticky top bar) ── */
+  .back-nav {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    height: 2.6rem;
+    max-width: 940px;
+    margin: 0 auto 1rem;
+    padding: 0 0.35rem;
+    background: linear-gradient(to bottom, #F3EAD3, var(--cream, #F2EBD9));
+    border: 1px solid rgba(212, 185, 122, 0.55);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(28, 26, 23, 0.10);
+    font-family: 'EB Garamond', Georgia, serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .back-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 2rem;
+    padding: 0 0.85rem;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-mid, #3D3829);
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  .back-nav-btn:hover,
+  .back-nav-btn:focus-visible { color: var(--crimson, #7A1F1F); background: rgba(122, 31, 31, 0.06); }
+  .back-nav-btn:focus-visible { outline: 2px solid var(--gold-light, #C9A84C); outline-offset: 0; }
+  .back-nav-arrow { font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; letter-spacing: 0; }
+  .back-nav-sep { width: 1px; height: 1.1rem; background: rgba(201, 168, 76, 0.45); }
+
+  /* the page's own sticky nav must sit below the back bar, not under it */
+  .site-nav { top: 2.6rem; }
+
+  /* ── BACK LINK IN THE FOOTER ── */
+  .back-footer { margin-top: 1.6rem; }
+  .back-footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.25rem;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+  .back-footer-link:hover,
+  .back-footer-link:focus-visible { opacity: 1; }
+  .back-footer-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+  @media (max-width: 480px) {
+    .back-nav { margin-bottom: 0.7rem; padding: 0 0.2rem; }
+    .back-nav-btn { padding: 0 0.6rem; font-size: 0.65rem; letter-spacing: 0.12em; }
+  }
+  @media print { .back-nav, .back-footer { display: none !important; } }
+</style>
 </head>
 <body>
+
+<!-- BACK NAVIGATION -->
+<nav class="back-nav" aria-label="Page navigation">
+  <button type="button" class="back-nav-btn" onclick="if(document.referrer.indexOf(location.origin)===0||history.length&gt;1){history.back()}else{location.href='index.html'}"><span class="back-nav-arrow" aria-hidden="true">&#8592;</span> Back</button>
+  <span class="back-nav-sep" aria-hidden="true"></span>
+  <a class="back-nav-btn" href="index.html">Home</a>
+</nav>
+
 <div class="page">
 
   <!-- HEADER -->
@@ -1300,7 +1385,8 @@
   <footer class="doc-footer">
     <div class="footer-ornament">&#10022; &#10022; &#10022;</div>
     <p class="footer-text">Work the Word &middot; Pronomian Teaching Series<br>Statutes &middot; Judgments &middot; Ordinances &middot; Commandments</p>
-  </footer>
+    <p class="back-footer"><a class="back-footer-link" href="index.html"><span aria-hidden="true">&#8592;</span> Back to Home</a></p>
+</footer>
 
 </div>
 </body>

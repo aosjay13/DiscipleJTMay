@@ -228,9 +228,9 @@
 
 <!-- BACK NAVIGATION -->
 <nav class="back-nav" aria-label="Page navigation">
-  <button type="button" class="back-nav-btn" onclick="if(document.referrer.indexOf(location.origin)===0||history.length&gt;1){history.back()}else{location.href='Through%20the%20Word.html'}"><span class="back-nav-arrow" aria-hidden="true">&#8592;</span> Back</button>
+  <button type="button" class="back-nav-btn" onclick="if(document.referrer.indexOf(location.origin)===0||history.length&gt;1){history.back()}else{location.href='./Through%20the%20Word'}"><span class="back-nav-arrow" aria-hidden="true">&#8592;</span> Back</button>
   <span class="back-nav-sep" aria-hidden="true"></span>
-  <a class="back-nav-btn" href="index.html">Home</a>
+  <a class="back-nav-btn" href="./">Home</a>
 </nav>
 
 <div class="page">
@@ -280,8 +280,8 @@
 
   <!-- NAV -->
   <nav class="site-nav">
-    <a href="./index.html">Home</a>
-    <a href="./Through%20the%20Word.html">Through the Word</a>
+    <a href="./">Home</a>
+    <a href="./Through%20the%20Word">Through the Word</a>
     <a href="#workbench">The Workbench</a>
     <a href="#meanwhile">Meanwhile</a>
   </nav>
@@ -350,8 +350,8 @@
     <p class="section-lead">There is no lack of Scripture to read tonight. Return to the book you came from, or choose another, and begin where the studies are already laid out.</p>
 
     <div class="wip-actions">
-      <a class="wip-btn wip-btn-primary" id="wip-back" href="./Through%20the%20Word.html">Return to Through the Word</a>
-      <a class="wip-btn wip-btn-ghost" href="./index.html">Back to Home</a>
+      <a class="wip-btn wip-btn-primary" id="wip-back" href="./Through%20the%20Word">Return to Through the Word</a>
+      <a class="wip-btn wip-btn-ghost" href="./">Back to Home</a>
     </div>
   </section>
 
@@ -391,7 +391,7 @@
 
     <div class="footer-rule"><span></span><i>&#10022;</i><span></span></div>
     <p class="footer-fine">The Bible Teaching of Brother Justin May &middot; Pronomian in Theology<br>Sola Scriptura &middot; To the Law and to the Testimony &middot; Isaiah 8:20</p>
-    <p class="back-footer"><a class="back-footer-link" href="./Through%20the%20Word.html"><span aria-hidden="true">&#8592;</span> Back to Through the Word</a></p>
+    <p class="back-footer"><a class="back-footer-link" href="./Through%20the%20Word"><span aria-hidden="true">&#8592;</span> Back to Through the Word</a></p>
   </footer>
 
 </div>
@@ -414,7 +414,7 @@
   if (refNode) refNode.textContent = ref;
   if (panelNode) panelNode.textContent = 'Through the Word \u00b7 ' + ref;
   if (backNode) {
-    backNode.href = './Through%20the%20Word%20-%20' + encodeURIComponent(book) + '.html';
+    backNode.href = './Through%20the%20Word%20-%20' + encodeURIComponent(book);
     backNode.textContent = 'Return to ' + book;
   }
   document.title = ref + ' \u00b7 Still in the Workshop \u00b7 Through the Word';

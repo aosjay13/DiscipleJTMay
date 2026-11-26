@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="description" content="A monthly Bible study on John 16:12: the things the disciples could not yet bear, and how wisdom, understanding, and the Baptism in the Holy Ghost make room for more, with every Scripture quoted in full from the King James Bible and summarized by category.">
+<title>I Have Yet Many Things to Say · Monthly Bible Study · November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:        #8B6914;
+    --gold-light:  #C9A84C;
+    --gold-pale:   #F5EDD8;
+    --crimson:     #7A1F1F;
+    --crimson-lt:  #9B3434;
+    --ink:         #1C1A17;
+    --ink-mid:     #3D3829;
+    --ink-soft:    #6B6047;
+    --parchment:   #FAF6EE;
+    --cream:       #F2EBD9;
+    --rule:        #C9A84C44;
+    --rule-solid:  #C9A84C;
+    --shadow:      rgba(28,26,23,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* ── HEADER (crimson bookend) ── */
+  .doc-header {
+    text-align: center;
+    padding: 3.2rem 3rem 2.5rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .header-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.9rem;
+  }
+  .header-ornament { font-size: 1.3rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 0.9rem; }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .doc-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+    color: var(--gold-light);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 0.7rem;
+    line-height: 1.6;
+    text-wrap: balance;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.5rem auto 0; max-width: 320px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* ── BODY ── */
+  .doc-body { padding: 0 3.2rem 3rem; }
+
+  .preamble { margin: 2.5rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .preamble-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .preamble p { font-size: 1.07rem; line-height: 1.8; color: var(--ink-mid); text-align: justify; }
+  .preamble p + p { margin-top: 0.9rem; }
+
+  .toc { margin: 2.5rem 0; padding: 1.5rem 2rem; background: var(--cream); border: 1px solid #D4B97A66; border-left: 3px solid var(--gold-light); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; columns: 2; column-gap: 2rem; }
+  .toc-list li { margin-bottom: 0.4rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.95rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.4rem; align-items: baseline; }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold); min-width: 2.1rem; flex-shrink: 0; }
+
+  .article { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .article-header { margin-bottom: 1.1rem; }
+  .article-num {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .article-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .article-body { font-size: 1.07rem; line-height: 1.82; color: var(--ink-mid); text-align: justify; margin-bottom: 1.2rem; }
+  .article-body em, .preamble em, .teacher-note em { font-style: italic; }
+  .ref-inline { white-space: nowrap; }
+
+  /* ── SCRIPTURE ── */
+  .scripture-block {
+    margin: 1.4rem 0 1.5rem;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    box-shadow: 0 1px 0 #E8D49A inset;
+  }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+  .scripture-entry { margin-bottom: 1rem; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .scripture-text { display: block; font-style: italic; font-size: 1.03rem; line-height: 1.78; color: var(--ink-mid); }
+
+  /* ── HISTORICAL QUOTE ── */
+  .histquote {
+    margin: 1.4rem 0 1.5rem;
+    padding: 1.3rem 1.5rem;
+    background: var(--parchment);
+    border: 1px solid #D4B97A77;
+    border-left: 4px solid var(--crimson-lt);
+  }
+  .histquote-ref { display: block; font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--crimson); font-weight: 600; margin-bottom: 0.35rem; }
+  .histquote-text { display: block; font-style: italic; font-size: 1.03rem; line-height: 1.78; color: var(--ink-mid); }
+  .histquote-src { display: block; margin-top: 0.7rem; font-size: 0.88rem; line-height: 1.55; color: var(--ink-soft); }
+
+  /* ── KEY POINT ── */
+  .keypoint {
+    margin: 1.6rem 0 0.4rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--cream);
+    border-left: 4px solid var(--crimson-lt);
+    border-top: 1px solid #D4B97A55;
+    border-right: 1px solid #D4B97A55;
+    border-bottom: 1px solid #D4B97A55;
+  }
+  .keypoint-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--crimson); margin-bottom: 0.55rem; }
+  .keypoint p { font-size: 1.03rem; line-height: 1.75; color: var(--ink-mid); }
+  .keypoint strong { color: var(--ink); }
+
+  /* ── BONUS PANEL ── */
+  .bonus-panel {
+    margin: 1.6rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C;
+    border-top: 3px solid var(--crimson-lt);
+  }
+  .bonus-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--crimson-lt); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+  .bonus-star { color: var(--gold); font-size: 0.85rem; }
+  .bonus-body { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); text-align: justify; }
+
+  /* ── TABLE ── */
+  .table-wrap { margin: 1.4rem 0 1.5rem; overflow-x: auto; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.97rem; line-height: 1.5; background: var(--parchment); }
+  .data-table th {
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cream); background: var(--crimson); text-align: left; padding: 0.6rem 0.7rem;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .data-table td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #D4B97A66; color: var(--ink-mid); vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: var(--cream); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .data-table td:last-child { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.04em; color: var(--gold); white-space: nowrap; }
+
+  /* ── CHARGE LIST ── */
+  .charge-list { list-style: none; counter-reset: c; margin: 1.2rem 0 1.4rem; }
+  .charge-list li {
+    counter-increment: c;
+    position: relative;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    margin-bottom: 0.6rem;
+    background: var(--cream);
+    border-left: 3px solid var(--gold-light);
+    font-size: 1.04rem; line-height: 1.72; color: var(--ink-mid);
+  }
+  .charge-list li::before {
+    content: counter(c);
+    position: absolute; left: 0.9rem; top: 0.8rem;
+    font-family: 'Cinzel', serif; font-weight: 700; font-size: 1rem; color: var(--crimson);
+  }
+  .charge-list strong { color: var(--ink); }
+
+  /* ── CLOSING PANEL ── */
+  .closing-panel {
+    margin: 1.8rem 0 0.5rem;
+    padding: 1.6rem 1.8rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: #EDE0C4;
+    position: relative;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .closing-panel::after { content: ''; position: absolute; inset: 8px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .closing-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.6rem; }
+  .closing-panel p { font-size: 1.06rem; line-height: 1.8; }
+  .closing-panel strong { color: #FBF6E9; }
+
+  /* ── TEACHER NOTE ── */
+  .teacher-note {
+    margin: 2.8rem 0 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C;
+  }
+  .tnote-label { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .teacher-note p { font-size: 1rem; line-height: 1.75; color: var(--ink-soft); text-align: justify; }
+  .teacher-note p + p { margin-top: 0.75rem; }
+  .teacher-note strong { color: var(--ink-mid); }
+
+  /* ── SCRIPTURE APPENDIX ── */
+  .appendix { margin-top: 2.8rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+  .index-list { columns: 2; column-gap: 2rem; column-rule: 1px solid #C9A84C55; }
+  .index-entry { break-inside: avoid; page-break-inside: avoid; margin-bottom: 0.95rem; }
+  .index-entry .scripture-ref { font-size: 0.72rem; margin-bottom: 0.2rem; }
+  .index-entry .scripture-text { font-size: 0.95rem; line-height: 1.6; }
+
+  /* ── FOOTER (crimson bookend) ── */
+  .doc-footer {
+    text-align: center;
+    padding: 2.4rem 2rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 10px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.4em; }
+  .footer-text { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em; color: #FBF6E9; text-transform: uppercase; margin-top: 0.6rem; line-height: 1.8; }
+  .footer-sub { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--gold-light); text-transform: uppercase; margin-top: 0.4rem; }
+
+  /* ── PRINT (US Letter 8.5 x 11, numbered pages) ── */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.1in 0.1in 0.35in 0.1in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.12em;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    html, body { background: #FFFFFF; }
+    body { padding: 0; font-size: 11pt; }
+    .page { max-width: 100%; margin: 0; border: none; box-shadow: none; background: #FFFFFF; }
+    .page::before, .page::after { display: none; }
+
+    .doc-header, .doc-footer, .scripture-block, .keypoint, .bonus-panel, .histquote,
+    .teacher-note, .toc, .charge-list li, .closing-panel, .data-table th, .data-table td {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Readable margin comes from padding on the content wrapper. The padding is
+       cloned onto every page fragment, so text on page 2 onward sits well inside
+       a 0.2in printer margin while the crimson bands bleed close to the edge. */
+    .doc-header { padding: 0.45in 0.8in 0.35in; }
+    .doc-body {
+      padding: 0.3in 0.55in 0.25in;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+    .doc-footer { padding: 0.3in 0.8in; }
+
+    p, li, td, .scripture-text, .histquote-text, .bonus-body {
+      hyphens: auto; -webkit-hyphens: auto;
+      orphans: 3; widows: 3;
+    }
+    .preamble { margin-top: 0; }
+    .article { margin-top: 1.6rem; padding-top: 1.4rem; }
+    .article-body { font-size: 11.5pt; line-height: 1.62; margin-bottom: 0.9rem; }
+    .preamble p { font-size: 11.5pt; line-height: 1.62; }
+    .scripture-text, .histquote-text { font-size: 11pt; line-height: 1.58; }
+    .scripture-block, .histquote { margin: 0.9rem 0 1rem; padding: 0.85rem 1.1rem; }
+    .keypoint { margin: 1rem 0 0.3rem; padding: 0.85rem 1.1rem; }
+    .keypoint p, .bonus-body, .teacher-note p { font-size: 10.8pt; line-height: 1.58; }
+    .charge-list li { font-size: 11pt; line-height: 1.55; padding: 0.55rem 0.9rem 0.55rem 2.6rem; }
+    .closing-panel p { font-size: 11pt; line-height: 1.6; }
+    .toc { margin: 1.1rem 0 0.2rem; padding: 0.8rem 1.3rem; }
+    .toc-title { margin-bottom: 0.5rem; }
+    .toc-list li { margin-bottom: 0.1rem; }
+    .toc-list a { font-size: 10pt; line-height: 1.45; }
+    .doc-header { padding: 0.4in 0.8in 0.3in; }
+    .header-ornament { margin-bottom: 0.5rem; }
+    .doc-subtitle { font-size: 0.8rem; }
+    .preamble { padding-bottom: 0; border-bottom: none; }
+    .preamble p { line-height: 1.55; }
+    .preamble p + p { margin-top: 0.6rem; }
+
+    /* Small meaningful units never split across a page */
+    .scripture-entry, .keypoint, .bonus-panel, .histquote, .data-table tr,
+    .charge-list li, .closing-panel, .toc, .toc-list li, .index-entry {
+      break-inside: avoid; page-break-inside: avoid;
+    }
+    /* Tall scripture blocks may flow between entries rather than leave a gap */
+    .scripture-block { break-inside: auto; }
+    .scripture-label { break-after: avoid; page-break-after: avoid; }
+    .data-table thead { display: table-header-group; }
+
+    /* Headings stay glued to what follows them */
+    .article-header, .tnote-label, .preamble-label { break-after: avoid; page-break-after: avoid; }
+    .article-num { break-after: avoid; page-break-after: avoid; }
+
+    /* The full Scripture listing begins on a fresh sheet */
+    .appendix { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; border-top: none; }
+    .index-entry .scripture-text { font-size: 10pt; line-height: 1.5; }
+    .index-entry { margin-bottom: 0.6rem; }
+
+    .doc-footer { break-inside: avoid; page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    body { padding: 1rem 0.5rem 2.5rem; }
+    .doc-header { padding: 2.2rem 1.3rem 1.8rem; }
+    .doc-footer { padding: 2rem 1.2rem 1.8rem; }
+    .doc-body { padding: 0 1.3rem 2rem; }
+    .doc-header::after, .doc-footer::after { inset: 8px; }
+    .page::before, .page::after { width: 24px; height: 24px; }
+    .toc-list, .index-list { columns: 1; }
+    .toc { padding: 1.2rem 1.2rem; }
+    .scripture-block, .histquote, .keypoint, .bonus-panel, .teacher-note { padding: 1.1rem 1.1rem; }
+    .data-table td:last-child { white-space: normal; }
+  }
+
+</style>
+<style>
+  /* ── BACK NAVIGATION (sticky top bar) ── */
+  .back-nav {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    height: 2.6rem;
+    max-width: 940px;
+    margin: 0 auto 1rem;
+    padding: 0 0.35rem;
+    background: linear-gradient(to bottom, #F3EAD3, var(--cream, #F2EBD9));
+    border: 1px solid rgba(212, 185, 122, 0.55);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(28, 26, 23, 0.10);
+    font-family: 'EB Garamond', Georgia, serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .back-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 2rem;
+    padding: 0 0.85rem;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-mid, #3D3829);
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  .back-nav-btn:hover,
+  .back-nav-btn:focus-visible { color: var(--crimson, #7A1F1F); background: rgba(122, 31, 31, 0.06); }
+  .back-nav-btn:focus-visible { outline: 2px solid var(--gold-light, #C9A84C); outline-offset: 0; }
+  .back-nav-arrow { font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; letter-spacing: 0; }
+  .back-nav-sep { width: 1px; height: 1.1rem; background: rgba(201, 168, 76, 0.45); }
+
+  /* the page's own sticky nav must sit below the back bar, not under it */
+  .site-nav { top: 2.6rem; }
+
+  /* ── BACK LINK IN THE FOOTER ── */
+  .back-footer { margin-top: 1.6rem; }
+  .back-footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.25rem;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+  .back-footer-link:hover,
+  .back-footer-link:focus-visible { opacity: 1; }
+  .back-footer-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+  @media (max-width: 480px) {
+    .back-nav { margin-bottom: 0.7rem; padding: 0 0.2rem; }
+    .back-nav-btn { padding: 0 0.6rem; font-size: 0.65rem; letter-spacing: 0.12em; }
+  }
+  @media print { .back-nav, .back-footer { display: none !important; } }
+</style>
+<style>
+  /* ── THEME VERSE ── */
+  .anchor {
+    margin: 2.5rem 0 0;
+    padding: 1.6rem 1.8rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    border-bottom: 3px solid var(--gold-light);
+    text-align: center;
+  }
+  .anchor-text { display: block; font-size: 1.2rem; line-height: 1.7; color: var(--ink); font-style: italic; }
+  .anchor-ref { display: block; margin-top: 0.9rem; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+  /* Scripture quoted inside a Bonus panel */
+  .bonus-body .scripture-entry { margin: 0.8rem 0 0.9rem; padding-left: 0.9rem; border-left: 2px solid var(--gold-light); }
+  .bonus-body p + p { margin-top: 0.75rem; }
+
+  /* ── SUMMARY BY CATEGORY ── */
+  .data-table.summary-table td:first-child { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.04em; color: var(--gold); white-space: nowrap; width: 36%; }
+  .data-table.summary-table td:last-child { font-family: 'EB Garamond', Georgia, serif; font-size: 0.98rem; letter-spacing: normal; color: var(--ink-mid); white-space: normal; }
+  .data-table.summary-table tr.cat-row td {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--crimson); background: var(--gold-pale); border-top: 2px solid var(--gold-light);
+    padding-top: 0.75rem; white-space: normal; width: auto;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  @media print {
+    .anchor { margin-top: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; page-break-inside: avoid; }
+    .anchor-text { font-size: 12.5pt; line-height: 1.55; }
+    .summary-table tr { break-inside: avoid; page-break-inside: avoid; }
+    .summary-table tr.cat-row { break-after: avoid; page-break-after: avoid; }
+  }
+  @media (max-width: 640px) {
+    .anchor { padding: 1.2rem 1.1rem; }
+    .data-table.summary-table td:first-child { white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BACK NAVIGATION -->
+<nav class="back-nav" aria-label="Page navigation">
+  <button type="button" class="back-nav-btn" onclick="if(document.referrer.indexOf(location.origin)===0||history.length&gt;1){history.back()}else{location.href='./'}"><span class="back-nav-arrow" aria-hidden="true">&#8592;</span> Back</button>
+  <span class="back-nav-sep" aria-hidden="true"></span>
+  <a class="back-nav-btn" href="./">Home</a>
+</nav>
+
+<div class="page">
+
+  <header class="doc-header">
+    <p class="header-eyebrow">Monthly Bible Study · November 2026</p>
+    <span class="header-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</span>
+    <h1 class="doc-title">I Have Yet Many Things to Say</h1>
+    <p class="doc-subtitle">Growing in Wisdom, Understanding, and the Spirit of Truth</p>
+    <div class="header-rule"><span></span><i>&#10022;</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <div class="anchor">
+      <span class="anchor-text">&ldquo;I have yet many things to say unto you, but ye cannot bear them now.&rdquo;</span>
+      <span class="anchor-ref">John 16:12</span>
+    </div>
+
+    <section class="preamble">
+      <p class="preamble-label">Where We Are Going</p>
+      <p>On the last night before the cross, the Lord Jesus sat with His disciples and told them more than they could take in. He spoke of His going away, of the Comforter who would come, of the hatred of the world, and of the joy that would follow their sorrow. Then, in the middle of it all, He said something every believer needs to hear: <em>I have yet many things to say unto you, but ye cannot bear them now</em> <span class="ref-inline">(John 16:12)</span>.</p><p>Over the past several weeks the messages from our pulpit have centered on wisdom, on understanding, and on the Baptism in the Holy Ghost. This one verse ties all three together. The Lord had more to give His disciples, but they did not yet have the capacity to carry it. In the very next breath He told them how that would change, because the Spirit of truth would come and guide them into all truth <span class="ref-inline">(John 16:13)</span>. All through Scripture the Lord calls His people to get wisdom, to get understanding, and to be filled with His Spirit, because those are the things that make room for more.</p><p>Last month we learned that a steward who is faithful in a little is trusted with more. This month we see the same law at work in the things of God. We start in the upper room where the words were spoken, then look at what the disciples could not yet carry and at the way God has always taught His people as they were able to hear. From there we walk through wisdom, understanding, the Spirit of truth, and the promise of the Father poured out at Pentecost, and we see what the same men were able to bear afterward. Every comment in this study is drawn from the Scriptures printed beside it, quoted in full from the King James Bible, so the Word can speak for itself.</p>
+    </section>
+
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+      <li><a href="#art1"><span class="toc-num">I.</span>The Night It Was Spoken</a></li>
+      <li><a href="#art2"><span class="toc-num">II.</span>What They Could Not Yet Carry</a></li>
+      <li><a href="#art3"><span class="toc-num">III.</span>As They Were Able to Hear It</a></li>
+      <li><a href="#art4"><span class="toc-num">IV.</span>Unto You That Hear Shall More Be Given</a></li>
+      <li><a href="#art5"><span class="toc-num">V.</span>Wisdom Is the Principal Thing</a></li>
+      <li><a href="#art6"><span class="toc-num">VI.</span>With All Thy Getting Get Understanding</a></li>
+      <li><a href="#art7"><span class="toc-num">VII.</span>The Spirit of Truth</a></li>
+      <li><a href="#art8"><span class="toc-num">VIII.</span>Tarry Until Ye Be Endued with Power</a></li>
+      <li><a href="#art9"><span class="toc-num">IX.</span>What They Were Able to Bear</a></li>
+      <li><a href="#art10"><span class="toc-num">X.</span>To the Law and to the Testimony</a></li>
+      <li><a href="#art11"><span class="toc-num">XI.</span>Until We Can Bear More</a></li>
+      <li><a href="#art12"><span class="toc-num">XII.</span>What to Do Before the Year Is Out</a></li>
+      <li><a href="#teacher"><span class="toc-num">&#10022;</span>For the Teacher</a></li>
+      <li><a href="#scriptures"><span class="toc-num">&#10022;</span>Every Scripture by Category</a></li>
+      </ul>
+    </nav>
+
+<article class="article" id="art1">
+  <div class="article-header"><span class="article-num">I &middot; The Setting</span><h2 class="article-title">The Night It Was Spoken</h2></div>
+<p class="article-body">These words were not spoken on a hillside to a crowd. They were spoken to eleven men in a room, on the night before the cross. John tells us what was on the Lord's heart as that night began.</p>
+<div class="scripture-block"><p class="scripture-label">Having Loved His Own</p>
+<div class="scripture-entry"><span class="scripture-ref">John 13:1</span><span class="scripture-text">Now before the feast of the passover, when Jesus knew that his hour was come that he should depart out of this world unto the Father, having loved his own which were in the world, he loved them unto the end.</span></div>
+</div>
+<p class="article-body">By the time we reach chapter 16, the Lord has already told them that He is going away. He opens the chapter by warning them about what the world will do to them, and He tells them why He waited until that night to say it.</p>
+<div class="scripture-block"><p class="scripture-label">I Said Not unto You at the Beginning</p>
+<div class="scripture-entry"><span class="scripture-ref">John 16:1–4</span><span class="scripture-text">These things have I spoken unto you, that ye should not be offended. They shall put you out of the synagogues: yea, the time cometh, that whosoever killeth you will think that he doeth God service. And these things will they do unto you, because they have not known the Father, nor me. But these things have I told you, that when the time shall come, ye may remember that I told you of them. And these things I said not unto you at the beginning, because I was with you.</span></div>
+</div>
+<p class="article-body">He did not lay this on them at the beginning, because while He was with them they did not need it yet. He told them when the time was near, so that they would remember when it came. The Lord was already measuring what He told them by what they needed and when they would need it. Then He described the state of their hearts.</p>
+<div class="scripture-block"><p class="scripture-label">Sorrow Hath Filled Your Heart</p>
+<div class="scripture-entry"><span class="scripture-ref">John 16:5–7</span><span class="scripture-text">But now I go my way to him that sent me; and none of you asketh me, Whither goest thou? But because I have said these things unto you, sorrow hath filled your heart. Nevertheless I tell you the truth; It is expedient for you that I go away: for if I go not away, the Comforter will not come unto you; but if I depart, I will send him unto you.</span></div>
+</div>
+<p class="article-body">None of them asked where He was going. Their hearts were full, and what filled them was sorrow. That is the room in which He said, <em>I have yet many things to say unto you, but ye cannot bear them now</em>. Yet He did not leave them there. He told them the truth: it was better for them that He go, because His going would bring the Comforter. Then He told them what the Comforter would do.</p>
+<div class="scripture-block"><p class="scripture-label">When He, the Spirit of Truth, Is Come</p>
+<div class="scripture-entry"><span class="scripture-ref">John 16:13–15</span><span class="scripture-text">Howbeit when he, the Spirit of truth, is come, he will guide you into all truth: for he shall not speak of himself; but whatsoever he shall hear, that shall he speak: and he will shew you things to come. He shall glorify me: for he shall receive of mine, and shall shew it unto you. All things that the Father hath are mine: therefore said I, that he shall take of mine, and shall shew it unto you.</span></div>
+</div>
+<p class="article-body">Notice the words <em>all truth</em>, <em>things to come</em>, and <em>shew it unto you</em>. What the disciples could not bear that night, the Spirit would bring to them later. He would not speak of Himself. He would take what belongs to Christ and show it to them.</p>
+<div class="keypoint"><p class="keypoint-label">Not Now Is Not Never</p><p>The Lord did not say, Ye will never bear them. He said, <strong>ye cannot bear them now.</strong> The word <em>now</em> looks ahead to a later time, and in the very next sentence He tells them what will bring that time: the Spirit of truth will come and guide them into all truth.</p></div>
+</article>
+
+<article class="article" id="art2">
+  <div class="article-header"><span class="article-num">II &middot; The Hearers</span><h2 class="article-title">What They Could Not Yet Carry</h2></div>
+<p class="article-body">Scripture is honest about the disciples. These men had left everything to follow Jesus, and still there were things He said plainly that they could not take in. The clearest example is the cross itself. The Lord told them in plain words what was going to happen in Jerusalem, and the Gospels record that the words went right past them.</p>
+<div class="scripture-block"><p class="scripture-label">This Saying Was Hid from Them</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 18:31–34</span><span class="scripture-text">Then he took unto him the twelve, and said unto them, Behold, we go up to Jerusalem, and all things that are written by the prophets concerning the Son of man shall be accomplished. For he shall be delivered unto the Gentiles, and shall be mocked, and spitefully entreated, and spitted on: And they shall scourge him, and put him to death: and the third day he shall rise again. And they understood none of these things: and this saying was hid from them, neither knew they the things which were spoken.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Mark 9:31–32</span><span class="scripture-text">For he taught his disciples, and said unto them, The Son of man is delivered into the hands of men, and they shall kill him; and after that he is killed, he shall rise the third day. But they understood not that saying, and were afraid to ask him.</span></div>
+</div>
+<p class="article-body">He did not speak in a parable here. He said He would be delivered to the Gentiles, mocked, spitefully entreated, spitted on, scourged, put to death, and raised the third day. Luke says three things about how they took it: they understood none of these things, the saying was hid from them, and they knew not the things which were spoken. Mark adds that they were afraid to ask Him. Sometimes a man cannot bear a word because he is afraid of what it means.</p>
+<p class="article-body">On the night of John 16 the Lord said the same kind of thing to Peter more than once. There was a <em>now</em>, and there was a <em>hereafter</em>.</p>
+<div class="scripture-block"><p class="scripture-label">Thou Shalt Know Hereafter</p>
+<div class="scripture-entry"><span class="scripture-ref">John 13:7</span><span class="scripture-text">Jesus answered and said unto him, What I do thou knowest not now; but thou shalt know hereafter.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">John 13:36</span><span class="scripture-text">Simon Peter said unto him, Lord, whither goest thou? Jesus answered him, Whither I go, thou canst not follow me now; but thou shalt follow me afterwards.</span></div>
+</div>
+<p class="article-body">Peter did not know what the Lord was doing, but he would know. Peter could not follow Him now, but he would follow afterward. The Lord was not shutting Peter out. He was telling him that a door would open later that could not open yet.</p>
+<p class="article-body">Even after the Lord spoke of the Comforter, the disciples were still puzzled. They turned to one another and admitted they did not understand Him.</p>
+<div class="scripture-block"><p class="scripture-label">We Cannot Tell What He Saith</p>
+<div class="scripture-entry"><span class="scripture-ref">John 16:16–18</span><span class="scripture-text">A little while, and ye shall not see me: and again, a little while, and ye shall see me, because I go to the Father. Then said some of his disciples among themselves, What is this that he saith unto us, A little while, and ye shall not see me: and again, a little while, and ye shall see me: and, Because I go to the Father? They said therefore, What is this that he saith, A little while? we cannot tell what he saith.</span></div>
+</div>
+<p class="article-body">The understanding came later, and John tells us when. After the Lord was risen and glorified, they remembered what He had said and believed it.</p>
+<div class="scripture-block"><p class="scripture-label">Then Remembered They</p>
+<div class="scripture-entry"><span class="scripture-ref">John 2:22</span><span class="scripture-text">When therefore he was risen from the dead, his disciples remembered that he had said this unto them; and they believed the scripture, and the word which Jesus had said.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">John 12:16</span><span class="scripture-text">These things understood not his disciples at the first: but when Jesus was glorified, then remembered they that these things were written of him, and that they had done these things unto him.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">The Problem Was Never the Teacher</p><p>The Lord's words were clear, true, and spoken in love. <strong>The limit was in the hearers.</strong> Sorrow, fear, and a heart not yet opened kept them from carrying what He wanted to give. That is still how it works, and it is why the rest of this study matters.</p></div>
+</article>
+
+<article class="article" id="art3">
+  <div class="article-header"><span class="article-num">III &middot; The Way God Teaches</span><h2 class="article-title">As They Were Able to Hear It</h2></div>
+<p class="article-body">What the Lord did in the upper room was not new. Scripture shows again and again that God gives His word to His people in the measure they are able to receive it. Mark tells us this was how Jesus taught from the beginning.</p>
+<div class="scripture-block"><p class="scripture-label">As They Were Able to Hear It</p>
+<div class="scripture-entry"><span class="scripture-ref">Mark 4:33</span><span class="scripture-text">And with many such parables spake he the word unto them, as they were able to hear it.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">John 3:12</span><span class="scripture-text">If I have told you earthly things, and ye believe not, how shall ye believe, if I tell you of heavenly things?</span></div>
+</div>
+<p class="article-body">He spoke the word as they were able to hear it. He told Nicodemus that if he could not believe the earthly things, he was not ready for the heavenly ones. Paul ran into the same problem with the church at Corinth, and he used almost the same words the Lord used in John 16.</p>
+<div class="scripture-block"><p class="scripture-label">Ye Were Not Able to Bear It</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 3:1–2</span><span class="scripture-text">And I, brethren, could not speak unto you as unto spiritual, but as unto carnal, even as unto babes in Christ. I have fed you with milk, and not with meat: for hitherto ye were not able to bear it, neither yet now are ye able.</span></div>
+</div>
+<p class="article-body"><em>Not able to bear it.</em> Paul had more to give them, the same as the Lord had more to give His disciples, and for the same reason. They were still babes. The writer to the Hebrews faced it too, and he opened with the very phrase from our verse: <em>many things to say</em>.</p>
+<div class="scripture-block"><p class="scripture-label">Many Things to Say, and Hard to Be Uttered</p>
+<div class="scripture-entry"><span class="scripture-ref">Hebrews 5:11–14</span><span class="scripture-text">Of whom we have many things to say, and hard to be uttered, seeing ye are dull of hearing. For when for the time ye ought to be teachers, ye have need that one teach you again which be the first principles of the oracles of God; and are become such as have need of milk, and not of strong meat. For every one that useth milk is unskilful in the word of righteousness: for he is a babe. But strong meat belongeth to them that are of full age, even those who by reason of use have their senses exercised to discern both good and evil.</span></div>
+</div>
+<p class="article-body">Look at what made the difference between milk and strong meat. It was not age in years. It was use. Those who are of full age have their senses exercised by reason of use, and they can discern both good and evil. A believer who takes what God gives and puts it to work grows able to receive more. One who does not stays on milk, even after enough time has passed that he ought to be teaching others. Hebrews does not leave the hearers there. It calls them forward.</p>
+<div class="scripture-block"><p class="scripture-label">Let Us Go On</p>
+<div class="scripture-entry"><span class="scripture-ref">Hebrews 6:1–3</span><span class="scripture-text">Therefore leaving the principles of the doctrine of Christ, let us go on unto perfection; not laying again the foundation of repentance from dead works, and of faith toward God, Of the doctrine of baptisms, and of laying on of hands, and of resurrection of the dead, and of eternal judgment. And this will we do, if God permit.</span></div>
+</div>
+<p class="article-body">Isaiah described the same pattern long before. God teaches knowledge to those who are weaned from the milk, and He builds it line upon line.</p>
+<div class="scripture-block"><p class="scripture-label">Precept upon Precept</p>
+<div class="scripture-entry"><span class="scripture-ref">Isaiah 28:9–10</span><span class="scripture-text">Whom shall he teach knowledge? and whom shall he make to understand doctrine? them that are weaned from the milk, and drawn from the breasts. For precept must be upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little:</span></div>
+</div>
+<div class="bonus-panel"><p class="bonus-label"><span class="bonus-star">&#10022;</span> Bonus &middot; By Little and Little</p><div class="bonus-body"><p>When Jacob met Esau on the road home, Esau offered to travel alongside him. Jacob answered that the children were tender and the flocks had young with them, so he would lead on softly, as the children were able to endure.</p><div class="scripture-entry"><span class="scripture-ref">Genesis 33:13–14</span><span class="scripture-text">And he said unto him, My lord knoweth that the children are tender, and the flocks and herds with young are with me: and if men should overdrive them one day, all the flock will die. Let my lord, I pray thee, pass over before his servant: and I will lead on softly, according as the cattle that goeth before me and the children be able to endure, until I come unto my lord unto Seir.</span></div><p>God told Israel that He would drive out the nations of Canaan the same way, by little and little, so that the beasts of the field would not increase upon them before they were ready to hold the land.</p><div class="scripture-entry"><span class="scripture-ref">Deuteronomy 7:22</span><span class="scripture-text">And the LORD thy God will put out those nations before thee by little and little: thou mayest not consume them at once, lest the beasts of the field increase upon thee.</span></div><p>The Lord leads His people the same way. He does not hand us more than we can carry, and He does not hold back what we are ready for.</p></div></div>
+<div class="keypoint"><p class="keypoint-label">The Same Words, the Same Reason</p><p>The Lord said, <em>Ye cannot bear them now.</em> Paul said, <em>Ye were not able to bear it.</em> Hebrews said, <em>We have many things to say.</em> <strong>Every time, the Teacher had more to give, and every time the limit was the growth of the hearer.</strong></p></div>
+</article>
+
+<article class="article" id="art4">
+  <div class="article-header"><span class="article-num">IV &middot; The Law of Increase</span><h2 class="article-title">Unto You That Hear Shall More Be Given</h2></div>
+<p class="article-body">If God gives according to our capacity, the next question is how capacity grows. The Lord answered that Himself, in the same chapter as the parable of the sower.</p>
+<div class="scripture-block"><p class="scripture-label">Take Heed What Ye Hear</p>
+<div class="scripture-entry"><span class="scripture-ref">Mark 4:24–25</span><span class="scripture-text">And he said unto them, Take heed what ye hear: with what measure ye mete, it shall be measured to you: and unto you that hear shall more be given. For he that hath, to him shall be given: and he that hath not, from him shall be taken even that which he hath.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Luke 8:18</span><span class="scripture-text">Take heed therefore how ye hear: for whosoever hath, to him shall be given; and whosoever hath not, from him shall be taken even that which he seemeth to have.</span></div>
+</div>
+<p class="article-body">The measure we use is the measure we receive. The one who has, and uses what he has, is given more. The one who lets the word slip loses even what he seemed to have. Mark records it as <em>take heed what ye hear</em>, and Luke as <em>take heed how ye hear</em>. Both matter. What we listen to, and how we listen to it, decide how much more we will be given.</p>
+<p class="article-body">Last month we saw this same law in the life of a steward. The Lord applied it to money, and then He lifted it higher, to the true riches.</p>
+<div class="scripture-block"><p class="scripture-label">Faithful in That Which Is Least</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 16:10–11</span><span class="scripture-text">He that is faithful in that which is least is faithful also in much: and he that is unjust in the least is unjust also in much. If therefore ye have not been faithful in the unrighteous mammon, who will commit to your trust the true riches?</span></div>
+</div>
+<p class="article-body">The true riches are the things of God. The man who is faithful with the little he understands today is the man God trusts with more tomorrow. The Lord tied knowing the truth to doing the will of God in the plainest terms.</p>
+<div class="scripture-block"><p class="scripture-label">If Any Man Will Do His Will</p>
+<div class="scripture-entry"><span class="scripture-ref">John 7:17</span><span class="scripture-text">If any man will do his will, he shall know of the doctrine, whether it be of God, or whether I speak of myself.</span></div>
+</div>
+<p class="article-body">The psalmist found the same thing. His understanding did not come from being clever. It came from keeping what God had already said.</p>
+<div class="scripture-block"><p class="scripture-label">Through Thy Precepts I Get Understanding</p>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 111:10</span><span class="scripture-text">The fear of the LORD is the beginning of wisdom: a good understanding have all they that do his commandments: his praise endureth for ever.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 119:100</span><span class="scripture-text">I understand more than the ancients, because I keep thy precepts.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 119:104</span><span class="scripture-text">Through thy precepts I get understanding: therefore I hate every false way.</span></div>
+</div>
+<p class="article-body">Understanding grows as we walk in what we already know, and the light gets brighter the farther we go.</p>
+<div class="scripture-block"><p class="scripture-label">More and More unto the Perfect Day</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 4:18</span><span class="scripture-text">But the path of the just is as the shining light, that shineth more and more unto the perfect day.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Light Obeyed Brings More Light</p><p>God does not hand fresh light to someone who is sitting on what He already gave. <strong>The way to be able to bear more is to walk in what you have.</strong> Obedience does not earn salvation, but Scripture is plain that it opens understanding.</p></div>
+</article>
+
+<article class="article" id="art5">
+  <div class="article-header"><span class="article-num">V &middot; Wisdom</span><h2 class="article-title">Wisdom Is the Principal Thing</h2></div>
+<p class="article-body">Our church has been hearing about wisdom from the pulpit, and Scripture does not treat wisdom as something extra. Proverbs calls it the principal thing, the first and chief thing a person should go after.</p>
+<div class="scripture-block"><p class="scripture-label">Get Wisdom</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 4:5–7</span><span class="scripture-text">Get wisdom, get understanding: forget it not; neither decline from the words of my mouth. Forsake her not, and she shall preserve thee: love her, and she shall keep thee. Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.</span></div>
+</div>
+<p class="article-body">Get wisdom, get understanding, and with all thy getting get understanding. Wisdom is something a person has to go and get. Proverbs also tells us where it begins.</p>
+<div class="scripture-block"><p class="scripture-label">The Beginning of Wisdom</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 9:10</span><span class="scripture-text">The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Job 28:28</span><span class="scripture-text">And unto man he said, Behold, the fear of the Lord, that is wisdom; and to depart from evil is understanding.</span></div>
+</div>
+<p class="article-body">Wisdom starts with the fear of the LORD, and to depart from evil is understanding. Moses told Israel the same thing before they entered the land. Keeping God's statutes and judgments was their wisdom and their understanding in the sight of the nations.</p>
+<div class="scripture-block"><p class="scripture-label">This Is Your Wisdom and Your Understanding</p>
+<div class="scripture-entry"><span class="scripture-ref">Deuteronomy 4:5–6</span><span class="scripture-text">Behold, I have taught you statutes and judgments, even as the LORD my God commanded me, that ye should do so in the land whither ye go to possess it. Keep therefore and do them; for this is your wisdom and your understanding in the sight of the nations, which shall hear all these statutes, and say, Surely this great nation is a wise and understanding people.</span></div>
+</div>
+<p class="article-body">So wisdom is not the same as being smart. Scripture ties it to fearing God and doing what He said. And the person who has it is the very person who can receive more.</p>
+<div class="scripture-block"><p class="scripture-label">A Wise Man Will Hear</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 1:5</span><span class="scripture-text">A wise man will hear, and will increase learning; and a man of understanding shall attain unto wise counsels:</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 9:9</span><span class="scripture-text">Give instruction to a wise man, and he will be yet wiser: teach a just man, and he will increase in learning.</span></div>
+</div>
+<p class="article-body">Here is an answer to John 16:12 in a single proverb: give instruction to a wise man, and he will be yet wiser. Wisdom is what makes a person able to bear more. Proverbs also tells us how to get it. We seek it the way men search for silver, and God Himself gives it.</p>
+<div class="scripture-block"><p class="scripture-label">Seek Her as Silver</p>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 2:1–6</span><span class="scripture-text">My son, if thou wilt receive my words, and hide my commandments with thee; So that thou incline thine ear unto wisdom, and apply thine heart to understanding; Yea, if thou criest after knowledge, and liftest up thy voice for understanding; If thou seekest her as silver, and searchest for her as for hid treasures; Then shalt thou understand the fear of the LORD, and find the knowledge of God. For the LORD giveth wisdom: out of his mouth cometh knowledge and understanding.</span></div>
+</div>
+<p class="article-body">Look at the order. We receive His words, hide His commandments, incline the ear, apply the heart, cry after knowledge, lift up the voice for understanding, seek, and search. Then we understand the fear of the LORD and find the knowledge of God, <em>for the LORD giveth wisdom</em>. James tells us the same God gives it liberally to anyone who asks in faith, and he describes what that wisdom looks like.</p>
+<div class="scripture-block"><p class="scripture-label">Let Him Ask of God</p>
+<div class="scripture-entry"><span class="scripture-ref">James 1:5–6</span><span class="scripture-text">If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">James 3:17</span><span class="scripture-text">But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.</span></div>
+</div>
+<p class="article-body">All of this wisdom is found in one Person. Paul wrote that in Christ are hid all the treasures of wisdom and knowledge, and that Christ is made unto us wisdom.</p>
+<div class="scripture-block"><p class="scripture-label">Christ Made unto Us Wisdom</p>
+<div class="scripture-entry"><span class="scripture-ref">Colossians 2:2–3</span><span class="scripture-text">That their hearts might be comforted, being knit together in love, and unto all riches of the full assurance of understanding, to the acknowledgement of the mystery of God, and of the Father, and of Christ; In whom are hid all the treasures of wisdom and knowledge.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 1:30</span><span class="scripture-text">But of him are ye in Christ Jesus, who of God is made unto us wisdom, and righteousness, and sanctification, and redemption:</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Wisdom Makes Room</p><p>The disciples could not bear more because they were not yet ready. <strong>Wisdom is part of what makes a believer ready.</strong> It begins with the fear of the LORD, it grows by keeping His word, and God gives it freely to anyone who asks.</p></div>
+</article>
+
+<article class="article" id="art6">
+  <div class="article-header"><span class="article-num">VI &middot; Understanding</span><h2 class="article-title">With All Thy Getting Get Understanding</h2></div>
+<p class="article-body">Scripture names wisdom and understanding together again and again, and on the night of John 16 the disciples' greatest lack was understanding. Luke shows us the moment that began to change. After the Lord rose from the dead, He stood among them and did something they could not do for themselves.</p>
+<div class="scripture-block"><p class="scripture-label">Then Opened He Their Understanding</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 24:44–46</span><span class="scripture-text">And he said unto them, These are the words which I spake unto you, while I was yet with you, that all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me. Then opened he their understanding, that they might understand the scriptures, And said unto them, Thus it is written, and thus it behoved Christ to suffer, and to rise from the dead the third day:</span></div>
+</div>
+<p class="article-body">He reminded them that He had spoken these words <em>while I was yet with you</em>, the very thing He told them in the upper room. Then He opened their understanding so they could understand the Scriptures: the law of Moses, the prophets, and the psalms. Understanding is something the Lord opens, and the psalmist knew to ask for it.</p>
+<div class="scripture-block"><p class="scripture-label">Open Thou Mine Eyes</p>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 119:18</span><span class="scripture-text">Open thou mine eyes, that I may behold wondrous things out of thy law.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 119:34</span><span class="scripture-text">Give me understanding, and I shall keep thy law; yea, I shall observe it with my whole heart.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 119:130</span><span class="scripture-text">The entrance of thy words giveth light; it giveth understanding unto the simple.</span></div>
+</div>
+<p class="article-body">Each of these prayers looks to God's own word. Wondrous things are in His law, but a man needs his eyes opened to see them. Understanding leads to keeping, and the entrance of His words gives light even to the simple. Paul prayed for the churches the same way.</p>
+<div class="scripture-block"><p class="scripture-label">The Eyes of Your Understanding Being Enlightened</p>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 1:17–18</span><span class="scripture-text">That the God of our Lord Jesus Christ, the Father of glory, may give unto you the spirit of wisdom and revelation in the knowledge of him: The eyes of your understanding being enlightened; that ye may know what is the hope of his calling, and what the riches of the glory of his inheritance in the saints,</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Colossians 1:9–10</span><span class="scripture-text">For this cause we also, since the day we heard it, do not cease to pray for you, and to desire that ye might be filled with the knowledge of his will in all wisdom and spiritual understanding; That ye might walk worthy of the Lord unto all pleasing, being fruitful in every good work, and increasing in the knowledge of God;</span></div>
+</div>
+<p class="article-body">Paul did not pray that these believers would simply gather more information. He prayed that God would give them the spirit of wisdom and revelation, that the eyes of their understanding would be enlightened, and that they would be filled with spiritual understanding and increase in the knowledge of God. It is God who gives it.</p>
+<div class="scripture-block"><p class="scripture-label">The Lord Give Thee Understanding</p>
+<div class="scripture-entry"><span class="scripture-ref">2 Timothy 2:7</span><span class="scripture-text">Consider what I say; and the Lord give thee understanding in all things.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 3:5–6</span><span class="scripture-text">Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.</span></div>
+</div>
+<p class="article-body">Our part is to consider what God says and not lean on our own understanding. His part is to give understanding in all things. The parable of the sower shows how much depends on this. The difference between the wayside and the good ground is understanding.</p>
+<div class="scripture-block"><p class="scripture-label">Heareth the Word, and Understandeth It</p>
+<div class="scripture-entry"><span class="scripture-ref">Matthew 13:19</span><span class="scripture-text">When any one heareth the word of the kingdom, and understandeth it not, then cometh the wicked one, and catcheth away that which was sown in his heart. This is he which received seed by the way side.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Matthew 13:23</span><span class="scripture-text">But he that received seed into the good ground is he that heareth the word, and understandeth it; which also beareth fruit, and bringeth forth, some an hundredfold, some sixty, some thirty.</span></div>
+</div>
+<p class="article-body">Understanding is given, but it is also sought. When Daniel set his heart to understand, his words were heard from the first day.</p>
+<div class="scripture-block"><p class="scripture-label">Thou Didst Set Thine Heart to Understand</p>
+<div class="scripture-entry"><span class="scripture-ref">Daniel 10:12</span><span class="scripture-text">Then said he unto me, Fear not, Daniel: for from the first day that thou didst set thine heart to understand, and to chasten thyself before thy God, thy words were heard, and I am come for thy words.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Given and Sought</p><p><strong>The Lord opens understanding, and He opens it to those who set their hearts to seek it.</strong> The disciples could not open their own eyes, and neither can we. But we can ask, we can consider what He says, and we can set our hearts to understand, and Scripture says God answers that.</p></div>
+</article>
+
+<article class="article" id="art7">
+  <div class="article-header"><span class="article-num">VII &middot; The Teacher Who Was Coming</span><h2 class="article-title">The Spirit of Truth</h2></div>
+<p class="article-body">The Lord did not leave His disciples to grow into understanding on their own. Right after He said <em>ye cannot bear them now</em>, He told them who would bring them the rest. Through those last hours He spoke of the Comforter again and again.</p>
+<div class="scripture-block"><p class="scripture-label">Another Comforter</p>
+<div class="scripture-entry"><span class="scripture-ref">John 14:16–17</span><span class="scripture-text">And I will pray the Father, and he shall give you another Comforter, that he may abide with you for ever; Even the Spirit of truth; whom the world cannot receive, because it seeth him not, neither knoweth him: but ye know him; for he dwelleth with you, and shall be in you.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">John 14:26</span><span class="scripture-text">But the Comforter, which is the Holy Ghost, whom the Father will send in my name, he shall teach you all things, and bring all things to your remembrance, whatsoever I have said unto you.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">John 15:26</span><span class="scripture-text">But when the Comforter is come, whom I will send unto you from the Father, even the Spirit of truth, which proceedeth from the Father, he shall testify of me:</span></div>
+</div>
+<p class="article-body">The Spirit of truth would dwell with them and be in them. He would teach them all things and bring to their remembrance everything the Lord had said. He would testify of Christ. This is exactly what the disciples lacked. They could not remember, they could not understand, and they could not bear it. The Spirit would supply all three.</p>
+<p class="article-body">Paul explained why the Spirit is necessary. The things of God are spiritually discerned, and no man receives them by natural ability.</p>
+<div class="scripture-block"><p class="scripture-label">Revealed unto Us by His Spirit</p>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 2:9–12</span><span class="scripture-text">But as it is written, Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which God hath prepared for them that love him. But God hath revealed them unto us by his Spirit: for the Spirit searcheth all things, yea, the deep things of God. For what man knoweth the things of a man, save the spirit of man which is in him? even so the things of God knoweth no man, but the Spirit of God. Now we have received, not the spirit of the world, but the spirit which is of God; that we might know the things that are freely given to us of God.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">1 Corinthians 2:14</span><span class="scripture-text">But the natural man receiveth not the things of the Spirit of God: for they are foolishness unto him: neither can he know them, because they are spiritually discerned.</span></div>
+</div>
+<p class="article-body">John wrote the same thing to the believers of his day. The anointing they had received of God was their teacher.</p>
+<div class="scripture-block"><p class="scripture-label">The Same Anointing Teacheth You</p>
+<div class="scripture-entry"><span class="scripture-ref">1 John 2:20</span><span class="scripture-text">But ye have an unction from the Holy One, and ye know all things.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">1 John 2:27</span><span class="scripture-text">But the anointing which ye have received of him abideth in you, and ye need not that any man teach you: but as the same anointing teacheth you of all things, and is truth, and is no lie, and even as it hath taught you, ye shall abide in him.</span></div>
+</div>
+<p class="article-body">This does not mean believers have no need of teachers in the church, because the same Lord gave teachers to the church for the perfecting of the saints <span class="ref-inline">(Ephesians 4:11–12)</span>. It means the Spirit of truth who lives in the believer is the One who confirms the truth and makes it real to him.</p>
+<p class="article-body">Here is where the three messages from our pulpit meet. Isaiah, describing the Spirit that would rest upon the Branch out of Jesse, named Him the spirit of wisdom and understanding. And when God filled a man with His Spirit for His work, wisdom and understanding came with it.</p>
+<div class="scripture-block"><p class="scripture-label">The Spirit of Wisdom and Understanding</p>
+<div class="scripture-entry"><span class="scripture-ref">Isaiah 11:1–2</span><span class="scripture-text">And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots: And the spirit of the LORD shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of the LORD;</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Exodus 31:2–3</span><span class="scripture-text">See, I have called by name Bezaleel the son of Uri, the son of Hur, of the tribe of Judah: And I have filled him with the spirit of God, in wisdom, and in understanding, and in knowledge, and in all manner of workmanship,</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 6:3</span><span class="scripture-text">Wherefore, brethren, look ye out among you seven men of honest report, full of the Holy Ghost and wisdom, whom we may appoint over this business.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 6:9–10</span><span class="scripture-text">Then there arose certain of the synagogue, which is called the synagogue of the Libertines, and Cyrenians, and Alexandrians, and of them of Cilicia and of Asia, disputing with Stephen. And they were not able to resist the wisdom and the spirit by which he spake.</span></div>
+</div>
+<p class="article-body">Wisdom and understanding are not separate subjects from the Holy Ghost. They are His work. Bezaleel was filled with the spirit of God in wisdom and in understanding. The seven men chosen in Acts 6 had to be full of the Holy Ghost and wisdom, and the men who disputed with Stephen were not able to resist the wisdom and the spirit by which he spoke.</p>
+<div class="keypoint"><p class="keypoint-label">Three Messages, One Truth</p><p><strong>Wisdom, understanding, and the Holy Ghost belong together.</strong> The Spirit of truth is the spirit of wisdom and understanding. When He comes, He brings what the disciples were missing on that night, and what we need in order to bear more.</p></div>
+</article>
+
+<article class="article" id="art8">
+  <div class="article-header"><span class="article-num">VIII &middot; The Promise of the Father</span><h2 class="article-title">Tarry Until Ye Be Endued with Power</h2></div>
+<p class="article-body">The Spirit was not yet given on the night of John 16. John tells us so in plain words, and he tells us why.</p>
+<div class="scripture-block"><p class="scripture-label">The Holy Ghost Was Not Yet Given</p>
+<div class="scripture-entry"><span class="scripture-ref">John 7:37–39</span><span class="scripture-text">In the last day, that great day of the feast, Jesus stood and cried, saying, If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water. (But this spake he of the Spirit, which they that believe on him should receive: for the Holy Ghost was not yet given; because that Jesus was not yet glorified.)</span></div>
+</div>
+<p class="article-body">The rivers of living water would flow once Jesus was glorified. This is why the Lord said <em>now</em>. On that night the disciples stood on the near side of the cross, the resurrection, and the outpouring of the Spirit. John the Baptist had already told Israel that the One coming after him would baptize with the Holy Ghost.</p>
+<div class="scripture-block"><p class="scripture-label">He Shall Baptize You with the Holy Ghost</p>
+<div class="scripture-entry"><span class="scripture-ref">Matthew 3:11</span><span class="scripture-text">I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you with the Holy Ghost, and with fire:</span></div>
+</div>
+<p class="article-body">After His resurrection the Lord told His disciples to wait for it.</p>
+<div class="scripture-block"><p class="scripture-label">Tarry Ye in the City</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 24:49</span><span class="scripture-text">And, behold, I send the promise of my Father upon you: but tarry ye in the city of Jerusalem, until ye be endued with power from on high.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 1:4–5</span><span class="scripture-text">And, being assembled together with them, commanded them that they should not depart from Jerusalem, but wait for the promise of the Father, which, saith he, ye have heard of me. For John truly baptized with water; but ye shall be baptized with the Holy Ghost not many days hence.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 1:8</span><span class="scripture-text">But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judaea, and in Samaria, and unto the uttermost part of the earth.</span></div>
+</div>
+<p class="article-body">They had already seen Him risen. He had already opened their understanding <span class="ref-inline">(Luke 24:45)</span>. Still He told them to wait, because they needed power from on high. Then the day came.</p>
+<div class="scripture-block"><p class="scripture-label">The Day of Pentecost</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 2:1–4</span><span class="scripture-text">And when the day of Pentecost was fully come, they were all with one accord in one place. And suddenly there came a sound from heaven as of a rushing mighty wind, and it filled all the house where they were sitting. And there appeared unto them cloven tongues like as of fire, and it sat upon each of them. And they were all filled with the Holy Ghost, and began to speak with other tongues, as the Spirit gave them utterance.</span></div>
+</div>
+<p class="article-body">They were all filled with the Holy Ghost and began to speak with other tongues, as the Spirit gave them utterance. Peter told the crowd that this promise was not only for the people in that room.</p>
+<div class="scripture-block"><p class="scripture-label">The Promise Is unto You</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 2:38–39</span><span class="scripture-text">Then Peter said unto them, Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost. For the promise is unto you, and to your children, and to all that are afar off, even as many as the Lord our God shall call.</span></div>
+</div>
+<p class="article-body">The same gift came on the household of Cornelius, and later on disciples at Ephesus who had believed but had not yet received the Holy Ghost. Each time, Scripture records the same sign: they spoke with tongues.</p>
+<div class="scripture-block"><p class="scripture-label">They Spake with Tongues</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 10:44–46</span><span class="scripture-text">While Peter yet spake these words, the Holy Ghost fell on all them which heard the word. And they of the circumcision which believed were astonished, as many as came with Peter, because that on the Gentiles also was poured out the gift of the Holy Ghost. For they heard them speak with tongues, and magnify God. Then answered Peter,</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 19:1–6</span><span class="scripture-text">And it came to pass, that, while Apollos was at Corinth, Paul having passed through the upper coasts came to Ephesus: and finding certain disciples, He said unto them, Have ye received the Holy Ghost since ye believed? And they said unto him, We have not so much as heard whether there be any Holy Ghost. And he said unto them, Unto what then were ye baptized? And they said, Unto John’s baptism. Then said Paul, John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on Christ Jesus. When they heard this, they were baptized in the name of the Lord Jesus. And when Paul had laid his hands upon them, the Holy Ghost came on them; and they spake with tongues, and prophesied.</span></div>
+</div>
+<p class="article-body">Paul's question at Ephesus shows that a person can believe and not yet have received the Holy Ghost in this way. Scripture also says that every believer is sealed with the Holy Spirit of promise when he believes. These are two works of the same Spirit. The sealing marks a believer as God's own at salvation. The baptism endues him with power from on high, and Scripture shows it evidenced by speaking with other tongues.</p>
+<div class="scripture-block"><p class="scripture-label">Sealed with That Holy Spirit of Promise</p>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 1:13</span><span class="scripture-text">In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ye were sealed with that holy Spirit of promise,</span></div>
+</div>
+<p class="article-body">The Lord said the Father gives the Holy Spirit to those who ask Him, and gives it more willingly than any earthly father gives good gifts to his children.</p>
+<div class="scripture-block"><p class="scripture-label">How Much More</p>
+<div class="scripture-entry"><span class="scripture-ref">Luke 11:13</span><span class="scripture-text">If ye then, being evil, know how to give good gifts unto your children: how much more shall your heavenly Father give the Holy Spirit to them that ask him?</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">Power to Bear It</p><p>The men who could not bear it then were told to tarry until they were endued with power. <strong>The Baptism in the Holy Ghost is that power, and the promise is unto you, and to your children, and to all that are afar off.</strong> If you have not received it, ask. The Father has promised to give it.</p></div>
+</article>
+
+<article class="article" id="art9">
+  <div class="article-header"><span class="article-num">IX &middot; Afterward</span><h2 class="article-title">What They Were Able to Bear</h2></div>
+<p class="article-body">Now look at the same men on the other side of Pentecost. Peter, who could not understand the Lord's plain words about the cross, stood up that same day and explained the Scriptures to the crowd.</p>
+<div class="scripture-block"><p class="scripture-label">Peter, Standing Up with the Eleven</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 2:14–17</span><span class="scripture-text">But Peter, standing up with the eleven, lifted up his voice, and said unto them, Ye men of Judaea, and all ye that dwell at Jerusalem, be this known unto you, and hearken to my words: For these are not drunken, as ye suppose, seeing it is but the third hour of the day. But this is that which was spoken by the prophet Joel; And it shall come to pass in the last days, saith God, I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy, and your young men shall see visions, and your old men shall dream dreams:</span></div>
+</div>
+<p class="article-body">He understood that Joel had spoken of that very day. The rulers in Jerusalem noticed the change in these men, and they could only account for it one way.</p>
+<div class="scripture-block"><p class="scripture-label">They Had Been with Jesus</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 4:13</span><span class="scripture-text">Now when they saw the boldness of Peter and John, and perceived that they were unlearned and ignorant men, they marvelled; and they took knowledge of them, that they had been with Jesus.</span></div>
+</div>
+<p class="article-body">The Lord had warned them that they would be put out of the synagogues <span class="ref-inline">(John 16:2)</span>. On the night He said it, sorrow filled their hearts. After Pentecost they were beaten for His name, and they went away rejoicing.</p>
+<div class="scripture-block"><p class="scripture-label">Counted Worthy to Suffer Shame</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 5:40–42</span><span class="scripture-text">And to him they agreed: and when they had called the apostles, and beaten them, they commanded that they should not speak in the name of Jesus, and let them go. And they departed from the presence of the council, rejoicing that they were counted worthy to suffer shame for his name. And daily in the temple, and in every house, they ceased not to teach and preach Jesus Christ.</span></div>
+</div>
+<p class="article-body">Some of the many things took longer. Peter had to be shown by God that He had opened the door of faith to the Gentiles. Peter himself tells us what he was shown: that he should not call any man common or unclean.</p>
+<div class="scripture-block"><p class="scripture-label">God Is No Respecter of Persons</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 10:28</span><span class="scripture-text">And he said unto them, Ye know how that it is an unlawful thing for a man that is a Jew to keep company, or come unto one of another nation; but God hath shewed me that I should not call any man common or unclean.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 10:34–35</span><span class="scripture-text">Then Peter opened his mouth, and said, Of a truth I perceive that God is no respecter of persons: But in every nation he that feareth him, and worketh righteousness, is accepted with him.</span></div>
+</div>
+<p class="article-body">The Spirit guided the church into this truth, just as the Lord promised. When the apostles and elders met over the question of the Gentiles, they could say that their decision seemed good to the Holy Ghost.</p>
+<div class="scripture-block"><p class="scripture-label">It Seemed Good to the Holy Ghost</p>
+<div class="scripture-entry"><span class="scripture-ref">Acts 15:28</span><span class="scripture-text">For it seemed good to the Holy Ghost, and to us, to lay upon you no greater burden than these necessary things;</span></div>
+</div>
+<p class="article-body">The Lord also said the Spirit would show them things to come <span class="ref-inline">(John 16:13)</span>. The last book of the Bible opens with that promise kept.</p>
+<div class="scripture-block"><p class="scripture-label">Things Which Must Shortly Come to Pass</p>
+<div class="scripture-entry"><span class="scripture-ref">Revelation 1:1</span><span class="scripture-text">The Revelation of Jesus Christ, which God gave unto him, to shew unto his servants things which must shortly come to pass; and he sent and signified it by his angel unto his servant John:</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">The Same Men</p><p><strong>The men who could not bear it in the upper room carried the gospel to the world.</strong> Nothing changed in the message. What changed was the men. The Spirit of truth came, their understanding was opened, and they were given power to bear what they could not bear before.</p></div>
+</article>
+
+<article class="article" id="art10">
+  <div class="article-header"><span class="article-num">X &middot; The Boundary</span><h2 class="article-title">To the Law and to the Testimony</h2></div>
+<p class="article-body">There is a danger worth naming here. Some have taken John 16:12 to mean that God is still handing out new doctrines the Bible does not contain, or even ones that contradict it. The passage itself shuts that door. The Spirit of truth <em>shall not speak of himself</em>. He takes what belongs to Christ and shows it to us <span class="ref-inline">(John 16:13–14)</span>. He does not bring another gospel. He brings understanding of the one already given.</p>
+<div class="scripture-block"><p class="scripture-label">Once Delivered unto the Saints</p>
+<div class="scripture-entry"><span class="scripture-ref">Jude 1:3</span><span class="scripture-text">Beloved, when I gave all diligence to write unto you of the common salvation, it was needful for me to write unto you, and exhort you that ye should earnestly contend for the faith which was once delivered unto the saints.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">2 Timothy 3:16–17</span><span class="scripture-text">All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness: That the man of God may be perfect, throughly furnished unto all good works.</span></div>
+</div>
+<p class="article-body">The faith was once delivered. The Scripture makes the man of God perfect, thoroughly furnished unto all good works. What grows is not the Word but our grasp of it. So every teaching, every dream, and every word that claims to come from the Spirit has to be weighed by what God has already spoken.</p>
+<div class="scripture-block"><p class="scripture-label">To the Law and to the Testimony</p>
+<div class="scripture-entry"><span class="scripture-ref">Isaiah 8:20</span><span class="scripture-text">To the law and to the testimony: if they speak not according to this word, it is because there is no light in them.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Proverbs 30:5–6</span><span class="scripture-text">Every word of God is pure: he is a shield unto them that put their trust in him. Add thou not unto his words, lest he reprove thee, and thou be found a liar.</span></div>
+</div>
+<div class="scripture-block"><p class="scripture-label">Try the Spirits</p>
+<div class="scripture-entry"><span class="scripture-ref">1 John 4:1</span><span class="scripture-text">Beloved, believe not every spirit, but try the spirits whether they are of God: because many false prophets are gone out into the world.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Acts 17:11</span><span class="scripture-text">These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.</span></div>
+</div>
+<p class="article-body">The Bereans were called noble for searching the Scriptures daily to see whether what Paul preached was so. That is the attitude of a believer who wants to grow. He is ready to receive more, and he holds everything up to the Word.</p>
+<div class="keypoint"><p class="keypoint-label">More Understanding, Not More Scripture</p><p><strong>When the Lord gives us more, He gives us more light on what He has already said.</strong> The Spirit of truth will never lead anyone away from the law and the testimony. If a teaching does not agree with the written Word, there is no light in it.</p></div>
+</article>
+
+<article class="article" id="art11">
+  <div class="article-header"><span class="article-num">XI &middot; Growing Up</span><h2 class="article-title">Until We Can Bear More</h2></div>
+<p class="article-body">The Lord still has more to show each of us. None of us has reached the end of what God wants to teach, and Scripture calls every believer to keep growing.</p>
+<div class="scripture-block"><p class="scripture-label">Grow in Grace</p>
+<div class="scripture-entry"><span class="scripture-ref">2 Peter 3:18</span><span class="scripture-text">But grow in grace, and in the knowledge of our Lord and Saviour Jesus Christ. To him be glory both now and for ever. Amen.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">1 Peter 2:2</span><span class="scripture-text">As newborn babes, desire the sincere milk of the word, that ye may grow thereby:</span></div>
+</div>
+<p class="article-body">Growth does not happen by accident. Peter lists what to add to our faith, one thing upon another, and promises that a believer who does so will be neither barren nor unfruitful in the knowledge of the Lord.</p>
+<div class="scripture-block"><p class="scripture-label">Add to Your Faith</p>
+<div class="scripture-entry"><span class="scripture-ref">2 Peter 1:5–8</span><span class="scripture-text">And beside this, giving all diligence, add to your faith virtue; and to virtue knowledge; And to knowledge temperance; and to temperance patience; and to patience godliness; And to godliness brotherly kindness; and to brotherly kindness charity. For if these things be in you, and abound, they make you that ye shall neither be barren nor unfruitful in the knowledge of our Lord Jesus Christ.</span></div>
+</div>
+<p class="article-body">God also gave gifts to the church for this very purpose, so that the saints would grow up and no longer be children tossed to and fro with every wind of doctrine.</p>
+<div class="scripture-block"><p class="scripture-label">No More Children</p>
+<div class="scripture-entry"><span class="scripture-ref">Ephesians 4:11–15</span><span class="scripture-text">And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fulness of Christ: That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive; But speaking the truth in love, may grow up into him in all things, which is the head, even Christ:</span></div>
+</div>
+<p class="article-body">Hosea shows us both sides of it. God's people are destroyed for lack of knowledge, and those who follow on to know the LORD will know Him.</p>
+<div class="scripture-block"><p class="scripture-label">Follow On to Know the LORD</p>
+<div class="scripture-entry"><span class="scripture-ref">Hosea 4:6</span><span class="scripture-text">My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Hosea 6:3</span><span class="scripture-text">Then shall we know, if we follow on to know the LORD: his going forth is prepared as the morning; and he shall come unto us as the rain, as the latter and former rain unto the earth.</span></div>
+</div>
+<p class="article-body">God invites His people to call on Him for what they do not yet know, and He promises to show it. Paul had not arrived, and he said so. He pressed toward the mark, and he told the believers that if any of them saw a thing differently, God would reveal even that to them.</p>
+<div class="scripture-block"><p class="scripture-label">Great and Mighty Things</p>
+<div class="scripture-entry"><span class="scripture-ref">Jeremiah 33:3</span><span class="scripture-text">Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Philippians 3:13–15</span><span class="scripture-text">Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark for the prize of the high calling of God in Christ Jesus. Let us therefore, as many as be perfect, be thus minded: and if in any thing ye be otherwise minded, God shall reveal even this unto you.</span></div>
+</div>
+<p class="article-body">A growing believer is not afraid of being shown more. The way to stay ready to receive it is the daily habit of the Word.</p>
+<div class="scripture-block"><p class="scripture-label">Meditate Therein Day and Night</p>
+<div class="scripture-entry"><span class="scripture-ref">Joshua 1:8</span><span class="scripture-text">This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">Psalm 1:2</span><span class="scripture-text">But his delight is in the law of the LORD; and in his law doth he meditate day and night.</span></div>
+<div class="scripture-entry"><span class="scripture-ref">2 Timothy 2:15</span><span class="scripture-text">Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.</span></div>
+</div>
+<div class="keypoint"><p class="keypoint-label">The Lord Still Has More</p><p><strong>He has yet many things to say unto us as well.</strong> The question is whether we will be ready to bear them. Wisdom, understanding, and the power of the Holy Ghost are how He makes us ready, and He has promised all three to those who seek Him.</p></div>
+</article>
+
+<article class="article" id="art12">
+  <div class="article-header"><span class="article-num">XII &middot; The Charge</span><h2 class="article-title">What to Do Before the Year Is Out</h2></div>
+<p class="article-body">A study about receiving more is wasted if it only fills a notebook. Here are seven things to put into practice before the year is out. None of them will earn anything from God. All of them make room for what He wants to give.</p>
+<ol class="charge-list"><li><strong>Ask for wisdom every day.</strong> Make it a daily prayer, and ask in faith, nothing wavering <span class="ref-inline">(James 1:5–6)</span>.</li><li><strong>Walk in what you already know.</strong> Pick one thing God has already shown you in His Word that you have been putting off, and do it. Light obeyed brings more light <span class="ref-inline">(John 7:17)</span>.</li><li><strong>Pray before you read.</strong> Make the psalmist's prayer your own: Open thou mine eyes, that I may behold wondrous things out of thy law <span class="ref-inline">(Psalm 119:18)</span>.</li><li><strong>Watch what you hear and how you hear it.</strong> Turn off what dulls your hearing, and come to the Word expecting to be given more <span class="ref-inline">(Mark 4:24–25)</span>.</li><li><strong>Ask the Father for the Holy Ghost.</strong> If you have not received the Baptism in the Holy Ghost, ask, and keep asking, because He has promised <span class="ref-inline">(Luke 11:13)</span>. If you have, yield to Him daily and let Him teach you <span class="ref-inline">(John 14:26)</span>.</li><li><strong>Dig for understanding.</strong> Choose one book of the Bible this month, search it as for hid treasure, and set your heart to understand it <span class="ref-inline">(Proverbs 2:1–6; Daniel 10:12)</span>.</li><li><strong>Prove what you hear.</strong> Measure every teaching, this one included, against the written Word <span class="ref-inline">(Acts 17:11)</span>.</li></ol>
+<div class="closing-panel"><p class="closing-label">The Final Word</p><p>The Lord did not tell His disciples that they would never hear the rest. He told them they could not bear it yet, and then He promised them the Spirit of truth. <strong>Howbeit when he, the Spirit of truth, is come, he will guide you into all truth.</strong> He is still guiding His people. Get wisdom, get understanding, be filled with the Spirit, and keep walking. There is more.</p></div>
+</article>
+
+<section class="teacher-note" id="teacher"><p class="tnote-label">For the Teacher</p><p><strong>Do not guess at the many things.</strong> Scripture does not give us a list of what the Lord held back that night. Keep the class with what Scripture shows the Spirit opened to them afterward: the meaning of the cross and the resurrection <span class="ref-inline">(John 12:16; Luke 24:45)</span>, the courage to suffer for His name <span class="ref-inline">(Acts 5:41)</span>, the place of the Gentiles <span class="ref-inline">(Acts 10:34–35)</span>, and things to come <span class="ref-inline">(Revelation 1:1)</span>. Do not fill the gap with speculation.</p><p><strong>Cannot bear is not an insult.</strong> The Lord said it to men He loved unto the end <span class="ref-inline">(John 13:1)</span>, and He followed it with a promise. Teach it as an invitation to grow, not as a label for anyone in the room.</p><p><strong>Guard both sides on the Holy Ghost.</strong> Every believer is sealed with the Holy Spirit of promise when he believes <span class="ref-inline">(Ephesians 1:13)</span>. The Baptism in the Holy Ghost is a further work of power, evidenced by speaking with other tongues <span class="ref-inline">(Acts 2:4; Acts 19:6)</span>. Never let a believer who has not yet received it leave thinking he is unsaved, and never let anyone leave thinking the promise is not for him <span class="ref-inline">(Acts 2:39)</span>.</p><p><strong>John 16:12 is not a door to new doctrine.</strong> Expect someone to ask whether God is still revealing things beyond the Bible. Go straight to John 16:13–14 and Isaiah 8:20. The Spirit speaks what He hears and takes of what is Christ's. He gives more light on the Word, never a word against it.</p><p><strong>The anointing and the teacher.</strong> Someone may use 1 John 2:27 to say believers do not need teachers. Show that the same Lord gave teachers to the church <span class="ref-inline">(Ephesians 4:11–12)</span>, and that John was writing to teach them even as he said it. The anointing confirms the truth in the believer. It does not cancel the ministry God set in the church.</p></section>
+
+<section class="appendix" id="scriptures">
+  <div class="article-header"><span class="article-num">Summary</span><h2 class="article-title">Every Scripture in This Study, by Category</h2></div>
+  <p class="article-body">Every passage quoted in this study is listed here under the category where it was taught, in the order it appears. The categories are the parts of the study, and beside each reference is the heading it was printed under. In all, 96 passages are quoted: the theme verse and 95 more across 11 categories. Every one is printed in full above from the King James Bible.</p>
+  <div class="table-wrap"><table class="data-table summary-table"><thead><tr><th>Scripture</th><th>Listed Under</th></tr></thead><tbody>
+<tr class="cat-row"><td colspan="2">The Theme Verse</td></tr>
+<tr><td>John 16:12</td><td>The Theme Verse</td></tr>
+<tr class="cat-row"><td colspan="2">I · The Night It Was Spoken</td></tr>
+<tr><td>John 13:1</td><td>Having Loved His Own</td></tr>
+<tr><td>John 16:1–4</td><td>I Said Not unto You at the Beginning</td></tr>
+<tr><td>John 16:5–7</td><td>Sorrow Hath Filled Your Heart</td></tr>
+<tr><td>John 16:13–15</td><td>When He, the Spirit of Truth, Is Come</td></tr>
+<tr class="cat-row"><td colspan="2">II · What They Could Not Yet Carry</td></tr>
+<tr><td>Luke 18:31–34</td><td>This Saying Was Hid from Them</td></tr>
+<tr><td>Mark 9:31–32</td><td>This Saying Was Hid from Them</td></tr>
+<tr><td>John 13:7</td><td>Thou Shalt Know Hereafter</td></tr>
+<tr><td>John 13:36</td><td>Thou Shalt Know Hereafter</td></tr>
+<tr><td>John 16:16–18</td><td>We Cannot Tell What He Saith</td></tr>
+<tr><td>John 2:22</td><td>Then Remembered They</td></tr>
+<tr><td>John 12:16</td><td>Then Remembered They</td></tr>
+<tr class="cat-row"><td colspan="2">III · As They Were Able to Hear It</td></tr>
+<tr><td>Mark 4:33</td><td>As They Were Able to Hear It</td></tr>
+<tr><td>John 3:12</td><td>As They Were Able to Hear It</td></tr>
+<tr><td>1 Corinthians 3:1–2</td><td>Ye Were Not Able to Bear It</td></tr>
+<tr><td>Hebrews 5:11–14</td><td>Many Things to Say, and Hard to Be Uttered</td></tr>
+<tr><td>Hebrews 6:1–3</td><td>Let Us Go On</td></tr>
+<tr><td>Isaiah 28:9–10</td><td>Precept upon Precept</td></tr>
+<tr><td>Genesis 33:13–14</td><td>Bonus: By Little and Little</td></tr>
+<tr><td>Deuteronomy 7:22</td><td>Bonus: By Little and Little</td></tr>
+<tr class="cat-row"><td colspan="2">IV · Unto You That Hear Shall More Be Given</td></tr>
+<tr><td>Mark 4:24–25</td><td>Take Heed What Ye Hear</td></tr>
+<tr><td>Luke 8:18</td><td>Take Heed What Ye Hear</td></tr>
+<tr><td>Luke 16:10–11</td><td>Faithful in That Which Is Least</td></tr>
+<tr><td>John 7:17</td><td>If Any Man Will Do His Will</td></tr>
+<tr><td>Psalm 111:10</td><td>Through Thy Precepts I Get Understanding</td></tr>
+<tr><td>Psalm 119:100</td><td>Through Thy Precepts I Get Understanding</td></tr>
+<tr><td>Psalm 119:104</td><td>Through Thy Precepts I Get Understanding</td></tr>
+<tr><td>Proverbs 4:18</td><td>More and More unto the Perfect Day</td></tr>
+<tr class="cat-row"><td colspan="2">V · Wisdom Is the Principal Thing</td></tr>
+<tr><td>Proverbs 4:5–7</td><td>Get Wisdom</td></tr>
+<tr><td>Proverbs 9:10</td><td>The Beginning of Wisdom</td></tr>
+<tr><td>Job 28:28</td><td>The Beginning of Wisdom</td></tr>
+<tr><td>Deuteronomy 4:5–6</td><td>This Is Your Wisdom and Your Understanding</td></tr>
+<tr><td>Proverbs 1:5</td><td>A Wise Man Will Hear</td></tr>
+<tr><td>Proverbs 9:9</td><td>A Wise Man Will Hear</td></tr>
+<tr><td>Proverbs 2:1–6</td><td>Seek Her as Silver</td></tr>
+<tr><td>James 1:5–6</td><td>Let Him Ask of God</td></tr>
+<tr><td>James 3:17</td><td>Let Him Ask of God</td></tr>
+<tr><td>Colossians 2:2–3</td><td>Christ Made unto Us Wisdom</td></tr>
+<tr><td>1 Corinthians 1:30</td><td>Christ Made unto Us Wisdom</td></tr>
+<tr class="cat-row"><td colspan="2">VI · With All Thy Getting Get Understanding</td></tr>
+<tr><td>Luke 24:44–46</td><td>Then Opened He Their Understanding</td></tr>
+<tr><td>Psalm 119:18</td><td>Open Thou Mine Eyes</td></tr>
+<tr><td>Psalm 119:34</td><td>Open Thou Mine Eyes</td></tr>
+<tr><td>Psalm 119:130</td><td>Open Thou Mine Eyes</td></tr>
+<tr><td>Ephesians 1:17–18</td><td>The Eyes of Your Understanding Being Enlightened</td></tr>
+<tr><td>Colossians 1:9–10</td><td>The Eyes of Your Understanding Being Enlightened</td></tr>
+<tr><td>2 Timothy 2:7</td><td>The Lord Give Thee Understanding</td></tr>
+<tr><td>Proverbs 3:5–6</td><td>The Lord Give Thee Understanding</td></tr>
+<tr><td>Matthew 13:19</td><td>Heareth the Word, and Understandeth It</td></tr>
+<tr><td>Matthew 13:23</td><td>Heareth the Word, and Understandeth It</td></tr>
+<tr><td>Daniel 10:12</td><td>Thou Didst Set Thine Heart to Understand</td></tr>
+<tr class="cat-row"><td colspan="2">VII · The Spirit of Truth</td></tr>
+<tr><td>John 14:16–17</td><td>Another Comforter</td></tr>
+<tr><td>John 14:26</td><td>Another Comforter</td></tr>
+<tr><td>John 15:26</td><td>Another Comforter</td></tr>
+<tr><td>1 Corinthians 2:9–12</td><td>Revealed unto Us by His Spirit</td></tr>
+<tr><td>1 Corinthians 2:14</td><td>Revealed unto Us by His Spirit</td></tr>
+<tr><td>1 John 2:20</td><td>The Same Anointing Teacheth You</td></tr>
+<tr><td>1 John 2:27</td><td>The Same Anointing Teacheth You</td></tr>
+<tr><td>Isaiah 11:1–2</td><td>The Spirit of Wisdom and Understanding</td></tr>
+<tr><td>Exodus 31:2–3</td><td>The Spirit of Wisdom and Understanding</td></tr>
+<tr><td>Acts 6:3</td><td>The Spirit of Wisdom and Understanding</td></tr>
+<tr><td>Acts 6:9–10</td><td>The Spirit of Wisdom and Understanding</td></tr>
+<tr class="cat-row"><td colspan="2">VIII · Tarry Until Ye Be Endued with Power</td></tr>
+<tr><td>John 7:37–39</td><td>The Holy Ghost Was Not Yet Given</td></tr>
+<tr><td>Matthew 3:11</td><td>He Shall Baptize You with the Holy Ghost</td></tr>
+<tr><td>Luke 24:49</td><td>Tarry Ye in the City</td></tr>
+<tr><td>Acts 1:4–5</td><td>Tarry Ye in the City</td></tr>
+<tr><td>Acts 1:8</td><td>Tarry Ye in the City</td></tr>
+<tr><td>Acts 2:1–4</td><td>The Day of Pentecost</td></tr>
+<tr><td>Acts 2:38–39</td><td>The Promise Is unto You</td></tr>
+<tr><td>Acts 10:44–46</td><td>They Spake with Tongues</td></tr>
+<tr><td>Acts 19:1–6</td><td>They Spake with Tongues</td></tr>
+<tr><td>Ephesians 1:13</td><td>Sealed with That Holy Spirit of Promise</td></tr>
+<tr><td>Luke 11:13</td><td>How Much More</td></tr>
+<tr class="cat-row"><td colspan="2">IX · What They Were Able to Bear</td></tr>
+<tr><td>Acts 2:14–17</td><td>Peter, Standing Up with the Eleven</td></tr>
+<tr><td>Acts 4:13</td><td>They Had Been with Jesus</td></tr>
+<tr><td>Acts 5:40–42</td><td>Counted Worthy to Suffer Shame</td></tr>
+<tr><td>Acts 10:28</td><td>God Is No Respecter of Persons</td></tr>
+<tr><td>Acts 10:34–35</td><td>God Is No Respecter of Persons</td></tr>
+<tr><td>Acts 15:28</td><td>It Seemed Good to the Holy Ghost</td></tr>
+<tr><td>Revelation 1:1</td><td>Things Which Must Shortly Come to Pass</td></tr>
+<tr class="cat-row"><td colspan="2">X · To the Law and to the Testimony</td></tr>
+<tr><td>Jude 1:3</td><td>Once Delivered unto the Saints</td></tr>
+<tr><td>2 Timothy 3:16–17</td><td>Once Delivered unto the Saints</td></tr>
+<tr><td>Isaiah 8:20</td><td>To the Law and to the Testimony</td></tr>
+<tr><td>Proverbs 30:5–6</td><td>To the Law and to the Testimony</td></tr>
+<tr><td>1 John 4:1</td><td>Try the Spirits</td></tr>
+<tr><td>Acts 17:11</td><td>Try the Spirits</td></tr>
+<tr class="cat-row"><td colspan="2">XI · Until We Can Bear More</td></tr>
+<tr><td>2 Peter 3:18</td><td>Grow in Grace</td></tr>
+<tr><td>1 Peter 2:2</td><td>Grow in Grace</td></tr>
+<tr><td>2 Peter 1:5–8</td><td>Add to Your Faith</td></tr>
+<tr><td>Ephesians 4:11–15</td><td>No More Children</td></tr>
+<tr><td>Hosea 4:6</td><td>Follow On to Know the LORD</td></tr>
+<tr><td>Hosea 6:3</td><td>Follow On to Know the LORD</td></tr>
+<tr><td>Jeremiah 33:3</td><td>Great and Mighty Things</td></tr>
+<tr><td>Philippians 3:13–15</td><td>Great and Mighty Things</td></tr>
+<tr><td>Joshua 1:8</td><td>Meditate Therein Day and Night</td></tr>
+<tr><td>Psalm 1:2</td><td>Meditate Therein Day and Night</td></tr>
+<tr><td>2 Timothy 2:15</td><td>Meditate Therein Day and Night</td></tr>
+</tbody></table></div>
+</section>
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+    <p class="footer-text">I have yet many things to say unto you, but ye cannot bear them now · John 16:12</p>
+    <p class="footer-sub">Work the Word Church · Madison, West Virginia · Brother Justin May</p>
+    <p class="back-footer"><a class="back-footer-link" href="./"><span aria-hidden="true">&#8592;</span> Back to Home</a></p>
+</footer>
+
+</div>
+</body>
+</html>

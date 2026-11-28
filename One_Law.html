@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico?v=20260709" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=20260709">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=20260709">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260709">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>One Law &middot; One Law for Jew and Gentile Alike</title>
+<meta name="description" content="One law for the homeborn and the stranger: a Pronomian teaching on why the Torah of God has not changed and was never split into one law for Jews and another for Gentiles.">
+<style>
+  :root {
+    --gold:           #8B6914;
+    --gold-light:     #C9A84C;
+    --gold-pale:      #F5EDD8;
+    --ink:            #1C1A17;
+    --ink-mid:        #3D3829;
+    --ink-soft:       #6B6047;
+    --parchment:      #FAF6EE;
+    --cream:          #F2EBD9;
+    --crimson:        #7A1F1F;
+    --crimson-lt:     #9B3434;
+    --crimson-dk:     #2A1414;
+    --rule:           #C9A84C44;
+    --rule-solid:     #C9A84C;
+    --shadow:         rgba(28,26,23,0.10);
+    --crimson-dark:   #7A1F1F;
+    --crimson-light:  #9B3434;
+    --crimson-soft:   #9B3434;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #EDE4CF;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .page {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--parchment);
+    border: 1px solid #D4B97A;
+    box-shadow: 0 2px 0 #B8973A, 0 4px 24px var(--shadow), 0 1px 0 #E8D49A inset;
+    position: relative;
+  }
+  .page::before, .page::after {
+    content: '';
+    position: absolute;
+    width: 40px; height: 40px;
+    border-color: var(--gold-light);
+    border-style: solid;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .page::before { top: 12px; left: 12px;  border-width: 2px 0 0 2px; }
+  .page::after  { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+  /* HEADER */
+  .doc-header {
+    text-align: center;
+    padding: 3.4rem 3rem 2.6rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-bottom: 3px solid var(--gold-light);
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-header::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .header-ornament { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 0.4em; display: block; margin-bottom: 1.1rem; }
+  .doc-eyebrow { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .doc-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+    color: #FBF6E9;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.30);
+  }
+  .doc-subtitle {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--gold-pale);
+    line-height: 1.6;
+    margin-top: 0.9rem;
+    opacity: 0.94;
+  }
+  .header-rule { display: flex; align-items: center; gap: 0.75rem; margin: 1.6rem auto 0; max-width: 300px; }
+  .header-rule span { flex: 1; height: 1px; background: var(--gold-light); opacity: 0.6; }
+  .header-rule i { color: var(--gold-light); font-style: normal; font-size: 1rem; }
+
+  /* BODY */
+    .doc-body {
+    padding: 0 3rem 3rem;
+  }
+  /* one uniform gap between the header and the first block on every page */
+  .doc-body > *:first-child { margin-top: 2.6rem; }
+
+  .intro { margin: 2.7rem 0 0; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+  .intro-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+  .intro p {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .intro p + p { margin-top: 0.9rem; }
+  .dropcap::first-letter { font-family: 'Cinzel', serif; font-size: 3.4rem; font-weight: 700; float: left; line-height: 0.82; padding: 0.1rem 0.6rem 0 0; color: var(--crimson); }
+
+  .toc {
+    margin: 2.5rem 0;
+    padding: 1.5rem 2rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .toc-list { list-style: none; }
+  .toc-list li { margin-bottom: 0.5rem; break-inside: avoid; }
+  .toc-list a { font-size: 0.95rem; color: var(--ink-mid); text-decoration: none; display: flex; gap: 0.7rem; align-items: baseline; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--crimson); }
+  .toc-num { font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--gold-light); min-width: 2rem; flex-shrink: 0; }
+
+  .article { margin-top: 2.8rem; padding-top: 2.4rem; border-top: 1px solid var(--rule); }
+  .article-header { display: flex; align-items: baseline; gap: 0.85rem; margin-bottom: 1.1rem; }
+  .article-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .article-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+    font-weight: 600;
+    color: var(--crimson);
+    line-height: 1.3;
+  }
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+    margin-bottom: 1.4rem;
+  }
+  .article-body:last-child { margin-bottom: 0; }
+  .article-body strong { color: var(--crimson); font-weight: 600; }
+
+  .subhead { font-family: 'Cinzel', serif; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin: 1.9rem 0 0.85rem; }
+
+  .section { margin: 1.6rem 0; padding: 1.2rem 1.4rem; background: var(--cream); border-left: 3px solid var(--crimson-lt); }
+  .section-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-body {
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: var(--ink-mid);
+    text-align: justify;
+  }
+  .section-body p + p { margin-top: 0.7rem; }
+
+  .scripture-block {
+    margin: 1.5rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid #D4B97A55;
+    border-top: 3px solid var(--gold-light);
+    box-shadow: 0 1px 0 #E8D49A inset;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .scripture-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .scripture-entry { margin-bottom: 1rem; font-size: 1.02rem; line-height: 1.78; page-break-inside: avoid; break-inside: avoid; }
+  .scripture-entry:last-child { margin-bottom: 0; }
+  .scripture-ref {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+  }
+  .scripture-text { font-style: italic; font-size: 1.02rem; line-height: 1.78; color: var(--ink-mid); }
+
+  .keypoint {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #F3E6E0;
+    border-left: 4px solid var(--crimson);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .keypoint-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.55rem;
+  }
+  .keypoint-body { font-size: 1rem; line-height: 1.78; color: var(--ink-mid); }
+
+  .bonus-panel {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--gold-pale);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .bonus-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .bonus-star { color: var(--gold); font-size: 0.85rem; }
+  .bonus-body { font-size: 0.98rem; line-height: 1.78; color: var(--ink-mid); }
+  .bonus-body p + p { margin-top: 0.7rem; }
+
+  .teacher-note {
+    margin: 1.8rem 0;
+    padding: 1.3rem 1.5rem;
+    background: var(--parchment);
+    border: 1px dashed #C9A84C88;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .teacher-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .teacher-body { font-size: 0.96rem; line-height: 1.78; color: var(--ink-soft); }
+  .teacher-body p + p { margin-top: 0.7rem; }
+
+  .list { margin: 1.1rem 0 1.1rem 1.4rem; }
+  .list li { font-size: 1.02rem; line-height: 1.8; color: var(--ink-mid); margin-bottom: 0.6rem; break-inside: avoid; }
+  .list li strong { color: var(--crimson); font-weight: 600; }
+
+  .conclusion {
+    margin-top: 3rem;
+    padding: 2.2rem 2.2rem;
+    background: linear-gradient(135deg, #2A1414 0%, var(--crimson) 100%);
+    color: var(--gold-pale);
+    border-left: 4px solid var(--gold-light);
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .conclusion::after { content: ''; position: absolute; inset: 9px; border: 1px solid rgba(201,168,76,0.35); pointer-events: none; }
+  .conclusion-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+  .conclusion p { font-size: 1.03rem; line-height: 1.85; color: #F6EFE0; text-align: justify; }
+  .conclusion p + p { margin-top: 0.85rem; }
+
+  .inline-link { color: var(--crimson); text-decoration: none; border-bottom: 1px solid #9B343455; transition: border-color 0.2s; }
+  .inline-link:hover { border-bottom-color: var(--crimson); }
+
+  .pull-line {
+    margin: 1.8rem 0;
+    padding: 1.1rem 1.6rem;
+    border-left: 4px solid var(--crimson-lt);
+    background: var(--gold-pale);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    font-style: italic;
+    color: var(--ink);
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.2rem 0 0.4rem; font-size: 0.95rem; }
+  .contrast-table thead th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border: 1px solid #6A1A1A;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .contrast-table td {
+    padding: 0.85rem 1rem;
+    border: 1px solid #D4B97A66;
+    vertical-align: top;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    width: 50%;
+  }
+  .contrast-table tbody tr:nth-child(odd) td { background: var(--cream); }
+  .contrast-table tbody tr:nth-child(even) td { background: var(--parchment); }
+
+  .glance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.9rem; margin-top: 1.2rem; }
+  .glance-item {
+    background: var(--cream);
+    border: 1px solid #D4B97A66;
+    border-left: 3px solid var(--gold-light);
+    padding: 0.95rem 1.1rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .glance-head { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--crimson); font-weight: 600; margin-bottom: 0.45rem; line-height: 1.4; }
+  .glance-refs { font-size: 0.98rem; line-height: 1.7; color: var(--ink-mid); }
+
+  /* FOOTER */
+  .doc-footer {
+    text-align: center;
+    padding: 2.8rem 3rem 2.4rem;
+    background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-lt) 100%);
+    color: var(--gold-pale);
+    border-top: 3px solid var(--gold-light);
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-footer::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,168,76,0.4); pointer-events: none; }
+  .footer-ornament { display: block; font-size: 1.2rem; color: var(--gold-light); letter-spacing: 0.4em; }
+  .footer-verse { font-family: 'EB Garamond', serif; font-style: italic; font-size: 0.95rem; color: var(--gold-pale); margin-top: 0.7rem; }
+  .footer-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #FBF6E9;
+    text-transform: uppercase;
+    margin-top: 0.6rem;
+    line-height: 1.9;
+  }
+
+  /* PRINT */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.75in;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Cinzel', serif;
+      font-size: 9pt;
+      color: #8B6914;
+    }
+  }
+
+  @media print {
+    /* shared print shell */
+    body { background: #FFFFFF; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { max-width: 100%; margin: 0; border: none; box-shadow: none; }
+    .page::before, .page::after { display: none; }
+    .site-nav { display: none; }
+    .doc-header, .site-hero, .doc-footer, .site-footer {
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+
+    body { background: white; padding: 0; font-size: 11pt; }
+    .page { box-shadow: none; border: none; max-width: 100%; margin: 0; }
+    .page::before, .page::after { display: none; }
+    .doc-body { padding: 0 0 1rem; }
+    .doc-header, .doc-footer, .conclusion { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .doc-header { padding: 2rem 1.5rem 1.6rem; }
+
+    .scripture-block, .scripture-entry, .section, .keypoint,
+    .bonus-panel, .teacher-note, .list li, .toc-list li,
+    .pull-line, .glance-item, .contrast-table tr {
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .contrast-table thead th, .glance-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    /* long scripture boxes may break between verses; each verse stays whole */
+    .scripture-block { page-break-inside: auto !important; break-inside: auto !important; }
+    .article-header, .section-title, .subhead, .scripture-label,
+    .conclusion-label, .keypoint-label { page-break-after: avoid; break-after: avoid; }
+    .article-body { orphans: 3; widows: 3; }
+    .toc { page-break-after: always; break-after: page; }
+    .print-new-page { page-break-before: always; break-before: page; }
+    .conclusion { page-break-before: auto; }
+    .doc-footer { page-break-before: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+  @media (max-width: 600px) {
+    .doc-body { padding: 0 1.4rem 2rem; }
+    .doc-header { padding: 2.2rem 1.4rem 1.6rem; }
+    .conclusion { padding: 1.5rem 1.4rem; }
+    .contrast-table { font-size: 0.88rem; }
+    .contrast-table td, .contrast-table thead th { padding: 0.6rem 0.7rem; }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem 0.6rem 2.5rem; }
+    .doc-header, .site-hero { padding: 2.2rem 1.3rem 1.8rem; }
+    .doc-footer, .site-footer { padding: 2rem 1.2rem 1.8rem; }
+    .doc-body { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .doc-header::after, .site-hero::after,
+    .doc-footer::after, .site-footer::after { inset: 8px; }
+    .page::before, .page::after { width: 24px; height: 24px; }
+  }
+</style>
+<style>
+  /* ── BACK NAVIGATION (sticky top bar) ── */
+  .back-nav {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    height: 2.6rem;
+    max-width: 940px;
+    margin: 0 auto 1rem;
+    padding: 0 0.35rem;
+    background: linear-gradient(to bottom, #F3EAD3, var(--cream, #F2EBD9));
+    border: 1px solid rgba(212, 185, 122, 0.55);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(28, 26, 23, 0.10);
+    font-family: 'EB Garamond', Georgia, serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .back-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 2rem;
+    padding: 0 0.85rem;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    color: var(--ink-mid, #3D3829);
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  .back-nav-btn:hover,
+  .back-nav-btn:focus-visible { color: var(--crimson, #7A1F1F); background: rgba(122, 31, 31, 0.06); }
+  .back-nav-btn:focus-visible { outline: 2px solid var(--gold-light, #C9A84C); outline-offset: 0; }
+  .back-nav-arrow { font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; letter-spacing: 0; }
+  .back-nav-sep { width: 1px; height: 1.1rem; background: rgba(201, 168, 76, 0.45); }
+
+  /* the page's own sticky nav must sit below the back bar, not under it */
+  .site-nav { top: 2.6rem; }
+
+  /* ── BACK LINK IN THE FOOTER ── */
+  .back-footer { margin-top: 1.6rem; }
+  .back-footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.25rem;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+  }
+  .back-footer-link:hover,
+  .back-footer-link:focus-visible { opacity: 1; }
+  .back-footer-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+  @media (max-width: 480px) {
+    .back-nav { margin-bottom: 0.7rem; padding: 0 0.2rem; }
+    .back-nav-btn { padding: 0 0.6rem; font-size: 0.65rem; letter-spacing: 0.12em; }
+  }
+  @media print { .back-nav, .back-footer { display: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- BACK NAVIGATION -->
+<nav class="back-nav" aria-label="Page navigation">
+  <button type="button" class="back-nav-btn" onclick="if(document.referrer.indexOf(location.origin)===0||history.length&gt;1){history.back()}else{location.href='./'}"><span class="back-nav-arrow" aria-hidden="true">&#8592;</span> Back</button>
+  <span class="back-nav-sep" aria-hidden="true"></span>
+  <a class="back-nav-btn" href="./">Home</a>
+</nav>
+
+<div class="page">
+
+  <header class="doc-header">
+    <span class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</span>
+    <p class="doc-eyebrow">Pronomian Teaching Series</p>
+    <h1 class="doc-title">One Law</h1>
+    <p class="doc-subtitle">One Law for the Homeborn and the Stranger: the Unchanging Torah of God for Jew and Gentile Alike</p>
+    <div class="header-rule"><span></span><i>✦</i><span></span></div>
+  </header>
+
+  <div class="doc-body">
+
+    <section class="intro">
+      <p class="intro-label">Introduction</p>
+      <p class="dropcap">Somewhere along the way the church learned to speak of two laws. One belonged to the Jews. It was given at Sinai, it was heavy and old, and we are told it has passed away. The other, if there is any law at all, belongs to the Gentiles who came in through the gospel. Some put it bluntly: the law was for Israel, and the church has grace instead. Others put it more carefully. They say the Torah still binds the Jewish believer, but the Gentile believer only needs the four things of Acts 15, or a short list of laws said to have been given to Noah. The wording changes from one camp to the next. The result is the same. The one people of God is cut into two peoples, and each one is handed a different standard of righteousness.</p>
+      <p>The Scripture does not leave this question open. The Torah answers it in its own words, and it answers it more than once: <em>One law shall be to him that is homeborn, and unto the stranger that sojourneth among you.</em> The prophets carry that promise forward to the nations. Christ says that not one jot or tittle will pass from the law. The apostles graft the Gentiles into the same olive tree and tell them they are no longer strangers but fellowcitizens. One God, one people, one law. The Torah has not changed, and it was never split in two.</p>
+      <p>This teaching sets out that witness from the Torah, the Prophets, the Gospels, and the Epistles. It answers the verses usually raised against it, and it closes with what it means for a believer, Jew or Gentile, to walk in the one law of God by grace through faith.</p>
+    </section>
+
+    <div class="keypoint">
+      <p class="keypoint-label">Settle This First</p>
+      <p class="keypoint-body">One law is not a way to be saved. Salvation is by grace through faith, and it comes to the Jew and the Gentile on exactly the same terms (Ephesians 2:8&ndash;9; Acts 15:11). The question in this teaching is not how a man is saved. It is how a saved man is called to live, and whether God gave the Jew one answer to that question and the Gentile another.</p>
+    </div>
+
+    <nav class="toc">
+      <p class="toc-title">Contents</p>
+      <ul class="toc-list">
+        <li><a href="#s1"><span class="toc-num">I.</span> One Law Written Into the Torah</a></li>
+        <li><a href="#s2"><span class="toc-num">II.</span> Who the Stranger Was</a></li>
+        <li><a href="#s3"><span class="toc-num">III.</span> The Torah Has Not Changed</a></li>
+        <li><a href="#s4"><span class="toc-num">IV.</span> One Olive Tree, One Household</a></li>
+        <li><a href="#s5"><span class="toc-num">V.</span> One Law in the Mouth of Christ and His Apostles</a></li>
+        <li><a href="#s6"><span class="toc-num">VI.</span> Acts 15: The Stranger&rsquo;s Starting Place</a></li>
+        <li><a href="#s7"><span class="toc-num">VII.</span> What One Law Does Not Mean</a></li>
+        <li><a href="#s8"><span class="toc-num">VIII.</span> Answering the Objections</a></li>
+        <li><a href="#s9"><span class="toc-num">IX.</span> Walking in the One Law</a></li>
+        <li><a href="#s10"><span class="toc-num">X.</span> The Witness of Scripture at a Glance</a></li>
+      </ul>
+    </nav>
+
+    <!-- ════════ I ════════ -->
+    <article class="article" id="s1">
+      <div class="article-header">
+        <span class="article-num">I.</span>
+        <h2 class="article-title">One Law Written Into the Torah</h2>
+      </div>
+
+      <p class="article-body">The phrase <strong>one law</strong> was not coined by a modern teacher. God spoke it, and Moses wrote it down. He did not write it once in a corner of the text where it could be missed. He wrote it again and again, in Exodus, Leviticus, and Numbers, across the Passover, the offerings, the judgments of the court, and the sins of ignorance and presumption.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">One Law, Spoken by God</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:49</span>
+          <span class="scripture-text">One law shall be to him that is homeborn, and unto the stranger that sojourneth among you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 24:22</span>
+          <span class="scripture-text">Ye shall have one manner of law, as well for the stranger, as for one of your own country: for I am the LORD your God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Numbers 9:14</span>
+          <span class="scripture-text">And if a stranger shall sojourn among you, and will keep the passover unto the LORD; according to the ordinance of the passover, and according to the manner thereof, so shall he do: ye shall have one ordinance, both for the stranger, and for him that was born in the land.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Numbers 15:15&ndash;16</span>
+          <span class="scripture-text">One ordinance shall be both for you of the congregation, and also for the stranger that sojourneth with you, an ordinance for ever in your generations: as ye are, so shall the stranger be before the LORD. One law and one manner shall be for you, and for the stranger that sojourneth with you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Numbers 15:29</span>
+          <span class="scripture-text">Ye shall have one law for him that sinneth through ignorance, both for him that is born among the children of Israel, and for the stranger that sojourneth among them.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Look closely at Numbers 15:15. God does not call this an arrangement for the wilderness years. He calls it <strong>an ordinance for ever in your generations</strong>. Then He states the principle in plain words: <em>as ye are, so shall the stranger be.</em> And He says where this equality holds: <em>before the LORD.</em> When a man stands before God, there is no upper tier for the native and lower tier for the newcomer. There is one standard, because there is one God.</p>
+
+      <p class="article-body">The Torah does not leave the principle in the abstract either. Over and over it names the stranger inside the commandments themselves. He rested on the Sabbath. He put away leaven at the Feast of Unleavened Bread. He afflicted his soul on the Day of Atonement. He was held to the same sexual holiness. He rejoiced at the feasts. He sat with everyone else when the whole law was read aloud.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Stranger Inside the Commandments</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 20:10</span>
+          <span class="scripture-text">But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Exodus 12:19</span>
+          <span class="scripture-text">Seven days shall there be no leaven found in your houses: for whosoever eateth that which is leavened, even that soul shall be cut off from the congregation of Israel, whether he be a stranger, or born in the land.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 16:29</span>
+          <span class="scripture-text">And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all, whether it be one of your own country, or a stranger that sojourneth among you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 18:26</span>
+          <span class="scripture-text">Ye shall therefore keep my statutes and my judgments, and shall not commit any of these abominations; neither any of your own nation, nor any stranger that sojourneth among you.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 16:14</span>
+          <span class="scripture-text">And thou shalt rejoice in thy feast, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite, the stranger, and the fatherless, and the widow, that are within thy gates.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 31:12</span>
+          <span class="scripture-text">Gather the people together, men, and women, and children, and thy stranger that is within thy gates, that they may hear, and that they may learn, and fear the LORD your God, and observe to do all the words of this law.</span>
+        </div>
+      </div>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus &middot; The Stranger Stood at Sinai</p>
+        <div class="bonus-body">
+          <p>When Israel came out of Egypt, Israel did not come out alone. <em>&ldquo;And a mixed multitude went up also with them&rdquo;</em> (Exodus 12:38). That means the congregation standing at the foot of Sinai already had Gentiles in it. The law was never handed to a pure ethnic Israel and then reluctantly extended to outsiders. From the first day it was spoken, it was spoken to Israel and the stranger together.</p>
+          <p>Forty years later, when Joshua read the law at Mount Ebal, the text goes out of its way to tell us who was listening: <em>&ldquo;There was not a word of all that Moses commanded, which Joshua read not before all the congregation of Israel, with the women, and the little ones, and the strangers that were conversant among them&rdquo;</em> (Joshua 8:35). Not a word was held back from the stranger.</p>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Key Point</p>
+        <p class="keypoint-body">The Torah never pictured a covenant people made of Israelites alone. It pictured Israel with the stranger standing in the midst, under the same commandments, at the same feasts, before the same God, and it called that arrangement an ordinance for ever.</p>
+      </div>
+    </article>
+
+    <!-- ════════ II ════════ -->
+    <article class="article" id="s2">
+      <div class="article-header">
+        <span class="article-num">II.</span>
+        <h2 class="article-title">Who the Stranger Was</h2>
+      </div>
+
+      <p class="article-body">The word behind <strong>stranger</strong> in all of these passages is the Hebrew <em>ger</em>. It comes from a root that means to sojourn, to come and dwell somewhere as a newcomer. The <em>ger</em> was not the foreigner passing through on business, and he was not the enemy nation across the border. Hebrew has another word, <em>nokri</em>, for the outsider who stays an outsider. The King James sometimes renders that word as stranger too, but it is the <em>alien</em> of Deuteronomy 14:21 and the <em>foreigner</em> of Deuteronomy 15:3. The <em>ger</em> was the man or woman from the nations who came in, cast their lot with Israel, and joined themselves to Israel&rsquo;s God.</p>
+
+      <p class="article-body">In the language of the Torah, then, a Gentile who turns to the God of Israel already has a name. He is the stranger. And the stranger was always given one law with Israel.</p>
+
+      <p class="subhead">Faces of the Stranger</p>
+
+      <p class="article-body">Scripture gives this word faces. Rahab of Jericho hid the spies, and afterward <em>&ldquo;she dwelleth in Israel even unto this day&rdquo;</em> (Joshua 6:25). Ruth of Moab told Naomi, <em>&ldquo;thy people shall be my people, and thy God my God&rdquo;</em> (Ruth 1:16). Both women became mothers in the line of David, and both are named in the genealogy of Jesus Christ (Matthew 1:5). They were not kept at the edge of the people of God. They were woven into the very line of the Messiah.</p>
+
+      <p class="article-body">The prophets took this further and spoke directly to the stranger&rsquo;s fear, the fear that he would always be a second-class member of God&rsquo;s people.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Prophets and the Stranger</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 56:3</span>
+          <span class="scripture-text">Neither let the son of the stranger, that hath joined himself to the LORD, speak, saying, The LORD hath utterly separated me from his people: neither let the eunuch say, Behold, I am a dry tree.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 56:6&ndash;7</span>
+          <span class="scripture-text">Also the sons of the stranger, that join themselves to the LORD, to serve him, and to love the name of the LORD, to be his servants, every one that keepeth the sabbath from polluting it, and taketh hold of my covenant; even them will I bring to my holy mountain, and make them joyful in my house of prayer: their burnt offerings and their sacrifices shall be accepted upon mine altar; for mine house shall be called an house of prayer for all people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 47:22&ndash;23</span>
+          <span class="scripture-text">And it shall come to pass, that ye shall divide it by lot for an inheritance unto you, and to the strangers that sojourn among you, which shall beget children among you: and they shall be unto you as born in the country among the children of Israel; they shall have inheritance with you among the tribes of Israel. And it shall come to pass, that in what tribe the stranger sojourneth, there shall ye give him his inheritance, saith the Lord GOD.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Isaiah describes the stranger who has joined himself to the LORD by what he does: he keeps the Sabbath and takes hold of the covenant. Isaiah does not describe a stranger who is excused from the Sabbath because he was born among the nations. And when Jesus drove the money changers out of the temple, this is the passage He quoted: <em>&ldquo;Is it not written, My house shall be called of all nations the house of prayer?&rdquo;</em> (Mark 11:17). Ezekiel goes further still. In the coming division of the land, the stranger receives an inheritance among the tribes, <em>&ldquo;as born in the country among the children of Israel.&rdquo;</em></p>
+
+      <div class="pull-line">The stranger was never a guest in someone else&rsquo;s house. The prophets saw him keeping the same Sabbath, holding the same covenant, and receiving an inheritance among the tribes as one born in the land.</div>
+    </article>
+
+    <!-- ════════ III ════════ -->
+    <article class="article" id="s3">
+      <div class="article-header">
+        <span class="article-num">III.</span>
+        <h2 class="article-title">The Torah Has Not Changed</h2>
+      </div>
+
+      <p class="article-body">If God gave one law to Israel and the stranger, the only way to arrive at two laws today is to say that the law itself has changed. So we have to ask whether it has. The Scripture answers by first pointing us to the Lawgiver.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Lawgiver and His Word</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Malachi 3:6</span>
+          <span class="scripture-text">For I am the LORD, I change not; therefore ye sons of Jacob are not consumed.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Hebrews 13:8</span>
+          <span class="scripture-text">Jesus Christ the same yesterday, and to day, and for ever.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 119:89</span>
+          <span class="scripture-text">For ever, O LORD, thy word is settled in heaven.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Psalm 111:7&ndash;8</span>
+          <span class="scripture-text">The works of his hands are verity and judgment; all his commandments are sure. They stand fast for ever and ever, and are done in truth and uprightness.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Deuteronomy 4:2</span>
+          <span class="scripture-text">Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of the LORD your God which I command you.</span>
+        </div>
+      </div>
+
+      <p class="article-body">The law describes the One who gave it. His holiness does not expire, and so the standard that flows from His holiness does not expire either. Deuteronomy 4:2 forbids anyone from adding to the law or taking away from it. A teaching that removes the Sabbath, the feasts, and the dietary distinctions from half of God&rsquo;s people is a teaching that diminishes the word. It does not matter that it only diminishes it for the Gentiles. Diminishing is diminishing.</p>
+
+      <p class="subhead">What the Messiah Said</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Words of Jesus</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 5:17&ndash;19</span>
+          <span class="scripture-text">Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled. Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Luke 16:17</span>
+          <span class="scripture-text">And it is easier for heaven and earth to pass, than one tittle of the law to fail.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Jesus sets two words against each other: <em>destroy</em> and <em>fulfil</em>. If fulfil meant to bring the law to an end, the verse would read, &ldquo;I am not come to end the law, but to end it,&rdquo; which is nonsense. To fulfil is to fill full, to carry out, to show the law&rsquo;s full meaning by doing it perfectly. Then He sets a boundary on the question: <strong>till heaven and earth pass</strong>. Step outside and look up. Heaven and earth are still here. And notice who He says will be least in the kingdom: the one who breaks the least commandment <em>and teaches men so.</em> Teaching Gentile believers that the commandments are not for them is exactly that.</p>
+
+      <p class="subhead">What Did Change</p>
+
+      <p class="article-body">Honesty requires us to say what the New Testament does say changed. <em>&ldquo;For the priesthood being changed, there is made of necessity a change also of the law&rdquo;</em> (Hebrews 7:12). The priesthood moved from the order of Aaron to Christ, our High Priest after the order of Melchizedek, and the Levitical service and its sacrifices found their substance in Him. That is set out in full in <a class="inline-link" href="./002%20-%20Which%20Laws%20Remain">Which Laws Remain</a>. But look at what that change touched. It touched the priesthood. It did not create a new standard of righteousness, and it certainly did not create one standard for Jews and another for Gentiles. The Jewish believer and the Gentile believer come to God through the very same High Priest. Even the change of priesthood is one law for both.</p>
+
+      <p class="subhead">The Same Law on a New Heart</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The New Covenant</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Jeremiah 31:31, 33</span>
+          <span class="scripture-text">Behold, the days come, saith the LORD, that I will make a new covenant with the house of Israel, and with the house of Judah&hellip; But this shall be the covenant that I will make with the house of Israel; After those days, saith the LORD, I will put my law in their inward parts, and write it in their hearts; and will be their God, and they shall be my people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ezekiel 36:26&ndash;27</span>
+          <span class="scripture-text">A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">2 Corinthians 3:3</span>
+          <span class="scripture-text">Forasmuch as ye are manifestly declared to be the epistle of Christ ministered by us, written not with ink, but with the Spirit of the living God; not in tables of stone, but in fleshy tables of the heart.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Two things stand out. First, the New Covenant does not bring a new law. God says <strong>my law</strong>, the law He had already given, and He promises to write it where stone could never hold it, on the heart. Ezekiel says the Spirit Himself will cause God&rsquo;s people to walk in His statutes. The Spirit does not lead men away from what He wrote. Second, the New Covenant is made <strong>with the house of Israel, and with the house of Judah</strong>. There is no separate covenant written for the Gentiles. When Paul tells the church at Corinth, a mostly Gentile church, that they are the letter of Christ written on fleshy tables of the heart, he is telling Gentiles that Jeremiah&rsquo;s promise has reached them. They came into Israel&rsquo;s New Covenant, and they received Israel&rsquo;s law written on their hearts.</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Key Point</p>
+        <p class="keypoint-body">The New Covenant brought the same law to a new place, off the tablets of stone and onto the tables of the heart. There is one New Covenant, made with Israel, and the Gentile enters it by faith. One covenant cannot carry two laws.</p>
+      </div>
+    </article>
+
+    <!-- ════════ IV ════════ -->
+    <article class="article" id="s4">
+      <div class="article-header">
+        <span class="article-num">IV.</span>
+        <h2 class="article-title">One Olive Tree, One Household</h2>
+      </div>
+
+      <p class="article-body">Paul gives the Gentile believer two pictures of where he now belongs. The first is a tree.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Grafted In</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 11:16&ndash;18</span>
+          <span class="scripture-text">For if the firstfruit be holy, the lump is also holy: and if the root be holy, so are the branches. And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree; boast not against the branches. But if thou boast, thou bearest not the root, but the root thee.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 11:24</span>
+          <span class="scripture-text">For if thou wert cut out of the olive tree which is wild by nature, and wert graffed contrary to nature into a good olive tree: how much more shall these, which be the natural branches, be graffed into their own olive tree?</span>
+        </div>
+      </div>
+
+      <p class="article-body">The Gentile is not planted as a second tree beside Israel. He is grafted <strong>into</strong> Israel&rsquo;s tree, <em>among them</em>, drawing from the same root and the same sap. A grafted branch does not get its own root system. It lives on what the tree lives on. Paul even calls it <em>their own olive tree</em> when he speaks of the natural branches coming back. There is one tree, and every branch on it, natural or grafted, is fed by the same root.</p>
+
+      <p class="article-body">The second picture is a commonwealth, a nation with citizens.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Fellowcitizens</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 2:11&ndash;13</span>
+          <span class="scripture-text">Wherefore remember, that ye being in time past Gentiles in the flesh, who are called Uncircumcision by that which is called the Circumcision in the flesh made by hands; that at that time ye were without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world: but now in Christ Jesus ye who sometimes were far off are made nigh by the blood of Christ.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ephesians 2:19</span>
+          <span class="scripture-text">Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Galatians 3:28&ndash;29</span>
+          <span class="scripture-text">There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus. And if ye be Christ&rsquo;s, then are ye Abraham&rsquo;s seed, and heirs according to the promise.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Read what Paul says the Gentiles&rsquo; problem used to be. They were <strong>aliens from the commonwealth of Israel</strong> and strangers from the covenants of promise. The cure for that is not a second commonwealth with its own constitution. The cure is citizenship in the one that already exists. Now they are <em>fellowcitizens with the saints.</em> A citizen lives under the laws of the nation he belongs to. He does not carry a separate rulebook because he was naturalized instead of born there.</p>
+
+      <p class="article-body">Think of it as a household, because Paul uses that word too. When a father adopts a son, the boy sits at the same table, calls the same man Father, and keeps the same house rules as the son who was born there. The adoption papers do not give him a different father or a different house. That is exactly what the Torah said about the stranger at Passover: <em>&ldquo;he shall be as one that is born in the land&rdquo;</em> (Exodus 12:48). And it is what Paul says about every believer: <em>&ldquo;ye have received the Spirit of adoption, whereby we cry, Abba, Father&rdquo;</em> (Romans 8:15).</p>
+
+      <div class="teacher-note">
+        <p class="teacher-label">Teacher&rsquo;s Note &middot; Ephesians 2:15</p>
+        <div class="teacher-body">
+          <p>Expect someone to raise the next verse: Christ <em>&ldquo;abolished in his flesh the enmity, even the law of commandments contained in ordinances.&rdquo;</em> Read it slowly. What the verse names as abolished is <strong>the enmity</strong>, the hostility between Jew and Gentile, and the result is <em>&ldquo;one new man, so making peace.&rdquo;</em> The word rendered ordinances is the Greek <em>dogma</em>, a decree, and it is not the ordinary word for the law of Moses. The longer treatment of this verse is in <a class="inline-link" href="./004%20-%20Moedim%20in%20the%20Church">Moedim in the Church</a>.</p>
+          <p>Here is the simplest way to put it. If Christ had abolished the Torah in order to make Jew and Gentile one, He would have abolished the very law that commanded one law for the two of them (Numbers 15:16). Whatever divided them, it was not the commandment that told them to be one.</p>
+        </div>
+      </div>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Key Point</p>
+        <p class="keypoint-body">One tree, one root. One commonwealth, one citizenship. One household, one Father, one table. Jesus said there would be <em>&ldquo;one fold, and one shepherd&rdquo;</em> (John 10:16). One fold does not run on two sets of rules.</p>
+      </div>
+    </article>
+
+    <!-- ════════ V ════════ -->
+    <article class="article" id="s5">
+      <div class="article-header">
+        <span class="article-num">V.</span>
+        <h2 class="article-title">One Law in the Mouth of Christ and His Apostles</h2>
+      </div>
+
+      <p class="article-body">If the New Testament meant to set up a lighter standard for the Gentiles, we would expect to find it in the Great Commission, the moment Jesus sent His disciples out to the nations. Instead we find the opposite.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">Sent to All Nations</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Matthew 28:19&ndash;20</span>
+          <span class="scripture-text">Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost: teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.</span>
+        </div>
+      </div>
+
+      <p class="article-body"><strong>All nations. All things.</strong> Jesus did not tell the apostles to teach the Jewish disciples everything and give the Gentile disciples a summary. He told them to teach the nations to observe everything He had commanded, and what He had commanded included <em>&ldquo;if thou wilt enter into life, keep the commandments&rdquo;</em> (Matthew 19:17). The apostles carried the same teaching to the nations that they had received in Galilee.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Apostles on Jew and Gentile</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Romans 3:29&ndash;31</span>
+          <span class="scripture-text">Is he the God of the Jews only? is he not also of the Gentiles? Yes, of the Gentiles also: seeing it is one God, which shall justify the circumcision by faith, and uncircumcision through faith. Do we then make void the law through faith? God forbid: yea, we establish the law.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">1 Corinthians 7:18&ndash;19</span>
+          <span class="scripture-text">Is any man called being circumcised? let him not become uncircumcised. Is any called in uncircumcision? let him not be circumcised. Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of God.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 10:34&ndash;35</span>
+          <span class="scripture-text">Then Peter opened his mouth, and said, Of a truth I perceive that God is no respecter of persons: but in every nation he that feareth him, and worketh righteousness, is accepted with him.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Follow Paul&rsquo;s argument in Romans 3. There is one God. That one God justifies the Jew and the Gentile the same way, by faith. And then, in the very same breath, Paul asks whether faith cancels the law, and he answers with the strongest denial in his vocabulary: <em>God forbid: yea, we establish the law.</em> One God, one way of justification, one law established. Paul never imagined a gospel that made the law void for half the church.</p>
+
+      <p class="article-body">First Corinthians 7 may be the clearest one law passage in the New Testament. Paul is writing to a church full of Gentiles. He tells the Jew not to undo his circumcision, and he tells the Gentile not to seek it. Each stays what he was when he was called. Then he names the one thing that counts for both of them, and it is the same thing: <strong>the keeping of the commandments of God.</strong> Their birth stays different. Their duty is the same.</p>
+
+      <p class="subhead">No Law, No Sin</p>
+
+      <p class="article-body">There is one more way to test the two law idea, and it is decisive. John defines sin for every believer: <em>&ldquo;sin is the transgression of the law&rdquo;</em> (1 John 3:4). Paul agrees: <em>&ldquo;where no law is, there is no transgression&rdquo;</em> (Romans 4:15). So if the law of God does not apply to a Gentile, then by the apostles&rsquo; own definition a Gentile cannot sin. And if he cannot sin, he has no need of a Saviour. But Paul says the law speaks <em>&ldquo;that every mouth may be stopped, and all the world may become guilty before God&rdquo;</em> (Romans 3:19), and <em>&ldquo;all have sinned, and come short of the glory of God&rdquo;</em> (Romans 3:23). The whole world stands guilty before one law. The whole world is offered one Saviour. And the redeemed of the whole world are described at the end the same way: <em>&ldquo;Here are they that keep the commandments of God, and the faith of Jesus&rdquo;</em> (Revelation 14:12).</p>
+
+      <div class="keypoint">
+        <p class="keypoint-label">Key Point</p>
+        <p class="keypoint-body">The same law that shows the Gentile he is a sinner is the law that describes how a forgiven Gentile now walks. You cannot hold him guilty under the law for the sake of the gospel and then tell him the law has nothing to say to him once he believes.</p>
+      </div>
+    </article>
+
+    <!-- ════════ VI ════════ -->
+    <article class="article" id="s6">
+      <div class="article-header">
+        <span class="article-num">VI.</span>
+        <h2 class="article-title">Acts 15: The Stranger&rsquo;s Starting Place</h2>
+      </div>
+
+      <p class="article-body">Many read Acts 15 as the place where the two law system was set up: the whole Torah for Jewish believers, four rules for Gentile believers. The full study of the Jerusalem council is in <a class="inline-link" href="./046_-_The_Four_Necessary_Things">The Four Necessary Things</a>, but three facts from that chapter matter here.</p>
+
+      <p class="article-body">First, the question before the council was salvation. Men from Judaea were teaching, <em>&ldquo;Except ye be circumcised after the manner of Moses, ye cannot be saved&rdquo;</em> (Acts 15:1). The answer was grace, and grace on equal terms: <em>&ldquo;we believe that through the grace of the Lord Jesus Christ we shall be saved, even as they&rdquo;</em> (Acts 15:11).</p>
+
+      <p class="article-body">Second, the four things James named were not invented on the spot. They line up with the commands the Torah lays on <strong>the stranger that sojourneth among you</strong> in Leviticus 17 and 18, the very chapters where God names the stranger again and again.</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Council and the Torah of the Stranger</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Acts 15:19&ndash;21</span>
+          <span class="scripture-text">Wherefore my sentence is, that we trouble not them, which from among the Gentiles are turned to God: but that we write unto them, that they abstain from pollutions of idols, and from fornication, and from things strangled, and from blood. For Moses of old time hath in every city them that preach him, being read in the synagogues every sabbath day.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 17:10</span>
+          <span class="scripture-text">And whatsoever man there be of the house of Israel, or of the strangers that sojourn among you, that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Leviticus 18:26</span>
+          <span class="scripture-text">Ye shall therefore keep my statutes and my judgments, and shall not commit any of these abominations; neither any of your own nation, nor any stranger that sojourneth among you.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Third, James gave a reason for his ruling, and the reason is the verse almost everyone skips: <em>Moses is read in the synagogues every sabbath day.</em> The new Gentile believer was not being handed a four item religion. He was being given the Torah&rsquo;s own starting place for the stranger, and then pointed to where he would hear the rest, week by week. That is not two laws. That is one law, and a newcomer beginning to learn it.</p>
+
+      <div class="teacher-note">
+        <p class="teacher-label">Teacher&rsquo;s Note</p>
+        <p class="teacher-body">The match between the four requirements and Leviticus 17 and 18 is strong and worth teaching, but James does not name the chapters. Present it as a close correspondence that fits the evidence, not as a direct citation. The one law argument does not rest on it. It rests on the Torah&rsquo;s own repeated statements in Section I, and on the reason James himself gave in Acts 15:21.</p>
+      </div>
+    </article>
+
+    <!-- ════════ VII ════════ -->
+    <article class="article" id="s7">
+      <div class="article-header">
+        <span class="article-num">VII.</span>
+        <h2 class="article-title">What One Law Does Not Mean</h2>
+      </div>
+
+      <p class="article-body">A true teaching can be pushed into a false one. So it matters just as much to say what one law does not mean.</p>
+
+      <ul class="list">
+        <li><strong>It is not a way of salvation.</strong> <em>&ldquo;For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: not of works, lest any man should boast&rdquo;</em> (Ephesians 2:8&ndash;9). The next verse says we were <em>&ldquo;created in Christ Jesus unto good works.&rdquo;</em> Obedience is the fruit of salvation, never its root. That order is the same for the Jew and the Gentile.</li>
+        <li><strong>It does not mean a Gentile must become a Jew.</strong> After Ruth joined Israel, and even on the day Boaz took her as his wife, the Scripture still calls her <em>Ruth the Moabitess</em> (Ruth 2:2; 4:10). She took Israel&rsquo;s God and Israel&rsquo;s people without pretending she was born in Bethlehem. Paul says the same: <em>&ldquo;Is any called in uncircumcision? let him not be circumcised&rdquo;</em> (1 Corinthians 7:18). And he warned the Galatians that receiving circumcision in order to be justified meant falling from grace (Galatians 5:2&ndash;4). A Gentile believer keeps God&rsquo;s commandments as a Gentile grafted in, not as a man trying to change his birth.</li>
+        <li><strong>It does not mean every command lands on every person in the same way.</strong> Some commands are given to priests, some to kings, some to husbands and some to wives, some to the man who owns a field and some to the man who owns an ox. The one law is applied to each person according to his place in life. What the Torah never does is hold back a command from a believer because he was born among the nations. Its lines run between priest and people, husband and wife, owner and worker. They do not run between the homeborn and the stranger who has joined himself to the LORD.</li>
+        <li><strong>It does not mean the traditions of men.</strong> Jesus rebuked those who were <em>&ldquo;laying aside the commandment of God&rdquo;</em> to <em>&ldquo;hold the tradition of men&rdquo;</em> (Mark 7:8). The one law is the written word of God, not the fences and customs later generations built around it, whether those came from the rabbis or from the church. No Gentile believer is called to take on an oral law, and no Jewish believer is bound by one as though it were Scripture.</li>
+        <li><strong>It does not mean a return to the altar.</strong> The priesthood has changed (Hebrews 7:12). <em>&ldquo;For there is one God, and one mediator between God and men, the man Christ Jesus&rdquo;</em> (1 Timothy 2:5). One Mediator for both Jew and Gentile is itself one law.</li>
+      </ul>
+
+      <p class="subhead">Two Laws Taught, One Law Written</p>
+
+      <table class="contrast-table">
+        <thead>
+          <tr>
+            <th>What Is Often Taught</th>
+            <th>What Is Written</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The law was for Israel; the church has grace instead.</td>
+            <td>Abraham was counted righteous by faith before Sinai (Genesis 15:6), and the Gentile believer is grafted into Israel&rsquo;s own tree (Romans 11:17). Grace and the law were never rival peoples.</td>
+          </tr>
+          <tr>
+            <td>Jewish believers keep the Torah; Gentile believers keep four rules.</td>
+            <td>&ldquo;As ye are, so shall the stranger be before the LORD&rdquo; (Numbers 15:15). The four rules were a starting place, with Moses read every Sabbath (Acts 15:21).</td>
+          </tr>
+          <tr>
+            <td>Gentiles were only ever under the laws given to Noah.</td>
+            <td>The stranger in Israel kept the Sabbath, the feasts, and the holiness laws with Israel (Exodus 20:10; Leviticus 16:29; 18:26).</td>
+          </tr>
+          <tr>
+            <td>The New Covenant brought a new law.</td>
+            <td>&ldquo;I will put my law in their inward parts&rdquo; (Jeremiah 31:33). The same law on a new heart.</td>
+          </tr>
+          <tr>
+            <td>The Gentile is a welcome guest in Israel&rsquo;s house.</td>
+            <td>&ldquo;Ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God&rdquo; (Ephesians 2:19).</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- ════════ VIII ════════ -->
+    <article class="article" id="s8">
+      <div class="article-header">
+        <span class="article-num">VIII.</span>
+        <h2 class="article-title">Answering the Objections</h2>
+      </div>
+
+      <p class="subhead">&ldquo;The law was given only to Israel.&rdquo;</p>
+      <p class="article-body">Yes, and the stranger was counted in Israel&rsquo;s congregation from the day the law was given (Exodus 12:38, 49). The Gentile believer is no longer an alien from the commonwealth of Israel (Ephesians 2:12, 19). This objection does not answer the one law teaching. It proves it. The law was given to Israel, and the Gentile in Christ has been brought into Israel.</p>
+
+      <p class="subhead">&ldquo;We are not under the law, but under grace.&rdquo;</p>
+      <p class="article-body">Paul wrote those words in Romans 6:14, and in the very next verse he heads off the misuse of them: <em>&ldquo;What then? shall we sin, because we are not under the law, but under grace? God forbid&rdquo;</em> (Romans 6:15). To be under the law in that passage is to be under its condemnation and under sin&rsquo;s dominion. <em>&ldquo;Christ hath redeemed us from the curse of the law&rdquo;</em> (Galatians 3:13). He redeemed us from the curse, not from the commandment, and He did it for the Jew and the Gentile alike. Grace is one more thing the two share, not a thing that divides them.</p>
+
+      <p class="subhead">&ldquo;If ye be led of the Spirit, ye are not under the law.&rdquo;</p>
+      <p class="article-body">Galatians was written against men who made circumcision the door of justification (Galatians 5:2&ndash;4). In that same chapter Paul quotes the Torah to those Gentile believers as their standard of life: <em>&ldquo;For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself&rdquo;</em> (Galatians 5:14, from Leviticus 19:18). He lists the works of the flesh, beginning with adultery, fornication, idolatry, and witchcraft, sins the Torah itself names and forbids. Then he lists the fruit of the Spirit and says <em>&ldquo;against such there is no law&rdquo;</em> (Galatians 5:23). The Spirit-led life is not lawless. It is the life the law describes, flowing from the inside.</p>
+
+      <p class="subhead">&ldquo;Acts 21:25 says the Gentiles observe no such thing.&rdquo;</p>
+      <p class="article-body">Read the whole scene. The elders tell Paul that thousands of Jewish believers <em>&ldquo;are all zealous of the law&rdquo;</em> and have heard a rumor that he teaches Jews to forsake Moses (Acts 21:20&ndash;21). So they have him join four men in a vow and pay their charges, <em>&ldquo;that all may know&hellip; that thou thyself also walkest orderly, and keepest the law&rdquo;</em> (Acts 21:24). Then in verse 25 they remind him of the letter already sent to the Gentiles in Acts 15. The &ldquo;such thing&rdquo; is what the whole scene is about: the vow Paul was about to join, and the circumcision and customs of verse 21. Gentile believers had never been required to take those on as the door into the church. The elders are not issuing a new ruling that the law is optional for Gentiles. If they were, they would be asking Paul to prove he keeps the law in verse 24 while announcing in verse 25 that the law did not matter for half the church. The letter they point back to still carried its own reason: Moses is read every Sabbath.</p>
+
+      <p class="subhead">&ldquo;Deuteronomy 14:21 treats the stranger differently.&rdquo;</p>
+      <div class="teacher-note">
+        <p class="teacher-label">Teacher&rsquo;s Note &middot; Deal With This One Honestly</p>
+        <div class="teacher-body">
+          <p>This is the strongest verse raised against one law, so do not skip it. <em>&ldquo;Ye shall not eat of any thing that dieth of itself: thou shalt give it unto the stranger that is in thy gates, that he may eat it; or thou mayest sell it unto an alien: for thou art an holy people unto the LORD thy God&rdquo;</em> (Deuteronomy 14:21). Israel may not eat it; the stranger may.</p>
+          <p>Now set beside it Leviticus 17:15: <em>&ldquo;And every soul that eateth that which died of itself, or that which was torn with beasts, whether it be one of your own country, or a stranger, he shall both wash his clothes, and bathe himself in water, and be unclean until the even.&rdquo;</em> Here the native and the stranger are under the same rule.</p>
+          <p>Sincere teachers reconcile these in more than one way. Many understand the stranger of Deuteronomy 14:21 as a man living in the land who had not yet joined himself to the LORD, which is why he is named in the same breath as the alien. Later Jewish writers drew this same line between the resident stranger and the stranger who had fully joined Israel. Others note that the matter is the carcass of an animal that is otherwise clean, a matter of separation for a people <em>holy unto the LORD</em>, and not a moral command at all. Whichever reading you take, teach the boundary firmly: one verse about a carcass does not overturn the repeated, explicit, <em>for ever</em> commands of one law. Hold the precise explanation of the verse more loosely than the principle it is set against.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ════════ IX ════════ -->
+    <article class="article" id="s9">
+      <div class="article-header">
+        <span class="article-num">IX.</span>
+        <h2 class="article-title">Walking in the One Law</h2>
+      </div>
+
+      <p class="subhead">To the Gentile Believer</p>
+      <p class="article-body">You are not a guest at someone else&rsquo;s table. <em>As ye are, so shall the stranger be.</em> Nothing God commanded is too holy for you, and nothing He commanded is beneath you. The Sabbath was made for man (Mark 2:27), and that means it was made for you as surely as for anyone born in Jerusalem. The feasts are your appointed times too. Start where Acts 15 started, with a clean break from idols, from sexual sin, and from the pagan table, and then keep doing what James expected: sit under the word every Sabbath, and grow. His commandments are not grievous (1 John 5:3). They are the Father&rsquo;s house rules, and you are a son of the house.</p>
+
+      <p class="subhead">To the Congregation</p>
+      <p class="article-body">The Torah&rsquo;s command toward the stranger was not merely to tolerate him: <em>&ldquo;the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt&rdquo;</em> (Leviticus 19:34). Paul warned the Gentile branches, <em>&ldquo;Boast not against the branches&rdquo;</em> (Romans 11:18). The warning cuts both ways in a church that keeps the commandments. The Gentile must not boast against Israel, and the one who learned the commandments first must not look down on the one who is learning them now. Every one of us was a stranger once.</p>
+
+      <p class="subhead">To Everyone</p>
+
+      <div class="scripture-block">
+        <p class="scripture-label">The Whole Duty of Man</p>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Ecclesiastes 12:13</span>
+          <span class="scripture-text">Let us hear the conclusion of the whole matter: Fear God, and keep his commandments: for this is the whole duty of man.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Isaiah 2:2&ndash;3</span>
+          <span class="scripture-text">And it shall come to pass in the last days, that the mountain of the LORD&rsquo;s house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it. And many people shall go and say, Come ye, and let us go up to the mountain of the LORD, to the house of the God of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of the LORD from Jerusalem.</span>
+        </div>
+        <div class="scripture-entry">
+          <span class="scripture-ref">Zechariah 14:16</span>
+          <span class="scripture-text">And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, the LORD of hosts, and to keep the feast of tabernacles.</span>
+        </div>
+      </div>
+
+      <p class="article-body">Solomon did not call the commandments the whole duty of Israel. He called them <strong>the whole duty of man</strong>. And the prophets looked ahead to a day when all nations would stream to Zion to be taught God&rsquo;s ways, when the law would go forth from Jerusalem to the whole earth, and when the nations would keep the Feast of Tabernacles year by year. The kingdom to come is one law for all nations under one King. The church is called to be a foretaste of that kingdom now.</p>
+
+      <div class="bonus-panel">
+        <p class="bonus-label"><span class="bonus-star">✦</span> Bonus &middot; For Discussion</p>
+        <div class="bonus-body">
+          <p>1. Numbers 15:15 says &ldquo;as ye are, so shall the stranger be before the LORD.&rdquo; Why do you think God added the words <em>before the LORD</em>?</p>
+          <p>2. Ruth is still called &ldquo;the Moabitess&rdquo; after she joined Israel. What does that teach a Gentile believer about keeping God&rsquo;s law without pretending to be someone he is not?</p>
+          <p>3. If sin is the transgression of the law (1 John 3:4), what would it mean for the gospel if the law did not apply to Gentiles?</p>
+          <p>4. Read 1 Corinthians 7:18&ndash;19 aloud. What stays different between the Jewish and Gentile believer, and what is the same?</p>
+          <p>5. How can a congregation that keeps the commandments make sure a newcomer feels like a son of the house and not a guest under inspection?</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ════════ X ════════ -->
+    <article class="article" id="s10">
+      <div class="article-header">
+        <span class="article-num">X.</span>
+        <h2 class="article-title">The Witness of Scripture at a Glance</h2>
+      </div>
+
+      <p class="article-body">Every passage used in this teaching, gathered by what it shows. Look each one up for yourself.</p>
+
+      <div class="glance-grid">
+        <div class="glance-item">
+          <p class="glance-head">One Law Commanded</p>
+          <p class="glance-refs">Exodus 12:48&ndash;49; Leviticus 24:22; Numbers 9:14; 15:15&ndash;16; 15:29</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">The Stranger Inside the Commandments</p>
+          <p class="glance-refs">Exodus 12:19; 20:10; Leviticus 16:29; 17:10, 15; 18:26; Deuteronomy 16:14; 31:12; Joshua 8:35</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">The Stranger Joined to the LORD</p>
+          <p class="glance-refs">Exodus 12:38; Leviticus 19:33&ndash;34; Joshua 6:25; Ruth 1:16; 2:2; 4:10; Isaiah 56:3&ndash;7; Ezekiel 47:22&ndash;23; Matthew 1:5; Mark 11:17</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">The Stranger and the Alien</p>
+          <p class="glance-refs">Leviticus 17:15; Deuteronomy 14:21; 15:3</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">The Torah Unchanged</p>
+          <p class="glance-refs">Deuteronomy 4:2; Psalm 111:7&ndash;8; 119:89; Malachi 3:6; Matthew 5:17&ndash;19; Luke 16:17; Hebrews 13:8</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">The Same Law on a New Heart</p>
+          <p class="glance-refs">Jeremiah 31:31&ndash;33; Ezekiel 36:26&ndash;27; 2 Corinthians 3:3; Hebrews 7:12</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">One People of God</p>
+          <p class="glance-refs">John 10:16; Romans 8:15; 11:16&ndash;24; Galatians 3:28&ndash;29; Ephesians 2:11&ndash;19</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">One Standard for Jew and Gentile</p>
+          <p class="glance-refs">Matthew 19:17; 28:19&ndash;20; Acts 10:34&ndash;35; Romans 3:19, 23, 29&ndash;31; 4:15; 1 Corinthians 7:18&ndash;19; 1 John 3:4; Revelation 14:12</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">Acts 15 and Acts 21</p>
+          <p class="glance-refs">Acts 15:1, 11, 19&ndash;21; 21:20&ndash;25; Leviticus 17&ndash;18</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">Grace and Obedience</p>
+          <p class="glance-refs">Genesis 15:6; Mark 2:27; Romans 6:14&ndash;15; Galatians 3:13; 5:2&ndash;4, 14, 19&ndash;23; Ephesians 2:8&ndash;10; 1 Timothy 2:5; 1 John 5:3</p>
+        </div>
+        <div class="glance-item">
+          <p class="glance-head">The Kingdom to Come</p>
+          <p class="glance-refs">Ecclesiastes 12:13; Isaiah 2:2&ndash;3; Zechariah 14:16</p>
+        </div>
+      </div>
+    </article>
+
+    <div class="conclusion">
+      <p class="conclusion-label">Conclusion</p>
+      <p>God never had two peoples, and He never had two laws. At Sinai the stranger stood beside the Israelite and heard the same commandments. At Passover he ate the same lamb. On the Day of Atonement he afflicted his soul with everyone else. The prophets promised that the stranger who joined himself to the LORD and kept His Sabbath would be brought to His holy mountain and given an inheritance among the tribes.</p>
+      <p>Christ did not tear that promise up. He fulfilled it. He sent His apostles to teach all nations to observe all things. He grafted the Gentiles into Israel&rsquo;s olive tree, made them fellowcitizens in Israel&rsquo;s commonwealth, and wrote Israel&rsquo;s law on their hearts by His Spirit. The Torah has not changed. What changed is that the stranger, who once stood far off, has been brought near by the blood of Christ.</p>
+      <p>So when someone tells you the law was for the Jews, open your Bible to Exodus 12:49 and let God answer for Himself. <em>One law shall be to him that is homeborn, and unto the stranger that sojourneth among you.</em> One God. One Messiah. One people. One law.</p>
+    </div>
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+    <p class="footer-verse">One law shall be to him that is homeborn, and unto the stranger &middot; Exodus 12:49</p>
+    <p class="footer-text">Work the Word &middot; Pronomian Teaching Series</p>
+    <p class="back-footer"><a class="back-footer-link" href="./"><span aria-hidden="true">&#8592;</span> Back to Home</a></p>
+</footer>
+
+</div>
+</body>
+</html>
